@@ -64,24 +64,21 @@ export default function Home() {
           }}
         />
         
-        {/* 深色渐变遮罩 - 只在上下,不遮挡中间 */}
+        {/* 深色渐变遮罩 */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/80" />
         
-        {/* 内容 - 简洁,不遮挡背景 */}
+        {/* 内容 */}
         <div className="relative z-10 text-center px-6 max-w-4xl">
-          {/* 顶部装饰 */}
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-400"></div>
             <Sparkles className="w-8 h-8 text-amber-400 animate-pulse" />
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-400"></div>
           </div>
           
-          {/* 主标题 */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
             {t('home.hero_title')}
           </h1>
           
-          {/* 副标题 */}
           <p className="text-xl md:text-2xl text-gray-100 mb-4 font-light tracking-wide drop-shadow-lg">
             {t('home.hero_subtitle')}
           </p>
@@ -98,27 +95,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 开光流程展示区域 - 新增 */}
+      {/* 开光流程展示区域 - 简化为3步 */}
       <section className="py-24 bg-gradient-to-b from-[#1a1410] via-[#2a1f18] to-[#1a1410]">
         <div className="container mx-auto px-6">
           {/* 标题 */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-amber-400 mb-4">
-              {t('home.blessing_title')}
+              五台山开光仪轨
             </h2>
             <p className="text-lg text-amber-200/80 max-w-3xl mx-auto font-light leading-relaxed">
-              {t('home.blessing_subtitle')}
+              文殊菩萨道场 · 千年传承
             </p>
           </div>
 
-          {/* 流程步骤 - 4步 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {/* 步骤1: 圣水清净 */}
+          {/* 流程步骤 - 3步 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* 步骤1: 圣水净化 */}
             <div className="group">
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
                 <img 
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/MoLPIPAKnackyMOl.jpg"
-                  alt="圣水清净仪轨 - 佛像特写"
+                  alt="圣水净化"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -128,16 +125,16 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <h3 className="text-xl font-light text-amber-300 mb-2">{t('home.blessing_step1')}</h3>
-              <p className="text-sm text-amber-200/60 font-light leading-relaxed">{t('home.blessing_step1_desc')}</p>
+              <h3 className="text-xl font-light text-amber-300 mb-2">圣水净化</h3>
+              <p className="text-sm text-amber-200/60 font-light leading-relaxed">香水沐浴,涤除尘垢</p>
             </div>
 
-            {/* 步骤2: 七日诵经 */}
+            {/* 步骤2: 诵经加持 */}
             <div className="group">
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
                 <img 
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/NyjdrRqleQWwamar.jpg"
-                  alt="七日诵经法会 - 僧人诵经"
+                  alt="诵经加持"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -147,16 +144,16 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <h3 className="text-xl font-light text-amber-300 mb-2">{t('home.blessing_step2')}</h3>
-              <p className="text-sm text-amber-200/60 font-light leading-relaxed">{t('home.blessing_step2_desc')}</p>
+              <h3 className="text-xl font-light text-amber-300 mb-2">诵经加持</h3>
+              <p className="text-sm text-amber-200/60 font-light leading-relaxed">高僧诵经,注入灵性</p>
             </div>
 
-            {/* 步骤3: 能量灌顶 */}
+            {/* 步骤3: 圣地灌顶 */}
             <div className="group">
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
                 <img 
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ROpxIzavxRIvCgNk.jpg"
-                  alt="神圣能量灌顶 - 金色佛塔"
+                  alt="圣地灌顶"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -166,33 +163,14 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <h3 className="text-xl font-light text-amber-300 mb-2">{t('home.blessing_step3')}</h3>
-              <p className="text-sm text-amber-200/60 font-light leading-relaxed">{t('home.blessing_step3_desc')}</p>
-            </div>
-
-            {/* 步骤4: 证书认证 */}
-            <div className="group">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
-                <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/TEERzbPLLaysNIVh.jpg"
-                  alt="开光证书认证 - 法器供奉"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
-                    <span className="text-white font-bold text-xl">4</span>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-xl font-light text-amber-300 mb-2">{t('home.blessing_step4')}</h3>
-              <p className="text-sm text-amber-200/60 font-light leading-relaxed">{t('home.blessing_step4_desc')}</p>
+              <h3 className="text-xl font-light text-amber-300 mb-2">圣地灌顶</h3>
+              <p className="text-sm text-amber-200/60 font-light leading-relaxed">五台山能量加持</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 服务区域 - 使用佛像背景 */}
+      {/* 服务区域 - 统一金黄色系 */}
       <section className="py-24 relative overflow-hidden">
         {/* 背景图片 - 佛像虚化 */}
         <div 
@@ -215,34 +193,29 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 服务卡片网格 - 3列 */}
+          {/* 服务卡片网格 - 3列 - 统一金黄色系 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
             
-            {/* 卡片1: 开光法物 - 使用莲花图标 */}
+            {/* 卡片1: 开光法物 */}
             <Link href="/products">
               <a className="block group">
-                <div className="relative h-full bg-gradient-to-br from-amber-900/30 to-orange-900/30 backdrop-blur-xl border border-amber-500/40 rounded-2xl p-8 hover:scale-105 hover:border-amber-400/70 transition-all duration-500 shadow-2xl">
-                  {/* 玻璃态光晕效果 */}
+                <div className="relative h-full bg-gradient-to-br from-amber-900/30 to-yellow-900/30 backdrop-blur-xl border border-amber-500/40 rounded-2xl p-8 hover:scale-105 hover:border-amber-400/70 transition-all duration-500 shadow-2xl">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
                   
-                  {/* 莲花图标 */}
                   <div className="relative mb-6 flex justify-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
+                    <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
                       <span className="text-4xl">🪷</span>
                     </div>
                   </div>
                   
-                  {/* 标题 - 细字体 */}
                   <h3 className="text-2xl font-light text-amber-100 mb-3 text-center tracking-wide">
                     {t('home.service_blessed_items')}
                   </h3>
                   
-                  {/* 描述 - 细字体 */}
                   <p className="text-amber-200/70 text-center leading-relaxed font-light text-sm">
                     {t('home.service_blessed_items_desc')}
                   </p>
                   
-                  {/* 查看更多 */}
                   <div className="mt-6 text-center">
                     <span className="inline-flex items-center gap-2 text-amber-300 font-light group-hover:gap-4 transition-all">
                       {t('home.cta_products')}
@@ -253,40 +226,36 @@ export default function Home() {
               </a>
             </Link>
 
-            {/* 卡片2: 命理服务合集 - 使用念珠图标 */}
+            {/* 卡片2: 命理服务合集 - 改为金色系 */}
             <div className="relative group">
-              <div className="relative h-full bg-gradient-to-br from-purple-900/30 to-indigo-900/30 backdrop-blur-xl border border-purple-500/40 rounded-2xl p-8 hover:scale-105 hover:border-purple-400/70 transition-all duration-500 shadow-2xl">
-                {/* 玻璃态光晕效果 */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-400/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+              <div className="relative h-full bg-gradient-to-br from-amber-800/30 to-orange-900/30 backdrop-blur-xl border border-amber-500/40 rounded-2xl p-8 hover:scale-105 hover:border-amber-400/70 transition-all duration-500 shadow-2xl">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
                 
-                {/* 念珠图标 */}
                 <div className="relative mb-6 flex justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
+                  <div className="w-20 h-20 bg-gradient-to-br from-amber-600 to-orange-700 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
                     <span className="text-4xl">📿</span>
                   </div>
                 </div>
                 
-                {/* 标题 - 细字体 */}
-                <h3 className="relative text-2xl font-light text-purple-100 mb-6 text-center tracking-wide">
+                <h3 className="relative text-2xl font-light text-amber-100 mb-6 text-center tracking-wide">
                   {t('home.service_fortune_collection')}
                 </h3>
                 
                 {/* 子服务列表 */}
                 <div className="space-y-4">
-                  {/* 子服务1: 命理运势 */}
                   <Link href="/fortune">
-                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-purple-500/20 hover:border-purple-400/40">
+                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-amber-500/20 hover:border-amber-400/40">
                       <div className="flex items-start gap-3">
                         <div className="flex-shrink-0 mt-1">
-                          <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center shadow-lg">
+                          <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-800 rounded-lg flex items-center justify-center shadow-lg">
                             <Hand className="w-5 h-5 text-white" strokeWidth={1.5} />
                           </div>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-light text-purple-100 mb-1 text-sm">
+                          <h4 className="font-light text-amber-100 mb-1 text-sm">
                             {t('home.service_fortune_short')}
                           </h4>
-                          <p className="text-xs text-purple-200/60 font-light leading-relaxed">
+                          <p className="text-xs text-amber-200/60 font-light leading-relaxed">
                             {t('home.service_fortune_desc')}
                           </p>
                         </div>
@@ -294,20 +263,19 @@ export default function Home() {
                     </a>
                   </Link>
 
-                  {/* 子服务2: 手相面相 */}
                   <Link href="/fortune">
-                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-purple-500/20 hover:border-purple-400/40">
+                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-amber-500/20 hover:border-amber-400/40">
                       <div className="flex items-start gap-3">
                         <div className="flex-shrink-0 mt-1">
-                          <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center shadow-lg">
+                          <div className="w-10 h-10 bg-gradient-to-br from-orange-600 to-orange-800 rounded-lg flex items-center justify-center shadow-lg">
                             <Eye className="w-5 h-5 text-white" strokeWidth={1.5} />
                           </div>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-light text-purple-100 mb-1 text-sm">
+                          <h4 className="font-light text-amber-100 mb-1 text-sm">
                             {t('home.service_palmistry_short')}
                           </h4>
-                          <p className="text-xs text-purple-200/60 font-light leading-relaxed">
+                          <p className="text-xs text-amber-200/60 font-light leading-relaxed">
                             {t('home.service_palmistry_desc')}
                           </p>
                         </div>
@@ -315,20 +283,19 @@ export default function Home() {
                     </a>
                   </Link>
 
-                  {/* 子服务3: 家居风水 */}
                   <Link href="/fortune">
-                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-purple-500/20 hover:border-purple-400/40">
+                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-amber-500/20 hover:border-amber-400/40">
                       <div className="flex items-start gap-3">
                         <div className="flex-shrink-0 mt-1">
-                          <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-violet-700 rounded-lg flex items-center justify-center shadow-lg">
+                          <div className="w-10 h-10 bg-gradient-to-br from-yellow-600 to-yellow-800 rounded-lg flex items-center justify-center shadow-lg">
                             <MapPin className="w-5 h-5 text-white" strokeWidth={1.5} />
                           </div>
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-light text-purple-100 mb-1 text-sm">
+                          <h4 className="font-light text-amber-100 mb-1 text-sm">
                             {t('home.service_fengshui_short')}
                           </h4>
-                          <p className="text-xs text-purple-200/60 font-light leading-relaxed">
+                          <p className="text-xs text-amber-200/60 font-light leading-relaxed">
                             {t('home.service_fengshui_desc')}
                           </p>
                         </div>
@@ -339,33 +306,28 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 卡片3: 代祈福服务 - 使用香炉图标 */}
+            {/* 卡片3: 代祈福服务 - 改为金色系 */}
             <Link href="/products?category=blessing">
               <a className="block group">
-                <div className="relative h-full bg-gradient-to-br from-rose-900/30 to-pink-900/30 backdrop-blur-xl border border-rose-500/40 rounded-2xl p-8 hover:scale-105 hover:border-rose-400/70 transition-all duration-500 shadow-2xl">
-                  {/* 玻璃态光晕效果 */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-rose-400/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                <div className="relative h-full bg-gradient-to-br from-yellow-900/30 to-amber-900/30 backdrop-blur-xl border border-amber-500/40 rounded-2xl p-8 hover:scale-105 hover:border-amber-400/70 transition-all duration-500 shadow-2xl">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
                   
-                  {/* 香炉图标 */}
                   <div className="relative mb-6 flex justify-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
+                    <div className="w-20 h-20 bg-gradient-to-br from-yellow-600 to-amber-700 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
                       <Flame className="w-10 h-10 text-white" strokeWidth={1.5} />
                     </div>
                   </div>
                   
-                  {/* 标题 - 细字体 */}
-                  <h3 className="text-2xl font-light text-rose-100 mb-3 text-center tracking-wide">
+                  <h3 className="text-2xl font-light text-amber-100 mb-3 text-center tracking-wide">
                     {t('home.service_blessing')}
                   </h3>
                   
-                  {/* 描述 - 细字体 */}
-                  <p className="text-rose-200/70 text-center leading-relaxed font-light text-sm">
+                  <p className="text-amber-200/70 text-center leading-relaxed font-light text-sm">
                     {t('home.service_blessing_desc')}
                   </p>
                   
-                  {/* 查看更多 */}
                   <div className="mt-6 text-center">
-                    <span className="inline-flex items-center gap-2 text-rose-300 font-light group-hover:gap-4 transition-all">
+                    <span className="inline-flex items-center gap-2 text-amber-300 font-light group-hover:gap-4 transition-all">
                       {t('home.cta_products')}
                       <span className="text-xl">→</span>
                     </span>
@@ -381,7 +343,6 @@ export default function Home() {
       {/* 精选产品区域 */}
       <section className="py-24 bg-gradient-to-b from-[#1a1410] to-[#2a1f18]">
         <div className="container mx-auto px-6">
-          {/* 标题 */}
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-4">
               <div className="h-px w-12 bg-gradient-to-r from-transparent to-amber-500"></div>
@@ -396,14 +357,12 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 产品网格 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {featuredProducts && featuredProducts.length > 0 ? (
               featuredProducts.map((product) => (
                 <Link key={product.id} href={`/products/${product.id}`}>
                   <a className="block group">
                     <div className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-amber-500/20 hover:border-amber-500/50 transition-all duration-500 hover:scale-105 shadow-2xl">
-                      {/* 产品图片 */}
                       <div className="relative aspect-square overflow-hidden bg-gray-800">
                         {product.images && product.images.length > 0 ? (
                           <img
@@ -416,7 +375,6 @@ export default function Home() {
                             <Sparkles className="w-16 h-16 text-gray-600" />
                           </div>
                         )}
-                        {/* 折扣标签 */}
                         {product.salePrice && product.regularPrice && Number(product.salePrice) < Number(product.regularPrice) && (
                           <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
                             -{Math.round((1 - Number(product.salePrice) / Number(product.regularPrice)) * 100)}%
@@ -424,7 +382,6 @@ export default function Home() {
                         )}
                       </div>
                       
-                      {/* 产品信息 */}
                       <div className="p-6">
                         <h3 className="font-light text-lg text-amber-100 mb-2 group-hover:text-amber-400 transition-colors line-clamp-2">
                           {product.name}
@@ -457,7 +414,6 @@ export default function Home() {
             )}
           </div>
 
-          {/* 查看全部按钮 */}
           {featuredProducts && featuredProducts.length > 0 && (
             <div className="text-center mt-12">
               <Link href="/products">
