@@ -117,8 +117,8 @@ export default function Home() {
             <div className="group">
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
                 <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/IdJDJdSZChEbWoKl.jpg"
-                  alt="圣水清净仪轨"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/MoLPIPAKnackyMOl.jpg"
+                  alt="圣水清净仪轨 - 佛像特写"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -137,7 +137,7 @@ export default function Home() {
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
                 <img 
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/NyjdrRqleQWwamar.jpg"
-                  alt="七日诵经法会"
+                  alt="七日诵经法会 - 僧人诵经"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -155,8 +155,8 @@ export default function Home() {
             <div className="group">
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
                 <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/UjvdqOMKIQUwyPRt.jpg"
-                  alt="神圣能量灌顶"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ROpxIzavxRIvCgNk.jpg"
+                  alt="神圣能量灌顶 - 金色佛塔"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -174,8 +174,8 @@ export default function Home() {
             <div className="group">
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
                 <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/CtjkaNRwTtRHApgm.jpg"
-                  alt="开光证书认证"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/TEERzbPLLaysNIVh.jpg"
+                  alt="开光证书认证 - 法器供奉"
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
