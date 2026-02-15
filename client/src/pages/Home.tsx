@@ -118,7 +118,7 @@ export default function Home() {
               <div className="group bg-[#FAF8F3] border border-[#D4AF37]/30 rounded-lg p-6 hover:border-[#D4AF37] hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer min-h-[44px] flex flex-col items-center justify-center">
                 <div className="text-4xl mb-3">👤</div>
                 <h3 className="text-sm font-semibold text-[#5D4E37] text-center">面相手相</h3>
-                <p className="text-xs text-gray-600 mt-1 text-center">AI智能命理测算</p>
+                <p className="text-xs text-gray-600 mt-1 text-center">传统命理测算</p>
               </div>
             </Link>
 

@@ -149,8 +149,8 @@ export default function FortuneServices() {
               },
               {
                 step: "3",
-                title: isZh ? "AI分析" : "AI Analysis",
-                desc: isZh ? "结合传统智慧与AI技术分析" : "Traditional wisdom + AI",
+                title: isZh ? "大师分析" : "Master Analysis",
+                desc: isZh ? "结合传统智慧与专业分析" : "Traditional wisdom + expertise",
               },
               {
                 step: "4",
