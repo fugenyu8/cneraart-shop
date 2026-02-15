@@ -184,6 +184,67 @@ export const appRouter = router({
     getDefault: protectedProcedure.query(async ({ ctx }) => {
       return await db.getDefaultAddress(ctx.user.id);
     }),
+
+    // 创建地址
+    create: protectedProcedure
+      .input(
+        z.object({
+          fullName: z.string(),
+          phone: z.string().optional(),
+          addressLine1: z.string(),
+          addressLine2: z.string().optional(),
+          city: z.string(),
+          state: z.string().optional(),
+          postalCode: z.string(),
+          country: z.string(),
+          isDefault: z.boolean().optional(),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const addressId = await db.createAddress({
+          userId: ctx.user.id,
+          ...input,
+        });
+        return { addressId };
+      }),
+
+    // 更新地址
+    update: protectedProcedure
+      .input(
+        z.object({
+          addressId: z.number(),
+          fullName: z.string().optional(),
+          phone: z.string().optional(),
+          addressLine1: z.string().optional(),
+          addressLine2: z.string().optional(),
+          city: z.string().optional(),
+          state: z.string().optional(),
+          postalCode: z.string().optional(),
+          country: z.string().optional(),
+          isDefault: z.boolean().optional(),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const { addressId, ...addressData } = input;
+        await db.updateAddress(addressId, ctx.user.id, addressData);
+        return { success: true };
+      }),
+
+    // 删除地址
+    delete: protectedProcedure
+      .input(z.object({ addressId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        await db.deleteAddress(input.addressId, ctx.user.id);
+        return { success: true };
+      }),
+
+    // 设置默认地址
+    setDefault: protectedProcedure
+      .input(z.object({ addressId: z.number() }))
+      .mutation(async ({ ctx, input }) => {
+        await db.setDefaultAddress(input.addressId, ctx.user.id);
+        return { success: true };
+      }),
   }),
 
   // ============= 订单相关 =============
@@ -247,6 +308,29 @@ export const appRouter = router({
 
         // 清空购物车
         await db.clearCart(ctx.user.id);
+
+        // 发送订单确认邮件
+        try {
+          const { sendEmail, getOrderConfirmationEmail } = await import("./email");
+          const orderItems = await db.getOrderItems(Number(orderId));
+          const emailHtml = getOrderConfirmationEmail({
+            orderNumber,
+            total: input.total.toString(),
+            customerName: input.shippingAddress.name,
+            items: orderItems.map((item: any) => ({
+              productName: item.product?.name || "Product",
+              quantity: item.quantity,
+              price: item.price,
+            })),
+          });
+          await sendEmail({
+            to: ctx.user.email || "",
+            subject: `订单确认 - ${orderNumber}`,
+            html: emailHtml,
+          });
+        } catch (error) {
+          console.error("Failed to send order confirmation email:", error);
+        }
 
         return { orderId: Number(orderId), orderNumber };
       }),
@@ -529,6 +613,44 @@ export const appRouter = router({
         )
         .mutation(async ({ input }) => {
           await db.updateOrderStatus(input.orderId, input.status);
+          
+          // 发送邮件通知
+          try {
+            const order = await db.getOrderById(input.orderId);
+            if (!order) return { success: true };
+            
+            const user = await db.getUserById(order.userId);
+            if (!user?.email) return { success: true };
+            
+            const { sendEmail, getShippingNotificationEmail, getDeliveryNotificationEmail } = await import("./email");
+            
+            if (input.status === "shipped" && order.shippingCarrier && order.trackingNumber) {
+              const emailHtml = getShippingNotificationEmail({
+                orderNumber: order.orderNumber,
+                customerName: typeof order.shippingAddress === 'string' ? 'Customer' : (order.shippingAddress as any).name,
+                shippingCarrier: order.shippingCarrier,
+                trackingNumber: order.trackingNumber,
+              });
+              await sendEmail({
+                to: user.email,
+                subject: `发货通知 - ${order.orderNumber}`,
+                html: emailHtml,
+              });
+            } else if (input.status === "delivered") {
+              const emailHtml = getDeliveryNotificationEmail({
+                orderNumber: order.orderNumber,
+                customerName: typeof order.shippingAddress === 'string' ? 'Customer' : (order.shippingAddress as any).name,
+              });
+              await sendEmail({
+                to: user.email,
+                subject: `送达通知 - ${order.orderNumber}`,
+                html: emailHtml,
+              });
+            }
+          } catch (error) {
+            console.error("Failed to send status update email:", error);
+          }
+          
           return { success: true };
         }),
 

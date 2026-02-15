@@ -291,6 +291,104 @@ export async function getDefaultAddress(userId: number): Promise<Address | undef
   return result.length > 0 ? result[0] : undefined;
 }
 
+export async function createAddress(addressData: {
+  userId: number;
+  fullName: string;
+  phone?: string;
+  addressLine1: string;
+  addressLine2?: string;
+  city: string;
+  state?: string;
+  postalCode: string;
+  country: string;
+  isDefault?: boolean;
+}): Promise<number> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // 如果设置为默认地址,先取消其他默认地址
+  if (addressData.isDefault) {
+    await db
+      .update(addresses)
+      .set({ isDefault: false })
+      .where(eq(addresses.userId, addressData.userId));
+  }
+
+  const result = await db.insert(addresses).values(addressData);
+  return Number((result as any).insertId);
+}
+
+export async function updateAddress(
+  addressId: number,
+  userId: number,
+  addressData: {
+    fullName?: string;
+    phone?: string;
+    addressLine1?: string;
+    addressLine2?: string;
+    city?: string;
+    state?: string;
+    postalCode?: string;
+    country?: string;
+    isDefault?: boolean;
+  }
+): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // 如果设置为默认地址,先取消其他默认地址
+  if (addressData.isDefault) {
+    await db
+      .update(addresses)
+      .set({ isDefault: false })
+      .where(eq(addresses.userId, userId));
+  }
+
+  await db
+    .update(addresses)
+    .set(addressData)
+    .where(and(eq(addresses.id, addressId), eq(addresses.userId, userId)));
+}
+
+export async function deleteAddress(addressId: number, userId: number): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  await db
+    .delete(addresses)
+    .where(and(eq(addresses.id, addressId), eq(addresses.userId, userId)));
+}
+
+export async function setDefaultAddress(addressId: number, userId: number): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // 取消其他默认地址
+  await db
+    .update(addresses)
+    .set({ isDefault: false })
+    .where(eq(addresses.userId, userId));
+
+  // 设置新的默认地址
+  await db
+    .update(addresses)
+    .set({ isDefault: true })
+    .where(and(eq(addresses.id, addressId), eq(addresses.userId, userId)));
+}
+
+export async function getAddressById(addressId: number, userId: number): Promise<Address | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  const result = await db
+    .select()
+    .from(addresses)
+    .where(and(eq(addresses.id, addressId), eq(addresses.userId, userId)))
+    .limit(1);
+
+  return result.length > 0 ? result[0] : undefined;
+}
+
 // ============= 优惠券管理 =============
 
 export async function getCouponByCode(code: string): Promise<Coupon | undefined> {
