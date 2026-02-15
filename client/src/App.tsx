@@ -15,6 +15,7 @@ import Checkout from "./pages/Checkout";
 import AdminOrders from "./pages/admin/Orders";
 import AdminOrderDetail from "./pages/admin/OrderDetail";
 import Account from "./pages/Account";
+import OrderDetail from "./pages/OrderDetail";
 import FortuneServices from "./pages/FortuneServices";
 
 function Router() {
@@ -33,6 +34,7 @@ function Router() {
       <Route path={"/admin/orders"} component={AdminOrders} />
       <Route path={"/admin/orders/:id"} component={AdminOrderDetail} />
       <Route path={"/account"} component={Account} />
+      <Route path={"/orders/:id"} component={OrderDetail} />
       <Route path={"/fortune"} component={FortuneServices} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}

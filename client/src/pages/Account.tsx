@@ -166,13 +166,13 @@ export default function Account() {
                               <p className="text-[oklch(82%_0.18_85)] font-semibold">
                                 总计: ${parseFloat(order.total).toFixed(2)}
                               </p>
-                              <Link href={`/account/orders/${order.id}`}>
+                              <Link href={`/orders/${order.id}`}>
                                 <Button
                                   variant="outline"
                                   size="sm"
                                   className="border-slate-700 text-slate-300 hover:bg-slate-800"
                                 >
-                                  查看详情
+                                  {t("account.view_details")}
                                 </Button>
                               </Link>
                             </div>
