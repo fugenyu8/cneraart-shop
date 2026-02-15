@@ -30,11 +30,11 @@ export default function Home() {
                 {/* 五台山权威标识 */}
                 <div className="absolute top-4 left-4 flex flex-col gap-2">
                   <div className="bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg">
-                    <div className="text-xs text-[#8B4513] font-semibold">UNESCO世界文化遗产</div>
+                    <div className="text-xs text-[#8B4513] font-semibold">世界五大佛教圣地之一</div>
                     <div className="text-sm text-[#D4AF37] font-bold">五台山</div>
                   </div>
                   <div className="bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg">
-                    <div className="text-xs text-[#8B4513] font-semibold">中国四大佛教圣地</div>
+                    <div className="text-xs text-[#8B4513] font-semibold">中国四大佛教名山之首</div>
                     <div className="text-sm text-[#D4AF37] font-bold">文殊菩萨道场</div>
                   </div>
                 </div>
@@ -282,8 +282,8 @@ export default function Home() {
       <footer className="bg-[#5D4E37] text-[#D4AF37] py-8 text-center">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-sm space-y-2">
-            <p className="font-semibold text-lg">五台山 · 世界文化遗产 · 中国四大佛教圣地之首</p>
-            <p className="text-xs text-[#D4AF37]/80">文殊菩萨道场 · 千年佛教文化传承</p>
+            <p className="font-semibold text-lg">五台山 · 世界五大佛教圣地之一 · 世界文化遗产名录</p>
+            <p className="text-xs text-[#D4AF37]/90 mt-1">中国四大佛教名山之首 · 文殊菩萨道场 · 千年佛教文化传承</p>
           </div>
           <div className="mt-6 text-xs text-[#D4AF37]/60">
             <p>© 2026 源·华渡 YUAN·HUADU. All rights reserved.</p>
