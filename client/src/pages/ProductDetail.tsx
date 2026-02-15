@@ -238,7 +238,7 @@ export default function ProductDetail() {
                 disabled={product.stock <= 0 || addToCartMutation.isPending}
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                {addToCartMutation.isPending ? "添加中..." : "加入购物车"}
+                {addToCartMutation.isPending ? "请回中..." : "请回法物"}
               </Button>
               <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent/10">
                 <Heart className="w-5 h-5" />
