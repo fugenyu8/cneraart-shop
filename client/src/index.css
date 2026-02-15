@@ -49,7 +49,7 @@
 
 :root {
   /* 高档次佛教禅意配色 */
-  --primary: oklch(35% 0.15 25); /* 深红色 - 寺庙红 */
+  --primary: oklch(28% 0.12 15); /* 枣红色 - 深沉庄重 */
   --primary-foreground: oklch(98% 0.01 60);
   --secondary: oklch(25% 0.05 270); /* 深灰色 - 石板色 */
   --secondary-foreground: oklch(95% 0.01 60);

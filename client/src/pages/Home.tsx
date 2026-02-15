@@ -1,252 +1,379 @@
-import { useAuth } from "@/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { trpc } from "@/lib/trpc";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
-import { useTranslation } from "react-i18next";
-import { ShoppingCart, Sparkles, User, Mail, MessageCircle, Package, Star, Home as HomeIcon } from "lucide-react";
 import { Link } from "wouter";
-import { getLoginUrl } from "@/const";
+import { useTranslation } from "react-i18next";
+import { trpc } from "@/lib/trpc";
+import { Sparkles, Heart, Eye, Hand, MapPin, Flame } from "lucide-react";
 
 export default function Home() {
-  const { user, isAuthenticated } = useAuth();
-  const { data: featuredProducts, isLoading } = trpc.products.featured.useQuery();
   const { t } = useTranslation();
+  const { data: featuredProducts } = trpc.products.list.useQuery({ featured: true, limit: 4 });
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* 顶部深红色导航栏 */}
-      <nav className="bg-primary text-primary-foreground py-4 shadow-lg relative z-10">
-        <div className="container">
-          <div className="flex items-center justify-between">
+    <div className="min-h-screen">
+      {/* 导航栏 - 枣红色 */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#8B1A1A] shadow-lg">
+        <div className="container mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo */}
             <Link href="/">
-              <a className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center shadow-md">
-                  <Sparkles className="w-6 h-6 text-accent-foreground" />
+              <a className="flex items-center gap-3 group">
+                <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <div>
-                  <h1 className="text-xl font-serif font-bold tracking-wide" style={{ fontFamily: "'Ma Shan Zheng', 'Noto Serif SC', serif" }}>源・华渡</h1>
-                  <p className="text-xs tracking-widest opacity-90" style={{ fontFamily: "'Cinzel', serif" }}>YUAN · HUADU</p>
+                <div className="flex flex-col">
+                  <span className="text-xl font-bold text-amber-400">源 · 华渡</span>
+                  <span className="text-xs text-amber-300 tracking-widest">YUAN · HUADU</span>
                 </div>
               </a>
             </Link>
 
-            <div className="flex items-center gap-6">
-              <a href="https://wa.me/your-number" className="flex items-center gap-2 text-sm hover:text-accent transition-colors">
-                <MessageCircle className="w-4 h-4" />
-                <span className="hidden md:inline">WhatsApp</span>
-              </a>
-              <a href="mailto:stegon@cneraart.com" className="flex items-center gap-2 text-sm hover:text-accent transition-colors">
-                <Mail className="w-4 h-4" />
-                <span className="hidden md:inline">stegon@cneraart.com</span>
-              </a>
-              <LanguageSwitcher />
-              {isAuthenticated ? (
-                <Link href="/account">
-                  <a className="flex items-center gap-2 text-sm hover:text-accent transition-colors">
-                    <User className="w-4 h-4" />
-                    <span className="hidden md:inline">{user?.name}</span>
-                  </a>
-                </Link>
-              ) : (
-                <a href={getLoginUrl()} className="bg-accent text-accent-foreground px-5 py-2 rounded-md text-sm font-medium hover:opacity-90 transition-opacity shadow-md">
-                  {t('nav.login')}
+            {/* 导航链接 */}
+            <div className="hidden md:flex items-center gap-8">
+              <Link href="/products">
+                <a className="text-amber-300 hover:text-amber-100 font-medium transition-colors">
+                  {t('nav.products')}
                 </a>
-              )}
+              </Link>
+              <Link href="/about">
+                <a className="text-amber-300 hover:text-amber-100 font-medium transition-colors">
+                  {t('nav.about')}
+                </a>
+              </Link>
+              <Link href="/cart">
+                <a className="text-amber-300 hover:text-amber-100 font-medium transition-colors">
+                  {t('nav.cart')}
+                </a>
+              </Link>
+              <Link href="/account">
+                <a className="text-amber-300 hover:text-amber-100 font-medium transition-colors">
+                  {t('nav.account')}
+                </a>
+              </Link>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero区域 - 五台山背景 */}
-      <section 
-        className="relative min-h-[600px] flex items-center justify-center"
-        style={{
-          backgroundImage: 'url(/wutai-bg.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        {/* 深色遮罩层 */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+      {/* Hero区域 - 五台山背景,不遮挡 */}
+      <section className="relative h-screen flex items-center justify-center overflow-hidden mt-20">
+        {/* 背景图片 */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1545569341-9eb8b30979d9?q=80&w=2070)',
+            backgroundPosition: 'center 40%'
+          }}
+        />
         
-        {/* 内容 */}
-        <div className="relative z-10 container max-w-4xl text-center py-20">
-          <div className="mb-8 flex justify-center">
-            <div className="w-24 h-24 bg-accent/90 rounded-full flex items-center justify-center shadow-2xl backdrop-blur-sm border-4 border-accent/30">
-              <Sparkles className="w-12 h-12 text-accent-foreground" />
-            </div>
+        {/* 深色渐变遮罩 - 只在上下,不遮挡中间 */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/70" />
+        
+        {/* 内容 - 简洁,不遮挡背景 */}
+        <div className="relative z-10 text-center px-6 max-w-4xl">
+          {/* 顶部装饰 */}
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-400"></div>
+            <Sparkles className="w-8 h-8 text-amber-400 animate-pulse" />
+            <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-400"></div>
           </div>
           
-          <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-white drop-shadow-2xl" style={{ fontFamily: "'Noto Serif SC', serif", textShadow: '0 4px 20px rgba(0,0,0,0.8)' }}>
+          {/* 主标题 */}
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
             {t('home.hero_title')}
-          </h2>
+          </h1>
           
-          <p className="text-xl md:text-2xl text-gray-100 mb-10 max-w-3xl mx-auto drop-shadow-lg" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
+          {/* 副标题 */}
+          <p className="text-xl md:text-2xl text-gray-100 mb-4 font-light tracking-wide drop-shadow-lg">
             {t('home.hero_subtitle')}
           </p>
-
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            <Link href="/products">
-              <a className="px-10 py-4 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-all font-medium text-lg shadow-2xl hover:shadow-accent/50 hover:scale-105 duration-300">
-                {t('home.cta_products')}
-              </a>
-            </Link>
-            <Link href="/fortune">
-              <a className="px-10 py-4 bg-white/10 backdrop-blur-md text-white border-2 border-white/30 rounded-lg hover:bg-white/20 transition-all font-medium text-lg shadow-2xl hover:scale-105 duration-300">
-                {t('home.cta_fortune')}
-              </a>
-            </Link>
-          </div>
         </div>
 
-        {/* 底部波浪装饰 */}
+        {/* 底部装饰波浪 */}
         <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-            <path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z" fill="oklch(97% 0.005 60)"/>
+          <svg viewBox="0 0 1440 120" className="w-full h-auto">
+            <path 
+              fill="#0a0a0a" 
+              d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
+            />
           </svg>
         </div>
       </section>
 
-      {/* 服务卡片 - 高档次设计 */}
-      <section className="py-20 bg-background">
-        <div className="container max-w-6xl">
-          <h3 className="text-4xl font-serif font-bold text-center mb-4 text-foreground" style={{ fontFamily: "'Noto Serif SC', serif" }}>
-            {t('home.services_title')}
-          </h3>
-          <div className="w-24 h-1 bg-accent mx-auto mb-16"></div>
+      {/* 服务区域 - 高级感设计 */}
+      <section className="py-24 bg-gradient-to-b from-black via-gray-900 to-black">
+        <div className="container mx-auto px-6">
+          {/* 标题 */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              {t('home.services_title')}
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto font-light">
+              {t('home.services_subtitle')}
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
-            {/* 开光法物 */}
-            <Card className="border-2 border-accent/20 hover:border-accent hover:shadow-2xl transition-all duration-300 overflow-hidden group">
-              <CardContent className="p-10 text-center relative">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-                <div className="relative z-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-accent to-accent/70 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Sparkles className="w-10 h-10 text-accent-foreground" />
-                  </div>
-                  <h4 className="text-2xl font-bold mb-4 text-foreground">{t('home.service_blessed_items')}</h4>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{t('home.service_blessed_items_desc')}</p>
-                  <Link href="/products">
-                    <a className="inline-flex items-center text-accent hover:text-accent/80 font-semibold group-hover:gap-3 gap-2 transition-all">
-                      {t('common.learn_more')} 
-                      <span className="text-xl">→</span>
-                    </a>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* 命理服务合集 */}
-            <Card className="border-2 border-accent/20 hover:border-accent hover:shadow-2xl transition-all duration-300 overflow-hidden group bg-gradient-to-br from-accent/5 to-transparent">
-              <CardContent className="p-10 text-center relative">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-                <div className="relative z-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-accent to-accent/70 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <Star className="w-10 h-10 text-accent-foreground" />
-                  </div>
-                  <h4 className="text-2xl font-bold mb-4 text-foreground">{t('home.service_fortune_collection')}</h4>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{t('home.service_fortune_collection_desc')}</p>
+          {/* 服务卡片网格 - 3列 */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            
+            {/* 卡片1: 开光法物 - 使用莲花图标 */}
+            <Link href="/products">
+              <a className="block group">
+                <div className="relative h-full bg-gradient-to-br from-amber-900/20 to-orange-900/20 backdrop-blur-xl border border-amber-500/30 rounded-2xl p-8 hover:scale-105 hover:border-amber-400/60 transition-all duration-500 shadow-2xl">
+                  {/* 玻璃态光晕效果 */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
                   
-                  <div className="space-y-3 mb-6">
-                    <Link href="/fortune?service=destiny">
-                      <a className="block px-6 py-3 border-2 border-accent/30 rounded-lg text-sm hover:bg-accent/10 hover:border-accent transition-all font-medium">
-                        {t('home.service_fortune_short')}
-                      </a>
-                    </Link>
-                    <Link href="/fortune?service=palmistry">
-                      <a className="block px-6 py-3 border-2 border-accent/30 rounded-lg text-sm hover:bg-accent/10 hover:border-accent transition-all font-medium">
-                        {t('home.service_palmistry_short')}
-                      </a>
-                    </Link>
-                    <Link href="/fortune?service=fengshui">
-                      <a className="block px-6 py-3 border-2 border-accent/30 rounded-lg text-sm hover:bg-accent/10 hover:border-accent transition-all font-medium">
-                        {t('home.service_fengshui_short')}
-                      </a>
-                    </Link>
+                  {/* 莲花图标 */}
+                  <div className="relative mb-6 flex justify-center">
+                    <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
+                      <span className="text-4xl">🪷</span>
+                    </div>
+                  </div>
+                  
+                  {/* 标题 - 细字体 */}
+                  <h3 className="text-2xl font-light text-amber-100 mb-3 text-center tracking-wide">
+                    {t('home.service_blessed_items')}
+                  </h3>
+                  
+                  {/* 描述 - 细字体 */}
+                  <p className="text-amber-200/70 text-center leading-relaxed font-light text-sm">
+                    {t('home.service_blessed_items_desc')}
+                  </p>
+                  
+                  {/* 查看更多 */}
+                  <div className="mt-6 text-center">
+                    <span className="inline-flex items-center gap-2 text-amber-300 font-light group-hover:gap-4 transition-all">
+                      {t('home.cta_products')}
+                      <span className="text-xl">→</span>
+                    </span>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </a>
+            </Link>
 
-            {/* 代祈福 */}
-            <Card className="border-2 border-accent/20 hover:border-accent hover:shadow-2xl transition-all duration-300 overflow-hidden group">
-              <CardContent className="p-10 text-center relative">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
-                <div className="relative z-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-accent to-accent/70 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <HomeIcon className="w-10 h-10 text-accent-foreground" />
+            {/* 卡片2: 命理服务合集 - 使用念珠图标 */}
+            <div className="relative group">
+              <div className="relative h-full bg-gradient-to-br from-purple-900/20 to-indigo-900/20 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-8 hover:scale-105 hover:border-purple-400/60 transition-all duration-500 shadow-2xl">
+                {/* 玻璃态光晕效果 */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-purple-400/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                
+                {/* 念珠图标 */}
+                <div className="relative mb-6 flex justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-indigo-600 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
+                    <span className="text-4xl">📿</span>
                   </div>
-                  <h4 className="text-2xl font-bold mb-4 text-foreground">{t('home.service_blessing')}</h4>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">{t('home.service_blessing_desc')}</p>
-                  <Link href="/blessing">
-                    <a className="inline-flex items-center text-accent hover:text-accent/80 font-semibold group-hover:gap-3 gap-2 transition-all">
-                      {t('common.learn_more')} 
-                      <span className="text-xl">→</span>
+                </div>
+                
+                {/* 标题 - 细字体 */}
+                <h3 className="relative text-2xl font-light text-purple-100 mb-6 text-center tracking-wide">
+                  {t('home.service_fortune_collection')}
+                </h3>
+                
+                {/* 子服务列表 */}
+                <div className="space-y-4">
+                  {/* 子服务1: 命理运势 */}
+                  <Link href="/fortune">
+                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-purple-500/20 hover:border-purple-400/40">
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg flex items-center justify-center shadow-lg">
+                            <Hand className="w-5 h-5 text-white" strokeWidth={1.5} />
+                          </div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-light text-purple-100 mb-1 text-sm">
+                            {t('home.service_fortune_short')}
+                          </h4>
+                          <p className="text-xs text-purple-200/60 font-light leading-relaxed">
+                            {t('home.service_fortune_desc')}
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </Link>
+
+                  {/* 子服务2: 手相面相 */}
+                  <Link href="/fortune">
+                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-purple-500/20 hover:border-purple-400/40">
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-indigo-700 rounded-lg flex items-center justify-center shadow-lg">
+                            <Eye className="w-5 h-5 text-white" strokeWidth={1.5} />
+                          </div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-light text-purple-100 mb-1 text-sm">
+                            {t('home.service_palmistry_short')}
+                          </h4>
+                          <p className="text-xs text-purple-200/60 font-light leading-relaxed">
+                            {t('home.service_palmistry_desc')}
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </Link>
+
+                  {/* 子服务3: 家居风水 */}
+                  <Link href="/fortune">
+                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-purple-500/20 hover:border-purple-400/40">
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 mt-1">
+                          <div className="w-10 h-10 bg-gradient-to-br from-violet-500 to-violet-700 rounded-lg flex items-center justify-center shadow-lg">
+                            <MapPin className="w-5 h-5 text-white" strokeWidth={1.5} />
+                          </div>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-light text-purple-100 mb-1 text-sm">
+                            {t('home.service_fengshui_short')}
+                          </h4>
+                          <p className="text-xs text-purple-200/60 font-light leading-relaxed">
+                            {t('home.service_fengshui_desc')}
+                          </p>
+                        </div>
+                      </div>
                     </a>
                   </Link>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
+
+            {/* 卡片3: 代祈福服务 - 使用香炉图标 */}
+            <Link href="/products?category=blessing">
+              <a className="block group">
+                <div className="relative h-full bg-gradient-to-br from-rose-900/20 to-pink-900/20 backdrop-blur-xl border border-rose-500/30 rounded-2xl p-8 hover:scale-105 hover:border-rose-400/60 transition-all duration-500 shadow-2xl">
+                  {/* 玻璃态光晕效果 */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-rose-400/10 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
+                  
+                  {/* 香炉图标 */}
+                  <div className="relative mb-6 flex justify-center">
+                    <div className="w-20 h-20 bg-gradient-to-br from-rose-500 to-pink-600 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
+                      <Flame className="w-10 h-10 text-white" strokeWidth={1.5} />
+                    </div>
+                  </div>
+                  
+                  {/* 标题 - 细字体 */}
+                  <h3 className="text-2xl font-light text-rose-100 mb-3 text-center tracking-wide">
+                    {t('home.service_blessing')}
+                  </h3>
+                  
+                  {/* 描述 - 细字体 */}
+                  <p className="text-rose-200/70 text-center leading-relaxed font-light text-sm">
+                    {t('home.service_blessing_desc')}
+                  </p>
+                  
+                  {/* 查看更多 */}
+                  <div className="mt-6 text-center">
+                    <span className="inline-flex items-center gap-2 text-rose-300 font-light group-hover:gap-4 transition-all">
+                      {t('home.cta_products')}
+                      <span className="text-xl">→</span>
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </Link>
+
           </div>
         </div>
       </section>
 
-      {/* 精选产品 */}
-      {!isLoading && featuredProducts && featuredProducts.length > 0 && (
-        <section className="py-20 bg-muted/30">
-          <div className="container max-w-6xl">
-            <h3 className="text-4xl font-serif font-bold text-center mb-4 text-foreground" style={{ fontFamily: "'Noto Serif SC', serif" }}>
+      {/* 精选产品区域 */}
+      <section className="py-24 bg-gradient-to-b from-black to-gray-900">
+        <div className="container mx-auto px-6">
+          {/* 标题 */}
+          <div className="text-center mb-16">
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-amber-500"></div>
+              <Sparkles className="w-6 h-6 text-amber-500" />
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-amber-500"></div>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               {t('home.featured_title')}
-            </h3>
-            <div className="w-24 h-1 bg-accent mx-auto mb-16"></div>
+            </h2>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto font-light">
+              {t('home.featured_subtitle')}
+            </p>
+          </div>
 
-            <div className="grid md:grid-cols-3 gap-10">
-              {featuredProducts.map((product) => (
-                <Card key={product.id} className="border-2 border-accent/20 hover:border-accent hover:shadow-2xl transition-all duration-300 overflow-hidden group">
-                  <Link href={`/products/${product.slug}`}>
-                    <a>
-                      {product.images && product.images.length > 0 && (
-                        <div className="aspect-square overflow-hidden bg-muted">
-                          <img 
-                            src={product.images[0].url} 
+          {/* 产品网格 */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {featuredProducts && featuredProducts.length > 0 ? (
+              featuredProducts.map((product) => (
+                <Link key={product.id} href={`/products/${product.id}`}>
+                  <a className="block group">
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-amber-500/50 transition-all duration-500 hover:scale-105 shadow-2xl">
+                      {/* 产品图片 */}
+                      <div className="relative aspect-square overflow-hidden bg-gray-800">
+                        {product.images && product.images.length > 0 ? (
+                          <img
+                            src={typeof product.images[0] === 'string' ? product.images[0] : product.images[0].url}
                             alt={product.name}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                           />
+                        ) : (
+                          <div className="w-full h-full flex items-center justify-center">
+                            <Sparkles className="w-16 h-16 text-gray-600" />
+                          </div>
+                        )}
+                        {/* 折扣标签 */}
+                        {product.salePrice && product.regularPrice && Number(product.salePrice) < Number(product.regularPrice) && (
+                          <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+                            -{Math.round((1 - Number(product.salePrice) / Number(product.regularPrice)) * 100)}%
+                          </div>
+                        )}
+                      </div>
+                      
+                      {/* 产品信息 */}
+                      <div className="p-6">
+                        <h3 className="font-light text-lg text-white mb-2 group-hover:text-amber-400 transition-colors line-clamp-2">
+                          {product.name}
+                        </h3>
+                        <div className="flex items-baseline gap-2">
+                          {product.salePrice && product.regularPrice && product.salePrice < product.regularPrice ? (
+                            <>
+                              <span className="text-2xl font-bold text-amber-400">
+                                ${Number(product.salePrice).toFixed(2)}
+                              </span>
+                              <span className="text-sm text-gray-400 line-through">
+                                ${Number(product.regularPrice).toFixed(2)}
+                              </span>
+                            </>
+                          ) : product.regularPrice ? (
+                            <span className="text-2xl font-bold text-amber-400">
+                              ${Number(product.regularPrice).toFixed(2)}
+                            </span>
+                          ) : null}
                         </div>
-                      )}
-                      <CardContent className="p-8">
-                        <h4 className="font-bold text-xl mb-3 text-foreground group-hover:text-accent transition-colors">{product.name}</h4>
-                        <p className="text-muted-foreground text-sm mb-6 line-clamp-2 leading-relaxed">{product.description}</p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-3xl font-bold text-accent">${product.salePrice || product.regularPrice}</span>
-                          <Button variant="outline" className="border-2 border-accent text-accent hover:bg-accent hover:text-primary-foreground transition-all">
-                            {t('products.view_details')}
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </a>
-                  </Link>
-                </Card>
-              ))}
-            </div>
+                      </div>
+                    </div>
+                  </a>
+                </Link>
+              ))
+            ) : (
+              <div className="col-span-full text-center text-gray-400 py-12">
+                {t('products.no_results')}
+              </div>
+            )}
           </div>
-        </section>
-      )}
 
-      {/* 页脚 */}
-      <footer className="bg-secondary text-secondary-foreground py-12 mt-20">
-        <div className="container text-center">
-          <div className="mb-6">
-            <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-              <Sparkles className="w-8 h-8 text-accent-foreground" />
+          {/* 查看全部按钮 */}
+          {featuredProducts && featuredProducts.length > 0 && (
+            <div className="text-center mt-12">
+              <Link href="/products">
+                <a className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-full font-light hover:from-amber-500 hover:to-orange-500 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
+                  {t('home.cta_products')}
+                  <span className="text-xl">→</span>
+                </a>
+              </Link>
             </div>
-            <h3 className="text-xl font-serif font-bold mb-2" style={{ fontFamily: "'Ma Shan Zheng', 'Noto Serif SC', serif" }}>源・华渡</h3>
+          )}
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black border-t border-white/10 py-12">
+        <div className="container mx-auto px-6">
+          <div className="text-center text-gray-400 font-light">
+            <p className="mb-2">© 2024 源·华渡 (Yuan Huadu)</p>
+            <p className="text-sm">{t('home.footer_about_desc')}</p>
           </div>
-          <p className="text-secondary-foreground/80 text-sm">
-            © 2024 {t('footer_copyright')} Yuan·Huadu
-          </p>
         </div>
       </footer>
     </div>
