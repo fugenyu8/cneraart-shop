@@ -28,16 +28,40 @@ export default function Checkout() {
     country: "United States",
   });
 
+  // 优惠券状态
+  const [couponCode, setCouponCode] = useState("");
+  const [appliedCoupon, setAppliedCoupon] = useState<any>(null);
+  const [couponError, setCouponError] = useState("");
+
+  // 验证优惠券
+  const validateCouponMutation = trpc.coupons.validate.useMutation({
+    onSuccess: (data) => {
+      if (data.valid) {
+        setAppliedCoupon({ code: couponCode, discount: data.discount || 0 });
+        setCouponError("");
+        toast.success("优惠券应用成功!");
+      } else {
+        setAppliedCoupon(null);
+        setCouponError(data.error || "优惠券无效");
+        toast.error(data.error || "优惠券无效");
+      }
+    },
+    onError: (error: any) => {
+      setAppliedCoupon(null);
+      setCouponError(error.message || "验证失败");
+      toast.error(error.message || "验证失败");
+    },
+  });
+
   // 获取购物车
   const { data: cartItems, isLoading: cartLoading } = trpc.cart.get.useQuery(undefined, {
     enabled: !!user,
   });
 
-  // TODO: 获取用户地址
-  // const { data: addresses } = trpc.addresses.list.useQuery(undefined, {
-  //   enabled: !!user,
-  // });
-  const addresses = [] as any;
+  // 获取用户地址
+  const { data: addresses } = trpc.addresses.list.useQuery(undefined, {
+    enabled: !!user,
+  });
 
   // 创建订单mutation
   const createOrderMutation = trpc.orders.create.useMutation({
@@ -80,7 +104,7 @@ export default function Checkout() {
   // 计算订单金额
   const calculateTotals = () => {
     if (!cartItems || cartItems.length === 0) {
-      return { subtotal: 0, shipping: 0, tax: 0, total: 0 };
+      return { subtotal: 0, shipping: 0, tax: 0, discount: 0, total: 0 };
     }
 
     const subtotal = cartItems.reduce((sum: number, item: any) => {
@@ -89,13 +113,39 @@ export default function Checkout() {
     }, 0);
 
     const shipping = subtotal >= 100 ? 0 : 10; // 满$100免运费
-    const tax = subtotal * 0.08; // 8%税率
-    const total = subtotal + shipping + tax;
+    
+    // 计算优惠
+    let discount = 0;
+    if (appliedCoupon && appliedCoupon.discount) {
+      discount = appliedCoupon.discount;
+      // 不能超过小计
+      discount = Math.min(discount, subtotal);
+    }
+    
+    const tax = (subtotal - discount) * 0.08; // 8%税率
+    const total = subtotal - discount + shipping + tax;
 
-    return { subtotal, shipping, tax, total };
+    return { subtotal, shipping, tax, discount, total };
   };
 
-  const { subtotal, shipping, tax, total } = calculateTotals();
+  const { subtotal, shipping, tax, discount, total } = calculateTotals();
+
+  // 应用优惠券
+  const handleApplyCoupon = () => {
+    if (!couponCode.trim()) {
+      toast.error("请输入优惠券代码");
+      return;
+    }
+    validateCouponMutation.mutate({ code: couponCode, cartTotal: subtotal });
+  };
+
+  // 移除优惠券
+  const handleRemoveCoupon = () => {
+    setAppliedCoupon(null);
+    setCouponCode("");
+    setCouponError("");
+    toast.success("已移除优惠券");
+  };
 
   // 提交订单
   const handleSubmit = (e: React.FormEvent) => {
@@ -120,10 +170,11 @@ export default function Checkout() {
         price: parseFloat(item.product.salePrice || item.product.regularPrice),
       })),
       subtotal,
-      discount: 0,
+      discount,
       shipping,
       tax,
       total,
+      couponCode: appliedCoupon?.code,
       shippingAddress: {
         name: shippingInfo.name,
         phone: shippingInfo.phone,
@@ -190,6 +241,39 @@ export default function Checkout() {
                   <CardTitle className="text-white">{t("checkout.shipping_info")}</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  {/* 地址选择 */}
+                  {addresses && addresses.length > 0 && (
+                    <div className="space-y-2">
+                      <Label className="text-slate-300">选择地址</Label>
+                      <select
+                        className="w-full bg-slate-800 border-slate-700 text-white rounded-md px-3 py-2"
+                        onChange={(e) => {
+                          const selectedAddress = addresses.find((addr: any) => addr.id === parseInt(e.target.value));
+                          if (selectedAddress) {
+                            setShippingInfo({
+                              name: selectedAddress.fullName,
+                              phone: selectedAddress.phone || "",
+                              addressLine1: selectedAddress.addressLine1,
+                              city: selectedAddress.city,
+                              state: selectedAddress.state || "",
+                              postalCode: selectedAddress.postalCode,
+                              country: selectedAddress.country,
+                            });
+                          }
+                        }}
+                      >
+                        <option value="">选择已保存的地址...</option>
+                        {addresses.map((addr: any) => (
+                          <option key={addr.id} value={addr.id}>
+                            {addr.fullName} - {addr.addressLine1}, {addr.city}
+                            {addr.isDefault && " (默认)"}
+                          </option>
+                        ))}
+                      </select>
+                      <Separator className="bg-slate-700 my-4" />
+                    </div>
+                  )}
+                  
                   <div className="grid grid-cols-2 gap-4">
                     <div className="col-span-2">
                       <Label htmlFor="name" className="text-slate-300">
@@ -316,12 +400,64 @@ export default function Checkout() {
 
                   <Separator className="bg-slate-800" />
 
+                  {/* 优惠券 */}
+                  <div className="space-y-2">
+                    <Label className="text-slate-300">优惠券</Label>
+                    {!appliedCoupon ? (
+                      <div className="flex gap-2">
+                        <Input
+                          value={couponCode}
+                          onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
+                          placeholder="输入优惠券代码"
+                          className="bg-slate-800 border-slate-700 text-white"
+                        />
+                        <Button
+                          type="button"
+                          onClick={handleApplyCoupon}
+                          disabled={validateCouponMutation.isPending}
+                          variant="outline"
+                          className="bg-slate-800 border-slate-700 text-white hover:bg-slate-700"
+                        >
+                          {validateCouponMutation.isPending ? (
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                          ) : (
+                            "应用"
+                          )}
+                        </Button>
+                      </div>
+                    ) : (
+                      <div className="flex items-center justify-between bg-green-900/20 border border-green-700/50 rounded-md px-3 py-2">
+                        <span className="text-green-400 text-sm font-medium">{appliedCoupon.code}</span>
+                        <Button
+                          type="button"
+                          onClick={handleRemoveCoupon}
+                          variant="ghost"
+                          size="sm"
+                          className="text-slate-400 hover:text-white h-auto p-1"
+                        >
+                          移除
+                        </Button>
+                      </div>
+                    )}
+                    {couponError && (
+                      <p className="text-red-400 text-sm">{couponError}</p>
+                    )}
+                  </div>
+
+                  <Separator className="bg-slate-800" />
+
                   {/* 金额明细 */}
                   <div className="space-y-2">
                     <div className="flex justify-between text-slate-300">
                       <span>小计</span>
                       <span>${subtotal.toFixed(2)}</span>
                     </div>
+                    {discount > 0 && (
+                      <div className="flex justify-between text-green-400">
+                        <span>优惠</span>
+                        <span>-${discount.toFixed(2)}</span>
+                      </div>
+                    )}
                     <div className="flex justify-between text-slate-300">
                       <span>运费</span>
                       <span>{shipping === 0 ? "免费" : `$${shipping.toFixed(2)}`}</span>
