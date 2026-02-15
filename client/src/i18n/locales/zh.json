@@ -43,7 +43,12 @@
     "service_fengshui": "家居风水",
     "service_fengshui_desc": "调和居住空间与宇宙能量",
     "service_blessing": "代祈福服务",
-    "service_blessing_desc": "供灯、烧香及各种祈福仪式"
+    "service_blessing_desc": "供灯、烧香及各种祈福仪式",
+    "service_fortune_collection": "命理服务",
+    "service_fortune_collection_desc": "中国古老智慧，解读人生运势与命运指引",
+    "service_fortune_short": "命理运势分析",
+    "service_palmistry_short": "手相面相分析",
+    "service_fengshui_short": "家居风水分析"
   },
   "products": {
     "title": "全部产品",

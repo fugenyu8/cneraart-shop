@@ -43,7 +43,12 @@
     "service_fengshui": "Home Feng Shui",
     "service_fengshui_desc": "Harmonize your living space with cosmic energy",
     "service_blessing": "Prayer Services",
-    "service_blessing_desc": "Lamp offerings, incense, and blessing rituals"
+    "service_blessing_desc": "Lamp offerings, incense, and blessing rituals",
+    "service_fortune_collection": "Fortune Services",
+    "service_fortune_collection_desc": "Ancient Chinese wisdom for life path and fortune guidance",
+    "service_fortune_short": "Destiny Analysis",
+    "service_palmistry_short": "Palm & Face Reading",
+    "service_fengshui_short": "Feng Shui Analysis"
   },
   "products": {
     "title": "All Products",

@@ -158,7 +158,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {/* 开光法物 */}
             <Card className="bg-card/80 backdrop-blur-md border-accent/30 hover:border-accent/60 transition-all hover:shadow-xl hover:shadow-accent/20 group">
               <CardContent className="p-8 text-center">
@@ -175,45 +175,55 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            {/* 命理服务 */}
-            <Card className="bg-card/80 backdrop-blur-md border-accent/30 hover:border-accent/60 transition-all hover:shadow-xl hover:shadow-accent/20 group">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <Star className="w-8 h-8 text-white" />
+            {/* 命理服务合集 - 合并三个服务 */}
+            <Card className="bg-card/80 backdrop-blur-md border-accent/30 hover:border-accent/60 transition-all hover:shadow-xl hover:shadow-accent/20 group md:col-span-1">
+              <CardContent className="p-8">
+                <div className="text-center mb-6">
+                  <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <Star className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-[oklch(90%_0.18_85)]">{t('home.service_fortune_collection')}</h3>
+                  <p className="text-sm text-gray-200">{t('home.service_fortune_collection_desc')}</p>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-[oklch(90%_0.18_85)]">{t('home.service_fortune')}</h3>
-                <p className="text-sm text-gray-200 mb-4">{t('home.service_fortune_desc')}</p>
-                <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
-                  {t('common.learn_more')}
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* 手相面相 */}
-            <Card className="bg-card/80 backdrop-blur-md border-accent/30 hover:border-accent/60 transition-all hover:shadow-xl hover:shadow-accent/20 group">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <User className="w-8 h-8 text-white" />
+                
+                {/* 三个子服务 */}
+                <div className="space-y-3 mt-6">
+                  <Link href="/fortune?type=bazi">
+                    <button className="w-full p-3 bg-accent/10 hover:bg-accent/20 border border-accent/30 hover:border-accent/50 rounded-lg transition-all text-left group/item">
+                      <div className="flex items-center gap-3">
+                        <Star className="w-5 h-5 text-accent group-hover/item:scale-110 transition-transform" />
+                        <div>
+                          <div className="text-sm font-semibold text-[oklch(90%_0.18_85)]">{t('home.service_fortune')}</div>
+                          <div className="text-xs text-gray-300">{t('home.service_fortune_short')}</div>
+                        </div>
+                      </div>
+                    </button>
+                  </Link>
+                  
+                  <Link href="/fortune?type=palm">
+                    <button className="w-full p-3 bg-accent/10 hover:bg-accent/20 border border-accent/30 hover:border-accent/50 rounded-lg transition-all text-left group/item">
+                      <div className="flex items-center gap-3">
+                        <User className="w-5 h-5 text-accent group-hover/item:scale-110 transition-transform" />
+                        <div>
+                          <div className="text-sm font-semibold text-[oklch(90%_0.18_85)]">{t('home.service_palmistry')}</div>
+                          <div className="text-xs text-gray-300">{t('home.service_palmistry_short')}</div>
+                        </div>
+                      </div>
+                    </button>
+                  </Link>
+                  
+                  <Link href="/fortune?type=fengshui">
+                    <button className="w-full p-3 bg-accent/10 hover:bg-accent/20 border border-accent/30 hover:border-accent/50 rounded-lg transition-all text-left group/item">
+                      <div className="flex items-center gap-3">
+                        <HomeIcon className="w-5 h-5 text-accent group-hover/item:scale-110 transition-transform" />
+                        <div>
+                          <div className="text-sm font-semibold text-[oklch(90%_0.18_85)]">{t('home.service_fengshui')}</div>
+                          <div className="text-xs text-gray-300">{t('home.service_fengshui_short')}</div>
+                        </div>
+                      </div>
+                    </button>
+                  </Link>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-[oklch(90%_0.18_85)]">{t('home.service_palmistry')}</h3>
-                <p className="text-sm text-gray-200 mb-4">{t('home.service_palmistry_desc')}</p>
-                <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
-                  {t('common.learn_more')}
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* 家居风水 */}
-            <Card className="bg-card/80 backdrop-blur-md border-accent/30 hover:border-accent/60 transition-all hover:shadow-xl hover:shadow-accent/20 group">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <HomeIcon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold mb-3 text-[oklch(90%_0.18_85)]">{t('home.service_fengshui')}</h3>
-                <p className="text-sm text-gray-200 mb-4">{t('home.service_fengshui_desc')}</p>
-                <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
-                  {t('common.learn_more')}
-                </Button>
               </CardContent>
             </Card>
 
