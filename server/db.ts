@@ -13,6 +13,11 @@ import {
   orderItems,
   reviews,
   couponUsages,
+  fortuneTasks,
+  fortuneReports,
+  faceRules,
+  palmRules,
+  fengshuiRules,
   type Category,
   type Product,
   type ProductImage,
@@ -709,4 +714,151 @@ export async function getAllOrdersForAdmin(options?: {
   }
 
   return await query;
+}
+
+
+// ============= 命理测算系统数据库操作 =============
+
+/**
+ * 获取面相规则
+ */
+export async function getFaceRules(palaceName?: string, category?: string) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  let query = db.select().from(faceRules);
+  
+  // 可选的筛选条件
+  if (palaceName) {
+    query = query.where(eq(faceRules.palaceName, palaceName)) as any;
+  }
+  if (category) {
+    query = query.where(eq(faceRules.category, category)) as any;
+  }
+  
+  return await query;
+}
+
+/**
+ * 获取手相规则
+ */
+export async function getPalmRules(lineName?: string, category?: string) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  let query = db.select().from(palmRules);
+  
+  if (lineName) {
+    query = query.where(eq(palmRules.lineName, lineName)) as any;
+  }
+  if (category) {
+    query = query.where(eq(palmRules.category, category)) as any;
+  }
+  
+  return await query;
+}
+
+/**
+ * 获取风水规则
+ */
+export async function getFengshuiRules(roomType?: string, category?: string) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  let query = db.select().from(fengshuiRules);
+  
+  if (roomType) {
+    query = query.where(eq(fengshuiRules.roomType, roomType)) as any;
+  }
+  if (category) {
+    query = query.where(eq(fengshuiRules.category, category)) as any;
+  }
+  
+  return await query;
+}
+
+/**
+ * 创建命理测算任务
+ */
+export async function createFortuneTask(data: {
+  taskId: string;
+  orderId: number;
+  userId: number;
+  serviceType: "face" | "palm" | "fengshui";
+  roomType?: string;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.insert(fortuneTasks).values({
+    taskId: data.taskId,
+    orderId: data.orderId,
+    userId: data.userId,
+    serviceType: data.serviceType,
+    roomType: data.roomType,
+    status: "created",
+    progress: 0,
+  });
+}
+
+/**
+ * 获取命理测算任务
+ */
+export async function getFortuneTask(taskId: string) {
+  const db = await getDb();
+  if (!db) return null;
+  
+  const [task] = await db.select().from(fortuneTasks).where(eq(fortuneTasks.taskId, taskId));
+  return task || null;
+}
+
+/**
+ * 更新命理测算任务状态
+ */
+export async function updateFortuneTaskStatus(taskId: string, data: {
+  status?: "created" | "processing" | "completed" | "failed";
+  progress?: number;
+  imageUrl?: string;
+  imagesJson?: any;
+  featuresJson?: any;
+  calculationJson?: any;
+  errorMessage?: string;
+}) {
+  const db = await getDb();
+  if (!db) return;
+  
+  await db.update(fortuneTasks)
+    .set({
+      ...data,
+      updatedAt: new Date(),
+    })
+    .where(eq(fortuneTasks.taskId, taskId));
+}
+
+/**
+ * 创建命理测算报告
+ */
+export async function createFortuneReport(data: {
+  taskId: string;
+  userId: number;
+  serviceType: "face" | "palm" | "fengshui";
+  overallSummary: string;
+  sectionsJson: any;
+  score?: number;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db.insert(fortuneReports).values(data);
+}
+
+/**
+ * 获取命理测算报告
+ */
+export async function getFortuneReport(taskId: string) {
+  const db = await getDb();
+  if (!db) return null;
+  
+  const [report] = await db.select().from(fortuneReports).where(eq(fortuneReports.taskId, taskId));
+  return report || null;
 }

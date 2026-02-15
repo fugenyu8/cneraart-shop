@@ -113,6 +113,7 @@
     "processing": "处理中..."
   },
   "account": {
+    "my_account": "我的账户",
     "orders": "我的订单",
     "addresses": "收货地址",
     "profile": "个人信息",

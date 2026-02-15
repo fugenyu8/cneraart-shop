@@ -476,6 +476,298 @@ export const appRouter = router({
         }),
     }),
   }),
+
+  // ============= 命理测算服务 =============
+  fortune: router({
+    // 创建测算任务(需要已支付订单)
+    createTask: protectedProcedure
+      .input(
+        z.object({
+          orderId: z.number(),
+          serviceType: z.enum(["face", "palm", "fengshui"]),
+          roomType: z.enum(["bedroom", "living_room", "study", "kitchen"]).optional(),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        // 验证订单是否存在且已支付
+        const order = await db.getOrderById(input.orderId);
+        if (!order) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "订单不存在" });
+        }
+        if (order.userId !== ctx.user.id) {
+          throw new TRPCError({ code: "FORBIDDEN", message: "无权访问此订单" });
+        }
+        if (order.paymentStatus !== "paid") {
+          throw new TRPCError({ code: "BAD_REQUEST", message: "订单未支付" });
+        }
+
+        // 生成任务ID
+        const taskId = `TASK-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
+        // 创建测算任务
+        await db.createFortuneTask({
+          taskId,
+          orderId: input.orderId,
+          userId: ctx.user.id,
+          serviceType: input.serviceType,
+          roomType: input.roomType,
+        });
+
+        return { taskId, status: "created" };
+      }),
+
+    // 上传图片并开始分析
+    uploadImage: protectedProcedure
+      .input(
+        z.object({
+          taskId: z.string(),
+          imageBase64: z.string(),
+          mimeType: z.string(),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        const { taskId, imageBase64, mimeType } = input;
+
+        // 验证任务
+        const task = await db.getFortuneTask(taskId);
+        if (!task) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "任务不存在" });
+        }
+        if (task.userId !== ctx.user.id) {
+          throw new TRPCError({ code: "FORBIDDEN", message: "无权访问此任务" });
+        }
+
+        // 上传图片到S3
+        const { storagePut } = await import("./storage");
+        const buffer = Buffer.from(imageBase64.split(",")[1] || imageBase64, "base64");
+        const fileKey = `fortune/${taskId}/${Date.now()}.${mimeType.split("/")[1]}`;
+        const { url } = await storagePut(fileKey, buffer, mimeType);
+
+        // 更新任务状态
+        await db.updateFortuneTaskStatus(taskId, {
+          status: "processing",
+          progress: 20,
+          imageUrl: url,
+        });
+
+        // 异步处理分析(不阻塞响应)
+        if (task.serviceType !== 'fengshui') {
+          processFortuneAnalysis(taskId, url, task.serviceType).catch(console.error);
+        }
+
+        return { taskId, status: "processing", imageUrl: url };
+      }),
+
+    // 上传多张图片(风水专用)
+    uploadImages: protectedProcedure
+      .input(
+        z.object({
+          taskId: z.string(),
+          images: z.array(
+            z.object({
+              imageBase64: z.string(),
+              mimeType: z.string(),
+            })
+          ),
+        })
+      )
+      .mutation(async ({ input, ctx }) => {
+        const { taskId, images } = input;
+
+        // 验证任务
+        const task = await db.getFortuneTask(taskId);
+        if (!task) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "任务不存在" });
+        }
+        if (task.userId !== ctx.user.id) {
+          throw new TRPCError({ code: "FORBIDDEN", message: "无权访问此任务" });
+        }
+
+        // 上传所有图片到S3
+        const { storagePut } = await import("./storage");
+        const uploadedUrls = [];
+
+        for (let i = 0; i < images.length; i++) {
+          const { imageBase64, mimeType } = images[i];
+          const buffer = Buffer.from(imageBase64.split(",")[1] || imageBase64, "base64");
+          const fileKey = `fortune/${taskId}/${Date.now()}-${i}.${mimeType.split("/")[1]}`;
+          const { url } = await storagePut(fileKey, buffer, mimeType);
+          uploadedUrls.push(url);
+        }
+
+        // 更新任务状态
+        await db.updateFortuneTaskStatus(taskId, {
+          status: "processing",
+          progress: 20,
+          imagesJson: uploadedUrls,
+        });
+
+        // 异步处理分析
+        processFengshuiAnalysis(taskId, uploadedUrls, task.roomType!).catch(console.error);
+
+        return { taskId, status: "processing", imageUrls: uploadedUrls };
+      }),
+
+    // 查询任务状态
+    getTaskStatus: protectedProcedure
+      .input(z.object({ taskId: z.string() }))
+      .query(async ({ input, ctx }) => {
+        const task = await db.getFortuneTask(input.taskId);
+        if (!task) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "任务不存在" });
+        }
+        if (task.userId !== ctx.user.id) {
+          throw new TRPCError({ code: "FORBIDDEN", message: "无权访问此任务" });
+        }
+
+        return {
+          taskId: task.taskId,
+          status: task.status,
+          progress: task.progress,
+          errorMessage: task.errorMessage,
+        };
+      }),
+
+    // 获取测算报告
+    getReport: protectedProcedure
+      .input(z.object({ taskId: z.string() }))
+      .query(async ({ input, ctx }) => {
+        const task = await db.getFortuneTask(input.taskId);
+        if (!task) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "任务不存在" });
+        }
+        if (task.userId !== ctx.user.id) {
+          throw new TRPCError({ code: "FORBIDDEN", message: "无权访问此任务" });
+        }
+
+        const report = await db.getFortuneReport(input.taskId);
+        if (!report) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "报告尚未生成" });
+        }
+
+        return {
+          taskId: report.taskId,
+          serviceType: report.serviceType,
+          overallSummary: report.overallSummary,
+          sections: report.sectionsJson,
+          score: report.score,
+          createdAt: report.createdAt,
+        };
+      }),
+
+    // 获取用户的所有测算记录
+    getMyTasks: protectedProcedure
+      .input(
+        z.object({
+          serviceType: z.enum(["face", "palm", "fengshui"]).optional(),
+          limit: z.number().min(1).max(50).default(10),
+          offset: z.number().min(0).default(0),
+        })
+      )
+      .query(async ({ input, ctx }) => {
+        // 这里需要在db.ts中添加相应的查询函数
+        // 暂时返回空数组
+        return [];
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
+
+// ============= 异步分析处理函数 =============
+
+/**
+ * 处理面相/手相分析
+ */
+async function processFortuneAnalysis(
+  taskId: string,
+  imageUrl: string,
+  serviceType: "face" | "palm"
+) {
+  try {
+    // 1. 图像识别 - 提取特征
+    await db.updateFortuneTaskStatus(taskId, { progress: 40 });
+    const { extractFaceFeatures, extractPalmFeatures } = await import("./image-recognition");
+    const features =
+      serviceType === "face"
+        ? await extractFaceFeatures(imageUrl)
+        : await extractPalmFeatures(imageUrl);
+
+    // 2. 命理计算
+    await db.updateFortuneTaskStatus(taskId, { progress: 60, featuresJson: features });
+    const { calculateFacePhysiognomy, calculatePalmPhysiognomy } = await import(
+      "./physiognomy-engine"
+    );
+    const calculationResult =
+      serviceType === "face"
+        ? await calculateFacePhysiognomy(features as any)
+        : await calculatePalmPhysiognomy(features as any);
+
+    // 3. AI解读
+    await db.updateFortuneTaskStatus(taskId, { progress: 80, calculationJson: calculationResult });
+    const { generateAIInterpretation } = await import("./ai-interpretation");
+    const interpretation = await generateAIInterpretation(calculationResult, serviceType);
+
+    // 4. 保存报告
+    const task = await db.getFortuneTask(taskId);
+    await db.createFortuneReport({
+      taskId,
+      userId: task!.userId,
+      serviceType,
+      overallSummary: interpretation.overallSummary,
+      sectionsJson: interpretation.sections,
+      score: typeof calculationResult.overallScore === 'number' ? calculationResult.overallScore : undefined,
+    });
+
+    // 5. 更新任务状态为完成
+    await db.updateFortuneTaskStatus(taskId, { status: "completed", progress: 100 });
+  } catch (error: any) {
+    console.error(`Fortune analysis failed for task ${taskId}:`, error);
+    await db.updateFortuneTaskStatus(taskId, {
+      status: "failed",
+      errorMessage: error.message || "分析失败",
+    });
+  }
+}
+
+/**
+ * 处理风水分析
+ */
+async function processFengshuiAnalysis(taskId: string, imageUrls: string[], roomType: string) {
+  try {
+    // 1. 图像识别 - 提取房间特征
+    await db.updateFortuneTaskStatus(taskId, { progress: 40 });
+    const { extractRoomFeatures } = await import("./fengshui-recognition");
+    const features = await extractRoomFeatures(imageUrls, roomType);
+
+    // 2. 风水计算
+    await db.updateFortuneTaskStatus(taskId, { progress: 60, featuresJson: features });
+    const { calculateRoomFengshui } = await import("./fengshui-engine");
+    const calculationResult = await calculateRoomFengshui(features);
+
+    // 3. AI解读
+    await db.updateFortuneTaskStatus(taskId, { progress: 80, calculationJson: calculationResult });
+    const { generateFengshuiAIInterpretation } = await import("./fengshui-ai-interpretation");
+    const interpretation = await generateFengshuiAIInterpretation(calculationResult, roomType);
+
+    // 4. 保存报告
+    const task = await db.getFortuneTask(taskId);
+    await db.createFortuneReport({
+      taskId,
+      userId: task!.userId,
+      serviceType: "fengshui",
+      overallSummary: interpretation.overallSummary,
+      sectionsJson: interpretation.sections,
+      score: typeof calculationResult.overallScore === 'number' ? calculationResult.overallScore : undefined,
+    });
+
+    // 5. 更新任务状态为完成
+    await db.updateFortuneTaskStatus(taskId, { status: "completed", progress: 100 });
+  } catch (error: any) {
+    console.error(`Fengshui analysis failed for task ${taskId}:`, error);
+    await db.updateFortuneTaskStatus(taskId, {
+      status: "failed",
+      errorMessage: error.message || "分析失败",
+    });
+  }
+}

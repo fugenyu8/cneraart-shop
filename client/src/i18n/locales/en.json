@@ -113,6 +113,7 @@
     "processing": "Processing..."
   },
   "account": {
+    "my_account": "My Account",
     "orders": "My Orders",
     "addresses": "Addresses",
     "profile": "Profile",

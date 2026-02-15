@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, decimal, boolean } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, decimal, boolean, json } from "drizzle-orm/mysql-core";
 
 /**
  * 用户表 - 核心认证和权限管理
@@ -277,3 +277,102 @@ export const couponUsages = mysqlTable("coupon_usages", {
 
 export type CouponUsage = typeof couponUsages.$inferSelect;
 export type InsertCouponUsage = typeof couponUsages.$inferInsert;
+
+// ============= 命理测算系统表 =============
+
+/**
+ * 命理测算任务表 - 存储面相、手相、风水分析任务
+ */
+export const fortuneTasks = mysqlTable("fortune_tasks", {
+  id: int("id").autoincrement().primaryKey(),
+  taskId: varchar("taskId", { length: 64 }).notNull().unique(),
+  orderId: int("orderId").notNull(), // 关联orders表
+  userId: int("userId").notNull(), // 关联users表
+  serviceType: mysqlEnum("serviceType", ["face", "palm", "fengshui"]).notNull(),
+  imageUrl: text("imageUrl"), // 单图服务(面相/手相)
+  imagesJson: json("imagesJson"), // 多图服务(风水)
+  roomType: varchar("roomType", { length: 32 }), // 风水专用:卧室/客厅/书房/厨房
+  status: mysqlEnum("status", ["created", "processing", "completed", "failed"]).default("created").notNull(),
+  progress: int("progress").default(0).notNull(),
+  featuresJson: json("featuresJson"), // 提取的特征数据
+  calculationJson: json("calculationJson"), // 计算结果
+  errorMessage: text("errorMessage"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FortuneTask = typeof fortuneTasks.$inferSelect;
+export type InsertFortuneTask = typeof fortuneTasks.$inferInsert;
+
+/**
+ * 命理测算报告表 - 存储AI生成的解读报告
+ */
+export const fortuneReports = mysqlTable("fortune_reports", {
+  id: int("id").autoincrement().primaryKey(),
+  taskId: varchar("taskId", { length: 64 }).notNull().unique(),
+  userId: int("userId").notNull(),
+  serviceType: mysqlEnum("serviceType", ["face", "palm", "fengshui"]).notNull(),
+  overallSummary: text("overallSummary").notNull(), // 总体概述
+  sectionsJson: json("sectionsJson").notNull(), // 分段解读
+  score: int("score"), // 综合评分(0-100)
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type FortuneReport = typeof fortuneReports.$inferSelect;
+export type InsertFortuneReport = typeof fortuneReports.$inferInsert;
+
+/**
+ * 面相规则表 - 基于传统面相学的规则库
+ */
+export const faceRules = mysqlTable("face_rules", {
+  id: int("id").autoincrement().primaryKey(),
+  palaceName: varchar("palaceName", { length: 64 }).notNull(), // 十二宫位名称
+  featureName: varchar("featureName", { length: 64 }).notNull(), // 特征名称
+  conditionOperator: varchar("conditionOperator", { length: 16 }).notNull(), // 条件操作符: >, <, ==, !=
+  conditionValue: varchar("conditionValue", { length: 64 }).notNull(), // 条件值
+  score: int("score").notNull(), // 评分(-10到+10)
+  interpretation: text("interpretation").notNull(), // 解读文本
+  category: varchar("category", { length: 32 }).notNull(), // 类别:事业/财运/感情/健康
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type FaceRule = typeof faceRules.$inferSelect;
+export type InsertFaceRule = typeof faceRules.$inferInsert;
+
+/**
+ * 手相规则表 - 基于传统手相学的规则库
+ */
+export const palmRules = mysqlTable("palm_rules", {
+  id: int("id").autoincrement().primaryKey(),
+  lineName: varchar("lineName", { length: 64 }), // 掌纹名称:生命线/智慧线/感情线等
+  hillName: varchar("hillName", { length: 64 }), // 丘陵名称:金星丘/木星丘等
+  featureName: varchar("featureName", { length: 64 }).notNull(), // 特征名称
+  conditionOperator: varchar("conditionOperator", { length: 16 }).notNull(),
+  conditionValue: varchar("conditionValue", { length: 64 }).notNull(),
+  score: int("score").notNull(),
+  interpretation: text("interpretation").notNull(),
+  category: varchar("category", { length: 32 }).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type PalmRule = typeof palmRules.$inferSelect;
+export type InsertPalmRule = typeof palmRules.$inferInsert;
+
+/**
+ * 风水规则表 - 基于传统风水学的规则库
+ */
+export const fengshuiRules = mysqlTable("fengshui_rules", {
+  id: int("id").autoincrement().primaryKey(),
+  roomType: varchar("roomType", { length: 32 }).notNull(), // 房间类型:bedroom/living_room/study/kitchen
+  category: varchar("category", { length: 32 }).notNull(), // 类别:layout/color/decoration/environment
+  ruleName: varchar("ruleName", { length: 100 }).notNull(), // 规则名称
+  conditionType: varchar("conditionType", { length: 32 }).notNull(), // 条件类型
+  conditionValue: varchar("conditionValue", { length: 100 }).notNull(), // 条件值
+  score: int("score").notNull(), // 评分
+  interpretation: text("interpretation").notNull(), // 解读
+  suggestion: text("suggestion"), // 改善建议
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type FengshuiRule = typeof fengshuiRules.$inferSelect;
+export type InsertFengshuiRule = typeof fengshuiRules.$inferInsert;

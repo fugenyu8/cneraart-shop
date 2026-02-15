@@ -47,12 +47,12 @@ export default function Home() {
 
             <div className="flex items-center gap-4 md:gap-6">
               <Link href="/products">
-                <a className="text-foreground hover:text-accent transition-colors font-medium">
+                <a className="text-[oklch(82%_0.18_85)] hover:text-[oklch(90%_0.18_85)] transition-colors font-medium">
                   {t('nav.products')}
                 </a>
               </Link>
               <Link href="/about">
-                <a className="text-foreground hover:text-accent transition-colors font-medium">
+                <a className="text-[oklch(82%_0.18_85)] hover:text-[oklch(90%_0.18_85)] transition-colors font-medium">
                   {t('nav.about')}
                 </a>
               </Link>
@@ -61,14 +61,14 @@ export default function Home() {
                 <>
                   <Link href="/cart">
                     <a className="relative group">
-                      <ShoppingCart className="w-6 h-6 text-foreground group-hover:text-accent transition-colors" />
+                      <ShoppingCart className="w-6 h-6 text-[oklch(82%_0.18_85)] group-hover:text-[oklch(90%_0.18_85)] transition-colors" />
                       <span className="absolute -top-2 -right-2 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
                         0
                       </span>
                     </a>
                   </Link>
                   <Link href="/account">
-                    <a className="text-foreground hover:text-accent transition-colors font-medium">
+                    <a className="text-[oklch(82%_0.18_85)] hover:text-[oklch(90%_0.18_85)] transition-colors font-medium">
                       {t('nav.account')}
                     </a>
                   </Link>

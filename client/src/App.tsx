@@ -14,6 +14,7 @@ import ProductForm from "./pages/admin/ProductForm";
 import Checkout from "./pages/Checkout";
 import AdminOrders from "./pages/admin/Orders";
 import Account from "./pages/Account";
+import FortuneServices from "./pages/FortuneServices";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -30,6 +31,7 @@ function Router() {
       <Route path={"/checkout"} component={Checkout} />
       <Route path={"/admin/orders"} component={AdminOrders} />
       <Route path={"/account"} component={Account} />
+      <Route path={"/fortune"} component={FortuneServices} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

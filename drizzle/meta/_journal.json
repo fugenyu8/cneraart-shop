@@ -15,6 +15,13 @@
       "when": 1771118785610,
       "tag": "0001_wet_venus",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1771144586893,
+      "tag": "0002_polite_karnak",
+      "breakpoints": true
     }
   ]
 }
