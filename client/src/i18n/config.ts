@@ -20,7 +20,8 @@ i18n
       es: { translation: es },
       it: { translation: it },
     },
-    fallbackLng: 'en',
+    fallbackLng: 'zh',
+    lng: 'zh',
     interpolation: {
       escapeValue: false,
     },
@@ -28,6 +29,7 @@ i18n
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
     },
+    debug: true,
   });
 
 export default i18n;

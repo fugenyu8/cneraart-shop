@@ -8,6 +8,61 @@
     "login": "登录",
     "logout": "退出登录"
   },
+  "hero": {
+    "title": "五台山圣地开光法物",
+    "subtitle": "文殊菩萨智慧加持 · 五爷庙财神庇佑 · 千年古法传承"
+  },
+  "services": {
+    "title": "我们的服务",
+    "subtitle": "古老东方智慧 · 现代灵性指导",
+    "blessed": {
+      "title": "开光法物",
+      "description": "经五台山高僧开光的神圣法器，守护您的人生旅程",
+      "cta": "探索开光饰品"
+    },
+    "fortune": {
+      "title": "命理服务",
+      "destiny": {
+        "title": "命运远势分析",
+        "description": "中国古老智慧，解读人生运势与命运指引"
+      },
+      "palm": {
+        "title": "手相面相分析",
+        "description": "通过手相和面相揭示古老智慧"
+      },
+      "fengshui": {
+        "title": "家居风水分析",
+        "description": "调和居住空间与宇宙能量"
+      }
+    },
+    "prayer": {
+      "title": "代祈福服务",
+      "description": "供灯、烧香及各种祈福仪式，为您和家人祈福",
+      "cta": "探索祈福服务"
+    }
+  },
+  "products": {
+    "title": "精选产品",
+    "subtitle": "每一件都经过五台山开光，承载守护之力",
+    "viewAll": "查看所有产品"
+  },
+  "blessing": {
+    "title": "开光流程",
+    "subtitle": "五台山高僧主持，古法传承",
+    "step1": {
+      "title": "圣水清净",
+      "description": "以圣水、沉香、古咒于大殿佛前洗涤一切不净"
+    },
+    "step2": {
+      "title": "诵经加持",
+      "description": "高僧大德诵经七日七夜，佛号不断，经文回荡"
+    },
+    "step3": {
+      "title": "圣地灌顶",
+      "description": "承文殊菩萨智慧之光、五爷财神富贵之力"
+    },
+    "scrollHint": "左右滚动查看更多"
+  },
   "home": {
     "hero_title": "古老东方的祝福",
     "hero_subtitle": "守护您的人生旅程·传承千年智慧",
@@ -50,7 +105,7 @@
     "service_palmistry_short": "手相面相分析",
     "service_fengshui_short": "家居风水分析"
   },
-  "products": {
+  "allProducts": {
     "title": "全部产品",
     "search_placeholder": "搜索产品...",
     "filter_all": "全部分类",

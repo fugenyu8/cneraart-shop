@@ -52,7 +52,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* 开光法物 */}
             <Link href="/products?category=blessed">
-              <a className="group block">
+              <div className="group block">
                 <div className="bg-white rounded-lg p-8 border-2 border-[#D4AF37] hover:shadow-xl transition-all duration-300 text-center h-full">
                   <div className="w-20 h-20 rounded-full border-2 border-[#D4AF37] flex items-center justify-center mx-auto mb-6 group-hover:bg-[#D4AF37] transition-colors">
                     <span className="text-4xl group-hover:scale-110 transition-transform">🪷</span>
@@ -67,7 +67,7 @@ export default function Home() {
                     {t("services.blessed.cta")} →
                   </div>
                 </div>
-              </a>
+              </div>
             </Link>
 
             {/* 命理服务 */}
@@ -83,7 +83,7 @@ export default function Home() {
 
               <div className="space-y-4">
                 <Link href="/destiny-analysis">
-                  <a className="block border-2 border-[#D4AF37]/50 rounded-lg p-4 hover:border-[#D4AF37] hover:bg-[#FAF8F3] transition-all">
+                  <div className="block border-2 border-[#D4AF37]/50 rounded-lg p-4 hover:border-[#D4AF37] hover:bg-[#FAF8F3] transition-all">
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">🖐️</span>
                       <div className="text-left">
@@ -91,11 +91,11 @@ export default function Home() {
                         <div className="text-sm text-[#8B7355] font-light">{t("services.fortune.destiny.description")}</div>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </Link>
 
                 <Link href="/palm-face-reading">
-                  <a className="block border-2 border-[#D4AF37]/50 rounded-lg p-4 hover:border-[#D4AF37] hover:bg-[#FAF8F3] transition-all">
+                  <div className="block border-2 border-[#D4AF37]/50 rounded-lg p-4 hover:border-[#D4AF37] hover:bg-[#FAF8F3] transition-all">
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">👁️</span>
                       <div className="text-left">
@@ -103,11 +103,11 @@ export default function Home() {
                         <div className="text-sm text-[#8B7355] font-light">{t("services.fortune.palm.description")}</div>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </Link>
 
                 <Link href="/feng-shui">
-                  <a className="block border-2 border-[#D4AF37]/50 rounded-lg p-4 hover:border-[#D4AF37] hover:bg-[#FAF8F3] transition-all">
+                  <div className="block border-2 border-[#D4AF37]/50 rounded-lg p-4 hover:border-[#D4AF37] hover:bg-[#FAF8F3] transition-all">
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">📍</span>
                       <div className="text-left">
@@ -115,14 +115,14 @@ export default function Home() {
                         <div className="text-sm text-[#8B7355] font-light">{t("services.fortune.fengshui.description")}</div>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </Link>
               </div>
             </div>
 
             {/* 代祈福服务 */}
             <Link href="/prayer-services">
-              <a className="group block">
+              <div className="group block">
                 <div className="bg-white rounded-lg p-8 border-2 border-[#D4AF37] hover:shadow-xl transition-all duration-300 text-center h-full">
                   <div className="w-20 h-20 rounded-full border-2 border-[#D4AF37] flex items-center justify-center mx-auto mb-6 group-hover:bg-[#D4AF37] transition-colors">
                     <span className="text-4xl group-hover:scale-110 transition-transform">🕯️</span>
@@ -137,7 +137,7 @@ export default function Home() {
                     {t("services.prayer.cta")} →
                   </div>
                 </div>
-              </a>
+              </div>
             </Link>
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredProducts?.map((product: any) => (
               <Link key={product.id} href={`/products/${product.id}`}>
-                <a className="group block">
+                <div className="group block">
                   <div className="bg-[#FAF8F3] rounded-lg overflow-hidden border-2 border-[#D4AF37]/30 hover:border-[#D4AF37] hover:shadow-lg transition-all duration-300">
                     {/* 折扣标签 */}
                     {product.salePrice && Number(product.salePrice) < Number(product.regularPrice) && (
@@ -199,16 +199,16 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                </a>
+                </div>
               </Link>
             ))}
           </div>
 
           <div className="text-center mt-12">
             <Link href="/products">
-              <a className="inline-block border-2 border-[#D4AF37] px-8 py-3 rounded-full text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white transition-colors font-light text-lg">
+              <div className="inline-block border-2 border-[#D4AF37] px-8 py-3 rounded-full text-[#D4AF37] hover:bg-[#D4AF37] hover:text-white transition-colors font-light text-lg">
                 {t("products.viewAll")} ✦
-              </a>
+              </div>
             </Link>
           </div>
         </div>
