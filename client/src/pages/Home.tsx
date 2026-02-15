@@ -12,21 +12,21 @@ export default function Home() {
       <section 
         className="relative h-[600px] bg-cover bg-center"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://d3hxwv9uga20ww.cloudfront.net/RoSpAXz7wgobQtEUGXx9ai-files/fojiaowutaishan1(16)-randomSuffix-1739540736.jpg')`
+          backgroundImage: `url('https://d3hxwv9uga20ww.cloudfront.net/RoSpAXz7wgobQtEUGXx9ai-files/fojiaowutaishan1(16)-randomSuffix-1739540736.jpg')`
         }}
       >
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
           <div className="mb-6">
-            <div className="w-16 h-0.5 bg-[#D4AF37] mx-auto mb-4"></div>
-            <div className="text-[#D4AF37] text-4xl mb-4">✦</div>
-            <div className="w-16 h-0.5 bg-[#D4AF37] mx-auto"></div>
+            <div className="w-16 h-0.5 bg-[#D4AF37] mx-auto mb-4 shadow-lg"></div>
+            <div className="text-[#D4AF37] text-4xl mb-4 drop-shadow-lg">✦</div>
+            <div className="w-16 h-0.5 bg-[#D4AF37] mx-auto shadow-lg"></div>
           </div>
           
-          <h1 className="text-5xl md:text-6xl font-serif text-white mb-6">
+          <h1 className="text-5xl md:text-6xl font-serif text-white mb-6 drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
             {t("hero.title")}
           </h1>
           
-          <p className="text-xl text-white/90 max-w-2xl font-light">
+          <p className="text-xl text-white max-w-2xl font-light drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             {t("hero.subtitle")}
           </p>
         </div>
