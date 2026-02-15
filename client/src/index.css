@@ -1,6 +1,11 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* 引入中文书法字体 - 标题使用 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap');
+/* 英文优雅字体 */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -43,39 +48,50 @@
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  /* 东方禅意配色 - 深色主题 */
+  --primary: oklch(45% 0.15 25); /* 深红 */
+  --primary-foreground: oklch(95% 0.01 65);
+  --secondary: oklch(35% 0.08 260); /* 深蓝 */
+  --secondary-foreground: oklch(95% 0.01 65);
+  --accent: oklch(65% 0.12 65); /* 暗金 */
+  --accent-foreground: oklch(15% 0.02 260);
+  --muted: oklch(25% 0.02 260);
+  --muted-foreground: oklch(65% 0.02 260);
+  --destructive: oklch(55% 0.20 25);
+  --destructive-foreground: oklch(95% 0.01 65);
+  
+  /* 背景和表面 */
+  --background: oklch(15% 0.02 260); /* 深色背景 */
+  --foreground: oklch(95% 0.01 65); /* 主文字 */
+  --card: oklch(20% 0.02 260); /* 卡片背景 */
+  --card-foreground: oklch(95% 0.01 65);
+  --popover: oklch(20% 0.02 260);
+  --popover-foreground: oklch(95% 0.01 65);
+  
+  /* 边框和输入 */
+  --border: oklch(30% 0.03 260);
+  --input: oklch(25% 0.02 260);
+  --ring: oklch(65% 0.12 65);
+  
+  /* 圆角 */
+  --radius: 0.5rem;
+  
+  /* 侧边栏 */
+  --sidebar: oklch(18% 0.02 260);
+  --sidebar-foreground: oklch(95% 0.01 65);
+  --sidebar-primary: oklch(45% 0.15 25);
+  --sidebar-primary-foreground: oklch(95% 0.01 65);
+  --sidebar-accent: oklch(25% 0.02 260);
+  --sidebar-accent-foreground: oklch(95% 0.01 65);
+  --sidebar-border: oklch(30% 0.03 260);
+  --sidebar-ring: oklch(65% 0.12 65);
+  
+  /* 图表颜色 */
+  --chart-1: oklch(45% 0.15 25);
+  --chart-2: oklch(65% 0.12 65);
+  --chart-3: oklch(35% 0.08 260);
+  --chart-4: oklch(55% 0.10 145);
+  --chart-5: oklch(70% 0.15 85);
 }
 
 .dark {
@@ -117,8 +133,58 @@
   * {
     @apply border-border outline-ring/50;
   }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Noto Serif SC', 'Cormorant Garamond', serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* 标题使用书法字体 */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Ma Shan Zheng', 'Noto Serif SC', 'Cinzel', serif;
+    @apply font-bold;
+    letter-spacing: 0.05em;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-5xl;
+  }
+  
+  h3 {
+    @apply text-2xl md:text-4xl;
+  }
+  
+  /* 链接和按钮过渡 */
+  a, button {
+    @apply transition-all duration-300;
+  }
+  
+  /* 滚动条样式 */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: oklch(20% 0.02 260);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: oklch(40% 0.05 260);
+    border-radius: 5px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(50% 0.08 65);
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -158,6 +224,79 @@
   .flex {
     min-height: 0;
     min-width: 0;
+  }
+  
+  /* 产品卡片3D效果 */
+  .product-card {
+    @apply relative bg-card rounded-lg overflow-hidden transition-all duration-500;
+    @apply border border-border;
+    @apply shadow-md;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .product-card:hover {
+    @apply border-accent;
+    transform: translateY(-8px) rotateX(2deg);
+    box-shadow: 0 0 20px oklch(65% 0.12 65 / 0.4);
+  }
+  
+  /* 金色渐变按钮 */
+  .btn-primary {
+    @apply relative overflow-hidden;
+    @apply bg-gradient-to-r from-primary via-accent to-primary;
+    @apply text-foreground font-semibold px-8 py-3 rounded-md;
+    @apply shadow-md;
+    @apply transition-all duration-300;
+    background-size: 200% 100%;
+  }
+  
+  .btn-primary:hover {
+    background-position: 100% 0;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px oklch(65% 0.12 65 / 0.4);
+  }
+  
+  /* 传统纹样背景 */
+  .pattern-bg {
+    background-image: 
+      radial-gradient(circle at 20% 50%, oklch(25% 0.05 260 / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 50%, oklch(25% 0.05 25 / 0.3) 0%, transparent 50%);
+  }
+  
+  /* 光晕文字效果 */
+  .glow-text {
+    text-shadow: 0 0 10px oklch(65% 0.12 65 / 0.5),
+                 0 0 20px oklch(65% 0.12 65 / 0.3),
+                 0 0 30px oklch(65% 0.12 65 / 0.2);
+  }
+  
+  /* 渐变文字 */
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent via-primary to-secondary;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* 加载动画 - 莲花绽放 */
+  @keyframes lotus-bloom {
+    0% {
+      transform: scale(0.8) rotate(0deg);
+      opacity: 0.5;
+    }
+    50% {
+      transform: scale(1.1) rotate(180deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotate(360deg);
+      opacity: 0.8;
+    }
+  }
+  
+  .lotus-loader {
+    animation: lotus-bloom 2s ease-in-out infinite;
   }
 
   @media (min-width: 640px) {
