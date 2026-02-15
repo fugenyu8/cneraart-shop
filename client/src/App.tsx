@@ -13,6 +13,7 @@ import AdminProducts from "./pages/admin/Products";
 import ProductForm from "./pages/admin/ProductForm";
 import Checkout from "./pages/Checkout";
 import AdminOrders from "./pages/admin/Orders";
+import AdminOrderDetail from "./pages/admin/OrderDetail";
 import Account from "./pages/Account";
 import FortuneServices from "./pages/FortuneServices";
 
@@ -30,6 +31,7 @@ function Router() {
       <Route path={"/admin/products/:id/edit"} component={ProductForm} />
       <Route path={"/checkout"} component={Checkout} />
       <Route path={"/admin/orders"} component={AdminOrders} />
+      <Route path={"/admin/orders/:id"} component={AdminOrderDetail} />
       <Route path={"/account"} component={Account} />
       <Route path={"/fortune"} component={FortuneServices} />
       <Route path={"/404"} component={NotFound} />

@@ -86,6 +86,11 @@ export async function calculateFacePhysiognomy(
   const rules = await getFaceRules();
   const result: CalculationResult = {};
 
+  // 如果没有palaces字段,直接返回空结果
+  if (!features.palaces || typeof features.palaces !== 'object') {
+    return result;
+  }
+
   // 遍历每个宫位的特征
   for (const [palaceName, palaceFeatures] of Object.entries(features.palaces)) {
     const matchedRules = [];
@@ -141,83 +146,89 @@ export async function calculatePalmPhysiognomy(
   const rules = await getPalmRules();
   const result: CalculationResult = {};
 
-  // 处理纹路特征
-  for (const [lineName, lineFeatures] of Object.entries(features.lines)) {
-    const matchedRules = [];
+  // 如果没有lines字段,跳过纹路处理
+  if (features.lines && typeof features.lines === 'object') {
+    // 处理纹路特征
+    for (const [lineName, lineFeatures] of Object.entries(features.lines)) {
+      const matchedRules = [];
 
-    for (const rule of rules) {
-      if (rule.lineName !== lineName) continue;
+      for (const rule of rules) {
+        if (rule.lineName !== lineName) continue;
 
-      const featureValue = lineFeatures[rule.featureName];
-      if (featureValue === undefined) continue;
+        const featureValue = lineFeatures[rule.featureName];
+        if (featureValue === undefined) continue;
 
-      if (
-        matchCondition(
-          featureValue,
-          rule.conditionOperator,
-          rule.conditionValue
-        )
-      ) {
-        matchedRules.push(rule);
+        if (
+          matchCondition(
+            featureValue,
+            rule.conditionOperator,
+            rule.conditionValue
+          )
+        ) {
+          matchedRules.push(rule);
+        }
       }
-    }
 
-    if (matchedRules.length > 0) {
-      const totalScore = matchedRules.reduce(
-        (sum, rule) => sum + rule.score,
-        0
-      );
-      const avgScore = Math.round(totalScore / matchedRules.length);
+      if (matchedRules.length > 0) {
+        const totalScore = matchedRules.reduce(
+          (sum, rule) => sum + rule.score,
+          0
+        );
+        const avgScore = Math.round(totalScore / matchedRules.length);
 
-      let category = "中";
-      if (avgScore >= 80) category = "吉";
-      else if (avgScore < 60) category = "凶";
+        let category = "中";
+        if (avgScore >= 80) category = "吉";
+        else if (avgScore < 60) category = "凶";
 
-      result[lineName] = {
-        score: avgScore,
-        category,
-        interpretations: matchedRules.map((rule) => rule.interpretation),
-      };
+        result[lineName] = {
+          score: avgScore,
+          category,
+          interpretations: matchedRules.map((rule) => rule.interpretation),
+        };
+      }
     }
   }
 
-  // 处理丘位特征
-  for (const [hillName, hillFeatures] of Object.entries(features.hills)) {
-    const matchedRules = [];
+  // 如果没有hills字段,跳过丘位处理
+  if (features.hills && typeof features.hills === 'object') {
+    // 处理丘位特征
+    for (const [hillName, hillFeatures] of Object.entries(features.hills)) {
+      const matchedRules = [];
 
-    for (const rule of rules) {
-      if (rule.hillName !== hillName) continue;
+      for (const rule of rules) {
+        if (rule.hillName !== hillName) continue;
 
-      const featureValue = hillFeatures[rule.featureName];
-      if (featureValue === undefined) continue;
+        const featureValue = hillFeatures[rule.featureName];
+        if (featureValue === undefined) continue;
 
-      if (
-        matchCondition(
-          featureValue,
-          rule.conditionOperator,
-          rule.conditionValue
-        )
-      ) {
-        matchedRules.push(rule);
+        if (
+          matchCondition(
+            featureValue,
+            rule.conditionOperator,
+            rule.conditionValue
+          )
+        ) {
+          matchedRules.push(rule);
+        }
       }
-    }
 
-    if (matchedRules.length > 0) {
-      const totalScore = matchedRules.reduce(
-        (sum, rule) => sum + rule.score,
-        0
-      );
-      const avgScore = Math.round(totalScore / matchedRules.length);
+      if (matchedRules.length > 0) {
+        const totalScore = matchedRules.reduce(
+          (sum, rule) => sum + rule.score,
+          0
+        );
+        const avgScore = Math.round(totalScore / matchedRules.length);
 
-      let category = "中";
-      if (avgScore >= 80) category = "吉";
-      else if (avgScore < 60) category = "凶";
+        let category = "中";
+        if (avgScore >= 80) category = "吉";
+        else if (avgScore < 60) category = "凶";
 
-      result[hillName] = {
-        score: avgScore,
-        category,
-        interpretations: matchedRules.map((rule) => rule.interpretation),
-      };
+        result[hillName] = {
+          score: avgScore,
+          category,
+          interpretations: matchedRules.map((rule) => rule.interpretation),
+        };
+      }
     }
   }
 

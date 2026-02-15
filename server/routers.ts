@@ -392,6 +392,77 @@ export const appRouter = router({
 
           return { success: true, productId };
         }),
+
+      // 更新产品
+      update: adminProcedure
+        .input(
+          z.object({
+            productId: z.number(),
+            name: z.string().optional(),
+            slug: z.string().optional(),
+            description: z.string().optional(),
+            shortDescription: z.string().optional(),
+            regularPrice: z.number().optional(),
+            salePrice: z.number().optional(),
+            categoryId: z.number().optional(),
+            sku: z.string().optional(),
+            stock: z.number().optional(),
+            lowStockThreshold: z.number().optional(),
+            status: z.enum(["draft", "published", "archived"]).optional(),
+            featured: z.boolean().optional(),
+            blessingTemple: z.string().optional(),
+            blessingMaster: z.string().optional(),
+            blessingDate: z.date().optional(),
+            blessingDescription: z.string().optional(),
+            images: z.array(
+              z.object({
+                url: z.string(),
+                fileKey: z.string(),
+                isPrimary: z.boolean(),
+                displayOrder: z.number(),
+              })
+            ).optional(),
+          })
+        )
+        .mutation(async ({ input }) => {
+          const { productId, images, ...updateData } = input;
+
+          // 更新产品基本信息
+          await db.updateProduct(productId, updateData);
+
+          // 如果提供了图片,先删除旧图片再创建新图片
+          if (images) {
+            await db.deleteProductImages(productId);
+            if (images.length > 0) {
+              await db.createProductImages(
+                images.map((img) => ({
+                  productId,
+                  url: img.url,
+                  fileKey: img.fileKey,
+                  isPrimary: img.isPrimary,
+                  displayOrder: img.displayOrder,
+                }))
+              );
+            }
+          }
+
+          return { success: true };
+        }),
+
+      // 删除产品
+      delete: adminProcedure
+        .input(
+          z.object({
+            productId: z.number(),
+          })
+        )
+        .mutation(async ({ input }) => {
+          // 先删除产品图片
+          await db.deleteProductImages(input.productId);
+          // 再删除产品
+          await db.deleteProduct(input.productId);
+          return { success: true };
+        }),
     }),
 
     // 订单管理
@@ -420,6 +491,34 @@ export const appRouter = router({
           return ordersWithDetails;
         }),
 
+      // 获取订单详情
+      getById: adminProcedure
+        .input(
+          z.object({
+            orderId: z.number(),
+          })
+        )
+        .query(async ({ input }) => {
+          const order = await db.getOrderById(input.orderId);
+          if (!order) {
+            throw new TRPCError({ code: "NOT_FOUND", message: "订单不存在" });
+          }
+          
+          const user = await db.getUserById(order.userId);
+          const items = await db.getOrderItems(order.id);
+          
+          // 获取每个订单项的产品信息
+          const itemsWithProducts = await Promise.all(
+            items.map(async (item) => {
+              const product = await db.getProductById(item.productId);
+              const images = product ? await db.getProductImages(product.id) : [];
+              return { ...item, product: product ? { ...product, images } : null };
+            })
+          );
+          
+          return { ...order, user, items: itemsWithProducts };
+        }),
+
       // 更新订单状态
       updateStatus: adminProcedure
         .input(
@@ -428,22 +527,26 @@ export const appRouter = router({
             status: z.enum(["pending", "processing", "shipped", "delivered", "cancelled"]),
           })
         )
-        .mutation(async () => {
-          // TODO: 实现订单状态更新
+        .mutation(async ({ input }) => {
+          await db.updateOrderStatus(input.orderId, input.status);
           return { success: true };
         }),
 
       // 更新物流信息
-      updateShipping: adminProcedure
+      updateTracking: adminProcedure
         .input(
           z.object({
             orderId: z.number(),
-            carrier: z.string(),
+            shippingCarrier: z.string(),
             trackingNumber: z.string(),
           })
         )
-        .mutation(async () => {
-          // TODO: 实现物流信息更新
+        .mutation(async ({ input }) => {
+          await db.updateOrderTracking(
+            input.orderId,
+            input.shippingCarrier,
+            input.trackingNumber
+          );
           return { success: true };
         }),
     }),

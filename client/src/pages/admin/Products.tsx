@@ -34,21 +34,20 @@ export default function AdminProducts() {
     status: statusFilter === "all" ? undefined : statusFilter,
   });
 
-  // TODO: 删除产品mutation
-  // const deleteMutation = trpc.admin.products.delete.useMutation({
-  //   onSuccess: () => {
-  //     toast.success("产品已删除");
-  //     refetch();
-  //   },
-  //   onError: (error: any) => {
-  //     toast.error(error.message || "删除失败");
-  //   },
-  // });
+  // 删除产品mutation
+  const deleteMutation = trpc.admin.products.delete.useMutation({
+    onSuccess: () => {
+      toast.success("产品已删除");
+      refetch();
+    },
+    onError: (error: any) => {
+      toast.error(error.message || "删除失败");
+    },
+  });
 
   const handleDelete = (id: number, name: string) => {
-    if (confirm(`确定要删除产品“${name}”吗?`)) {
-      toast.info("删除功能开发中...");
-      // deleteMutation.mutate({ productId: id });
+    if (confirm(`确定要删除产品"${name}"吗?`)) {
+      deleteMutation.mutate({ productId: id });
     }
   };
 

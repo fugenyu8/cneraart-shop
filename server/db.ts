@@ -458,6 +458,32 @@ export async function getOrderItems(orderId: number): Promise<OrderItem[]> {
   return await db.select().from(orderItems).where(eq(orderItems.orderId, orderId));
 }
 
+export async function updateOrderStatus(
+  orderId: number,
+  status: "pending" | "processing" | "shipped" | "delivered" | "cancelled"
+): Promise<void> {
+  const db = await getDb();
+  if (!db) return;
+
+  await db.update(orders).set({ status }).where(eq(orders.id, orderId));
+}
+
+export async function updateOrderTracking(
+  orderId: number,
+  shippingCarrier: string,
+  trackingNumber: string
+): Promise<void> {
+  const db = await getDb();
+  if (!db) return;
+
+  await db.update(orders).set({
+    shippingCarrier,
+    trackingNumber,
+    shippedAt: new Date(),
+    status: "shipped", // 添加物流信息时自动更新为已发货
+  }).where(eq(orders.id, orderId));
+}
+
 export async function updateOrderPaymentStatus(
   orderId: number,
   paymentStatus: "pending" | "paid" | "failed" | "refunded",
@@ -685,6 +711,59 @@ export async function createProductImages(images: Array<{
       displayOrder: image.displayOrder,
     });
   }
+}
+
+export async function updateProduct(
+  productId: number,
+  productData: Partial<{
+    name: string;
+    slug: string;
+    description: string;
+    shortDescription: string;
+    regularPrice: number;
+    salePrice: number;
+    sku: string;
+    stock: number;
+    lowStockThreshold: number;
+    categoryId: number;
+    status: "draft" | "published" | "archived";
+    featured: boolean;
+    blessingTemple: string;
+    blessingMaster: string;
+    blessingDate: Date;
+    blessingDescription: string;
+  }>
+): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  // 转换price为字符串
+  const updateData: any = { ...productData };
+  if (updateData.regularPrice !== undefined) {
+    updateData.regularPrice = updateData.regularPrice.toString();
+  }
+  if (updateData.salePrice !== undefined) {
+    updateData.salePrice = updateData.salePrice.toString();
+  }
+
+  await db
+    .update(products)
+    .set(updateData)
+    .where(eq(products.id, productId));
+}
+
+export async function deleteProduct(productId: number): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  await db.delete(products).where(eq(products.id, productId));
+}
+
+export async function deleteProductImages(productId: number): Promise<void> {
+  const db = await getDb();
+  if (!db) return;
+
+  await db.delete(productImages).where(eq(productImages.productId, productId));
 }
 
 // ============= 管理员订单管理 =============
