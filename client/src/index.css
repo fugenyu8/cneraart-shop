@@ -48,23 +48,23 @@
 }
 
 :root {
-  /* 东方禅意配色 - 深色主题 */
-  --primary: oklch(45% 0.15 25); /* 深红 */
-  --primary-foreground: oklch(95% 0.01 65);
-  --secondary: oklch(35% 0.08 260); /* 深蓝 */
-  --secondary-foreground: oklch(95% 0.01 65);
-  --accent: oklch(65% 0.12 65); /* 暗金 */
-  --accent-foreground: oklch(15% 0.02 260);
+  /* 东方灵性高贵配色 */
+  --primary: oklch(52% 0.22 25); /* 尊贵深红 */
+  --primary-foreground: oklch(98% 0.01 60);
+  --secondary: oklch(70% 0.20 80); /* 僧袍黄色 */
+  --secondary-foreground: oklch(15% 0.02 270);
+  --accent: oklch(82% 0.18 85); /* 佛教金黄色 */
+  --accent-foreground: oklch(12% 0.02 270);
   --muted: oklch(25% 0.02 260);
   --muted-foreground: oklch(65% 0.02 260);
   --destructive: oklch(55% 0.20 25);
   --destructive-foreground: oklch(95% 0.01 65);
   
   /* 背景和表面 */
-  --background: oklch(15% 0.02 260); /* 深色背景 */
-  --foreground: oklch(95% 0.01 65); /* 主文字 */
-  --card: oklch(20% 0.02 260); /* 卡片背景 */
-  --card-foreground: oklch(95% 0.01 65);
+  --background: oklch(12% 0.03 270); /* 深蓝黑背景 */
+  --foreground: oklch(96% 0.01 60); /* 金白色文字 */
+  --card: oklch(16% 0.04 270); /* 卡片背景 */
+  --card-foreground: oklch(96% 0.01 60);
   --popover: oklch(20% 0.02 260);
   --popover-foreground: oklch(95% 0.01 65);
   
@@ -142,6 +142,27 @@
     @apply bg-background text-foreground antialiased;
     font-family: 'Noto Serif SC', 'Cormorant Garamond', serif;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background: linear-gradient(180deg, 
+      oklch(12% 0.05 270) 0%, 
+      oklch(10% 0.04 280) 50%,
+      oklch(8% 0.03 290) 100%
+    );
+    min-height: 100vh;
+  }
+  
+  /* 传统纹样背景层 */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, oklch(30% 0.12 25 / 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, oklch(40% 0.15 85 / 0.12) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
   }
   
   /* 标题使用书法字体 */

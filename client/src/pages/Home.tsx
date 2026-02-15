@@ -2,162 +2,299 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { trpc } from "@/lib/trpc";
-import { ShoppingCart, Sparkles, Heart, Shield } from "lucide-react";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
+import { ShoppingCart, Sparkles, Shield, Award, Star, CheckCircle2, ChevronDown, User, Home as HomeIcon, Heart } from "lucide-react";
 import { Link } from "wouter";
 
 export default function Home() {
   const { user, isAuthenticated } = useAuth();
   const { data: featuredProducts, isLoading } = trpc.products.featured.useQuery();
+  const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      {/* 粒子光效背景 */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="particle absolute"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 6}s`,
+            }}
+          />
+        ))}
+      </div>
+
       {/* 导航栏 */}
-      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <nav className="sticky top-0 z-50 bg-card/60 backdrop-blur-xl border-b border-accent/20">
         <div className="container py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
-              <a className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-secondary rounded-full flex items-center justify-center">
-                  <Sparkles className="w-6 h-6 text-foreground" />
+              <a className="flex items-center gap-2 group">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-secondary rounded-full flex items-center justify-center shadow-lg group-hover:shadow-accent/50 transition-all">
+                  <Sparkles className="w-5 h-5 text-foreground" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold gradient-text">源・华渡</h1>
-                  <p className="text-xs text-muted-foreground">东方灵性商城</p>
+                  <h1 className="text-lg font-serif font-bold text-accent" style={{ fontFamily: "'Ma Shan Zheng', 'Noto Serif SC', serif", letterSpacing: '0.05em' }}>源・华渡</h1>
+                  <p className="text-[10px] text-muted-foreground tracking-wide" style={{ fontFamily: "'Cinzel', serif" }}>YUAN · HUADU</p>
                 </div>
               </a>
             </Link>
 
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-4 md:gap-6">
               <Link href="/products">
-                <a className="text-foreground hover:text-accent transition-colors">产品</a>
+                <a className="text-foreground hover:text-accent transition-colors font-medium">
+                  {t('nav.products')}
+                </a>
               </Link>
               <Link href="/about">
-                <a className="text-foreground hover:text-accent transition-colors">关于我们</a>
+                <a className="text-foreground hover:text-accent transition-colors font-medium">
+                  {t('nav.about')}
+                </a>
               </Link>
+              <LanguageSwitcher />
               {isAuthenticated ? (
                 <>
                   <Link href="/cart">
-                    <a className="relative">
-                      <ShoppingCart className="w-6 h-6 text-foreground hover:text-accent transition-colors" />
+                    <a className="relative group">
+                      <ShoppingCart className="w-6 h-6 text-foreground group-hover:text-accent transition-colors" />
+                      <span className="absolute -top-2 -right-2 w-5 h-5 bg-primary text-primary-foreground text-xs rounded-full flex items-center justify-center">
+                        0
+                      </span>
                     </a>
                   </Link>
                   <Link href="/account">
-                    <a className="text-foreground hover:text-accent transition-colors">我的账户</a>
+                    <a className="text-foreground hover:text-accent transition-colors font-medium">
+                      {t('nav.account')}
+                    </a>
                   </Link>
                 </>
               ) : (
-                <Button className="btn-primary">登录</Button>
+                <Button className="btn-primary">{t('nav.login')}</Button>
               )}
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Hero区域 - 全屏背景 */}
-      <section className="relative min-h-[80vh] flex items-center justify-center pattern-bg overflow-hidden">
-        {/* 背景装饰 */}
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
+      {/* Hero区域 - 五台山寺庙背景 */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* 背景图片层 */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10" />
+          <img
+            src="/images/buddhist/wutai-temple-1.jpg"
+            alt="Sacred Mount Wutai Temple"
+            className="w-full h-full object-cover opacity-50"
+          />
         </div>
 
-        <div className="container relative z-10 text-center">
-          <h2 className="text-5xl md:text-7xl font-bold mb-6 glow-text">
-            古老东方的祝福
-          </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            守护您的人生旅程 · 传承千年智慧
-          </p>
-          <div className="flex gap-4 justify-center">
-            <Link href="/products">
-              <Button className="btn-primary text-lg px-8 py-6">
-                探索开光饰品
+        <div className="container relative z-20 text-center">
+          <div className="max-w-4xl mx-auto space-y-8">
+            {/* 开光认证标识 */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 backdrop-blur-md rounded-full border border-accent/30 shadow-lg">
+              <Award className="w-4 h-4 text-accent" />
+              <span className="text-accent text-sm font-medium">Blessed by Venerable Monks at Sacred Mount Wutai</span>
+            </div>
+
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              <span className="text-accent" style={{ fontFamily: "'Noto Serif SC', serif" }}>{t('home.hero_title')}</span>
+            </h1>
+
+            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+              {t('home.hero_subtitle')}
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
+              <Link href="/products">
+                <Button className="btn-primary text-lg px-8 py-6">
+                  <Sparkles className="w-5 h-5 mr-2" />
+                  {t('home.cta_products')}
+                </Button>
+              </Link>
+              <Button variant="outline" className="text-lg px-8 py-6 border-accent/50 hover:bg-accent/10">
+                {t('home.cta_fortune')}
               </Button>
-            </Link>
-            <Link href="/services">
-              <Button variant="outline" className="text-lg px-8 py-6 border-accent text-accent hover:bg-accent/10">
-                预约命理分析
-              </Button>
-            </Link>
+            </div>
+
+            {/* 三大保证 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16">
+              {[
+                { icon: Shield, title: "Sacred Blessing", desc: "Consecrated by Venerable Monks at Mount Wutai" },
+                { icon: Sparkles, title: "Divine Protection", desc: "Manjusri's Wisdom & Lord Wuye's Prosperity" },
+                { icon: Award, title: "Authentic Tradition", desc: "Thousand-Year Ancient Rituals" },
+              ].map((item, i) => (
+                <Card key={i} className="bg-card/60 backdrop-blur-md border-accent/20 hover:border-accent/50 transition-all">
+                  <CardContent className="p-6 text-center">
+                    <item.icon className="w-10 h-10 text-accent mx-auto mb-3" />
+                    <h3 className="font-bold text-lg mb-2">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* 滚动提示 */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-accent rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-pulse"></div>
+          {/* 滚动提示 */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <ChevronDown className="w-8 h-8 text-accent" />
           </div>
         </div>
       </section>
 
-      {/* 精选产品区 */}
-      <section className="py-20 bg-card/50">
+      {/* 五大业务服务 */}
+      <section className="py-20 relative z-10">
         <div className="container">
           <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold mb-4 gradient-text">精选开光饰品</h3>
-            <div className="divider-ornament">
-              <Sparkles className="w-6 h-6 text-accent" />
-            </div>
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
-              每一件饰品均由五台山高僧亲自开光加持，承载千年佛法智慧，为您带来平安与祝福
+            <h2 className="text-2xl md:text-4xl font-bold gradient-text glow-text mb-4">
+              {t('home.services_title')}
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t('home.services_subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* 开光法物 */}
+            <Card className="bg-card/80 backdrop-blur-md border-accent/30 hover:border-accent/60 transition-all hover:shadow-xl hover:shadow-accent/20 group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Sparkles className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-accent">{t('home.service_blessed_items')}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{t('home.service_blessed_items_desc')}</p>
+                <Link href="/products">
+                  <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
+                    {t('common.learn_more')}
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* 命理服务 */}
+            <Card className="bg-card/80 backdrop-blur-md border-accent/30 hover:border-accent/60 transition-all hover:shadow-xl hover:shadow-accent/20 group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Star className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-accent">{t('home.service_fortune')}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{t('home.service_fortune_desc')}</p>
+                <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
+                  {t('common.learn_more')}
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* 手相面相 */}
+            <Card className="bg-card/80 backdrop-blur-md border-accent/30 hover:border-accent/60 transition-all hover:shadow-xl hover:shadow-accent/20 group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <User className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-accent">{t('home.service_palmistry')}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{t('home.service_palmistry_desc')}</p>
+                <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
+                  {t('common.learn_more')}
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* 家居风水 */}
+            <Card className="bg-card/80 backdrop-blur-md border-accent/30 hover:border-accent/60 transition-all hover:shadow-xl hover:shadow-accent/20 group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <HomeIcon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-accent">{t('home.service_fengshui')}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{t('home.service_fengshui_desc')}</p>
+                <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
+                  {t('common.learn_more')}
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* 代祈福 */}
+            <Card className="bg-card/80 backdrop-blur-md border-accent/30 hover:border-accent/60 transition-all hover:shadow-xl hover:shadow-accent/20 group">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <Heart className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-accent">{t('home.service_blessing')}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{t('home.service_blessing_desc')}</p>
+                <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
+                  {t('common.learn_more')}
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* 精选开光饰品 */}
+      <section className="py-24 relative z-10">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold gradient-text glow-text mb-4">
+              {t('home.featured_title')}
+            </h2>
+            <p className="text-base text-muted-foreground text-center max-w-2xl mx-auto">
+              {t('home.featured_subtitle')}
             </p>
           </div>
 
           {isLoading ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="product-card h-96 image-placeholder"></div>
-              ))}
+            <div className="flex justify-center items-center py-20">
+              <div className="lotus-loader">
+                <Sparkles className="w-16 h-16 text-accent" />
+              </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {featuredProducts?.map((product) => (
-                <Link key={product.id} href={`/products/${product.slug}`}>
-                  <Card className="product-card cursor-pointer group">
-                    <div className="relative h-64 overflow-hidden">
-                      {product.images[0] ? (
-                        <img
-                          src={product.images[0].url}
-                          alt={product.name}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-muted flex items-center justify-center">
-                          <Sparkles className="w-16 h-16 text-muted-foreground" />
-                        </div>
-                      )}
-                      {product.salePrice && (
-                        <div className="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full">
-                          <span className="text-sm font-bold">特惠</span>
+                <Link key={product.id} href={`/products/${product.id}`}>
+                  <Card className="product-card group cursor-pointer h-full">
+                    <div className="relative overflow-hidden aspect-square">
+                      <img
+                        src={product.images?.[0]?.url || "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&q=80"}
+                        alt={product.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      {product.featured && (
+                        <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold">
+                          FEATURED
                         </div>
                       )}
                     </div>
                     <CardContent className="p-6">
-                      <h4 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors">
+                      <h3 className="font-bold text-lg mb-2 group-hover:text-accent transition-colors">
                         {product.name}
-                      </h4>
-                      <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
-                        {product.shortDescription}
+                      </h3>
+                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                        {product.description}
                       </p>
                       <div className="flex items-center justify-between">
                         <div>
-                          {product.salePrice ? (
-                            <div className="flex items-center gap-2">
+                          {product.salePrice && product.salePrice < product.regularPrice ? (
+                            <>
                               <span className="text-2xl font-bold text-accent">
                                 ${product.salePrice}
                               </span>
-                              <span className="text-sm text-muted-foreground line-through">
+                              <span className="text-sm text-muted-foreground line-through ml-2">
                                 ${product.regularPrice}
                               </span>
-                            </div>
+                            </>
                           ) : (
                             <span className="text-2xl font-bold text-accent">
                               ${product.regularPrice}
                             </span>
                           )}
                         </div>
-                        <Button size="sm" className="bg-accent hover:bg-accent/90">
-                          查看详情
+                        <Button size="sm" className="bg-primary hover:bg-primary/90">
+                          <ShoppingCart className="w-4 h-4" />
                         </Button>
                       </div>
                     </CardContent>
@@ -169,111 +306,56 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/products">
-              <Button variant="outline" className="border-accent text-accent hover:bg-accent/10">
-                查看全部产品
+              <Button className="btn-primary text-lg px-8 py-6">
+                {t('common.view_more')}
               </Button>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 开光仪式展示区 */}
-      <section className="py-20">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-4xl font-bold mb-6 gradient-text">五台山开光仪式</h3>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                每一件饰品都经过五台山文殊菩萨道场的正统开光仪式。由修行数十年的高僧大德主持，
-                遵循古法仪轨，诵经加持，为饰品注入佛法能量，祈愿佩戴者平安吉祥、智慧增长。
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <Shield className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold mb-1">正统传承</h4>
-                    <p className="text-sm text-muted-foreground">
-                      遵循千年佛教仪轨，由五台山高僧亲自主持
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Sparkles className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold mb-1">能量加持</h4>
-                    <p className="text-sm text-muted-foreground">
-                      诵经祈福，为饰品注入佛法能量与祝福
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Heart className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
-                  <div>
-                    <h4 className="font-bold mb-1">用心服务</h4>
-                    <p className="text-sm text-muted-foreground">
-                      每件饰品附带开光证书，确保真实可靠
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="aspect-square rounded-lg overflow-hidden border border-border shadow-glow-md">
-                <div className="w-full h-full bg-muted flex items-center justify-center">
-                  <Sparkles className="w-24 h-24 text-muted-foreground" />
-                </div>
-              </div>
-              {/* 装饰元素 */}
-              <div className="absolute -top-4 -right-4 w-32 h-32 bg-accent/20 rounded-full blur-2xl"></div>
-              <div className="absolute -bottom-4 -left-4 w-40 h-40 bg-primary/20 rounded-full blur-2xl"></div>
-            </div>
-          </div>
+      {/* 正统开光仪式 */}
+      <section className="py-24 relative z-10 overflow-hidden">
+        {/* 五台山全景背景 */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/buddhist/wutai-panorama.webp"
+            alt="Mount Wutai Panorama"
+            className="w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/90" />
         </div>
-      </section>
-
-      {/* 客户见证 */}
-      <section className="py-20 bg-card/50">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h3 className="text-4xl font-bold mb-4 gradient-text">客户见证</h3>
-            <div className="divider-ornament">
-              <Heart className="w-6 h-6 text-accent" />
-            </div>
+        <div className="container relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-4xl font-bold gradient-text glow-text mb-4">
+              {t('home.blessing_title')}
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t('home.blessing_subtitle')}
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              {
-                name: "张女士",
-                location: "美国加州",
-                rating: 5,
-                comment: "收到北斗七星吊坠后，感觉整个人的运势都变好了。做工精美，能量很强，非常满意！",
-              },
-              {
-                name: "李先生",
-                location: "加拿大多伦多",
-                rating: 5,
-                comment: "命理报告非常准确，大师的分析让我对未来有了更清晰的规划。强烈推荐！",
-              },
-              {
-                name: "王女士",
-                location: "美国纽约",
-                rating: 5,
-                comment: "开光仪式很正统，收到饰品时能感受到满满的祝福能量。客服态度也很好。",
-              },
-            ].map((testimonial, i) => (
-              <Card key={i} className="bg-card border-border hover:border-accent transition-colors">
-                <CardContent className="p-6">
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Sparkles key={i} className="w-5 h-5 text-accent fill-accent" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground mb-4 italic">"{testimonial.comment}"</p>
-                  <div>
-                    <p className="font-bold">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-                  </div>
+              { step: "01", title: t('home.blessing_step1'), desc: t('home.blessing_step1_desc'), icon: "🕉️" },
+              { step: "02", title: t('home.blessing_step2'), desc: t('home.blessing_step2_desc'), icon: "📿" },
+              { step: "03", title: t('home.blessing_step3'), desc: t('home.blessing_step3_desc'), icon: "✨" },
+            ].map((item, i) => (
+              <Card key={i} className="bg-card/80 backdrop-blur-md border-accent/20 hover:border-accent/50 transition-all group relative overflow-hidden">
+                <CardContent className="p-8 text-center relative z-10">
+                  {/* 佛教装饰背景 */}
+                  {i === 1 && (
+                    <div className="absolute top-0 right-0 w-24 h-24 opacity-10">
+                      <img src="/images/buddhist/manjusri.jpg" alt="" className="w-full h-full object-cover" />
+                    </div>
+                  )}
+                  <div className="text-6xl mb-4">{item.icon}</div>
+                  <div className="text-4xl font-bold text-accent/30 mb-4">{item.step}</div>
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground">{item.desc}</p>
+                  <CheckCircle2 className="w-8 h-8 text-accent mx-auto mt-6" />
                 </CardContent>
               </Card>
             ))}
@@ -281,42 +363,38 @@ export default function Home() {
         </div>
       </section>
 
+
+
       {/* 页脚 */}
-      <footer className="bg-background border-t border-border py-12">
+      <footer className="bg-card/50 backdrop-blur-md border-t border-accent/20 py-12 relative z-10">
         <div className="container">
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <h4 className="font-bold mb-4 text-accent">关于我们</h4>
+              <h3 className="font-bold text-xl gradient-text mb-4">{t('home.footer_about')}</h3>
               <p className="text-sm text-muted-foreground">
-                源・华渡致力于传承东方文化，为全球华人提供正统的开光饰品和命理服务。
+                {t('home.footer_about_desc')}
               </p>
             </div>
             <div>
-              <h4 className="font-bold mb-4 text-accent">产品分类</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="/products?category=jewelry"><a className="hover:text-accent transition-colors">开光饰品</a></Link></li>
-                <li><Link href="/products?category=blessing"><a className="hover:text-accent transition-colors">祈福服务</a></Link></li>
-                <li><Link href="/products?category=report"><a className="hover:text-accent transition-colors">命理报告</a></Link></li>
+              <h3 className="font-bold text-lg mb-4">{t('home.footer_links')}</h3>
+              <ul className="space-y-2 text-sm">
+                <li><Link href="/products"><a className="text-muted-foreground hover:text-accent transition-colors">{t('nav.products')}</a></Link></li>
+                <li><Link href="/about"><a className="text-muted-foreground hover:text-accent transition-colors">{t('nav.about')}</a></Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-bold mb-4 text-accent">客户服务</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="/shipping"><a className="hover:text-accent transition-colors">配送政策</a></Link></li>
-                <li><Link href="/returns"><a className="hover:text-accent transition-colors">退换货政策</a></Link></li>
-                <li><Link href="/faq"><a className="hover:text-accent transition-colors">常见问题</a></Link></li>
-              </ul>
+              <h3 className="font-bold text-lg mb-4">{t('home.footer_contact')}</h3>
+              <p className="text-sm text-muted-foreground">Email: info@cneraart.com</p>
             </div>
             <div>
-              <h4 className="font-bold mb-4 text-accent">联系我们</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>邮箱: info@cneraart.com</li>
-                <li>微信: cneraart</li>
-              </ul>
+              <h3 className="font-bold text-lg mb-4">Follow Us</h3>
+              <div className="flex gap-4">
+                {/* Social media icons */}
+              </div>
             </div>
           </div>
-          <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2026 源・华渡 (cneraart). All rights reserved.</p>
+          <div className="border-t border-accent/20 mt-8 pt-8 text-center text-sm text-muted-foreground">
+            <p>© 2026 源・华渡 Yuan·Huadu. {t('home.footer_copyright')}</p>
           </div>
         </div>
       </footer>

@@ -296,6 +296,11 @@ export const appRouter = router({
 
   // ============= 管理员功能 =============
   admin: router({
+    // 获取统计数据
+    getStats: adminProcedure.query(async () => {
+      const stats = await db.getAdminStats();
+      return stats;
+    }),
     // 产品管理
     products: router({
       // 获取所有产品(包括草稿)
@@ -308,8 +313,17 @@ export const appRouter = router({
           })
         )
         .query(async ({ input }) => {
-          // TODO: 实现管理员产品列表查询
-          return [];
+          const products = await db.getAllProductsForAdmin(input);
+          
+          // 获取每个产品的图片
+          const productsWithImages = await Promise.all(
+            products.map(async (product) => {
+              const images = await db.getProductImages(product.id);
+              return { ...product, images };
+            })
+          );
+          
+          return productsWithImages;
         }),
 
       // 创建产品
