@@ -9,19 +9,19 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* 导航栏 - 枣红色 */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#8B1A1A] shadow-lg">
+      {/* 导航栏 - 明亮金黄色 */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-amber-500 to-yellow-500 shadow-lg">
         <div className="container mx-auto px-6">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/">
               <a className="flex items-center gap-3 group">
-                <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                  <Sparkles className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                  <Sparkles className="w-6 h-6 text-amber-600" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xl font-bold text-amber-400">源 · 华渡</span>
-                  <span className="text-xs text-amber-300 tracking-widest">YUAN · HUADU</span>
+                  <span className="text-xl font-bold text-white">源 · 华渡</span>
+                  <span className="text-xs text-amber-100 tracking-widest">YUAN · HUADU</span>
                 </div>
               </a>
             </Link>
@@ -29,22 +29,22 @@ export default function Home() {
             {/* 导航链接 */}
             <div className="hidden md:flex items-center gap-8">
               <Link href="/products">
-                <a className="text-amber-300 hover:text-amber-100 font-medium transition-colors">
+                <a className="text-white hover:text-amber-100 font-medium transition-colors">
                   {t('nav.products')}
                 </a>
               </Link>
               <Link href="/about">
-                <a className="text-amber-300 hover:text-amber-100 font-medium transition-colors">
+                <a className="text-white hover:text-amber-100 font-medium transition-colors">
                   {t('nav.about')}
                 </a>
               </Link>
               <Link href="/cart">
-                <a className="text-amber-300 hover:text-amber-100 font-medium transition-colors">
+                <a className="text-white hover:text-amber-100 font-medium transition-colors">
                   {t('nav.cart')}
                 </a>
               </Link>
               <Link href="/account">
-                <a className="text-amber-300 hover:text-amber-100 font-medium transition-colors">
+                <a className="text-white hover:text-amber-100 font-medium transition-colors">
                   {t('nav.account')}
                 </a>
               </Link>
@@ -53,251 +53,121 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero区域 - 使用真实金色佛塔照片 */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden mt-20">
-        {/* 背景图片 - 金色佛塔 */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ROpxIzavxRIvCgNk.jpg)',
-            backgroundPosition: 'center center'
-          }}
-        />
-        
-        {/* 深色渐变遮罩 */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/80" />
-        
-        {/* 内容 */}
-        <div className="relative z-10 text-center px-6 max-w-4xl">
+      {/* Hero区域 - 五台山寺庙背景 */}
+      <section 
+        className="relative h-screen flex items-center justify-center text-center pt-20"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url('https://d3hxnbuh28d4ew.cloudfront.net/3c1d0f8a-d0b7-4e9a-8e42-c6e0f8b9a7d2/fojiaowutaishan1(16).jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
+          {/* 金色装饰线 */}
           <div className="flex items-center justify-center gap-4 mb-8">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-400"></div>
+            <div className="h-px w-24 bg-gradient-to-r from-transparent to-amber-400"></div>
             <Sparkles className="w-8 h-8 text-amber-400 animate-pulse" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-400"></div>
+            <div className="h-px w-24 bg-gradient-to-l from-transparent to-amber-400"></div>
           </div>
-          
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight drop-shadow-2xl">
-            {t('home.hero_title')}
+
+          <h1 className="text-6xl md:text-7xl font-bold text-white mb-6 drop-shadow-2xl" style={{ fontFamily: "'Brush Script MT', cursive" }}>
+            Ancient Eastern Blessings
           </h1>
-          
-          <p className="text-xl md:text-2xl text-gray-100 mb-4 font-light tracking-wide drop-shadow-lg">
-            {t('home.hero_subtitle')}
+          <p className="text-xl md:text-2xl text-amber-100 font-light tracking-wide drop-shadow-lg">
+            Protecting Your Life Journey · Passing Down Thousand-Year Wisdom
           </p>
         </div>
 
-        {/* 底部装饰波浪 */}
-        <div className="absolute bottom-0 left-0 right-0">
-          <svg viewBox="0 0 1440 120" className="w-full h-auto">
-            <path 
-              fill="#1a1410" 
-              d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"
-            />
-          </svg>
-        </div>
+        {/* 底部渐变遮罩 */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-zinc-900 to-transparent"></div>
       </section>
 
-      {/* 开光流程展示区域 - 简化为3步 */}
-      <section className="py-24 bg-gradient-to-b from-[#1a1410] via-[#2a1f18] to-[#1a1410]">
+      {/* 服务卡片区域 - 明亮金黄色系 */}
+      <section className="py-24 bg-gradient-to-b from-zinc-900 to-zinc-800">
         <div className="container mx-auto px-6">
-          {/* 标题 */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-amber-400 mb-4">
-              五台山开光仪轨
-            </h2>
-            <p className="text-lg text-amber-200/80 max-w-3xl mx-auto font-light leading-relaxed">
-              文殊菩萨道场 · 千年传承
-            </p>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-400"></div>
+              <Sparkles className="w-6 h-6 text-amber-400" />
+              <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-400"></div>
+            </div>
+            <h2 className="text-4xl font-bold text-amber-400 mb-4">Our Sacred Services</h2>
+            <p className="text-amber-200 text-lg font-light">Ancient Eastern Wisdom · Modern Spiritual Guidance</p>
           </div>
 
-          {/* 流程步骤 - 3步 */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* 步骤1: 圣水净化 */}
-            <div className="group">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
-                <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/MoLPIPAKnackyMOl.jpg"
-                  alt="圣水净化"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
-                    <span className="text-white font-bold text-xl">1</span>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-xl font-light text-amber-300 mb-2">圣水净化</h3>
-              <p className="text-sm text-amber-200/60 font-light leading-relaxed">香水沐浴,涤除尘垢</p>
-            </div>
-
-            {/* 步骤2: 诵经加持 */}
-            <div className="group">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
-                <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/NyjdrRqleQWwamar.jpg"
-                  alt="诵经加持"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
-                    <span className="text-white font-bold text-xl">2</span>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-xl font-light text-amber-300 mb-2">诵经加持</h3>
-              <p className="text-sm text-amber-200/60 font-light leading-relaxed">高僧诵经,注入灵性</p>
-            </div>
-
-            {/* 步骤3: 圣地灌顶 */}
-            <div className="group">
-              <div className="relative aspect-[3/4] rounded-2xl overflow-hidden mb-6 shadow-2xl">
-                <img 
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ROpxIzavxRIvCgNk.jpg"
-                  alt="圣地灌顶"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center mb-4 shadow-lg">
-                    <span className="text-white font-bold text-xl">3</span>
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-xl font-light text-amber-300 mb-2">圣地灌顶</h3>
-              <p className="text-sm text-amber-200/60 font-light leading-relaxed">五台山能量加持</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 服务区域 - 统一金黄色系 */}
-      <section className="py-24 relative overflow-hidden">
-        {/* 背景图片 - 佛像虚化 */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center opacity-10"
-          style={{
-            backgroundImage: 'url(https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/MoLPIPAKnackyMOl.jpg)',
-            filter: 'blur(8px)'
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a1410] via-[#2a1f18]/95 to-[#1a1410]" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          {/* 标题 */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-amber-400 mb-4">
-              {t('home.services_title')}
-            </h2>
-            <p className="text-lg text-amber-200/80 max-w-2xl mx-auto font-light">
-              {t('home.services_subtitle')}
-            </p>
-          </div>
-
-          {/* 服务卡片网格 - 3列 - 统一金黄色系 */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            
-            {/* 卡片1: 开光法物 */}
-            <Link href="/products">
-              <a className="block group">
-                <div className="relative h-full bg-gradient-to-br from-amber-900/30 to-yellow-900/30 backdrop-blur-xl border border-amber-500/40 rounded-2xl p-8 hover:scale-105 hover:border-amber-400/70 transition-all duration-500 shadow-2xl">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-                  
-                  <div className="relative mb-6 flex justify-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
-                      <span className="text-4xl">🪷</span>
-                    </div>
+            {/* 开光法物卡片 - 明亮金黄色 */}
+            <Link href="/products?category=blessed">
+              <a className="group relative bg-gradient-to-br from-amber-400/20 to-yellow-500/20 backdrop-blur-sm rounded-2xl p-8 border border-amber-400/30 hover:border-amber-400/60 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-400/0 to-yellow-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-yellow-500 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg shadow-amber-500/50 group-hover:shadow-amber-500/70 transition-shadow">
+                    <Sparkles className="w-8 h-8 text-white" />
                   </div>
                   
-                  <h3 className="text-2xl font-light text-amber-100 mb-3 text-center tracking-wide">
-                    {t('home.service_blessed_items')}
-                  </h3>
+                  <h3 className="text-2xl font-bold text-amber-300 mb-3 text-center">Blessed Artifacts</h3>
+                  <p className="text-amber-200/80 text-center mb-6 font-light">Sacred items consecrated by Mount Wutai monks</p>
                   
-                  <p className="text-amber-200/70 text-center leading-relaxed font-light text-sm">
-                    {t('home.service_blessed_items_desc')}
-                  </p>
-                  
-                  <div className="mt-6 text-center">
-                    <span className="inline-flex items-center gap-2 text-amber-300 font-light group-hover:gap-4 transition-all">
-                      {t('home.cta_products')}
-                      <span className="text-xl">→</span>
+                  <div className="text-center">
+                    <span className="text-amber-400 font-medium group-hover:text-amber-300 transition-colors">
+                      Explore Blessed Items →
                     </span>
                   </div>
                 </div>
               </a>
             </Link>
 
-            {/* 卡片2: 命理服务合集 - 改为金色系 */}
-            <div className="relative group">
-              <div className="relative h-full bg-gradient-to-br from-amber-800/30 to-orange-900/30 backdrop-blur-xl border border-amber-500/40 rounded-2xl p-8 hover:scale-105 hover:border-amber-400/70 transition-all duration-500 shadow-2xl">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-                
-                <div className="relative mb-6 flex justify-center">
-                  <div className="w-20 h-20 bg-gradient-to-br from-amber-600 to-orange-700 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
-                    <span className="text-4xl">📿</span>
-                  </div>
+            {/* 命理服务卡片 - 明亮琥珀色 */}
+            <div className="group relative bg-gradient-to-br from-yellow-400/20 to-amber-500/20 backdrop-blur-sm rounded-2xl p-8 border border-yellow-400/30 hover:border-yellow-400/60 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/0 to-amber-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              
+              <div className="relative z-10">
+                <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg shadow-yellow-500/50 group-hover:shadow-yellow-500/70 transition-shadow">
+                  <Eye className="w-8 h-8 text-white" />
                 </div>
                 
-                <h3 className="relative text-2xl font-light text-amber-100 mb-6 text-center tracking-wide">
-                  {t('home.service_fortune_collection')}
-                </h3>
+                <h3 className="text-2xl font-bold text-yellow-300 mb-6 text-center">Fortune Services</h3>
                 
-                {/* 子服务列表 */}
                 <div className="space-y-4">
-                  <Link href="/fortune">
-                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-amber-500/20 hover:border-amber-400/40">
+                  <Link href="/fortune/destiny">
+                    <a className="block bg-amber-900/30 hover:bg-amber-900/50 rounded-xl p-4 border border-amber-600/20 hover:border-amber-500/40 transition-all">
                       <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 mt-1">
-                          <div className="w-10 h-10 bg-gradient-to-br from-amber-600 to-amber-800 rounded-lg flex items-center justify-center shadow-lg">
-                            <Hand className="w-5 h-5 text-white" strokeWidth={1.5} />
-                          </div>
+                        <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Hand className="w-5 h-5 text-white" />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-light text-amber-100 mb-1 text-sm">
-                            {t('home.service_fortune_short')}
-                          </h4>
-                          <p className="text-xs text-amber-200/60 font-light leading-relaxed">
-                            {t('home.service_fortune_desc')}
-                          </p>
+                        <div>
+                          <h4 className="text-amber-200 font-semibold mb-1">Destiny Analysis</h4>
+                          <p className="text-amber-300/70 text-sm font-light">Ancient Chinese wisdom for life path and fortune guidance</p>
                         </div>
                       </div>
                     </a>
                   </Link>
 
-                  <Link href="/fortune">
-                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-amber-500/20 hover:border-amber-400/40">
+                  <Link href="/fortune/palm">
+                    <a className="block bg-amber-900/30 hover:bg-amber-900/50 rounded-xl p-4 border border-amber-600/20 hover:border-amber-500/40 transition-all">
                       <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 mt-1">
-                          <div className="w-10 h-10 bg-gradient-to-br from-orange-600 to-orange-800 rounded-lg flex items-center justify-center shadow-lg">
-                            <Eye className="w-5 h-5 text-white" strokeWidth={1.5} />
-                          </div>
+                        <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Eye className="w-5 h-5 text-white" />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-light text-amber-100 mb-1 text-sm">
-                            {t('home.service_palmistry_short')}
-                          </h4>
-                          <p className="text-xs text-amber-200/60 font-light leading-relaxed">
-                            {t('home.service_palmistry_desc')}
-                          </p>
+                        <div>
+                          <h4 className="text-amber-200 font-semibold mb-1">Palm & Face Reading</h4>
+                          <p className="text-amber-300/70 text-sm font-light">Ancient wisdom through hand and facial analysis</p>
                         </div>
                       </div>
                     </a>
                   </Link>
 
-                  <Link href="/fortune">
-                    <a className="block p-4 bg-white/5 backdrop-blur-sm rounded-xl hover:bg-white/10 transition-all border border-amber-500/20 hover:border-amber-400/40">
+                  <Link href="/fortune/fengshui">
+                    <a className="block bg-amber-900/30 hover:bg-amber-900/50 rounded-xl p-4 border border-amber-600/20 hover:border-amber-500/40 transition-all">
                       <div className="flex items-start gap-3">
-                        <div className="flex-shrink-0 mt-1">
-                          <div className="w-10 h-10 bg-gradient-to-br from-yellow-600 to-yellow-800 rounded-lg flex items-center justify-center shadow-lg">
-                            <MapPin className="w-5 h-5 text-white" strokeWidth={1.5} />
-                          </div>
+                        <div className="w-10 h-10 bg-amber-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <MapPin className="w-5 h-5 text-white" />
                         </div>
-                        <div className="flex-1 min-w-0">
-                          <h4 className="font-light text-amber-100 mb-1 text-sm">
-                            {t('home.service_fengshui_short')}
-                          </h4>
-                          <p className="text-xs text-amber-200/60 font-light leading-relaxed">
-                            {t('home.service_fengshui_desc')}
-                          </p>
+                        <div>
+                          <h4 className="text-amber-200 font-semibold mb-1">Feng Shui Analysis</h4>
+                          <p className="text-amber-300/70 text-sm font-light">Harmonize your living space with cosmic energy</p>
                         </div>
                       </div>
                     </a>
@@ -306,134 +176,189 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 卡片3: 代祈福服务 - 改为金色系 */}
-            <Link href="/products?category=blessing">
-              <a className="block group">
-                <div className="relative h-full bg-gradient-to-br from-yellow-900/30 to-amber-900/30 backdrop-blur-xl border border-amber-500/40 rounded-2xl p-8 hover:scale-105 hover:border-amber-400/70 transition-all duration-500 shadow-2xl">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-amber-400/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700"></div>
-                  
-                  <div className="relative mb-6 flex justify-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-yellow-600 to-amber-700 rounded-full flex items-center justify-center shadow-xl group-hover:rotate-12 transition-transform duration-500">
-                      <Flame className="w-10 h-10 text-white" strokeWidth={1.5} />
-                    </div>
+            {/* 代祈福卡片 - 明亮金色 */}
+            <Link href="/products?category=prayer">
+              <a className="group relative bg-gradient-to-br from-amber-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl p-8 border border-amber-500/30 hover:border-amber-500/60 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-amber-600/20">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 to-orange-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                
+                <div className="relative z-10">
+                  <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg shadow-amber-600/50 group-hover:shadow-amber-600/70 transition-shadow">
+                    <Flame className="w-8 h-8 text-white" />
                   </div>
                   
-                  <h3 className="text-2xl font-light text-amber-100 mb-3 text-center tracking-wide">
-                    {t('home.service_blessing')}
-                  </h3>
+                  <h3 className="text-2xl font-bold text-amber-300 mb-3 text-center">Prayer Services</h3>
+                  <p className="text-amber-200/80 text-center mb-6 font-light">Lamp offerings, incense, and blessing rituals</p>
                   
-                  <p className="text-amber-200/70 text-center leading-relaxed font-light text-sm">
-                    {t('home.service_blessing_desc')}
-                  </p>
-                  
-                  <div className="mt-6 text-center">
-                    <span className="inline-flex items-center gap-2 text-amber-300 font-light group-hover:gap-4 transition-all">
-                      {t('home.cta_products')}
-                      <span className="text-xl">→</span>
+                  <div className="text-center">
+                    <span className="text-amber-400 font-medium group-hover:text-amber-300 transition-colors">
+                      Explore Blessed Items →
                     </span>
                   </div>
                 </div>
               </a>
             </Link>
-
           </div>
         </div>
       </section>
 
-      {/* 精选产品区域 */}
-      <section className="py-24 bg-gradient-to-b from-[#1a1410] to-[#2a1f18]">
+      {/* 产品区域 - 提前到这里 */}
+      <section className="py-24 bg-gradient-to-b from-zinc-800 to-zinc-900">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <div className="h-px w-12 bg-gradient-to-r from-transparent to-amber-500"></div>
-              <Sparkles className="w-6 h-6 text-amber-500" />
-              <div className="h-px w-12 bg-gradient-to-l from-transparent to-amber-500"></div>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="h-px w-16 bg-gradient-to-r from-transparent to-amber-400"></div>
+              <Sparkles className="w-6 h-6 text-amber-400" />
+              <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-400"></div>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-amber-400 mb-4">
-              {t('home.featured_title')}
-            </h2>
-            <p className="text-lg text-amber-200/80 max-w-2xl mx-auto font-light">
-              {t('home.featured_subtitle')}
-            </p>
+            <h2 className="text-4xl font-bold text-amber-400 mb-4">Featured Blessed Items</h2>
+            <p className="text-amber-200 text-lg font-light">Each piece is blessed at Wutai Mountain, carrying the power of protection</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-            {featuredProducts && featuredProducts.length > 0 ? (
-              featuredProducts.map((product) => (
-                <Link key={product.id} href={`/products/${product.id}`}>
-                  <a className="block group">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-amber-500/20 hover:border-amber-500/50 transition-all duration-500 hover:scale-105 shadow-2xl">
-                      <div className="relative aspect-square overflow-hidden bg-gray-800">
-                        {product.images && product.images.length > 0 ? (
-                          <img
-                            src={typeof product.images[0] === 'string' ? product.images[0] : product.images[0].url}
-                            alt={product.name}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center">
-                            <Sparkles className="w-16 h-16 text-gray-600" />
-                          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            {featuredProducts?.map((product) => (
+              <Link key={product.id} href={`/products/${product.id}`}>
+                <a className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-amber-500/20 transition-all duration-300 hover:-translate-y-2 border-2 border-amber-400/30 hover:border-amber-400/60">
+                  {/* 折扣标签 - 明亮红色 */}
+                  {product.salePrice && Number(product.salePrice) < Number(product.regularPrice) && (
+                    <div className="absolute top-4 left-4 z-10 bg-gradient-to-r from-red-500 to-red-600 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
+                      -{Math.round((1 - Number(product.salePrice) / Number(product.regularPrice)) * 100)}%
+                    </div>
+                  )}
+
+                  {/* 产品图片 */}
+                  <div className="aspect-square overflow-hidden bg-gradient-to-br from-amber-50 to-yellow-50">
+                    <img
+                      src={product.images?.[0]?.url || "/placeholder-product.jpg"}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+
+                  {/* 产品信息 */}
+                  <div className="p-6 bg-gradient-to-br from-amber-50 to-yellow-50">
+                    <h3 className="text-lg font-bold text-zinc-800 mb-3 group-hover:text-amber-700 transition-colors">
+                      {product.name}
+                    </h3>
+
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-baseline gap-2">
+                        <span className="text-2xl font-bold text-amber-600">
+                          ${product.salePrice ? Number(product.salePrice).toFixed(2) : Number(product.regularPrice).toFixed(2)}
+                        </span>
+                        {product.salePrice && Number(product.salePrice) < Number(product.regularPrice) && (
+                          <span className="text-sm text-zinc-400 line-through">
+                            ${Number(product.regularPrice).toFixed(2)}
+                          </span>
                         )}
-                        {product.salePrice && product.regularPrice && Number(product.salePrice) < Number(product.regularPrice) && (
-                          <div className="absolute top-4 right-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold shadow-lg">
-                            -{Math.round((1 - Number(product.salePrice) / Number(product.regularPrice)) * 100)}%
-                          </div>
-                        )}
-                      </div>
-                      
-                      <div className="p-6">
-                        <h3 className="font-light text-lg text-amber-100 mb-2 group-hover:text-amber-400 transition-colors line-clamp-2">
-                          {product.name}
-                        </h3>
-                        <div className="flex items-baseline gap-2">
-                          {product.salePrice && product.regularPrice && Number(product.salePrice) < Number(product.regularPrice) ? (
-                            <>
-                              <span className="text-2xl font-bold text-amber-400">
-                                ${Number(product.salePrice).toFixed(2)}
-                              </span>
-                              <span className="text-sm text-gray-400 line-through">
-                                ${Number(product.regularPrice).toFixed(2)}
-                              </span>
-                            </>
-                          ) : product.regularPrice ? (
-                            <span className="text-2xl font-bold text-amber-400">
-                              ${Number(product.regularPrice).toFixed(2)}
-                            </span>
-                          ) : null}
-                        </div>
                       </div>
                     </div>
-                  </a>
-                </Link>
-              ))
-            ) : (
-              <div className="col-span-full text-center text-amber-200/60 py-12">
-                {t('products.no_results')}
-              </div>
-            )}
-          </div>
+                  </div>
 
-          {featuredProducts && featuredProducts.length > 0 && (
-            <div className="text-center mt-12">
-              <Link href="/products">
-                <a className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-full font-light hover:from-amber-500 hover:to-orange-500 transition-all shadow-xl hover:shadow-2xl hover:scale-105">
-                  {t('home.cta_products')}
-                  <span className="text-xl">→</span>
+                  {/* 金色光晕效果 */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-amber-400/0 via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity pointer-events-none"></div>
                 </a>
               </Link>
-            </div>
-          )}
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link href="/products">
+              <a className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-yellow-500 text-white px-8 py-4 rounded-full font-semibold hover:from-amber-600 hover:to-yellow-600 transition-all shadow-lg hover:shadow-xl hover:shadow-amber-500/50">
+                Explore Blessed Items
+                <Sparkles className="w-5 h-5" />
+              </a>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-[#1a1410] border-t border-amber-500/20 py-12">
+      {/* 开光流程 - 横向滚动小卡片 */}
+      <section className="py-24 bg-gradient-to-b from-zinc-900 to-black">
         <div className="container mx-auto px-6">
-          <div className="text-center text-amber-200/60 font-light">
-            <p className="mb-2">© 2024 源·华渡 (Yuan Huadu)</p>
-            <p className="text-sm">{t('home.footer_about_desc')}</p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-amber-400 mb-3">五台山开光仪轨</h2>
+            <p className="text-amber-200 font-light">文殊菩萨道场 · 千年传承</p>
           </div>
+
+          {/* 横向滚动容器 */}
+          <div className="overflow-x-auto pb-6 scrollbar-hide">
+            <div className="flex gap-6 min-w-max px-6">
+              {/* 步骤1 */}
+              <div className="w-72 flex-shrink-0 bg-gradient-to-br from-amber-900/30 to-yellow-900/30 backdrop-blur-sm rounded-xl overflow-hidden border border-amber-500/30 hover:border-amber-500/60 transition-all hover:scale-105">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src="https://d3hxnbuh28d4ew.cloudfront.net/3c1d0f8a-d0b7-4e9a-8e42-c6e0f8b9a7d2/hh1(5).jpg"
+                    alt="圣水净化"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold mb-3">
+                    1
+                  </div>
+                  <h3 className="text-lg font-bold text-amber-300 mb-2">圣水净化</h3>
+                  <p className="text-amber-200/70 text-sm font-light">香水沐浴,涤除尘垢</p>
+                </div>
+              </div>
+
+              {/* 步骤2 */}
+              <div className="w-72 flex-shrink-0 bg-gradient-to-br from-amber-900/30 to-yellow-900/30 backdrop-blur-sm rounded-xl overflow-hidden border border-amber-500/30 hover:border-amber-500/60 transition-all hover:scale-105">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src="https://d3hxnbuh28d4ew.cloudfront.net/3c1d0f8a-d0b7-4e9a-8e42-c6e0f8b9a7d2/0%E4%BD%9B%E6%B4%BB%E5%8A%A8%E5%9C%BA%E6%99%AF2(11).jpg"
+                    alt="诵经加持"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold mb-3">
+                    2
+                  </div>
+                  <h3 className="text-lg font-bold text-amber-300 mb-2">诵经加持</h3>
+                  <p className="text-amber-200/70 text-sm font-light">高僧诵经,注入灵性</p>
+                </div>
+              </div>
+
+              {/* 步骤3 */}
+              <div className="w-72 flex-shrink-0 bg-gradient-to-br from-amber-900/30 to-yellow-900/30 backdrop-blur-sm rounded-xl overflow-hidden border border-amber-500/30 hover:border-amber-500/60 transition-all hover:scale-105">
+                <div className="aspect-video overflow-hidden">
+                  <img
+                    src="https://d3hxnbuh28d4ew.cloudfront.net/3c1d0f8a-d0b7-4e9a-8e42-c6e0f8b9a7d2/fojiaowutaishan1(16).jpg"
+                    alt="圣地灌顶"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="w-8 h-8 bg-amber-500 rounded-full flex items-center justify-center text-white font-bold mb-3">
+                    3
+                  </div>
+                  <h3 className="text-lg font-bold text-amber-300 mb-2">圣地灌顶</h3>
+                  <p className="text-amber-200/70 text-sm font-light">五台山能量加持</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 滚动提示 */}
+          <div className="text-center mt-6">
+            <p className="text-amber-300/50 text-sm font-light">← 左右滑动查看完整流程 →</p>
+          </div>
+        </div>
+      </section>
+
+      {/* 页脚 */}
+      <footer className="bg-black py-12 border-t border-amber-900/30">
+        <div className="container mx-auto px-6 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <Sparkles className="w-6 h-6 text-amber-500" />
+            <span className="text-xl font-bold text-amber-400">源 · 华渡</span>
+          </div>
+          <p className="text-amber-200/60 text-sm font-light">
+            Ancient Eastern Blessings · Protecting Your Life Journey
+          </p>
+          <p className="text-amber-200/40 text-xs mt-4">
+            © 2024 Yuan Huadu. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
