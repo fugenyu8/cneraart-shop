@@ -98,14 +98,14 @@ export default function Home() {
             {/* 开光认证标识 */}
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/80 backdrop-blur-md rounded-full border border-accent/30 shadow-lg">
               <Award className="w-4 h-4 text-accent" />
-              <span className="text-accent text-sm font-medium">Blessed by Venerable Monks at Sacred Mount Wutai</span>
+              <span className="text-[oklch(90%_0.18_85)] text-sm font-medium drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">Blessed by Venerable Monks at Sacred Mount Wutai</span>
             </div>
 
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              <span className="text-accent" style={{ fontFamily: "'Noto Serif SC', serif" }}>{t('home.hero_title')}</span>
+              <span className="text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]" style={{ fontFamily: "'Noto Serif SC', serif" }}>{t('home.hero_title')}</span>
             </h1>
 
-            <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-gray-100 max-w-3xl mx-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
               {t('home.hero_subtitle')}
             </p>
 
@@ -131,8 +131,8 @@ export default function Home() {
                 <Card key={i} className="bg-card/60 backdrop-blur-md border-accent/20 hover:border-accent/50 transition-all">
                   <CardContent className="p-6 text-center">
                     <item.icon className="w-10 h-10 text-accent mx-auto mb-3" />
-                    <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                    <h3 className="font-bold text-lg mb-2 text-white">{item.title}</h3>
+                    <p className="text-sm text-gray-200">{item.desc}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -165,8 +165,8 @@ export default function Home() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Sparkles className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-accent">{t('home.service_blessed_items')}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{t('home.service_blessed_items_desc')}</p>
+                <h3 className="text-xl font-bold mb-3 text-[oklch(90%_0.18_85)]">{t('home.service_blessed_items')}</h3>
+                <p className="text-sm text-gray-200 mb-4">{t('home.service_blessed_items_desc')}</p>
                 <Link href="/products">
                   <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
                     {t('common.learn_more')}
@@ -181,8 +181,8 @@ export default function Home() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Star className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-accent">{t('home.service_fortune')}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{t('home.service_fortune_desc')}</p>
+                <h3 className="text-xl font-bold mb-3 text-[oklch(90%_0.18_85)]">{t('home.service_fortune')}</h3>
+                <p className="text-sm text-gray-200 mb-4">{t('home.service_fortune_desc')}</p>
                 <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
                   {t('common.learn_more')}
                 </Button>
@@ -195,8 +195,8 @@ export default function Home() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <User className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-accent">{t('home.service_palmistry')}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{t('home.service_palmistry_desc')}</p>
+                <h3 className="text-xl font-bold mb-3 text-[oklch(90%_0.18_85)]">{t('home.service_palmistry')}</h3>
+                <p className="text-sm text-gray-200 mb-4">{t('home.service_palmistry_desc')}</p>
                 <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
                   {t('common.learn_more')}
                 </Button>
@@ -209,8 +209,8 @@ export default function Home() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <HomeIcon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-accent">{t('home.service_fengshui')}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{t('home.service_fengshui_desc')}</p>
+                <h3 className="text-xl font-bold mb-3 text-[oklch(90%_0.18_85)]">{t('home.service_fengshui')}</h3>
+                <p className="text-sm text-gray-200 mb-4">{t('home.service_fengshui_desc')}</p>
                 <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
                   {t('common.learn_more')}
                 </Button>
@@ -223,8 +223,8 @@ export default function Home() {
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Heart className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-accent">{t('home.service_blessing')}</h3>
-                <p className="text-sm text-muted-foreground mb-4">{t('home.service_blessing_desc')}</p>
+                <h3 className="text-xl font-bold mb-3 text-[oklch(90%_0.18_85)]">{t('home.service_blessing')}</h3>
+                <p className="text-sm text-gray-200 mb-4">{t('home.service_blessing_desc')}</p>
                 <Button variant="outline" size="sm" className="border-accent/50 hover:bg-accent/10">
                   {t('common.learn_more')}
                 </Button>
@@ -241,7 +241,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold gradient-text glow-text mb-4">
               {t('home.featured_title')}
             </h2>
-            <p className="text-base text-muted-foreground text-center max-w-2xl mx-auto">
+            <p className="text-base text-gray-300 text-center max-w-2xl mx-auto">
               {t('home.featured_subtitle')}
             </p>
           </div>
