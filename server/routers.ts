@@ -339,12 +339,58 @@ export const appRouter = router({
             categoryId: z.number().optional(),
             sku: z.string().optional(),
             stock: z.number().default(0),
+            lowStockThreshold: z.number().optional(),
             status: z.enum(["draft", "published", "archived"]).default("draft"),
+            featured: z.boolean().optional(),
+            blessingTemple: z.string().optional(),
+            blessingMaster: z.string().optional(),
+            blessingDate: z.date().optional(),
+            blessingDescription: z.string().optional(),
+            images: z.array(
+              z.object({
+                url: z.string(),
+                fileKey: z.string(),
+                isPrimary: z.boolean(),
+                displayOrder: z.number(),
+              })
+            ).optional(),
           })
         )
         .mutation(async ({ input }) => {
-          // TODO: 实现产品创建
-          return { success: true };
+          // 创建产品
+          const productId = await db.createProduct({
+            name: input.name,
+            slug: input.slug,
+            description: input.description,
+            shortDescription: input.shortDescription,
+            regularPrice: input.regularPrice,
+            salePrice: input.salePrice,
+            sku: input.sku,
+            stock: input.stock,
+            lowStockThreshold: input.lowStockThreshold,
+            categoryId: input.categoryId,
+            status: input.status,
+            featured: input.featured,
+            blessingTemple: input.blessingTemple,
+            blessingMaster: input.blessingMaster,
+            blessingDate: input.blessingDate,
+            blessingDescription: input.blessingDescription,
+          });
+
+          // 创建产品图片
+          if (input.images && input.images.length > 0) {
+            await db.createProductImages(
+              input.images.map((img) => ({
+                productId,
+                url: img.url,
+                fileKey: img.fileKey,
+                isPrimary: img.isPrimary,
+                displayOrder: img.displayOrder,
+              }))
+            );
+          }
+
+          return { success: true, productId };
         }),
     }),
 
@@ -359,9 +405,19 @@ export const appRouter = router({
             offset: z.number().min(0).default(0),
           })
         )
-        .query(async () => {
-          // TODO: 实现管理员订单列表查询
-          return [];
+        .query(async ({ input }) => {
+          const orders = await db.getAllOrdersForAdmin(input);
+          
+          // 获取每个订单的用户和订单项
+          const ordersWithDetails = await Promise.all(
+            orders.map(async (order) => {
+              const user = await db.getUserById(order.userId);
+              const items = await db.getOrderItems(order.id);
+              return { ...order, user, items };
+            })
+          );
+          
+          return ordersWithDetails;
         }),
 
       // 更新订单状态

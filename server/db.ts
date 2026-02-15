@@ -617,3 +617,96 @@ export async function getAllProductsForAdmin(options?: {
 
   return await query;
 }
+
+export async function createProduct(productData: {
+  name: string;
+  slug: string;
+  description?: string;
+  shortDescription?: string;
+  regularPrice: number;
+  salePrice?: number;
+  sku?: string;
+  stock: number;
+  lowStockThreshold?: number;
+  categoryId?: number;
+  status: "draft" | "published" | "archived";
+  featured?: boolean;
+  blessingTemple?: string;
+  blessingMaster?: string;
+  blessingDate?: Date;
+  blessingDescription?: string;
+}): Promise<number> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const [result] = await db.insert(products).values({
+    name: productData.name,
+    slug: productData.slug,
+    description: productData.description,
+    shortDescription: productData.shortDescription,
+    regularPrice: productData.regularPrice.toString(),
+    salePrice: productData.salePrice?.toString(),
+    sku: productData.sku,
+    stock: productData.stock,
+    lowStockThreshold: productData.lowStockThreshold,
+    categoryId: productData.categoryId,
+    status: productData.status,
+    featured: productData.featured || false,
+    blessingTemple: productData.blessingTemple,
+    blessingMaster: productData.blessingMaster,
+    blessingDate: productData.blessingDate,
+    blessingDescription: productData.blessingDescription,
+  });
+
+  return Number(result.insertId);
+}
+
+export async function createProductImages(images: Array<{
+  productId: number;
+  url: string;
+  fileKey: string;
+  isPrimary: boolean;
+  displayOrder: number;
+}>): Promise<void> {
+  const db = await getDb();
+  if (!db) return;
+
+  for (const image of images) {
+    await db.insert(productImages).values({
+      productId: image.productId,
+      url: image.url,
+      fileKey: image.fileKey,
+      isPrimary: image.isPrimary,
+      displayOrder: image.displayOrder,
+    });
+  }
+}
+
+// ============= 管理员订单管理 =============
+
+export async function getAllOrdersForAdmin(options?: {
+  status?: "pending" | "processing" | "shipped" | "delivered" | "cancelled";
+  limit?: number;
+  offset?: number;
+}): Promise<Order[]> {
+  const db = await getDb();
+  if (!db) return [];
+
+  let query = db.select().from(orders);
+
+  if (options?.status) {
+    query = query.where(eq(orders.status, options.status)) as any;
+  }
+
+  query = query.orderBy(desc(orders.createdAt)) as any;
+
+  if (options?.limit) {
+    query = query.limit(options.limit) as any;
+  }
+
+  if (options?.offset) {
+    query = query.offset(options.offset) as any;
+  }
+
+  return await query;
+}

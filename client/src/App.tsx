@@ -10,6 +10,10 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import AdminDashboard from "./pages/admin/Dashboard";
 import AdminProducts from "./pages/admin/Products";
+import ProductForm from "./pages/admin/ProductForm";
+import Checkout from "./pages/Checkout";
+import AdminOrders from "./pages/admin/Orders";
+import Account from "./pages/Account";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -21,6 +25,11 @@ function Router() {
       <Route path={"/cart"} component={Cart} />
       <Route path={"/admin"} component={AdminDashboard} />
       <Route path={"/admin/products"} component={AdminProducts} />
+      <Route path={"/admin/products/new"} component={ProductForm} />
+      <Route path={"/admin/products/:id/edit"} component={ProductForm} />
+      <Route path={"/checkout"} component={Checkout} />
+      <Route path={"/admin/orders"} component={AdminOrders} />
+      <Route path={"/account"} component={Account} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
