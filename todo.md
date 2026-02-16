@@ -663,3 +663,17 @@ PayPal支付凭证(明天完成)
 - [x] 配置VITE_PAYPAL_CLIENT_ID环境变量
 - [x] 编写vitest测试验证PayPal配置 - paypal.config.test.ts测试通过
 - [x] 测试PayPal支付流程 - PayPal Client ID配置成功,按钮已集成到Checkout页面
+
+## ABOUT US内容替换(2026-02-16)
+- [x] 更新zh.json中的aboutUs.paragraph1为新内容
+- [x] 更新en.json中的aboutUs.paragraph1为新内容
+- [x] 为其他13种语言添加新内容的翻译 - 已更新de/fr/es/it/pt/ru/ja/ko/ar/hi/th/vi/id
+- [ ] 测试所有语言的ABOUT US区域显示
+
+## ABOUT US内容替换(2026-02-16)
+- [x] 更新zh.json中的aboutUs.paragraph1为新内容
+- [x] 更新en.json中的aboutUs.paragraph1为新内容
+- [x] 为其他13种语言添加新内容的翻译 - 已更新de/fr/es/it/pt/ru/ja/ko/ar/hi/th/vi/id
+- [x] 测试所有语言的ABOUT US区域显示 - 已验证葡萄牙语版本,新内容完美显示
+- [x] 修改语言切换函数,添加页面刷新功能(window.location.reload)
+- [x] 所有34个测试通过
