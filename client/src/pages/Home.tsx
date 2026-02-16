@@ -119,23 +119,9 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-2xl">
               ANCIENT EASTERN BLESSINGS
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 font-light drop-shadow-lg">
+            <p className="text-xl md:text-2xl text-white/90 font-light drop-shadow-lg">
               HELPING YOU RESOLVE TROUBLES
             </p>
-
-            {/* 按钮 */}
-            <div className="flex gap-4">
-              <Link href="/products">
-                <button className="bg-white text-[#5D4E37] px-8 py-3 rounded-md hover:bg-[#D4AF37] hover:text-white transition-all font-medium min-h-[44px]">
-                  结缘开光
-                </button>
-              </Link>
-              <Link href="/contact">
-                <button className="border-2 border-white text-white px-8 py-3 rounded-md hover:bg-white hover:text-[#5D4E37] transition-all font-medium min-h-[44px]">
-                  GET IN TOUCH
-                </button>
-              </Link>
-            </div>
           </div>
 
           {/* 轮播指示器 */}
