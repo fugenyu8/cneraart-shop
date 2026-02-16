@@ -156,7 +156,7 @@ export default function Home() {
       {/* 服务卡片区 */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         {/* 五台山背景图 */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-30">
           <img src="/services/wutai-bg.jpg" alt="五台山寺庙" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-6xl mx-auto">
