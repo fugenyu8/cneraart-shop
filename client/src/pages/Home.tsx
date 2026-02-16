@@ -154,51 +154,66 @@ export default function Home() {
       </section>
 
       {/* 服务卡片区 */}
-      <section className="py-12 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {/* 1. 销售开光法物 */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* 1. 开光护佑法物 */}
             <Link href="/products">
-              <div className="group bg-[#FAF8F3] border border-[#D4AF37]/30 rounded-lg p-6 hover:border-[#D4AF37] hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer min-h-[44px] flex flex-col items-center justify-center">
-                <div className="text-4xl mb-3">🙏</div>
-                <h3 className="text-sm font-semibold text-[#5D4E37] text-center">销售开光法物</h3>
-                <p className="text-xs text-gray-600 mt-1 text-center">五台山开光加持</p>
+              <div className="group bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform">
+                    🪷
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-amber-900 mb-2">开光护佑法物</h3>
+                    <p className="text-sm text-amber-700">大师开光加持</p>
+                  </div>
+                </div>
               </div>
             </Link>
 
-            {/* 2. 面相手相 */}
-            <Link href="/fortune">
-              <div className="group bg-[#FAF8F3] border border-[#D4AF37]/30 rounded-lg p-6 hover:border-[#D4AF37] hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer min-h-[44px] flex flex-col items-center justify-center">
-                <div className="text-4xl mb-3">👤</div>
-                <h3 className="text-sm font-semibold text-[#5D4E37] text-center">面相手相</h3>
-                <p className="text-xs text-gray-600 mt-1 text-center">传统命理测算</p>
-              </div>
-            </Link>
-
-            {/* 3. 家居风水 */}
-            <Link href="/fortune">
-              <div className="group bg-[#FAF8F3] border border-[#D4AF37]/30 rounded-lg p-6 hover:border-[#D4AF37] hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer min-h-[44px] flex flex-col items-center justify-center">
-                <div className="text-4xl mb-3">🏠</div>
-                <h3 className="text-sm font-semibold text-[#5D4E37] text-center">家居风水</h3>
-                <p className="text-xs text-gray-600 mt-1 text-center">大师风水布局</p>
-              </div>
-            </Link>
-
-            {/* 4. 命理运势推演 */}
+            {/* 2. 命理运势 */}
             <Link href="/destiny">
-              <div className="group bg-[#FAF8F3] border border-[#D4AF37]/30 rounded-lg p-6 hover:border-[#D4AF37] hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer min-h-[44px] flex flex-col items-center justify-center">
-                <div className="text-4xl mb-3">☘️</div>
-                <h3 className="text-sm font-semibold text-[#5D4E37] text-center">命理运势</h3>
-                <p className="text-xs text-gray-600 mt-1 text-center">八字紫微推演</p>
+              <div className="group bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform">
+                    ☯️
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-purple-900 mb-2">命理运势</h3>
+                    <p className="text-sm text-purple-700">流年运势,破解难题</p>
+                  </div>
+                </div>
               </div>
             </Link>
 
-            {/* 5. 代祈福 */}
+            {/* 3. 面相手相风水 (合并) */}
+            <Link href="/fortune">
+              <div className="group bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform">
+                    🔮
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-blue-900 mb-2">面相手相风水</h3>
+                    <p className="text-sm text-blue-700">古老智慧解读当下</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* 4. 代客祈福 */}
             <Link href="/prayer">
-              <div className="group bg-[#FAF8F3] border border-[#D4AF37]/30 rounded-lg p-6 hover:border-[#D4AF37] hover:shadow-lg hover:-translate-y-1 transition-all cursor-pointer min-h-[44px] flex flex-col items-center justify-center">
-                <div className="text-4xl mb-3">🕯️</div>
-                <h3 className="text-sm font-semibold text-[#5D4E37] text-center">代客祈福</h3>
-                <p className="text-xs text-gray-600 mt-1 text-center">五台山代您祈福</p>
+              <div className="group bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform">
+                    🙏
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-emerald-900 mb-2">代客祈福</h3>
+                    <p className="text-sm text-emerald-700">跨越山海,代传祈愿</p>
+                  </div>
+                </div>
               </div>
             </Link>
           </div>
