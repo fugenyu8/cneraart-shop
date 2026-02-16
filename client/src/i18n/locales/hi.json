@@ -71,7 +71,14 @@
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
     "out_of_stock": "Out of Stock",
-    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary..."
+    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary...",
+    "service_guide": {
+      "title": "📋 सेवा खरीद प्रक्रिया",
+      "step1": "भुगतान के बाद, आपको ऑर्डर पुष्टिकरण ईमेल प्राप्त होगा",
+      "step2": "कृपया ईमेल उत्तर या ऑर्डर नोट्स के माध्यम से फोटो और प्रश्न जमा करें",
+      "step3": "वुताई पर्वत के गुरु 48 घंटों के भीतर विश्लेषण पूरा करेंगे",
+      "step4": "विश्लेषण रिपोर्ट आपको ईमेल के माध्यम से भेजी जाएगी"
+    }
   },
   "checkout": {
     "title": "Checkout",

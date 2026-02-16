@@ -71,7 +71,14 @@
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
     "out_of_stock": "Out of Stock",
-    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary..."
+    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary...",
+    "service_guide": {
+      "title": "📋 서비스 구매 프로세스",
+      "step1": "결제 후 주문 확인 이메일을 받게 됩니다",
+      "step2": "이메일 회신 또는 주문 메모를 통해 사진과 질문을 제출하세요",
+      "step3": "오대산 대사가 48시간 이내에 분석을 완료합니다",
+      "step4": "분석 보고서는 이메일로 전송됩니다"
+    }
   },
   "checkout": {
     "title": "Checkout",

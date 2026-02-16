@@ -71,7 +71,14 @@
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
     "out_of_stock": "Out of Stock",
-    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary..."
+    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary...",
+    "service_guide": {
+      "title": "📋 Процесс покупки услуги",
+      "step1": "После оплаты вы получите письмо с подтверждением заказа",
+      "step2": "Пожалуйста, отправьте фотографии и вопросы в ответном письме или в примечаниях к заказу",
+      "step3": "Мастер горы Утай завершит анализ в течение 48 часов",
+      "step4": "Отчет об анализе будет отправлен вам по электронной почте"
+    }
   },
   "checkout": {
     "title": "Checkout",

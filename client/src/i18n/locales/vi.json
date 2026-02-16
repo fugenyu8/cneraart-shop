@@ -71,7 +71,14 @@
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
     "out_of_stock": "Out of Stock",
-    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary..."
+    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary...",
+    "service_guide": {
+      "title": "📋 Quy trình mua dịch vụ",
+      "step1": "Sau khi thanh toán, bạn sẽ nhận được email xác nhận đơn hàng",
+      "step2": "Vui lòng gửi ảnh và câu hỏi qua email phản hồi hoặc ghi chú đơn hàng",
+      "step3": "Đại sư Ngũ Đài Sơn sẽ hoàn thành phân tích trong vòng 48 giờ",
+      "step4": "Báo cáo phân tích sẽ được gửi đến bạn qua email"
+    }
   },
   "checkout": {
     "title": "Checkout",

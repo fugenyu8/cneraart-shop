@@ -1179,3 +1179,28 @@ export async function updateServiceReport(
     return false;
   }
 }
+
+/**
+ * 创建服务预约记录
+ */
+export async function createFortuneBooking(data: {
+  orderId: number;
+  userId: number;
+  serviceType: "face" | "palm" | "fengshui";
+  questionDescription?: string;
+  imageUrls?: any;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  const [result] = await db.insert(fortuneBookings).values({
+    orderId: data.orderId,
+    userId: data.userId,
+    serviceType: data.serviceType,
+    questionDescription: data.questionDescription,
+    imageUrls: data.imageUrls,
+    status: "pending",
+  });
+
+  return result.insertId;
+}

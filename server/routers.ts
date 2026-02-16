@@ -306,6 +306,31 @@ export const appRouter = router({
           customerNote: input.customerNote,
         });
 
+        // 检测是否包含服务类产品(categoryId===5),自动创建fortune_bookings记录
+        try {
+          for (const item of input.items) {
+            const product = await db.getProductById(item.productId);
+            if (product && product.categoryId === 5) {
+              // 这是服务类产品,创建fortune_bookings记录
+              // 根据产品名称映射到serviceType
+              let serviceType: "face" | "palm" | "fengshui" = "face";
+              if (product.name.includes("手相") || product.name.toLowerCase().includes("palm")) {
+                serviceType = "palm";
+              } else if (product.name.includes("风水") || product.name.toLowerCase().includes("feng")) {
+                serviceType = "fengshui";
+              }
+              
+              await db.createFortuneBooking({
+                orderId: Number(orderId),
+                userId: ctx.user.id,
+                serviceType,
+              });
+            }
+          }
+        } catch (error) {
+          console.error("Failed to create fortune bookings:", error);
+        }
+
         // 清空购物车
         await db.clearCart(ctx.user.id);
 

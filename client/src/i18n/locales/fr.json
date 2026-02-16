@@ -121,7 +121,14 @@
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
     "out_of_stock": "Out of Stock",
-    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary..."
+    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary...",
+    "service_guide": {
+      "title": "📋 Processus d'achat de service",
+      "step1": "Après le paiement, vous recevrez un e-mail de confirmation de commande",
+      "step2": "Veuillez soumettre des photos et des questions par réponse e-mail ou notes de commande",
+      "step3": "Le Maître du Mont Wutai terminera l'analyse dans les 48 heures",
+      "step4": "Le rapport d'analyse vous sera envoyé par e-mail"
+    }
   },
   "cart": {
     "title": "Panier",

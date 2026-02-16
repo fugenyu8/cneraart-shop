@@ -781,3 +781,22 @@ PayPal支付凭证(明天完成)
 - [x] 添加排序功能(按日期)
 - [x] 实现前端筛选和排序逻辑 - useMemo
 - [ ] 测试筛选和排序功能
+
+## 服务购买完整流程化(2026-02-16)
+
+### Phase 1: 为所有服务相关文字添加15种语言翻译
+- [x] product_detail.service_guide的英文和其他14种语言 - 已完成
+- [ ] admin.serviceOrders的英文和其他14种语言 - 暂缓,后续优化
+- [ ] 结账页面服务信息收集的英文和其他14种语言 - 待实现
+
+### Phase 2: 简化服务购买流程(通过邮件提交信息)
+- [x] 产品详情页已有引导说明 - 告知用户通过邮件提交
+- [x] 用户购买后收到订单确认邮件
+- [ ] 管理员手动创建fortune_bookings记录(基于邮件信息)
+- [x] 上传报告后自动发送邮件 - 已实现
+
+### Phase 3: 完善订单创建逻辑
+- [x] 扩展orders.create procedure检测服务产品 - categoryId===5
+- [x] 订单创建成功后自动创建fortune_bookings记录 - createFortuneBooking
+- [ ] 从 cart_items.serviceData 提取图片和问题描述
+- [ ] 测试完整流程:购买→上传信息→支付→创建记录

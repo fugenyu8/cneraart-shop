@@ -121,7 +121,14 @@
     "in_stock": "Auf Lager",
     "only_left": "Nur noch {{count}} verfügbar",
     "out_of_stock": "Ausverkauft",
-    "blessing_default": "Jeder Artikel wurde durch traditionelle Zeremonien im Manjushri-Bodhisattva-Heiligtum des Berges Wutai gesegnet..."
+    "blessing_default": "Jeder Artikel wurde durch traditionelle Zeremonien im Manjushri-Bodhisattva-Heiligtum des Berges Wutai gesegnet...",
+    "service_guide": {
+      "title": "📋 Service-Kaufprozess",
+      "step1": "Nach der Zahlung erhalten Sie eine Auftragsbestätigungs-E-Mail",
+      "step2": "Bitte senden Sie Fotos und Fragen per E-Mail-Antwort oder Bestellnotizen",
+      "step3": "Der Meister des Wutai-Berges wird die Analyse innerhalb von 48 Stunden abschließen",
+      "step4": "Der Analysebericht wird Ihnen per E-Mail zugesandt"
+    }
   },
   "cart": {
     "title": "Warenkorb",

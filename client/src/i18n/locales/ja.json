@@ -71,7 +71,14 @@
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
     "out_of_stock": "Out of Stock",
-    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary..."
+    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary...",
+    "service_guide": {
+      "title": "📋 サービス購入プロセス",
+      "step1": "お支払い後、注文確認メールが届きます",
+      "step2": "メール返信または注文メモで写真と質問を送信してください",
+      "step3": "五台山の大師が48時間以内に分析を完了します",
+      "step4": "分析レポートはメールで送信されます"
+    }
   },
   "checkout": {
     "title": "Checkout",
