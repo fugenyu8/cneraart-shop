@@ -171,8 +171,8 @@ export default function Home() {
                     <img src="/services/beads.png" alt="开光佛珠" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                              <h3 className="text-xl font-medium text-[#FFD700] mb-2">{t('serviceCards.blessedItems.title')}</h3>
-                    <p className="text-sm font-light text-[#E8D4A0]">{t('serviceCards.blessedItems.subtitle')}</p>
+                              <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.blessedItems.title')}</h3>
+                    <p className="text-xs font-light text-[#E8D4A0]">{t('serviceCards.blessedItems.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -192,8 +192,8 @@ export default function Home() {
                     <img src="/services/compass1.jpg" alt="八卦罗盘" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-medium text-[#FFD700] mb-2">{t('serviceCards.destiny.title')}</h3>
-                    <p className="text-sm font-light text-[#E8D4A0]">{t('serviceCards.destiny.subtitle')}</p>
+                    <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.destiny.title')}</h3>
+                    <p className="text-xs font-light text-[#E8D4A0]">{t('serviceCards.destiny.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -213,8 +213,8 @@ export default function Home() {
                     <img src="/services/palmistry.jpg" alt="手相图谱" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-medium text-[#FFD700] mb-2">{t('serviceCards.palmistry.title')}</h3>
-                    <p className="text-sm font-light text-[#E8D4A0]">{t('serviceCards.palmistry.subtitle')}</p>
+                    <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.palmistry.title')}</h3>
+                    <p className="text-xs font-light text-[#E8D4A0]">{t('serviceCards.palmistry.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -234,8 +234,8 @@ export default function Home() {
                     <img src="/services/lotus-lamp.jpg" alt="莲花灯" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-medium text-[#FFD700] mb-2">{t('serviceCards.prayer.title')}</h3>
-                    <p className="text-sm font-light text-[#E8D4A0]">{t('serviceCards.prayer.subtitle')}</p>
+                    <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.prayer.title')}</h3>
+                    <p className="text-xs font-light text-[#E8D4A0]">{t('serviceCards.prayer.subtitle')}</p>
                   </div>
                 </div>
               </div>
