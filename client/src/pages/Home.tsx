@@ -154,12 +154,16 @@ export default function Home() {
       </section>
 
       {/* 服务卡片区 */}
-      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <section className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+        {/* 五台山背景图 */}
+        <div className="absolute inset-0 opacity-10">
+          <img src="/services/wutai-bg.jpg" alt="五台山寺庙" className="w-full h-full object-cover" />
+        </div>
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* 1. 开光护佑法物 */}
             <Link href="/products">
-              <div className="group relative bg-gradient-to-br from-gray-900 via-black to-gray-800 border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="group relative bg-black/70 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/80 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
@@ -180,7 +184,7 @@ export default function Home() {
 
             {/* 2. 命理运势 */}
             <Link href="/destiny">
-              <div className="group relative bg-gradient-to-br from-gray-900 via-black to-gray-800 border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="group relative bg-black/70 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/80 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
@@ -201,7 +205,7 @@ export default function Home() {
 
             {/* 3. 面相手相风水 (合并) */}
             <Link href="/fortune">
-              <div className="group relative bg-gradient-to-br from-gray-900 via-black to-gray-800 border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="group relative bg-black/70 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/80 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
@@ -222,7 +226,7 @@ export default function Home() {
 
             {/* 4. 代客祈福 */}
             <Link href="/prayer">
-              <div className="group relative bg-gradient-to-br from-gray-900 via-black to-gray-800 border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="group relative bg-black/70 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/80 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
