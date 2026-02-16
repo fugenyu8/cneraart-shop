@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
-import { Sparkles, ShoppingCart, Heart, Shield, Star, ChevronLeft, Plus, Minus } from "lucide-react";
+import { Sparkles, ShoppingCart, Heart, Shield, Star, ChevronLeft, Plus, Minus, Info } from "lucide-react";
 import { toast } from "sonner";
 
 export default function ProductDetail() {
@@ -230,6 +230,24 @@ export default function ProductDetail() {
                 </Button>
               </div>
             </div>
+
+            {/* 服务类产品引导说明 */}
+            {product.categoryId === 5 && (
+              <div className="mb-6 p-4 bg-accent/10 border border-accent/30 rounded-lg">
+                <div className="flex items-start gap-3">
+                  <Info className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                  <div className="text-sm">
+                    <p className="font-bold text-accent mb-2">{t('product_detail.service_guide.title')}</p>
+                    <ol className="list-decimal list-inside space-y-1 text-foreground/80">
+                      <li>{t('product_detail.service_guide.step1')}</li>
+                      <li>{t('product_detail.service_guide.step2')}</li>
+                      <li>{t('product_detail.service_guide.step3')}</li>
+                      <li>{t('product_detail.service_guide.step4')}</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* 操作按钮 */}
             <div className="flex gap-4">

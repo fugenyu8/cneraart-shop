@@ -741,7 +741,28 @@ export const appRouter = router({
           if (!success) {
             throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "报告上传失败" });
           }
-          // TODO: 发送邮件给用户
+          
+          // 发送报告邮件给用户
+          try {
+            const orderDetail = await db.getServiceOrderDetail(input.orderId);
+            if (orderDetail && orderDetail.userEmail) {
+              const { sendEmail, getServiceReportEmail } = await import("./email");
+              const emailHtml = getServiceReportEmail({
+                serviceName: orderDetail.productName,
+                customerName: orderDetail.userName,
+                reportUrl: input.reportUrl,
+                orderNumber: orderDetail.orderNumber,
+              });
+              await sendEmail({
+                to: orderDetail.userEmail,
+                subject: `您的${orderDetail.productName}报告已完成 - ${orderDetail.orderNumber}`,
+                html: emailHtml,
+              });
+            }
+          } catch (error) {
+            console.error("Failed to send service report email:", error);
+          }
+          
           return { success: true };
         }),
     }),

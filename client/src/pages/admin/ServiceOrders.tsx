@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
 import { storagePut } from "@/lib/storage";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
 
 /**
  * 服务订单管理页面
@@ -29,6 +31,8 @@ export default function ServiceOrders() {
   const [selectedOrderId, setSelectedOrderId] = useState<number | null>(null);
   const [reportFile, setReportFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState(false);
+  const [statusFilter, setStatusFilter] = useState<string>("all");
+  const [sortBy, setSortBy] = useState<string>("date_desc");
 
   // 获取服务订单列表
   const { data: orders, isLoading, refetch } = trpc.admin.serviceOrders.list.useQuery({
@@ -86,11 +90,62 @@ export default function ServiceOrders() {
     );
   }
 
+  // 筛选和排序逻辑
+  const filteredAndSortedOrders = useMemo(() => {
+    if (!orders) return [];
+    
+    // 筛选
+    let filtered = orders;
+    if (statusFilter !== "all") {
+      filtered = orders.filter((item: any) => item.order.status === statusFilter);
+    }
+    
+    // 排序
+    const sorted = [...filtered].sort((a: any, b: any) => {
+      if (sortBy === "date_desc") {
+        return new Date(b.order.createdAt).getTime() - new Date(a.order.createdAt).getTime();
+      } else if (sortBy === "date_asc") {
+        return new Date(a.order.createdAt).getTime() - new Date(b.order.createdAt).getTime();
+      }
+      return 0;
+    });
+    
+    return sorted;
+  }, [orders, statusFilter, sortBy]);
+
   return (
     <div className="container mx-auto py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold">{t("admin.serviceOrders.title")}</h1>
         <p className="text-slate-400">{t("admin.serviceOrders.subtitle")}</p>
+      </div>
+
+      {/* 筛选和排序控件 */}
+      <div className="mb-6 flex gap-4">
+        <div className="w-48">
+          <Select value={statusFilter} onValueChange={setStatusFilter}>
+            <SelectTrigger>
+              <SelectValue placeholder="筛选状态" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">全部状态</SelectItem>
+              <SelectItem value="pending">待处理</SelectItem>
+              <SelectItem value="processing">处理中</SelectItem>
+              <SelectItem value="delivered">已完成</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div className="w-48">
+          <Select value={sortBy} onValueChange={setSortBy}>
+            <SelectTrigger>
+              <SelectValue placeholder="排序方式" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="date_desc">日期(由新到旧)</SelectItem>
+              <SelectItem value="date_asc">日期(由旧到新)</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </div>
 
       <Card className="p-6">
@@ -106,8 +161,8 @@ export default function ServiceOrders() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {orders && orders.length > 0 ? (
-              orders.map((item: any) => (
+            {filteredAndSortedOrders && filteredAndSortedOrders.length > 0 ? (
+              filteredAndSortedOrders.map((item: any) => (
                 <TableRow key={item.order.id}>
                   <TableCell>#{item.order.id}</TableCell>
                   <TableCell>{item.items.product?.name || "-"}</TableCell>

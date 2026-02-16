@@ -224,3 +224,75 @@ export function getDeliveryNotificationEmail(order: {
 </html>
   `.trim();
 }
+
+/**
+ * 服务报告发送邮件模板
+ */
+export function getServiceReportEmail(service: {
+  serviceName: string;
+  customerName: string;
+  reportUrl: string;
+  orderNumber: string;
+}): string {
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>您的${service.serviceName}报告已完成</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;">
+  <div style="background: linear-gradient(135deg, #8B1A1A 0%, #D4AF37 100%); padding: 30px; text-align: center; border-radius: 10px 10px 0 0;">
+    <h1 style="color: white; margin: 0; font-size: 28px;">源·华渡</h1>
+    <p style="color: #FAF8F3; margin: 10px 0 0 0;">Ancient Eastern Blessings</p>
+  </div>
+  
+  <div style="background: #FAF8F3; padding: 30px; border-radius: 0 0 10px 10px;">
+    <h2 style="color: #8B1A1A; margin-top: 0;">📜 您的${service.serviceName}报告已完成</h2>
+    
+    <p>尊敬的 ${service.customerName}，</p>
+    
+    <p>五台山大师已完成您的${service.serviceName}分析,报告已准备就绪。</p>
+    
+    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border: 2px solid #D4AF37;">
+      <p style="margin: 0 0 10px 0;"><strong>订单号:</strong> ${service.orderNumber}</p>
+      <p style="margin: 0;"><strong>服务类型:</strong> ${service.serviceName}</p>
+    </div>
+    
+    <div style="background: #FFF8DC; padding: 15px; border-radius: 8px; border-left: 4px solid #D4AF37; margin: 20px 0;">
+      <p style="margin: 0; color: #8B1A1A;"><strong>✨ 报告内容</strong></p>
+      <p style="margin: 10px 0 0 0; font-size: 14px;">大师基于易经、五行、紫微斗数等千年东方智慧,为您深度解析运势走向,明示机遇、警示险阻,助您趋利避害、拓宽人生格局。</p>
+    </div>
+    
+    <div style="text-align: center; margin: 30px 0;">
+      <a href="${service.reportUrl}" style="display: inline-block; background: linear-gradient(135deg, #8B1A1A 0%, #D4AF37 100%); color: white; padding: 15px 40px; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px;">📥 下载报告</a>
+    </div>
+    
+    <div style="background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border: 1px solid #ddd;">
+      <p style="margin: 0 0 10px 0; color: #8B1A1A; font-weight: bold;">💡 温馨提示</p>
+      <ul style="margin: 0; padding-left: 20px; font-size: 14px; color: #666;">
+        <li>报告链接长期有效,请妥善保存</li>
+        <li>建议在安静环境下细读报告,领悟其中智慧</li>
+        <li>如有疑问,欢迎随时联系我们</li>
+        <li>报告内容仅供参考,人生掌握在您手中</li>
+      </ul>
+    </div>
+    
+    <div style="background: #FFF8DC; padding: 15px; border-radius: 8px; margin: 20px 0; text-align: center;">
+      <p style="margin: 0 0 10px 0; color: #8B1A1A; font-weight: bold;">🙏 感谢您的信任</p>
+      <p style="margin: 0; font-size: 14px;">愿东方智慧照亮您的人生旅程</p>
+    </div>
+    
+    <p style="margin-top: 30px; font-size: 14px; color: #666;">如需更多服务,欢迎访问我们的网站或联系客服。</p>
+    
+    <p style="margin-top: 20px;">祝您吉祥如意!</p>
+    
+    <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; color: #666; font-size: 12px;">
+      <p>源·华渡 Yuan·Huadu</p>
+      <p>传承东方智慧 · 守护人生旅程</p>
+    </div>
+  </div>
+</body>
+</html>
+  `.trim();
+}
