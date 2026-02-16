@@ -4,37 +4,29 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 /**
- * 命理测算服务页面
+ * 相学风水服务页面
  * 展示面相、手相、风水三大服务
  */
 export default function FortuneServices() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const services = [
     {
       id: "face",
       icon: "👤",
-      features: ["十二宫位分析", "流年运势", "事业财运", "健康婚姻"],
-      featuresEn: ["12 Palaces Analysis", "Annual Fortune", "Career & Wealth", "Health & Marriage"],
-      price: "￥199",
+      price: "$9.9",
     },
     {
       id: "palm",
       icon: "✋",
-      features: ["三大主线", "财运线", "事业线", "婚姻线"],
-      featuresEn: ["3 Major Lines", "Money Line", "Career Line", "Marriage Line"],
-      price: "￥199",
+      price: "$9.9",
     },
     {
       id: "fengshui",
       icon: "🏠",
-      features: ["布局分析", "色彩搭配", "化解煞气", "招财旺运"],
-      featuresEn: ["Layout Analysis", "Color Harmony", "Resolve Negative Energy", "Attract Wealth"],
-      price: "￥299",
+      price: "$11.9",
     },
   ];
-
-  const isZh = i18n.language === "zh";
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
@@ -89,10 +81,10 @@ export default function FortuneServices() {
             <div className="mb-6 space-y-2">
               <p className="font-semibold text-yellow-400">{t("fortuneServices.featuresLabel")}</p>
               <ul className="space-y-1 text-sm text-slate-300">
-                {(isZh ? service.features : service.featuresEn).map((feature, idx) => (
+                {[1, 2, 3, 4].map((idx) => (
                   <li key={idx} className="flex items-center gap-2">
                     <span className="text-yellow-400">✓</span>
-                    {feature}
+                    {t(`fortuneServices.${service.id}Feature${idx}`)}
                   </li>
                 ))}
               </ul>
@@ -119,37 +111,20 @@ export default function FortuneServices() {
       <div className="border-t border-slate-800 bg-slate-950/50 py-16">
         <div className="container mx-auto">
           <h2 className="mb-12 text-center text-3xl font-bold text-yellow-400">
-            {isZh ? "服务流程" : "Service Process"}
+            {t("fortuneServices.serviceProcess")}
           </h2>
           <div className="grid gap-8 md:grid-cols-4">
-            {[
-              {
-                step: "1",
-                title: isZh ? "选择服务" : "Choose Service",
-                desc: isZh ? "选择面相、手相或风水服务" : "Select face, palm or feng shui",
-              },
-              {
-                step: "2",
-                title: isZh ? "上传图片" : "Upload Image",
-                desc: isZh ? "上传清晰的照片或房间图片" : "Upload clear photos",
-              },
-              {
-                step: "3",
-                title: isZh ? "大师分析" : "Master Analysis",
-                desc: isZh ? "结合传统智慧与专业分析" : "Traditional wisdom + expertise",
-              },
-              {
-                step: "4",
-                title: isZh ? "查看报告" : "View Report",
-                desc: isZh ? "获取详细的命理分析报告" : "Get detailed report",
-              },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
+            {[1, 2, 3, 4].map((step) => (
+              <div key={step} className="text-center">
                 <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-yellow-400 bg-slate-900 text-2xl font-bold text-yellow-400">
-                  {item.step}
+                  {step}
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-yellow-400">{item.title}</h3>
-                <p className="text-sm text-slate-400">{item.desc}</p>
+                <h3 className="mb-2 text-lg font-semibold text-yellow-400">
+                  {t(`fortuneServices.step${step}Title`)}
+                </h3>
+                <p className="text-sm text-slate-400">
+                  {t(`fortuneServices.step${step}Desc`)}
+                </p>
               </div>
             ))}
           </div>
@@ -158,7 +133,7 @@ export default function FortuneServices() {
 
       {/* 页脚 */}
       <footer className="border-t border-slate-800 py-8 text-center text-slate-500">
-        <p>© 2026 源·华渡 YUAN·HUADU. {isZh ? "保留所有权利" : "All rights reserved"}.</p>
+        <p>© 2026 源·华渡 YUAN·HUADU. {t("footer.allRightsReserved")}.</p>
       </footer>
     </div>
   );
