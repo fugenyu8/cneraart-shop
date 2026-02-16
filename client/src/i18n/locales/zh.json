@@ -63,6 +63,24 @@
     },
     "scrollHint": "左右滚动查看更多"
   },
+  "serviceCards": {
+    "blessedItems": {
+      "title": "开光护佑法物",
+      "subtitle": "传统仪轨，大师加持"
+    },
+    "destiny": {
+      "title": "命理运势",
+      "subtitle": "流年运势，破解难题"
+    },
+    "palmistry": {
+      "title": "面相手相风水",
+      "subtitle": "古老智慧，解读当下"
+    },
+    "prayer": {
+      "title": "代客祈福",
+      "subtitle": "跨越山海，代传祈愿"
+    }
+  },
   "home": {
     "hero_title": "古老东方的祝福",
     "hero_subtitle": "守护您的人生旅程·传承千年智慧",

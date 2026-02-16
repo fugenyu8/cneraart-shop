@@ -12,6 +12,24 @@
     "title": "Ancient Eastern Wisdom",
     "subtitle": "Elevate Energy · Resolve Troubles · Benefit All Beings"
   },
+  "serviceCards": {
+    "blessedItems": {
+      "title": "Blessed Protective Artifacts",
+      "subtitle": "Traditional Rituals, Master Consecration"
+    },
+    "destiny": {
+      "title": "Destiny & Fortune",
+      "subtitle": "Annual Fortune, Resolve Challenges"
+    },
+    "palmistry": {
+      "title": "Face, Palm & Feng Shui",
+      "subtitle": "Ancient Wisdom, Present Insights"
+    },
+    "prayer": {
+      "title": "Prayer Services",
+      "subtitle": "Across Mountains & Seas, Deliver Blessings"
+    }
+  },
   "home": {
     "hero_title": "Ancient Eastern Blessings",
     "hero_subtitle": "Protecting Your Life Journey · Passing Down Thousand-Year Wisdom",

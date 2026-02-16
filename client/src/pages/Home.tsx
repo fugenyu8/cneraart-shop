@@ -175,8 +175,8 @@ export default function Home() {
                     <img src="/services/beads.png" alt="开光佛珠" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">开光护佑法物</h3>
-                    <p className="text-sm text-[#E8D4A0]">传统仪轨，大师加持</p>
+                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">{t('serviceCards.blessedItems.title')}</h3>
+                    <p className="text-sm text-[#E8D4A0]">{t('serviceCards.blessedItems.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -196,8 +196,8 @@ export default function Home() {
                     <img src="/services/compass1.jpg" alt="八卦罗盘" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">命理运势</h3>
-                    <p className="text-sm text-[#E8D4A0]">流年运势,破解难题</p>
+                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">{t('serviceCards.destiny.title')}</h3>
+                    <p className="text-sm text-[#E8D4A0]">{t('serviceCards.destiny.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -214,11 +214,11 @@ export default function Home() {
                 <div className="relative z-10 flex flex-col items-center text-center space-y-4">
                   {/* 实物照片 */}
                   <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/compass2.jpg" alt="风水罗盘" className="w-full h-full object-cover" />
+                    <img src="/services/palmistry.jpg" alt="手相图谱" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">面相手相风水</h3>
-                    <p className="text-sm text-[#E8D4A0]">古老智慧，解读当下</p>
+                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">{t('serviceCards.palmistry.title')}</h3>
+                    <p className="text-sm text-[#E8D4A0]">{t('serviceCards.palmistry.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -238,8 +238,8 @@ export default function Home() {
                     <img src="/services/lotus-lamp.jpg" alt="莲花灯" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">代客祈福</h3>
-                    <p className="text-sm text-[#E8D4A0]">跨越山海,代传祈愿</p>
+                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">{t('serviceCards.prayer.title')}</h3>
+                    <p className="text-sm text-[#E8D4A0]">{t('serviceCards.prayer.subtitle')}</p>
                   </div>
                 </div>
               </div>
