@@ -1,0 +1,62 @@
+{
+  "query": "SELECT id, name FROM products WHERE id >= 510049 ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name FROM products WHERE id >= 510049 ORDER BY id;",
+  "rows": [
+    {
+      "id": "510049",
+      "name": "Eastern Ancient Wisdom Text Pendant"
+    },
+    {
+      "id": "510050",
+      "name": "Heart Sutra Bracelet"
+    },
+    {
+      "id": "510051",
+      "name": "Great Compassion Mantra Bracelet"
+    },
+    {
+      "id": "510052",
+      "name": "Shurangama Mantra Bracelet"
+    },
+    {
+      "id": "510053",
+      "name": "Yellow Jambhala Bracelet"
+    },
+    {
+      "id": "510054",
+      "name": "Amitabha Bracelet"
+    },
+    {
+      "id": "510055",
+      "name": "Esoteric North Star Seven-Star Pendant"
+    },
+    {
+      "id": "510056",
+      "name": "Wutai Mountain Incense Offering Service"
+    },
+    {
+      "id": "510057",
+      "name": "Wutai Mountain Lamp Offering Service"
+    },
+    {
+      "id": "510058",
+      "name": "Incense Offering & Consecration Package with Blessed Amulet"
+    },
+    {
+      "id": "510059",
+      "name": "Complete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet"
+    },
+    {
+      "id": "510060",
+      "name": "Fortune Energy Analysis Report - Unlock Ancient Chinese Wisdom"
+    },
+    {
+      "id": "510061",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\n510049\tEastern Ancient Wisdom Text Pendant\n510050\tHeart Sutra Bracelet\n510051\tGreat Compassion Mantra Bracelet\n510052\tShurangama Mantra Bracelet\n510053\tYellow Jambhala Bracelet\n510054\tAmitabha Bracelet\n510055\tEsoteric North Star Seven-Star Pendant\n510056\tWutai Mountain Incense Offering Service\n510057\tWutai Mountain Lamp Offering Service\n510058\tIncense Offering & Consecration Package with Blessed Amulet\n510059\tComplete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet\n510060\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\n510061\tDestiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade\n",
+  "stderr": "",
+  "execution_time_ms": 50
+}

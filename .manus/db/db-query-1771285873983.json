@@ -1,0 +1,20 @@
+{
+  "query": "SELECT id, name, SUBSTRING(description, 1, 300) as desc_start FROM products WHERE id IN (510028, 510060);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, SUBSTRING(description, 1, 300) as desc_start FROM products WHERE id IN (510028, 510060);",
+  "rows": [
+    {
+      "id": "510028",
+      "name": "Cancer Zodiac Moon Crescent Pendant",
+      "desc_start": "A celestial guardian pendant that unites the nurturing essence of Cancer with the sacred blessing rituals of Mount Wutai, one of China's Four Great Buddhist Mountains and a UNESCO World Heritage Site. This exquisite piece channels the protective energy of the moon and the spiritual power infused by "
+    },
+    {
+      "id": "510060",
+      "name": "Fortune Energy Analysis Report - Unlock Ancient Chinese Wisdom",
+      "desc_start": "A comprehensive fortune and energy analysis based on ancient Chinese wisdom traditions including I Ching, BaZi (Four Pillars), Zi Wei Dou Shu, and Five Elements theory. This detailed report is prepared by masters trained in Mount Wutai's spiritual traditions, providing profound insights into your de"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tdesc_start\n510028\tCancer Zodiac Moon Crescent Pendant\tA celestial guardian pendant that unites the nurturing essence of Cancer with the sacred blessing rituals of Mount Wutai, one of China's Four Great Buddhist Mountains and a UNESCO World Heritage Site. This exquisite piece channels the protective energy of the moon and the spiritual power infused by \n510060\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\tA comprehensive fortune and energy analysis based on ancient Chinese wisdom traditions including I Ching, BaZi (Four Pillars), Zi Wei Dou Shu, and Five Elements theory. This detailed report is prepared by masters trained in Mount Wutai's spiritual traditions, providing profound insights into your de\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

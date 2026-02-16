@@ -1,0 +1,40 @@
+{
+  "query": "SELECT id, name, SUBSTRING(description, 1, 200) as desc_preview FROM products WHERE id IN (510001, 510013, 510028, 510049, 510056, 510061) ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, SUBSTRING(description, 1, 200) as desc_preview FROM products WHERE id IN (510001, 510013, 510028, 510049, 510056, 510061) ORDER BY id;",
+  "rows": [
+    {
+      "id": "510001",
+      "name": "Wutai Mountain Blessed Rat Guardian Pendant",
+      "desc_preview": "In the ancient wisdom of Chinese astrology, the Rat symbolizes intelligence, resourcefulness, and the ability to seize opportunities. This sacred pendant has been consecrated by senior monks at Wutai "
+    },
+    {
+      "id": "510013",
+      "name": "Wutai Mountain Blessed Aries Guardian Pendant",
+      "desc_preview": "In the celestial wisdom of Western astrology, Aries (March 21 - April 19) embodies courage, passion, and pioneering spirit. This sacred pendant has been consecrated by senior monks at Wutai Mountain, "
+    },
+    {
+      "id": "510028",
+      "name": "Cancer Zodiac Moon Crescent Pendant",
+      "desc_preview": "A celestial guardian pendant that unites the nurturing essence of Cancer with the sacred blessing rituals of Mount Wutai, one of China's Four Great Buddhist Mountains and a UNESCO World Heritage Site."
+    },
+    {
+      "id": "510049",
+      "name": "Eastern Ancient Wisdom Text Pendant",
+      "desc_preview": "A sacred pendant inscribed with ancient Eastern wisdom texts, blessed through the traditional consecration rituals of Mount Wutai, one of China's Four Great Buddhist Mountains and a UNESCO World Herit"
+    },
+    {
+      "id": "510056",
+      "name": "Wutai Mountain Incense Offering Service",
+      "desc_preview": "A sacred incense offering service performed by monks at Mount Wutai, one of China's Four Great Buddhist Mountains and a UNESCO World Heritage Site. This traditional ritual creates spiritual merit and "
+    },
+    {
+      "id": "510061",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade",
+      "desc_preview": "The ultimate fortune service combining comprehensive destiny analysis with a dedicated blessing ceremony at Mount Wutai, one of China's Four Great Buddhist Mountains and a UNESCO World Heritage Site. "
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tdesc_preview\n510001\tWutai Mountain Blessed Rat Guardian Pendant\tIn the ancient wisdom of Chinese astrology, the Rat symbolizes intelligence, resourcefulness, and the ability to seize opportunities. This sacred pendant has been consecrated by senior monks at Wutai \n510013\tWutai Mountain Blessed Aries Guardian Pendant\tIn the celestial wisdom of Western astrology, Aries (March 21 - April 19) embodies courage, passion, and pioneering spirit. This sacred pendant has been consecrated by senior monks at Wutai Mountain, \n510028\tCancer Zodiac Moon Crescent Pendant\tA celestial guardian pendant that unites the nurturing essence of Cancer with the sacred blessing rituals of Mount Wutai, one of China's Four Great Buddhist Mountains and a UNESCO World Heritage Site.\n510049\tEastern Ancient Wisdom Text Pendant\tA sacred pendant inscribed with ancient Eastern wisdom texts, blessed through the traditional consecration rituals of Mount Wutai, one of China's Four Great Buddhist Mountains and a UNESCO World Herit\n510056\tWutai Mountain Incense Offering Service\tA sacred incense offering service performed by monks at Mount Wutai, one of China's Four Great Buddhist Mountains and a UNESCO World Heritage Site. This traditional ritual creates spiritual merit and \n510061\tDestiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade\tThe ultimate fortune service combining comprehensive destiny analysis with a dedicated blessing ceremony at Mount Wutai, one of China's Four Great Buddhist Mountains and a UNESCO World Heritage Site. \n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

@@ -1,0 +1,55 @@
+{
+  "query": "SELECT id, name, description FROM products WHERE id BETWEEN 510028 AND 510036 ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, description FROM products WHERE id BETWEEN 510028 AND 510036 ORDER BY id;",
+  "rows": [
+    {
+      "id": "510028",
+      "name": "Cancer Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Cancer constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian."
+    },
+    {
+      "id": "510029",
+      "name": "Leo Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Leo constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian."
+    },
+    {
+      "id": "510030",
+      "name": "Virgo Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Virgo constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian."
+    },
+    {
+      "id": "510031",
+      "name": "Libra Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Libra constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian."
+    },
+    {
+      "id": "510032",
+      "name": "Scorpio Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Scorpio constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian."
+    },
+    {
+      "id": "510033",
+      "name": "Sagittarius Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Sagittarius constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian."
+    },
+    {
+      "id": "510034",
+      "name": "Capricorn Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Capricorn constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian."
+    },
+    {
+      "id": "510035",
+      "name": "Aquarius Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Aquarius constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian."
+    },
+    {
+      "id": "510036",
+      "name": "Pisces Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Pisces constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian."
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tdescription\n510028\tCancer Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Cancer constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\n510029\tLeo Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Leo constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\n510030\tVirgo Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Virgo constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\n510031\tLibra Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Libra constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\n510032\tScorpio Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Scorpio constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\n510033\tSagittarius Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Sagittarius constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\n510034\tCapricorn Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Capricorn constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\n510035\tAquarius Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Aquarius constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\n510036\tPisces Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Pisces constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\n",
+  "stderr": "",
+  "execution_time_ms": 62
+}
