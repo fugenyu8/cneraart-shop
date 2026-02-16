@@ -35,11 +35,8 @@ export default function Home() {
   }, [carouselImages.length]);
 
   // 语言切换
-  const changeLanguage = (lng: string) => {
-    // 手动保存到localStorage
-    localStorage.setItem('i18nextLng', lng);
-    // 刷新页面以加载新语言
-    window.location.reload();
+  const changeLanguage = async (lng: string) => {
+    await i18n.changeLanguage(lng);
   };
 
   return (
@@ -262,7 +259,7 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-8">{t('aboutUs.title')}</h2>
+            <h2 className="text-4xl font-serif font-semibold mb-8 tracking-wide">{t('aboutUs.title')}</h2>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 space-y-6">

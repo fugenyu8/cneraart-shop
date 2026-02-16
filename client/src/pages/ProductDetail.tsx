@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useParams, Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -10,6 +11,7 @@ import { Sparkles, ShoppingCart, Heart, Shield, Star, ChevronLeft, Plus, Minus }
 import { toast } from "sonner";
 
 export default function ProductDetail() {
+  const { t } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const { isAuthenticated } = useAuth();
   const [quantity, setQuantity] = useState(1);
@@ -32,10 +34,10 @@ export default function ProductDetail() {
         productId: product.id,
         quantity,
       });
-      toast.success("已添加到购物车");
+      toast.success(t('product_detail.success_added'));
       utils.cart.get.invalidate();
     } catch (error) {
-      toast.error("添加失败,请重试");
+      toast.error(t('product_detail.error_add'));
     }
   };
 
@@ -53,9 +55,9 @@ export default function ProductDetail() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <h2 className="text-2xl font-bold mb-4">产品不存在</h2>
+          <h2 className="text-2xl font-bold mb-4">{t('product_detail.not_found')}</h2>
           <Link href="/products">
-            <Button>返回产品列表</Button>
+            <Button>{t('product_detail.back')}</Button>
           </Link>
         </div>
       </div>
@@ -82,7 +84,7 @@ export default function ProductDetail() {
               </a>
             </Link>
             <Link href="/cart">
-              <Button variant="outline">购物车</Button>
+              <Button variant="outline">{t('product_detail.cart')}</Button>
             </Link>
           </div>
         </div>
@@ -93,7 +95,7 @@ export default function ProductDetail() {
         <Link href="/products">
           <Button variant="ghost" className="mb-6">
             <ChevronLeft className="w-4 h-4 mr-2" />
-            返回产品列表
+            {t('product_detail.back')}
           </Button>
         </Link>
 
@@ -150,7 +152,7 @@ export default function ProductDetail() {
                   ))}
                 </div>
                 <span className="text-sm text-muted-foreground">
-                  {product.averageRating.toFixed(1)} ({product.reviews.length} 评价)
+                  {product.averageRating.toFixed(1)} ({t('product_detail.reviews_count', { count: product.reviews.length })})
                 </span>
               </div>
             )}
@@ -162,7 +164,7 @@ export default function ProductDetail() {
                 {product.salePrice && (
                   <>
                     <span className="text-xl text-muted-foreground line-through">${product.regularPrice}</span>
-                    <span className="px-2 py-1 bg-primary rounded text-sm font-bold">省 {discount}%</span>
+                    <span className="px-2 py-1 bg-primary rounded text-sm font-bold">{t('product_detail.save_percent', { percent: discount })}</span>
                   </>
                 )}
               </div>
@@ -178,11 +180,11 @@ export default function ProductDetail() {
                   <div className="flex items-start gap-3">
                     <Shield className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-bold mb-2 text-accent">开光信息</h3>
+                      <h3 className="font-bold mb-2 text-accent">{t('product_detail.blessing_info')}</h3>
                       <div className="space-y-1 text-sm text-muted-foreground">
-                        {product.blessingTemple && <p>开光寺庙: {product.blessingTemple}</p>}
-                        {product.blessingMaster && <p>开光大师: {product.blessingMaster}</p>}
-                        {product.blessingDate && <p>开光日期: {new Date(product.blessingDate).toLocaleDateString()}</p>}
+                        {product.blessingTemple && <p>{t('product_detail.temple')}: {product.blessingTemple}</p>}
+                        {product.blessingMaster && <p>{t('product_detail.master')}: {product.blessingMaster}</p>}
+                        {product.blessingDate && <p>{t('product_detail.date')}: {new Date(product.blessingDate).toLocaleDateString()}</p>}
                       </div>
                     </div>
                   </div>
@@ -195,19 +197,19 @@ export default function ProductDetail() {
               {product.stock > 0 ? (
                 <div className="flex items-center gap-2 text-success">
                   <div className="w-2 h-2 bg-success rounded-full"></div>
-                  <span>有货 {product.stock <= 10 && `(仅剩 ${product.stock} 件)`}</span>
+                  <span>{t('product_detail.in_stock')} {product.stock <= 10 && `(${t('product_detail.only_left', { count: product.stock })})`}</span>
                 </div>
               ) : (
                 <div className="flex items-center gap-2 text-destructive">
                   <div className="w-2 h-2 bg-destructive rounded-full"></div>
-                  <span>已售罄</span>
+                  <span>{t('product_detail.out_of_stock')}</span>
                 </div>
               )}
             </div>
 
             {/* 数量选择 */}
             <div className="mb-6">
-              <label className="block text-sm font-bold mb-2">数量</label>
+              <label className="block text-sm font-bold mb-2">{t('product_detail.quantity')}</label>
               <div className="flex items-center gap-3">
                 <Button
                   variant="outline"
@@ -238,7 +240,7 @@ export default function ProductDetail() {
                 disabled={product.stock <= 0 || addToCartMutation.isPending}
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                {addToCartMutation.isPending ? "请回中..." : "请回法物"}
+                {addToCartMutation.isPending ? t('product_detail.adding') : t('product_detail.add_to_cart')}
               </Button>
               <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent/10">
                 <Heart className="w-5 h-5" />
@@ -250,9 +252,9 @@ export default function ProductDetail() {
         {/* 详细信息标签页 */}
         <Tabs defaultValue="description" className="mb-12">
           <TabsList className="grid w-full grid-cols-3 bg-card">
-            <TabsTrigger value="description">产品详情</TabsTrigger>
-            <TabsTrigger value="blessing">开光说明</TabsTrigger>
-            <TabsTrigger value="reviews">客户评价 ({product.reviews.length})</TabsTrigger>
+            <TabsTrigger value="description">{t('product_detail.tab_description')}</TabsTrigger>
+            <TabsTrigger value="blessing">{t('product_detail.tab_blessing')}</TabsTrigger>
+            <TabsTrigger value="reviews">{t('product_detail.tab_reviews')} ({product.reviews.length})</TabsTrigger>
           </TabsList>
 
           <TabsContent value="description" className="mt-6">
@@ -270,7 +272,7 @@ export default function ProductDetail() {
               <CardContent className="p-6">
                 <div className="prose prose-invert max-w-none">
                   <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap">
-                    {product.blessingDescription || "每一件饰品都经过五台山文殊菩萨道场的正统开光仪式..."}
+                    {product.blessingDescription || t('product_detail.blessing_default')}
                   </p>
                 </div>
               </CardContent>
@@ -296,7 +298,7 @@ export default function ProductDetail() {
                           {review.title && <h4 className="font-bold mb-1">{review.title}</h4>}
                         </div>
                         {review.isVerifiedPurchase && (
-                          <span className="text-xs bg-success/20 text-success px-2 py-1 rounded">已验证购买</span>
+                          <span className="text-xs bg-success/20 text-success px-2 py-1 rounded">{t('product_detail.verified_purchase')}</span>
                         )}
                       </div>
                       <p className="text-muted-foreground mb-2">{review.content}</p>
@@ -311,7 +313,7 @@ export default function ProductDetail() {
               <Card className="bg-card">
                 <CardContent className="p-12 text-center">
                   <Star className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground">暂无评价</p>
+                  <p className="text-muted-foreground">{t('product_detail.no_reviews')}</p>
                 </CardContent>
               </Card>
             )}
