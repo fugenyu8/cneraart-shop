@@ -48,14 +48,23 @@ export default function Home() {
       {/* 顶部栏 - 参照service.cneraart.com */}
       <div className="bg-[#8B0000] text-[#F5DEB3] py-2 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          {/* 左侧:五台山背书 - 横向滚动 */}
-          <div className="flex items-center gap-1 text-xs md:text-sm overflow-x-auto whitespace-nowrap flex-1 mr-4">
-            <span className="font-semibold">五台山</span>
-            <span className="mx-1">世界五大佛教圣地之一</span>
-            <span>-</span>
-            <span className="mx-1">中国四大佛教名山之首</span>
-            <span>-</span>
-            <span className="mx-1">世界文化遗产名录</span>
+          {/* 左侧:五台山背书 - 自动滚动 */}
+          <div className="flex-1 mr-4 overflow-hidden">
+            <div className="flex items-center gap-4 text-xs md:text-sm whitespace-nowrap animate-scroll">
+              <span className="font-semibold">五台山</span>
+              <span>世界五大佛教圣地之一</span>
+              <span>-</span>
+              <span>中国四大佛教名山之首</span>
+              <span>-</span>
+              <span>世界文化遗产名录</span>
+              {/* 重复内容实现无缝循环 */}
+              <span className="font-semibold">五台山</span>
+              <span>世界五大佛教圣地之一</span>
+              <span>-</span>
+              <span>中国四大佛教名山之首</span>
+              <span>-</span>
+              <span>世界文化遗产名录</span>
+            </div>
           </div>
 
           {/* 右侧:注册/登录/语言 */}
@@ -118,11 +127,11 @@ export default function Home() {
 
           {/* 文字叠加 */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-2xl">
-              ANCIENT EASTERN BLESSINGS
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-2xl" style={{ fontFamily: 'Cinzel, serif' }}>
+              {t('hero.title')}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-light drop-shadow-lg">
-              HELPING YOU RESOLVE TROUBLES
+            <p className="text-xl md:text-2xl text-white/90 font-light drop-shadow-lg" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+              {t('hero.subtitle')}
             </p>
           </div>
 
