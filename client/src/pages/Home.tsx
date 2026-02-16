@@ -60,23 +60,13 @@ export default function Home() {
 
           {/* 右侧:注册/登录/语言 */}
           <div className="flex items-center gap-2 text-xs md:text-sm flex-shrink-0">
-            {user ? (
-              <Link href="/account">
-                <span className="hover:text-white cursor-pointer transition-colors">
-                  {user.name || user.email}
-                </span>
-              </Link>
-            ) : (
-              <>
-                <a href={getLoginUrl()} className="hover:text-white transition-colors">
-                  注册
-                </a>
-                <span>|</span>
-                <a href={getLoginUrl()} className="hover:text-white transition-colors">
-                  登录
-                </a>
-              </>
-            )}
+            <a href={getLoginUrl()} className="hover:text-white transition-colors">
+              注册
+            </a>
+            <span>|</span>
+            <a href={getLoginUrl()} className="hover:text-white transition-colors">
+              登录
+            </a>
             <span>|</span>
             <select
               value={i18n.language}
@@ -117,7 +107,8 @@ export default function Home() {
               <img
                 src={image}
                 alt={`Wutai Mountain ${index + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
+                loading={index === 0 ? "eager" : "lazy"}
               />
             </div>
           ))}
