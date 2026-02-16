@@ -256,5 +256,28 @@
     "success": "Success",
     "error": "Error",
     "loading": "Loading..."
+  },
+  "fortuneServices": {
+    "pageTitle": "Análisis de Fortuna y Destino",
+    "pageSubtitle": "Sabiduría china antigua para el camino de vida y guía de fortuna",
+    "navLink": "Servicios de Fortuna",
+    "faceTitle": "Lectura Facial",
+    "faceDescription": "Arte milenario de lectura facial, revelando la carrera, riqueza, salud y fortunas relacionales a través de rasgos faciales",
+    "palmTitle": "Lectura de la Mano",
+    "palmDescription": "Las líneas de la mano revelan el camino de la vida, guiando tu destino a través de la antigua sabiduría de la quiromancia",
+    "fengshuiTitle": "Feng Shui",
+    "fengshuiDescription": "Sabiduría feng shui del Maestro para armonizar la energía del hogar, resolver la negatividad y atraer la prosperidad",
+    "featuresLabel": "Características:",
+    "bookNow": "Reservar ahora",
+    "comingSoon": "¡Próximamente!",
+    "serviceProcess": "Proceso de Servicio",
+    "step1Title": "Elegir Servicio",
+    "step1Desc": "Seleccionar rostro, mano o feng shui",
+    "step2Title": "Subir Imagen",
+    "step2Desc": "Subir fotos claras",
+    "step3Title": "Análisis del Maestro",
+    "step3Desc": "Sabiduría tradicional + experiencia",
+    "step4Title": "Ver Informe",
+    "step4Desc": "Obtener informe detallado"
   }
 }

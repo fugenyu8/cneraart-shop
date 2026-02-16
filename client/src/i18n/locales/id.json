@@ -119,5 +119,28 @@
     "success": "Success",
     "error": "Error",
     "loading": "Loading..."
+  },
+  "fortuneServices": {
+    "pageTitle": "Analisis Keberuntungan & Takdir",
+    "pageSubtitle": "Kebijaksanaan Tiongkok kuno untuk jalur hidup dan panduan keberuntungan",
+    "navLink": "Layanan Keberuntungan",
+    "faceTitle": "Membaca Wajah",
+    "faceDescription": "Seni membaca wajah kuno, mengungkap karier, kekayaan, kesehatan, dan keberuntungan hubungan melalui fitur wajah",
+    "palmTitle": "Membaca Telapak Tangan",
+    "palmDescription": "Garis telapak tangan mengungkap jalan hidup, membimbing takdir Anda melalui kebijaksanaan membaca telapak tangan kuno",
+    "fengshuiTitle": "Feng Shui",
+    "fengshuiDescription": "Kebijaksanaan feng shui Guru untuk menyelaraskan energi rumah, menyelesaikan negativitas, dan menarik kemakmuran",
+    "featuresLabel": "Fitur:",
+    "bookNow": "Pesan Sekarang",
+    "comingSoon": "Segera hadir!",
+    "serviceProcess": "Proses Layanan",
+    "step1Title": "Pilih Layanan",
+    "step1Desc": "Pilih wajah, telapak tangan, atau feng shui",
+    "step2Title": "Unggah Gambar",
+    "step2Desc": "Unggah foto yang jelas",
+    "step3Title": "Analisis Guru",
+    "step3Desc": "Kebijaksanaan tradisional + keahlian",
+    "step4Title": "Lihat Laporan",
+    "step4Desc": "Dapatkan laporan terperinci"
   }
 }

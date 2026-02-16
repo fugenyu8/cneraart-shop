@@ -256,5 +256,28 @@
     "success": "Success",
     "error": "Error",
     "loading": "Loading..."
+  },
+  "fortuneServices": {
+    "pageTitle": "Analyse de la Fortune et du Destin",
+    "pageSubtitle": "Sagesse chinoise ancienne pour le chemin de vie et la guidance de la fortune",
+    "navLink": "Services de Fortune",
+    "faceTitle": "Lecture du Visage",
+    "faceDescription": "Art millénaire de lecture du visage, révélant la carrière, la richesse, la santé et les fortunes relationnelles à travers les traits faciaux",
+    "palmTitle": "Lecture de la Main",
+    "palmDescription": "Les lignes de la main révèlent le chemin de vie, guidant votre destin à travers l'ancienne sagesse de la chiromancie",
+    "fengshuiTitle": "Feng Shui",
+    "fengshuiDescription": "Sagesse feng shui du Maître pour harmoniser l'énergie domestique, résoudre la négativité et attirer la prospérité",
+    "featuresLabel": "Caractéristiques:",
+    "bookNow": "Réserver maintenant",
+    "comingSoon": "Bientôt disponible!",
+    "serviceProcess": "Processus de Service",
+    "step1Title": "Choisir le Service",
+    "step1Desc": "Sélectionner visage, main ou feng shui",
+    "step2Title": "Télécharger l'Image",
+    "step2Desc": "Télécharger des photos claires",
+    "step3Title": "Analyse du Maître",
+    "step3Desc": "Sagesse traditionnelle + expertise",
+    "step4Title": "Voir le Rapport",
+    "step4Desc": "Obtenir un rapport détaillé"
   }
 }

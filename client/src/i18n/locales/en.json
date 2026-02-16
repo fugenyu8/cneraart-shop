@@ -288,5 +288,28 @@
     "success": "Success",
     "error": "Error",
     "loading": "Loading..."
+  },
+  "fortuneServices": {
+    "pageTitle": "Fortune & Destiny Analysis",
+    "pageSubtitle": "Ancient Chinese wisdom for life path and fortune guidance",
+    "navLink": "Fortune Services",
+    "faceTitle": "Face Reading",
+    "faceDescription": "Ancient face reading art, revealing career, wealth, health and relationship fortunes through facial features",
+    "palmTitle": "Palm Reading",
+    "palmDescription": "Palm lines reveal life's path, guiding your destiny through ancient palmistry wisdom",
+    "fengshuiTitle": "Feng Shui",
+    "fengshuiDescription": "Master's feng shui wisdom to harmonize home energy, resolve negativity and attract prosperity",
+    "featuresLabel": "Features:",
+    "bookNow": "Book Now",
+    "comingSoon": "Coming soon!",
+    "serviceProcess": "Service Process",
+    "step1Title": "Choose Service",
+    "step1Desc": "Select face, palm or feng shui",
+    "step2Title": "Upload Image",
+    "step2Desc": "Upload clear photos",
+    "step3Title": "Master Analysis",
+    "step3Desc": "Traditional wisdom + expertise",
+    "step4Title": "View Report",
+    "step4Desc": "Get detailed report"
   }
 }

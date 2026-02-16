@@ -119,5 +119,28 @@
     "success": "Success",
     "error": "Error",
     "loading": "Loading..."
+  },
+  "fortuneServices": {
+    "pageTitle": "Phân Tích Vận Mệnh và Số Phận",
+    "pageSubtitle": "Trí tuệ Trung Hoa cổ đại cho con đường cuộc đời và hướng dẫn vận mệnh",
+    "navLink": "Dịch Vụ Vận Mệnh",
+    "faceTitle": "Xem Tướng Mặt",
+    "faceDescription": "Nghệ thuật xem tướng mặt cổ đại, tiết lộ sự nghiệp, tài lộc, sức khỏe và vận may tình cảm qua nét mặt",
+    "palmTitle": "Xem Chỉ Tay",
+    "palmDescription": "Đường chỉ tay tiết lộ con đường cuộc đời, dẫn dắt số phận của bạn qua trí tuệ xem chỉ tay cổ đại",
+    "fengshuiTitle": "Phong Thủy",
+    "fengshuiDescription": "Trí tuệ phong thủy của Đại sư để hài hòa năng lượng gia đình, giải quyết tiêu cực và thu hút thịnh vượng",
+    "featuresLabel": "Tính năng:",
+    "bookNow": "Đặt ngay",
+    "comingSoon": "Sắp ra mắt!",
+    "serviceProcess": "Quy Trình Dịch Vụ",
+    "step1Title": "Chọn Dịch Vụ",
+    "step1Desc": "Chọn mặt, tay hoặc phong thủy",
+    "step2Title": "Tải Hình Ảnh",
+    "step2Desc": "Tải ảnh rõ ràng",
+    "step3Title": "Phân Tích Của Đại Sư",
+    "step3Desc": "Trí tuệ truyền thống + chuyên môn",
+    "step4Title": "Xem Báo Cáo",
+    "step4Desc": "Nhận báo cáo chi tiết"
   }
 }

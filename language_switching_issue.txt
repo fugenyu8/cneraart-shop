@@ -1,0 +1,27 @@
+FortuneServices页面语言切换问题分析
+
+## 问题现象
+无论如何切换语言,FortuneServices页面始终显示葡萄牙语(pt)内容,而不是中文(zh)。
+
+## 原因分析
+1. ✅ i18n JSON文件中的翻译数据正确 - zh.json包含完整的中文翻译
+2. ✅ FortuneServices.tsx代码已改为使用i18n系统 - 使用t("fortuneServices.xxx")
+3. ⚠️ 但页面实际显示的是葡萄牙语
+
+## 可能的原因
+1. localStorage中的语言设置被缓存为'pt'
+2. 浏览器刷新后语言未正确切换
+3. i18n初始化时使用了错误的默认语言
+
+## 解决方案
+需要检查:
+1. i18n/config.ts中的fallbackLng设置
+2. 浏览器localStorage中的i18nextLng值
+3. Home.tsx中的changeLanguage函数是否正确执行
+
+## 验证步骤
+1. 清除浏览器localStorage
+2. 重新访问首页
+3. 选择中文语言
+4. 访问FortuneServices页面
+5. 验证中文显示是否正确

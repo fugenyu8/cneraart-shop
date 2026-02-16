@@ -339,5 +339,28 @@
   "footer": {
     "wutaishan": "五台山 · 世界五大佛教圣地之一 · 世界文化遗产名录",
     "heritage": "中国四大佛教名山之首 · 文殊菩萨道场 · 千年佛教文化传承"
+  },
+  "fortuneServices": {
+    "pageTitle": "命理运势分析",
+    "pageSubtitle": "融合中国古老智慧,解读人生运势与命运指引",
+    "navLink": "命理服务",
+    "faceTitle": "面相分析",
+    "faceDescription": "传承千年相术，观面知命，解析事业财运、健康婚姻之运势起伏",
+    "palmTitle": "手相分析",
+    "palmDescription": "掌中乾坤，纹理藏玄机，洞悉人生轨迹，指引命运方向",
+    "fengshuiTitle": "家居风水",
+    "fengshuiDescription": "五台山大师堪舆之道，调和气场能量，化解煞气，招财旺运",
+    "featuresLabel": "服务内容:",
+    "bookNow": "立即预约",
+    "comingSoon": "即将开放,敬请期待!",
+    "serviceProcess": "服务流程",
+    "step1Title": "选择服务",
+    "step1Desc": "选择面相、手相或风水服务",
+    "step2Title": "上传图片",
+    "step2Desc": "上传清晰的照片或房间图片",
+    "step3Title": "大师分析",
+    "step3Desc": "结合传统智慧与专业分析",
+    "step4Title": "查看报告",
+    "step4Desc": "获取详细的命理分析报告"
   }
 }

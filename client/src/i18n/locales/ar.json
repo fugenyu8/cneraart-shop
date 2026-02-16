@@ -119,5 +119,28 @@
     "success": "Success",
     "error": "Error",
     "loading": "Loading..."
+  },
+  "fortuneServices": {
+    "pageTitle": "تحليل الحظ والمصير",
+    "pageSubtitle": "الحكمة الصينية القديمة لمسار الحياة وإرشاد الحظ",
+    "navLink": "خدمات الحظ",
+    "faceTitle": "قراءة الوجه",
+    "faceDescription": "فن قراءة الوجه القديم، يكشف عن المهنة والثروة والصحة وحظوظ العلاقات من خلال ملامح الوجه",
+    "palmTitle": "قراءة الكف",
+    "palmDescription": "خطوط الكف تكشف مسار الحياة، توجه مصيرك من خلال حكمة قراءة الكف القديمة",
+    "fengshuiTitle": "فنغ شوي",
+    "fengshuiDescription": "حكمة فنغ شوي للمعلم لتنسيق طاقة المنزل، وحل السلبية وجذب الازدهار",
+    "featuresLabel": "الميزات:",
+    "bookNow": "احجز الآن",
+    "comingSoon": "قريبًا!",
+    "serviceProcess": "عملية الخدمة",
+    "step1Title": "اختر الخدمة",
+    "step1Desc": "اختر الوجه أو الكف أو فنغ شوي",
+    "step2Title": "تحميل الصورة",
+    "step2Desc": "تحميل صور واضحة",
+    "step3Title": "تحليل المعلم",
+    "step3Desc": "الحكمة التقليدية + الخبرة",
+    "step4Title": "عرض التقرير",
+    "step4Desc": "احصل على تقرير مفصل"
   }
 }

@@ -13,36 +13,24 @@ export default function FortuneServices() {
   const services = [
     {
       id: "face",
-      title: "面相分析",
-      titleEn: "Face Reading",
-      description: "基于传统面相学,分析面部特征,解读运势吉凶",
-      descriptionEn: "Traditional face reading to analyze facial features and interpret fortune",
       icon: "👤",
       features: ["十二宫位分析", "流年运势", "事业财运", "健康婚姻"],
       featuresEn: ["12 Palaces Analysis", "Annual Fortune", "Career & Wealth", "Health & Marriage"],
-      price: "¥199",
+      price: "￥199",
     },
     {
       id: "palm",
-      title: "手相分析",
-      titleEn: "Palm Reading",
-      description: "解读掌纹奥秘,洞察人生轨迹",
-      descriptionEn: "Decode palm lines to reveal life path and destiny",
       icon: "✋",
       features: ["三大主线", "财运线", "事业线", "婚姻线"],
       featuresEn: ["3 Major Lines", "Money Line", "Career Line", "Marriage Line"],
-      price: "¥199",
+      price: "￥199",
     },
     {
       id: "fengshui",
-      title: "家居风水",
-      titleEn: "Feng Shui",
-      description: "五台山大师风水智慧,调和居家气场",
-      descriptionEn: "Master feng shui wisdom to harmonize home energy",
       icon: "🏠",
       features: ["布局分析", "色彩搭配", "化解煞气", "招财旺运"],
       featuresEn: ["Layout Analysis", "Color Harmony", "Resolve Negative Energy", "Attract Wealth"],
-      price: "¥299",
+      price: "￥299",
     },
   ];
 
@@ -64,7 +52,7 @@ export default function FortuneServices() {
               <a className="text-yellow-400 hover:text-yellow-300">{t("nav.products")}</a>
             </Link>
             <Link href="/fortune">
-              <a className="text-yellow-400 hover:text-yellow-300">{isZh ? "命理服务" : "Fortune Services"}</a>
+              <a className="text-yellow-400 hover:text-yellow-300">{t("fortuneServices.navLink")}</a>
             </Link>
             <Link href="/cart">
               <a className="text-yellow-400 hover:text-yellow-300">{t("nav.cart")}</a>
@@ -76,12 +64,10 @@ export default function FortuneServices() {
       {/* 页头 */}
       <div className="container mx-auto py-16 text-center">
         <h1 className="mb-4 text-5xl font-bold text-yellow-400">
-          {isZh ? "命理运势分析" : "Fortune & Destiny Analysis"}
+          {t("fortuneServices.pageTitle")}
         </h1>
-        <p className="text-xl text-slate-300">
-          {isZh
-            ? "融合中国古老智慧,解读人生运势与命运指引"
-            : "Ancient Chinese wisdom for life path and fortune guidance"}
+        <p className="text-lg text-slate-300">
+          {t("fortuneServices.pageSubtitle")}
         </p>
       </div>
 
@@ -94,14 +80,14 @@ export default function FortuneServices() {
           >
             <div className="mb-6 text-center text-6xl">{service.icon}</div>
             <h2 className="mb-3 text-center text-2xl font-bold text-yellow-400">
-              {isZh ? service.title : service.titleEn}
+              {t(`fortuneServices.${service.id}Title`)}
             </h2>
             <p className="mb-6 text-center text-slate-300">
-              {isZh ? service.description : service.descriptionEn}
+              {t(`fortuneServices.${service.id}Description`)}
             </p>
 
             <div className="mb-6 space-y-2">
-              <p className="font-semibold text-yellow-400">{isZh ? "服务内容:" : "Features:"}</p>
+              <p className="font-semibold text-yellow-400">{t("fortuneServices.featuresLabel")}</p>
               <ul className="space-y-1 text-sm text-slate-300">
                 {(isZh ? service.features : service.featuresEn).map((feature, idx) => (
                   <li key={idx} className="flex items-center gap-2">
@@ -120,10 +106,10 @@ export default function FortuneServices() {
               className="w-full bg-yellow-400 text-slate-950 hover:bg-yellow-300"
               onClick={() => {
                 // TODO: 跳转到服务购买页面
-                alert(isZh ? "即将开放,敬请期待!" : "Coming soon!");
+                alert(t("fortuneServices.comingSoon"));
               }}
             >
-              {isZh ? "立即预约" : "Book Now"}
+              {t("fortuneServices.bookNow")}
             </Button>
           </Card>
         ))}
