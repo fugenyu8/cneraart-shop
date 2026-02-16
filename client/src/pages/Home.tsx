@@ -80,21 +80,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* 下方小图 - 五台山风景 */}
-              <div className="relative h-[242px] rounded-lg overflow-hidden group">
-                <img
-                  src="https://d3hxwv9uga20ww.cloudfront.net/RoSpAXz7wgobQtEUGXx9ai-files/wutais1(6)-randomSuffix-1739540737.jpg"
-                  alt="Wutai Mountain Sacred Site"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <div className="text-lg font-medium mb-2">Wutai Mountain</div>
-                    <div className="text-xl font-bold">Sacred Site</div>
-                  </div>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
