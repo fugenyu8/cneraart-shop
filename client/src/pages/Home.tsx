@@ -15,9 +15,9 @@ export default function Home() {
       {/* Hero Section - 左右分栏布局 */}
       <section className="relative">
         <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {/* 左侧大图 */}
-            <div className="lg:col-span-2 relative h-[500px] rounded-lg overflow-hidden group">
+          <div className="relative">
+            {/* Hero大图 */}
+            <div className="relative h-[500px] rounded-lg overflow-hidden group">
               <img
                 src="https://d3hxwv9uga20ww.cloudfront.net/RoSpAXz7wgobQtEUGXx9ai-files/fojiaowutaishan1(16)-randomSuffix-1739540736.jpg"
                 alt="Wutai Mountain Temple"
@@ -60,27 +60,6 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-            </div>
-
-            {/* 右侧两个小图 */}
-            <div className="flex flex-col gap-4">
-              {/* 上方小图 - 和尚诵经 */}
-              <div className="relative h-[242px] rounded-lg overflow-hidden group">
-                <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/qHFOIcpoppWwbBgV.png"
-                  alt="Venerable Monk's Consecration Ritual"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-white text-center">
-                    <div className="text-lg font-medium mb-2">Venerable Monk's</div>
-                    <div className="text-xl font-bold">Consecration Ritual</div>
-                  </div>
-                </div>
-              </div>
-
-
             </div>
           </div>
         </div>
