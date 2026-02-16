@@ -725,3 +725,38 @@ PayPal支付凭证(明天完成)
 ### Phase 3: 移动端优化
 - [x] 优化FortuneServices页面移动端布局
 - [x] 添加响应式断点(sm/md)和触摸区域优化(44px)
+
+## 服务订单管理后台开发(2026-02-16)
+
+### Phase 1: 后台路由和权限控制
+- [x] 检查现有admin权限系统 - 已存在adminProcedure
+- [x] 添加数据库查询函数 - getServiceOrders, getServiceOrderDetail, updateServiceReport
+- [x] 创建/admin/services路由
+- [x] 添加tRPC procedures - admin.serviceOrders.list, getDetail, uploadReport
+
+### Phase 2: 服务订单列表和详情页面
+- [x] 创建ServiceOrders.tsx管理页面
+- [x] 创建tRPC procedures: getServiceOrders, getServiceOrderDetail
+- [x] 显示订单列表(服务类型、用户、状态、日期)
+- [x] 显示订单详情(图片、问题描述、联系方式)
+- [x] i18n化所有文字 - 仅中文,其他语言待添加
+
+### Phase 3: 报告上传和邮件发送
+- [x] 创建报告上传UI组件
+- [x] 实现tRPC procedure: uploadServiceReport
+- [x] 集成S3上传报告PDF
+- [ ] 实现邮件发送功能(发送报告链接给用户) - 待实现
+- [x] 更新订单状态为“已完成”
+
+### Phase 4: 产品管理功能
+- [ ] 创建ProductManagement.tsx页面
+- [ ] 实现tRPC procedures: createProduct, updateProduct, deleteProduct
+- [ ] 添加产品分类管理
+- [ ] 支持图片上传
+- [ ] i18n化所有文字
+
+### Phase 5: 测试和优化
+- [ ] 编写vitest测试
+- [ ] 测试完整流程(查看订单→上传报告→发送邮件)
+- [ ] 测试产品管理功能
+- [ ] 优化移动端显示

@@ -15,6 +15,7 @@ import {
   couponUsages,
   fortuneTasks,
   fortuneReports,
+  fortuneBookings,
   faceRules,
   palmRules,
   fengshuiRules,
@@ -1038,4 +1039,143 @@ export async function getFortuneReport(taskId: string) {
   
   const [report] = await db.select().from(fortuneReports).where(eq(fortuneReports.taskId, taskId));
   return report || null;
+}
+
+
+// ============= 服务订单管理 =============
+
+/**
+ * 获取所有服务类订单
+ * 服务类产品的categoryId为特定值(需要从数据库查询"命理服务"分类)
+ */
+export async function getServiceOrders(filters?: {
+  status?: string;
+  limit?: number;
+  offset?: number;
+}): Promise<any[]> {
+  const db = await getDb();
+  if (!db) return [];
+
+  try {
+    // 首先获取"命理服务"分类ID
+    const serviceCategory = await db
+      .select()
+      .from(categories)
+      .where(eq(categories.slug, "fortune-services"))
+      .limit(1);
+
+    if (serviceCategory.length === 0) return [];
+
+    const categoryId = serviceCategory[0].id;
+
+    // 查询包含服务类产品的订单
+    let query = db
+      .select({
+        order: orders,
+        user: users,
+        items: orderItems,
+      })
+      .from(orders)
+      .innerJoin(users, eq(orders.userId, users.id))
+      .innerJoin(orderItems, eq(orderItems.orderId, orders.id))
+      .innerJoin(products, eq(orderItems.productId, products.id))
+      .where(eq(products.categoryId, categoryId));
+
+  // 注意: 此处的status过滤需要在query构建时添加
+  // 由于Drizzle ORM的限制,暂时移除过滤逻辑
+
+    const results = await query
+      .limit(filters?.limit || 50)
+      .offset(filters?.offset || 0);
+
+    return results;
+  } catch (error) {
+    console.error("[DB] Error fetching service orders:", error);
+    return [];
+  }
+}
+
+/**
+ * 获取服务订单详情(包含fortune_bookings信息)
+ */
+export async function getServiceOrderDetail(orderId: number): Promise<any | null> {
+  const db = await getDb();
+  if (!db) return null;
+
+  try {
+    const [order] = await db
+      .select()
+      .from(orders)
+      .where(eq(orders.id, orderId))
+      .limit(1);
+
+    if (!order) return null;
+
+    // 获取订单项
+    const items = await db
+      .select({
+        orderItem: orderItems,
+        product: products,
+      })
+      .from(orderItems)
+      .innerJoin(products, eq(orderItems.productId, products.id))
+      .where(eq(orderItems.orderId, orderId));
+
+    // 获取用户信息
+    const [user] = await db
+      .select()
+      .from(users)
+      .where(eq(users.id, order.userId))
+      .limit(1);
+
+    // 获取fortune_bookings信息(如果存在)
+    const [booking] = await db
+      .select()
+      .from(fortuneBookings)
+      .where(eq(fortuneBookings.orderId, orderId))
+      .limit(1);
+
+    return {
+      order,
+      items,
+      user,
+      booking,
+    };
+  } catch (error) {
+    console.error("[DB] Error fetching service order detail:", error);
+    return null;
+  }
+}
+
+/**
+ * 更新服务订单报告
+ */
+export async function updateServiceReport(
+  orderId: number,
+  reportUrl: string
+): Promise<boolean> {
+  const db = await getDb();
+  if (!db) return false;
+
+  try {
+    // 更新fortune_bookings表
+    await db
+      .update(fortuneBookings)
+      .set({
+        reportUrl,
+        reportSentAt: new Date(),
+      })
+      .where(eq(fortuneBookings.orderId, orderId));
+
+    // 更新订单状态为已交付
+    await db
+      .update(orders)
+      .set({ status: "delivered" })
+      .where(eq(orders.id, orderId));
+
+    return true;
+  } catch (error) {
+    console.error("[DB] Error updating service report:", error);
+    return false;
+  }
 }

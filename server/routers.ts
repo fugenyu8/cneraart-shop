@@ -700,6 +700,51 @@ export const appRouter = router({
           return { success: true };
         }),
     }),
+
+    // 服务订单管理
+    serviceOrders: router({
+      // 获取服务订单列表
+      list: adminProcedure
+        .input(
+          z.object({
+            status: z.string().optional(),
+            limit: z.number().min(1).max(100).default(50),
+            offset: z.number().min(0).default(0),
+          })
+        )
+        .query(async ({ input }) => {
+          const orders = await db.getServiceOrders(input);
+          return orders;
+        }),
+
+      // 获取服务订单详情
+      getDetail: adminProcedure
+        .input(z.object({ orderId: z.number() }))
+        .query(async ({ input }) => {
+          const detail = await db.getServiceOrderDetail(input.orderId);
+          if (!detail) {
+            throw new TRPCError({ code: "NOT_FOUND", message: "订单不存在" });
+          }
+          return detail;
+        }),
+
+      // 上传报告
+      uploadReport: adminProcedure
+        .input(
+          z.object({
+            orderId: z.number(),
+            reportUrl: z.string(),
+          })
+        )
+        .mutation(async ({ input }) => {
+          const success = await db.updateServiceReport(input.orderId, input.reportUrl);
+          if (!success) {
+            throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "报告上传失败" });
+          }
+          // TODO: 发送邮件给用户
+          return { success: true };
+        }),
+    }),
   }),
 
   // ============= 命理测算服务 =============

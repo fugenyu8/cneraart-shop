@@ -17,6 +17,7 @@ import AdminOrderDetail from "./pages/admin/OrderDetail";
 import Account from "./pages/Account";
 import OrderDetail from "./pages/OrderDetail";
 import FortuneServices from "./pages/FortuneServices";
+import ServiceOrders from "./pages/admin/ServiceOrders";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -36,6 +37,7 @@ function Router() {
       <Route path={"/account"} component={Account} />
       <Route path={"/orders/:id"} component={OrderDetail} />
       <Route path={"/fortune"} component={FortuneServices} />
+      <Route path={"/admin/service-orders"} component={ServiceOrders} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
