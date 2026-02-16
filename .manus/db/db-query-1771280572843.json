@@ -1,0 +1,100 @@
+{
+  "query": "SELECT id, name, slug, categoryId FROM products WHERE name LIKE '%生肖%' OR name LIKE '%zodiac%' OR slug LIKE '%zodiac%' ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug, categoryId FROM products WHERE name LIKE '%生肖%' OR name LIKE '%zodiac%' OR slug LIKE '%zodiac%' ORDER BY id;",
+  "rows": [
+    {
+      "id": "120001",
+      "name": "Chinese Zodiac Guardian Pendant",
+      "slug": "chinese-zodiac-guardian-pendant",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120005",
+      "name": "Zodiac Constellation Guardian Pendant",
+      "slug": "zodiac-constellation-guardian-pendant",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120006",
+      "name": "Zodiac Moon Crescent Pendant",
+      "slug": "zodiac-moon-crescent-pendant",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "510001",
+      "name": "五台山开光鼠守护吊坠",
+      "slug": "wutai-mountain-rat-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510002",
+      "name": "五台山开光牛守护吊坠",
+      "slug": "wutai-mountain-ox-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510003",
+      "name": "五台山开光虎守护吊坠",
+      "slug": "wutai-mountain-tiger-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510004",
+      "name": "五台山开光兔守护吊坠",
+      "slug": "wutai-mountain-rabbit-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510005",
+      "name": "五台山开光龙守护吊坠",
+      "slug": "wutai-mountain-dragon-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510006",
+      "name": "五台山开光蛇守护吊坠",
+      "slug": "wutai-mountain-snake-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510007",
+      "name": "五台山开光马守护吊坠",
+      "slug": "wutai-mountain-horse-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510008",
+      "name": "五台山开光羊守护吊坠",
+      "slug": "wutai-mountain-goat-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510009",
+      "name": "五台山开光猴守护吊坠",
+      "slug": "wutai-mountain-monkey-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510010",
+      "name": "五台山开光鸡守护吊坠",
+      "slug": "wutai-mountain-rooster-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510011",
+      "name": "五台山开光狗守护吊坠",
+      "slug": "wutai-mountain-dog-zodiac-guardian-pendant",
+      "categoryId": "6"
+    },
+    {
+      "id": "510012",
+      "name": "五台山开光猪守护吊坠",
+      "slug": "wutai-mountain-pig-zodiac-guardian-pendant",
+      "categoryId": "6"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tcategoryId\n120001\tChinese Zodiac Guardian Pendant\tchinese-zodiac-guardian-pendant\tNULL\n120005\tZodiac Constellation Guardian Pendant\tzodiac-constellation-guardian-pendant\tNULL\n120006\tZodiac Moon Crescent Pendant\tzodiac-moon-crescent-pendant\tNULL\n510001\t五台山开光鼠守护吊坠\twutai-mountain-rat-zodiac-guardian-pendant\t6\n510002\t五台山开光牛守护吊坠\twutai-mountain-ox-zodiac-guardian-pendant\t6\n510003\t五台山开光虎守护吊坠\twutai-mountain-tiger-zodiac-guardian-pendant\t6\n510004\t五台山开光兔守护吊坠\twutai-mountain-rabbit-zodiac-guardian-pendant\t6\n510005\t五台山开光龙守护吊坠\twutai-mountain-dragon-zodiac-guardian-pendant\t6\n510006\t五台山开光蛇守护吊坠\twutai-mountain-snake-zodiac-guardian-pendant\t6\n510007\t五台山开光马守护吊坠\twutai-mountain-horse-zodiac-guardian-pendant\t6\n510008\t五台山开光羊守护吊坠\twutai-mountain-goat-zodiac-guardian-pendant\t6\n510009\t五台山开光猴守护吊坠\twutai-mountain-monkey-zodiac-guardian-pendant\t6\n510010\t五台山开光鸡守护吊坠\twutai-mountain-rooster-zodiac-guardian-pendant\t6\n510011\t五台山开光狗守护吊坠\twutai-mountain-dog-zodiac-guardian-pendant\t6\n510012\t五台山开光猪守护吊坠\twutai-mountain-pig-zodiac-guardian-pendant\t6\n",
+  "stderr": "",
+  "execution_time_ms": 50
+}

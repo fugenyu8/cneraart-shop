@@ -1,0 +1,33 @@
+{
+  "query": "\nSELECT \n  c.name as category_name,\n  COUNT(p.id) as product_count,\n  GROUP_CONCAT(p.name SEPARATOR ' | ') as product_names\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nGROUP BY c.id, c.name\nORDER BY c.id;\n\nSELECT COUNT(*) as total_products FROM products;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nSELECT \n  c.name as category_name,\n  COUNT(p.id) as product_count,\n  GROUP_CONCAT(p.name SEPARATOR ' | ') as product_names\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nGROUP BY c.id, c.name\nORDER BY c.id;\n\nSELECT COUNT(*) as total_products FROM products;\n",
+  "rows": [
+    {
+      "category_name": "NULL",
+      "product_count": "17",
+      "product_names": "Chinese Zodiac Guardian Pendant | Master-Infused Energy Bracelet | Zodiac Constellation Guardian Pendant | Zodiac Moon Crescent Pendant | Ancient Chinese Wisdom Analysis | Dual Blessings Package | Wutai Mountain Incense Offering | Lamp Offering for Blessings | Incense and Amulet Package | Complete Blessing Ceremony | Eastern Ancient Wisdom Text Pendant | Heart Sutra Bracelet | Great Compassion Mantra Bracelet | Shurangama Mantra Bracelet | Yellow Jambhala Bracelet | Amitabha Bracelet | Esoteric North Star Seven-Star Pendant"
+    },
+    {
+      "category_name": "命理服务",
+      "product_count": "3",
+      "product_names": "面相分析服务 | 手相分析服务 | 家居风水服务"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_count": "12",
+      "product_names": "五台山开光鼠守护吊坠 | 五台山开光牛守护吊坠 | 五台山开光虎守护吊坠 | 五台山开光兔守护吊坠 | 五台山开光龙守护吊坠 | 五台山开光蛇守护吊坠 | 五台山开光马守护吊坠 | 五台山开光羊守护吊坠 | 五台山开光猴守护吊坠 | 五台山开光鸡守护吊坠 | 五台山开光狗守护吊坠 | 五台山开光猪守护吊坠"
+    },
+    {
+      "category_name": "星座守护",
+      "product_count": "24",
+      "product_names": "五台山开光白羊座守护吊坠 | 五台山开光金牛座守护吊坠 | 五台山开光双子座守护吊坠 | 五台山开光巨蟹座守护吊坠 | 五台山开光狮子座守护吊坠 | 五台山开光处女座守护吊坠 | 五台山开光天秤座守护吊坠 | 五台山开光天蝎座守护吊坠 | 五台山开光射手座守护吊坠 | 五台山开光摩羯座守护吊坠 | 五台山开光水瓶座守护吊坠 | 五台山开光双鱼座守护吊坠 | Aries Moon Crescent Pendant | Taurus Moon Crescent Pendant | Gemini Moon Crescent Pendant | Cancer Moon Crescent Pendant | Leo Moon Crescent Pendant | Virgo Moon Crescent Pendant | Libra Moon Crescent Pendant | Scorpio Moon Crescent Pendant | Sagittarius Moon Crescent Pendant | Capricorn Moon Crescent Pendant | Aquarius Moon Crescent Pendant | Pisces Moon Crescent Pendant"
+    }
+  ],
+  "messages": [
+    "total_products",
+    "56"
+  ],
+  "stdout": "category_name\tproduct_count\tproduct_names\nNULL\t17\tChinese Zodiac Guardian Pendant | Master-Infused Energy Bracelet | Zodiac Constellation Guardian Pendant | Zodiac Moon Crescent Pendant | Ancient Chinese Wisdom Analysis | Dual Blessings Package | Wutai Mountain Incense Offering | Lamp Offering for Blessings | Incense and Amulet Package | Complete Blessing Ceremony | Eastern Ancient Wisdom Text Pendant | Heart Sutra Bracelet | Great Compassion Mantra Bracelet | Shurangama Mantra Bracelet | Yellow Jambhala Bracelet | Amitabha Bracelet | Esoteric North Star Seven-Star Pendant\n命理服务\t3\t面相分析服务 | 手相分析服务 | 家居风水服务\n生肖守护\t12\t五台山开光鼠守护吊坠 | 五台山开光牛守护吊坠 | 五台山开光虎守护吊坠 | 五台山开光兔守护吊坠 | 五台山开光龙守护吊坠 | 五台山开光蛇守护吊坠 | 五台山开光马守护吊坠 | 五台山开光羊守护吊坠 | 五台山开光猴守护吊坠 | 五台山开光鸡守护吊坠 | 五台山开光狗守护吊坠 | 五台山开光猪守护吊坠\n星座守护\t24\t五台山开光白羊座守护吊坠 | 五台山开光金牛座守护吊坠 | 五台山开光双子座守护吊坠 | 五台山开光巨蟹座守护吊坠 | 五台山开光狮子座守护吊坠 | 五台山开光处女座守护吊坠 | 五台山开光天秤座守护吊坠 | 五台山开光天蝎座守护吊坠 | 五台山开光射手座守护吊坠 | 五台山开光摩羯座守护吊坠 | 五台山开光水瓶座守护吊坠 | 五台山开光双鱼座守护吊坠 | Aries Moon Crescent Pendant | Taurus Moon Crescent Pendant | Gemini Moon Crescent Pendant | Cancer Moon Crescent Pendant | Leo Moon Crescent Pendant | Virgo Moon Crescent Pendant | Libra Moon Crescent Pendant | Scorpio Moon Crescent Pendant | Sagittarius Moon Crescent Pendant | Capricorn Moon Crescent Pendant | Aquarius Moon Crescent Pendant | Pisces Moon Crescent Pendant\ntotal_products\n56\n",
+  "stderr": "",
+  "execution_time_ms": 67
+}

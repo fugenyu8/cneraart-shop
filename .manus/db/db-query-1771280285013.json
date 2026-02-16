@@ -1,0 +1,20 @@
+{
+  "query": "SELECT id, name, slug FROM products WHERE slug LIKE '%eastern-ancient-wisdom%' OR slug LIKE '%heart-sutra%' OR slug LIKE '%seven-star%' ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug FROM products WHERE slug LIKE '%eastern-ancient-wisdom%' OR slug LIKE '%heart-sutra%' OR slug LIKE '%seven-star%' ORDER BY id;",
+  "rows": [
+    {
+      "id": "120002",
+      "name": "Eastern Ancient Wisdom Text Pendant",
+      "slug": "eastern-ancient-wisdom-text-pendant"
+    },
+    {
+      "id": "120003",
+      "name": "Esoteric North Star Seven-Star Pendant",
+      "slug": "esoteric-north-star-seven-star-pendant"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\n120002\tEastern Ancient Wisdom Text Pendant\teastern-ancient-wisdom-text-pendant\n120003\tEsoteric North Star Seven-Star Pendant\tesoteric-north-star-seven-star-pendant\n",
+  "stderr": "",
+  "execution_time_ms": 52
+}

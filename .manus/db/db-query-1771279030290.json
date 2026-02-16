@@ -1,0 +1,130 @@
+{
+  "query": "SELECT id, name, slug FROM products WHERE id >= 510025 ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug FROM products WHERE id >= 510025 ORDER BY id;",
+  "rows": [
+    {
+      "id": "510025",
+      "name": "Aries Moon Crescent Pendant",
+      "slug": "aries-moon-crescent-pendant"
+    },
+    {
+      "id": "510026",
+      "name": "Taurus Moon Crescent Pendant",
+      "slug": "taurus-moon-crescent-pendant"
+    },
+    {
+      "id": "510027",
+      "name": "Gemini Moon Crescent Pendant",
+      "slug": "gemini-moon-crescent-pendant"
+    },
+    {
+      "id": "510028",
+      "name": "Cancer Moon Crescent Pendant",
+      "slug": "cancer-moon-crescent-pendant"
+    },
+    {
+      "id": "510029",
+      "name": "Leo Moon Crescent Pendant",
+      "slug": "leo-moon-crescent-pendant"
+    },
+    {
+      "id": "510030",
+      "name": "Virgo Moon Crescent Pendant",
+      "slug": "virgo-moon-crescent-pendant"
+    },
+    {
+      "id": "510031",
+      "name": "Libra Moon Crescent Pendant",
+      "slug": "libra-moon-crescent-pendant"
+    },
+    {
+      "id": "510032",
+      "name": "Scorpio Moon Crescent Pendant",
+      "slug": "scorpio-moon-crescent-pendant"
+    },
+    {
+      "id": "510033",
+      "name": "Sagittarius Moon Crescent Pendant",
+      "slug": "sagittarius-moon-crescent-pendant"
+    },
+    {
+      "id": "510034",
+      "name": "Capricorn Moon Crescent Pendant",
+      "slug": "capricorn-moon-crescent-pendant"
+    },
+    {
+      "id": "510035",
+      "name": "Aquarius Moon Crescent Pendant",
+      "slug": "aquarius-moon-crescent-pendant"
+    },
+    {
+      "id": "510036",
+      "name": "Pisces Moon Crescent Pendant",
+      "slug": "pisces-moon-crescent-pendant"
+    },
+    {
+      "id": "510037",
+      "name": "Rat Chinese Zodiac Guardian Pendant",
+      "slug": "rat-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510038",
+      "name": "Ox Chinese Zodiac Guardian Pendant",
+      "slug": "ox-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510039",
+      "name": "Tiger Chinese Zodiac Guardian Pendant",
+      "slug": "tiger-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510040",
+      "name": "Rabbit Chinese Zodiac Guardian Pendant",
+      "slug": "rabbit-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510041",
+      "name": "Dragon Chinese Zodiac Guardian Pendant",
+      "slug": "dragon-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510042",
+      "name": "Snake Chinese Zodiac Guardian Pendant",
+      "slug": "snake-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510043",
+      "name": "Horse Chinese Zodiac Guardian Pendant",
+      "slug": "horse-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510044",
+      "name": "Goat Chinese Zodiac Guardian Pendant",
+      "slug": "goat-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510045",
+      "name": "Monkey Chinese Zodiac Guardian Pendant",
+      "slug": "monkey-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510046",
+      "name": "Rooster Chinese Zodiac Guardian Pendant",
+      "slug": "rooster-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510047",
+      "name": "Dog Chinese Zodiac Guardian Pendant",
+      "slug": "dog-chinese-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510048",
+      "name": "Pig Chinese Zodiac Guardian Pendant",
+      "slug": "pig-chinese-zodiac-guardian-pendant"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\n510025\tAries Moon Crescent Pendant\taries-moon-crescent-pendant\n510026\tTaurus Moon Crescent Pendant\ttaurus-moon-crescent-pendant\n510027\tGemini Moon Crescent Pendant\tgemini-moon-crescent-pendant\n510028\tCancer Moon Crescent Pendant\tcancer-moon-crescent-pendant\n510029\tLeo Moon Crescent Pendant\tleo-moon-crescent-pendant\n510030\tVirgo Moon Crescent Pendant\tvirgo-moon-crescent-pendant\n510031\tLibra Moon Crescent Pendant\tlibra-moon-crescent-pendant\n510032\tScorpio Moon Crescent Pendant\tscorpio-moon-crescent-pendant\n510033\tSagittarius Moon Crescent Pendant\tsagittarius-moon-crescent-pendant\n510034\tCapricorn Moon Crescent Pendant\tcapricorn-moon-crescent-pendant\n510035\tAquarius Moon Crescent Pendant\taquarius-moon-crescent-pendant\n510036\tPisces Moon Crescent Pendant\tpisces-moon-crescent-pendant\n510037\tRat Chinese Zodiac Guardian Pendant\trat-chinese-zodiac-guardian-pendant\n510038\tOx Chinese Zodiac Guardian Pendant\tox-chinese-zodiac-guardian-pendant\n510039\tTiger Chinese Zodiac Guardian Pendant\ttiger-chinese-zodiac-guardian-pendant\n510040\tRabbit Chinese Zodiac Guardian Pendant\trabbit-chinese-zodiac-guardian-pendant\n510041\tDragon Chinese Zodiac Guardian Pendant\tdragon-chinese-zodiac-guardian-pendant\n510042\tSnake Chinese Zodiac Guardian Pendant\tsnake-chinese-zodiac-guardian-pendant\n510043\tHorse Chinese Zodiac Guardian Pendant\thorse-chinese-zodiac-guardian-pendant\n510044\tGoat Chinese Zodiac Guardian Pendant\tgoat-chinese-zodiac-guardian-pendant\n510045\tMonkey Chinese Zodiac Guardian Pendant\tmonkey-chinese-zodiac-guardian-pendant\n510046\tRooster Chinese Zodiac Guardian Pendant\trooster-chinese-zodiac-guardian-pendant\n510047\tDog Chinese Zodiac Guardian Pendant\tdog-chinese-zodiac-guardian-pendant\n510048\tPig Chinese Zodiac Guardian Pendant\tpig-chinese-zodiac-guardian-pendant\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

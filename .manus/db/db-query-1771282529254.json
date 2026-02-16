@@ -1,0 +1,483 @@
+{
+  "query": "SELECT p.id, p.name, p.description, p.regularPrice, p.salePrice, c.name as categoryName\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nWHERE p.status = 'published'\nORDER BY c.id, p.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, p.description, p.regularPrice, p.salePrice, c.name as categoryName\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nWHERE p.status = 'published'\nORDER BY c.id, p.id;",
+  "rows": [
+    {
+      "id": "120001",
+      "name": "Chinese Zodiac Guardian Pendant",
+      "description": "Ancient Eastern Ritual-Enhanced Symbolic Talisman. Handcrafted by masters from Wutai Mountain, this pendant carries the protective energy of your zodiac guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "120004",
+      "name": "Master-Infused Energy Bracelet",
+      "description": "Embedded with Ancient Scriptural Wisdom, A Personal Talisman for Meditation & Energy. Each bead is individually blessed by Wutai Mountain monks.",
+      "regularPrice": "59.00",
+      "salePrice": "49.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "120005",
+      "name": "Zodiac Constellation Guardian Pendant",
+      "description": "Eastern Ritual-Enhanced Celestial Talisman. Connects you with the cosmic energies of your birth constellation.",
+      "regularPrice": "59.00",
+      "salePrice": "49.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "120006",
+      "name": "Zodiac Moon Crescent Pendant",
+      "description": "Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Harmonizes lunar energies with your personal destiny.",
+      "regularPrice": "59.00",
+      "salePrice": "49.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "120007",
+      "name": "Ancient Chinese Wisdom Analysis",
+      "description": "Unlock Ancient Chinese Wisdom for Only $19! Receive a comprehensive Four Pillars of Destiny analysis based on your birth date and time.",
+      "regularPrice": "19.00",
+      "salePrice": "NULL",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "510049",
+      "name": "Eastern Ancient Wisdom Text Pendant",
+      "description": "This pendant bears a timeless text rooted in millennia-old Eastern wisdom — sacred scriptures that have long been linked to mindfulness, inner calm, and the quiet strength of spiritual centering. Each piece is elevated by a traditional Eastern ceremonial enlivenment performed at sacred temples, a practice deeply woven into ancient cultural heritage, focused on aligning the piece with the resonant energy of intentional presence. Crafted with polished, durable metals in both lustrous gold and elegant silver finishes, the intricate engraved script (classic passages of Eastern philosophical legacy including Heart Sutra, Great Compassion Mantra, and other sacred texts) and refined design blend understated luxury with profound symbolic depth. Worn close to the body, it serves as a tangible reminder of inner balance — a subtle, elegant link to the quiet wisdom of ancient Eastern traditions. For seekers drawn to the mystique of Eastern cultural heritage and symbolic pieces that carry intentional, centering energy.",
+      "regularPrice": "59.00",
+      "salePrice": "49.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "510050",
+      "name": "Heart Sutra Bracelet",
+      "description": "Meticulously crafted, this bracelet features the complete Heart Sutra (般若波罗蜜多心经) — one of the most revered texts in Eastern philosophy — engraved upon its surface with exquisite precision. Each character holds millennia of wisdom about emptiness, non-attachment, and the path to spiritual liberation. Available in radiant gold and refined silver finishes, this flat-design bracelet (width: 1.0cm, inner circumference: 19cm) combines modern elegance with ancient spiritual power. Blessed in the sacred setting of Wutaishan Mountain by revered masters through traditional methods, it is intended to carry pure, protective energy for spiritual healing, mental clarity, and energy protection. More than jewelry, it is a consecrated spiritual companion designed to help anchor the mind amidst chaos and cultivate a personal aura of serenity and safeguarding. Whether used for mindfulness practice or given as a profoundly meaningful gift, it carries deep intention.",
+      "regularPrice": "59.00",
+      "salePrice": "49.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "510051",
+      "name": "Great Compassion Mantra Bracelet",
+      "description": "This bracelet bears the sacred Great Compassion Mantra (大悲咒) — a powerful dharani revered across Eastern traditions for its ability to invoke the boundless compassion of Avalokitesvara Bodhisattva. The complete mantra is meticulously engraved across the bracelet's surface, each syllable carrying the energy of relief from suffering, emotional healing, health blessings, and comprehensive protection. Crafted in lustrous gold and elegant silver finishes with a flat design (width: 1.0cm, inner circumference: 19cm), this piece seamlessly blends spiritual depth with contemporary aesthetics. Consecrated at Wutaishan Mountain by accomplished masters using time-honored rituals, it is imbued with protective energy that resonates with the wearer's intention. Whether worn during meditation, carried through daily challenges, or gifted to loved ones facing difficulties, this bracelet serves as a tangible connection to the compassionate forces that guide and protect.",
+      "regularPrice": "59.00",
+      "salePrice": "49.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "510052",
+      "name": "Shurangama Mantra Bracelet",
+      "description": "The Shurangama Mantra (楞严咒) is considered the \"king of mantras\" in Eastern esoteric traditions — the most powerful protective invocation for dispelling negative forces, purifying consciousness, and establishing an impenetrable spiritual shield. This bracelet carries the complete mantra engraved with precision across its surface, each sacred syllable resonating with the energy of ultimate protection and spiritual awakening. Available in three exquisite finishes — radiant gold, refined silver, and elegant rose gold — this flat-design bracelet (width: 1.0cm, inner circumference: 19cm) offers both aesthetic versatility and profound spiritual significance. Blessed at the sacred Wutaishan Mountain by masters trained in esoteric practices, this piece is consecrated to serve as your personal guardian talisman. Practitioners wear it to strengthen their meditation practice, protect against harmful energies, and maintain clarity of mind in all circumstances. For those seeking the highest level of spiritual protection combined with refined craftsmanship.",
+      "regularPrice": "59.00",
+      "salePrice": "49.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "510053",
+      "name": "Yellow Jambhala Bracelet",
+      "description": "Yellow Jambhala (黄财神) is the revered deity of wealth and prosperity in Eastern esoteric traditions, known for bestowing material abundance while cultivating generosity and ethical wealth accumulation. This bracelet features sacred mantras and symbols associated with Yellow Jambhala, meticulously engraved to invoke the deity's blessings of financial prosperity, business success, and the removal of poverty consciousness. Available in two distinctive styles — a bold traditional design and an elegant fine-gold variation — each piece is crafted to resonate with different aesthetic preferences while maintaining the same spiritual potency. Blessed at Wutaishan Mountain through traditional wealth deity invocation rituals, this bracelet is consecrated to attract auspicious opportunities, enhance financial wisdom, and create a magnetic field for prosperity. Ideal for entrepreneurs, business professionals, or anyone seeking to transform their relationship with abundance while maintaining spiritual integrity. Wear it as a daily reminder that true wealth flows from both material success and generous spirit.",
+      "regularPrice": "59.00",
+      "salePrice": "49.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "510054",
+      "name": "Amitabha Bracelet",
+      "description": "This bracelet carries the sacred name \"南无阿弥陀佛\" (Namo Amitabha Buddha) — the most widely recited invocation in Pure Land Buddhism, representing infinite light, boundless life, and the compassionate vow to guide all beings to liberation. Each repetition of this holy name is believed to purify karma, dispel fear of death, and establish a connection with Amitabha Buddha's Pure Land of Ultimate Bliss. The bracelet features this powerful invocation engraved with devotional precision, transforming a simple accessory into a constant prayer wheel that accompanies your every movement. Crafted in refined metal with elegant design, this piece serves both as a meditation tool and a protective talisman. Blessed at Wutaishan Mountain by masters devoted to Pure Land practice, it carries the energy of peaceful transition, karmic purification, and spiritual refuge. Especially meaningful for practitioners of Pure Land Buddhism, those caring for elderly loved ones, or anyone seeking peace of mind regarding life's ultimate journey. Wear it as a reminder that every moment is an opportunity for mindfulness and every breath can be a prayer.",
+      "regularPrice": "59.00",
+      "salePrice": "49.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "510055",
+      "name": "Esoteric North Star Seven-Star Pendant",
+      "description": "Across ancient civilizations, the Big Dipper (北斗七星) was more than a constellation — it was revered as a symbol of \"universal order,\" a celestial compass for navigation, and a protective sigil for travelers on both physical and spiritual journeys. In Eastern esoteric traditions, the Seven-Star Array is invoked for protection, destiny alignment, and connection to cosmic forces. This pendant carries the weight of that legacy, enhanced by a time-honored ceremonial process that infuses it with the Seven-Star Array's inherent energetic properties. The innovative dual-layer rotating design (can rotate 360 degrees) isn't just aesthetic: it mirrors the Big Dipper's eternal movement across the heavens, acting as a physical reminder to \"sync\" with the universe's supportive currents. The front displays the seven stars in their sacred configuration, while the reverse features the Eight Trigrams (八卦) representing the fundamental forces of existence. Crafted with precision (pendant diameter: approx. 35.5mm, height: approx. 40.5mm, chain length: approx. 60mm), this piece combines ancient symbolism with contemporary craftsmanship. Worn close to the body, it is said to ward off unbalanced energies, amplify inner clarity and purpose (tied to the Big Dipper's \"guidance\" legacy), and serve as a tangible link to the cosmos' quiet, protective power. For those who seek alignment with celestial wisdom and cosmic protection.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "NULL"
+    },
+    {
+      "id": "510001",
+      "name": "五台山开光鼠守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属鼠之人机智灵活、聪慧敏锐,善于把握机遇。此款生肖鼠守护吊坠精雕细琢,将鼠的灵动形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510002",
+      "name": "五台山开光牛守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属牛之人勤勉踏实、坚韧不拔,具有强大的耐力与毅力。此款生肖牛守护吊坠精雕细琢,将牛的稳重形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510003",
+      "name": "五台山开光虎守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属虎之人勇猛果敢、充满自信,具有强大的领导力与行动力。此款生肖虎守护吊坠精雕细琢,将虎的威猛形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510004",
+      "name": "五台山开光兔守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属兔之人温和善良、细腻敏感,具有优雅的气质与艺术天赋。此款生肖兔守护吊坠精雕细琢,将兔的灵巧形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510005",
+      "name": "五台山开光龙守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属龙之人气宇轩昂、才华横溢,具有非凡的魅力与创造力。龙在东方文化中象征权威、尊贵与吉祥。此款生肖龙守护吊坠精雕细琢,将龙的威严形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510006",
+      "name": "五台山开光蛇守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属蛇之人智慧深邃、神秘优雅,具有敏锐的洞察力与直觉。此款生肖蛇守护吊坠精雕细琢,将蛇的灵性形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510007",
+      "name": "五台山开光马守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属马之人热情奔放、自由不羁,具有强大的行动力与冒险精神。此款生肖马守护吊坠精雕细琢,将马的奔腾形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510008",
+      "name": "五台山开光羊守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属羊之人温柔体贴、富有同情心,具有强大的艺术感知力与审美能力。此款生肖羊守护吊坠精雕细琢,将羊的温顺形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510009",
+      "name": "五台山开光猴守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属猴之人聪明伶俐、活泼好动,具有强大的创新能力与幽默感。此款生肖猴守护吊坠精雕细琢,将猴的机敏形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510010",
+      "name": "五台山开光鸡守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属鸡之人勤奋认真、追求完美,具有强大的责任感与时间观念。此款生肖鸡守护吊坠精雕细琢,将鸡的昂扬形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510011",
+      "name": "五台山开光狗守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属狗之人忠诚可靠、正直善良,具有强大的正义感与保护欲。此款生肖狗守护吊坠精雕细琢,将狗的忠诚形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510012",
+      "name": "五台山开光猪守护吊坠",
+      "description": "在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属猪之人真诚善良、乐观豁达,具有强大的包容心与享受生活的能力。此款生肖猪守护吊坠精雕细琢,将猪的憨厚形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "生肖守护"
+    },
+    {
+      "id": "510013",
+      "name": "五台山开光白羊座守护吊坠",
+      "description": "白羊座(3月21日-4月19日)象征勇气、热情与开拓精神。这款吊坠刻有白羊座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为白羊座佩戴者注入勇往直前的力量,增强领导力与行动力,守护您的星座能量场。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510014",
+      "name": "五台山开光金牛座守护吊坠",
+      "description": "金牛座(4月20日-5月20日)象征稳重、务实与财富。这款吊坠刻有金牛座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为金牛座佩戴者带来稳定的能量场,增强财运与事业运,守护您的物质与精神富足。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510015",
+      "name": "五台山开光双子座守护吊坠",
+      "description": "双子座(5月21日-6月21日)象征智慧、沟通与灵活性。这款吊坠刻有双子座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为双子座佩戴者提升思维敏捷度,增强人际关系与表达能力,守护您的智慧之光。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510016",
+      "name": "五台山开光巨蟹座守护吊坠",
+      "description": "巨蟹座(6月22日-7月22日)象征情感、家庭与直觉。这款吊坠刻有巨蟹座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为巨蟹座佩戴者带来情感安全感,增强家庭和谐与直觉力,守护您的内心世界。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510017",
+      "name": "五台山开光狮子座守护吊坠",
+      "description": "狮子座(7月23日-8月22日)象征自信、创造力与王者风范。这款吊坠刻有狮子座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为狮子座佩戴者增强自信与魅力,提升创造力与领导才能,守护您的王者之光。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510018",
+      "name": "五台山开光处女座守护吊坠",
+      "description": "处女座(8月23日-9月22日)象征完美主义、分析力与服务精神。这款吊坠刻有处女座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为处女座佩戴者带来清晰的思维,增强健康意识与工作效率,守护您的完美追求。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510019",
+      "name": "五台山开光天秤座守护吊坠",
+      "description": "天秤座(9月23日-10月23日)象征平衡、和谐与美感。这款吊坠刻有天秤座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为天秤座佩戴者带来内在平衡,增强人际和谐与审美能力,守护您的优雅气质。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510020",
+      "name": "五台山开光天蝎座守护吊坠",
+      "description": "天蝎座(10月24日-11月22日)象征深度、神秘与转化力量。这款吊坠刻有天蝎座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为天蝎座佩戴者增强洞察力与意志力,提升转化负能量的能力,守护您的内在力量。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510021",
+      "name": "五台山开光射手座守护吊坠",
+      "description": "射手座(11月23日-12月21日)象征自由、冒险与哲学思考。这款吊坠刻有射手座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为射手座佩戴者带来探索精神,增强乐观态度与智慧追求,守护您的自由之旅。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510022",
+      "name": "五台山开光摩羯座守护吊坠",
+      "description": "摩羯座(12月22日-1月19日)象征责任、毅力与成就。这款吊坠刻有摩羯座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为摩羯座佩戴者增强耐力与目标达成能力,提升事业运与社会地位,守护您的成功之路。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510023",
+      "name": "五台山开光水瓶座守护吊坠",
+      "description": "水瓶座(1月20日-2月18日)象征创新、独立与人道主义。这款吊坠刻有水瓶座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为水瓶座佩戴者激发创新思维,增强独立精神与社会责任感,守护您的理想追求。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510024",
+      "name": "五台山开光双鱼座守护吊坠",
+      "description": "双鱼座(2月19日-3月20日)象征梦想、同理心与灵性。这款吊坠刻有双鱼座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为双鱼座佩戴者增强直觉与想象力,提升艺术天赋与精神感知,守护您的梦想之海。",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510025",
+      "name": "Aries Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Aries constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510026",
+      "name": "Taurus Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Taurus constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510027",
+      "name": "Gemini Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Gemini constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510028",
+      "name": "Cancer Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Cancer constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510029",
+      "name": "Leo Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Leo constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510030",
+      "name": "Virgo Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Virgo constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510031",
+      "name": "Libra Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Libra constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510032",
+      "name": "Scorpio Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Scorpio constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510033",
+      "name": "Sagittarius Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Sagittarius constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510034",
+      "name": "Capricorn Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Capricorn constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510035",
+      "name": "Aquarius Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Aquarius constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    },
+    {
+      "id": "510036",
+      "name": "Pisces Moon Crescent Pendant",
+      "description": "Zodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Pisces constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "categoryName": "星座守护"
+    }
+  ],
+  "messages": [
+    "510056\tWutai Mountain Incense Offering Service\tMay all disasters be averted, may the weather be favorable, may all beings be happy, and may peace and good fortune prevail.",
+    "As the Buddhist scriptures say, \"A single petal of incense fills the ten directions, and all Buddhas can smell it.\" Amidst the swirling smoke, leave your blessings for your family, friends, and yourself. As long as you have sincere intentions, your wishes will come true.",
+    "Burning incense is a sacred religious ritual to pay respects to gods and Buddhas. In Daoism, incense offering is divided into temple master burning incense and altar master offering incense, with specific placement methods and directional significance. Buddhism emphasizes burning three sticks of incense with a pure heart to offer to the Three Treasures of Buddha, Dharma, and Sangha, advocating that \"a single petal of incense from the heart\" resonates with the Dharma Realm.",
+    "Our monks at Wutai Mountain will perform the incense offering ceremony on your behalf, channeling your sincere wishes to the heavens and praying for your peace, health, and prosperity.\t79.00\t69.00\tNULL",
+    "510057\tWutai Mountain Lamp Offering Service\tOffering lamps for blessings, nurturing love and compassion.",
+    "The merit of offering lamps before the Buddha is dedicated to all compassionate beings who have made vows. May all karmic obstacles be eliminated, may blessings and wisdom increase, may all illnesses be eradicated, and may the body be healthy. May wisdom increase, all wishes be fulfilled, and all aspirations be realized.",
+    "May the parents of this life be blessed with longevity, and may the parents of past lives, along with all their karmic creditors and relatives from past lives, and all beings they have harmed, as well as those in the hell realm, hungry ghost realm, and animal realm, all be reborn in the Western Pure Land, resolving all karmic debts and knots!",
+    "May all Buddhas and Bodhisattvas compassionately protect and bless all beings with increased blessings and wisdom, the elimination of karmic obstacles, family harmony, freedom from suffering and attainment of happiness.",
+    "**Available lamp types:** Fortune Lamp, Peace Lamp, Academic Lamp, Marriage Lamp, Wish-Fulfilling Lamp, Wisdom Lamp.",
+    "**Price includes one pair (two lamps). You can choose multiple pairs for different blessings.**\t79.00\t69.00\tNULL",
+    "510058\tIncense Offering & Consecration Package with Blessed Amulet\tA comprehensive blessing package combining the sacred rituals of incense offering and consecration (Kāiguāng), with a portable blessed amulet included.",
+    "**Incense Offering Ritual:** As the Buddhist scriptures say, \"A single petal of incense fills the ten directions, and all Buddhas can smell it.\" Our monks will perform the incense offering ceremony on your behalf, channeling your sincere wishes to the heavens.",
+    "**Consecration (Kāiguāng) Ritual:** This ancient ritual endows objects with spirituality and sacredness through specific ceremonies. In Buddhism, consecration ceremonies are performed by high monks who recite sutras and mantras, awakening the \"spiritual essence\" of the object and making it a tool to assist believers in their spiritual practice.",
+    "**Blessed Amulet Included:** You will receive a consecrated amulet that has been blessed by Wutai Mountain senior monks. These portable talismans can be placed in cars, phone cases, wallets, bedside tables, or carried with you for protection and blessings.",
+    "For believers, consecrated items are regarded as a medium connecting them to deities or Buddhist teachings, enhancing faith and dispelling fear. The ritual provides a sense of stability through spiritual connection, helping individuals focus their minds and alleviate anxiety.\t179.00\t159.00\tNULL",
+    "510059\tComplete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet\tThe ultimate blessing package combining three sacred rituals: lamp offering, incense offering, and consecration, with a blessed amulet included.",
+    "**Lamp Offering Ritual:** The merit of offering lamps before the Buddha is dedicated to all compassionate beings. May all karmic obstacles be eliminated, may blessings and wisdom increase, may all illnesses be eradicated, and may the body be healthy. Available lamp types include Fortune Lamp, Peace Lamp, Academic Lamp, Marriage Lamp, Wish-Fulfilling Lamp, and Wisdom Lamp.",
+    "**Incense Offering Ritual:** A single incense stick, a heartfelt wish, a blessing—blessings from Wutai Mountain. May disasters be averted, may the weather be favorable, may all beings be happy, and may peace and good fortune prevail. Our monks will perform the incense offering ceremony on your behalf.",
+    "**Consecration (Kāiguāng) Ritual:** This ancient ritual endows objects with spirituality and sacredness. Buddhist consecration ceremonies are performed by high monks who recite sutras and mantras, awakening the \"spiritual essence\" of the object and making it a tool to assist believers in their spiritual practice.",
+    "**Blessed Amulet Included:** You will receive a consecrated amulet that has been blessed through all three rituals by Wutai Mountain senior monks. These portable talismans can be placed in cars, phone cases, wallets, bedside tables, or carried with you for maximum protection and blessings.",
+    "This comprehensive package provides the most powerful spiritual support, combining the blessings of light, fragrance, and sacred energy to protect you and your loved ones.\t229.00\t209.00\tNULL",
+    "510060\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\tHi there! Are you curious about what the future holds? Now for just $19, you can receive your personalized **Fortune Energy Analysis Report**—a unique exploration of your individual life energy patterns!",
+    "**What's Included in Your Report?**",
+    "Your personalized report brings together two in-depth analyses:",
+    "**1. Destiny Analysis**",
+    "Based on your birth data, we interpret your innate strengths, challenges, and life path:",
+    "- Explore your core Bazi structure (Heavenly Stems and Earthly Branches) and understand how the Five Elements (Wood, Fire, Earth, Metal, Water) influence your personality and relationships.",
+    "- Discover special astrological signs and auspicious symbols (e.g., Tianyi Guiren, Taiji Guiren) that affect your fortune.",
+    "- Uncover connections between life palaces (career, emotions, wealth, etc.) and your life journey.",
+    "**2. Annual Fortune Analysis (by Lunar Flow)**",
+    "A detailed interpretation of energy shifts in the coming year (2025-2026):",
+    "- Learn how elemental interactions affect your career, relationships, and decision-making.",
+    "- Receive practical advice tailored to modern life—how to seize opportunities and navigate challenges.",
+    "Together, these two reports form a complete roadmap linking your past, present, and future!",
+    "**How to Proceed After Purchase?**",
+    "1. **Provide Birth Information**: After completing payment, please send your detailed birth information (year, month, day, exact time, and place of birth) to: **seondo@cneraart.com** (Example: December 12, 1978, 12:20 PM, New York, USA)",
+    "2. **Receive Your Report**: Our master will use ancient Chinese Five Elements philosophy to analyze your unique energy patterns. You will receive your personalized Fortune Energy Analysis Report via email within **3-5 business days**.",
+    "3. **Privacy & Personalization Assurance**: We highly value your privacy—all information will be kept strictly confidential. This is not \"fortune-telling\"—it's about understanding your energy patterns to help you live with greater clarity and confidence.",
+    "**Why Choose Us?**",
+    "- For only $19, receive a deeply personalized report that blends ancient wisdom with modern practice.",
+    "- Especially beneficial for those seeking guidance in career advancement, relationship harmony, emotional balance, health optimization, or personal growth.",
+    "- A unique insightful experience—like a personality assessment refined over thousands of years!",
+    "**Note**: Our service strictly adheres to traditional cultural interpretations and is intended to provide directional guidance only. All results are for reference purposes.\t19.00\t19.00\tNULL",
+    "510061\tDestiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade\tDear friend, are you looking to understand your life's path while also inviting sacred blessings into your future? For just $79, you will not only receive our complete **Destiny Energy Analysis Report**, but also enjoy a personalized blessing ceremony performed by our team at China's sacred Buddhist mountain—Wutai Mountain! Light up the path ahead for yourself and your loved ones.",
+    "**Your exclusive package includes:**",
+    "**Destiny Analysis Report (delivered within 3-5 days)**",
+    "- Personalized analysis based on your birth details, interpreting your destiny structure and energy interactions",
+    "- Examination of your major life cycles and yearly luck, helping you grasp key opportunities and precautions for 2025-2026",
+    "- Guidance covering career, wealth, relationships, health, and more",
+    "- Blending traditional Five Elements philosophy with modern life applications to provide practical advice",
+    "**Wutai Mountain Proxy Blessing Service (video delivered within 10-15 days)**",
+    "- You may choose **Lighting a Lamp** (illuminating your path and wisdom) or **Offering Incense** (praying for peace and dispelling obstacles)",
+    "- Our team will personally visit Wutai Mountain temples to record the entire blessing ceremony",
+    "- The video will include chanting of your name, your wishes, and the blessing process—ensuring transparency and authenticity",
+    "- Every lamp and incense stick is lit especially for you",
+    "**How to participate?**",
+    "1. Click the purchase link and select the $79 blessing package",
+    "2. After payment, please send your **name, birth information, and blessing preference (lamp or incense)** to: **seondo@cneraart.com** (Example: December 12, 1978, 12:20 PM, New York, USA)",
+    "3. You will receive your **Destiny Energy Analysis Report** via email within 3-5 business days",
+    "4. The blessing video will be sent to your email within 10-15 days after the ceremony is completed",
+    "**Why choose this upgrade?**",
+    "- More than prediction—infuse your life with blessed energy",
+    "- Ancient wisdom + sacred ceremony, dual protection",
+    "- Full transparency with video proof—sincere and trustworthy",
+    "- Suitable for various wishes: career success, family harmony, turning luck around, academic achievement, and more",
+    "One report, one lamp, one wish, one transformation. May we join hands, knock on the door of destiny, and welcome a bright future.",
+    "**Note**: The blessing service is a proxy religious offering. We respect all beliefs—sincerity is what matters. Our service strictly adheres to traditional cultural interpretations and is intended to provide directional guidance only. All results are for reference purposes.\t79.00\t79.00\tNULL",
+    "420003\t面相分析服务\t## 面相分析服务",
+    "传承千年相术，观面知命，解析事业财运、健康婚姻之运势起伏。",
+    "### 服务内容",
+    "- **十二宫位分析**: 全面解读面部十二宫位的吉凶",
+    "- **流年运势**: 分析未来一年的运势走向",
+    "- **事业财运**: 深度解析事业发展和财富机遇",
+    "- **健康婚姻**: 洞察健康状况和婚姻感情\t9.90\tNULL\t命理服务",
+    "420004\t手相分析服务\t## 手相分析服务",
+    "掌中乾坤，纹理藏玄机，洞悉人生轨迹，指引命运方向。",
+    "### 服务内容",
+    "- **三大主线**: 生命线、智慧线、感情线深度解读",
+    "- **财运线**: 分析财富积累和投资运势",
+    "- **事业线**: 洞察职业发展和事业成就",
+    "- **婚姻线**: 解读感情婚姻和人际关系\t9.90\tNULL\t命理服务",
+    "420005\t家居风水服务\t## 家居风水服务",
+    "五台山大师堪舆之道，调和气场能量，化解煞气，招财旺运。",
+    "### 服务内容",
+    "- **布局分析**: 全面分析房间布局的风水吉凶",
+    "- **色彩搭配**: 根据五行理论推荐最佳色彩方案",
+    "- **化解煞气**: 识别并提供化解方案",
+    "- **招财旺运**: 提供招财旺运的风水布局建议\t11.90\tNULL\t命理服务"
+  ],
+  "stdout": "id\tname\tdescription\tregularPrice\tsalePrice\tcategoryName\n120001\tChinese Zodiac Guardian Pendant\tAncient Eastern Ritual-Enhanced Symbolic Talisman. Handcrafted by masters from Wutai Mountain, this pendant carries the protective energy of your zodiac guardian.\t55.00\t45.00\tNULL\n120004\tMaster-Infused Energy Bracelet\tEmbedded with Ancient Scriptural Wisdom, A Personal Talisman for Meditation & Energy. Each bead is individually blessed by Wutai Mountain monks.\t59.00\t49.00\tNULL\n120005\tZodiac Constellation Guardian Pendant\tEastern Ritual-Enhanced Celestial Talisman. Connects you with the cosmic energies of your birth constellation.\t59.00\t49.00\tNULL\n120006\tZodiac Moon Crescent Pendant\tAncient Eastern Ritual-Enhanced Celestial Symbol Accessory. Harmonizes lunar energies with your personal destiny.\t59.00\t49.00\tNULL\n120007\tAncient Chinese Wisdom Analysis\tUnlock Ancient Chinese Wisdom for Only $19! Receive a comprehensive Four Pillars of Destiny analysis based on your birth date and time.\t19.00\tNULL\tNULL\n510049\tEastern Ancient Wisdom Text Pendant\tThis pendant bears a timeless text rooted in millennia-old Eastern wisdom — sacred scriptures that have long been linked to mindfulness, inner calm, and the quiet strength of spiritual centering. Each piece is elevated by a traditional Eastern ceremonial enlivenment performed at sacred temples, a practice deeply woven into ancient cultural heritage, focused on aligning the piece with the resonant energy of intentional presence. Crafted with polished, durable metals in both lustrous gold and elegant silver finishes, the intricate engraved script (classic passages of Eastern philosophical legacy including Heart Sutra, Great Compassion Mantra, and other sacred texts) and refined design blend understated luxury with profound symbolic depth. Worn close to the body, it serves as a tangible reminder of inner balance — a subtle, elegant link to the quiet wisdom of ancient Eastern traditions. For seekers drawn to the mystique of Eastern cultural heritage and symbolic pieces that carry intentional, centering energy.\t59.00\t49.00\tNULL\n510050\tHeart Sutra Bracelet\tMeticulously crafted, this bracelet features the complete Heart Sutra (般若波罗蜜多心经) — one of the most revered texts in Eastern philosophy — engraved upon its surface with exquisite precision. Each character holds millennia of wisdom about emptiness, non-attachment, and the path to spiritual liberation. Available in radiant gold and refined silver finishes, this flat-design bracelet (width: 1.0cm, inner circumference: 19cm) combines modern elegance with ancient spiritual power. Blessed in the sacred setting of Wutaishan Mountain by revered masters through traditional methods, it is intended to carry pure, protective energy for spiritual healing, mental clarity, and energy protection. More than jewelry, it is a consecrated spiritual companion designed to help anchor the mind amidst chaos and cultivate a personal aura of serenity and safeguarding. Whether used for mindfulness practice or given as a profoundly meaningful gift, it carries deep intention.\t59.00\t49.00\tNULL\n510051\tGreat Compassion Mantra Bracelet\tThis bracelet bears the sacred Great Compassion Mantra (大悲咒) — a powerful dharani revered across Eastern traditions for its ability to invoke the boundless compassion of Avalokitesvara Bodhisattva. The complete mantra is meticulously engraved across the bracelet's surface, each syllable carrying the energy of relief from suffering, emotional healing, health blessings, and comprehensive protection. Crafted in lustrous gold and elegant silver finishes with a flat design (width: 1.0cm, inner circumference: 19cm), this piece seamlessly blends spiritual depth with contemporary aesthetics. Consecrated at Wutaishan Mountain by accomplished masters using time-honored rituals, it is imbued with protective energy that resonates with the wearer's intention. Whether worn during meditation, carried through daily challenges, or gifted to loved ones facing difficulties, this bracelet serves as a tangible connection to the compassionate forces that guide and protect.\t59.00\t49.00\tNULL\n510052\tShurangama Mantra Bracelet\tThe Shurangama Mantra (楞严咒) is considered the \"king of mantras\" in Eastern esoteric traditions — the most powerful protective invocation for dispelling negative forces, purifying consciousness, and establishing an impenetrable spiritual shield. This bracelet carries the complete mantra engraved with precision across its surface, each sacred syllable resonating with the energy of ultimate protection and spiritual awakening. Available in three exquisite finishes — radiant gold, refined silver, and elegant rose gold — this flat-design bracelet (width: 1.0cm, inner circumference: 19cm) offers both aesthetic versatility and profound spiritual significance. Blessed at the sacred Wutaishan Mountain by masters trained in esoteric practices, this piece is consecrated to serve as your personal guardian talisman. Practitioners wear it to strengthen their meditation practice, protect against harmful energies, and maintain clarity of mind in all circumstances. For those seeking the highest level of spiritual protection combined with refined craftsmanship.\t59.00\t49.00\tNULL\n510053\tYellow Jambhala Bracelet\tYellow Jambhala (黄财神) is the revered deity of wealth and prosperity in Eastern esoteric traditions, known for bestowing material abundance while cultivating generosity and ethical wealth accumulation. This bracelet features sacred mantras and symbols associated with Yellow Jambhala, meticulously engraved to invoke the deity's blessings of financial prosperity, business success, and the removal of poverty consciousness. Available in two distinctive styles — a bold traditional design and an elegant fine-gold variation — each piece is crafted to resonate with different aesthetic preferences while maintaining the same spiritual potency. Blessed at Wutaishan Mountain through traditional wealth deity invocation rituals, this bracelet is consecrated to attract auspicious opportunities, enhance financial wisdom, and create a magnetic field for prosperity. Ideal for entrepreneurs, business professionals, or anyone seeking to transform their relationship with abundance while maintaining spiritual integrity. Wear it as a daily reminder that true wealth flows from both material success and generous spirit.\t59.00\t49.00\tNULL\n510054\tAmitabha Bracelet\tThis bracelet carries the sacred name \"南无阿弥陀佛\" (Namo Amitabha Buddha) — the most widely recited invocation in Pure Land Buddhism, representing infinite light, boundless life, and the compassionate vow to guide all beings to liberation. Each repetition of this holy name is believed to purify karma, dispel fear of death, and establish a connection with Amitabha Buddha's Pure Land of Ultimate Bliss. The bracelet features this powerful invocation engraved with devotional precision, transforming a simple accessory into a constant prayer wheel that accompanies your every movement. Crafted in refined metal with elegant design, this piece serves both as a meditation tool and a protective talisman. Blessed at Wutaishan Mountain by masters devoted to Pure Land practice, it carries the energy of peaceful transition, karmic purification, and spiritual refuge. Especially meaningful for practitioners of Pure Land Buddhism, those caring for elderly loved ones, or anyone seeking peace of mind regarding life's ultimate journey. Wear it as a reminder that every moment is an opportunity for mindfulness and every breath can be a prayer.\t59.00\t49.00\tNULL\n510055\tEsoteric North Star Seven-Star Pendant\tAcross ancient civilizations, the Big Dipper (北斗七星) was more than a constellation — it was revered as a symbol of \"universal order,\" a celestial compass for navigation, and a protective sigil for travelers on both physical and spiritual journeys. In Eastern esoteric traditions, the Seven-Star Array is invoked for protection, destiny alignment, and connection to cosmic forces. This pendant carries the weight of that legacy, enhanced by a time-honored ceremonial process that infuses it with the Seven-Star Array's inherent energetic properties. The innovative dual-layer rotating design (can rotate 360 degrees) isn't just aesthetic: it mirrors the Big Dipper's eternal movement across the heavens, acting as a physical reminder to \"sync\" with the universe's supportive currents. The front displays the seven stars in their sacred configuration, while the reverse features the Eight Trigrams (八卦) representing the fundamental forces of existence. Crafted with precision (pendant diameter: approx. 35.5mm, height: approx. 40.5mm, chain length: approx. 60mm), this piece combines ancient symbolism with contemporary craftsmanship. Worn close to the body, it is said to ward off unbalanced energies, amplify inner clarity and purpose (tied to the Big Dipper's \"guidance\" legacy), and serve as a tangible link to the cosmos' quiet, protective power. For those who seek alignment with celestial wisdom and cosmic protection.\t55.00\t45.00\tNULL\n510056\tWutai Mountain Incense Offering Service\tMay all disasters be averted, may the weather be favorable, may all beings be happy, and may peace and good fortune prevail.\n\nAs the Buddhist scriptures say, \"A single petal of incense fills the ten directions, and all Buddhas can smell it.\" Amidst the swirling smoke, leave your blessings for your family, friends, and yourself. As long as you have sincere intentions, your wishes will come true.\n\nBurning incense is a sacred religious ritual to pay respects to gods and Buddhas. In Daoism, incense offering is divided into temple master burning incense and altar master offering incense, with specific placement methods and directional significance. Buddhism emphasizes burning three sticks of incense with a pure heart to offer to the Three Treasures of Buddha, Dharma, and Sangha, advocating that \"a single petal of incense from the heart\" resonates with the Dharma Realm.\n\nOur monks at Wutai Mountain will perform the incense offering ceremony on your behalf, channeling your sincere wishes to the heavens and praying for your peace, health, and prosperity.\t79.00\t69.00\tNULL\n510057\tWutai Mountain Lamp Offering Service\tOffering lamps for blessings, nurturing love and compassion.\n\nThe merit of offering lamps before the Buddha is dedicated to all compassionate beings who have made vows. May all karmic obstacles be eliminated, may blessings and wisdom increase, may all illnesses be eradicated, and may the body be healthy. May wisdom increase, all wishes be fulfilled, and all aspirations be realized.\n\nMay the parents of this life be blessed with longevity, and may the parents of past lives, along with all their karmic creditors and relatives from past lives, and all beings they have harmed, as well as those in the hell realm, hungry ghost realm, and animal realm, all be reborn in the Western Pure Land, resolving all karmic debts and knots!\n\nMay all Buddhas and Bodhisattvas compassionately protect and bless all beings with increased blessings and wisdom, the elimination of karmic obstacles, family harmony, freedom from suffering and attainment of happiness.\n\n**Available lamp types:** Fortune Lamp, Peace Lamp, Academic Lamp, Marriage Lamp, Wish-Fulfilling Lamp, Wisdom Lamp.\n\n**Price includes one pair (two lamps). You can choose multiple pairs for different blessings.**\t79.00\t69.00\tNULL\n510058\tIncense Offering & Consecration Package with Blessed Amulet\tA comprehensive blessing package combining the sacred rituals of incense offering and consecration (Kāiguāng), with a portable blessed amulet included.\n\n**Incense Offering Ritual:** As the Buddhist scriptures say, \"A single petal of incense fills the ten directions, and all Buddhas can smell it.\" Our monks will perform the incense offering ceremony on your behalf, channeling your sincere wishes to the heavens.\n\n**Consecration (Kāiguāng) Ritual:** This ancient ritual endows objects with spirituality and sacredness through specific ceremonies. In Buddhism, consecration ceremonies are performed by high monks who recite sutras and mantras, awakening the \"spiritual essence\" of the object and making it a tool to assist believers in their spiritual practice.\n\n**Blessed Amulet Included:** You will receive a consecrated amulet that has been blessed by Wutai Mountain senior monks. These portable talismans can be placed in cars, phone cases, wallets, bedside tables, or carried with you for protection and blessings.\n\nFor believers, consecrated items are regarded as a medium connecting them to deities or Buddhist teachings, enhancing faith and dispelling fear. The ritual provides a sense of stability through spiritual connection, helping individuals focus their minds and alleviate anxiety.\t179.00\t159.00\tNULL\n510059\tComplete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet\tThe ultimate blessing package combining three sacred rituals: lamp offering, incense offering, and consecration, with a blessed amulet included.\n\n**Lamp Offering Ritual:** The merit of offering lamps before the Buddha is dedicated to all compassionate beings. May all karmic obstacles be eliminated, may blessings and wisdom increase, may all illnesses be eradicated, and may the body be healthy. Available lamp types include Fortune Lamp, Peace Lamp, Academic Lamp, Marriage Lamp, Wish-Fulfilling Lamp, and Wisdom Lamp.\n\n**Incense Offering Ritual:** A single incense stick, a heartfelt wish, a blessing—blessings from Wutai Mountain. May disasters be averted, may the weather be favorable, may all beings be happy, and may peace and good fortune prevail. Our monks will perform the incense offering ceremony on your behalf.\n\n**Consecration (Kāiguāng) Ritual:** This ancient ritual endows objects with spirituality and sacredness. Buddhist consecration ceremonies are performed by high monks who recite sutras and mantras, awakening the \"spiritual essence\" of the object and making it a tool to assist believers in their spiritual practice.\n\n**Blessed Amulet Included:** You will receive a consecrated amulet that has been blessed through all three rituals by Wutai Mountain senior monks. These portable talismans can be placed in cars, phone cases, wallets, bedside tables, or carried with you for maximum protection and blessings.\n\nThis comprehensive package provides the most powerful spiritual support, combining the blessings of light, fragrance, and sacred energy to protect you and your loved ones.\t229.00\t209.00\tNULL\n510060\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\tHi there! Are you curious about what the future holds? Now for just $19, you can receive your personalized **Fortune Energy Analysis Report**—a unique exploration of your individual life energy patterns!\n\n**What's Included in Your Report?**\n\nYour personalized report brings together two in-depth analyses:\n\n**1. Destiny Analysis**\n\nBased on your birth data, we interpret your innate strengths, challenges, and life path:\n- Explore your core Bazi structure (Heavenly Stems and Earthly Branches) and understand how the Five Elements (Wood, Fire, Earth, Metal, Water) influence your personality and relationships.\n- Discover special astrological signs and auspicious symbols (e.g., Tianyi Guiren, Taiji Guiren) that affect your fortune.\n- Uncover connections between life palaces (career, emotions, wealth, etc.) and your life journey.\n\n**2. Annual Fortune Analysis (by Lunar Flow)**\n\nA detailed interpretation of energy shifts in the coming year (2025-2026):\n- Learn how elemental interactions affect your career, relationships, and decision-making.\n- Receive practical advice tailored to modern life—how to seize opportunities and navigate challenges.\n\nTogether, these two reports form a complete roadmap linking your past, present, and future!\n\n**How to Proceed After Purchase?**\n\n1. **Provide Birth Information**: After completing payment, please send your detailed birth information (year, month, day, exact time, and place of birth) to: **seondo@cneraart.com** (Example: December 12, 1978, 12:20 PM, New York, USA)\n\n2. **Receive Your Report**: Our master will use ancient Chinese Five Elements philosophy to analyze your unique energy patterns. You will receive your personalized Fortune Energy Analysis Report via email within **3-5 business days**.\n\n3. **Privacy & Personalization Assurance**: We highly value your privacy—all information will be kept strictly confidential. This is not \"fortune-telling\"—it's about understanding your energy patterns to help you live with greater clarity and confidence.\n\n**Why Choose Us?**\n\n- For only $19, receive a deeply personalized report that blends ancient wisdom with modern practice.\n- Especially beneficial for those seeking guidance in career advancement, relationship harmony, emotional balance, health optimization, or personal growth.\n- A unique insightful experience—like a personality assessment refined over thousands of years!\n\n**Note**: Our service strictly adheres to traditional cultural interpretations and is intended to provide directional guidance only. All results are for reference purposes.\t19.00\t19.00\tNULL\n510061\tDestiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade\tDear friend, are you looking to understand your life's path while also inviting sacred blessings into your future? For just $79, you will not only receive our complete **Destiny Energy Analysis Report**, but also enjoy a personalized blessing ceremony performed by our team at China's sacred Buddhist mountain—Wutai Mountain! Light up the path ahead for yourself and your loved ones.\n\n**Your exclusive package includes:**\n\n**Destiny Analysis Report (delivered within 3-5 days)**\n\n- Personalized analysis based on your birth details, interpreting your destiny structure and energy interactions\n- Examination of your major life cycles and yearly luck, helping you grasp key opportunities and precautions for 2025-2026\n- Guidance covering career, wealth, relationships, health, and more\n- Blending traditional Five Elements philosophy with modern life applications to provide practical advice\n\n**Wutai Mountain Proxy Blessing Service (video delivered within 10-15 days)**\n\n- You may choose **Lighting a Lamp** (illuminating your path and wisdom) or **Offering Incense** (praying for peace and dispelling obstacles)\n- Our team will personally visit Wutai Mountain temples to record the entire blessing ceremony\n- The video will include chanting of your name, your wishes, and the blessing process—ensuring transparency and authenticity\n- Every lamp and incense stick is lit especially for you\n\n**How to participate?**\n\n1. Click the purchase link and select the $79 blessing package\n2. After payment, please send your **name, birth information, and blessing preference (lamp or incense)** to: **seondo@cneraart.com** (Example: December 12, 1978, 12:20 PM, New York, USA)\n3. You will receive your **Destiny Energy Analysis Report** via email within 3-5 business days\n4. The blessing video will be sent to your email within 10-15 days after the ceremony is completed\n\n**Why choose this upgrade?**\n\n- More than prediction—infuse your life with blessed energy\n- Ancient wisdom + sacred ceremony, dual protection\n- Full transparency with video proof—sincere and trustworthy\n- Suitable for various wishes: career success, family harmony, turning luck around, academic achievement, and more\n\nOne report, one lamp, one wish, one transformation. May we join hands, knock on the door of destiny, and welcome a bright future.\n\n**Note**: The blessing service is a proxy religious offering. We respect all beliefs—sincerity is what matters. Our service strictly adheres to traditional cultural interpretations and is intended to provide directional guidance only. All results are for reference purposes.\t79.00\t79.00\tNULL\n420003\t面相分析服务\t## 面相分析服务\n\n传承千年相术，观面知命，解析事业财运、健康婚姻之运势起伏。\n\n### 服务内容\n- **十二宫位分析**: 全面解读面部十二宫位的吉凶\n- **流年运势**: 分析未来一年的运势走向\n- **事业财运**: 深度解析事业发展和财富机遇\n- **健康婚姻**: 洞察健康状况和婚姻感情\t9.90\tNULL\t命理服务\n420004\t手相分析服务\t## 手相分析服务\n\n掌中乾坤，纹理藏玄机，洞悉人生轨迹，指引命运方向。\n\n### 服务内容\n- **三大主线**: 生命线、智慧线、感情线深度解读\n- **财运线**: 分析财富积累和投资运势\n- **事业线**: 洞察职业发展和事业成就\n- **婚姻线**: 解读感情婚姻和人际关系\t9.90\tNULL\t命理服务\n420005\t家居风水服务\t## 家居风水服务\n\n五台山大师堪舆之道，调和气场能量，化解煞气，招财旺运。\n\n### 服务内容\n- **布局分析**: 全面分析房间布局的风水吉凶\n- **色彩搭配**: 根据五行理论推荐最佳色彩方案\n- **化解煞气**: 识别并提供化解方案\n- **招财旺运**: 提供招财旺运的风水布局建议\t11.90\tNULL\t命理服务\n510001\t五台山开光鼠守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属鼠之人机智灵活、聪慧敏锐,善于把握机遇。此款生肖鼠守护吊坠精雕细琢,将鼠的灵动形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510002\t五台山开光牛守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属牛之人勤勉踏实、坚韧不拔,具有强大的耐力与毅力。此款生肖牛守护吊坠精雕细琢,将牛的稳重形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510003\t五台山开光虎守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属虎之人勇猛果敢、充满自信,具有强大的领导力与行动力。此款生肖虎守护吊坠精雕细琢,将虎的威猛形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510004\t五台山开光兔守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属兔之人温和善良、细腻敏感,具有优雅的气质与艺术天赋。此款生肖兔守护吊坠精雕细琢,将兔的灵巧形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510005\t五台山开光龙守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属龙之人气宇轩昂、才华横溢,具有非凡的魅力与创造力。龙在东方文化中象征权威、尊贵与吉祥。此款生肖龙守护吊坠精雕细琢,将龙的威严形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510006\t五台山开光蛇守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属蛇之人智慧深邃、神秘优雅,具有敏锐的洞察力与直觉。此款生肖蛇守护吊坠精雕细琢,将蛇的灵性形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510007\t五台山开光马守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属马之人热情奔放、自由不羁,具有强大的行动力与冒险精神。此款生肖马守护吊坠精雕细琢,将马的奔腾形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510008\t五台山开光羊守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属羊之人温柔体贴、富有同情心,具有强大的艺术感知力与审美能力。此款生肖羊守护吊坠精雕细琢,将羊的温顺形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510009\t五台山开光猴守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属猴之人聪明伶俐、活泼好动,具有强大的创新能力与幽默感。此款生肖猴守护吊坠精雕细琢,将猴的机敏形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510010\t五台山开光鸡守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属鸡之人勤奋认真、追求完美,具有强大的责任感与时间观念。此款生肖鸡守护吊坠精雕细琢,将鸡的昂扬形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510011\t五台山开光狗守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属狗之人忠诚可靠、正直善良,具有强大的正义感与保护欲。此款生肖狗守护吊坠精雕细琢,将狗的忠诚形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510012\t五台山开光猪守护吊坠\t在东方文化传承中,十二生肖不仅是符号,更与个人性格、生命节奏、以及个体与传统智慧之间的微妙联系紧密相连。属猪之人真诚善良、乐观豁达,具有强大的包容心与享受生活的能力。此款生肖猪守护吊坠精雕细琢,将猪的憨厚形象与阴阳太极等东方古老符号相融合,辅以精美装饰纹样,尽显古朴奢华。经五台山高僧古法开光加持,每一枚吊坠都化身为您的专属守护符。采用复古黄铜材质,质感丰富,兼具永恒优雅与神秘深邃,不仅是配饰,更是您与东方文化深邃神秘之间的可穿戴纽带,与您的生肖身份紧密相连。\t55.00\t45.00\t生肖守护\n510013\t五台山开光白羊座守护吊坠\t白羊座(3月21日-4月19日)象征勇气、热情与开拓精神。这款吊坠刻有白羊座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为白羊座佩戴者注入勇往直前的力量,增强领导力与行动力,守护您的星座能量场。\t55.00\t45.00\t星座守护\n510014\t五台山开光金牛座守护吊坠\t金牛座(4月20日-5月20日)象征稳重、务实与财富。这款吊坠刻有金牛座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为金牛座佩戴者带来稳定的能量场,增强财运与事业运,守护您的物质与精神富足。\t55.00\t45.00\t星座守护\n510015\t五台山开光双子座守护吊坠\t双子座(5月21日-6月21日)象征智慧、沟通与灵活性。这款吊坠刻有双子座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为双子座佩戴者提升思维敏捷度,增强人际关系与表达能力,守护您的智慧之光。\t55.00\t45.00\t星座守护\n510016\t五台山开光巨蟹座守护吊坠\t巨蟹座(6月22日-7月22日)象征情感、家庭与直觉。这款吊坠刻有巨蟹座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为巨蟹座佩戴者带来情感安全感,增强家庭和谐与直觉力,守护您的内心世界。\t55.00\t45.00\t星座守护\n510017\t五台山开光狮子座守护吊坠\t狮子座(7月23日-8月22日)象征自信、创造力与王者风范。这款吊坠刻有狮子座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为狮子座佩戴者增强自信与魅力,提升创造力与领导才能,守护您的王者之光。\t55.00\t45.00\t星座守护\n510018\t五台山开光处女座守护吊坠\t处女座(8月23日-9月22日)象征完美主义、分析力与服务精神。这款吊坠刻有处女座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为处女座佩戴者带来清晰的思维,增强健康意识与工作效率,守护您的完美追求。\t55.00\t45.00\t星座守护\n510019\t五台山开光天秤座守护吊坠\t天秤座(9月23日-10月23日)象征平衡、和谐与美感。这款吊坠刻有天秤座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为天秤座佩戴者带来内在平衡,增强人际和谐与审美能力,守护您的优雅气质。\t55.00\t45.00\t星座守护\n510020\t五台山开光天蝎座守护吊坠\t天蝎座(10月24日-11月22日)象征深度、神秘与转化力量。这款吊坠刻有天蝎座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为天蝎座佩戴者增强洞察力与意志力,提升转化负能量的能力,守护您的内在力量。\t55.00\t45.00\t星座守护\n510021\t五台山开光射手座守护吊坠\t射手座(11月23日-12月21日)象征自由、冒险与哲学思考。这款吊坠刻有射手座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为射手座佩戴者带来探索精神,增强乐观态度与智慧追求,守护您的自由之旅。\t55.00\t45.00\t星座守护\n510022\t五台山开光摩羯座守护吊坠\t摩羯座(12月22日-1月19日)象征责任、毅力与成就。这款吊坠刻有摩羯座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为摩羯座佩戴者增强耐力与目标达成能力,提升事业运与社会地位,守护您的成功之路。\t55.00\t45.00\t星座守护\n510023\t五台山开光水瓶座守护吊坠\t水瓶座(1月20日-2月18日)象征创新、独立与人道主义。这款吊坠刻有水瓶座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为水瓶座佩戴者激发创新思维,增强独立精神与社会责任感,守护您的理想追求。\t55.00\t45.00\t星座守护\n510024\t五台山开光双鱼座守护吊坠\t双鱼座(2月19日-3月20日)象征梦想、同理心与灵性。这款吊坠刻有双鱼座星图,经五台山高僧古法开光加持,融合东方能量仪式与西方星座智慧,为双鱼座佩戴者增强直觉与想象力,提升艺术天赋与精神感知,守护您的梦想之海。\t55.00\t45.00\t星座守护\n510025\tAries Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Aries constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510026\tTaurus Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Taurus constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510027\tGemini Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Gemini constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510028\tCancer Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Cancer constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510029\tLeo Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Leo constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510030\tVirgo Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Virgo constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510031\tLibra Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Libra constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510032\tScorpio Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Scorpio constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510033\tSagittarius Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Sagittarius constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510034\tCapricorn Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Capricorn constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510035\tAquarius Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Aquarius constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n510036\tPisces Moon Crescent Pendant\tZodiac Moon Crescent Pendant: Ancient Eastern Ritual-Enhanced Celestial Symbol Accessory. Features a delicate crescent moon frame with intricate carved patterns and a luminous Pisces constellation design. Elevated by an ancient Eastern energy-alignment ritual, this pendant becomes your personal celestial guardian.\t55.00\t45.00\t星座守护\n",
+  "stderr": "",
+  "execution_time_ms": 60
+}

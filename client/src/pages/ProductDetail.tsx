@@ -136,7 +136,7 @@ export default function ProductDetail() {
 
           {/* 右侧 - 产品信息 */}
           <div>
-            <h1 className="text-4xl font-bold mb-4">{product.name}</h1>
+            <h1 className="text-4xl font-light mb-4 tracking-wide">{product.name}</h1>
 
             {/* 评分 */}
             {product.averageRating > 0 && (
@@ -160,11 +160,11 @@ export default function ProductDetail() {
             {/* 价格 */}
             <div className="mb-6">
               <div className="flex items-baseline gap-3">
-                <span className="text-4xl font-bold text-accent">${currentPrice}</span>
+                <span className="text-4xl font-normal text-accent">${currentPrice}</span>
                 {product.salePrice && (
                   <>
                     <span className="text-xl text-muted-foreground line-through">${product.regularPrice}</span>
-                    <span className="px-2 py-1 bg-primary rounded text-sm font-bold">{t('product_detail.save_percent', { percent: discount })}</span>
+                    <span className="px-2 py-1 bg-primary rounded text-sm font-medium">{t('product_detail.save_percent', { percent: discount })}</span>
                   </>
                 )}
               </div>
@@ -180,7 +180,7 @@ export default function ProductDetail() {
                   <div className="flex items-start gap-3">
                     <Shield className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-bold mb-2 text-accent">{t('product_detail.blessing_info')}</h3>
+                      <h3 className="font-medium mb-2 text-accent">{t('product_detail.blessing_info')}</h3>
                       <div className="space-y-1 text-sm text-muted-foreground">
                         {product.blessingTemple && <p>{t('product_detail.temple')}: {product.blessingTemple}</p>}
                         {product.blessingMaster && <p>{t('product_detail.master')}: {product.blessingMaster}</p>}
@@ -209,7 +209,7 @@ export default function ProductDetail() {
 
             {/* 数量选择 */}
             <div className="mb-6">
-              <label className="block text-sm font-bold mb-2">{t('product_detail.quantity')}</label>
+              <label className="block text-sm font-medium mb-2">{t('product_detail.quantity')}</label>
               <div className="flex items-center gap-3">
                 <Button
                   variant="outline"
@@ -219,7 +219,7 @@ export default function ProductDetail() {
                 >
                   <Minus className="w-4 h-4" />
                 </Button>
-                <span className="text-xl font-bold w-12 text-center">{quantity}</span>
+                <span className="text-xl font-normal w-12 text-center">{quantity}</span>
                 <Button
                   variant="outline"
                   size="icon"
@@ -237,7 +237,7 @@ export default function ProductDetail() {
                 <div className="flex items-start gap-3">
                   <Info className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                   <div className="text-sm">
-                    <p className="font-bold text-accent mb-2">{t('product_detail.service_guide.title')}</p>
+                    <p className="font-medium text-accent mb-2">{t('product_detail.service_guide.title')}</p>
                     <ol className="list-decimal list-inside space-y-1 text-foreground/80">
                       <li>{t('product_detail.service_guide.step1')}</li>
                       <li>{t('product_detail.service_guide.step2')}</li>
@@ -279,7 +279,9 @@ export default function ProductDetail() {
             <Card className="bg-card">
               <CardContent className="p-6">
                 <div className="prose prose-invert max-w-none">
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap">{product.description}</p>
+                  <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
+                    {product.description}
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -289,9 +291,9 @@ export default function ProductDetail() {
             <Card className="bg-card">
               <CardContent className="p-6">
                 <div className="prose prose-invert max-w-none">
-                  <p className="text-muted-foreground leading-relaxed whitespace-pre-wrap">
+                  <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
                     {product.blessingDescription || t('product_detail.blessing_default')}
-                  </p>
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -313,7 +315,7 @@ export default function ProductDetail() {
                               />
                             ))}
                           </div>
-                          {review.title && <h4 className="font-bold mb-1">{review.title}</h4>}
+                          {review.title && <h4 className="font-medium mb-1">{review.title}</h4>}
                         </div>
                         {review.isVerifiedPurchase && (
                           <span className="text-xs bg-success/20 text-success px-2 py-1 rounded">{t('product_detail.verified_purchase')}</span>

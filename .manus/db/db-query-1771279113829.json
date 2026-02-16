@@ -1,0 +1,70 @@
+{
+  "query": "SELECT p.id, p.name, pi.url \nFROM products p \nLEFT JOIN product_images pi ON p.id = pi.productId \nWHERE p.id BETWEEN 510001 AND 510012 \nORDER BY p.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, pi.url \nFROM products p \nLEFT JOIN product_images pi ON p.id = pi.productId \nWHERE p.id BETWEEN 510001 AND 510012 \nORDER BY p.id;",
+  "rows": [
+    {
+      "id": "510001",
+      "name": "五台山开光鼠守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/wyIKDxNOXjUDeWNc.jpg"
+    },
+    {
+      "id": "510002",
+      "name": "五台山开光牛守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/VKRhCulFqvSqAURX.jpg"
+    },
+    {
+      "id": "510003",
+      "name": "五台山开光虎守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/yeERYtgUiAjMLkwY.jpg"
+    },
+    {
+      "id": "510004",
+      "name": "五台山开光兔守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/VrisgGvkgvKgWTYO.jpg"
+    },
+    {
+      "id": "510005",
+      "name": "五台山开光龙守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/wVGXIrfCHWaIFmsw.jpg"
+    },
+    {
+      "id": "510006",
+      "name": "五台山开光蛇守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/HxIKTykCIuxPbMYj.jpg"
+    },
+    {
+      "id": "510007",
+      "name": "五台山开光马守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/aXdRFtCdwRgjkReY.jpg"
+    },
+    {
+      "id": "510008",
+      "name": "五台山开光羊守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/xhtdTuxmzzafNSET.jpg"
+    },
+    {
+      "id": "510009",
+      "name": "五台山开光猴守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/VrisgGvkgvKgWTYO.jpg"
+    },
+    {
+      "id": "510010",
+      "name": "五台山开光鸡守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/gogXfonFjYNDOpCu.jpg"
+    },
+    {
+      "id": "510011",
+      "name": "五台山开光狗守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/cbpUizLsSLARhcQz.jpg"
+    },
+    {
+      "id": "510012",
+      "name": "五台山开光猪守护吊坠",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/zWzDeZdXqQUTnvGj.jpg"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\turl\n510001\t五台山开光鼠守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/wyIKDxNOXjUDeWNc.jpg\n510002\t五台山开光牛守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/VKRhCulFqvSqAURX.jpg\n510003\t五台山开光虎守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/yeERYtgUiAjMLkwY.jpg\n510004\t五台山开光兔守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/VrisgGvkgvKgWTYO.jpg\n510005\t五台山开光龙守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/wVGXIrfCHWaIFmsw.jpg\n510006\t五台山开光蛇守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/HxIKTykCIuxPbMYj.jpg\n510007\t五台山开光马守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/aXdRFtCdwRgjkReY.jpg\n510008\t五台山开光羊守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/xhtdTuxmzzafNSET.jpg\n510009\t五台山开光猴守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/VrisgGvkgvKgWTYO.jpg\n510010\t五台山开光鸡守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/gogXfonFjYNDOpCu.jpg\n510011\t五台山开光狗守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/cbpUizLsSLARhcQz.jpg\n510012\t五台山开光猪守护吊坠\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/zWzDeZdXqQUTnvGj.jpg\n",
+  "stderr": "",
+  "execution_time_ms": 54
+}

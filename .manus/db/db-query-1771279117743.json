@@ -1,0 +1,70 @@
+{
+  "query": "SELECT p.id, p.name, pi.url \nFROM products p \nLEFT JOIN product_images pi ON p.id = pi.productId \nWHERE p.id BETWEEN 510037 AND 510048 \nORDER BY p.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, pi.url \nFROM products p \nLEFT JOIN product_images pi ON p.id = pi.productId \nWHERE p.id BETWEEN 510037 AND 510048 \nORDER BY p.id;",
+  "rows": [
+    {
+      "id": "510037",
+      "name": "Rat Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/oUKzpGzfxvmrlxNY.jpg"
+    },
+    {
+      "id": "510038",
+      "name": "Ox Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ucMhhhAykaJguspy.jpg"
+    },
+    {
+      "id": "510039",
+      "name": "Tiger Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/WhgKFohbkchiXtBU.jpg"
+    },
+    {
+      "id": "510040",
+      "name": "Rabbit Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/opWBETVDMvSRzXdb.jpg"
+    },
+    {
+      "id": "510041",
+      "name": "Dragon Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/UclnLZwAUlnhVRpQ.jpg"
+    },
+    {
+      "id": "510042",
+      "name": "Snake Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/PdVHoXnnEBnjWdGG.jpg"
+    },
+    {
+      "id": "510043",
+      "name": "Horse Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/HuZIKvuWlkqkJoeh.jpg"
+    },
+    {
+      "id": "510044",
+      "name": "Goat Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/pkXphuFxNzmVfZNZ.jpg"
+    },
+    {
+      "id": "510045",
+      "name": "Monkey Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ZhSGmtnkpIkPnryX.jpg"
+    },
+    {
+      "id": "510046",
+      "name": "Rooster Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jWpXRjlOLXBPqTyG.jpg"
+    },
+    {
+      "id": "510047",
+      "name": "Dog Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/BMgFZaLgbTwXsliV.jpg"
+    },
+    {
+      "id": "510048",
+      "name": "Pig Chinese Zodiac Guardian Pendant",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/AgdsYRYoznVHqIlL.jpg"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\turl\n510037\tRat Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/oUKzpGzfxvmrlxNY.jpg\n510038\tOx Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ucMhhhAykaJguspy.jpg\n510039\tTiger Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/WhgKFohbkchiXtBU.jpg\n510040\tRabbit Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/opWBETVDMvSRzXdb.jpg\n510041\tDragon Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/UclnLZwAUlnhVRpQ.jpg\n510042\tSnake Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/PdVHoXnnEBnjWdGG.jpg\n510043\tHorse Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/HuZIKvuWlkqkJoeh.jpg\n510044\tGoat Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/pkXphuFxNzmVfZNZ.jpg\n510045\tMonkey Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ZhSGmtnkpIkPnryX.jpg\n510046\tRooster Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jWpXRjlOLXBPqTyG.jpg\n510047\tDog Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/BMgFZaLgbTwXsliV.jpg\n510048\tPig Chinese Zodiac Guardian Pendant\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/AgdsYRYoznVHqIlL.jpg\n",
+  "stderr": "",
+  "execution_time_ms": 54
+}

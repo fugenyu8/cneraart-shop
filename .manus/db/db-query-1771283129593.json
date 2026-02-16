@@ -1,0 +1,25 @@
+{
+  "query": "SELECT id, name, slug FROM products WHERE id BETWEEN 510001 AND 510012 LIMIT 3;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug FROM products WHERE id BETWEEN 510001 AND 510012 LIMIT 3;",
+  "rows": [
+    {
+      "id": "510001",
+      "name": "Wutai Mountain Blessed Rat Guardian Pendant",
+      "slug": "wutai-mountain-rat-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510002",
+      "name": "五台山开光牛守护吊坠",
+      "slug": "wutai-mountain-ox-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510003",
+      "name": "五台山开光虎守护吊坠",
+      "slug": "wutai-mountain-tiger-zodiac-guardian-pendant"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\n510001\tWutai Mountain Blessed Rat Guardian Pendant\twutai-mountain-rat-zodiac-guardian-pendant\n510002\t五台山开光牛守护吊坠\twutai-mountain-ox-zodiac-guardian-pendant\n510003\t五台山开光虎守护吊坠\twutai-mountain-tiger-zodiac-guardian-pendant\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

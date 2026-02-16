@@ -1,0 +1,50 @@
+{
+  "query": "\nSELECT id, name, slug, regularPrice, salePrice, categoryId \nFROM products \nWHERE name LIKE '%Blessing%' OR name LIKE '%Lamp%' OR name LIKE '%Incense%' OR name LIKE '%祈福%'\nORDER BY id;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nSELECT id, name, slug, regularPrice, salePrice, categoryId \nFROM products \nWHERE name LIKE '%Blessing%' OR name LIKE '%Lamp%' OR name LIKE '%Incense%' OR name LIKE '%祈福%'\nORDER BY id;\n",
+  "rows": [
+    {
+      "id": "120008",
+      "name": "Dual Blessings Package",
+      "slug": "dual-blessings-package",
+      "regularPrice": "79.00",
+      "salePrice": "NULL",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120009",
+      "name": "Wutai Mountain Incense Offering",
+      "slug": "wutai-mountain-incense-offering",
+      "regularPrice": "79.00",
+      "salePrice": "69.00",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120010",
+      "name": "Lamp Offering for Blessings",
+      "slug": "lamp-offering-for-blessings",
+      "regularPrice": "79.00",
+      "salePrice": "69.00",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120011",
+      "name": "Incense and Amulet Package",
+      "slug": "incense-and-amulet-package",
+      "regularPrice": "179.00",
+      "salePrice": "159.00",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120012",
+      "name": "Complete Blessing Ceremony",
+      "slug": "complete-blessing-ceremony",
+      "regularPrice": "229.00",
+      "salePrice": "209.00",
+      "categoryId": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tregularPrice\tsalePrice\tcategoryId\n120008\tDual Blessings Package\tdual-blessings-package\t79.00\tNULL\tNULL\n120009\tWutai Mountain Incense Offering\twutai-mountain-incense-offering\t79.00\t69.00\tNULL\n120010\tLamp Offering for Blessings\tlamp-offering-for-blessings\t79.00\t69.00\tNULL\n120011\tIncense and Amulet Package\tincense-and-amulet-package\t179.00\t159.00\tNULL\n120012\tComplete Blessing Ceremony\tcomplete-blessing-ceremony\t229.00\t209.00\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 146
+}

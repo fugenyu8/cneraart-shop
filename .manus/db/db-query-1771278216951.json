@@ -1,0 +1,60 @@
+{
+  "query": "SELECT id, name, categoryId, regularPrice, salePrice, blessingTemple, blessingMaster, status FROM products WHERE id BETWEEN 510001 AND 510024 LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, categoryId, regularPrice, salePrice, blessingTemple, blessingMaster, status FROM products WHERE id BETWEEN 510001 AND 510024 LIMIT 5;",
+  "rows": [
+    {
+      "id": "510001",
+      "name": "五台山开光鼠守护吊坠",
+      "categoryId": "6",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "blessingTemple": "五台山",
+      "blessingMaster": "五台山高僧",
+      "status": "published"
+    },
+    {
+      "id": "510002",
+      "name": "五台山开光牛守护吊坠",
+      "categoryId": "6",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "blessingTemple": "五台山",
+      "blessingMaster": "五台山高僧",
+      "status": "published"
+    },
+    {
+      "id": "510003",
+      "name": "五台山开光虎守护吊坠",
+      "categoryId": "6",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "blessingTemple": "五台山",
+      "blessingMaster": "五台山高僧",
+      "status": "published"
+    },
+    {
+      "id": "510004",
+      "name": "五台山开光兔守护吊坠",
+      "categoryId": "6",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "blessingTemple": "五台山",
+      "blessingMaster": "五台山高僧",
+      "status": "published"
+    },
+    {
+      "id": "510005",
+      "name": "五台山开光龙守护吊坠",
+      "categoryId": "6",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "blessingTemple": "五台山",
+      "blessingMaster": "五台山高僧",
+      "status": "published"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tcategoryId\tregularPrice\tsalePrice\tblessingTemple\tblessingMaster\tstatus\n510001\t五台山开光鼠守护吊坠\t6\t55.00\t45.00\t五台山\t五台山高僧\tpublished\n510002\t五台山开光牛守护吊坠\t6\t55.00\t45.00\t五台山\t五台山高僧\tpublished\n510003\t五台山开光虎守护吊坠\t6\t55.00\t45.00\t五台山\t五台山高僧\tpublished\n510004\t五台山开光兔守护吊坠\t6\t55.00\t45.00\t五台山\t五台山高僧\tpublished\n510005\t五台山开光龙守护吊坠\t6\t55.00\t45.00\t五台山\t五台山高僧\tpublished\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

@@ -1,0 +1,130 @@
+{
+  "query": "SELECT p.id, p.name, p.categoryId, p.regularPrice, p.salePrice, p.stock, p.status, pi.url \nFROM products p \nLEFT JOIN product_images pi ON p.id = pi.productId \nWHERE p.id BETWEEN 510025 AND 510036 \nORDER BY p.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, p.categoryId, p.regularPrice, p.salePrice, p.stock, p.status, pi.url \nFROM products p \nLEFT JOIN product_images pi ON p.id = pi.productId \nWHERE p.id BETWEEN 510025 AND 510036 \nORDER BY p.id;",
+  "rows": [
+    {
+      "id": "510025",
+      "name": "Aries Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/mrvUpyEWMFUsfdHU.png"
+    },
+    {
+      "id": "510026",
+      "name": "Taurus Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/CLXwqLGYozsKVYdW.png"
+    },
+    {
+      "id": "510027",
+      "name": "Gemini Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/hsBtcWuWwejusajk.png"
+    },
+    {
+      "id": "510028",
+      "name": "Cancer Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ZflIDPyaMuKcSIrP.png"
+    },
+    {
+      "id": "510029",
+      "name": "Leo Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/aBMBVahdPXlpqWZs.png"
+    },
+    {
+      "id": "510030",
+      "name": "Virgo Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/OCcchxolfBjzmAGB.png"
+    },
+    {
+      "id": "510031",
+      "name": "Libra Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/SuTtAJgmaccdModM.png"
+    },
+    {
+      "id": "510032",
+      "name": "Scorpio Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jFuaGawTMVkXwYCL.png"
+    },
+    {
+      "id": "510033",
+      "name": "Sagittarius Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/vwCJtgltwZyLRiWN.png"
+    },
+    {
+      "id": "510034",
+      "name": "Capricorn Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jedlcSjMNnDTSWNn.png"
+    },
+    {
+      "id": "510035",
+      "name": "Aquarius Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/KAIpnfWdQwEPPbcL.png"
+    },
+    {
+      "id": "510036",
+      "name": "Pisces Moon Crescent Pendant",
+      "categoryId": "7",
+      "regularPrice": "55.00",
+      "salePrice": "45.00",
+      "stock": "999",
+      "status": "published",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ugIIvKfyCGkXaeHr.png"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tcategoryId\tregularPrice\tsalePrice\tstock\tstatus\turl\n510025\tAries Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/mrvUpyEWMFUsfdHU.png\n510026\tTaurus Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/CLXwqLGYozsKVYdW.png\n510027\tGemini Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/hsBtcWuWwejusajk.png\n510028\tCancer Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ZflIDPyaMuKcSIrP.png\n510029\tLeo Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/aBMBVahdPXlpqWZs.png\n510030\tVirgo Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/OCcchxolfBjzmAGB.png\n510031\tLibra Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/SuTtAJgmaccdModM.png\n510032\tScorpio Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jFuaGawTMVkXwYCL.png\n510033\tSagittarius Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/vwCJtgltwZyLRiWN.png\n510034\tCapricorn Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jedlcSjMNnDTSWNn.png\n510035\tAquarius Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/KAIpnfWdQwEPPbcL.png\n510036\tPisces Moon Crescent Pendant\t7\t55.00\t45.00\t999\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ugIIvKfyCGkXaeHr.png\n",
+  "stderr": "",
+  "execution_time_ms": 60
+}

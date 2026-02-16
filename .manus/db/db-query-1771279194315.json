@@ -1,0 +1,9 @@
+{
+  "query": "-- 删除12个生肖属相牌的图片\nDELETE FROM product_images WHERE productId BETWEEN 510037 AND 510048;\n\n-- 删除12个生肖属相牌商品\nDELETE FROM products WHERE id BETWEEN 510037 AND 510048;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute -- 删除12个生肖属相牌的图片\nDELETE FROM product_images WHERE productId BETWEEN 510037 AND 510048;\n\n-- 删除12个生肖属相牌商品\nDELETE FROM products WHERE id BETWEEN 510037 AND 510048;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 66
+}

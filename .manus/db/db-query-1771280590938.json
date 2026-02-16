@@ -1,0 +1,26 @@
+{
+  "query": "\nSELECT \n  COALESCE(c.name, '未分类') as category_name,\n  COUNT(p.id) as product_count\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nGROUP BY c.id, c.name\nORDER BY product_count DESC;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nSELECT \n  COALESCE(c.name, '未分类') as category_name,\n  COUNT(p.id) as product_count\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nGROUP BY c.id, c.name\nORDER BY product_count DESC;\n",
+  "rows": [
+    {
+      "category_name": "星座守护",
+      "product_count": "24"
+    },
+    {
+      "category_name": "未分类",
+      "product_count": "17"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_count": "12"
+    },
+    {
+      "category_name": "命理服务",
+      "product_count": "3"
+    }
+  ],
+  "messages": [],
+  "stdout": "category_name\tproduct_count\n星座守护\t24\n未分类\t17\n生肖守护\t12\n命理服务\t3\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}
