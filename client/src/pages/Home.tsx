@@ -8,11 +8,7 @@ import { getLoginUrl } from "@/const";
 export default function Home() {
   const { t, i18n } = useTranslation();
   const { user } = useAuth();
-  const { data: allProducts } = trpc.products.list.useQuery({ limit: 20 });
-  
-  // 分离新品和畅销品
-  const newArrivals = allProducts?.slice(0, 4) || [];
-  const bestSellers = allProducts?.slice(4, 8) || [];
+  // 产品查询已删除(用户要求删除NEW ARRIVALS/BEST SELLERS区域)
 
   // 轮播图片列表(用户提供的10张五台山照片)
   const carouselImages = [
@@ -163,7 +159,7 @@ export default function Home() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {/* 1. 开光护佑法物 */}
             <Link href="/products">
-              <div className="group relative bg-black/75 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/85 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
@@ -175,8 +171,8 @@ export default function Home() {
                     <img src="/services/beads.png" alt="开光佛珠" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">{t('serviceCards.blessedItems.title')}</h3>
-                    <p className="text-sm text-[#E8D4A0]">{t('serviceCards.blessedItems.subtitle')}</p>
+                              <h3 className="text-xl font-medium text-[#FFD700] mb-2">{t('serviceCards.blessed.title')}</h3>
+                    <p className="text-sm font-light text-[#E8D4A0]">{t('serviceCards.blessed.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -184,7 +180,7 @@ export default function Home() {
 
             {/* 2. 命理运势 */}
             <Link href="/destiny">
-              <div className="group relative bg-black/75 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/85 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
@@ -196,8 +192,8 @@ export default function Home() {
                     <img src="/services/compass1.jpg" alt="八卦罗盘" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">{t('serviceCards.destiny.title')}</h3>
-                    <p className="text-sm text-[#E8D4A0]">{t('serviceCards.destiny.subtitle')}</p>
+                    <h3 className="text-xl font-medium text-[#FFD700] mb-2">{t('serviceCards.destiny.title')}</h3>
+                    <p className="text-sm font-light text-[#E8D4A0]">{t('serviceCards.destiny.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -205,7 +201,7 @@ export default function Home() {
 
             {/* 3. 面相手相风水 (合并) */}
             <Link href="/fortune">
-              <div className="group relative bg-black/75 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/85 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
@@ -217,8 +213,8 @@ export default function Home() {
                     <img src="/services/palmistry.jpg" alt="手相图谱" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">{t('serviceCards.palmistry.title')}</h3>
-                    <p className="text-sm text-[#E8D4A0]">{t('serviceCards.palmistry.subtitle')}</p>
+                    <h3 className="text-xl font-medium text-[#FFD700] mb-2">{t('serviceCards.palmistry.title')}</h3>
+                    <p className="text-sm font-light text-[#E8D4A0]">{t('serviceCards.palmistry.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -226,7 +222,7 @@ export default function Home() {
 
             {/* 4. 代客祈福 */}
             <Link href="/prayer">
-              <div className="group relative bg-black/75 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/85 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
@@ -238,8 +234,8 @@ export default function Home() {
                     <img src="/services/lotus-lamp.jpg" alt="莲花灯" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">{t('serviceCards.prayer.title')}</h3>
-                    <p className="text-sm text-[#E8D4A0]">{t('serviceCards.prayer.subtitle')}</p>
+                    <h3 className="text-xl font-medium text-[#FFD700] mb-2">{t('serviceCards.prayer.title')}</h3>
+                    <p className="text-sm font-light text-[#E8D4A0]">{t('serviceCards.prayer.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -248,99 +244,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* NEW ARRIVALS Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <button className="bg-white border border-gray-300 px-8 py-2 rounded-md text-[#5D4E37] font-medium hover:bg-gray-50 transition-colors">
-              NEW ARRIVALS
-            </button>
-          </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {newArrivals.map((product: any) => (
-              <Link key={product.id} href={`/products/${product.id}`}>
-                <div className="group block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-all">
-                  <div className="aspect-square overflow-hidden bg-gray-100">
-                    <img
-                      src={product.images?.[0]?.url || "/placeholder-product.jpg"}
-                      alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-sm text-[#5D4E37] mb-2 line-clamp-2 group-hover:text-[#D4AF37] transition-colors">
-                      {product.name}
-                    </h3>
-                    {/* 社交证明 */}
-                    <div className="text-xs text-gray-500 mb-2 flex items-center gap-1">
-                      <span>🔥</span>
-                      <span>已有{Math.floor(50 + (product.id * 37) % 450)}人请回此法物</span>
-                    </div>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-lg font-bold text-[#5D4E37]">
-                        ${product.salePrice ? Number(product.salePrice).toFixed(2) : Number(product.regularPrice).toFixed(2)}
-                      </span>
-                      {product.salePrice && Number(product.salePrice) < Number(product.regularPrice) && (
-                        <span className="text-sm text-gray-400 line-through">
-                          ${Number(product.regularPrice).toFixed(2)}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* BEST SELLERS Section */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <button className="bg-white border border-gray-300 px-8 py-2 rounded-md text-[#5D4E37] font-medium hover:bg-gray-50 transition-colors">
-              BEST SELLERS
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {bestSellers.map((product: any) => (
-              <Link key={product.id} href={`/products/${product.id}`}>
-                <div className="group block bg-white rounded-lg overflow-hidden hover:shadow-lg transition-all">
-                  <div className="aspect-square overflow-hidden bg-gray-100">
-                    <img
-                      src={product.images?.[0]?.url || "/placeholder-product.jpg"}
-                      alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-sm text-[#5D4E37] mb-2 line-clamp-2 group-hover:text-[#D4AF37] transition-colors">
-                      {product.name}
-                    </h3>
-                    {/* 社交证明 */}
-                    <div className="text-xs text-gray-500 mb-2 flex items-center gap-1">
-                      <span>🔥</span>
-                      <span>已有{Math.floor(50 + (product.id * 37) % 450)}人请回此法物</span>
-                    </div>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-lg font-bold text-[#5D4E37]">
-                        ${product.salePrice ? Number(product.salePrice).toFixed(2) : Number(product.regularPrice).toFixed(2)}
-                      </span>
-                      {product.salePrice && Number(product.salePrice) < Number(product.regularPrice) && (
-                        <span className="text-sm text-gray-400 line-through">
-                          ${Number(product.regularPrice).toFixed(2)}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ABOUT US Section - 深红色背景 */}
       <section className="py-20 px-4 bg-[#8B1A1A] text-white relative overflow-hidden">
