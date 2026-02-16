@@ -130,7 +130,7 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-2xl" style={{ fontFamily: 'Cinzel, serif' }}>
               {t('hero.title')}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-light drop-shadow-lg" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+            <p className="text-base md:text-xl text-white/90 font-light drop-shadow-lg" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
               {t('hero.subtitle')}
             </p>
           </div>
