@@ -154,19 +154,25 @@ export default function Home() {
       </section>
 
       {/* 服务卡片区 */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* 1. 开光护佑法物 */}
             <Link href="/products">
-              <div className="group bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="w-20 h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform">
-                    🪷
+              <div className="group relative bg-gradient-to-br from-gray-900 via-black to-gray-800 border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden">
+                {/* 金色祥云纹理背景 */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
+                </div>
+                
+                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                  {/* 实物照片 */}
+                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
+                    <img src="/services/beads.png" alt="开光佛珠" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-amber-900 mb-2">开光护佑法物</h3>
-                    <p className="text-sm text-amber-700">传统仪轨，大师加持</p>
+                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">开光护佑法物</h3>
+                    <p className="text-sm text-[#E8D4A0]">传统仪轨，大师加持</p>
                   </div>
                 </div>
               </div>
@@ -174,14 +180,20 @@ export default function Home() {
 
             {/* 2. 命理运势 */}
             <Link href="/destiny">
-              <div className="group bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform">
-                    ☯️
+              <div className="group relative bg-gradient-to-br from-gray-900 via-black to-gray-800 border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden">
+                {/* 金色祥云纹理背景 */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
+                </div>
+                
+                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                  {/* 实物照片 */}
+                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
+                    <img src="/services/compass1.jpg" alt="八卦罗盘" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-purple-900 mb-2">命理运势</h3>
-                    <p className="text-sm text-purple-700">流年运势,破解难题</p>
+                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">命理运势</h3>
+                    <p className="text-sm text-[#E8D4A0]">流年运势,破解难题</p>
                   </div>
                 </div>
               </div>
@@ -189,14 +201,20 @@ export default function Home() {
 
             {/* 3. 面相手相风水 (合并) */}
             <Link href="/fortune">
-              <div className="group bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform">
-                    🔮
+              <div className="group relative bg-gradient-to-br from-gray-900 via-black to-gray-800 border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden">
+                {/* 金色祥云纹理背景 */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
+                </div>
+                
+                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                  {/* 实物照片 */}
+                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
+                    <img src="/services/compass2.jpg" alt="风水罗盘" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-blue-900 mb-2">面相手相风水</h3>
-                    <p className="text-sm text-blue-700">古老智慧，解读当下</p>
+                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">面相手相风水</h3>
+                    <p className="text-sm text-[#E8D4A0]">古老智慧，解读当下</p>
                   </div>
                 </div>
               </div>
@@ -204,14 +222,20 @@ export default function Home() {
 
             {/* 4. 代客祈福 */}
             <Link href="/prayer">
-              <div className="group bg-gradient-to-br from-emerald-50 to-teal-50 border border-emerald-200 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-                <div className="flex flex-col items-center text-center space-y-4">
-                  <div className="w-20 h-20 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full flex items-center justify-center text-4xl shadow-lg group-hover:scale-110 transition-transform">
-                    🙏
+              <div className="group relative bg-gradient-to-br from-gray-900 via-black to-gray-800 border-2 border-[#D4AF37] rounded-2xl p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 transition-all duration-300 cursor-pointer overflow-hidden">
+                {/* 金色祥云纹理背景 */}
+                <div className="absolute inset-0 opacity-5">
+                  <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
+                </div>
+                
+                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                  {/* 实物照片 */}
+                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
+                    <img src="/services/lotus-lamp.jpg" alt="莲花灯" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-emerald-900 mb-2">代客祈福</h3>
-                    <p className="text-sm text-emerald-700">跨越山海,代传祈愿</p>
+                    <h3 className="text-xl font-bold text-[#FFD700] mb-2">代客祈福</h3>
+                    <p className="text-sm text-[#E8D4A0]">跨越山海,代传祈愿</p>
                   </div>
                 </div>
               </div>
