@@ -375,11 +375,20 @@ export default function Home() {
       </section>
 
       {/* 五台山背书页脚 */}
-      <footer className="bg-[#5D4E37] text-[#D4AF37] py-8 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <div className="text-sm space-y-2">
-            <p className="font-semibold text-lg">五台山 · 世界五大佛教圣地之一 · 世界文化遗产名录</p>
-            <p className="text-xs">中国四大佛教名山之首 · 文殊菩萨道场 · 千年佛教文化传承</p>
+      <footer className="relative py-16 text-center overflow-hidden">
+        {/* 五台山寺庙背景图 */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{backgroundImage: 'url(/footer-bg.jpg)'}}
+        >
+          {/* 半透明黑色遮罩 */}
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <div className="text-sm space-y-3">
+            <p className="font-semibold text-2xl text-[#FFD700] drop-shadow-lg">五台山 · 世界五大佛教圣地之一 · 世界文化遗产名录</p>
+            <p className="text-base text-[#E8D4A0] drop-shadow-md">中国四大佛教名山之首 · 文殊菩萨道场 · 千年佛教文化传承</p>
           </div>
         </div>
       </footer>
