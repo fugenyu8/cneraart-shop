@@ -1,4 +1,34 @@
 {
+  "topBar": {
+    "wutaishan": "Monte Wutai",
+    "credential1": "Una de las cinco montañas budistas sagradas",
+    "credential2": "Primera de las cuatro grandes montañas budistas de China",
+    "credential3": "Sitio del Patrimonio Mundial de la UNESCO",
+    "register": "Registrarse",
+    "login": "Iniciar sesión"
+  },
+  "hero": {
+    "title": "Antigua sabiduría oriental",
+    "subtitle": "Elevar energía · Resolver problemas · Beneficiar a todos los seres"
+  },
+  "serviceCards": {
+    "blessedItems": {
+      "title": "Artefactos protectores bendecidos",
+      "subtitle": "Rituales tradicionales, consagración del maestro"
+    },
+    "destiny": {
+      "title": "Destino y fortuna",
+      "subtitle": "Fortuna anual, resolver desafíos"
+    },
+    "palmistry": {
+      "title": "Rostro, palma y Feng Shui",
+      "subtitle": "Sabiduría antigua, perspectivas presentes"
+    },
+    "prayer": {
+      "title": "Servicios de oración",
+      "subtitle": "A través de montañas y mares, entregar bendiciones"
+    }
+  },
   "nav": {
     "home": "Inicio",
     "products": "Productos",

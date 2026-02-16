@@ -1,4 +1,34 @@
 {
+  "topBar": {
+    "wutaishan": "Berg Wutai",
+    "credential1": "Einer der fünf heiligen buddhistischen Berge",
+    "credential2": "Erster der vier großen buddhistischen Berge Chinas",
+    "credential3": "UNESCO-Weltkulturerbe",
+    "register": "Registrieren",
+    "login": "Anmelden"
+  },
+  "hero": {
+    "title": "Alte östliche Weisheit",
+    "subtitle": "Energie erhöhen · Probleme lösen · Allen Wesen nützen"
+  },
+  "serviceCards": {
+    "blessedItems": {
+      "title": "Gesegnete Schutzartefakte",
+      "subtitle": "Traditionelle Rituale, Meisterweihe"
+    },
+    "destiny": {
+      "title": "Schicksal & Glück",
+      "subtitle": "Jahresglück, Herausforderungen lösen"
+    },
+    "palmistry": {
+      "title": "Gesicht, Hand & Feng Shui",
+      "subtitle": "Alte Weisheit, gegenwärtige Einsichten"
+    },
+    "prayer": {
+      "title": "Gebetsdienste",
+      "subtitle": "Über Berge & Meere, Segnungen überbringen"
+    }
+  },
   "nav": {
     "home": "Startseite",
     "products": "Produkte",

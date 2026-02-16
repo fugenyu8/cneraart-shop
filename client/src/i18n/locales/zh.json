@@ -1,4 +1,12 @@
 {
+  "topBar": {
+    "wutaishan": "五台山",
+    "credential1": "世界五大佛教圣地之一",
+    "credential2": "中国四大佛教名山之首",
+    "credential3": "世界文化遗产名录",
+    "register": "注册",
+    "login": "登录"
+  },
   "nav": {
     "home": "首页",
     "products": "产品",

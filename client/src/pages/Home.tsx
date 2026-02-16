@@ -47,30 +47,30 @@ export default function Home() {
           {/* 左侧:五台山背书 - 自动滚动 */}
           <div className="flex-1 mr-4 overflow-hidden">
             <div className="flex items-center gap-4 text-xs md:text-sm whitespace-nowrap animate-scroll">
-              <span className="font-semibold">五台山</span>
-              <span>世界五大佛教圣地之一</span>
+              <span className="font-semibold">{t('topBar.wutaishan')}</span>
+              <span>{t('topBar.credential1')}</span>
               <span>-</span>
-              <span>中国四大佛教名山之首</span>
+              <span>{t('topBar.credential2')}</span>
               <span>-</span>
-              <span>世界文化遗产名录</span>
+              <span>{t('topBar.credential3')}</span>
               {/* 重复内容实现无缝循环 */}
-              <span className="font-semibold">五台山</span>
-              <span>世界五大佛教圣地之一</span>
+              <span className="font-semibold">{t('topBar.wutaishan')}</span>
+              <span>{t('topBar.credential1')}</span>
               <span>-</span>
-              <span>中国四大佛教名山之首</span>
+              <span>{t('topBar.credential2')}</span>
               <span>-</span>
-              <span>世界文化遗产名录</span>
+              <span>{t('topBar.credential3')}</span>
             </div>
           </div>
 
           {/* 右侧:注册/登录/语言 */}
           <div className="flex items-center gap-2 text-xs md:text-sm flex-shrink-0">
             <a href={getLoginUrl()} className="hover:text-white transition-colors">
-              注册
+              {t('topBar.register')}
             </a>
             <span>|</span>
             <a href={getLoginUrl()} className="hover:text-white transition-colors">
-              登录
+              {t('topBar.login')}
             </a>
             <span>|</span>
             <select
@@ -171,8 +171,8 @@ export default function Home() {
                     <img src="/services/beads.png" alt="开光佛珠" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                              <h3 className="text-xl font-medium text-[#FFD700] mb-2">{t('serviceCards.blessed.title')}</h3>
-                    <p className="text-sm font-light text-[#E8D4A0]">{t('serviceCards.blessed.subtitle')}</p>
+                              <h3 className="text-xl font-medium text-[#FFD700] mb-2">{t('serviceCards.blessedItems.title')}</h3>
+                    <p className="text-sm font-light text-[#E8D4A0]">{t('serviceCards.blessedItems.subtitle')}</p>
                   </div>
                 </div>
               </div>

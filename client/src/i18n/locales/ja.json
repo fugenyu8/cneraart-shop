@@ -1,0 +1,41 @@
+{
+  "topBar": {
+    "wutaishan": "五台山",
+    "credential1": "世界五大仏教聖地の一つ",
+    "credential2": "中国四大仏教名山の筆頭",
+    "credential3": "ユネスコ世界遺産",
+    "register": "登録",
+    "login": "ログイン"
+  },
+  "hero": {
+    "title": "古代東洋の知恵",
+    "subtitle": "エネルギーを高める · 悩みを解決 · 衆生を利益する"
+  },
+  "serviceCards": {
+    "blessedItems": {
+      "title": "開光護佑法物",
+      "subtitle": "伝統儀式、大師加持"
+    },
+    "destiny": {
+      "title": "命理運勢",
+      "subtitle": "流年運勢、難題解決"
+    },
+    "palmistry": {
+      "title": "顔相・手相・風水",
+      "subtitle": "古代の知恵、現在を読み解く"
+    },
+    "prayer": {
+      "title": "代理祈福",
+      "subtitle": "山海を越えて、祈りを届ける"
+    }
+  },
+  "nav": {
+    "home": "ホーム",
+    "products": "商品",
+    "about": "私たちについて",
+    "cart": "カート",
+    "account": "マイアカウント",
+    "login": "ログイン",
+    "logout": "ログアウト"
+  }
+}

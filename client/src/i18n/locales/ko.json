@@ -1,0 +1,41 @@
+{
+  "topBar": {
+    "wutaishan": "오대산",
+    "credential1": "세계 5대 불교 성지 중 하나",
+    "credential2": "중국 4대 불교 명산의 으뜸",
+    "credential3": "유네스코 세계문화유산",
+    "register": "가입",
+    "login": "로그인"
+  },
+  "hero": {
+    "title": "고대 동양의 지혜",
+    "subtitle": "에너지 향상 · 고민 해결 · 중생 이익"
+  },
+  "serviceCards": {
+    "blessedItems": {
+      "title": "개광 호위 법물",
+      "subtitle": "전통 의식, 대사 가지"
+    },
+    "destiny": {
+      "title": "명리 운세",
+      "subtitle": "유년 운세, 난제 해결"
+    },
+    "palmistry": {
+      "title": "관상·수상·풍수",
+      "subtitle": "고대 지혜, 현재 해석"
+    },
+    "prayer": {
+      "title": "대리 기도",
+      "subtitle": "산해를 넘어, 기원 전달"
+    }
+  },
+  "nav": {
+    "home": "홈",
+    "products": "제품",
+    "about": "회사 소개",
+    "cart": "장바구니",
+    "account": "내 계정",
+    "login": "로그인",
+    "logout": "로그아웃"
+  }
+}

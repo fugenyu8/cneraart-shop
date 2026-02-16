@@ -1,0 +1,41 @@
+{
+  "topBar": {
+    "wutaishan": "Gunung Wutai",
+    "credential1": "Salah satu dari lima gunung Buddha suci",
+    "credential2": "Yang pertama dari empat gunung Buddha besar Tiongkok",
+    "credential3": "Situs Warisan Dunia UNESCO",
+    "register": "Daftar",
+    "login": "Masuk"
+  },
+  "hero": {
+    "title": "Kebijaksanaan Timur kuno",
+    "subtitle": "Tingkatkan energi · Atasi masalah · Manfaat semua makhluk"
+  },
+  "serviceCards": {
+    "blessedItems": {
+      "title": "Artefak pelindung yang diberkati",
+      "subtitle": "Ritual tradisional, pengudusan master"
+    },
+    "destiny": {
+      "title": "Takdir & keberuntungan",
+      "subtitle": "Keberuntungan tahunan, atasi tantangan"
+    },
+    "palmistry": {
+      "title": "Wajah, telapak tangan & Feng Shui",
+      "subtitle": "Kebijaksanaan kuno, wawasan saat ini"
+    },
+    "prayer": {
+      "title": "Layanan doa",
+      "subtitle": "Melintasi gunung & lautan, sampaikan berkah"
+    }
+  },
+  "nav": {
+    "home": "Beranda",
+    "products": "Produk",
+    "about": "Tentang kami",
+    "cart": "Keranjang",
+    "account": "Akun saya",
+    "login": "Masuk",
+    "logout": "Keluar"
+  }
+}

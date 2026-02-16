@@ -1,4 +1,12 @@
 {
+  "topBar": {
+    "wutaishan": "Mount Wutai",
+    "credential1": "One of the Five Sacred Buddhist Mountains",
+    "credential2": "Premier of China's Four Great Buddhist Mountains",
+    "credential3": "UNESCO World Heritage Site",
+    "register": "Register",
+    "login": "Login"
+  },
   "nav": {
     "home": "Home",
     "products": "Products",
