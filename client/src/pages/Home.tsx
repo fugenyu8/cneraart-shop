@@ -48,18 +48,18 @@ export default function Home() {
       {/* 顶部栏 - 参照service.cneraart.com */}
       <div className="bg-[#8B0000] text-[#F5DEB3] py-2 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          {/* 左侧:五台山背书 */}
-          <div className="flex items-center gap-1 text-xs md:text-sm">
+          {/* 左侧:五台山背书 - 横向滚动 */}
+          <div className="flex items-center gap-1 text-xs md:text-sm overflow-x-auto whitespace-nowrap flex-1 mr-4">
             <span className="font-semibold">五台山</span>
             <span className="mx-1">世界五大佛教圣地之一</span>
-            <span className="hidden md:inline">-</span>
-            <span className="hidden md:inline mx-1">中国四大佛教名山之首</span>
-            <span className="hidden md:inline">-</span>
-            <span className="hidden md:inline mx-1">世界文化遗产名录</span>
+            <span>-</span>
+            <span className="mx-1">中国四大佛教名山之首</span>
+            <span>-</span>
+            <span className="mx-1">世界文化遗产名录</span>
           </div>
 
-          {/* 右侧:用户名/语言 */}
-          <div className="flex items-center gap-2 md:gap-4 text-xs md:text-sm">
+          {/* 右侧:注册/登录/语言 */}
+          <div className="flex items-center gap-2 text-xs md:text-sm flex-shrink-0">
             {user ? (
               <Link href="/account">
                 <span className="hover:text-white cursor-pointer transition-colors">
@@ -67,9 +67,15 @@ export default function Home() {
                 </span>
               </Link>
             ) : (
-              <a href={getLoginUrl()} className="hover:text-white transition-colors">
-                登录
-              </a>
+              <>
+                <a href={getLoginUrl()} className="hover:text-white transition-colors">
+                  注册
+                </a>
+                <span>|</span>
+                <a href={getLoginUrl()} className="hover:text-white transition-colors">
+                  登录
+                </a>
+              </>
             )}
             <span>|</span>
             <select
