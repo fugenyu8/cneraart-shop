@@ -106,6 +106,7 @@ export const cartItems = mysqlTable("cart_items", {
   userId: int("userId").notNull(),
   productId: int("productId").notNull(),
   quantity: int("quantity").default(1).notNull(),
+  serviceData: json("serviceData"), // 服务产品的额外信息: {imageUrls, questionDescription, bookingDate}
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
 });
@@ -376,3 +377,61 @@ export const fengshuiRules = mysqlTable("fengshui_rules", {
 
 export type FengshuiRule = typeof fengshuiRules.$inferSelect;
 export type InsertFengshuiRule = typeof fengshuiRules.$inferInsert;
+
+// ============= 服务预约系统表 =============
+
+/**
+ * 命理服务预约表 - 独立的预约和支付系统
+ */
+export const fortuneBookings = mysqlTable("fortune_bookings", {
+  id: int("id").autoincrement().primaryKey(),
+  orderId: int("orderId").notNull(), // 关联orders表
+  userId: int("userId").notNull(),
+  serviceType: mysqlEnum("serviceType", ["face", "palm", "fengshui"]).notNull(),
+  
+  // 服务专属信息(订单表中没有的字段)
+  bookingDate: timestamp("bookingDate"), // 预约日期(可选)
+  questionDescription: text("questionDescription"), // 问题描述
+  imageUrls: json("imageUrls"), // 存储上传的图片URL数组
+  
+  // 服务状态和报告
+  status: mysqlEnum("status", ["pending", "in_progress", "completed", "cancelled"]).default("pending").notNull(),
+  reportUrl: varchar("reportUrl", { length: 500 }), // 生成的报告URL
+  reportSentAt: timestamp("reportSentAt"), // 报告发送时间
+  completedAt: timestamp("completedAt"),
+  
+  // 备注
+  adminNote: text("adminNote"),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FortuneBooking = typeof fortuneBookings.$inferSelect;
+export type InsertFortuneBooking = typeof fortuneBookings.$inferInsert;
+
+/**
+ * 命理服务评价表 - 独立于产品评价的服务评价系统
+ */
+export const fortuneServiceReviews = mysqlTable("fortune_service_reviews", {
+  id: int("id").autoincrement().primaryKey(),
+  bookingId: int("bookingId"), // 关联预约记录
+  userId: int("userId").notNull(),
+  serviceType: mysqlEnum("serviceType", ["face", "palm", "fengshui"]).notNull(),
+  
+  // 评价内容
+  customerName: varchar("customerName", { length: 100 }).notNull(), // 用于匿名显示
+  rating: int("rating").notNull(), // 1-5星
+  reviewText: text("reviewText").notNull(),
+  
+  // 管理
+  isFeatured: boolean("isFeatured").default(false), // 是否精选展示
+  isApproved: boolean("isApproved").default(false), // 管理员审核
+  language: varchar("language", { length: 10 }).default("zh"), // 评价语言
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type FortuneServiceReview = typeof fortuneServiceReviews.$inferSelect;
+export type InsertFortuneServiceReview = typeof fortuneServiceReviews.$inferInsert;

@@ -22,6 +22,27 @@
       "when": 1771144586893,
       "tag": "0002_polite_karnak",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1771232824308,
+      "tag": "0003_grey_microchip",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1771233375735,
+      "tag": "0004_mean_overlord",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1771234413780,
+      "tag": "0005_groovy_korath",
+      "breakpoints": true
     }
   ]
 }

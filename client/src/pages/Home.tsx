@@ -181,7 +181,7 @@ export default function Home() {
             </Link>
 
             {/* 2. 命理运势 */}
-            <Link href="/destiny">
+            <div onClick={() => alert(t('comingSoon') || '敬请期待')}>
               <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
@@ -199,7 +199,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
 
             {/* 3. 面相手相风水 (合并) */}
             <Link href="/fortune">
@@ -223,7 +223,7 @@ export default function Home() {
             </Link>
 
             {/* 4. 代客祈福 */}
-            <Link href="/prayer">
+            <div onClick={() => alert(t('comingSoon') || '敬请期待')}>
               <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
@@ -241,7 +241,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           </div>
         </div>
       </section>
