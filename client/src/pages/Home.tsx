@@ -36,7 +36,10 @@ export default function Home() {
 
   // 语言切换
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);
+    // 手动保存到localStorage
+    localStorage.setItem('i18nextLng', lng);
+    // 刷新页面以加载新语言
+    window.location.reload();
   };
 
   return (
