@@ -14,18 +14,18 @@ export default function Home() {
   const newArrivals = allProducts?.slice(0, 4) || [];
   const bestSellers = allProducts?.slice(4, 8) || [];
 
-  // 轮播图片列表(10张五台山照片)
+  // 轮播图片列表(用户提供的10张五台山照片)
   const carouselImages = [
-    "/wutai/fojiaowutaishan1(16).jpg",
-    "/wutai/hh1(5).jpg",
+    "/wutai/W1(6).jpg",
+    "/wutai/wutais1(23).jpg",
+    "/wutai/wf1(10).jpg",
+    "/wutai/佛1.jpg",
+    "/wutai/wutais1(18).jpg",
+    "/wutai/fowt1(1).jpg",
     "/wutai/wutai1(3).jpg",
     "/wutai/hh1(6).jpg",
-    "/wutai/fojiaowutaishan1(18).jpg",
-    "/wutai/wutais1(18).jpg",
-    "/wutai/fwts1(3).jpg",
-    "/wutai/wf1(10).jpg",
-    "/wutai/fowt1(1).jpg",
-    "/wutai/wutais1(23).jpg",
+    "/wutai/hh1(5).jpg",
+    "/wutai/W1(2).jpg",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
