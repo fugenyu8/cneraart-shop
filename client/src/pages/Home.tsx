@@ -1,66 +1,157 @@
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { useTranslation } from "react-i18next";
+import { useState, useEffect } from "react";
+import { useAuth } from "@/hooks/useAuth";
+import { getLoginUrl } from "@/const";
 
 export default function Home() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const { user } = useAuth();
   const { data: allProducts } = trpc.products.list.useQuery({ limit: 20 });
   
-  // 分离新品和畅销品 (这里简单按ID分,实际应该有featured/bestseller标记)
+  // 分离新品和畅销品
   const newArrivals = allProducts?.slice(0, 4) || [];
   const bestSellers = allProducts?.slice(4, 8) || [];
 
+  // 轮播图片列表(10张五台山照片)
+  const carouselImages = [
+    "/wutai/fojiaowutaishan1(16).jpg",
+    "/wutai/hh1(5).jpg",
+    "/wutai/wutai1(3).jpg",
+    "/wutai/hh1(6).jpg",
+    "/wutai/fojiaowutaishan1(18).jpg",
+    "/wutai/wutais1(18).jpg",
+    "/wutai/fwts1(3).jpg",
+    "/wutai/wf1(10).jpg",
+    "/wutai/fowt1(1).jpg",
+    "/wutai/wutais1(23).jpg",
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // 自动轮播(每5秒切换)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
+
+  // 语言切换
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF8F3]">
-      {/* Hero Section - 左右分栏布局 */}
-      <section className="relative">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="relative">
-            {/* Hero大图 */}
-            <div className="relative h-[500px] rounded-lg overflow-hidden group">
-              <img
-                src="https://d3hxwv9uga20ww.cloudfront.net/RoSpAXz7wgobQtEUGXx9ai-files/fojiaowutaishan1(16)-randomSuffix-1739540736.jpg"
-                alt="Wutai Mountain Temple"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-              
-              {/* 文字叠加 */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
-                {/* 五台山权威标识 */}
-                <div className="absolute top-4 left-4 flex flex-col gap-2">
-                  <div className="bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg">
-                    <div className="text-xs text-[#8B4513] font-semibold">世界五大佛教圣地之一</div>
-                    <div className="text-sm text-[#D4AF37] font-bold">五台山</div>
-                  </div>
-                  <div className="bg-white/95 backdrop-blur-sm px-3 py-2 rounded-lg shadow-lg">
-                    <div className="text-xs text-[#8B4513] font-semibold">中国四大佛教名山之首</div>
-                    <div className="text-sm text-[#D4AF37] font-bold">文殊菩萨道场</div>
-                  </div>
-                </div>
+      {/* 顶部栏 - 参照service.cneraart.com */}
+      <div className="bg-[#8B0000] text-[#F5DEB3] py-2 px-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
+          {/* 左侧:五台山背书 */}
+          <div className="flex items-center gap-2 md:gap-4 flex-wrap">
+            <span className="flex items-center gap-1">
+              <span className="text-base">🪷</span>
+              <span className="font-semibold">五台山</span>
+            </span>
+            <span className="hidden md:inline">|</span>
+            <span className="text-xs md:text-sm">世界五大佛教圣地之一</span>
+            <span className="hidden md:inline">|</span>
+            <span className="text-xs md:text-sm">中国四大佛教名山之首</span>
+            <span className="hidden md:inline">|</span>
+            <span className="text-xs md:text-sm">世界文化遗产名录</span>
+          </div>
 
-                <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-2xl">
-                  ANCIENT EASTERN BLESSINGS
-                </h1>
-                <p className="text-xl md:text-2xl text-white/90 mb-8 font-light drop-shadow-lg">
-                  HELPING YOU RESOLVE TROUBLES
-                </p>
-                
-                {/* 按钮 */}
-                <div className="flex gap-4">
-                  <Link href="/products">
-                    <button className="bg-white text-[#5D4E37] px-8 py-3 rounded-md hover:bg-[#D4AF37] hover:text-white transition-all font-medium min-h-[44px]">
-                      结缘开光
-                    </button>
-                  </Link>
-                  <Link href="/contact">
-                    <button className="border-2 border-white text-white px-8 py-3 rounded-md hover:bg-white hover:text-[#5D4E37] transition-all font-medium min-h-[44px]">
-                      GET IN TOUCH
-                    </button>
-                  </Link>
-                </div>
-              </div>
+          {/* 右侧:注册/邮箱/语言 */}
+          <div className="flex items-center gap-2 md:gap-4 text-xs md:text-sm">
+            {user ? (
+              <Link href="/account">
+                <span className="hover:text-white cursor-pointer transition-colors">
+                  {user.name || user.email}
+                </span>
+              </Link>
+            ) : (
+              <a href={getLoginUrl()} className="hover:text-white transition-colors">
+                注册/登录
+              </a>
+            )}
+            <span className="hidden md:inline">|</span>
+            <a href="mailto:service@cneraart.com" className="hover:text-white transition-colors hidden md:inline">
+              service@cneraart.com
+            </a>
+            <span className="hidden md:inline">|</span>
+            <select
+              value={i18n.language}
+              onChange={(e) => changeLanguage(e.target.value)}
+              className="bg-transparent border-none text-[#F5DEB3] hover:text-white cursor-pointer transition-colors focus:outline-none"
+            >
+              <option value="zh" className="bg-[#8B0000] text-[#F5DEB3]">中文</option>
+              <option value="en" className="bg-[#8B0000] text-[#F5DEB3]">English</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      {/* Hero Section - 10张照片轮播 */}
+      <section className="relative">
+        <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+          {/* 轮播图片 */}
+          {carouselImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                index === currentImageIndex ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <img
+                src={image}
+                alt={`Wutai Mountain ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
             </div>
+          ))}
+
+          {/* 渐变遮罩 */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+
+          {/* 文字叠加 */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-2xl">
+              ANCIENT EASTERN BLESSINGS
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-8 font-light drop-shadow-lg">
+              HELPING YOU RESOLVE TROUBLES
+            </p>
+
+            {/* 按钮 */}
+            <div className="flex gap-4">
+              <Link href="/products">
+                <button className="bg-white text-[#5D4E37] px-8 py-3 rounded-md hover:bg-[#D4AF37] hover:text-white transition-all font-medium min-h-[44px]">
+                  结缘开光
+                </button>
+              </Link>
+              <Link href="/contact">
+                <button className="border-2 border-white text-white px-8 py-3 rounded-md hover:bg-white hover:text-[#5D4E37] transition-all font-medium min-h-[44px]">
+                  GET IN TOUCH
+                </button>
+              </Link>
+            </div>
+          </div>
+
+          {/* 轮播指示器 */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
+            {carouselImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  index === currentImageIndex
+                    ? "bg-white w-8"
+                    : "bg-white/50 hover:bg-white/75"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -248,10 +339,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-sm space-y-2">
             <p className="font-semibold text-lg">五台山 · 世界五大佛教圣地之一 · 世界文化遗产名录</p>
-            <p className="text-xs text-[#D4AF37]/90 mt-1">中国四大佛教名山之首 · 文殊菩萨道场 · 千年佛教文化传承</p>
-          </div>
-          <div className="mt-6 text-xs text-[#D4AF37]/60">
-            <p>© 2026 源·华渡 YUAN·HUADU. All rights reserved.</p>
+            <p className="text-xs">中国四大佛教名山之首 · 文殊菩萨道场 · 千年佛教文化传承</p>
           </div>
         </div>
       </footer>
