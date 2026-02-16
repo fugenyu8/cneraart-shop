@@ -353,5 +353,43 @@
   "categories": {
     "zodiac_guardian": "Guardiano dello Zodiaco",
     "constellation_guardian": "Guardiano della Costellazione"
+  },
+  "guardianFinder": {
+    "title": "Trova Il Tuo Ciondolo Guardiano",
+    "subtitle": "Inserisci la tua data di nascita e ti consiglieremo i ciondoli guardiani dello zodiaco e della costellazione perfetti",
+    "birthdateLabel": "Birthdate",
+    "findButton": "Find",
+    "searching": "Searching...",
+    "pleaseSelectDate": "Please select date",
+    "yourZodiac": "Your Zodiac",
+    "yourConstellation": "Your Constellation"
+  },
+  "zodiac": {
+    "鼠": "Rat",
+    "牛": "Ox",
+    "虎": "Tiger",
+    "兔": "Rabbit",
+    "龙": "Dragon",
+    "蛇": "Snake",
+    "马": "Horse",
+    "羊": "Goat",
+    "猴": "Monkey",
+    "鸡": "Rooster",
+    "狗": "Dog",
+    "猪": "Pig"
+  },
+  "constellation": {
+    "Aries": "Aries",
+    "Taurus": "Taurus",
+    "Gemini": "Gemini",
+    "Cancer": "Cancer",
+    "Leo": "Leo",
+    "Virgo": "Virgo",
+    "Libra": "Libra",
+    "Scorpio": "Scorpio",
+    "Sagittarius": "Sagittarius",
+    "Capricorn": "Capricorn",
+    "Aquarius": "Aquarius",
+    "Pisces": "Pisces"
   }
 }

@@ -244,5 +244,43 @@
   "common": {
     "site_name": "Cneraart",
     "cart": "장바구니"
+  },
+  "guardianFinder": {
+    "title": "당신의 수호 펜던트 찾기",
+    "subtitle": "생년월일을 입력하시면 완벽한 십이지와 별자리 수호 펜던트를 추천해드립니다",
+    "birthdateLabel": "Birthdate",
+    "findButton": "Find",
+    "searching": "Searching...",
+    "pleaseSelectDate": "Please select date",
+    "yourZodiac": "Your Zodiac",
+    "yourConstellation": "Your Constellation"
+  },
+  "zodiac": {
+    "鼠": "Rat",
+    "牛": "Ox",
+    "虎": "Tiger",
+    "兔": "Rabbit",
+    "龙": "Dragon",
+    "蛇": "Snake",
+    "马": "Horse",
+    "羊": "Goat",
+    "猴": "Monkey",
+    "鸡": "Rooster",
+    "狗": "Dog",
+    "猪": "Pig"
+  },
+  "constellation": {
+    "Aries": "Aries",
+    "Taurus": "Taurus",
+    "Gemini": "Gemini",
+    "Cancer": "Cancer",
+    "Leo": "Leo",
+    "Virgo": "Virgo",
+    "Libra": "Libra",
+    "Scorpio": "Scorpio",
+    "Sagittarius": "Sagittarius",
+    "Capricorn": "Capricorn",
+    "Aquarius": "Aquarius",
+    "Pisces": "Pisces"
   }
 }

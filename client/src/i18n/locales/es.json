@@ -353,5 +353,43 @@
   "categories": {
     "zodiac_guardian": "Guardián del Zodiaco",
     "constellation_guardian": "Guardián de Constelación"
+  },
+  "guardianFinder": {
+    "title": "Encuentra Tu Colgante Guardián",
+    "subtitle": "Ingrese su fecha de nacimiento y le recomendaremos los colgantes guardianes del zodiaco y la constelación perfectos",
+    "birthdateLabel": "Birthdate",
+    "findButton": "Find",
+    "searching": "Searching...",
+    "pleaseSelectDate": "Please select date",
+    "yourZodiac": "Your Zodiac",
+    "yourConstellation": "Your Constellation"
+  },
+  "zodiac": {
+    "鼠": "Rat",
+    "牛": "Ox",
+    "虎": "Tiger",
+    "兔": "Rabbit",
+    "龙": "Dragon",
+    "蛇": "Snake",
+    "马": "Horse",
+    "羊": "Goat",
+    "猴": "Monkey",
+    "鸡": "Rooster",
+    "狗": "Dog",
+    "猪": "Pig"
+  },
+  "constellation": {
+    "Aries": "Aries",
+    "Taurus": "Taurus",
+    "Gemini": "Gemini",
+    "Cancer": "Cancer",
+    "Leo": "Leo",
+    "Virgo": "Virgo",
+    "Libra": "Libra",
+    "Scorpio": "Scorpio",
+    "Sagittarius": "Sagittarius",
+    "Capricorn": "Capricorn",
+    "Aquarius": "Aquarius",
+    "Pisces": "Pisces"
   }
 }

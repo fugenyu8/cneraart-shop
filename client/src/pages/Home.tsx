@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { useTranslation } from "react-i18next";
+import GuardianFinder from "@/components/GuardianFinder";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { getLoginUrl } from "@/const";
@@ -150,6 +151,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Guardian Finder Section */}
+      <GuardianFinder />
 
       {/* 服务卡片区 */}
       <section className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white">

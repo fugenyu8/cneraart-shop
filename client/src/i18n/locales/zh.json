@@ -440,5 +440,43 @@
   "categories": {
     "zodiac_guardian": "生肖守护",
     "constellation_guardian": "星座守护"
+  },
+  "guardianFinder": {
+    "title": "找到您的守护吊坠",
+    "subtitle": "输入您的生日,我们将为您推荐最适合的生肖和星座守护吊坠",
+    "birthdateLabel": "您的生日",
+    "findButton": "查找我的守护吊坠",
+    "searching": "查找中...",
+    "pleaseSelectDate": "请选择您的生日",
+    "yourZodiac": "您的生肖",
+    "yourConstellation": "您的星座"
+  },
+  "zodiac": {
+    "鼠": "鼠",
+    "牛": "牛",
+    "虎": "虎",
+    "兔": "兔",
+    "龙": "龙",
+    "蛇": "蛇",
+    "马": "马",
+    "羊": "羊",
+    "猴": "猴",
+    "鸡": "鸡",
+    "狗": "狗",
+    "猪": "猪"
+  },
+  "constellation": {
+    "Aries": "白羊座",
+    "Taurus": "金牛座",
+    "Gemini": "双子座",
+    "Cancer": "巨蟹座",
+    "Leo": "狮子座",
+    "Virgo": "处女座",
+    "Libra": "天秤座",
+    "Scorpio": "天蝎座",
+    "Sagittarius": "射手座",
+    "Capricorn": "摩羯座",
+    "Aquarius": "水瓶座",
+    "Pisces": "双鱼座"
   }
 }

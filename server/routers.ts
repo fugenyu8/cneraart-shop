@@ -80,6 +80,80 @@ export const appRouter = router({
       );
       return productsWithImages;
     }),
+
+    // 根据生日推荐守护吊坠(公开)
+    getGuardianRecommendations: publicProcedure
+      .input(z.object({ birthdate: z.string() })) // YYYY-MM-DD格式
+      .query(async ({ input }) => {
+        const date = new Date(input.birthdate);
+        const year = date.getFullYear();
+        const month = date.getMonth() + 1; // 0-11 -> 1-12
+        const day = date.getDate();
+
+        // 计算生肖(简化版:按公历年份计算,实际应该按农历)
+        const zodiacAnimals = ['鼠', '牛', '虎', '兔', '龙', '蛇', '马', '羊', '猴', '鸡', '狗', '猪'];
+        const zodiacIndex = (year - 4) % 12; // 1900年是鼠年
+        const zodiacSign = zodiacAnimals[zodiacIndex];
+
+        // 计算星座
+        const constellations = [
+          { name: 'Aries', zhName: '白羊座', start: [3, 21], end: [4, 19] },
+          { name: 'Taurus', zhName: '金牛座', start: [4, 20], end: [5, 20] },
+          { name: 'Gemini', zhName: '双子座', start: [5, 21], end: [6, 21] },
+          { name: 'Cancer', zhName: '巨蟹座', start: [6, 22], end: [7, 22] },
+          { name: 'Leo', zhName: '狮子座', start: [7, 23], end: [8, 22] },
+          { name: 'Virgo', zhName: '处女座', start: [8, 23], end: [9, 22] },
+          { name: 'Libra', zhName: '天秤座', start: [9, 23], end: [10, 23] },
+          { name: 'Scorpio', zhName: '天蝎座', start: [10, 24], end: [11, 22] },
+          { name: 'Sagittarius', zhName: '射手座', start: [11, 23], end: [12, 21] },
+          { name: 'Capricorn', zhName: '摩羯座', start: [12, 22], end: [1, 19] },
+          { name: 'Aquarius', zhName: '水瓶座', start: [1, 20], end: [2, 18] },
+          { name: 'Pisces', zhName: '双鱼座', start: [2, 19], end: [3, 20] },
+        ];
+
+        let constellationSign = '';
+        for (const c of constellations) {
+          const [startMonth, startDay] = c.start;
+          const [endMonth, endDay] = c.end;
+          
+          if (startMonth === endMonth) {
+            if (month === startMonth && day >= startDay && day <= endDay) {
+              constellationSign = c.name;
+              break;
+            }
+          } else {
+            if ((month === startMonth && day >= startDay) || (month === endMonth && day <= endDay)) {
+              constellationSign = c.name;
+              break;
+            }
+          }
+        }
+
+        // 查询对应的生肖商品
+        const zodiacProducts = await db.getPublishedProducts({ search: zodiacSign, limit: 3 });
+        const zodiacWithImages = await Promise.all(
+          zodiacProducts.map(async (product) => {
+            const images = await db.getProductImages(product.id);
+            return { ...product, images };
+          })
+        );
+
+        // 查询对应的星座商品
+        const constellationProducts = await db.getPublishedProducts({ search: constellationSign, limit: 3 });
+        const constellationWithImages = await Promise.all(
+          constellationProducts.map(async (product) => {
+            const images = await db.getProductImages(product.id);
+            return { ...product, images };
+          })
+        );
+
+        return {
+          zodiacSign,
+          constellationSign,
+          zodiac: zodiacWithImages,
+          constellation: constellationWithImages,
+        };
+      }),
   }),
 
   // ============= 分类相关 =============

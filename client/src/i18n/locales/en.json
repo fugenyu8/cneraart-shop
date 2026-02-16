@@ -385,5 +385,43 @@
   "categories": {
     "zodiac_guardian": "Zodiac Guardian",
     "constellation_guardian": "Constellation Guardian"
+  },
+  "guardianFinder": {
+    "title": "Find Your Guardian Pendant",
+    "subtitle": "Enter your birthdate and we'll recommend the perfect zodiac and constellation guardian pendants for you",
+    "birthdateLabel": "Your Birthdate",
+    "findButton": "Find My Guardian Pendant",
+    "searching": "Searching...",
+    "pleaseSelectDate": "Please select your birthdate",
+    "yourZodiac": "Your Zodiac",
+    "yourConstellation": "Your Constellation"
+  },
+  "zodiac": {
+    "鼠": "Rat",
+    "牛": "Ox",
+    "虎": "Tiger",
+    "兔": "Rabbit",
+    "龙": "Dragon",
+    "蛇": "Snake",
+    "马": "Horse",
+    "羊": "Goat",
+    "猴": "Monkey",
+    "鸡": "Rooster",
+    "狗": "Dog",
+    "猪": "Pig"
+  },
+  "constellation": {
+    "Aries": "Aries",
+    "Taurus": "Taurus",
+    "Gemini": "Gemini",
+    "Cancer": "Cancer",
+    "Leo": "Leo",
+    "Virgo": "Virgo",
+    "Libra": "Libra",
+    "Scorpio": "Scorpio",
+    "Sagittarius": "Sagittarius",
+    "Capricorn": "Capricorn",
+    "Aquarius": "Aquarius",
+    "Pisces": "Pisces"
   }
 }
