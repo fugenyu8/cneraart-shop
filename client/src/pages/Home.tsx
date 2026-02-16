@@ -166,7 +166,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-amber-900 mb-2">开光护佑法物</h3>
-                    <p className="text-sm text-amber-700">大师开光加持</p>
+                    <p className="text-sm text-amber-700">传统仪轨，大师加持</p>
                   </div>
                 </div>
               </div>
@@ -196,7 +196,7 @@ export default function Home() {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-blue-900 mb-2">面相手相风水</h3>
-                    <p className="text-sm text-blue-700">古老智慧解读当下</p>
+                    <p className="text-sm text-blue-700">古老智慧，解读当下</p>
                   </div>
                 </div>
               </div>
