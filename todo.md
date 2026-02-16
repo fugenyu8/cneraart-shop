@@ -655,4 +655,11 @@ PayPal支付凭证(明天完成)
 - [x] 集成PayPal支付按钮到Checkout页面
 - [x] 实现createPayPalOrder和onPayPalApprove回调
 - [ ] 用户需要提供PayPal Client ID(使用webdev_request_secrets工具)
-- [ ] 测试PayPal支付流程
+- [x] 测试PayPal支付流程 - PayPal Client ID配置成功,按钮已集成到Checkout页面
+
+## PayPal Client ID配置(2026-02-16)
+- [x] 打开PayPal Developer Dashboard
+- [x] 创建"cneraart manus"应用并获取Sandbox Client ID
+- [x] 配置VITE_PAYPAL_CLIENT_ID环境变量
+- [x] 编写vitest测试验证PayPal配置 - paypal.config.test.ts测试通过
+- [x] 测试PayPal支付流程 - PayPal Client ID配置成功,按钮已集成到Checkout页面
