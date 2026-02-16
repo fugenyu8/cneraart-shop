@@ -262,20 +262,15 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-8">ABOUT US</h2>
+            <h2 className="text-4xl font-bold mb-8">{t('aboutUs.title')}</h2>
           </div>
 
           <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 space-y-6">
             <p className="text-lg leading-relaxed">
-              Masters from China's sacred Wutai Mountain personally interpret the Four Pillars of Destiny. 
-              By analyzing the interactions of the Five Elements, they clarify opportunities in career, wealth, 
-              health and relationships, warn of obstacles, help avoid risks while pursuing benefits, and enlighten 
-              wisdom to broaden horizons.
+              {t('aboutUs.paragraph1')}
             </p>
             <p className="text-lg leading-relaxed">
-              Traditional Chinese ritual ceremonies follow ancient rites like consecration (Kai Guang) and scripture 
-              chanting. Unique and solemn, these ceremonies grant customized blessings to promote a smooth and 
-              prosperous life.
+              {t('aboutUs.paragraph2')}
             </p>
           </div>
         </div>
@@ -294,8 +289,8 @@ export default function Home() {
 
         <div className="max-w-4xl mx-auto px-4 relative z-10">
           <div className="text-sm space-y-3">
-            <p className="font-semibold text-2xl text-[#FFD700] drop-shadow-lg">五台山 · 世界五大佛教圣地之一 · 世界文化遗产名录</p>
-            <p className="text-base text-[#E8D4A0] drop-shadow-md">中国四大佛教名山之首 · 文殊菩萨道场 · 千年佛教文化传承</p>
+            <p className="font-semibold text-2xl text-[#FFD700] drop-shadow-lg">{t('footer.wutaishan')}</p>
+            <p className="text-base text-[#E8D4A0] drop-shadow-md">{t('footer.heritage')}</p>
           </div>
         </div>
       </footer>

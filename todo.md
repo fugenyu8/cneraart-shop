@@ -609,3 +609,23 @@ PayPal支付凭证(明天完成)
 - [x] 启用localStorage持久化保存用户语言选择
 - [x] 修改changeLanguage函数支持语言切换后自动刷新
 - [x] 浏览器测试验证葡萄牙语完美显示
+
+## 全面语言一致性检查(2026-02-16)
+- [ ] 检查首页所有区域(Hero/服务卡片/ABOUT US/Footer)
+- [ ] 检查Fortune页面(/fortune)所有文字
+- [ ] 检查产品相关页面(列表/详情/购物车)
+- [ ] 检查用户相关页面(注册/登录/用户中心/订单详情)
+- [ ] 检查结算页面(地址/支付/订单确认)
+- [ ] 检查后台管理页面(如需国际化)
+- [ ] 为所有缺失的翻译键添加15种语言翻译
+- [ ] 浏览器测试所有页面的语言切换功能
+
+## 全面语言一致性检查(2026-02-16)
+- [x] Home.tsx - ABOUT US区域翻译 - 已添加aboutUs.title/paragraph1/paragraph2
+- [x] Home.tsx - Footer区域翻译 - 已添加footer.wutaishan/heritage
+- [x] Account.tsx - 订单状态标签翻译 - 使用status.*翻译键
+- [x] Account.tsx - 侧边栏和按钮翻译 - 所有硬编码中文已替换为翻译键
+- [x] 为15种语言添加aboutUs和footer翻译
+- [x] 所有32个测试全部通过
+- [x] 首页中文显示正常(顶部栏/Hero/服务卡片/ABOUT US/Footer)
+- [x] FortuneServices.tsx保持现有isZh三元表达式(不需修改)

@@ -200,5 +200,14 @@
     "shipped": "Expédié",
     "delivered": "Livré",
     "cancelled": "Annulé"
+  },
+  "aboutUs": {
+    "title": "À PROPOS",
+    "paragraph1": "Les maîtres de la montagne sacrée de Wutai en Chine interprètent personnellement les Quatre Piliers du Destin. En analysant les interactions des Cinq Éléments, ils clarifient les opportunités en carrière, richesse, santé et relations, avertissent des obstacles, aident à éviter les risques et éclairent la sagesse.",
+    "paragraph2": "Les cérémonies rituelles chinoises traditionnelles suivent des rites anciens comme la consécration (Kai Guang) et la récitation de sutras. Uniques et solennelles, ces cérémonies accordent des bénédictions personnalisées pour une vie harmonieuse et prospère."
+  },
+  "footer": {
+    "wutaishan": "Mont Wutai · L'une des Cinq Montagnes Sacrées Bouddhistes · Site du Patrimoine Mondial de l'UNESCO",
+    "heritage": "Première des Quatre Grandes Montagnes Bouddhistes de Chine · Dojo de Manjushri Bodhisattva · Patrimoine Bouddhiste Millénaire"
   }
 }

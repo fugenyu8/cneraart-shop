@@ -200,5 +200,14 @@
     "shipped": "Spedito",
     "delivered": "Consegnato",
     "cancelled": "Annullato"
+  },
+  "aboutUs": {
+    "title": "CHI SIAMO",
+    "paragraph1": "I maestri della sacra Montagna Wutai in Cina interpretano personalmente i Quattro Pilastri del Destino. Analizzando le interazioni dei Cinque Elementi, chiariscono opportunità in carriera, ricchezza, salute e relazioni, avvertono di ostacoli, aiutano a evitare rischi e illuminano la saggezza.",
+    "paragraph2": "Le cerimonie rituali cinesi tradizionali seguono riti antichi come la consacrazione (Kai Guang) e la recitazione di sutra. Uniche e solenni, queste cerimonie concedono benedizioni personalizzate per una vita prospera e armoniosa."
+  },
+  "footer": {
+    "wutaishan": "Monte Wutai · Una delle Cinque Montagne Sacre Buddiste · Patrimonio Mondiale dell'UNESCO",
+    "heritage": "Prima delle Quattro Grandi Montagne Buddiste della Cina · Dojo di Manjushri Bodhisattva · Patrimonio Buddista Millenario"
   }
 }

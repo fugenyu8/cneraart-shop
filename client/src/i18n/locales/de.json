@@ -200,5 +200,14 @@
     "shipped": "Versendet",
     "delivered": "Zugestellt",
     "cancelled": "Storniert"
+  },
+  "aboutUs": {
+    "title": "ÜBER UNS",
+    "paragraph1": "Meister vom heiligen Wutai-Berg in China interpretieren persönlich die Vier Säulen des Schicksals. Durch die Analyse der Wechselwirkungen der Fünf Elemente klären sie Chancen in Karriere, Reichtum, Gesundheit und Beziehungen, warnen vor Hindernissen, helfen Risiken zu vermeiden und Weisheit zu erlangen.",
+    "paragraph2": "Traditionelle chinesische Ritualzeremonien folgen alten Riten wie Weihe (Kai Guang) und Schriftrezitation. Einzigartig und feierlich gewähren diese Zeremonien maßgeschneiderte Segnungen für ein reibungsloses und erfolgreiches Leben."
+  },
+  "footer": {
+    "wutaishan": "Berg Wutai · Einer der Fünf Heiligen Buddhistischen Berge · UNESCO-Weltkulturerbe",
+    "heritage": "Erster der Vier Großen Buddhistischen Berge Chinas · Manjushri Bodhisattva Dojo · Jahrtausendealtes Buddhistisches Erbe"
   }
 }

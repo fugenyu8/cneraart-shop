@@ -34,15 +34,15 @@ export default function Account() {
   }, [user, authLoading]);
 
   const getStatusBadge = (status: string) => {
-    const variants: Record<string, { variant: any; label: string }> = {
-      pending: { variant: "secondary", label: "待处理" },
-      processing: { variant: "default", label: "处理中" },
-      shipped: { variant: "default", label: "已发货" },
-      delivered: { variant: "default", label: "已送达" },
-      cancelled: { variant: "outline", label: "已取消" },
+    const variants: Record<string, { variant: any; key: string }> = {
+      pending: { variant: "secondary", key: "status.pending" },
+      processing: { variant: "default", key: "status.processing" },
+      shipped: { variant: "default", key: "status.shipped" },
+      delivered: { variant: "default", key: "status.delivered" },
+      cancelled: { variant: "outline", key: "status.cancelled" },
     };
     const config = variants[status] || variants.pending;
-    return <Badge variant={config.variant}>{config.label}</Badge>;
+    return <Badge variant={config.variant}>{t(config.key)}</Badge>;
   };
 
   if (authLoading || ordersLoading) {
@@ -66,7 +66,7 @@ export default function Account() {
               onClick={() => navigate("/")}
               className="text-slate-400 hover:text-white"
             >
-              返回首页
+              {t("nav.home")}
             </Button>
           </div>
 
@@ -92,13 +92,13 @@ export default function Account() {
                   <Link href="/account">
                     <a className="flex items-center gap-3 px-4 py-3 rounded-lg bg-slate-800/50 text-white hover:bg-slate-800 transition-colors">
                       <Package className="w-5 h-5" />
-                      我的订单
+                      {t("account.orders")}
                     </a>
                   </Link>
                   <Link href="/account/addresses">
                     <a className="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-400 hover:bg-slate-800/50 hover:text-white transition-colors">
                       <MapPin className="w-5 h-5" />
-                      收货地址
+                      {t("account.addresses")}
                     </a>
                   </Link>
                   <button
@@ -106,7 +106,7 @@ export default function Account() {
                     className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-red-400 hover:bg-slate-800/50 transition-colors"
                   >
                     <LogOut className="w-5 h-5" />
-                    退出登录
+                    {t("nav.logout")}
                   </button>
                 </CardContent>
               </Card>
@@ -116,7 +116,7 @@ export default function Account() {
             <div className="md:col-span-2">
               <Card className="bg-slate-900/50 border-slate-800">
                 <CardHeader>
-                  <CardTitle className="text-white">我的订单</CardTitle>
+                  <CardTitle className="text-white">{t("account.orders")}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {orders && orders.length > 0 ? (
@@ -148,10 +148,10 @@ export default function Account() {
                                 )}
                                 <div className="flex-1">
                                   <p className="text-white text-sm font-medium">
-                                    {item.product?.name || "商品已下架"}
+                                    {item.product?.name || t("account.product_unavailable")}
                                   </p>
                                   <p className="text-slate-400 text-sm">
-                                    数量: {item.quantity} × ${parseFloat(item.price).toFixed(2)}
+                                    {t("account.quantity")}: {item.quantity} × ${parseFloat(item.price).toFixed(2)}
                                   </p>
                                 </div>
                               </div>
@@ -160,11 +160,11 @@ export default function Account() {
 
                           <div className="flex items-center justify-between pt-3 border-t border-slate-800">
                             <p className="text-slate-400 text-sm">
-                              共 {order.items?.length || 0} 件商品
+                              {t("cart.item_total")}: {order.items?.length || 0}
                             </p>
                             <div className="flex items-center gap-4">
                               <p className="text-[oklch(82%_0.18_85)] font-semibold">
-                                总计: ${parseFloat(order.total).toFixed(2)}
+                                {t("account.total")}: ${parseFloat(order.total).toFixed(2)}
                               </p>
                               <Link href={`/orders/${order.id}`}>
                                 <Button
@@ -183,10 +183,10 @@ export default function Account() {
                   ) : (
                     <div className="text-center py-12">
                       <Package className="w-16 h-16 mx-auto mb-4 text-slate-600" />
-                      <p className="text-slate-400 mb-4">暂无订单</p>
+                      <p className="text-slate-400 mb-4">{t("cart.empty")}</p>
                       <Link href="/products">
                         <Button className="bg-[oklch(82%_0.18_85)] hover:bg-[oklch(82%_0.18_85)]/90 text-slate-900">
-                          去购物
+                          {t("cart.browse_products")}
                         </Button>
                       </Link>
                     </div>

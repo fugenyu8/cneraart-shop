@@ -37,5 +37,14 @@
     "account": "Akun saya",
     "login": "Masuk",
     "logout": "Keluar"
+  },
+  "aboutUs": {
+    "title": "TENTANG KAMI",
+    "paragraph1": "Guru dari Gunung Wutai suci Tiongkok secara pribadi menafsirkan Empat Pilar Takdir. Dengan menganalisis interaksi Lima Elemen, mereka memperjelas peluang dalam karier, kekayaan, kesehatan, dan hubungan, memperingatkan hambatan, membantu menghindari risiko, dan mencerahkan kebijaksanaan.",
+    "paragraph2": "Upacara ritual Tiongkok tradisional mengikuti ritus kuno seperti konsekrasi (Kai Guang) dan pembacaan sutra. Unik dan khidmat, upacara ini memberikan berkah yang disesuaikan untuk mempromosikan kehidupan yang lancar dan makmur."
+  },
+  "footer": {
+    "wutaishan": "Gunung Wutai · Salah satu dari lima gunung Buddha suci · Situs Warisan Dunia UNESCO",
+    "heritage": "Yang pertama dari empat gunung Buddha besar Tiongkok · Dojo Manjushri Bodhisattva · Warisan Buddha ribuan tahun"
   }
 }

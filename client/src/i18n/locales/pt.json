@@ -37,5 +37,14 @@
     "account": "Minha Conta",
     "login": "Entrar",
     "logout": "Sair"
+  },
+  "aboutUs": {
+    "title": "SOBRE NÓS",
+    "paragraph1": "Mestres da sagrada Montanha Wutai da China interpretam pessoalmente os Quatro Pilares do Destino. Ao analisar as interações dos Cinco Elementos, eles esclarecem oportunidades em carreira, riqueza, saúde e relacionamentos, alertam sobre obstáculos, ajudam a evitar riscos e iluminam a sabedoria.",
+    "paragraph2": "Cerimônias rituais chinesas tradicionais seguem ritos antigos como consagração (Kai Guang) e canto de sutras. Únicas e solenes, essas cerimônias concedem bênçãos personalizadas para uma vida próspera e harmoniosa."
+  },
+  "footer": {
+    "wutaishan": "Monte Wutai · Uma das Cinco Montanhas Sagradas Budistas · Patrimônio Mundial da UNESCO",
+    "heritage": "Primeira das Quatro Grandes Montanhas Budistas da China · Dojo de Manjushri Bodhisattva · Patrimônio Budista Milenar"
   }
 }
