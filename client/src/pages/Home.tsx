@@ -49,20 +49,16 @@ export default function Home() {
       <div className="bg-[#8B0000] text-[#F5DEB3] py-2 px-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           {/* 左侧:五台山背书 */}
-          <div className="flex items-center gap-2 md:gap-4 flex-wrap">
-            <span className="flex items-center gap-1">
-              <span className="text-base">🪷</span>
-              <span className="font-semibold">五台山</span>
-            </span>
-            <span className="hidden md:inline">|</span>
-            <span className="text-xs md:text-sm">世界五大佛教圣地之一</span>
-            <span className="hidden md:inline">|</span>
-            <span className="text-xs md:text-sm">中国四大佛教名山之首</span>
-            <span className="hidden md:inline">|</span>
-            <span className="text-xs md:text-sm">世界文化遗产名录</span>
+          <div className="flex items-center gap-1 text-xs md:text-sm">
+            <span className="font-semibold">五台山</span>
+            <span className="mx-1">世界五大佛教圣地之一</span>
+            <span className="hidden md:inline">-</span>
+            <span className="hidden md:inline mx-1">中国四大佛教名山之首</span>
+            <span className="hidden md:inline">-</span>
+            <span className="hidden md:inline mx-1">世界文化遗产名录</span>
           </div>
 
-          {/* 右侧:注册/邮箱/语言 */}
+          {/* 右侧:用户名/语言 */}
           <div className="flex items-center gap-2 md:gap-4 text-xs md:text-sm">
             {user ? (
               <Link href="/account">
@@ -72,14 +68,10 @@ export default function Home() {
               </Link>
             ) : (
               <a href={getLoginUrl()} className="hover:text-white transition-colors">
-                注册/登录
+                登录
               </a>
             )}
-            <span className="hidden md:inline">|</span>
-            <a href="mailto:service@cneraart.com" className="hover:text-white transition-colors hidden md:inline">
-              service@cneraart.com
-            </a>
-            <span className="hidden md:inline">|</span>
+            <span>|</span>
             <select
               value={i18n.language}
               onChange={(e) => changeLanguage(e.target.value)}
@@ -87,6 +79,19 @@ export default function Home() {
             >
               <option value="zh" className="bg-[#8B0000] text-[#F5DEB3]">中文</option>
               <option value="en" className="bg-[#8B0000] text-[#F5DEB3]">English</option>
+              <option value="de" className="bg-[#8B0000] text-[#F5DEB3]">Deutsch</option>
+              <option value="fr" className="bg-[#8B0000] text-[#F5DEB3]">Français</option>
+              <option value="es" className="bg-[#8B0000] text-[#F5DEB3]">Español</option>
+              <option value="it" className="bg-[#8B0000] text-[#F5DEB3]">Italiano</option>
+              <option value="pt" className="bg-[#8B0000] text-[#F5DEB3]">Português</option>
+              <option value="ru" className="bg-[#8B0000] text-[#F5DEB3]">Русский</option>
+              <option value="ja" className="bg-[#8B0000] text-[#F5DEB3]">日本語</option>
+              <option value="ko" className="bg-[#8B0000] text-[#F5DEB3]">한국어</option>
+              <option value="ar" className="bg-[#8B0000] text-[#F5DEB3]">العربية</option>
+              <option value="hi" className="bg-[#8B0000] text-[#F5DEB3]">हिन्दी</option>
+              <option value="th" className="bg-[#8B0000] text-[#F5DEB3]">ไทย</option>
+              <option value="vi" className="bg-[#8B0000] text-[#F5DEB3]">Tiếng Việt</option>
+              <option value="id" className="bg-[#8B0000] text-[#F5DEB3]">Bahasa Indonesia</option>
             </select>
           </div>
         </div>
