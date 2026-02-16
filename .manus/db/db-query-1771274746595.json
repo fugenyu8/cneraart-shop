@@ -1,0 +1,17 @@
+{
+  "query": "SELECT id, slug, status, featured, categoryId FROM products WHERE slug LIKE 'wutai-mountain%' LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, slug, status, featured, categoryId FROM products WHERE slug LIKE 'wutai-mountain%' LIMIT 5;",
+  "rows": [
+    {
+      "id": "120009",
+      "slug": "wutai-mountain-incense-offering",
+      "status": "published",
+      "featured": "0",
+      "categoryId": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tslug\tstatus\tfeatured\tcategoryId\n120009\twutai-mountain-incense-offering\tpublished\t0\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 67
+}

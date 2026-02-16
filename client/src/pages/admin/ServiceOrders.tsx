@@ -125,24 +125,24 @@ export default function ServiceOrders() {
         <div className="w-48">
           <Select value={statusFilter} onValueChange={setStatusFilter}>
             <SelectTrigger>
-              <SelectValue placeholder="筛选状态" />
+              <SelectValue placeholder={t("admin.serviceOrders.filterStatus")} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">全部状态</SelectItem>
-              <SelectItem value="pending">待处理</SelectItem>
-              <SelectItem value="processing">处理中</SelectItem>
-              <SelectItem value="delivered">已完成</SelectItem>
+              <SelectItem value="all">{t("admin.serviceOrders.allStatus")}</SelectItem>
+              <SelectItem value="pending">{t("admin.serviceOrders.status.pending")}</SelectItem>
+              <SelectItem value="processing">{t("admin.serviceOrders.status.processing")}</SelectItem>
+              <SelectItem value="delivered">{t("admin.serviceOrders.status.delivered")}</SelectItem>
             </SelectContent>
           </Select>
         </div>
         <div className="w-48">
           <Select value={sortBy} onValueChange={setSortBy}>
             <SelectTrigger>
-              <SelectValue placeholder="排序方式" />
+              <SelectValue placeholder={t("admin.serviceOrders.sortBy")} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="date_desc">日期(由新到旧)</SelectItem>
-              <SelectItem value="date_asc">日期(由旧到新)</SelectItem>
+              <SelectItem value="date_desc">{t("admin.serviceOrders.dateDesc")}</SelectItem>
+              <SelectItem value="date_asc">{t("admin.serviceOrders.dateAsc")}</SelectItem>
             </SelectContent>
           </Select>
         </div>

@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE users ADD COLUMN preferredLanguage VARCHAR(10) DEFAULT 'zh' NOT NULL COMMENT '用户语言偏好';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute ALTER TABLE users ADD COLUMN preferredLanguage VARCHAR(10) DEFAULT 'zh' NOT NULL COMMENT '用户语言偏好';",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 278
+}

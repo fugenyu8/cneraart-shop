@@ -1,0 +1,31 @@
+{
+  "query": "SELECT id, name, slug, categoryId, status FROM products WHERE slug LIKE '%zodiac%' LIMIT 15;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug, categoryId, status FROM products WHERE slug LIKE '%zodiac%' LIMIT 15;",
+  "rows": [
+    {
+      "id": "120001",
+      "name": "Chinese Zodiac Guardian Pendant",
+      "slug": "chinese-zodiac-guardian-pendant",
+      "categoryId": "NULL",
+      "status": "published"
+    },
+    {
+      "id": "120005",
+      "name": "Zodiac Constellation Guardian Pendant",
+      "slug": "zodiac-constellation-guardian-pendant",
+      "categoryId": "NULL",
+      "status": "published"
+    },
+    {
+      "id": "120006",
+      "name": "Zodiac Moon Crescent Pendant",
+      "slug": "zodiac-moon-crescent-pendant",
+      "categoryId": "NULL",
+      "status": "published"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tcategoryId\tstatus\n120001\tChinese Zodiac Guardian Pendant\tchinese-zodiac-guardian-pendant\tNULL\tpublished\n120005\tZodiac Constellation Guardian Pendant\tzodiac-constellation-guardian-pendant\tNULL\tpublished\n120006\tZodiac Moon Crescent Pendant\tzodiac-moon-crescent-pendant\tNULL\tpublished\n",
+  "stderr": "",
+  "execution_time_ms": 76
+}

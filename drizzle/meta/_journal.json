@@ -43,6 +43,13 @@
       "when": 1771234413780,
       "tag": "0005_groovy_korath",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1771252398760,
+      "tag": "0006_whole_eddie_brock",
+      "breakpoints": true
     }
   ]
 }

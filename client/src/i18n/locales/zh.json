@@ -338,7 +338,12 @@
       "viewReport": "查看报告",
       "uploadButton": "上传报告",
       "reportUploaded": "报告上传成功",
-      "uploadFailed": "上传失败"
+      "uploadFailed": "上传失败",
+      "filterStatus": "筛选状态",
+      "allStatus": "全部状态",
+      "sortBy": "排序方式",
+      "dateDesc": "日期(由新到旧)",
+      "dateAsc": "日期(由旧到新)"
     }
   },
   "toast": {
