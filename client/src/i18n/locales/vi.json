@@ -217,5 +217,32 @@
       "dateDesc": "Ngày (Mới nhất trước)",
       "dateAsc": "Ngày (Cũ nhất trước)"
     }
+  },
+  "categories": {
+    "zodiac_guardian": "Người Bảo Vệ Cung Hoàng Đạo",
+    "constellation_guardian": "Người Bảo Vệ Chòm Sao"
+  },
+  "products": {
+    "title": "Phụ Kiện Được Phù Hộ",
+    "subtitle": "Phụ kiện được phù hộ được tuyển chọn, kế thừa trí tuệ ngàn năm, bảo vệ hành trình cuộc đời bạn",
+    "all_products": "Tất Cả Sản Phẩm",
+    "search_placeholder": "Tìm kiếm sản phẩm...",
+    "select_category": "Chọn Danh Mục",
+    "all_categories": "Tất Cả Danh Mục",
+    "sort_newest": "Mới Nhất",
+    "sort_price_low": "Giá: Thấp đến Cao",
+    "sort_price_high": "Giá: Cao đến Thấp",
+    "sort_popular": "Phổ Biến Nhất",
+    "total_count": "Tổng {{count}} sản phẩm",
+    "search_label": "Tìm kiếm",
+    "sale_badge": "Giảm Giá",
+    "sold_out": "Hết Hàng",
+    "stock_low": "Chỉ còn {{count}}",
+    "no_products": "Không Có Sản Phẩm",
+    "try_other_filters": "Vui lòng thử tiêu chí tìm kiếm khác"
+  },
+  "common": {
+    "site_name": "Cneraart",
+    "cart": "Giỏ Hàng"
   }
 }

@@ -217,5 +217,32 @@
       "dateDesc": "तिथि (नवीनतम पहले)",
       "dateAsc": "तिथि (सबसे पुराना पहले)"
     }
+  },
+  "categories": {
+    "zodiac_guardian": "राशि संरक्षक",
+    "constellation_guardian": "नक्षत्र संरक्षक"
+  },
+  "products": {
+    "title": "आशीर्वादित सहायक उपकरण",
+    "subtitle": "चयनित आशीर्वादित सहायक उपकरण, हजार साल की बुद्धि विरासत में, आपकी जीवन यात्रा की रक्षा",
+    "all_products": "सभी उत्पाद",
+    "search_placeholder": "उत्पाद खोजें...",
+    "select_category": "श्रेणी चुनें",
+    "all_categories": "सभी श्रेणियाँ",
+    "sort_newest": "नवीनतम",
+    "sort_price_low": "मूल्य: कम से अधिक",
+    "sort_price_high": "मूल्य: अधिक से कम",
+    "sort_popular": "सबसे लोकप्रिय",
+    "total_count": "कुल {{count}} उत्पाद",
+    "search_label": "खोज",
+    "sale_badge": "बिक्री",
+    "sold_out": "बिक गया",
+    "stock_low": "केवल {{count}} शेष",
+    "no_products": "कोई उत्पाद नहीं",
+    "try_other_filters": "कृपया अन्य खोज मानदंड आज़माएं"
+  },
+  "common": {
+    "site_name": "Cneraart",
+    "cart": "कार्ट"
   }
 }

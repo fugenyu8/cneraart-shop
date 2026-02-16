@@ -217,5 +217,32 @@
       "dateDesc": "التاريخ (الأحدث أولاً)",
       "dateAsc": "التاريخ (الأقدم أولاً)"
     }
+  },
+  "categories": {
+    "zodiac_guardian": "حارس البروج",
+    "constellation_guardian": "حارس الكوكبة"
+  },
+  "products": {
+    "title": "إكسسوارات مباركة",
+    "subtitle": "إكسسوارات مباركة منتقاة، ترث حكمة الألفية، تحمي رحلة حياتك",
+    "all_products": "جميع المنتجات",
+    "search_placeholder": "البحث عن المنتجات...",
+    "select_category": "اختر الفئة",
+    "all_categories": "جميع الفئات",
+    "sort_newest": "الأحدث",
+    "sort_price_low": "السعر: من الأقل إلى الأعلى",
+    "sort_price_high": "السعر: من الأعلى إلى الأقل",
+    "sort_popular": "الأكثر شعبية",
+    "total_count": "{{count}} منتج إجمالي",
+    "search_label": "بحث",
+    "sale_badge": "تخفيض",
+    "sold_out": "نفذ",
+    "stock_low": "{{count}} فقط متبقي",
+    "no_products": "لا توجد منتجات",
+    "try_other_filters": "يرجى تجربة معايير بحث أخرى"
+  },
+  "common": {
+    "site_name": "Cneraart",
+    "cart": "عربة التسوق"
   }
 }

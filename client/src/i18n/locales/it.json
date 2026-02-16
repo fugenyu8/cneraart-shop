@@ -81,21 +81,33 @@
     "service_fengshui_short": "Analisi Feng Shui"
   },
   "products": {
-    "title": "Tutti i prodotti",
+    "title": "Accessori Benedetti",
     "search_placeholder": "Cerca prodotti...",
     "filter_all": "Tutte le categorie",
     "sort_label": "Ordina per",
     "sort_latest": "Più recente",
-    "sort_price_low": "Prezzo: Basso ad alto",
-    "sort_price_high": "Prezzo: Alto a basso",
-    "sort_popular": "Più popolare",
+    "sort_price_low": "Prezzo: Basso ad Alto",
+    "sort_price_high": "Prezzo: Alto a Basso",
+    "sort_popular": "Più Popolare",
     "no_results": "Nessun prodotto trovato",
     "no_results_desc": "Prova ad aggiustare la tua ricerca o i filtri",
     "view_details": "Vedi dettagli",
     "add_to_cart": "Aggiungi al carrello",
     "out_of_stock": "Esaurito",
     "in_stock": "Disponibile",
-    "only_left": "Solo {{count}} rimasti"
+    "only_left": "Solo {{count}} rimasti",
+    "subtitle": "Accessori benedetti selezionati, ereditando saggezza millenaria, proteggendo il tuo viaggio di vita",
+    "all_products": "Tutti i Prodotti",
+    "select_category": "Seleziona Categoria",
+    "all_categories": "Tutte le Categorie",
+    "sort_newest": "Più Recente",
+    "total_count": "{{count}} prodotti totali",
+    "search_label": "Cerca",
+    "sale_badge": "Offerta",
+    "sold_out": "Esaurito",
+    "stock_low": "Solo {{count}} rimasti",
+    "no_products": "Nessun Prodotto",
+    "try_other_filters": "Per favore prova altri criteri di ricerca"
   },
   "product_detail": {
     "back": "Back to Products",
@@ -278,7 +290,9 @@
     "view_more": "Vedi altro",
     "language": "Lingua",
     "currency": "Valuta",
-    "learn_more": "Scopri di più"
+    "learn_more": "Scopri di più",
+    "site_name": "Cneraart",
+    "cart": "Carrello"
   },
   "status": {
     "pending": "In attesa",
@@ -335,5 +349,9 @@
     "step3Desc": "Saggezza tradizionale + competenza",
     "step4Title": "Visualizza rapporto",
     "step4Desc": "Ottieni rapporto dettagliato"
+  },
+  "categories": {
+    "zodiac_guardian": "Guardiano dello Zodiaco",
+    "constellation_guardian": "Guardiano della Costellazione"
   }
 }

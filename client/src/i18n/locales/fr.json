@@ -81,21 +81,33 @@
     "service_fengshui_short": "Analyse Feng Shui"
   },
   "products": {
-    "title": "Tous les produits",
+    "title": "Accessoires Bénis",
     "search_placeholder": "Rechercher des produits...",
     "filter_all": "Toutes les catégories",
     "sort_label": "Trier par",
     "sort_latest": "Plus récent",
-    "sort_price_low": "Prix: Bas à élevé",
-    "sort_price_high": "Prix: Élevé à bas",
-    "sort_popular": "Plus populaire",
+    "sort_price_low": "Prix: Bas à Élevé",
+    "sort_price_high": "Prix: Élevé à Bas",
+    "sort_popular": "Plus Populaire",
     "no_results": "Aucun produit trouvé",
     "no_results_desc": "Essayez d'ajuster votre recherche ou vos filtres",
     "view_details": "Voir les détails",
     "add_to_cart": "Ajouter au panier",
     "out_of_stock": "Rupture de stock",
     "in_stock": "En stock",
-    "only_left": "Plus que {{count}} restant(s)"
+    "only_left": "Plus que {{count}} restant(s)",
+    "subtitle": "Accessoires bénis sélectionnés, héritant de la sagesse millénaire, protégeant votre voyage de vie",
+    "all_products": "Tous les Produits",
+    "select_category": "Sélectionner une Catégorie",
+    "all_categories": "Toutes les Catégories",
+    "sort_newest": "Plus Récent",
+    "total_count": "{{count}} produits au total",
+    "search_label": "Recherche",
+    "sale_badge": "Promo",
+    "sold_out": "Épuisé",
+    "stock_low": "Plus que {{count}}",
+    "no_products": "Aucun Produit",
+    "try_other_filters": "Veuillez essayer d'autres critères de recherche"
   },
   "product_detail": {
     "back": "Back to Products",
@@ -278,7 +290,9 @@
     "view_more": "Voir plus",
     "language": "Langue",
     "currency": "Devise",
-    "learn_more": "En savoir plus"
+    "learn_more": "En savoir plus",
+    "site_name": "Cneraart",
+    "cart": "Panier"
   },
   "status": {
     "pending": "En attente",
@@ -335,5 +349,9 @@
     "step3Desc": "Sagesse traditionnelle + expertise",
     "step4Title": "Voir le rapport",
     "step4Desc": "Obtenir un rapport détaillé"
+  },
+  "categories": {
+    "zodiac_guardian": "Gardien du Zodiaque",
+    "constellation_guardian": "Gardien de Constellation"
   }
 }

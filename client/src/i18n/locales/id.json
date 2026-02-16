@@ -210,5 +210,32 @@
       "dateDesc": "Tanggal (Terbaru Pertama)",
       "dateAsc": "Tanggal (Terlama Pertama)"
     }
+  },
+  "categories": {
+    "zodiac_guardian": "Penjaga Zodiak",
+    "constellation_guardian": "Penjaga Konstelasi"
+  },
+  "products": {
+    "title": "Aksesori Diberkati",
+    "subtitle": "Aksesori diberkati pilihan, mewarisi kebijaksanaan ribuan tahun, menjaga perjalanan hidup Anda",
+    "all_products": "Semua Produk",
+    "search_placeholder": "Cari produk...",
+    "select_category": "Pilih Kategori",
+    "all_categories": "Semua Kategori",
+    "sort_newest": "Terbaru",
+    "sort_price_low": "Harga: Rendah ke Tinggi",
+    "sort_price_high": "Harga: Tinggi ke Rendah",
+    "sort_popular": "Paling Populer",
+    "total_count": "Total {{count}} produk",
+    "search_label": "Cari",
+    "sale_badge": "Diskon",
+    "sold_out": "Habis",
+    "stock_low": "Hanya {{count}} tersisa",
+    "no_products": "Tidak Ada Produk",
+    "try_other_filters": "Silakan coba kriteria pencarian lain"
+  },
+  "common": {
+    "site_name": "Cneraart",
+    "cart": "Keranjang"
   }
 }

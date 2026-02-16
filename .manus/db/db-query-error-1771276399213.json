@@ -1,0 +1,10 @@
+{
+  "query": "-- 查看现有分类\nSELECT * FROM categories;\n\n-- 插入\"生肖守护\"分类\nINSERT INTO categories (id, name, slug, description, image, parentId, displayOrder, createdAt, updatedAt)\nVALUES (\n  6,\n  '生肖守护',\n  'zodiac-guardian',\n  '十二生肖守护吊坠，五台山古法开光加持，守护您的本命运势',\n  NULL,\n  NULL,\n  2,\n  NOW(),\n  NOW()\n);\n\n-- 插入\"星座守护\"分类\nINSERT INTO categories (id, name, slug, description, image, parentId, displayOrder, createdAt, updatedAt)\nVALUES (\n  7,\n  '星座守护',\n  'constellation-guardian',\n  '十二星座守护吊坠，融合东方能量仪式与西方星座智慧',\n  NULL,\n  NULL,\n  3,\n  NOW(),\n  NOW()\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute -- 查看现有分类\nSELECT * FROM categories;\n\n-- 插入\"生肖守护\"分类\nINSERT INTO categories (id, name, slug, description, image, parentId, displayOrder, createdAt, updatedAt)\nVALUES (\n  6,\n  '生肖守护',\n  'zodiac-guardian',\n  '十二生肖守护吊坠，五台山古法开光加持，守护您的本命运势',\n  NULL,\n  NULL,\n  2,\n  NOW(),\n  NOW()\n);\n\n-- 插入\"星座守护\"分类\nINSERT INTO categories (id, name, slug, description, image, parentId, displayOrder, createdAt, updatedAt)\nVALUES (\n  7,\n  '星座守护',\n  'constellation-guardian',\n  '十二星座守护吊坠，融合东方能量仪式与西方星座智慧',\n  NULL,\n  NULL,\n  3,\n  NOW(),\n  NOW()\n);",
+  "returncode": 1,
+  "logs": [
+    "id\tname\tslug\tdescription\tparentId\tdisplayOrder\tcreatedAt\tupdatedAt",
+    "1\t命理服务\tfortune-services\t专业的面相、手相、风水分析服务\tNULL\t100\t2026-02-16 09:18:36\t2026-02-16 09:18:36",
+    "ERROR 1054 (42S22) at line 5: Unknown column 'image' in 'field list'"
+  ]
+}

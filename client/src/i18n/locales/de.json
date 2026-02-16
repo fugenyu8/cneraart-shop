@@ -81,21 +81,33 @@
     "service_fengshui_short": "Feng Shui Analyse"
   },
   "products": {
-    "title": "Alle Produkte",
+    "title": "Gesegnete Accessoires",
     "search_placeholder": "Produkte suchen...",
     "filter_all": "Alle Kategorien",
     "sort_label": "Sortieren nach",
     "sort_latest": "Neueste",
     "sort_price_low": "Preis: Niedrig bis Hoch",
     "sort_price_high": "Preis: Hoch bis Niedrig",
-    "sort_popular": "Am beliebtesten",
+    "sort_popular": "Am Beliebtesten",
     "no_results": "Keine Produkte gefunden",
     "no_results_desc": "Versuchen Sie, Ihre Suche oder Filter anzupassen",
     "view_details": "Details anzeigen",
     "add_to_cart": "In den Warenkorb",
     "out_of_stock": "Ausverkauft",
     "in_stock": "Auf Lager",
-    "only_left": "Nur noch {{count}} übrig"
+    "only_left": "Nur noch {{count}} übrig",
+    "subtitle": "Ausgewählte gesegnete Accessoires, tausendjährige Weisheit erbend, Ihre Lebensreise schützend",
+    "all_products": "Alle Produkte",
+    "select_category": "Kategorie Auswählen",
+    "all_categories": "Alle Kategorien",
+    "sort_newest": "Neueste",
+    "total_count": "{{count}} Produkte insgesamt",
+    "search_label": "Suche",
+    "sale_badge": "Angebot",
+    "sold_out": "Ausverkauft",
+    "stock_low": "Nur noch {{count}}",
+    "no_products": "Keine Produkte",
+    "try_other_filters": "Bitte versuchen Sie andere Suchkriterien"
   },
   "product_detail": {
     "back": "Zurück zu Produkten",
@@ -278,7 +290,9 @@
     "view_more": "Mehr anzeigen",
     "language": "Sprache",
     "currency": "Währung",
-    "learn_more": "Mehr erfahren"
+    "learn_more": "Mehr erfahren",
+    "site_name": "Cneraart",
+    "cart": "Warenkorb"
   },
   "status": {
     "pending": "Ausstehend",
@@ -335,5 +349,9 @@
     "step3Desc": "Traditionelle Weisheit + Expertise",
     "step4Title": "Bericht ansehen",
     "step4Desc": "Detaillierten Bericht erhalten"
+  },
+  "categories": {
+    "zodiac_guardian": "Sternzeichen-Wächter",
+    "constellation_guardian": "Sternbild-Wächter"
   }
 }

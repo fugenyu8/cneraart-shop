@@ -3,11 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
 import { Search, Sparkles, SlidersHorizontal } from "lucide-react";
 import { Link } from "wouter";
+import { useTranslation } from "react-i18next";
 
 export default function Products() {
+  const { t } = useTranslation();
   const [search, setSearch] = useState("");
   const [categoryId, setCategoryId] = useState<number | undefined>();
   const [sortBy, setSortBy] = useState("newest");
@@ -20,6 +23,12 @@ export default function Products() {
 
   const { data: categories } = trpc.categories.list.useQuery();
 
+  // 快速筛选按钮
+  const quickFilters = [
+    { id: 6, label: t("categories.zodiac_guardian"), slug: "zodiac-guardian" },
+    { id: 7, label: t("categories.constellation_guardian"), slug: "constellation-guardian" },
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       {/* 顶部导航 */}
@@ -31,12 +40,12 @@ export default function Products() {
                 <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-secondary rounded-full flex items-center justify-center">
                   <Sparkles className="w-6 h-6 text-foreground" />
                 </div>
-                <h1 className="text-2xl font-bold gradient-text">源・华渡</h1>
+                <h1 className="text-2xl font-bold gradient-text">{t("common.site_name")}</h1>
               </a>
             </Link>
             <div className="flex items-center gap-4">
               <Link href="/cart">
-                <Button variant="outline">购物车</Button>
+                <Button variant="outline">{t("common.cart")}</Button>
               </Link>
             </div>
           </div>
@@ -46,10 +55,31 @@ export default function Products() {
       <div className="container py-8">
         {/* 页面标题 */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">开光饰品</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{t("products.title")}</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            精选开光饰品，传承千年智慧，守护您的人生旅程
+            {t("products.subtitle")}
           </p>
+        </div>
+
+        {/* 快速筛选按钮 */}
+        <div className="mb-6 flex flex-wrap gap-3 justify-center">
+          <Button
+            variant={categoryId === undefined ? "default" : "outline"}
+            onClick={() => setCategoryId(undefined)}
+            className="rounded-full"
+          >
+            {t("products.all_products")}
+          </Button>
+          {quickFilters.map((filter) => (
+            <Button
+              key={filter.id}
+              variant={categoryId === filter.id ? "default" : "outline"}
+              onClick={() => setCategoryId(filter.id)}
+              className="rounded-full"
+            >
+              {filter.label}
+            </Button>
+          ))}
         </div>
 
         {/* 筛选和搜索 */}
@@ -59,7 +89,7 @@ export default function Products() {
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
               <Input
-                placeholder="搜索产品..."
+                placeholder={t("products.search_placeholder")}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="pl-10 bg-card border-border"
@@ -72,13 +102,15 @@ export default function Products() {
               onValueChange={(value) => setCategoryId(value === "all" ? undefined : Number(value))}
             >
               <SelectTrigger className="w-full md:w-48 bg-card border-border">
-                <SelectValue placeholder="选择分类" />
+                <SelectValue placeholder={t("products.select_category")} />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="all">全部分类</SelectItem>
+                <SelectItem value="all">{t("products.all_categories")}</SelectItem>
                 {categories?.map((cat) => (
                   <SelectItem key={cat.id} value={cat.id.toString()}>
-                    {cat.name}
+                    {cat.slug === "zodiac-guardian" ? t("categories.zodiac_guardian") : 
+                     cat.slug === "constellation-guardian" ? t("categories.constellation_guardian") : 
+                     cat.name}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -90,10 +122,10 @@ export default function Products() {
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="newest">最新上架</SelectItem>
-                <SelectItem value="price-low">价格从低到高</SelectItem>
-                <SelectItem value="price-high">价格从高到低</SelectItem>
-                <SelectItem value="popular">最受欢迎</SelectItem>
+                <SelectItem value="newest">{t("products.sort_newest")}</SelectItem>
+                <SelectItem value="price-low">{t("products.sort_price_low")}</SelectItem>
+                <SelectItem value="price-high">{t("products.sort_price_high")}</SelectItem>
+                <SelectItem value="popular">{t("products.sort_popular")}</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -101,11 +133,17 @@ export default function Products() {
           {/* 筛选标签 */}
           <div className="flex items-center gap-2 text-sm text-muted-foreground">
             <SlidersHorizontal className="w-4 h-4" />
-            <span>共 {products?.length || 0} 件产品</span>
+            <span>{t("products.total_count", { count: products?.length || 0 })}</span>
             {search && (
-              <span className="px-2 py-1 bg-accent/20 text-accent rounded">
-                搜索: {search}
-              </span>
+              <Badge variant="secondary">
+                {t("products.search_label")}: {search}
+              </Badge>
+            )}
+            {categoryId && (
+              <Badge variant="secondary">
+                {quickFilters.find(f => f.id === categoryId)?.label || 
+                 categories?.find(c => c.id === categoryId)?.name}
+              </Badge>
             )}
           </div>
         </div>
@@ -136,12 +174,12 @@ export default function Products() {
                     )}
                     {product.salePrice && (
                       <div className="absolute top-3 right-3 bg-primary px-2 py-1 rounded-full text-xs font-bold">
-                        特惠
+                        {t("products.sale_badge")}
                       </div>
                     )}
                     {product.stock <= 0 && (
                       <div className="absolute inset-0 bg-background/80 flex items-center justify-center">
-                        <span className="text-lg font-bold text-muted-foreground">已售罄</span>
+                        <span className="text-lg font-bold text-muted-foreground">{t("products.sold_out")}</span>
                       </div>
                     )}
                   </div>
@@ -170,7 +208,9 @@ export default function Products() {
                         )}
                       </div>
                       {product.stock > 0 && product.stock <= 10 && (
-                        <span className="text-xs text-warning">仅剩 {product.stock} 件</span>
+                        <span className="text-xs text-warning">
+                          {t("products.stock_low", { count: product.stock })}
+                        </span>
                       )}
                     </div>
                   </CardContent>
@@ -181,8 +221,8 @@ export default function Products() {
         ) : (
           <div className="text-center py-20">
             <Sparkles className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-2">暂无产品</h3>
-            <p className="text-muted-foreground">请尝试其他搜索条件</p>
+            <h3 className="text-xl font-bold mb-2">{t("products.no_products")}</h3>
+            <p className="text-muted-foreground">{t("products.try_other_filters")}</p>
           </div>
         )}
       </div>

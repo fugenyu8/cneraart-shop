@@ -81,7 +81,7 @@
     "service_fengshui_short": "Feng Shui Analysis"
   },
   "products": {
-    "title": "All Products",
+    "title": "Blessed Accessories",
     "search_placeholder": "Search products...",
     "filter_all": "All Categories",
     "sort_label": "Sort By",
@@ -95,7 +95,19 @@
     "add_to_cart": "Add to Cart",
     "out_of_stock": "Out of Stock",
     "in_stock": "In Stock",
-    "only_left": "Only {{count}} left"
+    "only_left": "Only {{count}} left",
+    "subtitle": "Curated blessed accessories, inheriting thousand-year wisdom, guarding your life journey",
+    "all_products": "All Products",
+    "select_category": "Select Category",
+    "all_categories": "All Categories",
+    "sort_newest": "Newest",
+    "total_count": "{{count}} products total",
+    "search_label": "Search",
+    "sale_badge": "Sale",
+    "sold_out": "Sold Out",
+    "stock_low": "Only {{count}} left",
+    "no_products": "No Products",
+    "try_other_filters": "Please try other search criteria"
   },
   "product_detail": {
     "back": "Back to Products",
@@ -310,7 +322,9 @@
     "view_more": "View More",
     "language": "Language",
     "currency": "Currency",
-    "learn_more": "Learn More"
+    "learn_more": "Learn More",
+    "site_name": "Cneraart",
+    "cart": "Cart"
   },
   "status": {
     "pending": "Pending",
@@ -367,5 +381,9 @@
     "step3Desc": "Traditional wisdom + expertise",
     "step4Title": "View Report",
     "step4Desc": "Get detailed report"
+  },
+  "categories": {
+    "zodiac_guardian": "Zodiac Guardian",
+    "constellation_guardian": "Constellation Guardian"
   }
 }

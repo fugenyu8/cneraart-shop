@@ -217,5 +217,32 @@
       "dateDesc": "Data (Mais recente primeiro)",
       "dateAsc": "Data (Mais antigo primeiro)"
     }
+  },
+  "categories": {
+    "zodiac_guardian": "Guardião do Zodíaco",
+    "constellation_guardian": "Guardião da Constelação"
+  },
+  "products": {
+    "title": "Acessórios Abençoados",
+    "subtitle": "Acessórios abençoados selecionados, herdando sabedoria milenar, protegendo sua jornada de vida",
+    "all_products": "Todos os Produtos",
+    "search_placeholder": "Pesquisar produtos...",
+    "select_category": "Selecionar Categoria",
+    "all_categories": "Todas as Categorias",
+    "sort_newest": "Mais Recente",
+    "sort_price_low": "Preço: Baixo a Alto",
+    "sort_price_high": "Preço: Alto a Baixo",
+    "sort_popular": "Mais Popular",
+    "total_count": "{{count}} produtos no total",
+    "search_label": "Pesquisar",
+    "sale_badge": "Promoção",
+    "sold_out": "Esgotado",
+    "stock_low": "Apenas {{count}} restantes",
+    "no_products": "Sem Produtos",
+    "try_other_filters": "Por favor, tente outros critérios de pesquisa"
+  },
+  "common": {
+    "site_name": "Cneraart",
+    "cart": "Carrinho"
   }
 }

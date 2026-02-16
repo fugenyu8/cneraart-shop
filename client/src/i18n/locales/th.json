@@ -217,5 +217,32 @@
       "dateDesc": "วันที่ (ใหม่สุดก่อน)",
       "dateAsc": "วันที่ (เก่าสุดก่อน)"
     }
+  },
+  "categories": {
+    "zodiac_guardian": "ผู้พิทักษ์ราศี",
+    "constellation_guardian": "ผู้พิทักษ์กลุ่มดาว"
+  },
+  "products": {
+    "title": "เครื่องประดับที่ได้รับพร",
+    "subtitle": "เครื่องประดับที่ได้รับพรที่คัดสรร สืบทอดภูมิปัญญาพันปี ปกป้องเส้นทางชีวิตของคุณ",
+    "all_products": "ผลิตภัณฑ์ทั้งหมด",
+    "search_placeholder": "ค้นหาผลิตภัณฑ์...",
+    "select_category": "เลือกหมวดหมู่",
+    "all_categories": "หมวดหมู่ทั้งหมด",
+    "sort_newest": "ใหม่ล่าสุด",
+    "sort_price_low": "ราคา: ต่ำไปสูง",
+    "sort_price_high": "ราคา: สูงไปต่ำ",
+    "sort_popular": "ยอดนิยม",
+    "total_count": "ผลิตภัณฑ์ทั้งหมด {{count}} รายการ",
+    "search_label": "ค้นหา",
+    "sale_badge": "ลดราคา",
+    "sold_out": "ขายหมดแล้ว",
+    "stock_low": "เหลือเพียง {{count}} ชิ้น",
+    "no_products": "ไม่มีผลิตภัณฑ์",
+    "try_other_filters": "โปรดลองเกณฑ์การค้นหาอื่น"
+  },
+  "common": {
+    "site_name": "Cneraart",
+    "cart": "ตะกร้า"
   }
 }

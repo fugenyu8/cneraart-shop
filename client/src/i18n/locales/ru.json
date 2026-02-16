@@ -217,5 +217,32 @@
       "dateDesc": "Дата (Сначала новые)",
       "dateAsc": "Дата (Сначала старые)"
     }
+  },
+  "categories": {
+    "zodiac_guardian": "Хранитель Зодиака",
+    "constellation_guardian": "Хранитель Созвездия"
+  },
+  "products": {
+    "title": "Освященные Аксессуары",
+    "subtitle": "Отобранные освященные аксессуары, наследующие тысячелетнюю мудрость, охраняющие ваш жизненный путь",
+    "all_products": "Все Продукты",
+    "search_placeholder": "Поиск продуктов...",
+    "select_category": "Выбрать Категорию",
+    "all_categories": "Все Категории",
+    "sort_newest": "Новейшие",
+    "sort_price_low": "Цена: От Низкой к Высокой",
+    "sort_price_high": "Цена: От Высокой к Низкой",
+    "sort_popular": "Самые Популярные",
+    "total_count": "Всего {{count}} продуктов",
+    "search_label": "Поиск",
+    "sale_badge": "Скидка",
+    "sold_out": "Распродано",
+    "stock_low": "Осталось {{count}}",
+    "no_products": "Нет Продуктов",
+    "try_other_filters": "Пожалуйста, попробуйте другие критерии поиска"
+  },
+  "common": {
+    "site_name": "Cneraart",
+    "cart": "Корзина"
   }
 }

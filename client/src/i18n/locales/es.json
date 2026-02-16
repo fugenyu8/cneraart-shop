@@ -81,21 +81,33 @@
     "service_fengshui_short": "Análisis Feng Shui"
   },
   "products": {
-    "title": "Todos los productos",
+    "title": "Accesorios Bendecidos",
     "search_placeholder": "Buscar productos...",
     "filter_all": "Todas las categorías",
     "sort_label": "Ordenar por",
     "sort_latest": "Más reciente",
-    "sort_price_low": "Precio: Bajo a alto",
-    "sort_price_high": "Precio: Alto a bajo",
-    "sort_popular": "Más popular",
+    "sort_price_low": "Precio: Bajo a Alto",
+    "sort_price_high": "Precio: Alto a Bajo",
+    "sort_popular": "Más Popular",
     "no_results": "No se encontraron productos",
     "no_results_desc": "Intenta ajustar tu búsqueda o filtros",
     "view_details": "Ver detalles",
     "add_to_cart": "Añadir al carrito",
     "out_of_stock": "Agotado",
     "in_stock": "En stock",
-    "only_left": "Solo quedan {{count}}"
+    "only_left": "Solo quedan {{count}}",
+    "subtitle": "Accesorios bendecidos seleccionados, heredando sabiduría milenaria, protegiendo su viaje de vida",
+    "all_products": "Todos los Productos",
+    "select_category": "Seleccionar Categoría",
+    "all_categories": "Todas las Categorías",
+    "sort_newest": "Más Reciente",
+    "total_count": "{{count}} productos en total",
+    "search_label": "Buscar",
+    "sale_badge": "Oferta",
+    "sold_out": "Agotado",
+    "stock_low": "Solo quedan {{count}}",
+    "no_products": "Sin Productos",
+    "try_other_filters": "Por favor intente otros criterios de búsqueda"
   },
   "product_detail": {
     "back": "Back to Products",
@@ -278,7 +290,9 @@
     "view_more": "Ver más",
     "language": "Idioma",
     "currency": "Moneda",
-    "learn_more": "Saber más"
+    "learn_more": "Saber más",
+    "site_name": "Cneraart",
+    "cart": "Carrito"
   },
   "status": {
     "pending": "Pendiente",
@@ -335,5 +349,9 @@
     "step3Desc": "Sabiduría tradicional + experiencia",
     "step4Title": "Ver informe",
     "step4Desc": "Obtener informe detallado"
+  },
+  "categories": {
+    "zodiac_guardian": "Guardián del Zodiaco",
+    "constellation_guardian": "Guardián de Constelación"
   }
 }

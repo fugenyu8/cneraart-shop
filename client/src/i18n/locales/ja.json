@@ -217,5 +217,32 @@
       "dateDesc": "日付(新しい順)",
       "dateAsc": "日付(古い順)"
     }
+  },
+  "categories": {
+    "zodiac_guardian": "干支守護",
+    "constellation_guardian": "星座守護"
+  },
+  "products": {
+    "title": "開光アクセサリー",
+    "subtitle": "厳選された開光アクセサリー、千年の知恵を受け継ぎ、あなたの人生の旅を守ります",
+    "all_products": "すべての製品",
+    "search_placeholder": "製品を検索...",
+    "select_category": "カテゴリーを選択",
+    "all_categories": "すべてのカテゴリー",
+    "sort_newest": "最新",
+    "sort_price_low": "価格: 安い順",
+    "sort_price_high": "価格: 高い順",
+    "sort_popular": "人気順",
+    "total_count": "合計{{count}}製品",
+    "search_label": "検索",
+    "sale_badge": "セール",
+    "sold_out": "売り切れ",
+    "stock_low": "残り{{count}}個",
+    "no_products": "製品なし",
+    "try_other_filters": "他の検索条件をお試しください"
+  },
+  "common": {
+    "site_name": "Cneraart",
+    "cart": "カート"
   }
 }

@@ -217,5 +217,32 @@
       "dateDesc": "날짜(최신순)",
       "dateAsc": "날짜(오래된순)"
     }
+  },
+  "categories": {
+    "zodiac_guardian": "십이지 수호",
+    "constellation_guardian": "별자리 수호"
+  },
+  "products": {
+    "title": "개광 액세서리",
+    "subtitle": "엄선된 개광 액세서리, 천년의 지혜를 계승하여 당신의 인생 여정을 지킵니다",
+    "all_products": "모든 제품",
+    "search_placeholder": "제품 검색...",
+    "select_category": "카테고리 선택",
+    "all_categories": "모든 카테고리",
+    "sort_newest": "최신순",
+    "sort_price_low": "가격: 낮은순",
+    "sort_price_high": "가격: 높은순",
+    "sort_popular": "인기순",
+    "total_count": "총 {{count}}개 제품",
+    "search_label": "검색",
+    "sale_badge": "할인",
+    "sold_out": "품절",
+    "stock_low": "{{count}}개 남음",
+    "no_products": "제품 없음",
+    "try_other_filters": "다른 검색 조건을 시도해 보세요"
+  },
+  "common": {
+    "site_name": "Cneraart",
+    "cart": "장바구니"
   }
 }

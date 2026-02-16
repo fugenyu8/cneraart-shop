@@ -50,9 +50,24 @@
     }
   },
   "products": {
-    "title": "精选产品",
-    "subtitle": "每一件都经过五台山开光，承载守护之力",
-    "viewAll": "查看所有产品"
+    "title": "开光饰品",
+    "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
+    "viewAll": "查看所有产品",
+    "all_products": "全部产品",
+    "search_placeholder": "搜索产品...",
+    "select_category": "选择分类",
+    "all_categories": "全部分类",
+    "sort_newest": "最新上架",
+    "sort_price_low": "价格从低到高",
+    "sort_price_high": "价格从高到低",
+    "sort_popular": "最受欢迎",
+    "total_count": "共 {{count}} 件产品",
+    "search_label": "搜索",
+    "sale_badge": "特惠",
+    "sold_out": "已售罄",
+    "stock_low": "仅剩 {{count}} 件",
+    "no_products": "暂无产品",
+    "try_other_filters": "请尝试其他搜索条件"
   },
   "blessing": {
     "title": "开光流程",
@@ -367,7 +382,9 @@
     "language": "语言",
     "currency": "货币",
     "learn_more": "了解更多",
-    "uploading": "上传中..."
+    "uploading": "上传中...",
+    "site_name": "源・华渡",
+    "cart": "购物车"
   },
   "status": {
     "pending": "待处理",
@@ -419,5 +436,9 @@
     "step3Desc": "结合传统智慧与专业分析",
     "step4Title": "查看报告",
     "step4Desc": "获取详细的命理分析报告"
+  },
+  "categories": {
+    "zodiac_guardian": "生肖守护",
+    "constellation_guardian": "星座守护"
   }
 }
