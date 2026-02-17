@@ -190,7 +190,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {/* 1. 开光护佑法物 */}
-            <Link href="/products?category=1">
+            <Link href="/products?category=8">
               <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">

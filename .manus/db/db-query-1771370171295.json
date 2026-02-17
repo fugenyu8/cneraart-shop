@@ -1,0 +1,52 @@
+{
+  "query": "SELECT id, name, regularPrice, categoryId FROM products WHERE categoryId = 8 ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, regularPrice, categoryId FROM products WHERE categoryId = 8 ORDER BY id;",
+  "rows": [
+    {
+      "id": "510049",
+      "name": "Eastern Ancient Wisdom Text Pendant",
+      "regularPrice": "59.00",
+      "categoryId": "8"
+    },
+    {
+      "id": "510050",
+      "name": "Heart Sutra Bracelet",
+      "regularPrice": "59.00",
+      "categoryId": "8"
+    },
+    {
+      "id": "510051",
+      "name": "Great Compassion Mantra Bracelet",
+      "regularPrice": "59.00",
+      "categoryId": "8"
+    },
+    {
+      "id": "510052",
+      "name": "Shurangama Mantra Bracelet",
+      "regularPrice": "59.00",
+      "categoryId": "8"
+    },
+    {
+      "id": "510053",
+      "name": "Yellow Jambhala Bracelet",
+      "regularPrice": "59.00",
+      "categoryId": "8"
+    },
+    {
+      "id": "510054",
+      "name": "Amitabha Bracelet",
+      "regularPrice": "59.00",
+      "categoryId": "8"
+    },
+    {
+      "id": "510055",
+      "name": "Esoteric North Star Seven-Star Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "8"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tregularPrice\tcategoryId\n510049\tEastern Ancient Wisdom Text Pendant\t59.00\t8\n510050\tHeart Sutra Bracelet\t59.00\t8\n510051\tGreat Compassion Mantra Bracelet\t59.00\t8\n510052\tShurangama Mantra Bracelet\t59.00\t8\n510053\tYellow Jambhala Bracelet\t59.00\t8\n510054\tAmitabha Bracelet\t59.00\t8\n510055\tEsoteric North Star Seven-Star Pendant\t55.00\t8\n",
+  "stderr": "",
+  "execution_time_ms": 66
+}
