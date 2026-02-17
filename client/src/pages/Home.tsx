@@ -188,7 +188,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {/* 1. 开光护佑法物 */}
-            <Link href="/products">
+            <Link href="/products?category=1">
               <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
@@ -219,7 +219,7 @@ export default function Home() {
                 <div className="relative z-10 flex flex-col items-center text-center space-y-4">
                   {/* 实物照片 */}
                   <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/fortune-premium.png" alt="命理运势" className="w-full h-full object-cover" />
+                    <img src="/services/compass1.jpg" alt="命理运势" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.destiny.title')}</h3>
@@ -240,7 +240,7 @@ export default function Home() {
                 <div className="relative z-10 flex flex-col items-center text-center space-y-4">
                   {/* 实物照片 */}
                   <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/fortune-basic.png" alt="面相手相" className="w-full h-full object-cover" />
+                    <img src="/services/palmistry.jpg" alt="面相手相" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.palmistry.title')}</h3>

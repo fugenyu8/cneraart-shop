@@ -12,8 +12,14 @@ import { useTranslation } from "react-i18next";
 
 export default function Products() {
   const { t } = useTranslation();
+  
+  // 解析URL参数
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryParam = urlParams.get('category');
+  const initialCategoryId = categoryParam ? parseInt(categoryParam) : undefined;
+  
   const [search, setSearch] = useState("");
-  const [categoryId, setCategoryId] = useState<number | undefined>();
+  const [categoryId, setCategoryId] = useState<number | undefined>(initialCategoryId);
   const [sortBy, setSortBy] = useState("newest");
 
   const { data: products, isLoading } = trpc.products.list.useQuery({

@@ -1,0 +1,28 @@
+{
+  "query": "SELECT c.id, c.name AS category_name, COUNT(p.id) AS product_count, \nGROUP_CONCAT(p.name SEPARATOR ', ') AS products\nFROM categories c\nLEFT JOIN products p ON c.id = p.categoryId\nGROUP BY c.id, c.name\nORDER BY c.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT c.id, c.name AS category_name, COUNT(p.id) AS product_count, \nGROUP_CONCAT(p.name SEPARATOR ', ') AS products\nFROM categories c\nLEFT JOIN products p ON c.id = p.categoryId\nGROUP BY c.id, c.name\nORDER BY c.id;",
+  "rows": [
+    {
+      "id": "1",
+      "category_name": "命理服务",
+      "product_count": "3",
+      "products": "面相分析服务, 手相分析服务, 家居风水服务"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_count": "12",
+      "products": "Wutai Mountain Blessed Rat Guardian Pendant, Wutai Mountain Blessed Ox Guardian Pendant, Wutai Mountain Blessed Tiger Guardian Pendant, Wutai Mountain Blessed Rabbit Guardian Pendant, Wutai Mountain Blessed Dragon Guardian Pendant, Wutai Mountain Blessed Snake Guardian Pendant, Wutai Mountain Blessed Horse Guardian Pendant, Wutai Mountain Blessed Goat Guardian Pendant, Wutai Mountain Blessed Monkey Guardian Pendant, Wutai Mountain Blessed Rooster Guardian Pendant, Wutai Mountain Blessed Dog Guardian Pendant, Wutai Mountain Blessed Pig Guardian Pendant"
+    },
+    {
+      "id": "7",
+      "category_name": "星座守护",
+      "product_count": "24",
+      "products": "Wutai Mountain Blessed Aries Guardian Pendant, Wutai Mountain Blessed Taurus Guardian Pendant, Wutai Mountain Blessed Gemini Guardian Pendant, Wutai Mountain Blessed Cancer Guardian Pendant, Wutai Mountain Blessed Leo Guardian Pendant, Wutai Mountain Blessed Virgo Guardian Pendant, Wutai Mountain Blessed Libra Guardian Pendant, Wutai Mountain Blessed Scorpio Guardian Pendant, Wutai Mountain Blessed Sagittarius Guardian Pendant, Wutai Mountain Blessed Capricorn Guardian Pendant, Wutai Mountain Blessed Aquarius Guardian Pendant, Wutai Mountain Blessed Pisces Guardian Pendant, Aries Zodiac Moon Crescent Pendant, Taurus Zodiac Moon Crescent Pendant, Gemini Zodiac Moon Crescent Pendant, Cancer Zodiac Moon Crescent Pendant, Leo Zodiac Moon Crescent Pendant, Virgo Zodiac Moon Crescent Pendant, Libra Zodiac Moon Crescent Pendant, Scorpio Zodiac Moon Crescent Pendant, Sagittarius Zodiac Moon Crescent Pendant, Capricorn Zodiac Moon Crescent Pendant, Aquarius Zodiac Moon Crescent Pendant, Pisces Zodiac Moon Crescent Pen"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcategory_name\tproduct_count\tproducts\n1\t命理服务\t3\t面相分析服务, 手相分析服务, 家居风水服务\n6\t生肖守护\t12\tWutai Mountain Blessed Rat Guardian Pendant, Wutai Mountain Blessed Ox Guardian Pendant, Wutai Mountain Blessed Tiger Guardian Pendant, Wutai Mountain Blessed Rabbit Guardian Pendant, Wutai Mountain Blessed Dragon Guardian Pendant, Wutai Mountain Blessed Snake Guardian Pendant, Wutai Mountain Blessed Horse Guardian Pendant, Wutai Mountain Blessed Goat Guardian Pendant, Wutai Mountain Blessed Monkey Guardian Pendant, Wutai Mountain Blessed Rooster Guardian Pendant, Wutai Mountain Blessed Dog Guardian Pendant, Wutai Mountain Blessed Pig Guardian Pendant\n7\t星座守护\t24\tWutai Mountain Blessed Aries Guardian Pendant, Wutai Mountain Blessed Taurus Guardian Pendant, Wutai Mountain Blessed Gemini Guardian Pendant, Wutai Mountain Blessed Cancer Guardian Pendant, Wutai Mountain Blessed Leo Guardian Pendant, Wutai Mountain Blessed Virgo Guardian Pendant, Wutai Mountain Blessed Libra Guardian Pendant, Wutai Mountain Blessed Scorpio Guardian Pendant, Wutai Mountain Blessed Sagittarius Guardian Pendant, Wutai Mountain Blessed Capricorn Guardian Pendant, Wutai Mountain Blessed Aquarius Guardian Pendant, Wutai Mountain Blessed Pisces Guardian Pendant, Aries Zodiac Moon Crescent Pendant, Taurus Zodiac Moon Crescent Pendant, Gemini Zodiac Moon Crescent Pendant, Cancer Zodiac Moon Crescent Pendant, Leo Zodiac Moon Crescent Pendant, Virgo Zodiac Moon Crescent Pendant, Libra Zodiac Moon Crescent Pendant, Scorpio Zodiac Moon Crescent Pendant, Sagittarius Zodiac Moon Crescent Pendant, Capricorn Zodiac Moon Crescent Pendant, Aquarius Zodiac Moon Crescent Pendant, Pisces Zodiac Moon Crescent Pen\n",
+  "stderr": "",
+  "execution_time_ms": 200
+}

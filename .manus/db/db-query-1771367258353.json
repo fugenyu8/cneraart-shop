@@ -1,0 +1,15 @@
+{
+  "query": "SELECT p.id, p.name, c.name AS category_name\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nWHERE p.name LIKE '%命理%' OR p.name LIKE '%祈福%' OR p.name LIKE '%Fortune%' OR p.name LIKE '%Prayer%'\nORDER BY p.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, c.name AS category_name\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nWHERE p.name LIKE '%命理%' OR p.name LIKE '%祈福%' OR p.name LIKE '%Fortune%' OR p.name LIKE '%Prayer%'\nORDER BY p.id;",
+  "rows": [
+    {
+      "id": "510060",
+      "name": "Fortune Energy Analysis Report - Unlock Ancient Chinese Wisdom",
+      "category_name": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tcategory_name\n510060\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 69
+}
