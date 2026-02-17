@@ -279,7 +279,7 @@ export default function Home() {
 
 
       {/* ABOUT US Section - 深红色背景 */}
-      <section className="py-20 px-4 bg-[#8B1A1A] text-white relative overflow-hidden">
+      <section className="py-20 px-4 bg-[#8B0000] text-white relative overflow-hidden">
         {/* 书法装饰背景 */}
         <div className="absolute inset-0 opacity-10">
           <div className="text-9xl font-serif leading-none">
