@@ -1,0 +1,20 @@
+{
+  "query": "SELECT * FROM categories WHERE slug = 'prayer-services';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT * FROM categories WHERE slug = 'prayer-services';",
+  "rows": [
+    {
+      "id": "60001",
+      "name": "代客祈福",
+      "slug": "prayer-services",
+      "description": "五台山代客祈福服务,包括供灯、供香等佛教仪式",
+      "parentId": "NULL",
+      "displayOrder": "3",
+      "createdAt": "2026-02-17 23:07:00",
+      "updatedAt": "2026-02-17 23:07:00"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tdescription\tparentId\tdisplayOrder\tcreatedAt\tupdatedAt\n60001\t代客祈福\tprayer-services\t五台山代客祈福服务,包括供灯、供香等佛教仪式\tNULL\t3\t2026-02-17 23:07:00\t2026-02-17 23:07:00\n",
+  "stderr": "",
+  "execution_time_ms": 68
+}

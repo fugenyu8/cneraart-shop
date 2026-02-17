@@ -1,0 +1,9 @@
+{
+  "query": "INSERT INTO categories (name, slug, description, displayOrder) VALUES ('代客祈福', 'prayer-services', '五台山代客祈福服务,包括供灯、供香等佛教仪式', 3);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute INSERT INTO categories (name, slug, description, displayOrder) VALUES ('代客祈福', 'prayer-services', '五台山代客祈福服务,包括供灯、供香等佛教仪式', 3);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 65
+}

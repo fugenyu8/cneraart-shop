@@ -1,0 +1,100 @@
+{
+  "query": "SELECT id, name, categoryId FROM products WHERE categoryId IS NULL OR categoryId NOT IN (1, 6, 7) ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, categoryId FROM products WHERE categoryId IS NULL OR categoryId NOT IN (1, 6, 7) ORDER BY id;",
+  "rows": [
+    {
+      "id": "120001",
+      "name": "Chinese Zodiac Guardian Pendant",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120004",
+      "name": "Master-Infused Energy Bracelet",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120005",
+      "name": "Zodiac Constellation Guardian Pendant",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120006",
+      "name": "Zodiac Moon Crescent Pendant",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120007",
+      "name": "Ancient Chinese Wisdom Analysis",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "510049",
+      "name": "Eastern Ancient Wisdom Text Pendant",
+      "categoryId": "8"
+    },
+    {
+      "id": "510050",
+      "name": "Heart Sutra Bracelet",
+      "categoryId": "8"
+    },
+    {
+      "id": "510051",
+      "name": "Great Compassion Mantra Bracelet",
+      "categoryId": "8"
+    },
+    {
+      "id": "510052",
+      "name": "Shurangama Mantra Bracelet",
+      "categoryId": "8"
+    },
+    {
+      "id": "510053",
+      "name": "Yellow Jambhala Bracelet",
+      "categoryId": "8"
+    },
+    {
+      "id": "510054",
+      "name": "Amitabha Bracelet",
+      "categoryId": "8"
+    },
+    {
+      "id": "510055",
+      "name": "Esoteric North Star Seven-Star Pendant",
+      "categoryId": "8"
+    },
+    {
+      "id": "510056",
+      "name": "Wutai Mountain Incense Offering Service",
+      "categoryId": "9"
+    },
+    {
+      "id": "510057",
+      "name": "Wutai Mountain Lamp Offering Service",
+      "categoryId": "9"
+    },
+    {
+      "id": "510058",
+      "name": "Incense Offering & Consecration Package with Blessed Amulet",
+      "categoryId": "9"
+    },
+    {
+      "id": "510059",
+      "name": "Complete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet",
+      "categoryId": "9"
+    },
+    {
+      "id": "510060",
+      "name": "Fortune Energy Analysis Report - Unlock Ancient Chinese Wisdom",
+      "categoryId": "10"
+    },
+    {
+      "id": "510061",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade",
+      "categoryId": "10"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tcategoryId\n120001\tChinese Zodiac Guardian Pendant\tNULL\n120004\tMaster-Infused Energy Bracelet\tNULL\n120005\tZodiac Constellation Guardian Pendant\tNULL\n120006\tZodiac Moon Crescent Pendant\tNULL\n120007\tAncient Chinese Wisdom Analysis\tNULL\n510049\tEastern Ancient Wisdom Text Pendant\t8\n510050\tHeart Sutra Bracelet\t8\n510051\tGreat Compassion Mantra Bracelet\t8\n510052\tShurangama Mantra Bracelet\t8\n510053\tYellow Jambhala Bracelet\t8\n510054\tAmitabha Bracelet\t8\n510055\tEsoteric North Star Seven-Star Pendant\t8\n510056\tWutai Mountain Incense Offering Service\t9\n510057\tWutai Mountain Lamp Offering Service\t9\n510058\tIncense Offering & Consecration Package with Blessed Amulet\t9\n510059\tComplete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet\t9\n510060\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\t10\n510061\tDestiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade\t10\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

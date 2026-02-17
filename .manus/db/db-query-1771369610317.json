@@ -1,0 +1,40 @@
+{
+  "query": "SELECT * FROM categories ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT * FROM categories ORDER BY id;",
+  "rows": [
+    {
+      "id": "1",
+      "name": "命理服务",
+      "slug": "fortune-services",
+      "description": "专业的面相、手相、风水分析服务",
+      "parentId": "NULL",
+      "displayOrder": "100",
+      "createdAt": "2026-02-16 09:18:36",
+      "updatedAt": "2026-02-16 09:18:36"
+    },
+    {
+      "id": "6",
+      "name": "生肖守护",
+      "slug": "zodiac-guardian",
+      "description": "十二生肖守护吊坠，五台山古法开光加持，守护您的本命运势",
+      "parentId": "NULL",
+      "displayOrder": "2",
+      "createdAt": "2026-02-16 21:13:33",
+      "updatedAt": "2026-02-16 21:13:33"
+    },
+    {
+      "id": "7",
+      "name": "星座守护",
+      "slug": "constellation-guardian",
+      "description": "十二星座守护吊坠，融合东方能量仪式与西方星座智慧",
+      "parentId": "NULL",
+      "displayOrder": "3",
+      "createdAt": "2026-02-16 21:13:33",
+      "updatedAt": "2026-02-16 21:13:33"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tdescription\tparentId\tdisplayOrder\tcreatedAt\tupdatedAt\n1\t命理服务\tfortune-services\t专业的面相、手相、风水分析服务\tNULL\t100\t2026-02-16 09:18:36\t2026-02-16 09:18:36\n6\t生肖守护\tzodiac-guardian\t十二生肖守护吊坠，五台山古法开光加持，守护您的本命运势\tNULL\t2\t2026-02-16 21:13:33\t2026-02-16 21:13:33\n7\t星座守护\tconstellation-guardian\t十二星座守护吊坠，融合东方能量仪式与西方星座智慧\tNULL\t3\t2026-02-16 21:13:33\t2026-02-16 21:13:33\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

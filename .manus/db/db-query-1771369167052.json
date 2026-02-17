@@ -1,0 +1,205 @@
+{
+  "query": "SELECT c.name as category_name, p.name as product_name, p.id as product_id\nFROM categories c \nLEFT JOIN products p ON c.id = p.categoryId \nORDER BY c.id, p.name;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT c.name as category_name, p.name as product_name, p.id as product_id\nFROM categories c \nLEFT JOIN products p ON c.id = p.categoryId \nORDER BY c.id, p.name;",
+  "rows": [
+    {
+      "category_name": "命理服务",
+      "product_name": "家居风水服务",
+      "product_id": "420005"
+    },
+    {
+      "category_name": "命理服务",
+      "product_name": "手相分析服务",
+      "product_id": "420004"
+    },
+    {
+      "category_name": "命理服务",
+      "product_name": "面相分析服务",
+      "product_id": "420003"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Dog Guardian Pendant",
+      "product_id": "510011"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Dragon Guardian Pendant",
+      "product_id": "510005"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Goat Guardian Pendant",
+      "product_id": "510008"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Horse Guardian Pendant",
+      "product_id": "510007"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Monkey Guardian Pendant",
+      "product_id": "510009"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Ox Guardian Pendant",
+      "product_id": "510002"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Pig Guardian Pendant",
+      "product_id": "510012"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Rabbit Guardian Pendant",
+      "product_id": "510004"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Rat Guardian Pendant",
+      "product_id": "510001"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Rooster Guardian Pendant",
+      "product_id": "510010"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Snake Guardian Pendant",
+      "product_id": "510006"
+    },
+    {
+      "category_name": "生肖守护",
+      "product_name": "Wutai Mountain Blessed Tiger Guardian Pendant",
+      "product_id": "510003"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Aquarius Zodiac Moon Crescent Pendant",
+      "product_id": "510035"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Aries Zodiac Moon Crescent Pendant",
+      "product_id": "510025"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Cancer Zodiac Moon Crescent Pendant",
+      "product_id": "510028"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Capricorn Zodiac Moon Crescent Pendant",
+      "product_id": "510034"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Gemini Zodiac Moon Crescent Pendant",
+      "product_id": "510027"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Leo Zodiac Moon Crescent Pendant",
+      "product_id": "510029"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Libra Zodiac Moon Crescent Pendant",
+      "product_id": "510031"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Pisces Zodiac Moon Crescent Pendant",
+      "product_id": "510036"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Sagittarius Zodiac Moon Crescent Pendant",
+      "product_id": "510033"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Scorpio Zodiac Moon Crescent Pendant",
+      "product_id": "510032"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Taurus Zodiac Moon Crescent Pendant",
+      "product_id": "510026"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Virgo Zodiac Moon Crescent Pendant",
+      "product_id": "510030"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Aquarius Guardian Pendant",
+      "product_id": "510023"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Aries Guardian Pendant",
+      "product_id": "510013"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Cancer Guardian Pendant",
+      "product_id": "510016"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Capricorn Guardian Pendant",
+      "product_id": "510022"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Gemini Guardian Pendant",
+      "product_id": "510015"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Leo Guardian Pendant",
+      "product_id": "510017"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Libra Guardian Pendant",
+      "product_id": "510019"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Pisces Guardian Pendant",
+      "product_id": "510024"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Sagittarius Guardian Pendant",
+      "product_id": "510021"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Scorpio Guardian Pendant",
+      "product_id": "510020"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Taurus Guardian Pendant",
+      "product_id": "510014"
+    },
+    {
+      "category_name": "星座守护",
+      "product_name": "Wutai Mountain Blessed Virgo Guardian Pendant",
+      "product_id": "510018"
+    }
+  ],
+  "messages": [],
+  "stdout": "category_name\tproduct_name\tproduct_id\n命理服务\t家居风水服务\t420005\n命理服务\t手相分析服务\t420004\n命理服务\t面相分析服务\t420003\n生肖守护\tWutai Mountain Blessed Dog Guardian Pendant\t510011\n生肖守护\tWutai Mountain Blessed Dragon Guardian Pendant\t510005\n生肖守护\tWutai Mountain Blessed Goat Guardian Pendant\t510008\n生肖守护\tWutai Mountain Blessed Horse Guardian Pendant\t510007\n生肖守护\tWutai Mountain Blessed Monkey Guardian Pendant\t510009\n生肖守护\tWutai Mountain Blessed Ox Guardian Pendant\t510002\n生肖守护\tWutai Mountain Blessed Pig Guardian Pendant\t510012\n生肖守护\tWutai Mountain Blessed Rabbit Guardian Pendant\t510004\n生肖守护\tWutai Mountain Blessed Rat Guardian Pendant\t510001\n生肖守护\tWutai Mountain Blessed Rooster Guardian Pendant\t510010\n生肖守护\tWutai Mountain Blessed Snake Guardian Pendant\t510006\n生肖守护\tWutai Mountain Blessed Tiger Guardian Pendant\t510003\n星座守护\tAquarius Zodiac Moon Crescent Pendant\t510035\n星座守护\tAries Zodiac Moon Crescent Pendant\t510025\n星座守护\tCancer Zodiac Moon Crescent Pendant\t510028\n星座守护\tCapricorn Zodiac Moon Crescent Pendant\t510034\n星座守护\tGemini Zodiac Moon Crescent Pendant\t510027\n星座守护\tLeo Zodiac Moon Crescent Pendant\t510029\n星座守护\tLibra Zodiac Moon Crescent Pendant\t510031\n星座守护\tPisces Zodiac Moon Crescent Pendant\t510036\n星座守护\tSagittarius Zodiac Moon Crescent Pendant\t510033\n星座守护\tScorpio Zodiac Moon Crescent Pendant\t510032\n星座守护\tTaurus Zodiac Moon Crescent Pendant\t510026\n星座守护\tVirgo Zodiac Moon Crescent Pendant\t510030\n星座守护\tWutai Mountain Blessed Aquarius Guardian Pendant\t510023\n星座守护\tWutai Mountain Blessed Aries Guardian Pendant\t510013\n星座守护\tWutai Mountain Blessed Cancer Guardian Pendant\t510016\n星座守护\tWutai Mountain Blessed Capricorn Guardian Pendant\t510022\n星座守护\tWutai Mountain Blessed Gemini Guardian Pendant\t510015\n星座守护\tWutai Mountain Blessed Leo Guardian Pendant\t510017\n星座守护\tWutai Mountain Blessed Libra Guardian Pendant\t510019\n星座守护\tWutai Mountain Blessed Pisces Guardian Pendant\t510024\n星座守护\tWutai Mountain Blessed Sagittarius Guardian Pendant\t510021\n星座守护\tWutai Mountain Blessed Scorpio Guardian Pendant\t510020\n星座守护\tWutai Mountain Blessed Taurus Guardian Pendant\t510014\n星座守护\tWutai Mountain Blessed Virgo Guardian Pendant\t510018\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}
