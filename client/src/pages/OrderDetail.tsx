@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, Package, Truck, CheckCircle, Clock } from "lucide-react";
+import ShipmentTracking from "@/components/ShipmentTracking";
 import { useTranslation } from "react-i18next";
 
 export default function OrderDetail() {
@@ -227,6 +228,13 @@ export default function OrderDetail() {
           </div>
         </CardContent>
       </Card>
+
+      {/* 物流跟踪 */}
+      {(order.status === "shipped" || order.status === "delivered") && order.trackingNumber && (
+        <div className="mb-6">
+          <ShipmentTracking orderId={orderId} />
+        </div>
+      )}
 
       {/* 收货地址 */}
       <Card className="mb-6">

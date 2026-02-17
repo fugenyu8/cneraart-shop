@@ -436,3 +436,55 @@ export const fortuneServiceReviews = mysqlTable("fortune_service_reviews", {
 
 export type FortuneServiceReview = typeof fortuneServiceReviews.$inferSelect;
 export type InsertFortuneServiceReview = typeof fortuneServiceReviews.$inferInsert;
+
+/**
+ * 物流跟踪事件表 - 记录订单物流的详细轨迹
+ */
+export const shipmentTrackingEvents = mysqlTable("shipment_tracking_events", {
+  id: int("id").autoincrement().primaryKey(),
+  orderId: int("orderId").notNull(),
+  
+  // 物流信息
+  carrier: varchar("carrier", { length: 100 }), // 物流公司(USPS, FedEx, UPS, DHL等)
+  trackingNumber: varchar("trackingNumber", { length: 100 }).notNull(),
+  
+  // 事件详情
+  eventTime: timestamp("eventTime").notNull(), // 事件发生时间
+  eventType: varchar("eventType", { length: 50 }).notNull(), // 事件类型(picked_up, in_transit, out_for_delivery, delivered等)
+  eventDescription: text("eventDescription").notNull(), // 事件描述
+  location: varchar("location", { length: 200 }), // 事件发生地点
+  
+  // 元数据
+  rawData: json("rawData"), // 原始API响应数据
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type ShipmentTrackingEvent = typeof shipmentTrackingEvents.$inferSelect;
+export type InsertShipmentTrackingEvent = typeof shipmentTrackingEvents.$inferInsert;
+
+/**
+ * 批量物流导入记录表 - 追踪管理员的批量上传操作
+ */
+export const shipmentBatchUploads = mysqlTable("shipment_batch_uploads", {
+  id: int("id").autoincrement().primaryKey(),
+  adminId: int("adminId").notNull(), // 操作管理员ID
+  
+  // 批量操作信息
+  fileName: varchar("fileName", { length: 200 }).notNull(), // 上传的文件名
+  totalRecords: int("totalRecords").notNull(), // 总记录数
+  successCount: int("successCount").default(0).notNull(), // 成功导入数
+  failureCount: int("failureCount").default(0).notNull(), // 失败数
+  
+  // 错误日志
+  errorLog: json("errorLog"), // 存储失败记录的详细信息
+  
+  // 状态
+  status: mysqlEnum("status", ["processing", "completed", "failed"]).default("processing").notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  completedAt: timestamp("completedAt"),
+});
+
+export type ShipmentBatchUpload = typeof shipmentBatchUploads.$inferSelect;
+export type InsertShipmentBatchUpload = typeof shipmentBatchUploads.$inferInsert;

@@ -475,6 +475,35 @@ export const appRouter = router({
         );
         return { success: true };
       }),
+
+    // 获取订单物流跟踪信息
+    getTracking: protectedProcedure
+      .input(z.object({ orderId: z.number() }))
+      .query(async ({ ctx, input }) => {
+        const order = await db.getOrderById(input.orderId);
+        
+        if (!order) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "订单不存在" });
+        }
+
+        // 验证订单所有权
+        if (order.userId !== ctx.user.id && ctx.user.role !== "admin") {
+          throw new TRPCError({ code: "FORBIDDEN", message: "无权访问此订单" });
+        }
+
+        const { getShipmentTracking } = await import("./shipment");
+        const trackingEvents = await getShipmentTracking(input.orderId);
+        
+        return {
+          order: {
+            trackingNumber: order.trackingNumber,
+            shippingCarrier: order.shippingCarrier,
+            shippedAt: order.shippedAt,
+            status: order.status,
+          },
+          events: trackingEvents,
+        };
+      }),
   }),
 
   // ============= 管理员功能 =============
@@ -770,6 +799,32 @@ export const appRouter = router({
           );
           return { success: true };
         }),
+
+      // 批量上传运单号
+      batchUpdateTracking: adminProcedure
+        .input(
+          z.object({
+            records: z.array(
+              z.object({
+                orderNumber: z.string(),
+                trackingNumber: z.string(),
+                carrier: z.string().optional(),
+              })
+            ),
+          })
+        )
+        .mutation(async ({ ctx, input }) => {
+          const { batchUpdateShipping } = await import("./shipment");
+          const results = await batchUpdateShipping(ctx.user.id, input.records);
+          return results;
+        }),
+
+      // 获取批量上传历史
+      getBatchHistory: adminProcedure.query(async ({ ctx }) => {
+        const { getBatchUploadHistory } = await import("./shipment");
+        const history = await getBatchUploadHistory(ctx.user.id);
+        return history;
+      }),
     }),
 
     // 优惠券管理

@@ -18,6 +18,7 @@ import Account from "./pages/Account";
 import OrderDetail from "./pages/OrderDetail";
 import FortuneServices from "./pages/FortuneServices";
 import ServiceOrders from "./pages/admin/ServiceOrders";
+import BatchShipmentUpload from "./pages/admin/BatchShipmentUpload";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -38,6 +39,7 @@ function Router() {
       <Route path={"/orders/:id"} component={OrderDetail} />
       <Route path={"/fortune"} component={FortuneServices} />
       <Route path={"/admin/service-orders"} component={ServiceOrders} />
+      <Route path={"/admin/batch-shipment"} component={BatchShipmentUpload} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
