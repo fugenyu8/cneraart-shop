@@ -1,0 +1,8 @@
+{
+  "query": "SELECT p.id, p.name, p.image_url as mainImage\nFROM products p\nORDER BY p.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, p.image_url as mainImage\nFROM products p\nORDER BY p.id;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1054 (42S22) at line 1: Unknown column 'p.image_url' in 'field list'"
+  ]
+}

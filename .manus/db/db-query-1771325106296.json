@@ -1,0 +1,82 @@
+{
+  "query": "SELECT pi.id as imageId, pi.productId, pi.url, pi.displayOrder, pi.isPrimary, p.name as productName\nFROM product_images pi\nJOIN products p ON pi.productId = p.id\nWHERE pi.id IN (510013, 510014, 510016, 510017, 510018, 510019, 510020, 510021, 510023)\nORDER BY pi.productId, pi.displayOrder;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT pi.id as imageId, pi.productId, pi.url, pi.displayOrder, pi.isPrimary, p.name as productName\nFROM product_images pi\nJOIN products p ON pi.productId = p.id\nWHERE pi.id IN (510013, 510014, 510016, 510017, 510018, 510019, 510020, 510021, 510023)\nORDER BY pi.productId, pi.displayOrder;",
+  "rows": [
+    {
+      "imageId": "510013",
+      "productId": "510013",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jjBPqLOqmfXUGQSq.jpg",
+      "displayOrder": "0",
+      "isPrimary": "1",
+      "productName": "Wutai Mountain Blessed Aries Guardian Pendant"
+    },
+    {
+      "imageId": "510014",
+      "productId": "510014",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/WqEAcfGMPBcPZdNl.jpg",
+      "displayOrder": "0",
+      "isPrimary": "1",
+      "productName": "Wutai Mountain Blessed Taurus Guardian Pendant"
+    },
+    {
+      "imageId": "510016",
+      "productId": "510016",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/qyWZQBLuYVKuqBSh.jpg",
+      "displayOrder": "0",
+      "isPrimary": "1",
+      "productName": "Wutai Mountain Blessed Cancer Guardian Pendant"
+    },
+    {
+      "imageId": "510017",
+      "productId": "510017",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/oPdvmLCJaIZLqpOG.jpg",
+      "displayOrder": "0",
+      "isPrimary": "1",
+      "productName": "Wutai Mountain Blessed Leo Guardian Pendant"
+    },
+    {
+      "imageId": "510018",
+      "productId": "510018",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/DaJbfJLxUPGCfGEe.jpg",
+      "displayOrder": "0",
+      "isPrimary": "1",
+      "productName": "Wutai Mountain Blessed Virgo Guardian Pendant"
+    },
+    {
+      "imageId": "510019",
+      "productId": "510019",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/fJnBBwxWWFpxbpPO.jpg",
+      "displayOrder": "0",
+      "isPrimary": "1",
+      "productName": "Wutai Mountain Blessed Libra Guardian Pendant"
+    },
+    {
+      "imageId": "510020",
+      "productId": "510020",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/SFfWRSqkqxNzJgJr.jpg",
+      "displayOrder": "0",
+      "isPrimary": "1",
+      "productName": "Wutai Mountain Blessed Scorpio Guardian Pendant"
+    },
+    {
+      "imageId": "510021",
+      "productId": "510021",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/yMbYdZjlJJBDxmLx.jpg",
+      "displayOrder": "0",
+      "isPrimary": "1",
+      "productName": "Wutai Mountain Blessed Sagittarius Guardian Pendant"
+    },
+    {
+      "imageId": "510023",
+      "productId": "510023",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/vUXnQzqSPDHJnMQC.jpg",
+      "displayOrder": "0",
+      "isPrimary": "1",
+      "productName": "Wutai Mountain Blessed Aquarius Guardian Pendant"
+    }
+  ],
+  "messages": [],
+  "stdout": "imageId\tproductId\turl\tdisplayOrder\tisPrimary\tproductName\n510013\t510013\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jjBPqLOqmfXUGQSq.jpg\t0\t1\tWutai Mountain Blessed Aries Guardian Pendant\n510014\t510014\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/WqEAcfGMPBcPZdNl.jpg\t0\t1\tWutai Mountain Blessed Taurus Guardian Pendant\n510016\t510016\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/qyWZQBLuYVKuqBSh.jpg\t0\t1\tWutai Mountain Blessed Cancer Guardian Pendant\n510017\t510017\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/oPdvmLCJaIZLqpOG.jpg\t0\t1\tWutai Mountain Blessed Leo Guardian Pendant\n510018\t510018\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/DaJbfJLxUPGCfGEe.jpg\t0\t1\tWutai Mountain Blessed Virgo Guardian Pendant\n510019\t510019\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/fJnBBwxWWFpxbpPO.jpg\t0\t1\tWutai Mountain Blessed Libra Guardian Pendant\n510020\t510020\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/SFfWRSqkqxNzJgJr.jpg\t0\t1\tWutai Mountain Blessed Scorpio Guardian Pendant\n510021\t510021\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/yMbYdZjlJJBDxmLx.jpg\t0\t1\tWutai Mountain Blessed Sagittarius Guardian Pendant\n510023\t510023\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/vUXnQzqSPDHJnMQC.jpg\t0\t1\tWutai Mountain Blessed Aquarius Guardian Pendant\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

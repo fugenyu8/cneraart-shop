@@ -1,0 +1,17 @@
+{
+  "query": "SELECT pi.id, pi.url, pi.displayOrder, pi.isPrimary, p.name\nFROM product_images pi\nJOIN products p ON pi.productId = p.id\nWHERE pi.productId = 510004\nORDER BY pi.displayOrder;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT pi.id, pi.url, pi.displayOrder, pi.isPrimary, p.name\nFROM product_images pi\nJOIN products p ON pi.productId = p.id\nWHERE pi.productId = 510004\nORDER BY pi.displayOrder;",
+  "rows": [
+    {
+      "id": "510004",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/VrisgGvkgvKgWTYO.jpg",
+      "displayOrder": "1",
+      "isPrimary": "1",
+      "name": "Wutai Mountain Blessed Rabbit Guardian Pendant"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\turl\tdisplayOrder\tisPrimary\tname\n510004\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/VrisgGvkgvKgWTYO.jpg\t1\t1\tWutai Mountain Blessed Rabbit Guardian Pendant\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

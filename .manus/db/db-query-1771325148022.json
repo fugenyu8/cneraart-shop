@@ -1,0 +1,9 @@
+{
+  "query": "DELETE FROM product_images \nWHERE id IN (510013, 510014, 510016, 510017, 510018, 510019, 510020, 510021, 510023);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute DELETE FROM product_images \nWHERE id IN (510013, 510014, 510016, 510017, 510018, 510019, 510020, 510021, 510023);",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 54
+}
