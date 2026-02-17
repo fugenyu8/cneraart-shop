@@ -90,7 +90,7 @@ export default function ProductDetail() {
         </div>
       </nav>
 
-      <div className="container py-8">
+      <div className="container py-4 md:py-8 px-4">
         {/* 返回按钮 */}
         <Link href="/products">
           <Button variant="ghost" className="mb-6">
@@ -100,7 +100,7 @@ export default function ProductDetail() {
         </Link>
 
         {/* 产品主要信息 */}
-        <div className="grid md:grid-cols-2 gap-12 mb-12">
+        <div className="grid md:grid-cols-2 gap-6 md:gap-12 mb-8 md:mb-12">
           {/* 左侧 - 产品图片 */}
           <div>
             <div className="aspect-square rounded-lg overflow-hidden border border-border mb-4 bg-card">
@@ -118,12 +118,12 @@ export default function ProductDetail() {
             </div>
             {/* 缩略图 */}
             {product.images.length > 1 && (
-              <div className="grid grid-cols-4 gap-2">
+              <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
                 {product.images.map((image, index) => (
                   <button
                     key={image.id}
                     onClick={() => setSelectedImage(index)}
-                    className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
+                    className={`flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden border-2 transition-all ${
                       selectedImage === index ? "border-accent" : "border-border hover:border-accent/50"
                     }`}
                   >
@@ -136,7 +136,7 @@ export default function ProductDetail() {
 
           {/* 右侧 - 产品信息 */}
           <div>
-            <h1 className="text-4xl font-light mb-4 tracking-wide">{product.name}</h1>
+            <h1 className="text-2xl md:text-4xl font-light mb-4 tracking-wide">{product.name}</h1>
 
             {/* 评分 */}
             {product.averageRating > 0 && (
@@ -160,10 +160,10 @@ export default function ProductDetail() {
             {/* 价格 */}
             <div className="mb-6">
               <div className="flex items-baseline gap-3">
-                <span className="text-4xl font-normal text-accent">${currentPrice}</span>
+                <span className="text-3xl md:text-4xl font-normal text-accent">${currentPrice}</span>
                 {product.salePrice && (
                   <>
-                    <span className="text-xl text-muted-foreground line-through">${product.regularPrice}</span>
+                    <span className="text-lg md:text-xl text-muted-foreground line-through">${product.regularPrice}</span>
                     <span className="px-2 py-1 bg-primary rounded text-sm font-medium">{t('product_detail.save_percent', { percent: discount })}</span>
                   </>
                 )}
@@ -250,9 +250,9 @@ export default function ProductDetail() {
             )}
 
             {/* 操作按钮 */}
-            <div className="flex gap-4">
+            <div className="flex gap-3 md:gap-4">
               <Button
-                className="btn-primary flex-1"
+                className="btn-primary flex-1 h-12 md:h-11"
                 size="lg"
                 onClick={handleAddToCart}
                 disabled={product.stock <= 0 || addToCartMutation.isPending}
@@ -260,7 +260,7 @@ export default function ProductDetail() {
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 {addToCartMutation.isPending ? t('product_detail.adding') : t('product_detail.add_to_cart')}
               </Button>
-              <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent/10">
+              <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent/10 h-12 md:h-11 w-12 md:w-auto px-0 md:px-4">
                 <Heart className="w-5 h-5" />
               </Button>
             </div>
@@ -268,16 +268,16 @@ export default function ProductDetail() {
         </div>
 
         {/* 详细信息标签页 */}
-        <Tabs defaultValue="description" className="mb-12">
-          <TabsList className="grid w-full grid-cols-3 bg-card">
-            <TabsTrigger value="description">{t('product_detail.tab_description')}</TabsTrigger>
-            <TabsTrigger value="blessing">{t('product_detail.tab_blessing')}</TabsTrigger>
-            <TabsTrigger value="reviews">{t('product_detail.tab_reviews')} ({product.reviews.length})</TabsTrigger>
+        <Tabs defaultValue="description" className="mb-8 md:mb-12">
+          <TabsList className="grid w-full grid-cols-3 bg-card h-auto">
+            <TabsTrigger value="description" className="text-sm md:text-base py-3">{t('product_detail.tab_description')}</TabsTrigger>
+            <TabsTrigger value="blessing" className="text-sm md:text-base py-3">{t('product_detail.tab_blessing')}</TabsTrigger>
+            <TabsTrigger value="reviews" className="text-sm md:text-base py-3">{t('product_detail.tab_reviews')} ({product.reviews.length})</TabsTrigger>
           </TabsList>
 
           <TabsContent value="description" className="mt-6">
             <Card className="bg-card">
-              <CardContent className="p-6">
+              <CardContent className="p-4 md:p-6">
                 <div className="prose prose-invert max-w-none">
                   <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
                     {product.description}
@@ -289,7 +289,7 @@ export default function ProductDetail() {
 
           <TabsContent value="blessing" className="mt-6">
             <Card className="bg-card">
-              <CardContent className="p-6">
+              <CardContent className="p-4 md:p-6">
                 <div className="prose prose-invert max-w-none">
                   <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
                     {product.blessingDescription || t('product_detail.blessing_default')}
@@ -304,7 +304,7 @@ export default function ProductDetail() {
               <div className="space-y-4">
                 {product.reviews.map((review) => (
                   <Card key={review.id} className="bg-card">
-                    <CardContent className="p-6">
+                    <CardContent className="p-4 md:p-6">
                       <div className="flex items-start justify-between mb-3">
                         <div>
                           <div className="flex gap-1 mb-2">

@@ -52,21 +52,21 @@ export default function Products() {
         </div>
       </nav>
 
-      <div className="container py-8">
+      <div className="container py-4 md:py-8">
         {/* 页面标题 */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">{t("products.title")}</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+        <div className="text-center mb-6 md:mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 gradient-text">{t("products.title")}</h2>
+          <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4">
             {t("products.subtitle")}
           </p>
         </div>
 
         {/* 快速筛选按钮 */}
-        <div className="mb-6 flex flex-wrap gap-3 justify-center">
+        <div className="mb-4 md:mb-6 flex flex-wrap gap-2 md:gap-3 justify-center px-4">
           <Button
             variant={categoryId === undefined ? "default" : "outline"}
             onClick={() => setCategoryId(undefined)}
-            className="rounded-full"
+            className="rounded-full text-sm md:text-base h-9 md:h-10 px-3 md:px-4"
           >
             {t("products.all_products")}
           </Button>
@@ -75,7 +75,7 @@ export default function Products() {
               key={filter.id}
               variant={categoryId === filter.id ? "default" : "outline"}
               onClick={() => setCategoryId(filter.id)}
-              className="rounded-full"
+              className="rounded-full text-sm md:text-base h-9 md:h-10 px-3 md:px-4"
             >
               {filter.label}
             </Button>
@@ -83,7 +83,7 @@ export default function Products() {
         </div>
 
         {/* 筛选和搜索 */}
-        <div className="mb-8 space-y-4">
+        <div className="mb-6 md:mb-8 space-y-3 md:space-y-4">
           <div className="flex flex-col md:flex-row gap-4">
             {/* 搜索框 */}
             <div className="relative flex-1">
@@ -92,7 +92,7 @@ export default function Products() {
                 placeholder={t("products.search_placeholder")}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="pl-10 bg-card border-border"
+                className="pl-10 bg-card border-border h-11 md:h-10"
               />
             </div>
 
@@ -101,7 +101,7 @@ export default function Products() {
               value={categoryId?.toString() || "all"}
               onValueChange={(value) => setCategoryId(value === "all" ? undefined : Number(value))}
             >
-              <SelectTrigger className="w-full md:w-48 bg-card border-border">
+              <SelectTrigger className="w-full md:w-48 bg-card border-border h-11 md:h-10">
                 <SelectValue placeholder={t("products.select_category")} />
               </SelectTrigger>
               <SelectContent>
@@ -118,7 +118,7 @@ export default function Products() {
 
             {/* 排序 */}
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-full md:w-48 bg-card border-border">
+              <SelectTrigger className="w-full md:w-48 bg-card border-border h-11 md:h-10">
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -131,7 +131,7 @@ export default function Products() {
           </div>
 
           {/* 筛选标签 */}
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+          <div className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground px-1">
             <SlidersHorizontal className="w-4 h-4" />
             <span>{t("products.total_count", { count: products?.length || 0 })}</span>
             {search && (
@@ -150,13 +150,13 @@ export default function Products() {
 
         {/* 产品网格 */}
         {isLoading ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
               <div key={i} className="product-card h-96 image-placeholder"></div>
             ))}
           </div>
         ) : products && products.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
             {products.map((product) => (
               <Link key={product.id} href={`/products/${product.slug}`}>
                 <Card className="product-card cursor-pointer group h-full">
@@ -183,32 +183,32 @@ export default function Products() {
                       </div>
                     )}
                   </div>
-                  <CardContent className="p-4">
-                    <h3 className="font-bold mb-2 group-hover:text-accent transition-colors line-clamp-1">
+                  <CardContent className="p-3 md:p-4">
+                    <h3 className="text-sm md:text-base font-bold mb-1 md:mb-2 group-hover:text-accent transition-colors line-clamp-1">
                       {product.name}
                     </h3>
-                    <p className="text-sm text-muted-foreground mb-3 line-clamp-2">
+                    <p className="text-xs md:text-sm text-muted-foreground mb-2 md:mb-3 line-clamp-2">
                       {product.shortDescription}
                     </p>
                     <div className="flex items-center justify-between">
                       <div>
                         {product.salePrice ? (
                           <div className="flex items-center gap-2">
-                            <span className="text-xl font-bold text-accent">
+                            <span className="text-lg md:text-xl font-bold text-accent">
                               ${product.salePrice}
                             </span>
-                            <span className="text-xs text-muted-foreground line-through">
+                            <span className="text-[10px] md:text-xs text-muted-foreground line-through">
                               ${product.regularPrice}
                             </span>
                           </div>
                         ) : (
-                          <span className="text-xl font-bold text-accent">
+                          <span className="text-lg md:text-xl font-bold text-accent">
                             ${product.regularPrice}
                           </span>
                         )}
                       </div>
                       {product.stock > 0 && product.stock <= 10 && (
-                        <span className="text-xs text-warning">
+                        <span className="text-[10px] md:text-xs text-warning">
                           {t("products.stock_low", { count: product.stock })}
                         </span>
                       )}

@@ -247,6 +247,16 @@
     min-width: 0;
   }
   
+  /* 隐藏滚动条 */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+  
   /* 产品卡片3D效果 */
   .product-card {
     @apply relative bg-card rounded-lg overflow-hidden transition-all duration-500;
