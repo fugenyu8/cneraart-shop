@@ -5,6 +5,8 @@ import { useTranslation } from "react-i18next";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { getLoginUrl } from "@/const";
+import VideoPlayer from "@/components/VideoPlayer";
+import { videos } from "@/config/videos";
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -299,6 +301,15 @@ export default function Home() {
             <p className="text-lg leading-relaxed">
               {t('aboutUs.paragraph2')}
             </p>
+          </div>
+
+          {/* 五台山高僧开光仪式视频 */}
+          <div className="mt-12">
+            <VideoPlayer 
+              videoUrl={videos.consecrationRitual.url}
+              title={t('aboutUs.videoTitle') || videos.consecrationRitual.titleEn}
+              className="max-w-3xl mx-auto"
+            />
           </div>
         </div>
       </section>
