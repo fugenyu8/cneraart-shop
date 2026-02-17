@@ -237,7 +237,7 @@ export default function Checkout() {
   if (!cartItems || cartItems.length === 0) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-8 md:py-16">
           <div className="text-center">
             <h1 className="text-3xl font-bold text-white mb-4">{t('checkout.cart_empty')}</h1>
             <p className="text-slate-400 mb-8">{t('checkout.cart_empty_desc')}</p>
@@ -256,7 +256,7 @@ export default function Checkout() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8 md:py-16">
         <Button
           variant="ghost"
           onClick={() => navigate("/cart")}
@@ -266,23 +266,23 @@ export default function Checkout() {
           {t('checkout.back_to_cart')}
         </Button>
 
-        <h1 className="text-4xl font-bold text-white mb-8">{t("checkout.title")}</h1>
+        <h1 className="text-2xl md:text-4xl font-bold text-white mb-6 md:mb-8">{t("checkout.title")}</h1>
 
         <div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
             {/* 收货信息 */}
             <div className="lg:col-span-2 space-y-6">
               <Card className="bg-slate-900/50 border-slate-800">
                 <CardHeader>
                   <CardTitle className="text-white">{t("checkout.shipping_info")}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-3 md:space-y-4 p-4 md:p-6">
                   {/* 地址选择 */}
                   {addresses && addresses.length > 0 && (
                     <div className="space-y-2">
-                      <Label className="text-slate-300">{t('checkout.select_address')}</Label>
+                      <Label className="text-slate-300 text-sm md:text-base">{t('checkout.select_address')}</Label>
                       <select
-                        className="w-full bg-slate-800 border-slate-700 text-white rounded-md px-3 py-2"
+                        className="w-full bg-slate-800 border-slate-700 text-white rounded-md px-3 py-2.5 md:py-2 text-base md:text-sm"
                         onChange={(e) => {
                           const selectedAddress = addresses.find((addr: any) => addr.id === parseInt(e.target.value));
                           if (selectedAddress) {
@@ -407,11 +407,11 @@ export default function Checkout() {
 
             {/* 订单摘要 */}
             <div>
-              <Card className="bg-slate-900/50 border-slate-800 sticky top-4">
+              <Card className="bg-slate-900/50 border-slate-800 lg:sticky lg:top-4">
                 <CardHeader>
                   <CardTitle className="text-white">{t("checkout.order_summary")}</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
+                <CardContent className="space-y-3 md:space-y-4 p-4 md:p-6">
                   {/* 商品列表 */}
                   <div className="space-y-3">
                     {cartItems.map((item: any) => (
@@ -438,21 +438,21 @@ export default function Checkout() {
 
                   {/* 优惠券 */}
                   <div className="space-y-2">
-                    <Label className="text-slate-300">{t('checkout.coupon')}</Label>
+                    <Label className="text-slate-300 text-sm md:text-base">{t('checkout.coupon')}</Label>
                     {!appliedCoupon ? (
                       <div className="flex gap-2">
                         <Input
                           value={couponCode}
                           onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
                           placeholder={t('checkout.coupon_placeholder')}
-                          className="bg-slate-800 border-slate-700 text-white"
+                          className="bg-slate-800 border-slate-700 text-white text-base md:text-sm h-11 md:h-10"
                         />
                         <Button
                           type="button"
                           onClick={handleApplyCoupon}
                           disabled={validateCouponMutation.isPending}
                           variant="outline"
-                          className="bg-slate-800 border-slate-700 text-white hover:bg-slate-700"
+                          className="bg-slate-800 border-slate-700 text-white hover:bg-slate-700 h-11 md:h-10 px-4 md:px-3"
                         >
                           {validateCouponMutation.isPending ? (
                             <Loader2 className="w-4 h-4 animate-spin" />
@@ -522,14 +522,25 @@ export default function Checkout() {
                         clientId: import.meta.env.VITE_PAYPAL_CLIENT_ID || "test",
                         currency: "USD",
                         intent: "capture",
+                        // 启用Apple Pay和Google Pay
+                        components: "buttons,applepay,googlepay",
+                        "enable-funding": "venmo,paylater",
+                        "disable-funding": "",
                       }}
                     >
                       <PayPalButtons
-                        style={{ layout: "vertical", label: "paypal" }}
+                        style={{ 
+                          layout: "vertical", 
+                          label: "paypal",
+                          height: 48,
+                          tagline: false,
+                        }}
                         createOrder={createPayPalOrder}
                         onApprove={onPayPalApprove}
                         onError={onPayPalError}
                         disabled={createOrderMutation.isPending || !cartItems || cartItems.length === 0}
+                        // 启用所有支付方式
+                        fundingSource={undefined}
                       />
                     </PayPalScriptProvider>
                   </div>

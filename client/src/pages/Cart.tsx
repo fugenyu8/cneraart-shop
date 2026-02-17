@@ -119,8 +119,8 @@ export default function Cart() {
         </div>
       </nav>
 
-      <div className="container py-8">
-        <h2 className="text-4xl font-bold mb-8 gradient-text">购物车</h2>
+      <div className="container py-4 md:py-8">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-8 gradient-text">购物车</h2>
 
         {!cartItems || cartItems.length === 0 ? (
           <Card className="bg-card">
@@ -134,7 +134,7 @@ export default function Cart() {
             </CardContent>
           </Card>
         ) : (
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-4 md:gap-8">
             {/* 左侧 - 购物车商品列表 */}
             <div className="lg:col-span-2 space-y-4">
               {cartItems.map((item) => {
@@ -145,10 +145,10 @@ export default function Cart() {
 
                 return (
                   <Card key={item.id} className="bg-card">
-                    <CardContent className="p-6">
-                      <div className="flex gap-6">
+                    <CardContent className="p-4 md:p-6">
+                      <div className="flex gap-3 md:gap-6 flex-col sm:flex-row">
                         {/* 产品图片 */}
-                        <div className="w-24 h-24 rounded-lg overflow-hidden border border-border flex-shrink-0">
+                        <div className="w-full sm:w-24 h-48 sm:h-24 rounded-lg overflow-hidden border border-border flex-shrink-0">
                           {item.images[0] ? (
                             <img
                               src={item.images[0].url}
@@ -173,23 +173,23 @@ export default function Cart() {
                             ${price.toFixed(2)} 每件
                           </p>
 
-                          <div className="flex items-center justify-between">
+                          <div className="flex items-center justify-between flex-wrap gap-3">
                             {/* 数量控制 */}
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 flex-1 sm:flex-initial">
                               <Button
                                 variant="outline"
                                 size="icon"
-                                className="h-8 w-8"
+                                className="h-9 w-9 md:h-8 md:w-8"
                                 onClick={() => handleUpdateQuantity(item.id, item.quantity - 1)}
                                 disabled={item.quantity <= 1 || updateQuantityMutation.isPending}
                               >
                                 <Minus className="w-3 h-3" />
                               </Button>
-                              <span className="w-12 text-center font-bold">{item.quantity}</span>
+                              <span className="w-12 text-center font-bold text-lg md:text-base">{item.quantity}</span>
                               <Button
                                 variant="outline"
                                 size="icon"
-                                className="h-8 w-8"
+                                className="h-9 w-9 md:h-8 md:w-8"
                                 onClick={() => handleUpdateQuantity(item.id, item.quantity + 1)}
                                 disabled={
                                   item.quantity >= item.product.stock || updateQuantityMutation.isPending
@@ -200,8 +200,8 @@ export default function Cart() {
                             </div>
 
                             {/* 小计和删除 */}
-                            <div className="flex items-center gap-4">
-                              <span className="text-lg font-bold text-accent">
+                            <div className="flex items-center gap-3 md:gap-4">
+                              <span className="text-base md:text-lg font-bold text-accent">
                                 ${itemTotal.toFixed(2)}
                               </span>
                               <Button
@@ -225,7 +225,7 @@ export default function Cart() {
             {/* 右侧 - 订单摘要 */}
             <div>
               <Card className="bg-card sticky top-24">
-                <CardContent className="p-6">
+                <CardContent className="p-4 md:p-6">
                   <h3 className="text-xl font-bold mb-6">订单摘要</h3>
 
                   {/* 优惠券输入 */}
