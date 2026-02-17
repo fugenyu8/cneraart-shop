@@ -168,7 +168,12 @@ export async function getPublishedProducts(params?: {
     conditions.push(like(products.name, `%${params.search}%`));
   }
 
-  let query = db.select().from(products).where(and(...conditions)).orderBy(desc(products.createdAt)).$dynamic();
+  // 优先展示开光法物(categoryId=1),然后按创建时间倒序
+  let query = db.select().from(products).where(and(...conditions))
+    .orderBy(
+      sql`CASE WHEN ${products.categoryId} = 1 THEN 0 ELSE 1 END`,
+      desc(products.createdAt)
+    ).$dynamic();
 
   if (params?.limit) {
     query = query.limit(params.limit);

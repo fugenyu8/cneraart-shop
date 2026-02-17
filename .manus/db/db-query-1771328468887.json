@@ -1,0 +1,28 @@
+{
+  "query": "SELECT c.id, c.name, c.slug, COUNT(p.id) as product_count \nFROM categories c \nLEFT JOIN products p ON p.categoryId = c.id \nGROUP BY c.id \nORDER BY c.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT c.id, c.name, c.slug, COUNT(p.id) as product_count \nFROM categories c \nLEFT JOIN products p ON p.categoryId = c.id \nGROUP BY c.id \nORDER BY c.id;",
+  "rows": [
+    {
+      "id": "1",
+      "name": "命理服务",
+      "slug": "fortune-services",
+      "product_count": "3"
+    },
+    {
+      "id": "6",
+      "name": "生肖守护",
+      "slug": "zodiac-guardian",
+      "product_count": "12"
+    },
+    {
+      "id": "7",
+      "name": "星座守护",
+      "slug": "constellation-guardian",
+      "product_count": "24"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tproduct_count\n1\t命理服务\tfortune-services\t3\n6\t生肖守护\tzodiac-guardian\t12\n7\t星座守护\tconstellation-guardian\t24\n",
+  "stderr": "",
+  "execution_time_ms": 75
+}

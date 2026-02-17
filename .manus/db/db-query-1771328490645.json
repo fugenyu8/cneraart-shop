@@ -1,0 +1,150 @@
+{
+  "query": "SELECT c.id, c.name as category_name, p.id as product_id, p.name as product_name, p.createdAt\nFROM categories c\nLEFT JOIN products p ON p.categoryId = c.id\nORDER BY c.id, p.createdAt\nLIMIT 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT c.id, c.name as category_name, p.id as product_id, p.name as product_name, p.createdAt\nFROM categories c\nLEFT JOIN products p ON p.categoryId = c.id\nORDER BY c.id, p.createdAt\nLIMIT 20;",
+  "rows": [
+    {
+      "id": "1",
+      "category_name": "命理服务",
+      "product_id": "420005",
+      "product_name": "家居风水服务",
+      "createdAt": "2026-02-16 09:18:56"
+    },
+    {
+      "id": "1",
+      "category_name": "命理服务",
+      "product_id": "420003",
+      "product_name": "面相分析服务",
+      "createdAt": "2026-02-16 09:18:56"
+    },
+    {
+      "id": "1",
+      "category_name": "命理服务",
+      "product_id": "420004",
+      "product_name": "手相分析服务",
+      "createdAt": "2026-02-16 09:18:56"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510008",
+      "product_name": "Wutai Mountain Blessed Goat Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510005",
+      "product_name": "Wutai Mountain Blessed Dragon Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510006",
+      "product_name": "Wutai Mountain Blessed Snake Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510011",
+      "product_name": "Wutai Mountain Blessed Dog Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510001",
+      "product_name": "Wutai Mountain Blessed Rat Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510010",
+      "product_name": "Wutai Mountain Blessed Rooster Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510007",
+      "product_name": "Wutai Mountain Blessed Horse Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510002",
+      "product_name": "Wutai Mountain Blessed Ox Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510009",
+      "product_name": "Wutai Mountain Blessed Monkey Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510003",
+      "product_name": "Wutai Mountain Blessed Tiger Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510004",
+      "product_name": "Wutai Mountain Blessed Rabbit Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "6",
+      "category_name": "生肖守护",
+      "product_id": "510012",
+      "product_name": "Wutai Mountain Blessed Pig Guardian Pendant",
+      "createdAt": "2026-02-16 20:47:18"
+    },
+    {
+      "id": "7",
+      "category_name": "星座守护",
+      "product_id": "510023",
+      "product_name": "Wutai Mountain Blessed Aquarius Guardian Pendant",
+      "createdAt": "2026-02-16 20:57:06"
+    },
+    {
+      "id": "7",
+      "category_name": "星座守护",
+      "product_id": "510018",
+      "product_name": "Wutai Mountain Blessed Virgo Guardian Pendant",
+      "createdAt": "2026-02-16 20:57:06"
+    },
+    {
+      "id": "7",
+      "category_name": "星座守护",
+      "product_id": "510021",
+      "product_name": "Wutai Mountain Blessed Sagittarius Guardian Pendant",
+      "createdAt": "2026-02-16 20:57:06"
+    },
+    {
+      "id": "7",
+      "category_name": "星座守护",
+      "product_id": "510022",
+      "product_name": "Wutai Mountain Blessed Capricorn Guardian Pendant",
+      "createdAt": "2026-02-16 20:57:06"
+    },
+    {
+      "id": "7",
+      "category_name": "星座守护",
+      "product_id": "510019",
+      "product_name": "Wutai Mountain Blessed Libra Guardian Pendant",
+      "createdAt": "2026-02-16 20:57:06"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tcategory_name\tproduct_id\tproduct_name\tcreatedAt\n1\t命理服务\t420005\t家居风水服务\t2026-02-16 09:18:56\n1\t命理服务\t420003\t面相分析服务\t2026-02-16 09:18:56\n1\t命理服务\t420004\t手相分析服务\t2026-02-16 09:18:56\n6\t生肖守护\t510008\tWutai Mountain Blessed Goat Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510005\tWutai Mountain Blessed Dragon Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510006\tWutai Mountain Blessed Snake Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510011\tWutai Mountain Blessed Dog Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510001\tWutai Mountain Blessed Rat Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510010\tWutai Mountain Blessed Rooster Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510007\tWutai Mountain Blessed Horse Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510002\tWutai Mountain Blessed Ox Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510009\tWutai Mountain Blessed Monkey Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510003\tWutai Mountain Blessed Tiger Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510004\tWutai Mountain Blessed Rabbit Guardian Pendant\t2026-02-16 20:47:18\n6\t生肖守护\t510012\tWutai Mountain Blessed Pig Guardian Pendant\t2026-02-16 20:47:18\n7\t星座守护\t510023\tWutai Mountain Blessed Aquarius Guardian Pendant\t2026-02-16 20:57:06\n7\t星座守护\t510018\tWutai Mountain Blessed Virgo Guardian Pendant\t2026-02-16 20:57:06\n7\t星座守护\t510021\tWutai Mountain Blessed Sagittarius Guardian Pendant\t2026-02-16 20:57:06\n7\t星座守护\t510022\tWutai Mountain Blessed Capricorn Guardian Pendant\t2026-02-16 20:57:06\n7\t星座守护\t510019\tWutai Mountain Blessed Libra Guardian Pendant\t2026-02-16 20:57:06\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}
