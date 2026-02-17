@@ -955,3 +955,10 @@ PayPal支付凭证(明天完成)
 - [x] 测试图片URL可访问性
 - [x] 修复损坏的图片链接(删除9张403错误图片)
 - [x] 浏览器验证图片显示正常
+
+## 图片优化功能(2026-02-17)
+- [x] 开发OptimizedImage组件(懒加载+WebP支持)
+- [x] 开发ImageLightbox组件(全屏预览、左右切换、缩放)
+- [x] 集成到ProductDetail和Products页面
+- [x] 测试性能优化效果和交互体验
+- [x] 保存checkpoint

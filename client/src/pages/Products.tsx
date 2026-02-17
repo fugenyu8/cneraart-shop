@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
 import { Search, Sparkles, SlidersHorizontal } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
 
@@ -162,11 +163,14 @@ export default function Products() {
                 <Card className="product-card cursor-pointer group h-full">
                   <div className="relative h-56 overflow-hidden">
                     {product.images[0] ? (
-                      <img
-                        src={product.images[0].url}
-                        alt={product.name}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
+                      <div className="w-full h-full group-hover:scale-110 transition-transform duration-500">
+                        <OptimizedImage
+                          src={product.images[0].url}
+                          alt={product.name}
+                          className="w-full h-full"
+                          objectFit="cover"
+                        />
+                      </div>
                     ) : (
                       <div className="w-full h-full bg-muted flex items-center justify-center">
                         <Sparkles className="w-12 h-12 text-muted-foreground" />

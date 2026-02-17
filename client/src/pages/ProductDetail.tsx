@@ -8,6 +8,8 @@ import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
 import { Sparkles, ShoppingCart, Heart, Shield, Star, ChevronLeft, Plus, Minus, Info } from "lucide-react";
+import OptimizedImage from "@/components/OptimizedImage";
+import ImageLightbox from "@/components/ImageLightbox";
 import { toast } from "sonner";
 
 export default function ProductDetail() {
@@ -16,6 +18,7 @@ export default function ProductDetail() {
   const { isAuthenticated } = useAuth();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const { data: product, isLoading } = trpc.products.getBySlug.useQuery({ slug: slug! });
   const addToCartMutation = trpc.cart.add.useMutation();
@@ -103,13 +106,23 @@ export default function ProductDetail() {
         <div className="grid md:grid-cols-2 gap-6 md:gap-12 mb-8 md:mb-12">
           {/* 左侧 - 产品图片 */}
           <div>
-            <div className="aspect-square rounded-lg overflow-hidden border border-border mb-4 bg-card">
+            <div className="aspect-square rounded-lg overflow-hidden border border-border mb-4 bg-card cursor-pointer group relative"
+              onClick={() => product.images.length > 0 && setIsLightboxOpen(true)}>
               {product.images[selectedImage] ? (
-                <img
-                  src={product.images[selectedImage].url}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
+                <>
+                  <OptimizedImage
+                    src={product.images[selectedImage].url}
+                    alt={product.name}
+                    className="w-full h-full"
+                    priority={selectedImage === 0}
+                    objectFit="cover"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-3">
+                      <Sparkles className="w-6 h-6 text-accent" />
+                    </div>
+                  </div>
+                </>
               ) : (
                 <div className="w-full h-full flex items-center justify-center">
                   <Sparkles className="w-24 h-24 text-muted-foreground" />
@@ -127,7 +140,12 @@ export default function ProductDetail() {
                       selectedImage === index ? "border-accent" : "border-border hover:border-accent/50"
                     }`}
                   >
-                    <img src={image.url} alt={`${product.name} ${index + 1}`} className="w-full h-full object-cover" />
+                    <OptimizedImage
+                      src={image.url}
+                      alt={`${product.name} ${index + 1}`}
+                      className="w-full h-full"
+                      objectFit="cover"
+                    />
                   </button>
                 ))}
               </div>
@@ -340,6 +358,14 @@ export default function ProductDetail() {
           </TabsContent>
         </Tabs>
       </div>
+
+      {/* 图片灯箱 */}
+      <ImageLightbox
+        images={product.images.map(img => img.url)}
+        initialIndex={selectedImage}
+        isOpen={isLightboxOpen}
+        onClose={() => setIsLightboxOpen(false)}
+      />
     </div>
   );
 }
