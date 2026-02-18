@@ -1052,3 +1052,8 @@ PayPal支付凭证(明天完成)
 - [x] 修正命理运势卡片描述(改为命理服务描述,非开光服务)
 - [x] 修正代祈福卡片描述(改为祈福服务描述,非开光服务)
 - [x] 为15种语言更新服务卡片翻译
+
+## 命理运势商品图片更新
+- [x] 更新Fortune Energy Analysis Report商品图片为黑色八卦图
+- [x] 更新Destiny Analysis + Wutai Mountain Blessing Ceremony商品图片为金色八卦图
+- [x] 浏览器测试验证图片显示正常

@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE product_images \nSET url = '/fortune-black.jpg', fileKey = 'fortune-black.jpg'\nWHERE productId = 510060 AND isPrimary = 1;\n\nUPDATE product_images \nSET url = '/fortune-gold.jpg', fileKey = 'fortune-gold.jpg'\nWHERE productId = 510061 AND isPrimary = 1;\n\nSELECT pi.productId, p.name, pi.url, pi.isPrimary \nFROM product_images pi \nJOIN products p ON pi.productId = p.id \nWHERE p.categoryId = 1 AND pi.isPrimary = 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute UPDATE product_images \nSET url = '/fortune-black.jpg', fileKey = 'fortune-black.jpg'\nWHERE productId = 510060 AND isPrimary = 1;\n\nUPDATE product_images \nSET url = '/fortune-gold.jpg', fileKey = 'fortune-gold.jpg'\nWHERE productId = 510061 AND isPrimary = 1;\n\nSELECT pi.productId, p.name, pi.url, pi.isPrimary \nFROM product_images pi \nJOIN products p ON pi.productId = p.id \nWHERE p.categoryId = 1 AND pi.isPrimary = 1;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 71
+}

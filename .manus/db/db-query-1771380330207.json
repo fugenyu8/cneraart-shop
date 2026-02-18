@@ -1,0 +1,80 @@
+{
+  "query": "SELECT pi.id, pi.productId, pi.url, pi.isPrimary, p.name \nFROM product_images pi \nJOIN products p ON pi.productId = p.id \nWHERE p.categoryId = 1 \nORDER BY p.id, pi.isPrimary DESC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT pi.id, pi.productId, pi.url, pi.isPrimary, p.name \nFROM product_images pi \nJOIN products p ON pi.productId = p.id \nWHERE p.categoryId = 1 \nORDER BY p.id, pi.isPrimary DESC;",
+  "rows": [
+    {
+      "id": "540068",
+      "productId": "510060",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/rTtvbrUgNdEgkBju.png",
+      "isPrimary": "0",
+      "name": "Fortune Energy Analysis Report - Unlock Ancient Chinese Wisdom"
+    },
+    {
+      "id": "540069",
+      "productId": "510060",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/kwNgcgdiWOscmXxE.jpg",
+      "isPrimary": "0",
+      "name": "Fortune Energy Analysis Report - Unlock Ancient Chinese Wisdom"
+    },
+    {
+      "id": "540070",
+      "productId": "510060",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jZeGpLxKWzyKICYr.jpg",
+      "isPrimary": "0",
+      "name": "Fortune Energy Analysis Report - Unlock Ancient Chinese Wisdom"
+    },
+    {
+      "id": "540071",
+      "productId": "510060",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/IBtVQdjczQgBdQeC.png",
+      "isPrimary": "0",
+      "name": "Fortune Energy Analysis Report - Unlock Ancient Chinese Wisdom"
+    },
+    {
+      "id": "540072",
+      "productId": "510060",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/sgEojemolsmUsaBT.png",
+      "isPrimary": "0",
+      "name": "Fortune Energy Analysis Report - Unlock Ancient Chinese Wisdom"
+    },
+    {
+      "id": "540073",
+      "productId": "510061",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/OxbKqpKacyZPBMSm.png",
+      "isPrimary": "0",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade"
+    },
+    {
+      "id": "540074",
+      "productId": "510061",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/bKOXgjYBhlIoPtUH.jpg",
+      "isPrimary": "0",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade"
+    },
+    {
+      "id": "540075",
+      "productId": "510061",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/qPwtTcELkSAKTnFV.jpg",
+      "isPrimary": "0",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade"
+    },
+    {
+      "id": "540076",
+      "productId": "510061",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/evdxhRDWKQktZfpL.png",
+      "isPrimary": "0",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade"
+    },
+    {
+      "id": "540077",
+      "productId": "510061",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ZvcaIZEUBnaGHphM.png",
+      "isPrimary": "0",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tproductId\turl\tisPrimary\tname\n540068\t510060\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/rTtvbrUgNdEgkBju.png\t0\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\n540069\t510060\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/kwNgcgdiWOscmXxE.jpg\t0\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\n540070\t510060\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jZeGpLxKWzyKICYr.jpg\t0\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\n540071\t510060\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/IBtVQdjczQgBdQeC.png\t0\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\n540072\t510060\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/sgEojemolsmUsaBT.png\t0\tFortune Energy Analysis Report - Unlock Ancient Chinese Wisdom\n540073\t510061\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/OxbKqpKacyZPBMSm.png\t0\tDestiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade\n540074\t510061\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/bKOXgjYBhlIoPtUH.jpg\t0\tDestiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade\n540075\t510061\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/qPwtTcELkSAKTnFV.jpg\t0\tDestiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade\n540076\t510061\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/evdxhRDWKQktZfpL.png\t0\tDestiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade\n540077\t510061\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/ZvcaIZEUBnaGHphM.png\t0\tDestiny Analysis + Wutai Mountain Blessing Ceremony - Limited Time Upgrade\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}
