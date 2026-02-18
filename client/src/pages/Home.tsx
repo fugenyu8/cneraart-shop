@@ -20,9 +20,9 @@ export default function Home() {
     "/wutai/carousel-03.jpg",
     "/wutai/carousel-04.jpg",
     "/wutai/carousel-05.jpg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/oMQvInZqOWKvhCYx.jpg",
+    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/sZZKTEnCtwYCDXUf.jpg",
     "/wutai/carousel-07.jpg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/EfpCCUYFGRnoWbVe.jpg",
+    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/uLzmWkptPKJVjHvn.jpg",
     "/wutai/carousel-09.jpg",
     "/wutai/carousel-10.jpg",
     "/wutai/carousel-11.jpg",
@@ -47,9 +47,9 @@ export default function Home() {
     "/wutai/carousel-30.jpg",
     "/wutai/carousel-31.jpg",
     "/wutai/carousel-32.jpg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/FjFEgJtDXfeOwEXl.jpg",
+    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/pIrEJiFlrQAnEGWu.jpg",
     "/wutai/carousel-34.jpg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/sVqLLAnncaDXeCIg.jpg",
+    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/IuolpyutsAQJwedV.jpg",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
