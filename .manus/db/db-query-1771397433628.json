@@ -1,0 +1,170 @@
+{
+  "query": "SELECT id, name, slug, categoryId, status, regularPrice FROM products LIMIT 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug, categoryId, status, regularPrice FROM products LIMIT 20;",
+  "rows": [
+    {
+      "id": "120001",
+      "name": "Chinese Zodiac Guardian Pendant",
+      "slug": "chinese-zodiac-guardian-pendant",
+      "categoryId": "NULL",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "120004",
+      "name": "Master-Infused Energy Bracelet",
+      "slug": "master-infused-energy-bracelet",
+      "categoryId": "NULL",
+      "status": "published",
+      "regularPrice": "59.00"
+    },
+    {
+      "id": "120005",
+      "name": "Zodiac Constellation Guardian Pendant",
+      "slug": "zodiac-constellation-guardian-pendant",
+      "categoryId": "NULL",
+      "status": "published",
+      "regularPrice": "59.00"
+    },
+    {
+      "id": "120007",
+      "name": "Ancient Chinese Wisdom Analysis",
+      "slug": "ancient-chinese-wisdom-analysis",
+      "categoryId": "NULL",
+      "status": "published",
+      "regularPrice": "19.00"
+    },
+    {
+      "id": "510001",
+      "name": "Wutai Mountain Blessed Rat Guardian Pendant",
+      "slug": "wutai-mountain-rat-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510002",
+      "name": "Wutai Mountain Blessed Ox Guardian Pendant",
+      "slug": "wutai-mountain-ox-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510003",
+      "name": "Wutai Mountain Blessed Tiger Guardian Pendant",
+      "slug": "wutai-mountain-tiger-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510004",
+      "name": "Wutai Mountain Blessed Rabbit Guardian Pendant",
+      "slug": "wutai-mountain-rabbit-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510005",
+      "name": "Wutai Mountain Blessed Dragon Guardian Pendant",
+      "slug": "wutai-mountain-dragon-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510006",
+      "name": "Wutai Mountain Blessed Snake Guardian Pendant",
+      "slug": "wutai-mountain-snake-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510007",
+      "name": "Wutai Mountain Blessed Horse Guardian Pendant",
+      "slug": "wutai-mountain-horse-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510008",
+      "name": "Wutai Mountain Blessed Goat Guardian Pendant",
+      "slug": "wutai-mountain-goat-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510009",
+      "name": "Wutai Mountain Blessed Monkey Guardian Pendant",
+      "slug": "wutai-mountain-monkey-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510010",
+      "name": "Wutai Mountain Blessed Rooster Guardian Pendant",
+      "slug": "wutai-mountain-rooster-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510011",
+      "name": "Wutai Mountain Blessed Dog Guardian Pendant",
+      "slug": "wutai-mountain-dog-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510012",
+      "name": "Wutai Mountain Blessed Pig Guardian Pendant",
+      "slug": "wutai-mountain-pig-zodiac-guardian-pendant",
+      "categoryId": "90001",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510013",
+      "name": "Wutai Mountain Blessed Aries Guardian Pendant",
+      "slug": "wutai-mountain-aries-constellation-pendant",
+      "categoryId": "90002",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510014",
+      "name": "Wutai Mountain Blessed Taurus Guardian Pendant",
+      "slug": "wutai-mountain-taurus-constellation-pendant",
+      "categoryId": "90002",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510015",
+      "name": "Wutai Mountain Blessed Gemini Guardian Pendant",
+      "slug": "wutai-mountain-gemini-constellation-pendant",
+      "categoryId": "90002",
+      "status": "published",
+      "regularPrice": "55.00"
+    },
+    {
+      "id": "510016",
+      "name": "Wutai Mountain Blessed Cancer Guardian Pendant",
+      "slug": "wutai-mountain-cancer-constellation-pendant",
+      "categoryId": "90002",
+      "status": "published",
+      "regularPrice": "55.00"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tcategoryId\tstatus\tregularPrice\n120001\tChinese Zodiac Guardian Pendant\tchinese-zodiac-guardian-pendant\tNULL\tpublished\t55.00\n120004\tMaster-Infused Energy Bracelet\tmaster-infused-energy-bracelet\tNULL\tpublished\t59.00\n120005\tZodiac Constellation Guardian Pendant\tzodiac-constellation-guardian-pendant\tNULL\tpublished\t59.00\n120007\tAncient Chinese Wisdom Analysis\tancient-chinese-wisdom-analysis\tNULL\tpublished\t19.00\n510001\tWutai Mountain Blessed Rat Guardian Pendant\twutai-mountain-rat-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510002\tWutai Mountain Blessed Ox Guardian Pendant\twutai-mountain-ox-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510003\tWutai Mountain Blessed Tiger Guardian Pendant\twutai-mountain-tiger-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510004\tWutai Mountain Blessed Rabbit Guardian Pendant\twutai-mountain-rabbit-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510005\tWutai Mountain Blessed Dragon Guardian Pendant\twutai-mountain-dragon-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510006\tWutai Mountain Blessed Snake Guardian Pendant\twutai-mountain-snake-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510007\tWutai Mountain Blessed Horse Guardian Pendant\twutai-mountain-horse-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510008\tWutai Mountain Blessed Goat Guardian Pendant\twutai-mountain-goat-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510009\tWutai Mountain Blessed Monkey Guardian Pendant\twutai-mountain-monkey-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510010\tWutai Mountain Blessed Rooster Guardian Pendant\twutai-mountain-rooster-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510011\tWutai Mountain Blessed Dog Guardian Pendant\twutai-mountain-dog-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510012\tWutai Mountain Blessed Pig Guardian Pendant\twutai-mountain-pig-zodiac-guardian-pendant\t90001\tpublished\t55.00\n510013\tWutai Mountain Blessed Aries Guardian Pendant\twutai-mountain-aries-constellation-pendant\t90002\tpublished\t55.00\n510014\tWutai Mountain Blessed Taurus Guardian Pendant\twutai-mountain-taurus-constellation-pendant\t90002\tpublished\t55.00\n510015\tWutai Mountain Blessed Gemini Guardian Pendant\twutai-mountain-gemini-constellation-pendant\t90002\tpublished\t55.00\n510016\tWutai Mountain Blessed Cancer Guardian Pendant\twutai-mountain-cancer-constellation-pendant\t90002\tpublished\t55.00\n",
+  "stderr": "",
+  "execution_time_ms": 59
+}

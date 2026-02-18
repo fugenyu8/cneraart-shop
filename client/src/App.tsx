@@ -17,6 +17,8 @@ import AdminOrderDetail from "./pages/admin/OrderDetail";
 import Account from "./pages/Account";
 import OrderDetail from "./pages/OrderDetail";
 import FortuneServices from "./pages/FortuneServices";
+import Destiny from "./pages/Destiny";
+import Prayer from "./pages/Prayer";
 import ServiceOrders from "./pages/admin/ServiceOrders";
 import BatchShipmentUpload from "./pages/admin/BatchShipmentUpload";
 
@@ -38,6 +40,8 @@ function Router() {
       <Route path={"/account"} component={Account} />
       <Route path={"/orders/:id"} component={OrderDetail} />
       <Route path={"/fortune"} component={FortuneServices} />
+      <Route path={"/destiny"} component={Destiny} />
+      <Route path={"/prayer"} component={Prayer} />
       <Route path={"/admin/service-orders"} component={ServiceOrders} />
       <Route path={"/admin/batch-shipment"} component={BatchShipmentUpload} />
       <Route path={"/404"} component={NotFound} />

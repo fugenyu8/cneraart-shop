@@ -932,6 +932,47 @@ export const appRouter = router({
 
   // ============= 命理测算服务 =============
   fortune: router({
+    // 提交命理运势请求
+    submitDestiny: publicProcedure
+      .input(
+        z.object({
+          name: z.string(),
+          email: z.string().email(),
+          gender: z.string().optional(),
+          birthYear: z.string(),
+          birthMonth: z.string(),
+          birthDay: z.string(),
+          birthHour: z.string().optional(),
+          birthMinute: z.string().optional(),
+          question: z.string().optional(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        // TODO: 实现紫微斗数分析逻辑
+        // 目前先返回成功，后续实现报告生成
+        console.log("收到命理运势请求:", input);
+        return { success: true, message: "您的请求已提交，报告将在48小时内发送至您的邮箱" };
+      }),
+
+    // 提交代祈福请求
+    submitPrayer: publicProcedure
+      .input(
+        z.object({
+          name: z.string(),
+          email: z.string().email(),
+          serviceType: z.enum(["lamp", "incense"]),
+          prayerFor: z.string(),
+          wish: z.string().optional(),
+          quantity: z.string(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        // TODO: 实现祈福服务逻辑
+        // 目前先返回成功，后续实现证书生成
+        console.log("收到代祈福请求:", input);
+        return { success: true, message: "您的祈福请求已提交，我们将为您诚心祈福" };
+      }),
+
     // 获取用户的fortune bookings
     getMyBookings: protectedProcedure.query(async ({ ctx }) => {
       const { getPendingFortuneBookings } = await import("./db-fortune-helpers");
