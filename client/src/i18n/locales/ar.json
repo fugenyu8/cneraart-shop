@@ -220,7 +220,21 @@
   },
   "categories": {
     "zodiac_guardian": "حارس البروج",
-    "constellation_guardian": "حارس الكوكبة"
+    "constellation_guardian": "حارس الكوكبة",
+    "zodiac_guardians": "حراس الأبراج",
+    "zodiac_guardians_desc": "قطع أثرية حصرية لحراس الأبراج بناءً على سنة ميلادك",
+    "sun_sign_guardians": "حراس البرج الشمسي",
+    "sun_sign_guardians_desc": "حراس لشخصيتك الخارجية واتجاه حياتك بناءً على تاريخ ميلادك",
+    "moon_sign_guardians": "حراس البرج القمري",
+    "moon_sign_guardians_desc": "حراس لعالمك العاطفي واحتياجاتك الداخلية، تعزيز الطاقة العاطفية",
+    "wealth_fortune": "الثروة والحظ",
+    "wealth_fortune_desc": "تعزيز التطور المهني، جذب الثروة والازدهار",
+    "health_safety": "الصحة والسلامة",
+    "health_safety_desc": "صد الأمراض والكوارث، ضمان السلام والصحة",
+    "wisdom_study": "الحكمة والدراسة",
+    "wisdom_study_desc": "فتح الحكمة، التقدم الأكاديمي والنجاح في الامتحانات",
+    "inner_peace": "السلام الداخلي",
+    "inner_peace_desc": "تهدئة العقل، إزالة القلق، تحقيق الهدوء الداخلي"
   },
   "products": {
     "title": "إكسسوارات مباركة",

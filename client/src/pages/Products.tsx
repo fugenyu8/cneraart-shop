@@ -30,11 +30,15 @@ export default function Products() {
 
   const { data: categories } = trpc.categories.list.useQuery();
 
-  // 快速筛选按钮
-  const quickFilters = [
-    { id: 6, label: t("categories.zodiac_guardian"), slug: "zodiac-guardian" },
-    { id: 7, label: t("categories.constellation_guardian"), slug: "constellation-guardian" },
-  ];
+  // 获取开光法物的子分类(parentId = 8)
+  const subcategories = categories?.filter(cat => cat.parentId === 8).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)) || [];
+  
+  // 快速筛选按钮 - 使用动态子分类
+  const quickFilters = subcategories.map(cat => ({
+    id: cat.id,
+    label: t(`categories.${cat.slug.replace(/-/g, '_')}`),
+    slug: cat.slug
+  }));
 
   return (
     <div className="min-h-screen bg-background">

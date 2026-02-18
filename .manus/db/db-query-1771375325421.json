@@ -1,0 +1,9 @@
+{
+  "query": "\nINSERT INTO categories (name, slug, description, parentId, displayOrder) VALUES\n('生肖守护', 'zodiac-guardians', '根据您的出生年份,为您提供专属的生肖守护法物', 8, 1),\n('太阳星座守护', 'sun-sign-guardians', '根据您的出生日期,守护您的外在性格与人生方向', 8, 2),\n('月亮星座守护', 'moon-sign-guardians', '守护您的情感世界与内心需求,加强情感能量', 8, 3),\n('招财旺运', 'wealth-fortune', '助力事业发展,招财纳福,提升财运', 8, 4),\n('平安健康', 'health-safety', '祛病消灾,保佑平安,增强体质', 8, 5),\n('智慧学业', 'wisdom-study', '开启智慧,学业进步,考试顺利', 8, 6),\n('心灵平和', 'inner-peace', '平复内心,消除烦恼,心灵宁静', 8, 7);\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nINSERT INTO categories (name, slug, description, parentId, displayOrder) VALUES\n('生肖守护', 'zodiac-guardians', '根据您的出生年份,为您提供专属的生肖守护法物', 8, 1),\n('太阳星座守护', 'sun-sign-guardians', '根据您的出生日期,守护您的外在性格与人生方向', 8, 2),\n('月亮星座守护', 'moon-sign-guardians', '守护您的情感世界与内心需求,加强情感能量', 8, 3),\n('招财旺运', 'wealth-fortune', '助力事业发展,招财纳福,提升财运', 8, 4),\n('平安健康', 'health-safety', '祛病消灾,保佑平安,增强体质', 8, 5),\n('智慧学业', 'wisdom-study', '开启智慧,学业进步,考试顺利', 8, 6),\n('心灵平和', 'inner-peace', '平复内心,消除烦恼,心灵宁静', 8, 7);\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 67
+}

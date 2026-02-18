@@ -1,0 +1,9 @@
+{
+  "query": "\nUPDATE products SET categoryId = (SELECT id FROM categories WHERE slug = 'zodiac-guardians') \nWHERE name LIKE '%Rat Guardian Pendant%' OR name LIKE '%Ox Guardian Pendant%' \nOR name LIKE '%Tiger Guardian Pendant%' OR name LIKE '%Rabbit Guardian Pendant%'\nOR name LIKE '%Dragon Guardian Pendant%' OR name LIKE '%Snake Guardian Pendant%'\nOR name LIKE '%Horse Guardian Pendant%' OR name LIKE '%Goat Guardian Pendant%'\nOR name LIKE '%Monkey Guardian Pendant%' OR name LIKE '%Rooster Guardian Pendant%'\nOR name LIKE '%Dog Guardian Pendant%' OR name LIKE '%Pig Guardian Pendant%';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nUPDATE products SET categoryId = (SELECT id FROM categories WHERE slug = 'zodiac-guardians') \nWHERE name LIKE '%Rat Guardian Pendant%' OR name LIKE '%Ox Guardian Pendant%' \nOR name LIKE '%Tiger Guardian Pendant%' OR name LIKE '%Rabbit Guardian Pendant%'\nOR name LIKE '%Dragon Guardian Pendant%' OR name LIKE '%Snake Guardian Pendant%'\nOR name LIKE '%Horse Guardian Pendant%' OR name LIKE '%Goat Guardian Pendant%'\nOR name LIKE '%Monkey Guardian Pendant%' OR name LIKE '%Rooster Guardian Pendant%'\nOR name LIKE '%Dog Guardian Pendant%' OR name LIKE '%Pig Guardian Pendant%';\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 67
+}

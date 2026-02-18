@@ -352,7 +352,21 @@
   },
   "categories": {
     "zodiac_guardian": "Gardien du Zodiaque",
-    "constellation_guardian": "Gardien de Constellation"
+    "constellation_guardian": "Gardien de Constellation",
+    "zodiac_guardians": "Gardiens du Zodiaque",
+    "zodiac_guardians_desc": "Artefacts de gardien du zodiaque exclusifs basés sur votre année de naissance",
+    "sun_sign_guardians": "Gardiens du Signe Solaire",
+    "sun_sign_guardians_desc": "Gardiens pour votre personnalité extérieure et direction de vie basés sur votre date de naissance",
+    "moon_sign_guardians": "Gardiens du Signe Lunaire",
+    "moon_sign_guardians_desc": "Gardiens pour votre monde émotionnel et besoins intérieurs, renforçant l'énergie émotionnelle",
+    "wealth_fortune": "Richesse & Fortune",
+    "wealth_fortune_desc": "Stimuler le développement de carrière, attirer richesse et prospérité",
+    "health_safety": "Santé & Sécurité",
+    "health_safety_desc": "Éloigner les maladies et les catastrophes, assurer la paix et la santé",
+    "wisdom_study": "Sagesse & Étude",
+    "wisdom_study_desc": "Débloquer la sagesse, progrès académique et réussite aux examens",
+    "inner_peace": "Paix Intérieure",
+    "inner_peace_desc": "Calmer l'esprit, éliminer les soucis, atteindre la tranquillité intérieure"
   },
   "guardianFinder": {
     "title": "Trouvez Votre Pendentif Gardien",

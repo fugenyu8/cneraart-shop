@@ -220,7 +220,21 @@
   },
   "categories": {
     "zodiac_guardian": "干支守護",
-    "constellation_guardian": "星座守護"
+    "constellation_guardian": "星座守護",
+    "zodiac_guardians": "十二支の守護者",
+    "zodiac_guardians_desc": "生まれ年に基づく専属の十二支守護アーティファクト",
+    "sun_sign_guardians": "太陽星座の守護者",
+    "sun_sign_guardians_desc": "生年月日に基づく外向的な性格と人生の方向性の守護者",
+    "moon_sign_guardians": "月星座の守護者",
+    "moon_sign_guardians_desc": "感情の世界と内なるニーズの守護者、感情エネルギーを強化",
+    "wealth_fortune": "財運と幸運",
+    "wealth_fortune_desc": "キャリア開発を促進し、富と繁栄を引き寄せる",
+    "health_safety": "健康と安全",
+    "health_safety_desc": "病気や災害を遠ざけ、平和と健康を確保",
+    "wisdom_study": "知恵と学業",
+    "wisdom_study_desc": "知恵を解き放ち、学業の進歩と試験の成功",
+    "inner_peace": "内なる平和",
+    "inner_peace_desc": "心を落ち着かせ、悩みを取り除き、内なる静けさを達成"
   },
   "products": {
     "title": "開光アクセサリー",

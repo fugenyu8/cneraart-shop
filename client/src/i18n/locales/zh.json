@@ -439,7 +439,21 @@
   },
   "categories": {
     "zodiac_guardian": "生肖守护",
-    "constellation_guardian": "星座守护"
+    "constellation_guardian": "星座守护",
+    "zodiac_guardians": "生肖守护",
+    "zodiac_guardians_desc": "根据您的出生年份,为您提供专属的生肖守护法物",
+    "sun_sign_guardians": "太阳星座守护",
+    "sun_sign_guardians_desc": "根据您的出生日期,守护您的外在性格与人生方向",
+    "moon_sign_guardians": "月亮星座守护",
+    "moon_sign_guardians_desc": "守护您的情感世界与内心需求,加强情感能量",
+    "wealth_fortune": "招财旺运",
+    "wealth_fortune_desc": "助力事业发展,招财纳福,提升财运",
+    "health_safety": "平安健康",
+    "health_safety_desc": "祛病消灾,保佑平安,增强体质",
+    "wisdom_study": "智慧学业",
+    "wisdom_study_desc": "开启智慧,学业进步,考试顺利",
+    "inner_peace": "心灵平和",
+    "inner_peace_desc": "平复内心,消除烦恼,心灵宁静"
   },
   "guardianFinder": {
     "title": "找到您的守护吊坠",

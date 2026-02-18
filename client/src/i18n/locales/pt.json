@@ -220,7 +220,21 @@
   },
   "categories": {
     "zodiac_guardian": "Guardião do Zodíaco",
-    "constellation_guardian": "Guardião da Constelação"
+    "constellation_guardian": "Guardião da Constelação",
+    "zodiac_guardians": "Guardiões do Zodíaco",
+    "zodiac_guardians_desc": "Artefatos guardiões do zodíaco exclusivos baseados no seu ano de nascimento",
+    "sun_sign_guardians": "Guardiões do Signo Solar",
+    "sun_sign_guardians_desc": "Guardiões para sua personalidade exterior e direção de vida baseados na sua data de nascimento",
+    "moon_sign_guardians": "Guardiões do Signo Lunar",
+    "moon_sign_guardians_desc": "Guardiões para seu mundo emocional e necessidades internas, fortalecendo a energia emocional",
+    "wealth_fortune": "Riqueza e Fortuna",
+    "wealth_fortune_desc": "Impulsionar o desenvolvimento da carreira, atrair riqueza e prosperidade",
+    "health_safety": "Saúde e Segurança",
+    "health_safety_desc": "Afastar doenças e desastres, garantir paz e saúde",
+    "wisdom_study": "Sabedoria e Estudo",
+    "wisdom_study_desc": "Desbloquear sabedoria, progresso acadêmico e sucesso em exames",
+    "inner_peace": "Paz Interior",
+    "inner_peace_desc": "Acalmar a mente, eliminar preocupações, alcançar tranquilidade interior"
   },
   "products": {
     "title": "Acessórios Abençoados",

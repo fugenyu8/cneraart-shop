@@ -213,7 +213,21 @@
   },
   "categories": {
     "zodiac_guardian": "Penjaga Zodiak",
-    "constellation_guardian": "Penjaga Konstelasi"
+    "constellation_guardian": "Penjaga Konstelasi",
+    "zodiac_guardians": "Penjaga Zodiak",
+    "zodiac_guardians_desc": "Artefak penjaga zodiak eksklusif berdasarkan tahun kelahiran Anda",
+    "sun_sign_guardians": "Penjaga Tanda Matahari",
+    "sun_sign_guardians_desc": "Penjaga kepribadian luar dan arah hidup Anda berdasarkan tanggal lahir Anda",
+    "moon_sign_guardians": "Penjaga Tanda Bulan",
+    "moon_sign_guardians_desc": "Penjaga dunia emosional dan kebutuhan batin Anda, memperkuat energi emosional",
+    "wealth_fortune": "Kekayaan & Keberuntungan",
+    "wealth_fortune_desc": "Mendorong pengembangan karir, menarik kekayaan dan kemakmuran",
+    "health_safety": "Kesehatan & Keamanan",
+    "health_safety_desc": "Menangkal penyakit dan bencana, memastikan kedamaian dan kesehatan",
+    "wisdom_study": "Kebijaksanaan & Studi",
+    "wisdom_study_desc": "Membuka kebijaksanaan, kemajuan akademis dan kesuksesan ujian",
+    "inner_peace": "Kedamaian Batin",
+    "inner_peace_desc": "Menenangkan pikiran, menghilangkan kekhawatiran, mencapai ketenangan batin"
   },
   "products": {
     "title": "Aksesori Diberkati",

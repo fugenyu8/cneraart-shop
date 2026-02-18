@@ -352,7 +352,21 @@
   },
   "categories": {
     "zodiac_guardian": "Guardián del Zodiaco",
-    "constellation_guardian": "Guardián de Constelación"
+    "constellation_guardian": "Guardián de Constelación",
+    "zodiac_guardians": "Guardianes del Zodíaco",
+    "zodiac_guardians_desc": "Artefactos guardianes del zodíaco exclusivos basados en tu año de nacimiento",
+    "sun_sign_guardians": "Guardianes del Signo Solar",
+    "sun_sign_guardians_desc": "Guardianes para tu personalidad exterior y dirección de vida basados en tu fecha de nacimiento",
+    "moon_sign_guardians": "Guardianes del Signo Lunar",
+    "moon_sign_guardians_desc": "Guardianes para tu mundo emocional y necesidades internas, fortaleciendo la energía emocional",
+    "wealth_fortune": "Riqueza y Fortuna",
+    "wealth_fortune_desc": "Impulsar el desarrollo profesional, atraer riqueza y prosperidad",
+    "health_safety": "Salud y Seguridad",
+    "health_safety_desc": "Alejar enfermedades y desastres, asegurar paz y salud",
+    "wisdom_study": "Sabiduría y Estudio",
+    "wisdom_study_desc": "Desbloquear sabiduría, progreso académico y éxito en exámenes",
+    "inner_peace": "Paz Interior",
+    "inner_peace_desc": "Calmar la mente, eliminar preocupaciones, lograr tranquilidad interior"
   },
   "guardianFinder": {
     "title": "Encuentra Tu Colgante Guardián",

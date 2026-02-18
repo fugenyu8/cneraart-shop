@@ -220,7 +220,21 @@
   },
   "categories": {
     "zodiac_guardian": "십이지 수호",
-    "constellation_guardian": "별자리 수호"
+    "constellation_guardian": "별자리 수호",
+    "zodiac_guardians": "십이지 수호자",
+    "zodiac_guardians_desc": "출생 연도를 기반으로 한 전용 십이지 수호 유물",
+    "sun_sign_guardians": "태양 별자리 수호자",
+    "sun_sign_guardians_desc": "생년월일을 기반으로 한 외향적 성격과 인생 방향의 수호자",
+    "moon_sign_guardians": "달 별자리 수호자",
+    "moon_sign_guardians_desc": "감정 세계와 내면의 필요를 위한 수호자, 감정 에너지 강화",
+    "wealth_fortune": "재물과 행운",
+    "wealth_fortune_desc": "경력 개발 촉진, 부와 번영 유치",
+    "health_safety": "건강과 안전",
+    "health_safety_desc": "질병과 재난을 물리치고 평화와 건강 보장",
+    "wisdom_study": "지혜와 학업",
+    "wisdom_study_desc": "지혜를 열고 학업 진보와 시험 성공",
+    "inner_peace": "내면의 평화",
+    "inner_peace_desc": "마음을 진정시키고 걱정을 없애고 내면의 평온함 달성"
   },
   "products": {
     "title": "개광 액세서리",

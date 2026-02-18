@@ -1,0 +1,9 @@
+{
+  "query": "\nUPDATE products SET categoryId = (SELECT id FROM categories WHERE slug = 'sun-sign-guardians') \nWHERE (name LIKE '%Aries Guardian Pendant%' OR name LIKE '%Taurus Guardian Pendant%' \nOR name LIKE '%Gemini Guardian Pendant%' OR name LIKE '%Cancer Guardian Pendant%'\nOR name LIKE '%Leo Guardian Pendant%' OR name LIKE '%Virgo Guardian Pendant%'\nOR name LIKE '%Libra Guardian Pendant%' OR name LIKE '%Scorpio Guardian Pendant%'\nOR name LIKE '%Sagittarius Guardian Pendant%' OR name LIKE '%Capricorn Guardian Pendant%'\nOR name LIKE '%Aquarius Guardian Pendant%' OR name LIKE '%Pisces Guardian Pendant%')\nAND name NOT LIKE '%Moon Crescent%';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nUPDATE products SET categoryId = (SELECT id FROM categories WHERE slug = 'sun-sign-guardians') \nWHERE (name LIKE '%Aries Guardian Pendant%' OR name LIKE '%Taurus Guardian Pendant%' \nOR name LIKE '%Gemini Guardian Pendant%' OR name LIKE '%Cancer Guardian Pendant%'\nOR name LIKE '%Leo Guardian Pendant%' OR name LIKE '%Virgo Guardian Pendant%'\nOR name LIKE '%Libra Guardian Pendant%' OR name LIKE '%Scorpio Guardian Pendant%'\nOR name LIKE '%Sagittarius Guardian Pendant%' OR name LIKE '%Capricorn Guardian Pendant%'\nOR name LIKE '%Aquarius Guardian Pendant%' OR name LIKE '%Pisces Guardian Pendant%')\nAND name NOT LIKE '%Moon Crescent%';\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 67
+}

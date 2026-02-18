@@ -220,7 +220,21 @@
   },
   "categories": {
     "zodiac_guardian": "Người Bảo Vệ Cung Hoàng Đạo",
-    "constellation_guardian": "Người Bảo Vệ Chòm Sao"
+    "constellation_guardian": "Người Bảo Vệ Chòm Sao",
+    "zodiac_guardians": "Người Bảo Vệ Cung Hoàng Đạo",
+    "zodiac_guardians_desc": "Hiện vật bảo vệ cung hoàng đạo độc quyền dựa trên năm sinh của bạn",
+    "sun_sign_guardians": "Người Bảo Vệ Cung Mặt Trời",
+    "sun_sign_guardians_desc": "Người bảo vệ tính cách bên ngoài và hướng đi cuộc sống của bạn dựa trên ngày sinh",
+    "moon_sign_guardians": "Người Bảo Vệ Cung Mặt Trăng",
+    "moon_sign_guardians_desc": "Người bảo vệ thế giới cảm xúc và nhu cầu nội tâm của bạn, tăng cường năng lượng cảm xúc",
+    "wealth_fortune": "Tài Lộc và Vận May",
+    "wealth_fortune_desc": "Thúc đẩy phát triển sự nghiệp, thu hút tài lộc và thịnh vượng",
+    "health_safety": "Sức Khỏe và An Toàn",
+    "health_safety_desc": "Xua đuổi bệnh tật và tai họa, đảm bảo bình an và sức khỏe",
+    "wisdom_study": "Trí Tuệ và Học Tập",
+    "wisdom_study_desc": "Mở khóa trí tuệ, tiến bộ học tập và thành công trong kỳ thi",
+    "inner_peace": "Bình An Nội Tâm",
+    "inner_peace_desc": "Xoa dịu tâm trí, loại bỏ lo lắng, đạt được sự thanh thản nội tâm"
   },
   "products": {
     "title": "Phụ Kiện Được Phù Hộ",

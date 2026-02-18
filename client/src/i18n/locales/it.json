@@ -352,7 +352,21 @@
   },
   "categories": {
     "zodiac_guardian": "Guardiano dello Zodiaco",
-    "constellation_guardian": "Guardiano della Costellazione"
+    "constellation_guardian": "Guardiano della Costellazione",
+    "zodiac_guardians": "Guardiani dello Zodiaco",
+    "zodiac_guardians_desc": "Artefatti guardiani dello zodiaco esclusivi basati sul tuo anno di nascita",
+    "sun_sign_guardians": "Guardiani del Segno Solare",
+    "sun_sign_guardians_desc": "Guardiani per la tua personalità esteriore e direzione di vita basati sulla tua data di nascita",
+    "moon_sign_guardians": "Guardiani del Segno Lunare",
+    "moon_sign_guardians_desc": "Guardiani per il tuo mondo emotivo e bisogni interiori, rafforzando l'energia emotiva",
+    "wealth_fortune": "Ricchezza e Fortuna",
+    "wealth_fortune_desc": "Stimolare lo sviluppo della carriera, attrarre ricchezza e prosperità",
+    "health_safety": "Salute e Sicurezza",
+    "health_safety_desc": "Allontanare malattie e disastri, garantire pace e salute",
+    "wisdom_study": "Saggezza e Studio",
+    "wisdom_study_desc": "Sbloccare la saggezza, progresso accademico e successo negli esami",
+    "inner_peace": "Pace Interiore",
+    "inner_peace_desc": "Calmare la mente, eliminare le preoccupazioni, raggiungere la tranquillità interiore"
   },
   "guardianFinder": {
     "title": "Trova Il Tuo Ciondolo Guardiano",

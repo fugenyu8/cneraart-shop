@@ -384,7 +384,21 @@
   },
   "categories": {
     "zodiac_guardian": "Zodiac Guardian",
-    "constellation_guardian": "Constellation Guardian"
+    "constellation_guardian": "Constellation Guardian",
+    "zodiac_guardians": "Zodiac Guardians",
+    "zodiac_guardians_desc": "Exclusive zodiac guardian artifacts based on your birth year",
+    "sun_sign_guardians": "Sun Sign Guardians",
+    "sun_sign_guardians_desc": "Guardians for your outer personality and life direction based on your birth date",
+    "moon_sign_guardians": "Moon Sign Guardians",
+    "moon_sign_guardians_desc": "Guardians for your emotional world and inner needs, enhancing emotional energy",
+    "wealth_fortune": "Wealth & Fortune",
+    "wealth_fortune_desc": "Boost career development, attract wealth and prosperity",
+    "health_safety": "Health & Safety",
+    "health_safety_desc": "Ward off illness and disasters, ensure peace and health",
+    "wisdom_study": "Wisdom & Study",
+    "wisdom_study_desc": "Unlock wisdom, academic progress, and exam success",
+    "inner_peace": "Inner Peace",
+    "inner_peace_desc": "Calm the mind, eliminate worries, achieve inner tranquility"
   },
   "guardianFinder": {
     "title": "Find Your Guardian Pendant",

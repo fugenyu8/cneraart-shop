@@ -352,7 +352,21 @@
   },
   "categories": {
     "zodiac_guardian": "Sternzeichen-Wächter",
-    "constellation_guardian": "Sternbild-Wächter"
+    "constellation_guardian": "Sternbild-Wächter",
+    "zodiac_guardians": "Tierkreis-Wächter",
+    "zodiac_guardians_desc": "Exklusive Tierkreis-Schutzartefakte basierend auf Ihrem Geburtsjahr",
+    "sun_sign_guardians": "Sonnenzeichen-Wächter",
+    "sun_sign_guardians_desc": "Wächter für Ihre äußere Persönlichkeit und Lebensrichtung basierend auf Ihrem Geburtsdatum",
+    "moon_sign_guardians": "Mondzeichen-Wächter",
+    "moon_sign_guardians_desc": "Wächter für Ihre emotionale Welt und innere Bedürfnisse, stärken emotionale Energie",
+    "wealth_fortune": "Wohlstand & Glück",
+    "wealth_fortune_desc": "Fördern Sie Karriereentwicklung, ziehen Sie Wohlstand und Wohlstand an",
+    "health_safety": "Gesundheit & Sicherheit",
+    "health_safety_desc": "Wehren Sie Krankheiten und Katastrophen ab, sorgen Sie für Frieden und Gesundheit",
+    "wisdom_study": "Weisheit & Studium",
+    "wisdom_study_desc": "Weisheit freischalten, akademischer Fortschritt und Prüfungserfolg",
+    "inner_peace": "Innerer Frieden",
+    "inner_peace_desc": "Beruhigen Sie den Geist, beseitigen Sie Sorgen, erreichen Sie innere Ruhe"
   },
   "guardianFinder": {
     "title": "Finden Sie Ihren Schutzanhänger",
