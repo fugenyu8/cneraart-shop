@@ -71,11 +71,11 @@ export default function Prayer() {
       <header className="bg-gradient-to-r from-red-900 to-amber-900 text-white py-4 shadow-lg">
         <div className="container mx-auto flex items-center justify-between">
           <Link href="/">
-            <a className="text-2xl font-bold">☯ {t("common.siteName")}</a>
+            <a className="text-2xl font-bold">☯ {t("common.site_name")}</a>
           </Link>
           <nav className="flex gap-6">
             <Link href="/products"><a className="hover:text-amber-200">{t("nav.products")}</a></Link>
-            <Link href="/fortune"><a className="hover:text-amber-200">{t("nav.fortuneServices")}</a></Link>
+            <Link href="/fortune"><a className="hover:text-amber-200">{t("nav.fortune_services")}</a></Link>
             <Link href="/cart"><a className="hover:text-amber-200">{t("nav.cart")}</a></Link>
           </nav>
         </div>

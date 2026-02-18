@@ -1,0 +1,8 @@
+{
+  "query": "SELECT p.id, p.name, p.slug, pc.category_id \nFROM products p \nLEFT JOIN product_categories pc ON p.id = pc.product_id \nWHERE pc.category_id = 8 \nLIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, p.slug, pc.category_id \nFROM products p \nLEFT JOIN product_categories pc ON p.id = pc.product_id \nWHERE pc.category_id = 8 \nLIMIT 10;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1146 (42S02) at line 1: Table '8wrufpruxpmzzwd4zeeudg.product_categories' doesn't exist"
+  ]
+}

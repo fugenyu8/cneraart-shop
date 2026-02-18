@@ -36,7 +36,8 @@
     "cart": "장바구니",
     "account": "내 계정",
     "login": "로그인",
-    "logout": "로그아웃"
+    "logout": "로그아웃",
+    "fortune_services": "관상학 및 풍수"
   },
   "aboutUs": {
     "title": "회사 소개",

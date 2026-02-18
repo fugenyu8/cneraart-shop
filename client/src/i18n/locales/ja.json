@@ -36,7 +36,8 @@
     "cart": "カート",
     "account": "マイアカウント",
     "login": "ログイン",
-    "logout": "ログアウト"
+    "logout": "ログアウト",
+    "fortune_services": "相学と風水"
   },
   "aboutUs": {
     "title": "私たちについて",

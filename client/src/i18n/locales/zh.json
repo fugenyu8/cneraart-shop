@@ -14,7 +14,8 @@
     "cart": "购物车",
     "account": "我的账户",
     "login": "登录",
-    "logout": "退出登录"
+    "logout": "退出登录",
+    "fortune_services": "相学风水"
   },
   "hero": {
     "title": "来自东方古老智慧",

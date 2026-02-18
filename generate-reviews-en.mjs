@@ -129,10 +129,12 @@ const followUpTemplates = [
   "Coming back to say this continues to exceed my expectations. Worth every penny!"
 ];
 
-// 生成随机日期(8个月前到现在)
+// 生成随机日期(2025年6月-2026年2月)
 function getRandomDate() {
-  const now = new Date();
-  const eightMonthsAgo = new Date(now.getTime() - 8 * 30 * 24 * 60 * 60 * 1000);
+  // 现在是2026年2月19日
+  const now = new Date('2026-02-19T23:59:59');
+  // 8个月前是2025年6月19日
+  const eightMonthsAgo = new Date('2025-06-19T00:00:00');
   const randomTime = eightMonthsAgo.getTime() + Math.random() * (now.getTime() - eightMonthsAgo.getTime());
   return new Date(randomTime);
 }

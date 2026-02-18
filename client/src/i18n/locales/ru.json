@@ -36,7 +36,8 @@
     "cart": "Корзина",
     "account": "Мой аккаунт",
     "login": "Войти",
-    "logout": "Выйти"
+    "logout": "Выйти",
+    "fortune_services": "Физиогномика и Фэн-шуй"
   },
   "aboutUs": {
     "title": "О НАС",
