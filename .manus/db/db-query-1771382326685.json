@@ -1,0 +1,24 @@
+{
+  "query": "SELECT id, name, slug, categoryId, stock FROM products WHERE categoryId = 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug, categoryId, stock FROM products WHERE categoryId = 1;",
+  "rows": [
+    {
+      "id": "510060",
+      "name": "Fortune Energy Analysis Report",
+      "slug": "fortune-energy-analysis-report",
+      "categoryId": "1",
+      "stock": "999"
+    },
+    {
+      "id": "510061",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony",
+      "slug": "destiny-analysis-wutai-mountain-blessing",
+      "categoryId": "1",
+      "stock": "999"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tcategoryId\tstock\n510060\tFortune Energy Analysis Report\tfortune-energy-analysis-report\t1\t999\n510061\tDestiny Analysis + Wutai Mountain Blessing Ceremony\tdestiny-analysis-wutai-mountain-blessing\t1\t999\n",
+  "stderr": "",
+  "execution_time_ms": 61
+}

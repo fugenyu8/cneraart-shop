@@ -81,6 +81,16 @@
     "service_fengshui_short": "Feng Shui Analysis"
   },
   "products": {
+    "510060": {
+      "name": "Fortune Energy Analysis Report",
+      "shortDesc": "Unlock Ancient Eastern Wisdom, Explore Your Destiny Energy Code",
+      "description": "In-depth destiny analysis based on birth data, including Bazi structure interpretation and annual fortune analysis, delivered in 3-5 days"
+    },
+    "510061": {
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony",
+      "shortDesc": "Deep Destiny Analysis + Sacred Wutai Mountain Blessing, Dual Protection for Your Life Path",
+      "description": "Complete destiny report + Wutai Mountain proxy blessing service (lamp/incense), with video recording, delivered in 10-15 days"
+    },
     "title": "Blessed Accessories",
     "search_placeholder": "Search products...",
     "filter_all": "All Categories",

@@ -81,6 +81,16 @@
     "service_fengshui_short": "Analyse Feng Shui"
   },
   "products": {
+    "510060": {
+      "name": "Rapport d'Analyse de l'Énergie du Destin",
+      "shortDesc": "Déverrouillez la Sagesse Orientale Ancienne, Explorez Votre Code d'Énergie du Destin",
+      "description": "Analyse approfondie du destin basée sur les données de naissance, incluant l'interprétation de la structure Bazi et l'analyse de la fortune annuelle, livré en 3-5 jours"
+    },
+    "510061": {
+      "name": "Analyse du Destin + Cérémonie de Bénédiction du Mont Wutai",
+      "shortDesc": "Analyse Profonde du Destin + Bénédiction Sacrée du Mont Wutai, Double Protection pour Votre Chemin de Vie",
+      "description": "Rapport complet sur le destin + service de bénédiction par procuration du Mont Wutai (lampe/encens), avec enregistrement vidéo, livré en 10-15 jours"
+    },
     "title": "Accessoires Bénis",
     "search_placeholder": "Rechercher des produits...",
     "filter_all": "Toutes les catégories",

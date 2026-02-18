@@ -1,0 +1,22 @@
+{
+  "query": "UPDATE products SET status = 'published' WHERE id IN (510060, 510061);\n\nSELECT id, name, status, categoryId FROM products WHERE id IN (510060, 510061);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute UPDATE products SET status = 'published' WHERE id IN (510060, 510061);\n\nSELECT id, name, status, categoryId FROM products WHERE id IN (510060, 510061);",
+  "rows": [
+    {
+      "id": "510060",
+      "name": "Fortune Energy Analysis Report",
+      "status": "published",
+      "categoryId": "1"
+    },
+    {
+      "id": "510061",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony",
+      "status": "published",
+      "categoryId": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tstatus\tcategoryId\n510060\tFortune Energy Analysis Report\tpublished\t1\n510061\tDestiny Analysis + Wutai Mountain Blessing Ceremony\tpublished\t1\n",
+  "stderr": "",
+  "execution_time_ms": 67
+}

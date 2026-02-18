@@ -241,6 +241,16 @@
     "inner_peace_desc": "Xoa dịu tâm trí, loại bỏ lo lắng, đạt được sự thanh thản nội tâm"
   },
   "products": {
+    "510060": {
+      "name": "Báo Cáo Phân Tích Năng Lượng Vận Mệnh",
+      "shortDesc": "Mở Khóa Trí Tuệ Phương Đông Cổ Đại, Khám Phá Mã Năng Lượng Vận Mệnh Của Bạn",
+      "description": "Phân tích vận mệnh sâu sắc dựa trên dữ liệu sinh, bao gồm giải thích cấu trúc Bát Tự và phân tích vận may hàng năm, giao hàng trong 3-5 ngày"
+    },
+    "510061": {
+      "name": "Phân Tích Vận Mệnh + Nghi Lễ Chúc Phúc Núi Ngũ Đài",
+      "shortDesc": "Phân Tích Vận Mệnh Sâu Sắc + Phúc Lành Thiêng Liêng Từ Núi Ngũ Đài, Bảo Vệ Kép Cho Con Đường Cuộc Đời Bạn",
+      "description": "Báo cáo vận mệnh đầy đủ + dịch vụ chúc phúc ủy quyền từ Núi Ngũ Đài (đèn/hương), có ghi hình video, giao hàng trong 10-15 ngày"
+    },
     "title": "Phụ Kiện Được Phù Hộ",
     "subtitle": "Phụ kiện được phù hộ được tuyển chọn, kế thừa trí tuệ ngàn năm, bảo vệ hành trình cuộc đời bạn",
     "all_products": "Tất Cả Sản Phẩm",

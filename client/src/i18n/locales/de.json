@@ -81,6 +81,16 @@
     "service_fengshui_short": "Feng Shui Analyse"
   },
   "products": {
+    "510060": {
+      "name": "Schicksalsenergie-Analysebericht",
+      "shortDesc": "Entschlüsseln Sie alte östliche Weisheit, erkunden Sie Ihren Schicksalsenergie-Code",
+      "description": "Tiefgehende Schicksalsanalyse basierend auf Geburtsdaten, einschließlich Bazi-Strukturinterpretation und jährlicher Glücksanalyse, Lieferung in 3-5 Tagen"
+    },
+    "510061": {
+      "name": "Schicksalsanalyse + Wutai-Berg-Segenszeremonie",
+      "shortDesc": "Tiefe Schicksalsanalyse + Heiliger Wutai-Berg-Segen, Doppelter Schutz für Ihren Lebensweg",
+      "description": "Vollständiger Schicksalsbericht + Wutai-Berg-Stellvertreter-Segensdienst (Lampe/Räucherstäbchen), mit Videoaufzeichnung, Lieferung in 10-15 Tagen"
+    },
     "title": "Gesegnete Accessoires",
     "search_placeholder": "Produkte suchen...",
     "filter_all": "Alle Kategorien",

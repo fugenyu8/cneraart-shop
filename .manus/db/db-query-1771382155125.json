@@ -1,0 +1,13 @@
+{
+  "query": "-- 先删除商品图片\nDELETE FROM product_images WHERE productId IN (510060, 510061);\n\n-- 再删除商品本身\nDELETE FROM products WHERE id IN (510060, 510061);\n\n-- 验证删除\nSELECT COUNT(*) as remaining_fortune_products FROM products WHERE categoryId = 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute -- 先删除商品图片\nDELETE FROM product_images WHERE productId IN (510060, 510061);\n\n-- 再删除商品本身\nDELETE FROM products WHERE id IN (510060, 510061);\n\n-- 验证删除\nSELECT COUNT(*) as remaining_fortune_products FROM products WHERE categoryId = 1;",
+  "rows": [
+    {
+      "remaining_fortune_products": "0"
+    }
+  ],
+  "messages": [],
+  "stdout": "remaining_fortune_products\n0\n",
+  "stderr": "",
+  "execution_time_ms": 71
+}

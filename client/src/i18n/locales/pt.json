@@ -241,6 +241,16 @@
     "inner_peace_desc": "Acalmar a mente, eliminar preocupações, alcançar tranquilidade interior"
   },
   "products": {
+    "510060": {
+      "name": "Relatório de Análise de Energia do Destino",
+      "shortDesc": "Desbloqueie a Sabedoria Oriental Antiga, Explore Seu Código de Energia do Destino",
+      "description": "Análise profunda do destino baseada em dados de nascimento, incluindo interpretação da estrutura Bazi e análise da fortuna anual, entregue em 3-5 dias"
+    },
+    "510061": {
+      "name": "Análise do Destino + Cerimônia de Bênção do Monte Wutai",
+      "shortDesc": "Análise Profunda do Destino + Bênção Sagrada do Monte Wutai, Dupla Proteção para Seu Caminho de Vida",
+      "description": "Relatório completo do destino + serviço de bênção por procuração do Monte Wutai (lâmpada/incenso), com gravação de vídeo, entregue em 10-15 dias"
+    },
     "title": "Acessórios Abençoados",
     "subtitle": "Acessórios abençoados selecionados, herdando sabedoria milenar, protegendo sua jornada de vida",
     "all_products": "Todos os Produtos",
