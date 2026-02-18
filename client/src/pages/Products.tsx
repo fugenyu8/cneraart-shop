@@ -198,7 +198,7 @@ export default function Products() {
                     )}
                   </div>
                   <CardContent className="p-3 md:p-4">
-                    <h3 className="text-sm md:text-base font-bold mb-1 md:mb-2 group-hover:text-accent transition-colors line-clamp-1">
+                    <h3 className="text-sm md:text-base font-medium mb-1 md:mb-2 group-hover:text-accent transition-colors line-clamp-1">
                       {product.name}
                     </h3>
                     <p className="text-xs md:text-sm text-muted-foreground mb-2 md:mb-3 line-clamp-2">
