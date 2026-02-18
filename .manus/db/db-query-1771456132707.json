@@ -1,0 +1,292 @@
+{
+  "query": "SELECT id, name, slug, categoryId FROM products \nWHERE name LIKE '%Guardian%' \n   OR name LIKE '%Blessed%' \n   OR name LIKE '%Bracelet%' \n   OR name LIKE '%Pendant%' \n   OR name LIKE '%Zodiac%'\nORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug, categoryId FROM products \nWHERE name LIKE '%Guardian%' \n   OR name LIKE '%Blessed%' \n   OR name LIKE '%Bracelet%' \n   OR name LIKE '%Pendant%' \n   OR name LIKE '%Zodiac%'\nORDER BY id;",
+  "rows": [
+    {
+      "id": "120001",
+      "name": "Chinese Zodiac Guardian Pendant",
+      "slug": "chinese-zodiac-guardian-pendant",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120004",
+      "name": "Master-Infused Energy Bracelet",
+      "slug": "master-infused-energy-bracelet",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "120005",
+      "name": "Zodiac Constellation Guardian Pendant",
+      "slug": "zodiac-constellation-guardian-pendant",
+      "categoryId": "NULL"
+    },
+    {
+      "id": "510001",
+      "name": "Wutai Mountain Blessed Rat Guardian Pendant",
+      "slug": "wutai-mountain-rat-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510002",
+      "name": "Wutai Mountain Blessed Ox Guardian Pendant",
+      "slug": "wutai-mountain-ox-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510003",
+      "name": "Wutai Mountain Blessed Tiger Guardian Pendant",
+      "slug": "wutai-mountain-tiger-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510004",
+      "name": "Wutai Mountain Blessed Rabbit Guardian Pendant",
+      "slug": "wutai-mountain-rabbit-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510005",
+      "name": "Wutai Mountain Blessed Dragon Guardian Pendant",
+      "slug": "wutai-mountain-dragon-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510006",
+      "name": "Wutai Mountain Blessed Snake Guardian Pendant",
+      "slug": "wutai-mountain-snake-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510007",
+      "name": "Wutai Mountain Blessed Horse Guardian Pendant",
+      "slug": "wutai-mountain-horse-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510008",
+      "name": "Wutai Mountain Blessed Goat Guardian Pendant",
+      "slug": "wutai-mountain-goat-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510009",
+      "name": "Wutai Mountain Blessed Monkey Guardian Pendant",
+      "slug": "wutai-mountain-monkey-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510010",
+      "name": "Wutai Mountain Blessed Rooster Guardian Pendant",
+      "slug": "wutai-mountain-rooster-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510011",
+      "name": "Wutai Mountain Blessed Dog Guardian Pendant",
+      "slug": "wutai-mountain-dog-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510012",
+      "name": "Wutai Mountain Blessed Pig Guardian Pendant",
+      "slug": "wutai-mountain-pig-zodiac-guardian-pendant",
+      "categoryId": "90001"
+    },
+    {
+      "id": "510013",
+      "name": "Wutai Mountain Blessed Aries Guardian Pendant",
+      "slug": "wutai-mountain-aries-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510014",
+      "name": "Wutai Mountain Blessed Taurus Guardian Pendant",
+      "slug": "wutai-mountain-taurus-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510015",
+      "name": "Wutai Mountain Blessed Gemini Guardian Pendant",
+      "slug": "wutai-mountain-gemini-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510016",
+      "name": "Wutai Mountain Blessed Cancer Guardian Pendant",
+      "slug": "wutai-mountain-cancer-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510017",
+      "name": "Wutai Mountain Blessed Leo Guardian Pendant",
+      "slug": "wutai-mountain-leo-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510018",
+      "name": "Wutai Mountain Blessed Virgo Guardian Pendant",
+      "slug": "wutai-mountain-virgo-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510019",
+      "name": "Wutai Mountain Blessed Libra Guardian Pendant",
+      "slug": "wutai-mountain-libra-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510020",
+      "name": "Wutai Mountain Blessed Scorpio Guardian Pendant",
+      "slug": "wutai-mountain-scorpio-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510021",
+      "name": "Wutai Mountain Blessed Sagittarius Guardian Pendant",
+      "slug": "wutai-mountain-sagittarius-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510022",
+      "name": "Wutai Mountain Blessed Capricorn Guardian Pendant",
+      "slug": "wutai-mountain-capricorn-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510023",
+      "name": "Wutai Mountain Blessed Aquarius Guardian Pendant",
+      "slug": "wutai-mountain-aquarius-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510024",
+      "name": "Wutai Mountain Blessed Pisces Guardian Pendant",
+      "slug": "wutai-mountain-pisces-constellation-pendant",
+      "categoryId": "90002"
+    },
+    {
+      "id": "510025",
+      "name": "Aries Zodiac Moon Crescent Pendant",
+      "slug": "aries-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510026",
+      "name": "Taurus Zodiac Moon Crescent Pendant",
+      "slug": "taurus-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510027",
+      "name": "Gemini Zodiac Moon Crescent Pendant",
+      "slug": "gemini-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510028",
+      "name": "Cancer Zodiac Moon Crescent Pendant",
+      "slug": "cancer-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510029",
+      "name": "Leo Zodiac Moon Crescent Pendant",
+      "slug": "leo-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510030",
+      "name": "Virgo Zodiac Moon Crescent Pendant",
+      "slug": "virgo-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510031",
+      "name": "Libra Zodiac Moon Crescent Pendant",
+      "slug": "libra-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510032",
+      "name": "Scorpio Zodiac Moon Crescent Pendant",
+      "slug": "scorpio-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510033",
+      "name": "Sagittarius Zodiac Moon Crescent Pendant",
+      "slug": "sagittarius-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510034",
+      "name": "Capricorn Zodiac Moon Crescent Pendant",
+      "slug": "capricorn-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510035",
+      "name": "Aquarius Zodiac Moon Crescent Pendant",
+      "slug": "aquarius-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510036",
+      "name": "Pisces Zodiac Moon Crescent Pendant",
+      "slug": "pisces-moon-crescent-pendant",
+      "categoryId": "90003"
+    },
+    {
+      "id": "510049",
+      "name": "Eastern Ancient Wisdom Text Pendant",
+      "slug": "eastern-ancient-wisdom-text-pendant",
+      "categoryId": "90006"
+    },
+    {
+      "id": "510050",
+      "name": "Heart Sutra Bracelet",
+      "slug": "heart-sutra-bracelet",
+      "categoryId": "90007"
+    },
+    {
+      "id": "510051",
+      "name": "Great Compassion Mantra Bracelet",
+      "slug": "great-compassion-mantra-bracelet",
+      "categoryId": "90005"
+    },
+    {
+      "id": "510052",
+      "name": "Shurangama Mantra Bracelet",
+      "slug": "shurangama-mantra-bracelet",
+      "categoryId": "90006"
+    },
+    {
+      "id": "510053",
+      "name": "Yellow Jambhala Bracelet",
+      "slug": "yellow-jambhala-bracelet",
+      "categoryId": "90004"
+    },
+    {
+      "id": "510054",
+      "name": "Amitabha Bracelet",
+      "slug": "amitabha-bracelet",
+      "categoryId": "90005"
+    },
+    {
+      "id": "510055",
+      "name": "Esoteric North Star Seven-Star Pendant",
+      "slug": "esoteric-north-star-seven-star-pendant",
+      "categoryId": "90004"
+    },
+    {
+      "id": "510058",
+      "name": "Incense Offering & Consecration Package with Blessed Amulet",
+      "slug": "incense-offering-consecration-package-blessed-amulet",
+      "categoryId": "60001"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tcategoryId\n120001\tChinese Zodiac Guardian Pendant\tchinese-zodiac-guardian-pendant\tNULL\n120004\tMaster-Infused Energy Bracelet\tmaster-infused-energy-bracelet\tNULL\n120005\tZodiac Constellation Guardian Pendant\tzodiac-constellation-guardian-pendant\tNULL\n510001\tWutai Mountain Blessed Rat Guardian Pendant\twutai-mountain-rat-zodiac-guardian-pendant\t90001\n510002\tWutai Mountain Blessed Ox Guardian Pendant\twutai-mountain-ox-zodiac-guardian-pendant\t90001\n510003\tWutai Mountain Blessed Tiger Guardian Pendant\twutai-mountain-tiger-zodiac-guardian-pendant\t90001\n510004\tWutai Mountain Blessed Rabbit Guardian Pendant\twutai-mountain-rabbit-zodiac-guardian-pendant\t90001\n510005\tWutai Mountain Blessed Dragon Guardian Pendant\twutai-mountain-dragon-zodiac-guardian-pendant\t90001\n510006\tWutai Mountain Blessed Snake Guardian Pendant\twutai-mountain-snake-zodiac-guardian-pendant\t90001\n510007\tWutai Mountain Blessed Horse Guardian Pendant\twutai-mountain-horse-zodiac-guardian-pendant\t90001\n510008\tWutai Mountain Blessed Goat Guardian Pendant\twutai-mountain-goat-zodiac-guardian-pendant\t90001\n510009\tWutai Mountain Blessed Monkey Guardian Pendant\twutai-mountain-monkey-zodiac-guardian-pendant\t90001\n510010\tWutai Mountain Blessed Rooster Guardian Pendant\twutai-mountain-rooster-zodiac-guardian-pendant\t90001\n510011\tWutai Mountain Blessed Dog Guardian Pendant\twutai-mountain-dog-zodiac-guardian-pendant\t90001\n510012\tWutai Mountain Blessed Pig Guardian Pendant\twutai-mountain-pig-zodiac-guardian-pendant\t90001\n510013\tWutai Mountain Blessed Aries Guardian Pendant\twutai-mountain-aries-constellation-pendant\t90002\n510014\tWutai Mountain Blessed Taurus Guardian Pendant\twutai-mountain-taurus-constellation-pendant\t90002\n510015\tWutai Mountain Blessed Gemini Guardian Pendant\twutai-mountain-gemini-constellation-pendant\t90002\n510016\tWutai Mountain Blessed Cancer Guardian Pendant\twutai-mountain-cancer-constellation-pendant\t90002\n510017\tWutai Mountain Blessed Leo Guardian Pendant\twutai-mountain-leo-constellation-pendant\t90002\n510018\tWutai Mountain Blessed Virgo Guardian Pendant\twutai-mountain-virgo-constellation-pendant\t90002\n510019\tWutai Mountain Blessed Libra Guardian Pendant\twutai-mountain-libra-constellation-pendant\t90002\n510020\tWutai Mountain Blessed Scorpio Guardian Pendant\twutai-mountain-scorpio-constellation-pendant\t90002\n510021\tWutai Mountain Blessed Sagittarius Guardian Pendant\twutai-mountain-sagittarius-constellation-pendant\t90002\n510022\tWutai Mountain Blessed Capricorn Guardian Pendant\twutai-mountain-capricorn-constellation-pendant\t90002\n510023\tWutai Mountain Blessed Aquarius Guardian Pendant\twutai-mountain-aquarius-constellation-pendant\t90002\n510024\tWutai Mountain Blessed Pisces Guardian Pendant\twutai-mountain-pisces-constellation-pendant\t90002\n510025\tAries Zodiac Moon Crescent Pendant\taries-moon-crescent-pendant\t90003\n510026\tTaurus Zodiac Moon Crescent Pendant\ttaurus-moon-crescent-pendant\t90003\n510027\tGemini Zodiac Moon Crescent Pendant\tgemini-moon-crescent-pendant\t90003\n510028\tCancer Zodiac Moon Crescent Pendant\tcancer-moon-crescent-pendant\t90003\n510029\tLeo Zodiac Moon Crescent Pendant\tleo-moon-crescent-pendant\t90003\n510030\tVirgo Zodiac Moon Crescent Pendant\tvirgo-moon-crescent-pendant\t90003\n510031\tLibra Zodiac Moon Crescent Pendant\tlibra-moon-crescent-pendant\t90003\n510032\tScorpio Zodiac Moon Crescent Pendant\tscorpio-moon-crescent-pendant\t90003\n510033\tSagittarius Zodiac Moon Crescent Pendant\tsagittarius-moon-crescent-pendant\t90003\n510034\tCapricorn Zodiac Moon Crescent Pendant\tcapricorn-moon-crescent-pendant\t90003\n510035\tAquarius Zodiac Moon Crescent Pendant\taquarius-moon-crescent-pendant\t90003\n510036\tPisces Zodiac Moon Crescent Pendant\tpisces-moon-crescent-pendant\t90003\n510049\tEastern Ancient Wisdom Text Pendant\teastern-ancient-wisdom-text-pendant\t90006\n510050\tHeart Sutra Bracelet\theart-sutra-bracelet\t90007\n510051\tGreat Compassion Mantra Bracelet\tgreat-compassion-mantra-bracelet\t90005\n510052\tShurangama Mantra Bracelet\tshurangama-mantra-bracelet\t90006\n510053\tYellow Jambhala Bracelet\tyellow-jambhala-bracelet\t90004\n510054\tAmitabha Bracelet\tamitabha-bracelet\t90005\n510055\tEsoteric North Star Seven-Star Pendant\tesoteric-north-star-seven-star-pendant\t90004\n510058\tIncense Offering & Consecration Package with Blessed Amulet\tincense-offering-consecration-package-blessed-amulet\t60001\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}
