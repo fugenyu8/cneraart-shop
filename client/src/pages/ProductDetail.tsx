@@ -287,9 +287,12 @@ export default function ProductDetail() {
 
         {/* 详细信息标签页 */}
         <Tabs defaultValue="description" className="mb-8 md:mb-12">
-          <TabsList className="grid w-full grid-cols-3 bg-card h-auto">
+          <TabsList className={`grid w-full ${product.suitableFor || product.efficacy || product.wearingGuide ? 'grid-cols-4' : 'grid-cols-3'} bg-card h-auto`}>
             <TabsTrigger value="description" className="text-sm md:text-base py-3">{t('product_detail.tab_description')}</TabsTrigger>
             <TabsTrigger value="blessing" className="text-sm md:text-base py-3">{t('product_detail.tab_blessing')}</TabsTrigger>
+            {(product.suitableFor || product.efficacy || product.wearingGuide) && (
+              <TabsTrigger value="efficacy" className="text-sm md:text-base py-3">{t('product_detail.tab_efficacy')}</TabsTrigger>
+            )}
             <TabsTrigger value="reviews" className="text-sm md:text-base py-3">{t('product_detail.tab_reviews')} ({product.reviews.length})</TabsTrigger>
           </TabsList>
 
@@ -316,6 +319,52 @@ export default function ProductDetail() {
               </CardContent>
             </Card>
           </TabsContent>
+
+          {(product.suitableFor || product.efficacy || product.wearingGuide) && (
+            <TabsContent value="efficacy" className="mt-6">
+              <Card className="bg-card">
+                <CardContent className="p-4 md:p-6">
+                  <div className="space-y-6">
+                    {product.suitableFor && (
+                      <div>
+                        <h3 className="text-lg font-medium mb-3 text-accent flex items-center gap-2">
+                          <Shield className="w-5 h-5" />
+                          {t('product_detail.efficacy_suitable_for')}
+                        </h3>
+                        <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
+                          {product.suitableFor}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {product.efficacy && (
+                      <div>
+                        <h3 className="text-lg font-medium mb-3 text-accent flex items-center gap-2">
+                          <Sparkles className="w-5 h-5" />
+                          {t('product_detail.efficacy_effects')}
+                        </h3>
+                        <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
+                          {product.efficacy}
+                        </div>
+                      </div>
+                    )}
+                    
+                    {product.wearingGuide && (
+                      <div>
+                        <h3 className="text-lg font-medium mb-3 text-accent flex items-center gap-2">
+                          <Info className="w-5 h-5" />
+                          {t('product_detail.efficacy_wearing_tips')}
+                        </h3>
+                        <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
+                          {product.wearingGuide}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          )}
 
           <TabsContent value="reviews" className="mt-6">
             {product.reviews.length > 0 ? (

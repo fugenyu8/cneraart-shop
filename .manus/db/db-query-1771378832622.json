@@ -1,0 +1,50 @@
+{
+  "query": "SELECT categoryId, COUNT(*) as count, GROUP_CONCAT(name SEPARATOR ', ') as products\nFROM products \nWHERE categoryId >= 60000\nGROUP BY categoryId\nORDER BY categoryId;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT categoryId, COUNT(*) as count, GROUP_CONCAT(name SEPARATOR ', ') as products\nFROM products \nWHERE categoryId >= 60000\nGROUP BY categoryId\nORDER BY categoryId;",
+  "rows": [
+    {
+      "categoryId": "60001",
+      "count": "4",
+      "products": "Wutai Mountain Incense Offering Service, Wutai Mountain Lamp Offering Service, Incense Offering & Consecration Package with Blessed Amulet, Complete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet"
+    },
+    {
+      "categoryId": "90001",
+      "count": "12",
+      "products": "Wutai Mountain Blessed Rat Guardian Pendant, Wutai Mountain Blessed Ox Guardian Pendant, Wutai Mountain Blessed Tiger Guardian Pendant, Wutai Mountain Blessed Rabbit Guardian Pendant, Wutai Mountain Blessed Dragon Guardian Pendant, Wutai Mountain Blessed Snake Guardian Pendant, Wutai Mountain Blessed Horse Guardian Pendant, Wutai Mountain Blessed Goat Guardian Pendant, Wutai Mountain Blessed Monkey Guardian Pendant, Wutai Mountain Blessed Rooster Guardian Pendant, Wutai Mountain Blessed Dog Guardian Pendant, Wutai Mountain Blessed Pig Guardian Pendant"
+    },
+    {
+      "categoryId": "90002",
+      "count": "12",
+      "products": "Wutai Mountain Blessed Aries Guardian Pendant, Wutai Mountain Blessed Taurus Guardian Pendant, Wutai Mountain Blessed Gemini Guardian Pendant, Wutai Mountain Blessed Cancer Guardian Pendant, Wutai Mountain Blessed Leo Guardian Pendant, Wutai Mountain Blessed Virgo Guardian Pendant, Wutai Mountain Blessed Libra Guardian Pendant, Wutai Mountain Blessed Scorpio Guardian Pendant, Wutai Mountain Blessed Sagittarius Guardian Pendant, Wutai Mountain Blessed Capricorn Guardian Pendant, Wutai Mountain Blessed Aquarius Guardian Pendant, Wutai Mountain Blessed Pisces Guardian Pendant"
+    },
+    {
+      "categoryId": "90003",
+      "count": "13",
+      "products": "Zodiac Moon Crescent Pendant, Aries Zodiac Moon Crescent Pendant, Taurus Zodiac Moon Crescent Pendant, Gemini Zodiac Moon Crescent Pendant, Cancer Zodiac Moon Crescent Pendant, Leo Zodiac Moon Crescent Pendant, Virgo Zodiac Moon Crescent Pendant, Libra Zodiac Moon Crescent Pendant, Scorpio Zodiac Moon Crescent Pendant, Sagittarius Zodiac Moon Crescent Pendant, Capricorn Zodiac Moon Crescent Pendant, Aquarius Zodiac Moon Crescent Pendant, Pisces Zodiac Moon Crescent Pendant"
+    },
+    {
+      "categoryId": "90004",
+      "count": "2",
+      "products": "Yellow Jambhala Bracelet, Esoteric North Star Seven-Star Pendant"
+    },
+    {
+      "categoryId": "90005",
+      "count": "2",
+      "products": "Great Compassion Mantra Bracelet, Amitabha Bracelet"
+    },
+    {
+      "categoryId": "90006",
+      "count": "2",
+      "products": "Eastern Ancient Wisdom Text Pendant, Shurangama Mantra Bracelet"
+    },
+    {
+      "categoryId": "90007",
+      "count": "1",
+      "products": "Heart Sutra Bracelet"
+    }
+  ],
+  "messages": [],
+  "stdout": "categoryId\tcount\tproducts\n60001\t4\tWutai Mountain Incense Offering Service, Wutai Mountain Lamp Offering Service, Incense Offering & Consecration Package with Blessed Amulet, Complete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet\n90001\t12\tWutai Mountain Blessed Rat Guardian Pendant, Wutai Mountain Blessed Ox Guardian Pendant, Wutai Mountain Blessed Tiger Guardian Pendant, Wutai Mountain Blessed Rabbit Guardian Pendant, Wutai Mountain Blessed Dragon Guardian Pendant, Wutai Mountain Blessed Snake Guardian Pendant, Wutai Mountain Blessed Horse Guardian Pendant, Wutai Mountain Blessed Goat Guardian Pendant, Wutai Mountain Blessed Monkey Guardian Pendant, Wutai Mountain Blessed Rooster Guardian Pendant, Wutai Mountain Blessed Dog Guardian Pendant, Wutai Mountain Blessed Pig Guardian Pendant\n90002\t12\tWutai Mountain Blessed Aries Guardian Pendant, Wutai Mountain Blessed Taurus Guardian Pendant, Wutai Mountain Blessed Gemini Guardian Pendant, Wutai Mountain Blessed Cancer Guardian Pendant, Wutai Mountain Blessed Leo Guardian Pendant, Wutai Mountain Blessed Virgo Guardian Pendant, Wutai Mountain Blessed Libra Guardian Pendant, Wutai Mountain Blessed Scorpio Guardian Pendant, Wutai Mountain Blessed Sagittarius Guardian Pendant, Wutai Mountain Blessed Capricorn Guardian Pendant, Wutai Mountain Blessed Aquarius Guardian Pendant, Wutai Mountain Blessed Pisces Guardian Pendant\n90003\t13\tZodiac Moon Crescent Pendant, Aries Zodiac Moon Crescent Pendant, Taurus Zodiac Moon Crescent Pendant, Gemini Zodiac Moon Crescent Pendant, Cancer Zodiac Moon Crescent Pendant, Leo Zodiac Moon Crescent Pendant, Virgo Zodiac Moon Crescent Pendant, Libra Zodiac Moon Crescent Pendant, Scorpio Zodiac Moon Crescent Pendant, Sagittarius Zodiac Moon Crescent Pendant, Capricorn Zodiac Moon Crescent Pendant, Aquarius Zodiac Moon Crescent Pendant, Pisces Zodiac Moon Crescent Pendant\n90004\t2\tYellow Jambhala Bracelet, Esoteric North Star Seven-Star Pendant\n90005\t2\tGreat Compassion Mantra Bracelet, Amitabha Bracelet\n90006\t2\tEastern Ancient Wisdom Text Pendant, Shurangama Mantra Bracelet\n90007\t1\tHeart Sutra Bracelet\n",
+  "stderr": "",
+  "execution_time_ms": 84
+}

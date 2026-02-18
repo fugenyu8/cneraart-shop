@@ -1,0 +1,55 @@
+{
+  "query": "SELECT c.id, c.name, COUNT(p.id) as product_count\nFROM categories c\nLEFT JOIN products p ON c.id = p.categoryId\nGROUP BY c.id, c.name\nHAVING product_count > 0\nORDER BY c.id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT c.id, c.name, COUNT(p.id) as product_count\nFROM categories c\nLEFT JOIN products p ON c.id = p.categoryId\nGROUP BY c.id, c.name\nHAVING product_count > 0\nORDER BY c.id;",
+  "rows": [
+    {
+      "id": "1",
+      "name": "命理服务",
+      "product_count": "2"
+    },
+    {
+      "id": "60001",
+      "name": "代客祈福",
+      "product_count": "4"
+    },
+    {
+      "id": "90001",
+      "name": "生肖守护",
+      "product_count": "12"
+    },
+    {
+      "id": "90002",
+      "name": "太阳星座守护",
+      "product_count": "12"
+    },
+    {
+      "id": "90003",
+      "name": "月亮星座守护",
+      "product_count": "13"
+    },
+    {
+      "id": "90004",
+      "name": "招财旺运",
+      "product_count": "2"
+    },
+    {
+      "id": "90005",
+      "name": "平安健康",
+      "product_count": "2"
+    },
+    {
+      "id": "90006",
+      "name": "智慧学业",
+      "product_count": "2"
+    },
+    {
+      "id": "90007",
+      "name": "心灵平和",
+      "product_count": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tproduct_count\n1\t命理服务\t2\n60001\t代客祈福\t4\n90001\t生肖守护\t12\n90002\t太阳星座守护\t12\n90003\t月亮星座守护\t13\n90004\t招财旺运\t2\n90005\t平安健康\t2\n90006\t智慧学业\t2\n90007\t心灵平和\t1\n",
+  "stderr": "",
+  "execution_time_ms": 51
+}

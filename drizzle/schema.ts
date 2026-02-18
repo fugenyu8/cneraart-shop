@@ -66,6 +66,11 @@ export const products = mysqlTable("products", {
   blessingDate: timestamp("blessingDate"), // 开光日期
   blessingDescription: text("blessingDescription"), // 仪式说明
   
+  // 效用说明(开光法物专用)
+  suitableFor: text("suitableFor"), // 适用人群
+  efficacy: text("efficacy"), // 开光效用
+  wearingGuide: text("wearingGuide"), // 佩戴建议
+  
   // SEO
   metaTitle: varchar("metaTitle", { length: 200 }),
   metaDescription: text("metaDescription"),
