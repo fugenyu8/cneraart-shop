@@ -82,23 +82,36 @@
   },
   "products": {
     "510060": {
-      "name": "Schicksalsenergie-Analysebericht",
-      "shortDesc": "Entschlüsseln Sie alte östliche Weisheit, erkunden Sie Ihren Schicksalsenergie-Code",
-      "description": "Tiefgehende Schicksalsanalyse basierend auf Geburtsdaten, einschließlich Bazi-Strukturinterpretation und jährlicher Glücksanalyse, Lieferung in 3-5 Tagen"
+      "name": "Numerologischer Energieanalyse-Bericht",
+      "description": "Tiefgehende numerologische Analyse basierend auf den Acht Zeichen der Geburt (Bazi), einschließlich der Interpretation der Schicksalsstruktur und der Jahresglücks-Analyse. Exklusiver Bericht innerhalb von 3-5 Tagen geliefert."
     },
     "510061": {
-      "name": "Schicksalsanalyse + Wutai-Berg-Segenszeremonie",
-      "shortDesc": "Tiefe Schicksalsanalyse + Heiliger Wutai-Berg-Segen, Doppelter Schutz für Ihren Lebensweg",
-      "description": "Vollständiger Schicksalsbericht + Wutai-Berg-Stellvertreter-Segensdienst (Lampe/Räucherstäbchen), mit Videoaufzeichnung, Lieferung in 10-15 Tagen"
+      "name": "Numerologische Analyse + Wutaishan Segnungszeremonie",
+      "description": "Vollständiger numerologischer Bericht + Stellvertretender Segnungsdienst am Wutaishan (Lichtopfer/Räucherstäbchen), inklusive Videoaufzeichnung, Lieferung in 10-15 Tagen"
     },
-    "title": "Gesegnete Accessoires",
-    "search_placeholder": "Produkte suchen...",
+    "title": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "search_placeholder": {
+      "name": "",
+      "description": ""
+    },
     "filter_all": "Alle Kategorien",
     "sort_label": "Sortieren nach",
     "sort_latest": "Neueste",
-    "sort_price_low": "Preis: Niedrig bis Hoch",
-    "sort_price_high": "Preis: Hoch bis Niedrig",
-    "sort_popular": "Am Beliebtesten",
+    "sort_price_low": {
+      "name": "",
+      "description": ""
+    },
+    "sort_price_high": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sort_popular": {
+      "name": "null",
+      "description": "null"
+    },
     "no_results": "Keine Produkte gefunden",
     "no_results_desc": "Versuchen Sie, Ihre Suche oder Filter anzupassen",
     "view_details": "Details anzeigen",
@@ -106,18 +119,66 @@
     "out_of_stock": "Ausverkauft",
     "in_stock": "Auf Lager",
     "only_left": "Nur noch {{count}} übrig",
-    "subtitle": "Ausgewählte gesegnete Accessoires, tausendjährige Weisheit erbend, Ihre Lebensreise schützend",
-    "all_products": "Alle Produkte",
-    "select_category": "Kategorie Auswählen",
-    "all_categories": "Alle Kategorien",
-    "sort_newest": "Neueste",
-    "total_count": "{{count}} Produkte insgesamt",
-    "search_label": "Suche",
-    "sale_badge": "Angebot",
-    "sold_out": "Ausverkauft",
-    "stock_low": "Nur noch {{count}}",
-    "no_products": "Keine Produkte",
-    "try_other_filters": "Bitte versuchen Sie andere Suchkriterien"
+    "subtitle": {
+      "name": "",
+      "description": ""
+    },
+    "all_products": {
+      "name": "",
+      "description": ""
+    },
+    "select_category": {
+      "name": "",
+      "description": ""
+    },
+    "all_categories": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sort_newest": {
+      "name": "",
+      "description": ""
+    },
+    "total_count": {
+      "name": "undefiniert",
+      "description": "undefiniert"
+    },
+    "search_label": {
+      "name": "",
+      "description": ""
+    },
+    "sale_badge": {
+      "name": "",
+      "description": ""
+    },
+    "sold_out": {
+      "name": "",
+      "description": ""
+    },
+    "stock_low": {
+      "name": "",
+      "description": ""
+    },
+    "no_products": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "try_other_filters": {
+      "name": "",
+      "description": ""
+    },
+    "viewAll": {
+      "name": "null",
+      "description": "null"
+    },
+    "fortune-energy-analysis-report": {
+      "name": "Energieanalysebericht des Schicksals",
+      "description": "Entdecken Sie die alte östliche Weisheit und entschlüsseln Sie Ihren numerologischen Energiecode\n\n**Der Service beinhaltet:**\n\n**1. Analyse der numerologischen Struktur**\nBasierend auf Ihrem Geburtsdatum und Ihrer Geburtszeit wird Ihre angeborene Begabung, Ihre Persönlichkeitsmerkmale und Ihr Lebensweg tiefgehend interpretiert. Unsere Numerologie-Meister nutzen die Fünf-Elemente-Lehre (Metall, Holz, Wasser, Feuer, Erde), um Ihnen Folgendes zu offenbaren:\n- Wie die Kombination der Himmelsstämme und Erdzweige Ihre Persönlichkeit und zwischenmenschlichen Beziehungen beeinflusst\n- Die Segnungen besonderer glückverheißender Sterne und Gottheiten (wie Tian Yi Gui Ren, Tai Ji Gui Ren) auf Ihr Schicksal\n- Die tiefen Verbindungen zwischen den zwölf Palästen wie dem Lebenspalast, dem Karrierepalast, dem Wohlstandspalast und Ihren Lebenserfahrungen\n\n**2. Analyse der Jahresglücksentwicklung (2026-2027)**\nEine detaillierte Interpretation des Energieflusses und der Schicksalsveränderungen im kommenden Jahr:\n- Wie die Wechselwirkungen der Fünf Elemente Ihre Karriereentwicklung, romantische Beziehungen und Entscheidungszeitpunkte beeinflussen\n- Praktische Ratschläge, kombiniert mit modernen Lebensszenarien – wie man Chancen ergreift und Risiken vermeidet\n- Exklusive Anleitungen für Schlüsselbereiche wie Finanzen, Gesundheit und zwischenmenschliche Beziehungen\n\nDie beiden Berichte ergänzen sich gegenseitig und zeichnen eine vollständige numerologische Karte, die Vergangenheit, Gegenwart und Zukunft durchdringt!\n\n**Ablauf nach dem Kauf:**\n1. Nach Abschluss der Zahlung senden Sie bitte Ihre detaillierten Geburtsinformationen (Geburtsjahr, -monat, -tag, genaue Uhrzeit, Geburtsort) an: seondo@cneraart.com\n   Beispiel: 12. Dezember 1978, 12:20 PM, New York, USA\n2. Unsere Numerologie-Meister werden die alte chinesische Fünf-Elemente-Philosophie nutzen, um Ihr einzigartiges Energiemuster maßgeschneidert zu analysieren\n3. Sie erhalten Ihren exklusiven „Numerologischen Energieanalysebericht“ innerhalb von 3-5 Werktagen per E-Mail\n\n**Datenschutz und Personalisierungsgarantie:**\nWir legen größten Wert auf Ihre Privatsphäre – alle Informationen werden streng vertraulich behandelt. Dies ist kein „Wahrsagen“, sondern eine Unterstützung, um durch das Verständnis Ihrer Energiemuster klarer und selbstbewusster zu leben.\n\n**Warum uns wählen?**\n- Für nur 19 $ erhalten Sie einen tiefgehenden, personalisierten Bericht, der alte Weisheit mit moderner Praxis verbindet\n- Besonders geeignet für diejenigen, die beruflichen Aufstieg, harmonische Beziehungen, emotionales Gleichgewicht, Gesundheitsoptimierung oder persönliche Wachstumsanleitung suchen\n- Ein einzigartiges Einsichtserlebnis – wie eine über Jahrtausende verfeinerte Persönlichkeitsbewertung!\n\n**Hinweis:** Dieser Service folgt streng der traditionellen kulturellen Interpretation und bietet nur eine richtungsweisende Orientierung. Alle Ergebnisse dienen nur als Referenz."
+    },
+    "destiny-analysis-wutai-mountain-blessing-ceremony": {
+      "name": "Schicksalsanalyse + Segenzeremonie am Wutai-Berg",
+      "description": "Liebe Freunde, sehnen Sie sich danach, Ihren Lebensweg zu verstehen und gleichzeitig heilige Segensenergie für die Zukunft zu erhalten? Für nur 79 $ erhalten Sie einen vollständigen „Bericht zur Schicksalsenergie-Analyse“ und können zudem eine exklusive Segenszeremonie genießen, die unser Team am Wutai-Berg, einem heiligen Ort des chinesischen Buddhismus, für Sie durchführt! Erleuchten Sie den Weg für sich und Ihre Liebsten.\n\n**Ihr exklusives Paket beinhaltet:**\n\n**Bericht zur Schicksalsanalyse (Lieferung innerhalb von 3-5 Tagen)**\n- Basierend auf Ihrem Geburtsdatum und Ihrer Geburtszeit, eine personalisierte Interpretation Ihrer Schicksalsstruktur und Energieinteraktionen\n- Detaillierte Analyse Ihrer großen Glückszyklen und Jahresflüsse, um Ihnen zu helfen, wichtige Chancen und Vorsichtsmaßnahmen für 2026-2027 zu erkennen\n- Umfasst Anleitungen in mehreren Dimensionen wie Karriere, Vermögen, Beziehungen und Gesundheit\n- Kombiniert die traditionelle Fünf-Elemente-Philosophie mit modernen Lebensanwendungen und bietet praktische Ratschläge\n\n**Stellvertretender Segensdienst am Wutai-Berg (Video-Lieferung innerhalb von 10-15 Tagen)**\n- Sie können wählen zwischen **Lichtopfer** (erleuchtet den Weg der Weisheit) oder **Räucherstäbchenopfer** (bittet um Frieden, beseitigt Hindernisse)\n- Unser Team wird persönlich die Tempel am Wutai-Berg besuchen und die Segenszeremonie vollständig dokumentieren\n- Das Video wird die Rezitation Ihres Namens, Ihre Gebetswünsche und den Ablauf der Zeremonie enthalten – für Transparenz und Aufrichtigkeit\n- Jede Lampe, jedes Räucherstäbchen wird speziell für Sie angezündet\n\n**Wie können Sie teilnehmen?**\n1. Klicken Sie auf den Kauflink und wählen Sie das 79 $-Segenspaket\n2. Nach Abschluss der Zahlung senden Sie bitte Ihren Namen, Ihre Geburtsdaten und Ihre Gebetspräferenz (Lichtopfer oder Räucherstäbchenopfer) an: seondo@cneraart.com\n   Beispiel: 12. Dezember 1978, 12:20 Uhr, New York, USA\n3. Sie erhalten den „Bericht zur Schicksalsenergie-Analyse“ innerhalb von 3-5 Werktagen per E-Mail\n4. Das Segensvideo wird Ihnen 10-15 Tage nach Abschluss der Zeremonie an Ihre E-Mail-Adresse gesendet\n\n**Warum dieses Upgrade wählen?**\n- Nicht nur eine Vorhersage – es verleiht Ihrem Leben auch Segensenergie\n- Alte Weisheit + heilige Rituale, doppelter Schutz\n- Vollständige Videoaufzeichnung – aufrichtig, glaubwürdig, überprüfbar\n- Geeignet für vielfältige Wünsche: beruflicher Erfolg, familiäre Harmonie, Schicksalswende, akademischer Fortschritt usw.\n\nEin Bericht, eine helle Lampe, ein Wunsch, eine Transformation.\n\nMögen wir Hand in Hand die Tür des Schicksals öffnen und eine strahlende Zukunft begrüßen.\n\n**Hinweis:** Der Segensdienst ist ein stellvertretender religiöser Opferdienst. Wir respektieren alle Glaubensrichtungen – Aufrichtigkeit ist das Wichtigste. Dieser Dienst folgt streng der traditionellen kulturellen Interpretation und bietet lediglich richtungsweisende Anleitungen. Alle Ergebnisse dienen nur als Referenz."
+    }
   },
   "product_detail": {
     "back": "Zurück zu Produkten",
@@ -364,7 +425,14 @@
     "step3Title": "Meisteranalyse",
     "step3Desc": "Traditionelle Weisheit + Expertise",
     "step4Title": "Bericht ansehen",
-    "step4Desc": "Detaillierten Bericht erhalten"
+    "step4Desc": "Detaillierten Bericht erhalten",
+    "trustTitle": "Vertrauen & Sicherheit",
+    "privacy": "Datenschutz",
+    "privacyDesc": "Alle Informationen streng vertraulich",
+    "speed": "Schnelle Lieferung",
+    "speedDesc": "Analyse innerhalb von 3-5 Werktagen",
+    "accuracy": "Professionelle Genauigkeit",
+    "accuracyDesc": "Traditionelle Weisheit trifft moderne Analyse"
   },
   "categories": {
     "zodiac_guardian": "Sternzeichen-Wächter",
@@ -421,5 +489,26 @@
     "Capricorn": "Capricorn",
     "Aquarius": "Aquarius",
     "Pisces": "Pisces"
+  },
+  "fortuneUpload": {
+    "title": "Bilder hochladen",
+    "faceGuidance": "Bitte laden Sie 2-5 klare Gesichtsfotos hoch (Vorderansicht, Seitenansichten, natürliches Licht)",
+    "palmGuidance": "Bitte laden Sie 2-5 klare Handflächenfotos hoch (beide Hände vorne, hinten, gut beleuchtet)",
+    "fengshuiGuidance": "Bitte laden Sie 3-10 Raumfotos hoch (Eingang, Wohnzimmer, Schlafzimmer, Küche usw.)",
+    "selectImages": "Bilder auswählen",
+    "imageCount": "{{current}}/{{max}} Bilder",
+    "maxImagesError": "Maximal {{max}} Bilder erlaubt",
+    "invalidFileType": "Bitte Bilddateien hochladen",
+    "fileTooLarge": "Dateigröße darf 10MB nicht überschreiten",
+    "noImages": "Noch keine Bilder hochgeladen",
+    "minImagesRequired": "Mindestens {{min}} Bilder erforderlich",
+    "questionLabel": "Fragebeschreibung (Optional)",
+    "questionPlaceholder": "Bitte beschreiben Sie Ihre spezifischen Fragen oder Anliegen, wie: Karriereentwicklung, Vermögenstrends, Beziehungen usw...",
+    "questionHint": "Detaillierte Fragen helfen unseren Meistern bei einer genaueren Analyse",
+    "requirements": "Upload-Anforderungen",
+    "req1": "Bilder müssen klar und gut beleuchtet sein",
+    "req2": "Unterstützt JPG, PNG und andere gängige Formate",
+    "req3": "Einzelnes Bild darf 10MB nicht überschreiten",
+    "req4": "Alle Bilder sind streng vertraulich und werden nach der Analyse automatisch gelöscht"
   }
 }

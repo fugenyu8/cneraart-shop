@@ -10,6 +10,7 @@ import { getLoginUrl } from "@/const";
 import { Sparkles, ShoppingCart, Heart, Shield, Star, ChevronLeft, Plus, Minus, Info } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
 import ImageLightbox from "@/components/ImageLightbox";
+import FortuneServiceUpload from "@/components/FortuneServiceUpload";
 import { toast } from "sonner";
 
 export default function ProductDetail() {
@@ -19,6 +20,8 @@ export default function ProductDetail() {
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [uploadedImages, setUploadedImages] = useState<File[]>([]);
+  const [questionDescription, setQuestionDescription] = useState("");
 
   const { data: product, isLoading } = trpc.products.getBySlug.useQuery({ slug: slug! });
   const addToCartMutation = trpc.cart.add.useMutation();
@@ -32,15 +35,73 @@ export default function ProductDetail() {
 
     if (!product) return;
 
-    try {
-      await addToCartMutation.mutateAsync({
-        productId: product.id,
-        quantity,
-      });
-      toast.success(t('product_detail.success_added'));
-      utils.cart.get.invalidate();
-    } catch (error) {
-      toast.error(t('product_detail.error_add'));
+    // 对于命理服务,验证图片上传
+    if (isFortuneService) {
+      const minImages = serviceType === 'fengshui' ? 3 : 2;
+      if (uploadedImages.length < minImages) {
+        toast.error(t('fortuneUpload.minImagesRequired', { min: minImages }));
+        return;
+      }
+
+      try {
+        toast.info(t('product_detail.uploading_images'));
+        
+        // 上传图片到S3
+        const imageUrls: string[] = [];
+        for (const file of uploadedImages) {
+          const formData = new FormData();
+          formData.append('file', file);
+          
+          const response = await fetch('/api/upload-fortune-image', {
+            method: 'POST',
+            body: formData,
+          });
+          
+          if (!response.ok) {
+            throw new Error('Image upload failed');
+          }
+          
+          const data = await response.json();
+          imageUrls.push(data.url);
+        }
+
+        // 添加到购物车,带上服务数据
+        if (!serviceType) {
+          throw new Error('Service type is required');
+        }
+        
+        await addToCartMutation.mutateAsync({
+          productId: product.id,
+          quantity,
+          serviceData: {
+            imageUrls,
+            questionDescription,
+            serviceType,
+          },
+        });
+        
+        toast.success(t('product_detail.success_added'));
+        utils.cart.get.invalidate();
+        
+        // 清空上传的图片
+        setUploadedImages([]);
+        setQuestionDescription('');
+      } catch (error) {
+        console.error('Error adding fortune service to cart:', error);
+        toast.error(t('product_detail.error_add'));
+      }
+    } else {
+      // 普通商品
+      try {
+        await addToCartMutation.mutateAsync({
+          productId: product.id,
+          quantity,
+        });
+        toast.success(t('product_detail.success_added'));
+        utils.cart.get.invalidate();
+      } catch (error) {
+        toast.error(t('product_detail.error_add'));
+      }
     }
   };
 
@@ -72,8 +133,18 @@ export default function ProductDetail() {
     ? Math.round(((parseFloat(product.regularPrice) - parseFloat(product.salePrice)) / parseFloat(product.regularPrice)) * 100)
     : 0;
 
-  // 判断是否为命理服务(categoryId=1)
-  const isFortuneService = product.categoryId === 1;
+  // 判断是否为命理服务(根据slug判断)
+  const isFortuneService = product.slug.includes('reading') || product.slug.includes('feng-shui');
+  
+  // 确定服务类型
+  const getServiceType = (): "face" | "palm" | "fengshui" | undefined => {
+    if (product.slug.includes('face-reading')) return 'face';
+    if (product.slug.includes('palm-reading')) return 'palm';
+    if (product.slug.includes('feng-shui')) return 'fengshui';
+    return undefined;
+  };
+  
+  const serviceType = getServiceType();
   const addToCartText = isFortuneService ? 'product_detail.get_report' : 'product_detail.add_to_cart';
   const blessingTabText = isFortuneService ? 'product_detail.tab_service' : 'product_detail.tab_blessing';
 
@@ -253,6 +324,17 @@ export default function ProductDetail() {
                 </Button>
               </div>
             </div>
+
+            {/* 命理服务图片上传 */}
+            {isFortuneService && serviceType && (
+              <div className="mb-6">
+                <FortuneServiceUpload
+                  serviceType={serviceType}
+                  onImagesChange={setUploadedImages}
+                  onQuestionChange={setQuestionDescription}
+                />
+              </div>
+            )}
 
             {/* 服务类产品引导说明 */}
             {product.categoryId === 5 && (

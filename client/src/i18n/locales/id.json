@@ -159,7 +159,14 @@
     "step3Title": "Analisis Guru",
     "step3Desc": "Kebijaksanaan tradisional + keahlian",
     "step4Title": "Lihat laporan",
-    "step4Desc": "Dapatkan laporan terperinci"
+    "step4Desc": "Dapatkan laporan terperinci",
+    "trustTitle": "Kepercayaan & Keamanan",
+    "privacy": "Perlindungan Privasi",
+    "privacyDesc": "Semua informasi dijaga ketat kerahasiaannya",
+    "speed": "Pengiriman Cepat",
+    "speedDesc": "Analisis selesai dalam 3-5 hari kerja",
+    "accuracy": "Akurasi Profesional",
+    "accuracyDesc": "Kebijaksanaan tradisional bertemu analisis modern"
   },
   "admin": {
     "dashboard": "Dasbor",
@@ -237,32 +244,93 @@
   },
   "products": {
     "510060": {
-      "name": "Laporan Analisis Energi Takdir",
-      "shortDesc": "Buka Kunci Kebijaksanaan Timur Kuno, Jelajahi Kode Energi Takdir Anda",
-      "description": "Analisis takdir mendalam berdasarkan data kelahiran, termasuk interpretasi struktur Bazi dan analisis keberuntungan tahunan, dikirim dalam 3-5 hari"
+      "name": "Laporan Analisis Energi Numerologi",
+      "description": "Analisis numerologi mendalam berdasarkan **Ba Zi (Delapan Karakter Kelahiran)**, termasuk interpretasi struktur nasib dan analisis keberuntungan tahunan. Laporan eksklusif akan dikirimkan dalam 3-5 hari."
     },
     "510061": {
-      "name": "Analisis Takdir + Upacara Berkah Gunung Wutai",
-      "shortDesc": "Analisis Takdir Mendalam + Berkah Suci Gunung Wutai, Perlindungan Ganda untuk Jalan Hidup Anda",
-      "description": "Laporan takdir lengkap + layanan berkah proksi Gunung Wutai (lampu/dupa), dengan rekaman video, dikirim dalam 10-15 hari"
+      "name": "Analisis Numerologi + Upacara Doa Gunung Wutai",
+      "description": "Laporan Numerologi Lengkap + Layanan Doa Pengganti di Gunung Wutai (Persembahan Lampu/Dupa), termasuk rekaman video, pengiriman 10-15 hari"
     },
-    "title": "Aksesori Diberkati",
-    "subtitle": "Aksesori diberkati pilihan, mewarisi kebijaksanaan ribuan tahun, menjaga perjalanan hidup Anda",
-    "all_products": "Semua Produk",
-    "search_placeholder": "Cari produk...",
-    "select_category": "Pilih Kategori",
-    "all_categories": "Semua Kategori",
-    "sort_newest": "Terbaru",
-    "sort_price_low": "Harga: Rendah ke Tinggi",
-    "sort_price_high": "Harga: Tinggi ke Rendah",
-    "sort_popular": "Paling Populer",
-    "total_count": "Total {{count}} produk",
-    "search_label": "Cari",
-    "sale_badge": "Diskon",
-    "sold_out": "Habis",
-    "stock_low": "Hanya {{count}} tersisa",
-    "no_products": "Tidak Ada Produk",
-    "try_other_filters": "Silakan coba kriteria pencarian lain"
+    "title": {
+      "name": "",
+      "description": ""
+    },
+    "subtitle": {
+      "name": "",
+      "description": ""
+    },
+    "all_products": {
+      "name": "",
+      "description": ""
+    },
+    "search_placeholder": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "select_category": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "all_categories": {
+      "name": "Tidak Terdefinisi",
+      "description": "Tidak Terdefinisi"
+    },
+    "sort_newest": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sort_price_low": {
+      "name": "",
+      "description": ""
+    },
+    "sort_price_high": {
+      "name": "",
+      "description": ""
+    },
+    "sort_popular": {
+      "name": "",
+      "description": ""
+    },
+    "total_count": {
+      "name": "",
+      "description": ""
+    },
+    "search_label": {
+      "name": "",
+      "description": ""
+    },
+    "sale_badge": {
+      "name": "",
+      "description": ""
+    },
+    "sold_out": {
+      "name": "Tidak Terdefinisi",
+      "description": "Tidak Terdefinisi"
+    },
+    "stock_low": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "no_products": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "try_other_filters": {
+      "name": "",
+      "description": ""
+    },
+    "viewAll": {
+      "name": "",
+      "description": ""
+    },
+    "fortune-energy-analysis-report": {
+      "name": "Laporan Analisis Energi Keberuntungan",
+      "description": "Buka kunci kebijaksanaan kuno Timur, jelajahi kode energi numerologi Anda\n\n**Layanan meliputi:**\n\n**1. Analisis Struktur Numerologi**\nBerdasarkan tanggal lahir dan waktu lahir Anda (生辰八字), kami akan secara mendalam menginterpretasikan bakat bawaan, karakteristik kepribadian, dan lintasan hidup Anda. Master numerologi kami akan menggunakan teori Lima Elemen (金木水火土 - Logam, Kayu, Air, Api, Tanah) untuk mengungkapkan kepada Anda:\n- Bagaimana kombinasi Batang Langit dan Cabang Bumi memengaruhi kepribadian dan hubungan interpersonal Anda\n- Berkah dari bintang keberuntungan khusus (seperti 天乙贵人 - Nobleman of Heaven's Virtue, 太极贵人 - Nobleman of Taiji) pada keberuntungan Anda\n- Hubungan mendalam antara dua belas istana (seperti Istana Kehidupan, Istana Karier, Istana Kekayaan) dan pengalaman hidup Anda\n\n**2. Analisis Keberuntungan Tahunan (2026-2027)**\nInterpretasi terperinci tentang aliran energi dan perubahan keberuntungan di tahun mendatang:\n- Bagaimana interaksi Lima Elemen memengaruhi perkembangan karier, arah hubungan, dan waktu pengambilan keputusan Anda\n- Memberikan saran praktis yang dikombinasikan dengan skenario kehidupan modern – bagaimana memanfaatkan peluang dan menghindari risiko\n- Panduan eksklusif untuk bidang-bidang utama seperti kekayaan, kesehatan, dan hubungan interpersonal\n\nKedua laporan ini saling melengkapi, melukiskan peta numerologi lengkap yang mencakup masa lalu, sekarang, dan masa depan untuk Anda!\n\n**Proses Setelah Pembelian:**\n1. Setelah menyelesaikan pembayaran, harap kirimkan informasi tanggal lahir dan waktu lahir Anda yang terperinci (tanggal, bulan, tahun lahir, waktu tepat, tempat lahir) ke: seondo@cneraart.com\n   Contoh: 12 Desember 1978, 12:20 PM, New York, AS\n2. Master numerologi kami akan menggunakan filosofi Lima Elemen Tiongkok kuno untuk menganalisis pola energi unik Anda secara personal\n3. Anda akan menerima \"Laporan Analisis Energi Numerologi\" eksklusif Anda melalui email dalam 3-5 hari kerja\n\n**Jaminan Privasi dan Personalisasi:**\nKami sangat menghargai privasi Anda – semua informasi akan dijaga kerahasiaannya. Ini bukan \"ramalan\", melainkan untuk membantu Anda menjalani hidup dengan lebih jelas dan percaya diri melalui pemahaman pola energi Anda.\n\n**Mengapa memilih kami?**\n- Hanya dengan $19, Anda bisa mendapatkan laporan personalisasi mendalam yang memadukan kebijaksanaan kuno dengan praktik modern\n- Sangat cocok untuk Anda yang mencari promosi karier, keharmonisan hubungan, keseimbangan emosional, optimasi kesehatan, atau panduan pertumbuhan pribadi\n- Pengalaman wawasan yang unik – seperti penilaian kepribadian yang telah disempurnakan selama ribuan tahun!\n\n**Catatan:** Layanan ini secara ketat mengikuti interpretasi budaya tradisional dan hanya memberikan panduan arah. Semua hasil hanya untuk referensi."
+    },
+    "destiny-analysis-wutai-mountain-blessing-ceremony": {
+      "name": "Analisis Takdir + Upacara Pemberkatan Gunung Wutai",
+      "description": "Sahabat yang terkasih, apakah Anda ingin memahami jalur hidup Anda dan pada saat yang sama menyuntikkan energi berkah ilahi ke masa depan? Hanya dengan $79, Anda akan mendapatkan \"Laporan Analisis Energi Numerologi\" lengkap, dan Anda juga dapat menikmati upacara pemberkatan eksklusif yang akan diadakan oleh tim kami untuk Anda di Gunung Wutai, tempat suci Buddhisme Tiongkok! Menerangi jalan ke depan untuk Anda dan orang yang Anda cintai.\n\n**Paket Eksklusif Anda meliputi:**\n\n**Laporan Analisis Numerologi (dikirim dalam 3-5 hari)**\n- Berdasarkan tanggal lahir Anda (Bazi), interpretasi personal mengenai struktur numerologi dan interaksi energi Anda\n- Analisis mendalam tentang periode keberuntungan besar dan tahun-tahun yang berjalan, membantu Anda memahami peluang dan hal-hal penting di tahun 2026-2027\n- Mencakup panduan multidimensi seperti karier, kekayaan, hubungan, kesehatan, dll.\n- Menggabungkan filosofi Lima Elemen tradisional dengan aplikasi kehidupan modern, memberikan saran yang praktis dan dapat diterapkan\n\n**Layanan Doa Pengganti di Gunung Wutai (video dikirim dalam 10-15 hari)**\n- Anda dapat memilih untuk **menyalakan lampu** (menerangi jalan kebijaksanaan) atau **membakar dupa** (memohon kedamaian, menghilangkan rintangan)\n- Tim kami akan secara pribadi pergi ke kuil Gunung Wutai dan merekam seluruh proses upacara doa\n- Video akan berisi pembacaan nama Anda, doa permohonan, dan proses upacara – memastikan transparansi dan ketulusan\n- Setiap lampu, setiap dupa, dinyalakan khusus untuk Anda\n\n**Bagaimana cara berpartisipasi?**\n1. Klik tautan pembelian, pilih paket doa $79\n2. Setelah pembayaran selesai, harap kirimkan nama, informasi tanggal lahir, dan preferensi doa Anda (menyalakan lampu atau membakar dupa) ke: seondo@cneraart.com\n   Contoh: 12 Desember 1978 12:20 PM, New York, AS\n3. Anda akan menerima \"Laporan Analisis Energi Numerologi\" melalui email dalam 3-5 hari kerja\n4. Dalam 10-15 hari setelah upacara doa selesai, video doa akan dikirim ke email Anda\n\n**Mengapa memilih versi yang ditingkatkan ini?**\n- Bukan hanya prediksi – tetapi juga menyuntikkan energi berkah ke dalam hidup Anda\n- Kebijaksanaan kuno + ritual suci, perlindungan ganda\n- Rekaman video lengkap – tulus, dapat dipercaya, dan transparan\n- Berlaku untuk berbagai keinginan: kesuksesan karier, keharmonisan keluarga, perubahan nasib, kemajuan akademik, dll.\n\nSatu laporan, satu pelita, satu keinginan, satu transformasi.\n\nSemoga kita bergandengan tangan, membuka pintu takdir, dan menyambut masa depan yang cerah.\n\n**Catatan:** Layanan doa adalah perwakilan persembahan keagamaan. Kami menghormati semua keyakinan – ketulusan adalah yang terpenting. Layanan ini secara ketat mengikuti interpretasi budaya tradisional dan hanya memberikan panduan arah. Semua hasil hanya untuk referensi."
+    }
   },
   "common": {
     "site_name": "Cneraart",
@@ -305,5 +373,26 @@
     "Capricorn": "Capricorn",
     "Aquarius": "Aquarius",
     "Pisces": "Pisces"
+  },
+  "fortuneUpload": {
+    "title": "Unggah Gambar",
+    "faceGuidance": "Harap unggah 2-5 foto wajah yang jelas (tampak depan, tampak samping, pencahayaan alami)",
+    "palmGuidance": "Harap unggah 2-5 foto telapak tangan yang jelas (kedua tangan depan, belakang, pencahayaan cukup)",
+    "fengshuiGuidance": "Harap unggah 3-10 foto ruangan (pintu masuk, ruang tamu, kamar tidur, dapur, dll.)",
+    "selectImages": "Pilih Gambar",
+    "imageCount": "{{current}}/{{max}} gambar",
+    "maxImagesError": "Maksimum {{max}} gambar diizinkan",
+    "invalidFileType": "Harap unggah file gambar",
+    "fileTooLarge": "Ukuran file tidak boleh melebihi 10MB",
+    "noImages": "Belum ada gambar yang diunggah",
+    "minImagesRequired": "Setidaknya {{min}} gambar diperlukan",
+    "questionLabel": "Deskripsi Pertanyaan (Opsional)",
+    "questionPlaceholder": "Harap jelaskan pertanyaan atau kekhawatiran spesifik Anda, seperti: pengembangan karir, tren kekayaan, hubungan, dll...",
+    "questionHint": "Memberikan pertanyaan terperinci membantu master kami menganalisis lebih akurat",
+    "requirements": "Persyaratan Unggah",
+    "req1": "Gambar harus jelas dengan pencahayaan yang cukup",
+    "req2": "Mendukung JPG, PNG dan format umum lainnya",
+    "req3": "Satu gambar tidak boleh melebihi 10MB",
+    "req4": "Semua gambar dijaga ketat kerahasiaannya dan dihapus otomatis setelah analisis"
   }
 }

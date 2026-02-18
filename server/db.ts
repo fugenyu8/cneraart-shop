@@ -227,7 +227,12 @@ export async function getCartItems(userId: number): Promise<CartItem[]> {
   return await db.select().from(cartItems).where(eq(cartItems.userId, userId));
 }
 
-export async function addToCart(userId: number, productId: number, quantity: number = 1) {
+export async function addToCart(
+  userId: number, 
+  productId: number, 
+  quantity: number = 1,
+  serviceData?: any
+) {
   const db = await getDb();
   if (!db) return;
 
@@ -239,14 +244,23 @@ export async function addToCart(userId: number, productId: number, quantity: num
     .limit(1);
 
   if (existing.length > 0) {
-    // 更新数量
+    // 更新数量和serviceData
+    const updateData: any = { quantity: existing[0].quantity + quantity };
+    if (serviceData) {
+      updateData.serviceData = serviceData;
+    }
     await db
       .update(cartItems)
-      .set({ quantity: existing[0].quantity + quantity })
+      .set(updateData)
       .where(eq(cartItems.id, existing[0].id));
   } else {
     // 新增
-    await db.insert(cartItems).values({ userId, productId, quantity });
+    await db.insert(cartItems).values({ 
+      userId, 
+      productId, 
+      quantity,
+      serviceData: serviceData || null,
+    });
   }
 }
 

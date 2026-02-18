@@ -82,23 +82,36 @@
   },
   "products": {
     "510060": {
-      "name": "Informe de Análisis de Energía del Destino",
-      "shortDesc": "Desbloquea la Sabiduría Oriental Antigua, Explora Tu Código de Energía del Destino",
-      "description": "Análisis profundo del destino basado en datos de nacimiento, incluyendo interpretación de estructura Bazi y análisis de fortuna anual, entregado en 3-5 días"
+      "name": "Informe de Análisis Energético del Destino",
+      "description": "Análisis profundo del destino basado en la fecha y hora de nacimiento (Bazi), incluyendo la interpretación de la estructura del destino y el análisis de la fortuna anual. Entrega del informe exclusivo en 3-5 días."
     },
     "510061": {
-      "name": "Análisis del Destino + Ceremonia de Bendición del Monte Wutai",
-      "shortDesc": "Análisis Profundo del Destino + Bendición Sagrada del Monte Wutai, Doble Protección para Tu Camino de Vida",
-      "description": "Informe completo del destino + servicio de bendición por poder del Monte Wutai (lámpara/incienso), con grabación de video, entregado en 10-15 días"
+      "name": "Análisis de Numerología + Ritual de Bendición en Wutaishan",
+      "description": "Informe completo de numerología + Servicio de oración en Wutaishan (ofrenda de lámparas/incienso), incluye grabación de video, entrega en 10-15 días"
     },
-    "title": "Accesorios Bendecidos",
-    "search_placeholder": "Buscar productos...",
+    "title": {
+      "name": "",
+      "description": ""
+    },
+    "search_placeholder": {
+      "name": "",
+      "description": ""
+    },
     "filter_all": "Todas las categorías",
     "sort_label": "Ordenar por",
     "sort_latest": "Más reciente",
-    "sort_price_low": "Precio: Bajo a Alto",
-    "sort_price_high": "Precio: Alto a Bajo",
-    "sort_popular": "Más Popular",
+    "sort_price_low": {
+      "name": "",
+      "description": ""
+    },
+    "sort_price_high": {
+      "name": "",
+      "description": ""
+    },
+    "sort_popular": {
+      "name": "undefined",
+      "description": "undefined"
+    },
     "no_results": "No se encontraron productos",
     "no_results_desc": "Intenta ajustar tu búsqueda o filtros",
     "view_details": "Ver detalles",
@@ -106,18 +119,66 @@
     "out_of_stock": "Agotado",
     "in_stock": "En stock",
     "only_left": "Solo quedan {{count}}",
-    "subtitle": "Accesorios bendecidos seleccionados, heredando sabiduría milenaria, protegiendo su viaje de vida",
-    "all_products": "Todos los Productos",
-    "select_category": "Seleccionar Categoría",
-    "all_categories": "Todas las Categorías",
-    "sort_newest": "Más Reciente",
-    "total_count": "{{count}} productos en total",
-    "search_label": "Buscar",
-    "sale_badge": "Oferta",
-    "sold_out": "Agotado",
-    "stock_low": "Solo quedan {{count}}",
-    "no_products": "Sin Productos",
-    "try_other_filters": "Por favor intente otros criterios de búsqueda"
+    "subtitle": {
+      "name": "",
+      "description": ""
+    },
+    "all_products": {
+      "name": "",
+      "description": ""
+    },
+    "select_category": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "all_categories": {
+      "name": "",
+      "description": ""
+    },
+    "sort_newest": {
+      "name": "Indefinido",
+      "description": "Indefinido"
+    },
+    "total_count": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "search_label": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sale_badge": {
+      "name": "Indefinido",
+      "description": "Indefinido"
+    },
+    "sold_out": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "stock_low": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "no_products": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "try_other_filters": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "viewAll": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "fortune-energy-analysis-report": {
+      "name": "Informe de Análisis Energético de la Fortuna",
+      "description": "Desbloquee la antigua sabiduría oriental y explore su código de energía de numerología.\n\n**El servicio incluye:**\n\n**1. Análisis de la Estructura de la Numerología**\nBasado en su fecha y hora de nacimiento (Bazi), interpretamos profundamente sus talentos innatos, rasgos de personalidad y trayectoria vital. Nuestros maestros de numerología utilizarán la teoría de los Cinco Elementos (metal, madera, agua, fuego y tierra) para revelarle:\n- Cómo la combinación de los Troncos Celestes y las Ramas Terrestres influye en su personalidad y relaciones interpersonales.\n- La bendición de las estrellas auspiciosas especiales (como Tian Yi Gui Ren, Tai Ji Gui Ren) en su fortuna.\n- La conexión profunda entre las doce casas (como la Casa de la Vida, la Casa de la Carrera, la Casa de la Riqueza) y los eventos de su vida.\n\n**2. Análisis de la Fortuna Anual (2026-2027)**\nInterpretación detallada del flujo de energía y los cambios de fortuna para el próximo año:\n- Cómo la interacción de los Cinco Elementos afecta el desarrollo de su carrera, las tendencias de sus relaciones y el momento de sus decisiones.\n- Consejos prácticos combinados con escenarios de la vida moderna: cómo aprovechar las oportunidades y evitar riesgos.\n- Orientación exclusiva para áreas clave como la riqueza, la salud y las relaciones interpersonales.\n\n¡Ambos informes se complementan entre sí, trazando un mapa numerológico completo que abarca el pasado, el presente y el futuro!\n\n**Proceso después de la compra:**\n1. Una vez completado el pago, envíe su información detallada de nacimiento (fecha de nacimiento, hora exacta, lugar de nacimiento) a: seondo@cneraart.com\n   Ejemplo: 12 de diciembre de 1978, 12:20 PM, Nueva York, EE. UU.\n2. Nuestros maestros de numerología utilizarán la antigua filosofía china de los Cinco Elementos para analizar su patrón energético único de forma personalizada.\n3. Recibirá su \"Informe de Análisis Energético de Numerología\" exclusivo por correo electrónico en un plazo de 3 a 5 días hábiles.\n\n**Garantía de privacidad y personalización:**\nDamos gran importancia a su privacidad: toda la información se mantendrá estrictamente confidencial. Esto no es \"adivinación\", sino una forma de ayudarle a vivir con más claridad y confianza al comprender sus patrones energéticos.\n\n**¿Por qué elegirnos?**\n- Por solo $19, obtendrá un informe personalizado y profundo que fusiona la sabiduría antigua con la práctica moderna.\n- Especialmente adecuado para quienes buscan una promoción profesional, armonía en las relaciones, equilibrio emocional, optimización de la salud o orientación para el crecimiento personal.\n- Una experiencia de conocimiento única, ¡como una evaluación de personalidad refinada a lo largo de milenios!\n\n**Nota:** Este servicio sigue estrictamente las interpretaciones culturales tradicionales y solo proporciona orientación direccional. Todos los resultados son solo de referencia."
+    },
+    "destiny-analysis-wutai-mountain-blessing-ceremony": {
+      "name": "Análisis del Destino + Ceremonia de Bendición de la Montaña Wutai",
+      "description": "Estimado amigo, ¿anhela comprender la trayectoria de su vida y, al mismo tiempo, infundir energía de bendición divina en su futuro? ¡Por solo $79, recibirá un \"Informe Completo de Análisis de Energía Natal\" y, además, podrá disfrutar de una exclusiva ceremonia de bendición realizada por nuestro equipo en el sagrado lugar budista de China, la Montaña Wutai! Iluminando el camino a seguir para usted y sus seres queridos.\n\n**Su paquete exclusivo incluye:**\n\n**Informe de Análisis Natal (entrega en 3-5 días)**\n- Interpretación personalizada de su estructura natal e interacción energética basada en sus ocho caracteres natales (Bazi)\n- Análisis profundo de sus períodos de suerte y años de tránsito, ayudándole a aprovechar oportunidades clave y precauciones para 2026-2027\n- Guía multidimensional que abarca carrera, fortuna, relaciones, salud y más\n- Integración de la filosofía tradicional de los Cinco Elementos con aplicaciones modernas, ofreciendo consejos prácticos y viables\n\n**Servicio de Bendición Delegada en la Montaña Wutai (entrega de video en 10-15 días)**\n- Puede elegir entre **ofrenda de lámparas** (iluminando el camino de la sabiduría) o **quemar incienso** (orando por la paz y eliminando obstáculos)\n- Nuestro equipo viajará personalmente a los templos de la Montaña Wutai, documentando toda la ceremonia de bendición\n- El video incluirá la recitación de su nombre, oraciones por sus deseos y el proceso de la ceremonia, asegurando transparencia y sinceridad\n- Cada lámpara, cada varilla de incienso, se encenderá exclusivamente para usted\n\n**¿Cómo participar?**\n1. Haga clic en el enlace de compra y seleccione el paquete de bendición de $79\n2. Una vez completado el pago, envíe su nombre, información de nacimiento y preferencia de bendición (ofrenda de lámparas o quemar incienso) a: seondo@cneraart.com\n   Ejemplo: 12 de diciembre de 1978, 12:20 PM, Nueva York, EE. UU.\n3. Recibirá el \"Informe de Análisis de Energía Natal\" por correo electrónico en un plazo de 3 a 5 días hábiles\n4. El video de la bendición se enviará a su correo electrónico dentro de los 10 a 15 días posteriores a la finalización de la ceremonia de bendición\n\n**¿Por qué elegir esta versión mejorada?**\n- No es solo una predicción, sino que también infunde energía de bendición en su vida\n- Sabiduría antigua + ritual sagrado, doble protección\n- Grabación de video completa: sincera, creíble y transparente\n- Aplicable a una variedad de deseos: éxito profesional, armonía familiar, cambio de suerte, eliminación de obstáculos, progreso académico, etc.\n\nUn informe, una lámpara brillante, un deseo, una transformación.\n\nQue juntos abramos la puerta del destino y demos la bienvenida a un futuro brillante.\n\n**Nota:** El servicio de bendición es una ofrenda religiosa delegada. Respetamos todas las creencias; la sinceridad es lo más importante. Este servicio sigue estrictamente las interpretaciones de la cultura tradicional y solo proporciona orientación. Todos los resultados son solo para referencia."
+    }
   },
   "product_detail": {
     "back": "Back to Products",
@@ -364,7 +425,14 @@
     "step3Title": "Análisis del Maestro",
     "step3Desc": "Sabiduría tradicional + experiencia",
     "step4Title": "Ver informe",
-    "step4Desc": "Obtener informe detallado"
+    "step4Desc": "Obtener informe detallado",
+    "trustTitle": "Confianza y Seguridad",
+    "privacy": "Protección de privacidad",
+    "privacyDesc": "Toda la información estrictamente confidencial",
+    "speed": "Entrega rápida",
+    "speedDesc": "Análisis completado en 3-5 días hábiles",
+    "accuracy": "Precisión profesional",
+    "accuracyDesc": "Sabiduría tradicional con análisis moderno"
   },
   "categories": {
     "zodiac_guardian": "Guardián del Zodiaco",
@@ -421,5 +489,26 @@
     "Capricorn": "Capricorn",
     "Aquarius": "Aquarius",
     "Pisces": "Pisces"
+  },
+  "fortuneUpload": {
+    "title": "Subir imágenes",
+    "faceGuidance": "Por favor suba 2-5 fotos faciales claras (vista frontal, vistas laterales, iluminación natural)",
+    "palmGuidance": "Por favor suba 2-5 fotos de palmas claras (ambas manos frente, atrás, bien iluminadas)",
+    "fengshuiGuidance": "Por favor suba 3-10 fotos de habitaciones (entrada, sala de estar, dormitorio, cocina, etc.)",
+    "selectImages": "Seleccionar imágenes",
+    "imageCount": "{{current}}/{{max}} imágenes",
+    "maxImagesError": "Máximo {{max}} imágenes permitidas",
+    "invalidFileType": "Por favor suba archivos de imagen",
+    "fileTooLarge": "El tamaño del archivo no puede exceder 10MB",
+    "noImages": "Aún no se han subido imágenes",
+    "minImagesRequired": "Se requieren al menos {{min}} imágenes",
+    "questionLabel": "Descripción de la pregunta (opcional)",
+    "questionPlaceholder": "Por favor describa sus preguntas o inquietudes específicas, como: desarrollo profesional, tendencias de riqueza, relaciones, etc...",
+    "questionHint": "Proporcionar preguntas detalladas ayuda a nuestros maestros a analizar con mayor precisión",
+    "requirements": "Requisitos de carga",
+    "req1": "Las imágenes deben ser claras con iluminación suficiente",
+    "req2": "Admite JPG, PNG y otros formatos comunes",
+    "req3": "Una sola imagen no puede exceder 10MB",
+    "req4": "Todas las imágenes son estrictamente confidenciales y se eliminan automáticamente después del análisis"
   }
 }

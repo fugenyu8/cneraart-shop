@@ -197,10 +197,15 @@ export const appRouter = router({
         z.object({
           productId: z.number(),
           quantity: z.number().min(1).default(1),
+          serviceData: z.object({
+            imageUrls: z.array(z.string()),
+            questionDescription: z.string().optional(),
+            serviceType: z.enum(["face", "palm", "fengshui"]),
+          }).optional(),
         })
       )
       .mutation(async ({ ctx, input }) => {
-        await db.addToCart(ctx.user.id, input.productId, input.quantity);
+        await db.addToCart(ctx.user.id, input.productId, input.quantity, input.serviceData);
         return { success: true };
       }),
 
@@ -380,25 +385,28 @@ export const appRouter = router({
           customerNote: input.customerNote,
         });
 
-        // 检测是否包含服务类产品(categoryId===5),自动创建fortune_bookings记录
+        // 检测是否包含命理服务产品,自动创建fortune_bookings记录
         try {
+          // 获取购物车项以获取serviceData
+          const cartItems = await db.getCartItems(ctx.user.id);
+          
           for (const item of input.items) {
             const product = await db.getProductById(item.productId);
-            if (product && product.categoryId === 5) {
-              // 这是服务类产品,创建fortune_bookings记录
-              // 根据产品名称映射到serviceType
-              let serviceType: "face" | "palm" | "fengshui" = "face";
-              if (product.name.includes("手相") || product.name.toLowerCase().includes("palm")) {
-                serviceType = "palm";
-              } else if (product.name.includes("风水") || product.name.toLowerCase().includes("feng")) {
-                serviceType = "fengshui";
-              }
+            // 检查是否为命理服务(根据slug判断)
+            if (product && (product.slug.includes('reading') || product.slug.includes('feng-shui'))) {
+              // 从购物车中获取serviceData
+              const cartItem = cartItems.find(ci => ci.productId === item.productId);
+              const serviceData = cartItem?.serviceData as any;
               
-              await db.createFortuneBooking({
-                orderId: Number(orderId),
-                userId: ctx.user.id,
-                serviceType,
-              });
+              if (serviceData && serviceData.imageUrls && serviceData.serviceType) {
+                await db.createFortuneBooking({
+                  orderId: Number(orderId),
+                  userId: ctx.user.id,
+                  serviceType: serviceData.serviceType,
+                  questionDescription: serviceData.questionDescription || undefined,
+                  imageUrls: serviceData.imageUrls,
+                });
+              }
             }
           }
         } catch (error) {
@@ -924,6 +932,68 @@ export const appRouter = router({
 
   // ============= 命理测算服务 =============
   fortune: router({
+    // 获取用户的fortune bookings
+    getMyBookings: protectedProcedure.query(async ({ ctx }) => {
+      const { getPendingFortuneBookings } = await import("./db-fortune-helpers");
+      const allBookings = await getPendingFortuneBookings();
+      return allBookings.filter(b => b.userId === ctx.user.id);
+    }),
+
+    // 获取单个booking详情
+    getBooking: protectedProcedure
+      .input(z.object({ bookingId: z.number() }))
+      .query(async ({ input, ctx }) => {
+        const { getUserById } = await import("./db-fortune-helpers");
+        const db = await import("./db").then(m => m.getDb());
+        if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "数据库不可用" });
+        
+        const [booking] = await db.select().from((await import("../drizzle/schema")).fortuneBookings)
+          .where((await import("drizzle-orm")).eq((await import("../drizzle/schema")).fortuneBookings.id, input.bookingId))
+          .limit(1);
+        
+        if (!booking) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "Booking不存在" });
+        }
+        if (booking.userId !== ctx.user.id) {
+          throw new TRPCError({ code: "FORBIDDEN", message: "无权访问" });
+        }
+        
+        return booking;
+      }),
+
+    // 手动触发报告生成(仅用于测试)
+    generateReport: protectedProcedure
+      .input(z.object({ bookingId: z.number() }))
+      .mutation(async ({ input, ctx }) => {
+        const { getUserById } = await import("./db-fortune-helpers");
+        const { processFortuneReport } = await import("./fortuneEngines/reportProcessor");
+        const db = await import("./db").then(m => m.getDb());
+        if (!db) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "数据库不可用" });
+        
+        const [booking] = await db.select().from((await import("../drizzle/schema")).fortuneBookings)
+          .where((await import("drizzle-orm")).eq((await import("../drizzle/schema")).fortuneBookings.id, input.bookingId))
+          .limit(1);
+        
+        if (!booking) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "Booking不存在" });
+        }
+        if (booking.userId !== ctx.user.id) {
+          throw new TRPCError({ code: "FORBIDDEN", message: "无权访问" });
+        }
+        
+        const user = await getUserById(booking.userId);
+        
+        const result = await processFortuneReport({
+          bookingId: booking.id,
+          serviceType: booking.serviceType as any,
+          imageUrls: booking.imageUrls as string[],
+          questionDescription: booking.questionDescription || undefined,
+          userName: user?.name || undefined,
+        });
+        
+        return result;
+      }),
+
     // 创建测算任务(需要已支付订单)
     createTask: protectedProcedure
       .input(

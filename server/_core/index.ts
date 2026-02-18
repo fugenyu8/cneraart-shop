@@ -8,6 +8,7 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { uploadRouter } from "../upload";
+import { uploadFortuneImageHandler, handleFortuneImageUpload } from "../uploadFortuneImage";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -38,6 +39,8 @@ async function startServer() {
   registerOAuthRoutes(app);
   // File upload API
   app.use("/api", uploadRouter);
+  // Fortune service image upload
+  app.post("/api/upload-fortune-image", uploadFortuneImageHandler, handleFortuneImageUpload);
   // tRPC API
   app.use(
     "/api/trpc",

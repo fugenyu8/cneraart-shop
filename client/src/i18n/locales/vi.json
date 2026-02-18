@@ -166,7 +166,14 @@
     "step3Title": "Phân tích của Đại sư",
     "step3Desc": "Trí tuệ truyền thống + chuyên môn",
     "step4Title": "Xem báo cáo",
-    "step4Desc": "Nhận báo cáo chi tiết"
+    "step4Desc": "Nhận báo cáo chi tiết",
+    "trustTitle": "Tin cậy & Bảo mật",
+    "privacy": "Bảo vệ quyền riêng tư",
+    "privacyDesc": "Mọi thông tin được bảo mật tuyệt đối",
+    "speed": "Giao hàng nhanh",
+    "speedDesc": "Phân tích hoàn thành trong 3-5 ngày làm việc",
+    "accuracy": "Chính xác chuyên nghiệp",
+    "accuracyDesc": "Trí tuệ truyền thống kết hợp phân tích hiện đại"
   },
   "admin": {
     "dashboard": "Bảng điều khiển",
@@ -244,32 +251,93 @@
   },
   "products": {
     "510060": {
-      "name": "Báo Cáo Phân Tích Năng Lượng Vận Mệnh",
-      "shortDesc": "Mở Khóa Trí Tuệ Phương Đông Cổ Đại, Khám Phá Mã Năng Lượng Vận Mệnh Của Bạn",
-      "description": "Phân tích vận mệnh sâu sắc dựa trên dữ liệu sinh, bao gồm giải thích cấu trúc Bát Tự và phân tích vận may hàng năm, giao hàng trong 3-5 ngày"
+      "name": "Báo cáo phân tích năng lượng mệnh lý",
+      "description": "Phân tích mệnh lý chuyên sâu dựa trên Bát Tự (ngày giờ sinh), bao gồm giải thích cấu trúc mệnh lý và phân tích vận hạn theo từng năm, báo cáo độc quyền được giao trong 3-5 ngày."
     },
     "510061": {
-      "name": "Phân Tích Vận Mệnh + Nghi Lễ Chúc Phúc Núi Ngũ Đài",
-      "shortDesc": "Phân Tích Vận Mệnh Sâu Sắc + Phúc Lành Thiêng Liêng Từ Núi Ngũ Đài, Bảo Vệ Kép Cho Con Đường Cuộc Đời Bạn",
-      "description": "Báo cáo vận mệnh đầy đủ + dịch vụ chúc phúc ủy quyền từ Núi Ngũ Đài (đèn/hương), có ghi hình video, giao hàng trong 10-15 ngày"
+      "name": "Phân tích Mệnh lý + Nghi thức Cầu phúc Ngũ Đài Sơn",
+      "description": "Báo cáo mệnh lý đầy đủ + Dịch vụ cầu phúc hộ tại Ngũ Đài Sơn (cúng đèn/thắp hương), bao gồm video ghi lại, giao hàng trong 10-15 ngày"
     },
-    "title": "Phụ Kiện Được Phù Hộ",
-    "subtitle": "Phụ kiện được phù hộ được tuyển chọn, kế thừa trí tuệ ngàn năm, bảo vệ hành trình cuộc đời bạn",
-    "all_products": "Tất Cả Sản Phẩm",
-    "search_placeholder": "Tìm kiếm sản phẩm...",
-    "select_category": "Chọn Danh Mục",
-    "all_categories": "Tất Cả Danh Mục",
-    "sort_newest": "Mới Nhất",
-    "sort_price_low": "Giá: Thấp đến Cao",
-    "sort_price_high": "Giá: Cao đến Thấp",
-    "sort_popular": "Phổ Biến Nhất",
-    "total_count": "Tổng {{count}} sản phẩm",
-    "search_label": "Tìm kiếm",
-    "sale_badge": "Giảm Giá",
-    "sold_out": "Hết Hàng",
-    "stock_low": "Chỉ còn {{count}}",
-    "no_products": "Không Có Sản Phẩm",
-    "try_other_filters": "Vui lòng thử tiêu chí tìm kiếm khác"
+    "title": {
+      "name": "",
+      "description": ""
+    },
+    "subtitle": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "all_products": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "search_placeholder": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "select_category": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "all_categories": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sort_newest": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sort_price_low": {
+      "name": "",
+      "description": ""
+    },
+    "sort_price_high": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sort_popular": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "total_count": {
+      "name": "Chưa xác định",
+      "description": "Chưa xác định"
+    },
+    "search_label": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sale_badge": {
+      "name": "",
+      "description": ""
+    },
+    "sold_out": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "stock_low": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "no_products": {
+      "name": "",
+      "description": ""
+    },
+    "try_other_filters": {
+      "name": "",
+      "description": ""
+    },
+    "viewAll": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "fortune-energy-analysis-report": {
+      "name": "Báo cáo Phân tích Năng lượng Vận mệnh",
+      "description": "Mở khóa trí tuệ phương Đông cổ xưa, khám phá mật mã năng lượng vận mệnh của bạn\n\n**Dịch vụ bao gồm:**\n\n**1. Phân tích Cấu trúc Vận mệnh**\nDựa trên Tứ trụ của bạn, chúng tôi sẽ giải thích sâu sắc về năng khiếu bẩm sinh, đặc điểm tính cách và quỹ đạo cuộc đời bạn. Các chuyên gia vận mệnh của chúng tôi sẽ sử dụng học thuyết Ngũ hành (Kim, Mộc, Thủy, Hỏa, Thổ) để tiết lộ cho bạn:\n- Sự kết hợp Thiên Can Địa Chi ảnh hưởng đến tính cách và các mối quan hệ của bạn như thế nào\n- Các cát tinh đặc biệt (như Thiên Ất Quý Nhân, Thái Cực Quý Nhân) gia tăng vận may cho bạn\n- Mối liên hệ sâu sắc giữa Mệnh cung, Cung Sự nghiệp, Cung Tài Bạch và các cung vị khác với những trải nghiệm trong cuộc đời\n\n**2. Phân tích Vận hạn Lưu niên (2026-2027)**\nGiải thích chi tiết về dòng chảy năng lượng và sự thay đổi vận hạn trong năm tới:\n- Ngũ hành sinh khắc ảnh hưởng đến sự phát triển sự nghiệp, xu hướng tình cảm và thời điểm đưa ra quyết định của bạn như thế nào\n- Kết hợp với bối cảnh cuộc sống hiện đại, cung cấp lời khuyên thiết thực – cách nắm bắt cơ hội, tránh rủi ro\n- Hướng dẫn chuyên biệt cho các lĩnh vực quan trọng như tài lộc, sức khỏe, các mối quan hệ\n\nHai báo cáo bổ sung cho nhau, vẽ nên một bản đồ vận mệnh hoàn chỉnh xuyên suốt quá khứ, hiện tại và tương lai cho bạn!\n\n**Quy trình sau khi mua:**\n1. Sau khi hoàn tất thanh toán, vui lòng gửi thông tin ngày sinh chi tiết của bạn (ngày, tháng, năm sinh, giờ chính xác, nơi sinh) đến địa chỉ: seondo@cneraart.com\n   Ví dụ: 12/12/1978 12:20 PM, New York, Hoa Kỳ\n2. Các chuyên gia vận mệnh của chúng tôi sẽ sử dụng triết học Ngũ hành cổ xưa của Trung Quốc để phân tích mô hình năng lượng độc đáo của riêng bạn\n3. Bạn sẽ nhận được "
+    },
+    "destiny-analysis-wutai-mountain-blessing-ceremony": {
+      "name": "Phân tích vận mệnh + Nghi lễ ban phước tại Ngũ Đài Sơn",
+      "description": "Bạn thân mến, bạn có khao khát hiểu rõ quỹ đạo cuộc đời mình, đồng thời truyền năng lượng phước lành thiêng liêng vào tương lai không? Chỉ với $79, bạn sẽ nhận được \"Báo cáo phân tích năng lượng mệnh lý\" đầy đủ, và còn được hưởng nghi lễ cầu phúc độc quyền do đội ngũ của chúng tôi thực hiện tại Ngũ Đài Sơn – thánh địa Phật giáo ở Trung Quốc! Thắp sáng con đường phía trước cho bạn và những người thân yêu của bạn.\n\n**Gói dịch vụ độc quyền của bạn bao gồm:**\n\n**Báo cáo phân tích mệnh lý (Giao trong 3-5 ngày)**\n- Dựa trên ngày giờ sinh của bạn, giải thích cá nhân hóa về cấu trúc mệnh lý và sự tương tác năng lượng của bạn\n- Phân tích sâu sắc đại vận lưu niên của bạn, giúp bạn nắm bắt cơ hội và những điều cần lưu ý trong giai đoạn 2026-2027\n- Bao gồm hướng dẫn đa chiều về sự nghiệp, tài lộc, tình cảm, sức khỏe, v.v.\n- Kết hợp triết lý Ngũ hành truyền thống với ứng dụng cuộc sống hiện đại, cung cấp lời khuyên thiết thực\n\n**Dịch vụ cầu phúc hộ trì tại Ngũ Đài Sơn (Video giao trong 10-15 ngày)**\n- Bạn có thể chọn **cúng đèn** (thắp sáng con đường trí tuệ) hoặc **thắp hương** (cầu bình an, tiêu trừ chướng ngại)\n- Đội ngũ của chúng tôi sẽ đích thân đến chùa Ngũ Đài Sơn, ghi lại toàn bộ quá trình nghi lễ cầu phúc\n- Video sẽ bao gồm việc đọc tên bạn, lời cầu nguyện và quá trình nghi lễ – đảm bảo sự minh bạch và chân thành\n- Mỗi ngọn đèn, mỗi nén hương đều được thắp riêng cho bạn\n\n**Làm thế nào để tham gia?**\n1. Nhấp vào liên kết mua hàng, chọn gói cầu phúc $79\n2. Sau khi thanh toán, vui lòng gửi tên, thông tin ngày giờ sinh và sở thích cầu phúc của bạn (cúng đèn hoặc thắp hương) đến địa chỉ: seondo@cneraart.com\n   Ví dụ: 12 tháng 12 năm 1978 12:20 PM, New York, Hoa Kỳ\n3. Bạn sẽ nhận được \"Báo cáo phân tích năng lượng mệnh lý\" qua email trong vòng 3-5 ngày làm việc\n4. Trong vòng 10-15 ngày sau khi nghi lễ cầu phúc hoàn tất, video cầu phúc sẽ được gửi đến email của bạn\n\n**Tại sao chọn phiên bản nâng cấp này?**\n- Không chỉ là dự đoán – mà còn truyền năng lượng phước lành vào cuộc sống của bạn\n- Trí tuệ cổ xưa + nghi lễ thiêng liêng, bảo hộ kép\n- Ghi lại toàn bộ bằng video – chân thành, đáng tin cậy, minh bạch có thể kiểm tra\n- Phù hợp với nhiều tâm nguyện: thành công sự nghiệp, gia đình hòa thuận, chuyển vận hóa giải, học hành tiến bộ, v.v.\n\nMột báo cáo, một ngọn đèn sáng, một tâm nguyện, một sự chuyển đổi.\n\nNguyện chúng ta cùng nhau mở cánh cửa vận mệnh, đón chào tương lai tươi sáng.\n\n**Lưu ý:** Dịch vụ cầu phúc là đại diện cho việc cúng dường tôn giáo. Chúng tôi tôn trọng mọi tín ngưỡng – sự thành tâm là quan trọng nhất. Dịch vụ này tuân thủ nghiêm ngặt cách giải thích văn hóa truyền thống, chỉ cung cấp hướng dẫn định hướng. Tất cả kết quả chỉ mang tính chất tham khảo."
+    }
   },
   "common": {
     "site_name": "Cneraart",
@@ -312,5 +380,26 @@
     "Capricorn": "Capricorn",
     "Aquarius": "Aquarius",
     "Pisces": "Pisces"
+  },
+  "fortuneUpload": {
+    "title": "Tải lên hình ảnh",
+    "faceGuidance": "Vui lòng tải lên 2-5 ảnh khuôn mặt rõ ràng (góc nhìn phía trước, góc nhìn bên, ánh sáng tự nhiên)",
+    "palmGuidance": "Vui lòng tải lên 2-5 ảnh lòng bàn tay rõ ràng (cả hai tay mặt trước, mặt sau, đủ ánh sáng)",
+    "fengshuiGuidance": "Vui lòng tải lên 3-10 ảnh phòng (lối vào, phòng khách, phòng ngủ, nhà bếp, v.v.)",
+    "selectImages": "Chọn hình ảnh",
+    "imageCount": "{{current}}/{{max}} hình ảnh",
+    "maxImagesError": "Tối đa {{max}} hình ảnh được phép",
+    "invalidFileType": "Vui lòng tải lên tệp hình ảnh",
+    "fileTooLarge": "Kích thước tệp không thể vượt quá 10MB",
+    "noImages": "Chưa tải lên hình ảnh nào",
+    "minImagesRequired": "Cần ít nhất {{min}} hình ảnh",
+    "questionLabel": "Mô tả câu hỏi (Tùy chọn)",
+    "questionPlaceholder": "Vui lòng mô tả các câu hỏi hoặc mối quan tâm cụ thể của bạn, chẳng hạn như: phát triển sự nghiệp, xu hướng tài sản, mối quan hệ, v.v...",
+    "questionHint": "Cung cấp câu hỏi chi tiết giúp các bậc thầy của chúng tôi phân tích chính xác hơn",
+    "requirements": "Yêu cầu tải lên",
+    "req1": "Hình ảnh phải rõ ràng với đủ ánh sáng",
+    "req2": "Hỗ trợ JPG, PNG và các định dạng phổ biến khác",
+    "req3": "Một hình ảnh duy nhất không thể vượt quá 10MB",
+    "req4": "Tất cả hình ảnh đều được bảo mật nghiêm ngặt và tự động xóa sau khi phân tích"
   }
 }

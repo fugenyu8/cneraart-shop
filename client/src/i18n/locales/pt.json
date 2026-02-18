@@ -166,7 +166,14 @@
     "step3Title": "Análise do Mestre",
     "step3Desc": "Sabedoria tradicional + expertise",
     "step4Title": "Ver relatório",
-    "step4Desc": "Obter relatório detalhado"
+    "step4Desc": "Obter relatório detalhado",
+    "trustTitle": "Confiança e Segurança",
+    "privacy": "Proteção de privacidade",
+    "privacyDesc": "Todas as informações estritamente confidenciais",
+    "speed": "Entrega rápida",
+    "speedDesc": "Análise concluída em 3-5 dias úteis",
+    "accuracy": "Precisão profissional",
+    "accuracyDesc": "Sabedoria tradicional com análise moderna"
   },
   "admin": {
     "dashboard": "Painel",
@@ -244,32 +251,93 @@
   },
   "products": {
     "510060": {
-      "name": "Relatório de Análise de Energia do Destino",
-      "shortDesc": "Desbloqueie a Sabedoria Oriental Antiga, Explore Seu Código de Energia do Destino",
-      "description": "Análise profunda do destino baseada em dados de nascimento, incluindo interpretação da estrutura Bazi e análise da fortuna anual, entregue em 3-5 dias"
+      "name": "Relatório de Análise de Energia Bazi",
+      "description": "Análise aprofundada de numerologia baseada nos Oito Caracteres do Nascimento (Bazi), incluindo interpretação da estrutura numerológica e análise da sorte anual, com entrega de relatório exclusivo em 3-5 dias."
     },
     "510061": {
-      "name": "Análise do Destino + Cerimônia de Bênção do Monte Wutai",
-      "shortDesc": "Análise Profunda do Destino + Bênção Sagrada do Monte Wutai, Dupla Proteção para Seu Caminho de Vida",
-      "description": "Relatório completo do destino + serviço de bênção por procuração do Monte Wutai (lâmpada/incenso), com gravação de vídeo, entregue em 10-15 dias"
+      "name": "Análise de Numerologia + Cerimônia de Oração na Montanha Wutai",
+      "description": "Relatório completo de numerologia + Serviço de oração substituta na Montanha Wutai (oferta de luzes/incenso), incluindo gravação de vídeo, entrega em 10-15 dias"
     },
-    "title": "Acessórios Abençoados",
-    "subtitle": "Acessórios abençoados selecionados, herdando sabedoria milenar, protegendo sua jornada de vida",
-    "all_products": "Todos os Produtos",
-    "search_placeholder": "Pesquisar produtos...",
-    "select_category": "Selecionar Categoria",
-    "all_categories": "Todas as Categorias",
-    "sort_newest": "Mais Recente",
-    "sort_price_low": "Preço: Baixo a Alto",
-    "sort_price_high": "Preço: Alto a Baixo",
-    "sort_popular": "Mais Popular",
-    "total_count": "{{count}} produtos no total",
-    "search_label": "Pesquisar",
-    "sale_badge": "Promoção",
-    "sold_out": "Esgotado",
-    "stock_low": "Apenas {{count}} restantes",
-    "no_products": "Sem Produtos",
-    "try_other_filters": "Por favor, tente outros critérios de pesquisa"
+    "title": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "subtitle": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "all_products": {
+      "name": "null",
+      "description": "null"
+    },
+    "search_placeholder": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "select_category": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "all_categories": {
+      "name": "Indefinido",
+      "description": "Indefinido"
+    },
+    "sort_newest": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sort_price_low": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "sort_price_high": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "sort_popular": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "total_count": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "search_label": {
+      "name": "Indefinido",
+      "description": "Indefinido"
+    },
+    "sale_badge": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sold_out": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "stock_low": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "no_products": {
+      "name": "",
+      "description": ""
+    },
+    "try_other_filters": {
+      "name": "indefinido",
+      "description": "indefinido"
+    },
+    "viewAll": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "fortune-energy-analysis-report": {
+      "name": "Relatório de Análise de Energia da Fortuna",
+      "description": "Desbloqueie a antiga sabedoria oriental, explore seu código de energia numerológica\n\n**O serviço inclui:**\n\n**1. Análise da Estrutura Numerológica**\nCom base na sua data e hora de nascimento, interpretamos profundamente seus talentos inatos, traços de personalidade e trajetória de vida. Nossos mestres numerólogos usarão a teoria dos Cinco Elementos (Metal, Madeira, Água, Fogo, Terra) para revelar a você:\n- Como a combinação dos Troncos Celestes e Ramos Terrestres influencia sua personalidade e relacionamentos interpessoais\n- O apoio de estrelas auspiciosas e divindades propícias (como o Nobre Celestial Yi, o Nobre Tai Ji) para a sua sorte\n- A conexão profunda entre os doze palácios (como o Palácio da Vida, Palácio da Carreira, Palácio da Riqueza) e as experiências de vida\n\n**2. Análise da Sorte Anual (2026-2027)**\nInterpretação detalhada do fluxo de energia e mudanças na sorte para o próximo ano:\n- Como a interação de geração e controle dos Cinco Elementos afeta o desenvolvimento da sua carreira, o curso dos seus relacionamentos e o momento das suas decisões\n- Fornecimento de conselhos práticos, combinando com cenários da vida moderna – como aproveitar oportunidades e evitar riscos\n- Orientações exclusivas para áreas-chave como finanças, saúde e relacionamentos interpessoais\n\nOs dois relatórios se complementam, traçando para você um mapa numerológico completo que abrange o passado, presente e futuro!\n\n**Processo após a compra:**\n1. Após concluir o pagamento, envie suas informações detalhadas de nascimento (ano, mês, dia de nascimento, hora exata, local de nascimento) para: seondo@cneraart.com\n   Exemplo: 12 de dezembro de 1978, 12:20 PM, Nova York, EUA\n2. Nossos mestres numerólogos usarão a antiga filosofia chinesa dos Cinco Elementos para analisar seu padrão de energia único e personalizado\n3. Você receberá o seu exclusivo “Relatório de Análise de Energia Numerológica” por e-mail dentro de 3 a 5 dias úteis\n\n**Garantia de Privacidade e Personalização:**\nValorizamos muito a sua privacidade – todas as informações serão mantidas em estrita confidencialidade. Isso não é “adivinhação”, mas sim uma forma de ajudá-lo a viver com mais clareza e confiança, compreendendo seus padrões de energia.\n\n**Por que nos escolher?**\n- Por apenas $19, você obtém um relatório personalizado e aprofundado, que combina sabedoria antiga com práticas modernas\n- Especialmente adequado para quem busca promoção na carreira, harmonia nos relacionamentos, equilíbrio emocional, otimização da saúde ou orientação para o crescimento pessoal\n- Uma experiência de insight única – como uma avaliação de personalidade refinada por milênios!\n\n**Nota:** Este serviço segue estritamente as interpretações da cultura tradicional e fornece apenas orientações. Todos os resultados são apenas para referência."
+    },
+    "destiny-analysis-wutai-mountain-blessing-ceremony": {
+      "name": "Análise do Destino + Cerimônia de Bênção na Montanha Wutai",
+      "description": "Querido(a) amigo(a), você anseia por compreender a trajetória da sua vida e, ao mesmo tempo, infundir no seu futuro uma energia de bênção sagrada? Por apenas $79, você receberá um Relatório Completo de Análise de Energia da Numerologia e poderá desfrutar de uma cerimônia de bênção exclusiva realizada pela nossa equipe na Montanha Wutai, um local sagrado do budismo chinês! Iluminando o caminho à frente para você e seus entes queridos.\n\n**Seu pacote exclusivo inclui:**\n\n**Relatório de Análise Numerológica (entrega em 3-5 dias)**\n- Com base na sua data e hora de nascimento (Bazi), uma interpretação personalizada da sua estrutura numerológica e interações energéticas\n- Análise aprofundada dos seus Grandes Ciclos e Anos Correntes, ajudando você a aproveitar oportunidades cruciais e a estar ciente de precauções em 2026-2027\n- Abrange orientações multifacetadas em carreira, finanças, relacionamentos, saúde e muito mais\n- Integra a filosofia tradicional dos Cinco Elementos com aplicações na vida moderna, oferecendo conselhos práticos e viáveis\n\n**Serviço de Oração e Bênção na Montanha Wutai (entrega de vídeo em 10-15 dias)**\n- Você pode escolher **oferta de luz** (iluminando o caminho da sabedoria) ou **oferta de incenso** (orando por paz e eliminando obstáculos)\n- Nossa equipe irá pessoalmente aos templos da Montanha Wutai, registrando todo o processo da cerimônia de bênção\n- O vídeo incluirá a recitação do seu nome, a oração dos seus desejos e o processo da cerimônia – garantindo transparência e sinceridade\n- Cada luz, cada vareta de incenso, é acesa exclusivamente para você\n\n**Como participar?**\n1. Clique no link de compra e selecione o pacote de bênção de $79\n2. Após a conclusão do pagamento, envie seu nome, informações de nascimento e preferência de bênção (oferta de luz ou incenso) para: seondo@cneraart.com\n   Exemplo: 12 de dezembro de 1978, 12:20 PM, Nova York, EUA\n3. Você receberá o “Relatório de Análise de Energia da Numerologia” por e-mail em 3-5 dias úteis\n4. O vídeo da cerimônia de bênção será enviado para o seu e-mail dentro de 10-15 dias após a conclusão da cerimônia\n\n**Por que escolher esta versão aprimorada?**\n- Não é apenas uma previsão – mas também infunde energia de bênção em sua vida\n- Sabedoria antiga + rituais sagrados, dupla proteção\n- Gravação de vídeo completa – sincera, confiável e verificável\n- Adequado para diversos desejos: sucesso na carreira, harmonia familiar, mudança de sorte, progresso acadêmico, etc.\n\nUm relatório, uma luz guia, um desejo, uma transformação.\n\nQue possamos de mãos dadas, abrir a porta do destino e acolher um futuro brilhante.\n\n**Nota:** O serviço de bênção é uma representação de oferendas religiosas. Respeitamos todas as crenças – a sinceridade é o mais importante. Este serviço segue rigorosamente as interpretações da cultura tradicional, fornecendo apenas orientação direcional. Todos os resultados são apenas para referência."
+    }
   },
   "common": {
     "site_name": "Cneraart",
@@ -312,5 +380,26 @@
     "Capricorn": "Capricorn",
     "Aquarius": "Aquarius",
     "Pisces": "Pisces"
+  },
+  "fortuneUpload": {
+    "title": "Enviar imagens",
+    "faceGuidance": "Por favor envie 2-5 fotos faciais claras (vista frontal, vistas laterais, iluminação natural)",
+    "palmGuidance": "Por favor envie 2-5 fotos de palmas claras (ambas as mãos frente, costas, bem iluminadas)",
+    "fengshuiGuidance": "Por favor envie 3-10 fotos de cômodos (entrada, sala de estar, quarto, cozinha, etc.)",
+    "selectImages": "Selecionar imagens",
+    "imageCount": "{{current}}/{{max}} imagens",
+    "maxImagesError": "Máximo {{max}} imagens permitidas",
+    "invalidFileType": "Por favor envie arquivos de imagem",
+    "fileTooLarge": "O tamanho do arquivo não pode exceder 10MB",
+    "noImages": "Ainda não foram enviadas imagens",
+    "minImagesRequired": "Pelo menos {{min}} imagens são necessárias",
+    "questionLabel": "Descrição da pergunta (opcional)",
+    "questionPlaceholder": "Por favor descreva suas perguntas ou preocupações específicas, como: desenvolvimento de carreira, tendências de riqueza, relacionamentos, etc...",
+    "questionHint": "Fornecer perguntas detalhadas ajuda nossos mestres a analisar com mais precisão",
+    "requirements": "Requisitos de envio",
+    "req1": "As imagens devem ser claras com iluminação suficiente",
+    "req2": "Suporta JPG, PNG e outros formatos comuns",
+    "req3": "Uma única imagem não pode exceder 10MB",
+    "req4": "Todas as imagens são estritamente confidenciais e automaticamente excluídas após a análise"
   }
 }

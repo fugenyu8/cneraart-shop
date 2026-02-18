@@ -1,0 +1,28 @@
+{
+  "query": "SELECT id, slug, name, regularPrice, salePrice, categoryId, status FROM products WHERE slug LIKE '%service%' ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, slug, name, regularPrice, salePrice, categoryId, status FROM products WHERE slug LIKE '%service%' ORDER BY id;",
+  "rows": [
+    {
+      "id": "510056",
+      "slug": "wutai-mountain-incense-offering-service",
+      "name": "Wutai Mountain Incense Offering Service",
+      "regularPrice": "79.00",
+      "salePrice": "69.00",
+      "categoryId": "60001",
+      "status": "published"
+    },
+    {
+      "id": "510057",
+      "slug": "wutai-mountain-lamp-offering-service",
+      "name": "Wutai Mountain Lamp Offering Service",
+      "regularPrice": "79.00",
+      "salePrice": "69.00",
+      "categoryId": "60001",
+      "status": "published"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tslug\tname\tregularPrice\tsalePrice\tcategoryId\tstatus\n510056\twutai-mountain-incense-offering-service\tWutai Mountain Incense Offering Service\t79.00\t69.00\t60001\tpublished\n510057\twutai-mountain-lamp-offering-service\tWutai Mountain Lamp Offering Service\t79.00\t69.00\t60001\tpublished\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

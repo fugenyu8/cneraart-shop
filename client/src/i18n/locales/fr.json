@@ -82,23 +82,36 @@
   },
   "products": {
     "510060": {
-      "name": "Rapport d'Analyse de l'Énergie du Destin",
-      "shortDesc": "Déverrouillez la Sagesse Orientale Ancienne, Explorez Votre Code d'Énergie du Destin",
-      "description": "Analyse approfondie du destin basée sur les données de naissance, incluant l'interprétation de la structure Bazi et l'analyse de la fortune annuelle, livré en 3-5 jours"
+      "name": "Rapport d'analyse énergétique de la destinée",
+      "description": "Analyse approfondie de la destinée basée sur les Huit Caractères de Naissance (Bazi), incluant l'interprétation de la structure de la destinée et l'analyse des tendances annuelles. Rapport personnalisé livré en 3-5 jours."
     },
     "510061": {
-      "name": "Analyse du Destin + Cérémonie de Bénédiction du Mont Wutai",
-      "shortDesc": "Analyse Profonde du Destin + Bénédiction Sacrée du Mont Wutai, Double Protection pour Votre Chemin de Vie",
-      "description": "Rapport complet sur le destin + service de bénédiction par procuration du Mont Wutai (lampe/encens), avec enregistrement vidéo, livré en 10-15 jours"
+      "name": "Analyse de la numérologie + Cérémonie de prière et de bénédiction du Mont Wutai",
+      "description": "Rapport complet d'analyse numérologique + Service de prière et de bénédiction à distance au Mont Wutai (offrande de lampes/encens), incluant un enregistrement vidéo, livraison sous 10-15 jours."
     },
-    "title": "Accessoires Bénis",
-    "search_placeholder": "Rechercher des produits...",
+    "title": {
+      "name": "",
+      "description": ""
+    },
+    "search_placeholder": {
+      "name": "undefined",
+      "description": "undefined"
+    },
     "filter_all": "Toutes les catégories",
     "sort_label": "Trier par",
     "sort_latest": "Plus récent",
-    "sort_price_low": "Prix: Bas à Élevé",
-    "sort_price_high": "Prix: Élevé à Bas",
-    "sort_popular": "Plus Populaire",
+    "sort_price_low": {
+      "name": "non défini",
+      "description": "non défini"
+    },
+    "sort_price_high": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sort_popular": {
+      "name": "undefined",
+      "description": "undefined"
+    },
     "no_results": "Aucun produit trouvé",
     "no_results_desc": "Essayez d'ajuster votre recherche ou vos filtres",
     "view_details": "Voir les détails",
@@ -106,18 +119,66 @@
     "out_of_stock": "Rupture de stock",
     "in_stock": "En stock",
     "only_left": "Plus que {{count}} restant(s)",
-    "subtitle": "Accessoires bénis sélectionnés, héritant de la sagesse millénaire, protégeant votre voyage de vie",
-    "all_products": "Tous les Produits",
-    "select_category": "Sélectionner une Catégorie",
-    "all_categories": "Toutes les Catégories",
-    "sort_newest": "Plus Récent",
-    "total_count": "{{count}} produits au total",
-    "search_label": "Recherche",
-    "sale_badge": "Promo",
-    "sold_out": "Épuisé",
-    "stock_low": "Plus que {{count}}",
-    "no_products": "Aucun Produit",
-    "try_other_filters": "Veuillez essayer d'autres critères de recherche"
+    "subtitle": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "all_products": {
+      "name": "non défini",
+      "description": "non défini"
+    },
+    "select_category": {
+      "name": "non défini",
+      "description": "non défini"
+    },
+    "all_categories": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sort_newest": {
+      "name": "",
+      "description": ""
+    },
+    "total_count": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "search_label": {
+      "name": "",
+      "description": ""
+    },
+    "sale_badge": {
+      "name": "undefined",
+      "description": "undefined"
+    },
+    "sold_out": {
+      "name": "non défini",
+      "description": "non défini"
+    },
+    "stock_low": {
+      "name": "non défini",
+      "description": "non défini"
+    },
+    "no_products": {
+      "name": "",
+      "description": ""
+    },
+    "try_other_filters": {
+      "name": "",
+      "description": ""
+    },
+    "viewAll": {
+      "name": "non défini",
+      "description": "non défini"
+    },
+    "fortune-energy-analysis-report": {
+      "name": "Rapport d'Analyse Énergétique de la Fortune",
+      "description": "Débloquez l'ancienne sagesse orientale, explorez votre code énergétique numérologique.\n\n**Le service comprend :**\n\n**1. Analyse de la structure numérologique**\nBasée sur votre date de naissance (Bazi), une interprétation approfondie de vos talents innés, de vos traits de caractère et de votre trajectoire de vie. Nos maîtres numérologues utiliseront la théorie des Cinq Éléments (Métal, Bois, Eau, Feu, Terre) pour vous révéler :\n- Comment la combinaison des Troncs Célestes et des Branches Terrestres influence votre personnalité et vos relations interpersonnelles\n- L'influence bénéfique des étoiles propices et des divinités (telles que Tian Yi Gui Ren, Tai Ji Gui Ren) sur votre fortune\n- Les liens profonds entre les douze palais (comme le Palais de la Vie, le Palais de la Carrière, le Palais de la Richesse) et les événements de votre vie\n\n**2. Analyse de la fortune annuelle (2026-2027)**\nUne interprétation détaillée des flux énergétiques et des changements de fortune pour l'année à venir :\n- Comment l'interaction des Cinq Éléments affecte le développement de votre carrière, l'évolution de vos relations et le moment de vos décisions\n- Des conseils pratiques adaptés à la vie moderne – comment saisir les opportunités et éviter les risques\n- Des orientations exclusives pour des domaines clés tels que la richesse, la santé et les relations interpersonnelles\n\nCes deux rapports se complètent mutuellement, vous offrant une carte numérologique complète qui relie le passé, le présent et l'avenir !\n\n**Processus après l'achat :**\n1. Après avoir effectué le paiement, veuillez envoyer vos informations de naissance détaillées (date de naissance, heure exacte, lieu de naissance) à : seondo@cneraart.com\n   Exemple : 12 décembre 1978 12:20 PM, New York, États-Unis\n2. Nos maîtres numérologues utiliseront l'ancienne philosophie chinoise des Cinq Éléments pour analyser votre modèle énergétique unique et personnalisé.\n3. Vous recevrez votre « Rapport d'Analyse Énergétique Numérologique » exclusif par e-mail dans les 3 à 5 jours ouvrables.\n\n**Confidentialité et garantie de personnalisation :**\nNous attachons une grande importance à votre vie privée – toutes les informations seront strictement confidentielles. Ce n'est pas de la \"voyance\", mais une aide pour vivre plus clairement et avec plus de confiance en comprenant vos schémas énergétiques.\n\n**Pourquoi nous choisir ?**\n- Pour seulement 19 $, obtenez un rapport personnalisé approfondi, combinant sagesse ancienne et pratique moderne\n- Particulièrement adapté à ceux qui recherchent une promotion professionnelle, l'harmonie relationnelle, l'équilibre émotionnel, l'optimisation de la santé ou des conseils pour leur développement personnel\n- Une expérience de perspicacité unique – comme une évaluation de la personnalité affinée au fil des millénaires !\n\n**Note :** Ce service adhère strictement aux interprétations culturelles traditionnelles et ne fournit que des orientations. Tous les résultats sont fournis à titre indicatif uniquement."
+    },
+    "destiny-analysis-wutai-mountain-blessing-ceremony": {
+      "name": "Analyse de Destin + Cérémonie de Bénédiction du Mont Wutai",
+      "description": "Chers amis, aspirez-vous à comprendre votre parcours de vie tout en insufflant une énergie de bénédiction sacrée à votre avenir? Pour seulement 79$, vous recevrez un «Rapport d'Analyse Énergétique du Destin» complet, et pourrez également profiter d'une cérémonie de bénédiction exclusive organisée par notre équipe au Mont Wutai, terre sainte du bouddhisme chinois! Illuminez le chemin devant vous et vos proches.\n\n**Votre forfait exclusif comprend:**\n\n**Rapport d'Analyse du Destin (livraison sous 3-5 jours)**\n- Interprétation personnalisée de votre structure de destin et de l'interaction des énergies basée sur vos Huit Caractères de Naissance (Bazi)\n- Analyse approfondie de vos périodes de chance (Dayun) et années courantes (Liunian) pour vous aider à saisir les opportunités clés et les précautions à prendre en 2026-2027\n- Conseils couvrant plusieurs dimensions: carrière, fortune, relations, santé, etc.\n- Intègre la philosophie traditionnelle des Cinq Éléments et les applications de la vie moderne, offrant des suggestions pratiques et réalisables\n\n**Service de Bénédiction par procuration au Mont Wutai (livraison vidéo sous 10-15 jours)**\n- Vous pouvez choisir d'**offrir des lumières** (illuminer le chemin de la sagesse) ou d'**offrir de l'encens** (prier pour la paix, éliminer les obstacles)\n- Notre équipe se rendra personnellement aux temples du Mont Wutai pour enregistrer toute la cérémonie de bénédiction\n- La vidéo inclura la récitation de votre nom, la prière de vos vœux et le déroulement de la cérémonie – garantissant transparence et sincérité\n- Chaque lampe, chaque bâton d'encens est allumé spécialement pour vous\n\n**Comment participer?**\n1. Cliquez sur le lien d'achat et choisissez le forfait de bénédiction à 79$\n2. Après le paiement, veuillez envoyer votre nom, vos informations de naissance et votre préférence de bénédiction (offrande de lumières ou d'encens) à: seondo@cneraart.com\n   Exemple: 12 décembre 1978 12:20 PM, New York, États-Unis\n3. Vous recevrez le «Rapport d'Analyse Énergétique du Destin» par e-mail dans les 3-5 jours ouvrables\n4. La vidéo de bénédiction sera envoyée à votre boîte de réception dans les 10-15 jours suivant la fin de la cérémonie de bénédiction\n\n**Pourquoi choisir cette version améliorée?**\n- Ce n'est pas seulement une prédiction – cela insuffle également une énergie de bénédiction dans votre vie\n- Sagesse ancienne + Rituel sacré, double protection\n- Enregistrement vidéo complet – sincère, fiable et vérifiable\n- Convient à une variété de souhaits: succès professionnel, harmonie familiale, transformation de la malchance, progrès scolaire, etc.\n\nUn rapport, une lumière éclairante, un vœu, une transformation.\n\nPuissions-nous unir nos forces pour ouvrir la porte du destin et accueillir un avenir lumineux.\n\n**Remarque:** Le service de bénédiction est une offrande religieuse par procuration. Nous respectons toutes les croyances – la sincérité est primordiale. Ce service suit strictement les interprétations culturelles traditionnelles et ne fournit que des orientations. Tous les résultats sont donnés à titre indicatif uniquement."
+    }
   },
   "product_detail": {
     "back": "Back to Products",
@@ -364,7 +425,14 @@
     "step3Title": "Analyse du Maître",
     "step3Desc": "Sagesse traditionnelle + expertise",
     "step4Title": "Voir le rapport",
-    "step4Desc": "Obtenir un rapport détaillé"
+    "step4Desc": "Obtenir un rapport détaillé",
+    "trustTitle": "Confiance & Sécurité",
+    "privacy": "Protection de la vie privée",
+    "privacyDesc": "Toutes les informations strictement confidentielles",
+    "speed": "Livraison rapide",
+    "speedDesc": "Analyse complétée sous 3-5 jours ouvrables",
+    "accuracy": "Précision professionnelle",
+    "accuracyDesc": "Sagesse traditionnelle et analyse moderne"
   },
   "categories": {
     "zodiac_guardian": "Gardien du Zodiaque",
@@ -421,5 +489,26 @@
     "Capricorn": "Capricorn",
     "Aquarius": "Aquarius",
     "Pisces": "Pisces"
+  },
+  "fortuneUpload": {
+    "title": "Télécharger des images",
+    "faceGuidance": "Veuillez télécharger 2-5 photos faciales claires (vue de face, vues de côté, éclairage naturel)",
+    "palmGuidance": "Veuillez télécharger 2-5 photos de paumes claires (les deux mains devant, derrière, bien éclairées)",
+    "fengshuiGuidance": "Veuillez télécharger 3-10 photos de pièces (entrée, salon, chambre, cuisine, etc.)",
+    "selectImages": "Sélectionner des images",
+    "imageCount": "{{current}}/{{max}} images",
+    "maxImagesError": "Maximum {{max}} images autorisées",
+    "invalidFileType": "Veuillez télécharger des fichiers image",
+    "fileTooLarge": "La taille du fichier ne peut pas dépasser 10 Mo",
+    "noImages": "Aucune image téléchargée pour le moment",
+    "minImagesRequired": "Au moins {{min}} images requises",
+    "questionLabel": "Description de la question (facultatif)",
+    "questionPlaceholder": "Veuillez décrire vos questions ou préoccupations spécifiques, telles que : développement de carrière, tendances financières, relations, etc...",
+    "questionHint": "Fournir des questions détaillées aide nos maîtres à analyser plus précisément",
+    "requirements": "Exigences de téléchargement",
+    "req1": "Les images doivent être claires avec un éclairage suffisant",
+    "req2": "Prend en charge JPG, PNG et autres formats courants",
+    "req3": "Une seule image ne peut pas dépasser 10 Mo",
+    "req4": "Toutes les images sont strictement confidentielles et automatiquement supprimées après analyse"
   }
 }
