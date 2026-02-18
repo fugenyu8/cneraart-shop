@@ -1182,3 +1182,23 @@ PayPal支付凭证(明天完成)
 - [x] 更新开光法物商品的categoryId为8 - 已更新47个商品
 - [x] 测试开光法物页面显示 - 成功显示47个商品
 - [ ] 保存checkpoint
+
+
+## 三个核心功能开发(当前进行中)
+### 1. 报告查看页面
+- [x] 创建ReportView页面组件
+- [x] 添加路由配置
+- [x] 实现Markdown渲染(Streamdown)
+- [x] 实现PDF下载功能
+- [x] 添加中英文翻译
+
+### 2. 邮件通知系统
+- [x] 创建邮件模板(HTML+文本格式)
+- [x] 实现报告生成完成邮件通知(sendReportCompletionEmail)
+- [x] 实现订单状态更新邮件通知(sendOrderStatusEmail)
+- [ ] 集成到fortuneBooking和order流程中
+
+### 3. 商品图片加载优化
+- [x] 实现图片懒加载(OptimizedImage组件已存在)
+- [x] 添加WebP格式支持(已实现)
+- [x] 在Products和ProductDetail页面中使用

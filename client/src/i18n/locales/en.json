@@ -402,7 +402,8 @@
     "currency": "Currency",
     "learn_more": "Learn More",
     "site_name": "Cneraart",
-    "cart": "Cart"
+    "cart": "Cart",
+    "back_home": "Back to Home"
   },
   "status": {
     "pending": "Pending",
@@ -623,5 +624,19 @@
     "trust2Desc": "Each prayer is photographed to ensure authenticity and credibility",
     "trust3Title": "Email Feedback",
     "trust3Desc": "After prayer completion, photos and certificates will be sent to your email"
+  },
+  "reportView": {
+    "faceReadingReport": "Face Reading Report",
+    "palmReadingReport": "Palm Reading Report",
+    "fengshuiReport": "Feng Shui Report",
+    "download": "Download Report",
+    "downloading": "Downloading...",
+    "downloadSuccess": "Report downloaded successfully",
+    "downloadError": "Download failed, please try again",
+    "generatedAt": "Generated At",
+    "notFound": "Report Not Found",
+    "notFoundDesc": "Sorry, we couldn't find the report you requested. Please check if the link is correct.",
+    "processing": "Report Processing",
+    "processingDesc": "Your report is being generated. Please check back later. We'll notify you by email when it's ready."
   }
 }

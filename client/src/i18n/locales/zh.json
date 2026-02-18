@@ -410,7 +410,8 @@
     "learn_more": "了解更多",
     "uploading": "上传中...",
     "site_name": "源・华渡",
-    "cart": "购物车"
+    "cart": "购物车",
+    "back_home": "返回首页"
   },
   "status": {
     "pending": "待处理",
@@ -626,5 +627,19 @@
     "trust2Desc": "每次祈福都会拍照记录，确保真实可信",
     "trust3Title": "邮件反馈",
     "trust3Desc": "祈福完成后，将照片和证明发送至您的邮箱"
+  },
+  "reportView": {
+    "faceReadingReport": "面相分析报告",
+    "palmReadingReport": "手相分析报告",
+    "fengshuiReport": "风水分析报告",
+    "download": "下载报告",
+    "downloading": "下载中...",
+    "downloadSuccess": "报告下载成功",
+    "downloadError": "下载失败,请重试",
+    "generatedAt": "生成时间",
+    "notFound": "报告未找到",
+    "notFoundDesc": "抱歉,找不到您请求的报告。请检查链接是否正确。",
+    "processing": "报告生成中",
+    "processingDesc": "您的报告正在生成中,请稍后再来查看。我们会在报告完成后通过邮件通知您。"
   }
 }

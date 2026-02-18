@@ -19,6 +19,7 @@ import OrderDetail from "./pages/OrderDetail";
 import FortuneServices from "./pages/FortuneServices";
 import Destiny from "./pages/Destiny";
 import Prayer from "./pages/Prayer";
+import ReportView from "./pages/ReportView";
 import ServiceOrders from "./pages/admin/ServiceOrders";
 import BatchShipmentUpload from "./pages/admin/BatchShipmentUpload";
 
@@ -42,6 +43,7 @@ function Router() {
       <Route path={"/fortune"} component={FortuneServices} />
       <Route path={"/destiny"} component={Destiny} />
       <Route path={"/prayer"} component={Prayer} />
+      <Route path={"/report/:bookingId"} component={ReportView} />
       <Route path={"/admin/service-orders"} component={ServiceOrders} />
       <Route path={"/admin/batch-shipment"} component={BatchShipmentUpload} />
       <Route path={"/404"} component={NotFound} />

@@ -1,8 +1,8 @@
 {
   "version": "5",
   "dialect": "mysql",
-  "id": "f2af6e27-c34f-4e41-82f2-5778a7aafee8",
-  "prevId": "0a055cd0-0298-4a2e-9c74-bfbefebaed12",
+  "id": "6aacf243-7100-4105-a625-f8e8ea6630e2",
+  "prevId": "f2af6e27-c34f-4e41-82f2-5778a7aafee8",
   "tables": {
     "addresses": {
       "name": "addresses",
@@ -706,6 +706,13 @@
           "notNull": true,
           "autoincrement": false,
           "default": "'pending'"
+        },
+        "report": {
+          "name": "report",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
         },
         "reportUrl": {
           "name": "reportUrl",

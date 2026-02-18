@@ -402,6 +402,7 @@ export const fortuneBookings = mysqlTable("fortune_bookings", {
   
   // 服务状态和报告
   status: mysqlEnum("status", ["pending", "in_progress", "completed", "cancelled"]).default("pending").notNull(),
+  report: text("report"), // 生成的报告内容(Markdown格式)
   reportUrl: varchar("reportUrl", { length: 500 }), // 生成的报告URL
   reportSentAt: timestamp("reportSentAt"), // 报告发送时间
   completedAt: timestamp("completedAt"),
