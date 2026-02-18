@@ -220,8 +220,8 @@ export default function Home() {
                 
                 <div className="relative z-10 flex flex-col items-center text-center space-y-4">
                   {/* 实物照片 */}
-                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/compass1.jpg" alt="命理运势" className="w-full h-full object-cover" />
+                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform bg-black">
+                    <img src="/fortune-gold.jpg" alt="命理运势" className="w-full h-full object-contain p-2" />
                   </div>
                   <div>
                     <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.destiny.title')}</h3>
