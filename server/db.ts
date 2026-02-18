@@ -644,7 +644,8 @@ export async function getProductAverageRating(productId: number): Promise<number
     .from(reviews)
     .where(and(eq(reviews.productId, productId), eq(reviews.isApproved, true)));
 
-  return result[0]?.avg || 0;
+  const avgRating = result[0]?.avg;
+  return avgRating ? Number(avgRating) : 0;
 }
 
 // ============= 后台管理统计 =============
