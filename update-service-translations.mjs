@@ -1,92 +1,69 @@
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const languages = ['en', 'de', 'fr', 'es', 'it', 'pt', 'ru', 'ja', 'ko', 'ar', 'hi', 'th', 'vi', 'id'];
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
+const localesDir = path.join(__dirname, 'client/src/i18n/locales');
+
+// 翻译映射
 const translations = {
-  en: {
-    destiny: { subtitle: "BaZi Chart, Fortune Analysis" },
-    prayer: { subtitle: "Lamp Offering, Prayer Service" }
+  'get_report': {
+    'en': 'Get Report',
+    'pt': 'Obter Relatório',
+    'es': 'Obtener Informe',
+    'fr': 'Obtenir le Rapport',
+    'de': 'Bericht Erhalten',
+    'it': 'Ottieni Rapporto',
+    'ja': 'レポートを取得',
+    'ko': '보고서 받기',
+    'ru': 'Получить Отчет',
+    'ar': 'احصل على التقرير',
+    'hi': 'रिपोर्ट प्राप्त करें',
+    'th': 'รับรายงาน',
+    'vi': 'Nhận Báo Cáo',
+    'id': 'Dapatkan Laporan',
+    'zh': '立即购买'
   },
-  de: {
-    destiny: { subtitle: "BaZi-Diagramm, Schicksalsanalyse" },
-    prayer: { subtitle: "Lampenopfer, Gebetsdienst" }
-  },
-  fr: {
-    destiny: { subtitle: "Diagramme BaZi, Analyse du destin" },
-    prayer: { subtitle: "Offrande de lampe, Service de prière" }
-  },
-  es: {
-    destiny: { subtitle: "Carta BaZi, Análisis del destino" },
-    prayer: { subtitle: "Ofrenda de lámpara, Servicio de oración" }
-  },
-  it: {
-    destiny: { subtitle: "Diagramma BaZi, Analisi del destino" },
-    prayer: { subtitle: "Offerta di lampada, Servizio di preghiera" }
-  },
-  pt: {
-    destiny: { subtitle: "Mapa BaZi, Análise do destino" },
-    prayer: { subtitle: "Oferta de lâmpada, Serviço de oração" }
-  },
-  ru: {
-    destiny: { subtitle: "Карта BaZi, Анализ судьбы" },
-    prayer: { subtitle: "Подношение лампы, Молитвенная служба" }
-  },
-  ja: {
-    destiny: { subtitle: "八字命盤、運勢分析" },
-    prayer: { subtitle: "灯明供養、祈願サービス" }
-  },
-  ko: {
-    destiny: { subtitle: "사주팔자, 운세 분석" },
-    prayer: { subtitle: "등불 공양, 기도 서비스" }
-  },
-  ar: {
-    destiny: { subtitle: "مخطط BaZi، تحليل المصير" },
-    prayer: { subtitle: "تقديم المصباح، خدمة الصلاة" }
-  },
-  hi: {
-    destiny: { subtitle: "BaZi चार्ट, भाग्य विश्लेषण" },
-    prayer: { subtitle: "दीपक अर्पण, प्रार्थना सेवा" }
-  },
-  th: {
-    destiny: { subtitle: "แผนภูมิ BaZi, การวิเคราะห์โชคชะตา" },
-    prayer: { subtitle: "การถวายโคมไฟ, บริการสวดมนต์" }
-  },
-  vi: {
-    destiny: { subtitle: "Biểu đồ BaZi, Phân tích vận mệnh" },
-    prayer: { subtitle: "Cúng đèn, Dịch vụ cầu nguyện" }
-  },
-  id: {
-    destiny: { subtitle: "Diagram BaZi, Analisis Takdir" },
-    prayer: { subtitle: "Persembahan Lampu, Layanan Doa" }
+  'tab_service': {
+    'en': 'Service Details',
+    'pt': 'Detalhes do Serviço',
+    'es': 'Detalles del Servicio',
+    'fr': 'Détails du Service',
+    'de': 'Servicedetails',
+    'it': 'Dettagli del Servizio',
+    'ja': 'サービス詳細',
+    'ko': '서비스 세부정보',
+    'ru': 'Детали Услуги',
+    'ar': 'تفاصيل الخدمة',
+    'hi': 'सेवा विवरण',
+    'th': 'รายละเอียดบริการ',
+    'vi': 'Chi Tiết Dịch Vụ',
+    'id': 'Detail Layanan',
+    'zh': '服务说明'
   }
 };
 
-languages.forEach(lang => {
-  const filePath = path.join(process.cwd(), 'client/src/i18n/locales', `${lang}.json`);
+const files = fs.readdirSync(localesDir).filter(f => f.endsWith('.json'));
+
+files.forEach(file => {
+  const lang = file.replace('.json', '');
+  const filePath = path.join(localesDir, file);
+  const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   
-  try {
-    const content = fs.readFileSync(filePath, 'utf-8');
-    const data = JSON.parse(content);
-    
-    if (!data.serviceCards) {
-      console.log(`⚠️  ${lang}.json: serviceCards not found, skipping`);
-      return;
+  // 添加新翻译键
+  if (content.product_detail) {
+    if (!content.product_detail.get_report && translations.get_report[lang]) {
+      content.product_detail.get_report = translations.get_report[lang];
     }
-    
-    // 更新destiny和prayer的subtitle
-    if (data.serviceCards.destiny) {
-      data.serviceCards.destiny.subtitle = translations[lang].destiny.subtitle;
+    if (!content.product_detail.tab_service && translations.tab_service[lang]) {
+      content.product_detail.tab_service = translations.tab_service[lang];
     }
-    if (data.serviceCards.prayer) {
-      data.serviceCards.prayer.subtitle = translations[lang].prayer.subtitle;
-    }
-    
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
-    console.log(`✅ ${lang}.json updated`);
-  } catch (error) {
-    console.error(`❌ Error updating ${lang}.json:`, error.message);
   }
+  
+  fs.writeFileSync(filePath, JSON.stringify(content, null, 2) + '\n', 'utf-8');
+  console.log(`✅ Updated ${lang}.json`);
 });
 
-console.log('\n✅ All translation files updated!');
+console.log('✅ All translations updated!');

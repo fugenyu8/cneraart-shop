@@ -82,7 +82,9 @@
       "step2": "Envie fotos e perguntas por resposta de e-mail ou notas do pedido",
       "step3": "O Mestre do Monte Wutai concluirá a análise em 48 horas",
       "step4": "O relatório de análise será enviado por e-mail"
-    }
+    },
+    "get_report": "Obter Relatório",
+    "tab_service": "Detalhes do Serviço"
   },
   "checkout": {
     "title": "Checkout",

@@ -154,7 +154,9 @@
       "step2": "Invia foto e domande tramite risposta email o note dell'ordine",
       "step3": "Il Maestro del Monte Wutai completerà l'analisi entro 48 ore",
       "step4": "Il rapporto di analisi ti sarà inviato via email"
-    }
+    },
+    "get_report": "Ottieni Rapporto",
+    "tab_service": "Dettagli del Servizio"
   },
   "cart": {
     "title": "Carrello",

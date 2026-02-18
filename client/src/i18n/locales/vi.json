@@ -82,7 +82,9 @@
       "step2": "Vui lòng gửi ảnh và câu hỏi qua email phản hồi hoặc ghi chú đơn hàng",
       "step3": "Đại sư Ngũ Đài Sơn sẽ hoàn thành phân tích trong vòng 48 giờ",
       "step4": "Báo cáo phân tích sẽ được gửi đến bạn qua email"
-    }
+    },
+    "get_report": "Nhận Báo Cáo",
+    "tab_service": "Chi Tiết Dịch Vụ"
   },
   "checkout": {
     "title": "Checkout",

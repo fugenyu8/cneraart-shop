@@ -72,6 +72,11 @@ export default function ProductDetail() {
     ? Math.round(((parseFloat(product.regularPrice) - parseFloat(product.salePrice)) / parseFloat(product.regularPrice)) * 100)
     : 0;
 
+  // 判断是否为命理服务(categoryId=1)
+  const isFortuneService = product.categoryId === 1;
+  const addToCartText = isFortuneService ? 'product_detail.get_report' : 'product_detail.add_to_cart';
+  const blessingTabText = isFortuneService ? 'product_detail.tab_service' : 'product_detail.tab_blessing';
+
   return (
     <div className="min-h-screen bg-background">
       {/* 顶部导航 */}
@@ -276,7 +281,7 @@ export default function ProductDetail() {
                 disabled={product.stock <= 0 || addToCartMutation.isPending}
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                {addToCartMutation.isPending ? t('product_detail.adding') : t('product_detail.add_to_cart')}
+                {addToCartMutation.isPending ? t('product_detail.adding') : t(addToCartText)}
               </Button>
               <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent/10 h-12 md:h-11 w-12 md:w-auto px-0 md:px-4">
                 <Heart className="w-5 h-5" />
@@ -289,7 +294,7 @@ export default function ProductDetail() {
         <Tabs defaultValue="description" className="mb-8 md:mb-12">
           <TabsList className={`grid w-full ${product.suitableFor || product.efficacy || product.wearingGuide ? 'grid-cols-4' : 'grid-cols-3'} bg-card h-auto`}>
             <TabsTrigger value="description" className="text-sm md:text-base py-3">{t('product_detail.tab_description')}</TabsTrigger>
-            <TabsTrigger value="blessing" className="text-sm md:text-base py-3">{t('product_detail.tab_blessing')}</TabsTrigger>
+            <TabsTrigger value="blessing" className="text-sm md:text-base py-3">{t(blessingTabText)}</TabsTrigger>
             {(product.suitableFor || product.efficacy || product.wearingGuide) && (
               <TabsTrigger value="efficacy" className="text-sm md:text-base py-3">{t('product_detail.tab_efficacy')}</TabsTrigger>
             )}

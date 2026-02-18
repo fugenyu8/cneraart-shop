@@ -154,7 +154,9 @@
       "step2": "Bitte senden Sie Fotos und Fragen per E-Mail-Antwort oder Bestellnotizen",
       "step3": "Der Meister des Wutai-Berges wird die Analyse innerhalb von 48 Stunden abschließen",
       "step4": "Der Analysebericht wird Ihnen per E-Mail zugesandt"
-    }
+    },
+    "get_report": "Bericht Erhalten",
+    "tab_service": "Servicedetails"
   },
   "cart": {
     "title": "Warenkorb",

@@ -154,7 +154,9 @@
       "step2": "Veuillez soumettre des photos et des questions par réponse e-mail ou notes de commande",
       "step3": "Le Maître du Mont Wutai terminera l'analyse dans les 48 heures",
       "step4": "Le rapport d'analyse vous sera envoyé par e-mail"
-    }
+    },
+    "get_report": "Obtenir le Rapport",
+    "tab_service": "Détails du Service"
   },
   "cart": {
     "title": "Panier",
