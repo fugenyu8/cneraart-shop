@@ -8,6 +8,8 @@ import { analyzePalmReading, generatePalmReadingReport } from "./palmReading";
 import { analyzeFengshui, generateFengshuiReport } from "./fengshui";
 import * as db from "../db";
 import { getPendingFortuneBookings, updateFortuneBookingStatus, getUserById } from "../db-fortune-helpers";
+import { generatePDFReport } from "../pdfGenerator";
+import { storagePut } from "../storage";
 
 export type ServiceType = "face" | "palm" | "fengshui";
 
@@ -56,20 +58,34 @@ export async function processFortuneReport(input: ProcessReportInput) {
       reportMarkdown = await translateReport(reportMarkdown, userLanguage);
     }
 
-    // 4. 保存报告到数据库
-    // TODO: 实现createFortuneReport函数或使用现有的报告存储机制
-    const reportId = bookingId; // 使用bookingId作为临时ID
+    // 4. 生成PDF报告
+    const reportId = `REPORT-${bookingId}-${Date.now()}`;
+    const pdfBuffer = await generatePDFReport({
+      serviceType,
+      reportContent: reportMarkdown,
+      userName: userName || '尊贵的客户',
+      reportDate: new Date(),
+      reportId,
+    });
 
-    // 5. 更新booking状态为"已完成"
+    // 5. 上传PDF到S3
+    const fileKey = `fortune-reports/${bookingId}/${reportId}.pdf`;
+    const { url: pdfUrl } = await storagePut(fileKey, pdfBuffer, 'application/pdf');
+
+    // 6. 保存报告到数据库
+    // TODO: 实现createFortuneReport函数或使用现有的报告存储机制
+
+    // 7. 更新booking状态为"已完成"
     await updateFortuneBookingStatus(bookingId, "completed");
 
-    // 6. 发送通知给用户(可选)
+    // 8. 发送通知给用户(可选)
     // TODO: 实现邮件或站内通知
 
     return {
       success: true,
       reportId,
       reportContent: reportMarkdown,
+      pdfUrl,
     };
 
   } catch (error) {
