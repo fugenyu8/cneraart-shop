@@ -29,7 +29,7 @@ export default function Products() {
   const { data: products, isLoading } = trpc.products.list.useQuery({
     search: search || undefined,
     categoryId,
-    blessedOnly: true, // 只显示开光法物
+    // blessedOnly: true, // 移除此限制,允许显示所有产品包括命理服务
     limit: 50,
   });
 
