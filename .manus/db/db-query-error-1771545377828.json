@@ -1,0 +1,8 @@
+{
+  "query": "-- 先删除产品图片\nDELETE FROM productImages WHERE productId IN (\n  SELECT id FROM products WHERE categoryId = 1 ORDER BY createdAt DESC LIMIT 2\n);\n\n-- 再删除产品\nDELETE FROM products WHERE id IN (\n  SELECT id FROM (\n    SELECT id FROM products WHERE categoryId = 1 ORDER BY createdAt DESC LIMIT 2\n  ) AS temp\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute -- 先删除产品图片\nDELETE FROM productImages WHERE productId IN (\n  SELECT id FROM products WHERE categoryId = 1 ORDER BY createdAt DESC LIMIT 2\n);\n\n-- 再删除产品\nDELETE FROM products WHERE id IN (\n  SELECT id FROM (\n    SELECT id FROM products WHERE categoryId = 1 ORDER BY createdAt DESC LIMIT 2\n  ) AS temp\n);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1146 (42S02) at line 2: Table '8wrufpruxpmzzwd4zeeudg.productImages' doesn't exist"
+  ]
+}

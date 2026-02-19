@@ -1,0 +1,34 @@
+{
+  "query": "SELECT id, name, regularPrice, salePrice FROM products WHERE categoryId = 1 ORDER BY createdAt DESC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, regularPrice, salePrice FROM products WHERE categoryId = 1 ORDER BY createdAt DESC;",
+  "rows": [
+    {
+      "id": "600002",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Package",
+      "regularPrice": "79.00",
+      "salePrice": "NULL"
+    },
+    {
+      "id": "600001",
+      "name": "Destiny Energy Analysis Report - Basic",
+      "regularPrice": "19.00",
+      "salePrice": "NULL"
+    },
+    {
+      "id": "510060",
+      "name": "Fortune Energy Analysis Report",
+      "regularPrice": "19.00",
+      "salePrice": "19.00"
+    },
+    {
+      "id": "510061",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony",
+      "regularPrice": "79.00",
+      "salePrice": "79.00"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tregularPrice\tsalePrice\n600002\tDestiny Analysis + Wutai Mountain Blessing Package\t79.00\tNULL\n600001\tDestiny Energy Analysis Report - Basic\t19.00\tNULL\n510060\tFortune Energy Analysis Report\t19.00\t19.00\n510061\tDestiny Analysis + Wutai Mountain Blessing Ceremony\t79.00\t79.00\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}
