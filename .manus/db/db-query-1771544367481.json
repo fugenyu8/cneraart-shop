@@ -1,0 +1,46 @@
+{
+  "query": "SELECT p.id, p.name, p.slug, p.regularPrice, p.categoryId, p.status, pi.url as imageUrl\nFROM products p\nLEFT JOIN product_images pi ON p.id = pi.productId AND pi.isPrimary = TRUE\nWHERE p.categoryId = 1\nORDER BY p.id DESC\nLIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, p.slug, p.regularPrice, p.categoryId, p.status, pi.url as imageUrl\nFROM products p\nLEFT JOIN product_images pi ON p.id = pi.productId AND pi.isPrimary = TRUE\nWHERE p.categoryId = 1\nORDER BY p.id DESC\nLIMIT 5;",
+  "rows": [
+    {
+      "id": "600002",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Package",
+      "slug": "destiny-analysis-blessing-79",
+      "regularPrice": "79.00",
+      "categoryId": "1",
+      "status": "published",
+      "imageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/VBcYfIWOkITnERwK.jpg"
+    },
+    {
+      "id": "600001",
+      "name": "Destiny Energy Analysis Report - Basic",
+      "slug": "destiny-analysis-basic-19",
+      "regularPrice": "19.00",
+      "categoryId": "1",
+      "status": "published",
+      "imageUrl": "NULL"
+    },
+    {
+      "id": "510061",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony",
+      "slug": "destiny-analysis-wutai-mountain-blessing",
+      "regularPrice": "79.00",
+      "categoryId": "1",
+      "status": "published",
+      "imageUrl": "/fortune-79-main.jpg"
+    },
+    {
+      "id": "510060",
+      "name": "Fortune Energy Analysis Report",
+      "slug": "fortune-energy-analysis-report",
+      "regularPrice": "19.00",
+      "categoryId": "1",
+      "status": "published",
+      "imageUrl": "/fortune-19-main.jpg"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tregularPrice\tcategoryId\tstatus\timageUrl\n600002\tDestiny Analysis + Wutai Mountain Blessing Package\tdestiny-analysis-blessing-79\t79.00\t1\tpublished\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/VBcYfIWOkITnERwK.jpg\n600001\tDestiny Energy Analysis Report - Basic\tdestiny-analysis-basic-19\t19.00\t1\tpublished\tNULL\n510061\tDestiny Analysis + Wutai Mountain Blessing Ceremony\tdestiny-analysis-wutai-mountain-blessing\t79.00\t1\tpublished\t/fortune-79-main.jpg\n510060\tFortune Energy Analysis Report\tfortune-energy-analysis-report\t19.00\t1\tpublished\t/fortune-19-main.jpg\n",
+  "stderr": "",
+  "execution_time_ms": 54
+}

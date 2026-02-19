@@ -1,0 +1,9 @@
+{
+  "query": "SELECT pi.url, pi.fileKey, p.name \nFROM product_images pi \nJOIN products p ON pi.productId = p.id \nWHERE p.slug IN ('wutai-lamp-offering', 'wutai-incense-offering') \nAND pi.isPrimary = TRUE \nLIMIT 2;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT pi.url, pi.fileKey, p.name \nFROM product_images pi \nJOIN products p ON pi.productId = p.id \nWHERE p.slug IN ('wutai-lamp-offering', 'wutai-incense-offering') \nAND pi.isPrimary = TRUE \nLIMIT 2;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 55
+}

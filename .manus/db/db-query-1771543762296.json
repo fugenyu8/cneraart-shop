@@ -1,0 +1,31 @@
+{
+  "query": "SELECT p.id, p.name, p.regularPrice, p.categoryId, c.name as categoryName \nFROM products p \nLEFT JOIN categories c ON p.categoryId = c.id \nWHERE c.slug IN ('fortune-telling', 'prayer-services') \nORDER BY c.id, p.regularPrice;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, p.regularPrice, p.categoryId, c.name as categoryName \nFROM products p \nLEFT JOIN categories c ON p.categoryId = c.id \nWHERE c.slug IN ('fortune-telling', 'prayer-services') \nORDER BY c.id, p.regularPrice;",
+  "rows": [
+    {
+      "id": "510056",
+      "name": "Wutai Mountain Incense Offering Service",
+      "regularPrice": "79.00",
+      "categoryId": "60001",
+      "categoryName": "代客祈福"
+    },
+    {
+      "id": "510057",
+      "name": "Wutai Mountain Lamp Offering Service",
+      "regularPrice": "79.00",
+      "categoryId": "60001",
+      "categoryName": "代客祈福"
+    },
+    {
+      "id": "510059",
+      "name": "Complete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet",
+      "regularPrice": "229.00",
+      "categoryId": "60001",
+      "categoryName": "代客祈福"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tregularPrice\tcategoryId\tcategoryName\n510056\tWutai Mountain Incense Offering Service\t79.00\t60001\t代客祈福\n510057\tWutai Mountain Lamp Offering Service\t79.00\t60001\t代客祈福\n510059\tComplete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet\t229.00\t60001\t代客祈福\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

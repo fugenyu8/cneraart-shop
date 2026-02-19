@@ -1,0 +1,150 @@
+{
+  "query": "SELECT id, name, regularPrice, categoryId, tags FROM products ORDER BY id LIMIT 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, regularPrice, categoryId, tags FROM products ORDER BY id LIMIT 20;",
+  "rows": [
+    {
+      "id": "120007",
+      "name": "Ancient Chinese Wisdom Analysis",
+      "regularPrice": "19.00",
+      "categoryId": "9",
+      "tags": "NULL"
+    },
+    {
+      "id": "510001",
+      "name": "Wutai Mountain Blessed Rat Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"鼠\",\"Rat\"]"
+    },
+    {
+      "id": "510002",
+      "name": "Wutai Mountain Blessed Ox Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"牛\",\"Ox\"]"
+    },
+    {
+      "id": "510003",
+      "name": "Wutai Mountain Blessed Tiger Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"虎\",\"Tiger\"]"
+    },
+    {
+      "id": "510004",
+      "name": "Wutai Mountain Blessed Rabbit Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"兔\",\"Rabbit\"]"
+    },
+    {
+      "id": "510005",
+      "name": "Wutai Mountain Blessed Dragon Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"龙\",\"Dragon\"]"
+    },
+    {
+      "id": "510006",
+      "name": "Wutai Mountain Blessed Snake Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"蛇\",\"Snake\"]"
+    },
+    {
+      "id": "510007",
+      "name": "Wutai Mountain Blessed Horse Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"马\",\"Horse\"]"
+    },
+    {
+      "id": "510008",
+      "name": "Wutai Mountain Blessed Goat Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"羊\",\"Goat\"]"
+    },
+    {
+      "id": "510009",
+      "name": "Wutai Mountain Blessed Monkey Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"猴\",\"Monkey\"]"
+    },
+    {
+      "id": "510010",
+      "name": "Wutai Mountain Blessed Rooster Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"鸡\",\"Rooster\"]"
+    },
+    {
+      "id": "510011",
+      "name": "Wutai Mountain Blessed Dog Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"狗\",\"Dog\"]"
+    },
+    {
+      "id": "510012",
+      "name": "Wutai Mountain Blessed Pig Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90001",
+      "tags": "[\"开光法物\",\"生肖守护\",\"五台山\",\"猪\",\"Pig\"]"
+    },
+    {
+      "id": "510013",
+      "name": "Wutai Mountain Blessed Aries Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90002",
+      "tags": "[\"开光法物\",\"星座守护\",\"五台山\",\"白羊座\",\"Aries\"]"
+    },
+    {
+      "id": "510014",
+      "name": "Wutai Mountain Blessed Taurus Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90002",
+      "tags": "[\"开光法物\",\"星座守护\",\"五台山\",\"金牛座\",\"Taurus\"]"
+    },
+    {
+      "id": "510015",
+      "name": "Wutai Mountain Blessed Gemini Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90002",
+      "tags": "[\"开光法物\",\"星座守护\",\"五台山\",\"双子座\",\"Gemini\"]"
+    },
+    {
+      "id": "510016",
+      "name": "Wutai Mountain Blessed Cancer Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90002",
+      "tags": "[\"开光法物\",\"星座守护\",\"五台山\",\"巨蟹座\",\"Cancer\"]"
+    },
+    {
+      "id": "510017",
+      "name": "Wutai Mountain Blessed Leo Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90002",
+      "tags": "[\"开光法物\",\"星座守护\",\"五台山\",\"狮子座\",\"Leo\"]"
+    },
+    {
+      "id": "510018",
+      "name": "Wutai Mountain Blessed Virgo Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90002",
+      "tags": "[\"开光法物\",\"星座守护\",\"五台山\",\"处女座\",\"Virgo\"]"
+    },
+    {
+      "id": "510019",
+      "name": "Wutai Mountain Blessed Libra Guardian Pendant",
+      "regularPrice": "55.00",
+      "categoryId": "90002",
+      "tags": "[\"开光法物\",\"星座守护\",\"五台山\",\"天秤座\",\"Libra\"]"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tregularPrice\tcategoryId\ttags\n120007\tAncient Chinese Wisdom Analysis\t19.00\t9\tNULL\n510001\tWutai Mountain Blessed Rat Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"鼠\",\"Rat\"]\n510002\tWutai Mountain Blessed Ox Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"牛\",\"Ox\"]\n510003\tWutai Mountain Blessed Tiger Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"虎\",\"Tiger\"]\n510004\tWutai Mountain Blessed Rabbit Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"兔\",\"Rabbit\"]\n510005\tWutai Mountain Blessed Dragon Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"龙\",\"Dragon\"]\n510006\tWutai Mountain Blessed Snake Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"蛇\",\"Snake\"]\n510007\tWutai Mountain Blessed Horse Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"马\",\"Horse\"]\n510008\tWutai Mountain Blessed Goat Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"羊\",\"Goat\"]\n510009\tWutai Mountain Blessed Monkey Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"猴\",\"Monkey\"]\n510010\tWutai Mountain Blessed Rooster Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"鸡\",\"Rooster\"]\n510011\tWutai Mountain Blessed Dog Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"狗\",\"Dog\"]\n510012\tWutai Mountain Blessed Pig Guardian Pendant\t55.00\t90001\t[\"开光法物\",\"生肖守护\",\"五台山\",\"猪\",\"Pig\"]\n510013\tWutai Mountain Blessed Aries Guardian Pendant\t55.00\t90002\t[\"开光法物\",\"星座守护\",\"五台山\",\"白羊座\",\"Aries\"]\n510014\tWutai Mountain Blessed Taurus Guardian Pendant\t55.00\t90002\t[\"开光法物\",\"星座守护\",\"五台山\",\"金牛座\",\"Taurus\"]\n510015\tWutai Mountain Blessed Gemini Guardian Pendant\t55.00\t90002\t[\"开光法物\",\"星座守护\",\"五台山\",\"双子座\",\"Gemini\"]\n510016\tWutai Mountain Blessed Cancer Guardian Pendant\t55.00\t90002\t[\"开光法物\",\"星座守护\",\"五台山\",\"巨蟹座\",\"Cancer\"]\n510017\tWutai Mountain Blessed Leo Guardian Pendant\t55.00\t90002\t[\"开光法物\",\"星座守护\",\"五台山\",\"狮子座\",\"Leo\"]\n510018\tWutai Mountain Blessed Virgo Guardian Pendant\t55.00\t90002\t[\"开光法物\",\"星座守护\",\"五台山\",\"处女座\",\"Virgo\"]\n510019\tWutai Mountain Blessed Libra Guardian Pendant\t55.00\t90002\t[\"开光法物\",\"星座守护\",\"五台山\",\"天秤座\",\"Libra\"]\n",
+  "stderr": "",
+  "execution_time_ms": 172
+}

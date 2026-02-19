@@ -1,0 +1,13 @@
+{
+  "query": "SELECT id FROM products WHERE slug = 'destiny-analysis-basic-19';\n\nINSERT INTO product_images (productId, url, fileKey, altText, displayOrder, isPrimary) VALUES\n(LAST_INSERT_ID(), 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/NxDHZcRNYmWFcEeQ.jpg', 'NxDHZcRNYmWFcEeQ.jpg', 'Destiny Energy Analysis Report', 0, TRUE),\n(LAST_INSERT_ID(), 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/yypMdBPCIvnJYgzS.jpg', 'yypMdBPCIvnJYgzS.jpg', 'Ba Zi Chart Analysis', 1, FALSE),\n(LAST_INSERT_ID(), 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/vPRehOmbvtoFvZKx.jpg', 'vPRehOmbvtoFvZKx.jpg', 'Annual Fortune Analysis', 2, FALSE);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id FROM products WHERE slug = 'destiny-analysis-basic-19';\n\nINSERT INTO product_images (productId, url, fileKey, altText, displayOrder, isPrimary) VALUES\n(LAST_INSERT_ID(), 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/NxDHZcRNYmWFcEeQ.jpg', 'NxDHZcRNYmWFcEeQ.jpg', 'Destiny Energy Analysis Report', 0, TRUE),\n(LAST_INSERT_ID(), 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/yypMdBPCIvnJYgzS.jpg', 'yypMdBPCIvnJYgzS.jpg', 'Ba Zi Chart Analysis', 1, FALSE),\n(LAST_INSERT_ID(), 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/vPRehOmbvtoFvZKx.jpg', 'vPRehOmbvtoFvZKx.jpg', 'Annual Fortune Analysis', 2, FALSE);",
+  "rows": [
+    {
+      "id": "600001"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\n600001\n",
+  "stderr": "",
+  "execution_time_ms": 71
+}
