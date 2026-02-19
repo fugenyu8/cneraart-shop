@@ -113,7 +113,7 @@ export default function Checkout() {
       return sum + parseFloat(price) * item.quantity;
     }, 0);
 
-    const shipping = subtotal >= 100 ? 0 : 10; // 满$100免运费
+    const shipping = 0; // 所有商品免邮费
     
     // 计算优惠
     let discount = 0;
@@ -509,11 +509,7 @@ export default function Checkout() {
                     </div>
                   </div>
 
-                  {shipping > 0 && (
-                    <p className="text-sm text-slate-400">
-                      {t('checkout.shipping_note', { amount: (100 - subtotal).toFixed(2) })}
-                    </p>
-                  )}
+
 
                   {/* PayPal按钮 */}
                   <div className="w-full">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams, Link } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -14,7 +14,7 @@ import FortuneServiceUpload from "@/components/FortuneServiceUpload";
 import { toast } from "sonner";
 
 export default function ProductDetail() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const { isAuthenticated } = useAuth();
   const [quantity, setQuantity] = useState(1);
@@ -22,10 +22,164 @@ export default function ProductDetail() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [uploadedImages, setUploadedImages] = useState<File[]>([]);
   const [questionDescription, setQuestionDescription] = useState("");
+  
+  // 评价系统状态
+  const [reviewsToShow, setReviewsToShow] = useState(10); // 每次显示10条
+  const [selectedRating, setSelectedRating] = useState<number | null>(null); // 筛选评分
+  const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null); // 筛选语言
+  const [sortBy, setSortBy] = useState<'newest' | 'highest' | 'lowest'>('newest'); // 排序方式
+  const [showReviewForm, setShowReviewForm] = useState(false); // 显示评价表单
+  const [newReviewRating, setNewReviewRating] = useState(5); // 新评价评分
+  const [newReviewComment, setNewReviewComment] = useState(''); // 新评价内容
 
   const { data: product, isLoading } = trpc.products.getBySlug.useQuery({ slug: slug! });
   const addToCartMutation = trpc.cart.add.useMutation();
+  const submitReviewMutation = trpc.products.submitReview.useMutation();
   const utils = trpc.useUtils();
+  
+  // 语言检测 - 根据产品名称判断语言
+  const isEnglishProduct = useMemo(() => {
+    if (!product) return false;
+    // 检测产品名称是否为英语(包含英文字母)
+    return /[a-zA-Z]/.test(product.name);
+  }, [product]);
+  
+  // 英语翻译
+  const translations = {
+    zh: {
+      blessingInfo: '开光信息',
+      blessingTemple: '开光寺院',
+      blessingMaster: '开光大师',
+      inStock: '有货',
+      outOfStock: '无货',
+      quantity: '数量',
+      addToCart: '请回法物',
+      productDetails: '产品详情',
+      blessingDescription: '开光说明',
+      efficacyDescription: '效用说明',
+      customerReviews: '客户评价',
+      filterByRating: '按评分筛选',
+      all: '全部',
+      stars: '星',
+      filterByLanguage: '按语言筛选',
+      sortBy: '排序',
+      newest: '最新',
+      highestRating: '最高评分',
+      lowestRating: '最低评分',
+      addMyReview: '添加我的评价',
+      loadMore: '加载更多评价',
+      remaining: '条剩余',
+      verifiedPurchase: '已验证购买',
+      submitReview: '提交评价',
+      cancel: '取消',
+      yourRating: '您的评分',
+      yourReview: '您的评价',
+      minChars: '最少20字',
+      suitableFor: '适用人群',
+      efficacy: '功效',
+      wearingGuide: '佩戴指南',
+    },
+    en: {
+      blessingInfo: 'Blessing Information',
+      blessingTemple: 'Blessing Temple',
+      blessingMaster: 'Blessing Master',
+      inStock: 'In Stock',
+      outOfStock: 'Out of Stock',
+      quantity: 'Quantity',
+      addToCart: 'Add to Cart',
+      productDetails: 'Product Details',
+      blessingDescription: 'Blessing Description',
+      efficacyDescription: 'Efficacy Description',
+      customerReviews: 'Customer Reviews',
+      filterByRating: 'Filter by Rating',
+      all: 'All',
+      stars: 'Stars',
+      filterByLanguage: 'Filter by Language',
+      sortBy: 'Sort by',
+      newest: 'Newest',
+      highestRating: 'Highest Rating',
+      lowestRating: 'Lowest Rating',
+      addMyReview: 'Add My Review',
+      loadMore: 'Load More Reviews',
+      remaining: 'remaining',
+      verifiedPurchase: 'Verified Purchase',
+      submitReview: 'Submit Review',
+      cancel: 'Cancel',
+      yourRating: 'Your Rating',
+      yourReview: 'Your Review',
+      minChars: 'Minimum 20 characters',
+      suitableFor: 'Suitable For',
+      efficacy: 'Efficacy',
+      wearingGuide: 'Wearing Guide',
+    }
+  };
+  
+  const lang = isEnglishProduct ? translations.en : translations.zh;
+  
+  // 根据产品语言自动切换i18n语言
+  useEffect(() => {
+    if (product) {
+      const targetLang = isEnglishProduct ? 'en' : 'zh';
+      if (i18n.language !== targetLang) {
+        i18n.changeLanguage(targetLang);
+      }
+    }
+  }, [product, isEnglishProduct, i18n]);
+  
+  // 评价筛选和排序逻辑
+  const filteredAndSortedReviews = useMemo(() => {
+    if (!product?.reviews) return [];
+    
+    let filtered = [...product.reviews];
+    
+    // 按评分筛选
+    if (selectedRating !== null) {
+      filtered = filtered.filter(r => r.rating === selectedRating);
+    }
+    
+    // 按语言筛选
+    if (selectedLanguage !== null) {
+      filtered = filtered.filter(r => (r as any).language === selectedLanguage);
+    }
+    
+    // 排序
+    filtered.sort((a, b) => {
+      if (sortBy === 'newest') {
+        return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+      } else if (sortBy === 'highest') {
+        return b.rating - a.rating;
+      } else {
+        return a.rating - b.rating;
+      }
+    });
+    
+    return filtered;
+  }, [product?.reviews, selectedRating, selectedLanguage, sortBy]);
+  
+  // 当前显示的评价
+  const displayedReviews = filteredAndSortedReviews.slice(0, reviewsToShow);
+  const hasMoreReviews = reviewsToShow < filteredAndSortedReviews.length;
+  
+  // 评价语言统计
+  const languageCounts = useMemo(() => {
+    if (!product?.reviews) return {};
+    const counts: Record<string, number> = {};
+    product.reviews.forEach(r => {
+      const lang = (r as any).language || 'en'; // 使用any类型绕过类型检查
+      counts[lang] = (counts[lang] || 0) + 1;
+    });
+    return counts;
+  }, [product?.reviews]);
+  
+  // 评分统计
+  const ratingCounts = useMemo(() => {
+    if (!product?.reviews) return {};
+    const counts: Record<number, number> = {};
+    product.reviews.forEach(r => {
+      counts[r.rating] = (counts[r.rating] || 0) + 1;
+    });
+    return counts;
+  }, [product?.reviews]);
 
   const handleAddToCart = async () => {
     if (!isAuthenticated) {
@@ -274,10 +428,10 @@ export default function ProductDetail() {
                   <div className="flex items-start gap-3">
                     <Shield className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-medium mb-2 text-accent">{t('product_detail.blessing_info')}</h3>
+                      <h3 className="font-medium mb-2 text-accent">{lang.blessingInfo}</h3>
                       <div className="space-y-1 text-sm text-muted-foreground">
-                        {product.blessingTemple && <p>{t('product_detail.temple')}: {product.blessingTemple}</p>}
-                        {product.blessingMaster && <p>{t('product_detail.master')}: {product.blessingMaster}</p>}
+                        {product.blessingTemple && <p>{lang.blessingTemple}: {product.blessingTemple}</p>}
+                        {product.blessingMaster && <p>{lang.blessingMaster}: {product.blessingMaster}</p>}
                         {product.blessingDate && <p>{t('product_detail.date')}: {new Date(product.blessingDate).toLocaleDateString()}</p>}
                       </div>
                     </div>
@@ -291,19 +445,19 @@ export default function ProductDetail() {
               {product.stock > 0 ? (
                 <div className="flex items-center gap-2 text-success">
                   <div className="w-2 h-2 bg-success rounded-full"></div>
-                  <span>{t('product_detail.in_stock')} {product.stock <= 10 && `(${t('product_detail.only_left', { count: product.stock })})`}</span>
+                  <span>{lang.inStock}</span>
                 </div>
               ) : (
                 <div className="flex items-center gap-2 text-destructive">
                   <div className="w-2 h-2 bg-destructive rounded-full"></div>
-                  <span>{t('product_detail.out_of_stock')}</span>
+                  <span>{lang.outOfStock}</span>
                 </div>
               )}
             </div>
 
             {/* 数量选择 */}
             <div className="mb-6">
-              <label className="block text-sm font-medium mb-2">{t('product_detail.quantity')}</label>
+              <label className="block text-sm font-medium mb-2">{lang.quantity}</label>
               <div className="flex items-center gap-3">
                 <Button
                   variant="outline"
@@ -363,7 +517,7 @@ export default function ProductDetail() {
                 disabled={product.stock <= 0 || addToCartMutation.isPending}
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
-                {addToCartMutation.isPending ? t('product_detail.adding') : t(addToCartText)}
+                {addToCartMutation.isPending ? (isEnglishProduct ? 'Adding...' : '添加中...') : lang.addToCart}
               </Button>
               <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent/10 h-12 md:h-11 w-12 md:w-auto px-0 md:px-4">
                 <Heart className="w-5 h-5" />
@@ -375,12 +529,12 @@ export default function ProductDetail() {
         {/* 详细信息标签页 */}
         <Tabs defaultValue="description" className="mb-8 md:mb-12">
           <TabsList className={`grid w-full ${product.suitableFor || product.efficacy || product.wearingGuide ? 'grid-cols-4' : 'grid-cols-3'} bg-card h-auto`}>
-            <TabsTrigger value="description" className="text-sm md:text-base py-3">{t('product_detail.tab_description')}</TabsTrigger>
-            <TabsTrigger value="blessing" className="text-sm md:text-base py-3">{t(blessingTabText)}</TabsTrigger>
+            <TabsTrigger value="description" className="text-sm md:text-base py-3">{lang.productDetails}</TabsTrigger>
+            <TabsTrigger value="blessing" className="text-sm md:text-base py-3">{lang.blessingDescription}</TabsTrigger>
             {(product.suitableFor || product.efficacy || product.wearingGuide) && (
-              <TabsTrigger value="efficacy" className="text-sm md:text-base py-3">{t('product_detail.tab_efficacy')}</TabsTrigger>
+              <TabsTrigger value="efficacy" className="text-sm md:text-base py-3">{lang.efficacyDescription}</TabsTrigger>
             )}
-            <TabsTrigger value="reviews" className="text-sm md:text-base py-3">{t('product_detail.tab_reviews')} ({product.reviews.length})</TabsTrigger>
+            <TabsTrigger value="reviews" className="text-sm md:text-base py-3">{lang.customerReviews} ({product.reviews.length})</TabsTrigger>
           </TabsList>
 
           <TabsContent value="description" className="mt-6">
@@ -414,9 +568,9 @@ export default function ProductDetail() {
                   <div className="space-y-6">
                     {product.suitableFor && (
                       <div>
-                        <h3 className="text-lg font-medium mb-3 text-accent flex items-center gap-2">
-                          <Shield className="w-5 h-5" />
-                          {t('product_detail.efficacy_suitable_for')}
+                        <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
+                          <Shield className="w-5 h-5 text-accent" />
+                          {lang.suitableFor}
                         </h3>
                         <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
                           {product.suitableFor}
@@ -428,7 +582,7 @@ export default function ProductDetail() {
                       <div>
                         <h3 className="text-lg font-medium mb-3 text-accent flex items-center gap-2">
                           <Sparkles className="w-5 h-5" />
-                          {t('product_detail.efficacy_effects')}
+                          {lang.efficacy}
                         </h3>
                         <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
                           {product.efficacy}
@@ -440,7 +594,7 @@ export default function ProductDetail() {
                       <div>
                         <h3 className="text-lg font-medium mb-3 text-accent flex items-center gap-2">
                           <Info className="w-5 h-5" />
-                          {t('product_detail.efficacy_wearing_tips')}
+                          {lang.wearingGuide}
                         </h3>
                         <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
                           {product.wearingGuide}
@@ -455,44 +609,235 @@ export default function ProductDetail() {
 
           <TabsContent value="reviews" className="mt-6">
             {product.reviews.length > 0 ? (
-              <div className="space-y-4">
-                {product.reviews.map((review) => (
-                  <Card key={review.id} className="bg-card">
+              <div className="space-y-6">
+                {/* 筛选和排序控件 */}
+                <div className="flex flex-col md:flex-row gap-4 p-4 bg-muted/30 rounded-lg">
+                  {/* 评分筛选 */}
+                  <div className="flex-1">
+                    <p className="text-sm font-medium mb-2">{lang.filterByRating}</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        variant={selectedRating === null ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setSelectedRating(null)}
+                      >
+                        {lang.all} ({product.reviews.length})
+                      </Button>
+                      {[5, 4, 3].map(rating => (
+                        <Button
+                          key={rating}
+                          variant={selectedRating === rating ? 'default' : 'outline'}
+                          size="sm"
+                          onClick={() => setSelectedRating(rating)}
+                        >
+                          {rating}{lang.stars} ({ratingCounts[rating] || 0})
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* 语言筛选 */}
+                  <div className="flex-1">
+                    <p className="text-sm font-medium mb-2">{lang.filterByLanguage}</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        variant={selectedLanguage === null ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setSelectedLanguage(null)}
+                      >
+                        {lang.all}
+                      </Button>
+                      {Object.entries(languageCounts).map(([lang, count]) => (
+                        <Button
+                          key={lang}
+                          variant={selectedLanguage === lang ? "default" : "outline"}
+                          size="sm"
+                          onClick={() => setSelectedLanguage(lang)}
+                        >
+                          {lang === 'en' ? '英语' : lang === 'zh' ? '中文' : lang === 'de' ? '德语' : lang === 'fr' ? '法语' : lang === 'es' ? '西班牙语' : lang === 'it' ? '意大利语' : lang} ({count})
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* 排序 */}
+                  <div className="flex-1">
+                    <p className="text-sm font-medium mb-2">{lang.sortBy}</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Button
+                        variant={sortBy === 'newest' ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setSortBy('newest')}
+                      >
+                        {lang.newest}
+                      </Button>
+                      <Button
+                        variant={sortBy === 'highest' ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setSortBy('highest')}
+                      >
+                        {lang.highestRating}
+                      </Button>
+                      <Button
+                        variant={sortBy === 'lowest' ? 'default' : 'outline'}
+                        size="sm"
+                        onClick={() => setSortBy('lowest')}
+                      >
+                        {lang.lowestRating}
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* 添加评价按钮 */}
+                {isAuthenticated && (
+                  <Button
+                    onClick={() => setShowReviewForm(!showReviewForm)}
+                    className="w-full md:w-auto"
+                  >
+                    {showReviewForm ? lang.cancel : lang.addMyReview}
+                  </Button>
+                )}
+                
+                {/* 评价表单 */}
+                {showReviewForm && isAuthenticated && (
+                  <Card className="bg-card border-2 border-primary/20">
                     <CardContent className="p-4 md:p-6">
-                      <div className="flex items-start justify-between mb-3">
+                      <h3 className="font-medium mb-4 text-lg">分享您的使用体验</h3>
+                      <div className="space-y-4">
                         <div>
-                          <div className="flex gap-1 mb-2">
-                            {[...Array(5)].map((_, i) => (
-                              <Star
-                                key={i}
-                                className={`w-4 h-4 ${i < review.rating ? "text-accent fill-accent" : "text-muted-foreground"}`}
-                              />
+                          <label className="text-sm font-medium mb-2 block">评分 <span className="text-destructive">*</span></label>
+                          <div className="flex gap-2">
+                            {[1, 2, 3, 4, 5].map(rating => (
+                              <Button
+                                key={rating}
+                                variant={newReviewRating === rating ? "default" : "outline"}
+                                size="sm"
+                                onClick={() => setNewReviewRating(rating)}
+                                className="flex items-center gap-1"
+                              >
+                                <Star className={`w-4 h-4 ${newReviewRating >= rating ? 'fill-current' : ''}`} />
+                                {rating}
+                              </Button>
                             ))}
                           </div>
-                          {review.title && <h4 className="font-medium mb-1">{review.title}</h4>}
                         </div>
-                        {review.isVerified && (
-                          <span className="text-xs bg-success/20 text-success px-2 py-1 rounded">{t('product_detail.verified_purchase')}</span>
-                        )}
+                        <div>
+                          <label className="text-sm font-medium mb-2 block">
+                            {lang.yourReview} <span className="text-destructive">*</span>
+                            <span className="text-xs text-muted-foreground ml-2">({lang.minChars})</span>
+                          </label>
+                          <textarea
+                            className="w-full min-h-[120px] p-3 border rounded-md bg-background"
+                            placeholder="分享您的使用感受，帮助其他用户做出更好的选择..."
+                            value={newReviewComment}
+                            onChange={(e) => setNewReviewComment(e.target.value)}
+                          />
+                          <p className="text-xs text-muted-foreground mt-1">
+                            {newReviewComment.length} / 500 字
+                          </p>
+                        </div>
+                        <div className="flex gap-2">
+                          <Button 
+                            className="flex-1"
+                            disabled={newReviewComment.length < 20}
+                            onClick={async () => {
+                              if (newReviewComment.length < 20) {
+                                toast.error('评价内容至少20字');
+                                return;
+                              }
+                              
+                              try {
+                                toast.info('正在提交评价...');
+                                
+                                await submitReviewMutation.mutateAsync({
+                                  productId: product.id,
+                                  rating: newReviewRating,
+                                  comment: newReviewComment
+                                });
+                                
+                                toast.success('评价提交成功，审核后将显示');
+                                setShowReviewForm(false);
+                                setNewReviewRating(5);
+                                setNewReviewComment('');
+                              } catch (error) {
+                                toast.error('提交失败，请稍后重试');
+                              }
+                            }}
+                          >
+                            {lang.submitReview}
+                          </Button>
+                          <Button 
+                            type="button"
+                            variant="outline"
+                            onClick={() => {
+                              setShowReviewForm(false);
+                              setNewReviewComment('');
+                              setNewReviewRating(5);
+                            }}
+                          >
+                            {lang.cancel}
+                          </Button>                 </div>
                       </div>
-                      <p className="text-muted-foreground mb-2">{review.comment}</p>
-                      {review.location && (
-                        <p className="text-xs text-muted-foreground mb-1">
-                          📍 {review.location}
-                        </p>
-                      )}
-                      <p className="text-xs text-muted-foreground">
-                        {new Date(review.createdAt).toLocaleDateString()}
-                      </p>
                     </CardContent>
                   </Card>
-                ))}
+                )}
+                
+                {/* 评价列表 */}
+                <div className="space-y-4">
+                  <p className="text-sm text-muted-foreground">
+                    显示 {displayedReviews.length} / {filteredAndSortedReviews.length} 条评价
+                  </p>
+                  {displayedReviews.map((review) => (
+                    <Card key={review.id} className="bg-card">
+                      <CardContent className="p-4 md:p-6">
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <div className="flex gap-1 mb-2">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`w-4 h-4 ${i < review.rating ? "text-accent fill-accent" : "text-muted-foreground"}`}
+                                />
+                              ))}
+                            </div>
+                            {review.title && <h4 className="font-medium mb-1">{review.title}</h4>}
+                            <p className="text-sm text-muted-foreground">{review.userName || '匿名用户'}</p>
+                          </div>
+                          {review.isVerified && (
+                            <span className="text-xs bg-success/20 text-success px-2 py-1 rounded">{lang.verifiedPurchase}</span>
+                          )}
+                        </div>
+                        <p className="text-muted-foreground mb-2">{review.comment}</p>
+                        {review.location && (
+                          <p className="text-xs text-muted-foreground mb-1">
+                            📍 {review.location}
+                          </p>
+                        )}
+                        <p className="text-xs text-muted-foreground">
+                          {new Date(review.createdAt).toLocaleDateString()}
+                        </p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                
+                {/* 加载更多按钮 */}
+                {hasMoreReviews && (
+                  <Button
+                    variant="outline"
+                    className="w-full"
+                    onClick={() => setReviewsToShow(prev => prev + 10)}
+                  >
+                    {lang.loadMore} ({filteredAndSortedReviews.length - reviewsToShow} {lang.remaining})
+                  </Button>
+                )}
               </div>
             ) : (
               <Card className="bg-card">
                 <CardContent className="p-12 text-center">
                   <Star className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground">{t('product_detail.no_reviews')}</p>
+                  <p className="text-muted-foreground">暂无评价</p>
                 </CardContent>
               </Card>
             )}

@@ -1,0 +1,73 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "addresses"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "cart_items"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "categories"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "coupon_usages"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "coupons"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "face_rules"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "fengshui_rules"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "fortune_bookings"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "fortune_reports"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "fortune_service_reviews"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "fortune_tasks"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "order_items"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "orders"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "palm_rules"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "product_images"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "products"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "reviews"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "shipment_batch_uploads"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "shipment_tracking_events"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg": "users"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_8WruFPRUxPMzzwD4ZeeUDg\n__drizzle_migrations\naddresses\ncart_items\ncategories\ncoupon_usages\ncoupons\nface_rules\nfengshui_rules\nfortune_bookings\nfortune_reports\nfortune_service_reviews\nfortune_tasks\norder_items\norders\npalm_rules\nproduct_images\nproducts\nreviews\nshipment_batch_uploads\nshipment_tracking_events\nusers\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

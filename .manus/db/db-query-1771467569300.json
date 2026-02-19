@@ -1,0 +1,15 @@
+{
+  "query": "SELECT \n  (SELECT COUNT(*) FROM face_rules) as face_count,\n  (SELECT COUNT(*) FROM palm_rules) as palm_count,\n  (SELECT COUNT(*) FROM fengshui_rules) as fengshui_count;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT \n  (SELECT COUNT(*) FROM face_rules) as face_count,\n  (SELECT COUNT(*) FROM palm_rules) as palm_count,\n  (SELECT COUNT(*) FROM fengshui_rules) as fengshui_count;",
+  "rows": [
+    {
+      "face_count": "10",
+      "palm_count": "10",
+      "fengshui_count": "12"
+    }
+  ],
+  "messages": [],
+  "stdout": "face_count\tpalm_count\tfengshui_count\n10\t10\t12\n",
+  "stderr": "",
+  "execution_time_ms": 65
+}

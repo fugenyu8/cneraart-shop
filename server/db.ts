@@ -654,6 +654,91 @@ export async function getProductAverageRating(productId: number): Promise<number
   return avgRating ? Number(avgRating) : 0;
 }
 
+export async function createReview(data: {
+  productId: number;
+  userId: number;
+  userName: string | null;
+  rating: number;
+  comment: string;
+  title?: string;
+  isApproved: boolean;
+}): Promise<number> {
+  const db = await getDb();
+  if (!db) throw new Error("数据库连接失败");
+
+  const result = await db.insert(reviews).values({
+    productId: data.productId,
+    userId: data.userId,
+    userName: data.userName,
+    rating: data.rating,
+    comment: data.comment,
+    title: data.title || null,
+    isApproved: data.isApproved,
+    isVerified: true, // 默认验证购买
+  });
+
+  return Number((result as any).insertId || 0);
+}
+
+export async function getAllReviewsForAdmin(params: {
+  productId?: number;
+  status?: "pending" | "approved" | "rejected";
+  limit?: number;
+  offset?: number;
+}): Promise<Review[]> {
+  const db = await getDb();
+  if (!db) return [];
+
+  const conditions = [];
+  
+  if (params.productId) {
+    conditions.push(eq(reviews.productId, params.productId));
+  }
+  
+  if (params.status === "approved") {
+    conditions.push(eq(reviews.isApproved, true));
+  } else if (params.status === "pending" || params.status === "rejected") {
+    conditions.push(eq(reviews.isApproved, false));
+  }
+
+  return await db
+    .select()
+    .from(reviews)
+    .where(conditions.length > 0 ? and(...conditions) : undefined)
+    .orderBy(desc(reviews.createdAt))
+    .limit(params.limit || 50)
+    .offset(params.offset || 0);
+}
+
+export async function approveReview(reviewId: number): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("数据库连接失败");
+
+  await db
+    .update(reviews)
+    .set({ isApproved: true })
+    .where(eq(reviews.id, reviewId));
+}
+
+export async function rejectReview(reviewId: number): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("数据库连接失败");
+
+  await db
+    .update(reviews)
+    .set({ isApproved: false })
+    .where(eq(reviews.id, reviewId));
+}
+
+export async function deleteReview(reviewId: number): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("数据库连接失败");
+
+  await db
+    .delete(reviews)
+    .where(eq(reviews.id, reviewId));
+}
+
 // ============= 后台管理统计 =============
 
 export async function getAdminStats() {

@@ -82,6 +82,30 @@ export const appRouter = router({
       return productsWithImages;
     }),
 
+    // 提交评价(需要登录)
+    submitReview: protectedProcedure
+      .input(
+        z.object({
+          productId: z.number(),
+          rating: z.number().min(1).max(5),
+          comment: z.string().min(20).max(500),
+          title: z.string().optional(),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const reviewId = await db.createReview({
+          productId: input.productId,
+          userId: ctx.user.id,
+          userName: ctx.user.name,
+          rating: input.rating,
+          comment: input.comment,
+          title: input.title,
+          isApproved: false, // 默认未审核
+        });
+        
+        return { success: true, reviewId };
+      }),
+    
     // 根据生日推荐守护吊坠(公开)
     getGuardianRecommendations: publicProcedure
       .input(z.object({ birthdate: z.string() })) // YYYY-MM-DD格式
@@ -926,6 +950,48 @@ export const appRouter = router({
             console.error("Failed to send service report email:", error);
           }
           
+          return { success: true };
+        }),
+    }),
+    
+    // 评价管理
+    reviews: router({
+      // 获取所有评价
+      listAll: adminProcedure
+        .input(
+          z.object({
+            productId: z.number().optional(),
+            status: z.enum(["pending", "approved", "rejected"]).optional(),
+            limit: z.number().min(1).max(100).default(50),
+            offset: z.number().min(0).default(0),
+          })
+        )
+        .query(async ({ input }) => {
+          const reviews = await db.getAllReviewsForAdmin(input);
+          return reviews;
+        }),
+      
+      // 审核评价
+      approve: adminProcedure
+        .input(z.object({ reviewId: z.number() }))
+        .mutation(async ({ input }) => {
+          await db.approveReview(input.reviewId);
+          return { success: true };
+        }),
+      
+      // 拒绝评价
+      reject: adminProcedure
+        .input(z.object({ reviewId: z.number() }))
+        .mutation(async ({ input }) => {
+          await db.rejectReview(input.reviewId);
+          return { success: true };
+        }),
+      
+      // 删除评价
+      delete: adminProcedure
+        .input(z.object({ reviewId: z.number() }))
+        .mutation(async ({ input }) => {
+          await db.deleteReview(input.reviewId);
           return { success: true };
         }),
     }),

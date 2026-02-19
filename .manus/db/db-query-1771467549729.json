@@ -1,0 +1,22 @@
+{
+  "query": "SHOW TABLES LIKE '%fortune%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SHOW TABLES LIKE '%fortune%';",
+  "rows": [
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg (%fortune%)": "fortune_bookings"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg (%fortune%)": "fortune_reports"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg (%fortune%)": "fortune_service_reviews"
+    },
+    {
+      "Tables_in_8WruFPRUxPMzzwD4ZeeUDg (%fortune%)": "fortune_tasks"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_8WruFPRUxPMzzwD4ZeeUDg (%fortune%)\nfortune_bookings\nfortune_reports\nfortune_service_reviews\nfortune_tasks\n",
+  "stderr": "",
+  "execution_time_ms": 120
+}

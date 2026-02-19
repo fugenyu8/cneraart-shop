@@ -1,0 +1,65 @@
+{
+  "query": "SELECT * FROM face_rules LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT * FROM face_rules LIMIT 5;",
+  "rows": [
+    {
+      "id": "121",
+      "palaceName": "命宫",
+      "featureName": "额头高度",
+      "conditionOperator": ">",
+      "conditionValue": "70",
+      "score": "8",
+      "interpretation": "额头高广,智慧聪颖,事业运佳",
+      "category": "事业",
+      "createdAt": "2026-02-15 09:00:07"
+    },
+    {
+      "id": "122",
+      "palaceName": "命宫",
+      "featureName": "额头光洁度",
+      "conditionOperator": ">",
+      "conditionValue": "80",
+      "score": "7",
+      "interpretation": "额头光洁无瑕,贵人运旺,前程似锦",
+      "category": "财运",
+      "createdAt": "2026-02-15 09:00:07"
+    },
+    {
+      "id": "123",
+      "palaceName": "兄弟宫",
+      "featureName": "眉毛浓度",
+      "conditionOperator": ">",
+      "conditionValue": "60",
+      "score": "6",
+      "interpretation": "眉毛浓密,兄弟情深,朋友相助",
+      "category": "感情",
+      "createdAt": "2026-02-15 09:00:07"
+    },
+    {
+      "id": "124",
+      "palaceName": "兄弟宫",
+      "featureName": "眉形",
+      "conditionOperator": "==",
+      "conditionValue": "柳叶眉",
+      "score": "8",
+      "interpretation": "眉如柳叶,性情温和,人缘极佳",
+      "category": "感情",
+      "createdAt": "2026-02-15 09:00:07"
+    },
+    {
+      "id": "125",
+      "palaceName": "子女宫",
+      "featureName": "眼睛大小",
+      "conditionOperator": ">",
+      "conditionValue": "65",
+      "score": "7",
+      "interpretation": "眼大有神,子女聪慧,家庭和睦",
+      "category": "感情",
+      "createdAt": "2026-02-15 09:00:07"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tpalaceName\tfeatureName\tconditionOperator\tconditionValue\tscore\tinterpretation\tcategory\tcreatedAt\n121\t命宫\t额头高度\t>\t70\t8\t额头高广,智慧聪颖,事业运佳\t事业\t2026-02-15 09:00:07\n122\t命宫\t额头光洁度\t>\t80\t7\t额头光洁无瑕,贵人运旺,前程似锦\t财运\t2026-02-15 09:00:07\n123\t兄弟宫\t眉毛浓度\t>\t60\t6\t眉毛浓密,兄弟情深,朋友相助\t感情\t2026-02-15 09:00:07\n124\t兄弟宫\t眉形\t==\t柳叶眉\t8\t眉如柳叶,性情温和,人缘极佳\t感情\t2026-02-15 09:00:07\n125\t子女宫\t眼睛大小\t>\t65\t7\t眼大有神,子女聪慧,家庭和睦\t感情\t2026-02-15 09:00:07\n",
+  "stderr": "",
+  "execution_time_ms": 59
+}
