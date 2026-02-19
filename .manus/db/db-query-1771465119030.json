@@ -1,0 +1,14 @@
+{
+  "query": "SELECT isApproved, COUNT(*) as count FROM reviews GROUP BY isApproved;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT isApproved, COUNT(*) as count FROM reviews GROUP BY isApproved;",
+  "rows": [
+    {
+      "isApproved": "1",
+      "count": "812530"
+    }
+  ],
+  "messages": [],
+  "stdout": "isApproved\tcount\n1\t812530\n",
+  "stderr": "",
+  "execution_time_ms": 599
+}

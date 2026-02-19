@@ -1,0 +1,35 @@
+{
+  "query": "SELECT id, name, slug FROM products LIMIT 5;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug FROM products LIMIT 5;",
+  "rows": [
+    {
+      "id": "120007",
+      "name": "Ancient Chinese Wisdom Analysis",
+      "slug": "ancient-chinese-wisdom-analysis"
+    },
+    {
+      "id": "510001",
+      "name": "Wutai Mountain Blessed Rat Guardian Pendant",
+      "slug": "wutai-mountain-rat-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510002",
+      "name": "Wutai Mountain Blessed Ox Guardian Pendant",
+      "slug": "wutai-mountain-ox-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510003",
+      "name": "Wutai Mountain Blessed Tiger Guardian Pendant",
+      "slug": "wutai-mountain-tiger-zodiac-guardian-pendant"
+    },
+    {
+      "id": "510004",
+      "name": "Wutai Mountain Blessed Rabbit Guardian Pendant",
+      "slug": "wutai-mountain-rabbit-zodiac-guardian-pendant"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\n120007\tAncient Chinese Wisdom Analysis\tancient-chinese-wisdom-analysis\n510001\tWutai Mountain Blessed Rat Guardian Pendant\twutai-mountain-rat-zodiac-guardian-pendant\n510002\tWutai Mountain Blessed Ox Guardian Pendant\twutai-mountain-ox-zodiac-guardian-pendant\n510003\tWutai Mountain Blessed Tiger Guardian Pendant\twutai-mountain-tiger-zodiac-guardian-pendant\n510004\tWutai Mountain Blessed Rabbit Guardian Pendant\twutai-mountain-rabbit-zodiac-guardian-pendant\n",
+  "stderr": "",
+  "execution_time_ms": 51
+}
