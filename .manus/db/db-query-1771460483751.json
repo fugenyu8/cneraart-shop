@@ -1,0 +1,38 @@
+{
+  "query": "SELECT id, name FROM categories WHERE parentId = 8 ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name FROM categories WHERE parentId = 8 ORDER BY id;",
+  "rows": [
+    {
+      "id": "90001",
+      "name": "生肖守护"
+    },
+    {
+      "id": "90002",
+      "name": "太阳星座守护"
+    },
+    {
+      "id": "90003",
+      "name": "月亮星座守护"
+    },
+    {
+      "id": "90004",
+      "name": "招财旺运"
+    },
+    {
+      "id": "90005",
+      "name": "平安健康"
+    },
+    {
+      "id": "90006",
+      "name": "智慧学业"
+    },
+    {
+      "id": "90007",
+      "name": "心灵平和"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\n90001\t生肖守护\n90002\t太阳星座守护\n90003\t月亮星座守护\n90004\t招财旺运\n90005\t平安健康\n90006\t智慧学业\n90007\t心灵平和\n",
+  "stderr": "",
+  "execution_time_ms": 55
+}

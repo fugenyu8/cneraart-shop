@@ -1,0 +1,9 @@
+{
+  "query": "\n-- 1. 太阳星座守护 (510013-510024) → categoryId = 10\nUPDATE products SET categoryId = 10 WHERE id BETWEEN 510013 AND 510024;\n\n-- 2. 月亮星座守护 (510025-510036) → categoryId = 11\nUPDATE products SET categoryId = 11 WHERE id BETWEEN 510025 AND 510036;\n\n-- 3. 招财旺运 (Yellow Jambhala Bracelet) → categoryId = 12\nUPDATE products SET categoryId = 12 WHERE id = 510053;\n\n-- 4. 平安健康 (Heart Sutra, Great Compassion, Shurangama, Amitabha) → categoryId = 13\nUPDATE products SET categoryId = 13 WHERE id IN (510050, 510051, 510052, 510054);\n\n-- 5. 智慧学业 (Eastern Ancient Wisdom Text Pendant) → categoryId = 14\nUPDATE products SET categoryId = 14 WHERE id = 510049;\n\n-- 6. 心灵平和 (Esoteric North Star Seven-Star Pendant) → categoryId = 15\nUPDATE products SET categoryId = 15 WHERE id = 510055;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \n-- 1. 太阳星座守护 (510013-510024) → categoryId = 10\nUPDATE products SET categoryId = 10 WHERE id BETWEEN 510013 AND 510024;\n\n-- 2. 月亮星座守护 (510025-510036) → categoryId = 11\nUPDATE products SET categoryId = 11 WHERE id BETWEEN 510025 AND 510036;\n\n-- 3. 招财旺运 (Yellow Jambhala Bracelet) → categoryId = 12\nUPDATE products SET categoryId = 12 WHERE id = 510053;\n\n-- 4. 平安健康 (Heart Sutra, Great Compassion, Shurangama, Amitabha) → categoryId = 13\nUPDATE products SET categoryId = 13 WHERE id IN (510050, 510051, 510052, 510054);\n\n-- 5. 智慧学业 (Eastern Ancient Wisdom Text Pendant) → categoryId = 14\nUPDATE products SET categoryId = 14 WHERE id = 510049;\n\n-- 6. 心灵平和 (Esoteric North Star Seven-Star Pendant) → categoryId = 15\nUPDATE products SET categoryId = 15 WHERE id = 510055;\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 101
+}

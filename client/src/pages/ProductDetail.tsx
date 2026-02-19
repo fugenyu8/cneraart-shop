@@ -471,11 +471,16 @@ export default function ProductDetail() {
                           </div>
                           {review.title && <h4 className="font-medium mb-1">{review.title}</h4>}
                         </div>
-                        {review.isVerifiedPurchase && (
+                        {review.isVerified && (
                           <span className="text-xs bg-success/20 text-success px-2 py-1 rounded">{t('product_detail.verified_purchase')}</span>
                         )}
                       </div>
-                      <p className="text-muted-foreground mb-2">{review.content}</p>
+                      <p className="text-muted-foreground mb-2">{review.comment}</p>
+                      {review.location && (
+                        <p className="text-xs text-muted-foreground mb-1">
+                          📍 {review.location}
+                        </p>
+                      )}
                       <p className="text-xs text-muted-foreground">
                         {new Date(review.createdAt).toLocaleDateString()}
                       </p>

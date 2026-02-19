@@ -1,0 +1,20 @@
+{
+  "query": "SELECT id, name, slug FROM categories WHERE slug LIKE '%sun%' OR slug LIKE '%moon%' OR name LIKE '%太阳%' OR name LIKE '%月亮%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug FROM categories WHERE slug LIKE '%sun%' OR slug LIKE '%moon%' OR name LIKE '%太阳%' OR name LIKE '%月亮%';",
+  "rows": [
+    {
+      "id": "90002",
+      "name": "太阳星座守护",
+      "slug": "sun-sign-guardians"
+    },
+    {
+      "id": "90003",
+      "name": "月亮星座守护",
+      "slug": "moon-sign-guardians"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\n90002\t太阳星座守护\tsun-sign-guardians\n90003\t月亮星座守护\tmoon-sign-guardians\n",
+  "stderr": "",
+  "execution_time_ms": 58
+}

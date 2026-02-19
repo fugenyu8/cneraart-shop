@@ -1,0 +1,87 @@
+{
+  "query": "\nSELECT id, name, slug, parentId, displayOrder\nFROM categories\nORDER BY parentId, displayOrder;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nSELECT id, name, slug, parentId, displayOrder\nFROM categories\nORDER BY parentId, displayOrder;\n",
+  "rows": [
+    {
+      "id": "6",
+      "name": "生肖守护",
+      "slug": "zodiac-guardian",
+      "parentId": "NULL",
+      "displayOrder": "2"
+    },
+    {
+      "id": "7",
+      "name": "星座守护",
+      "slug": "constellation-guardian",
+      "parentId": "NULL",
+      "displayOrder": "3"
+    },
+    {
+      "id": "60001",
+      "name": "代客祈福",
+      "slug": "prayer-services",
+      "parentId": "NULL",
+      "displayOrder": "3"
+    },
+    {
+      "id": "1",
+      "name": "命理服务",
+      "slug": "fortune-services",
+      "parentId": "NULL",
+      "displayOrder": "100"
+    },
+    {
+      "id": "90001",
+      "name": "生肖守护",
+      "slug": "zodiac-guardians",
+      "parentId": "8",
+      "displayOrder": "1"
+    },
+    {
+      "id": "90002",
+      "name": "太阳星座守护",
+      "slug": "sun-sign-guardians",
+      "parentId": "8",
+      "displayOrder": "2"
+    },
+    {
+      "id": "90003",
+      "name": "月亮星座守护",
+      "slug": "moon-sign-guardians",
+      "parentId": "8",
+      "displayOrder": "3"
+    },
+    {
+      "id": "90004",
+      "name": "招财旺运",
+      "slug": "wealth-fortune",
+      "parentId": "8",
+      "displayOrder": "4"
+    },
+    {
+      "id": "90005",
+      "name": "平安健康",
+      "slug": "health-safety",
+      "parentId": "8",
+      "displayOrder": "5"
+    },
+    {
+      "id": "90006",
+      "name": "智慧学业",
+      "slug": "wisdom-study",
+      "parentId": "8",
+      "displayOrder": "6"
+    },
+    {
+      "id": "90007",
+      "name": "心灵平和",
+      "slug": "inner-peace",
+      "parentId": "8",
+      "displayOrder": "7"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tparentId\tdisplayOrder\n6\t生肖守护\tzodiac-guardian\tNULL\t2\n7\t星座守护\tconstellation-guardian\tNULL\t3\n60001\t代客祈福\tprayer-services\tNULL\t3\n1\t命理服务\tfortune-services\tNULL\t100\n90001\t生肖守护\tzodiac-guardians\t8\t1\n90002\t太阳星座守护\tsun-sign-guardians\t8\t2\n90003\t月亮星座守护\tmoon-sign-guardians\t8\t3\n90004\t招财旺运\twealth-fortune\t8\t4\n90005\t平安健康\thealth-safety\t8\t5\n90006\t智慧学业\twisdom-study\t8\t6\n90007\t心灵平和\tinner-peace\t8\t7\n",
+  "stderr": "",
+  "execution_time_ms": 52
+}

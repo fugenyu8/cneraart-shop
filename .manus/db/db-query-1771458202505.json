@@ -1,0 +1,9 @@
+{
+  "query": "\nUPDATE products \nSET categoryId = 9\nWHERE name LIKE '%Rat Guardian%' \n   OR name LIKE '%Ox Guardian%'\n   OR name LIKE '%Tiger Guardian%'\n   OR name LIKE '%Rabbit Guardian%'\n   OR name LIKE '%Dragon Guardian%'\n   OR name LIKE '%Snake Guardian%'\n   OR name LIKE '%Horse Guardian%'\n   OR name LIKE '%Goat Guardian%'\n   OR name LIKE '%Monkey Guardian%'\n   OR name LIKE '%Rooster Guardian%'\n   OR name LIKE '%Dog Guardian%'\n   OR name LIKE '%Pig Guardian%';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nUPDATE products \nSET categoryId = 9\nWHERE name LIKE '%Rat Guardian%' \n   OR name LIKE '%Ox Guardian%'\n   OR name LIKE '%Tiger Guardian%'\n   OR name LIKE '%Rabbit Guardian%'\n   OR name LIKE '%Dragon Guardian%'\n   OR name LIKE '%Snake Guardian%'\n   OR name LIKE '%Horse Guardian%'\n   OR name LIKE '%Goat Guardian%'\n   OR name LIKE '%Monkey Guardian%'\n   OR name LIKE '%Rooster Guardian%'\n   OR name LIKE '%Dog Guardian%'\n   OR name LIKE '%Pig Guardian%';\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 60
+}

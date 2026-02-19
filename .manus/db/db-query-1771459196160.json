@@ -1,0 +1,9 @@
+{
+  "query": "\nSELECT id, name, categoryId \nFROM products \nWHERE id BETWEEN 100004 AND 100039\nORDER BY id\nLIMIT 40;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nSELECT id, name, categoryId \nFROM products \nWHERE id BETWEEN 100004 AND 100039\nORDER BY id\nLIMIT 40;\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 60
+}

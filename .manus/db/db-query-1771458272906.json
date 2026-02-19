@@ -1,0 +1,15 @@
+{
+  "query": "\nSELECT MIN(id) as min_id, MAX(id) as max_id, COUNT(*) as total_count\nFROM products;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nSELECT MIN(id) as min_id, MAX(id) as max_id, COUNT(*) as total_count\nFROM products;\n",
+  "rows": [
+    {
+      "min_id": "120001",
+      "max_id": "570003",
+      "total_count": "56"
+    }
+  ],
+  "messages": [],
+  "stdout": "min_id\tmax_id\ttotal_count\n120001\t570003\t56\n",
+  "stderr": "",
+  "execution_time_ms": 59
+}

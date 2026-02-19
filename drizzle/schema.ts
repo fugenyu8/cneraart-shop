@@ -256,12 +256,15 @@ export type InsertOrderItem = typeof orderItems.$inferInsert;
 export const reviews = mysqlTable("reviews", {
   id: int("id").autoincrement().primaryKey(),
   productId: int("productId").notNull(),
-  userId: int("userId").notNull(),
+  userId: int("userId"),
+  userName: varchar("userName", { length: 100 }),
   orderId: int("orderId"), // 关联订单,确保购买后才能评价
   rating: int("rating").notNull(), // 1-5星
   title: varchar("title", { length: 200 }),
-  content: text("content"),
-  isVerifiedPurchase: boolean("isVerifiedPurchase").default(false),
+  comment: text("comment"),
+  ipAddress: varchar("ipAddress", { length: 45 }),
+  location: varchar("location", { length: 255 }),
+  isVerified: boolean("isVerified").default(false),
   isApproved: boolean("isApproved").default(false), // 管理员审核
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),

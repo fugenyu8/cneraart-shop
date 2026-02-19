@@ -1,0 +1,46 @@
+{
+  "query": "\nSELECT p.id, p.name, p.categoryId, c.name as category_name\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nWHERE p.name LIKE '%Rat Guardian%' \n   OR p.name LIKE '%Ox Guardian%'\n   OR p.name LIKE '%Tiger Guardian%'\n   OR p.name LIKE '%Rabbit Guardian%'\n   OR p.name LIKE '%Dragon Guardian%'\n   OR p.name LIKE '%Snake Guardian%'\nLIMIT 10;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nSELECT p.id, p.name, p.categoryId, c.name as category_name\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nWHERE p.name LIKE '%Rat Guardian%' \n   OR p.name LIKE '%Ox Guardian%'\n   OR p.name LIKE '%Tiger Guardian%'\n   OR p.name LIKE '%Rabbit Guardian%'\n   OR p.name LIKE '%Dragon Guardian%'\n   OR p.name LIKE '%Snake Guardian%'\nLIMIT 10;\n",
+  "rows": [
+    {
+      "id": "510001",
+      "name": "Wutai Mountain Blessed Rat Guardian Pendant",
+      "categoryId": "8",
+      "category_name": "NULL"
+    },
+    {
+      "id": "510002",
+      "name": "Wutai Mountain Blessed Ox Guardian Pendant",
+      "categoryId": "8",
+      "category_name": "NULL"
+    },
+    {
+      "id": "510003",
+      "name": "Wutai Mountain Blessed Tiger Guardian Pendant",
+      "categoryId": "8",
+      "category_name": "NULL"
+    },
+    {
+      "id": "510004",
+      "name": "Wutai Mountain Blessed Rabbit Guardian Pendant",
+      "categoryId": "8",
+      "category_name": "NULL"
+    },
+    {
+      "id": "510005",
+      "name": "Wutai Mountain Blessed Dragon Guardian Pendant",
+      "categoryId": "8",
+      "category_name": "NULL"
+    },
+    {
+      "id": "510006",
+      "name": "Wutai Mountain Blessed Snake Guardian Pendant",
+      "categoryId": "8",
+      "category_name": "NULL"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tcategoryId\tcategory_name\n510001\tWutai Mountain Blessed Rat Guardian Pendant\t8\tNULL\n510002\tWutai Mountain Blessed Ox Guardian Pendant\t8\tNULL\n510003\tWutai Mountain Blessed Tiger Guardian Pendant\t8\tNULL\n510004\tWutai Mountain Blessed Rabbit Guardian Pendant\t8\tNULL\n510005\tWutai Mountain Blessed Dragon Guardian Pendant\t8\tNULL\n510006\tWutai Mountain Blessed Snake Guardian Pendant\t8\tNULL\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

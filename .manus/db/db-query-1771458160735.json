@@ -1,0 +1,22 @@
+{
+  "query": "\nSELECT id, name, slug, parentId \nFROM categories \nWHERE name LIKE '%生肖%';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nSELECT id, name, slug, parentId \nFROM categories \nWHERE name LIKE '%生肖%';\n",
+  "rows": [
+    {
+      "id": "6",
+      "name": "生肖守护",
+      "slug": "zodiac-guardian",
+      "parentId": "NULL"
+    },
+    {
+      "id": "90001",
+      "name": "生肖守护",
+      "slug": "zodiac-guardians",
+      "parentId": "8"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tparentId\n6\t生肖守护\tzodiac-guardian\tNULL\n90001\t生肖守护\tzodiac-guardians\t8\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

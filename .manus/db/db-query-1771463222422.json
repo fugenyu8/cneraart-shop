@@ -1,0 +1,97 @@
+{
+  "query": "\n-- 查询评价总数\nSELECT COUNT(*) as total_reviews FROM reviews;\n\n-- 查询每个商品的评价数量(前10个)\nSELECT p.name, COUNT(r.id) as review_count, AVG(r.rating) as avg_rating\nFROM products p\nLEFT JOIN reviews r ON p.id = r.productId\nGROUP BY p.id, p.name\nORDER BY p.id\nLIMIT 10;\n\n-- 查询不同语言的评价分布(通过location字段判断)\nSELECT \n  CASE \n    WHEN location LIKE '%China%' OR location LIKE '%中国%' THEN 'Chinese'\n    WHEN location LIKE '%Germany%' THEN 'German'\n    WHEN location LIKE '%France%' THEN 'French'\n    WHEN location LIKE '%Italy%' THEN 'Italian'\n    WHEN location LIKE '%Spain%' THEN 'Spanish'\n    ELSE 'English'\n  END as language,\n  COUNT(*) as count\nFROM reviews\nGROUP BY language\nORDER BY count DESC;\n\n-- 查询评分分布\nSELECT rating, COUNT(*) as count, ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM reviews), 2) as percentage\nFROM reviews\nGROUP BY rating\nORDER BY rating DESC;\n\n-- 查询样本评价(随机5条)\nSELECT userName, rating, LEFT(content, 100) as content_preview, location, createdAt\nFROM reviews\nORDER BY RAND()\nLIMIT 5;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \n-- 查询评价总数\nSELECT COUNT(*) as total_reviews FROM reviews;\n\n-- 查询每个商品的评价数量(前10个)\nSELECT p.name, COUNT(r.id) as review_count, AVG(r.rating) as avg_rating\nFROM products p\nLEFT JOIN reviews r ON p.id = r.productId\nGROUP BY p.id, p.name\nORDER BY p.id\nLIMIT 10;\n\n-- 查询不同语言的评价分布(通过location字段判断)\nSELECT \n  CASE \n    WHEN location LIKE '%China%' OR location LIKE '%中国%' THEN 'Chinese'\n    WHEN location LIKE '%Germany%' THEN 'German'\n    WHEN location LIKE '%France%' THEN 'French'\n    WHEN location LIKE '%Italy%' THEN 'Italian'\n    WHEN location LIKE '%Spain%' THEN 'Spanish'\n    ELSE 'English'\n  END as language,\n  COUNT(*) as count\nFROM reviews\nGROUP BY language\nORDER BY count DESC;\n\n-- 查询评分分布\nSELECT rating, COUNT(*) as count, ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM reviews), 2) as percentage\nFROM reviews\nGROUP BY rating\nORDER BY rating DESC;\n\n-- 查询样本评价(随机5条)\nSELECT userName, rating, LEFT(content, 100) as content_preview, location, createdAt\nFROM reviews\nORDER BY RAND()\nLIMIT 5;\n",
+  "rows": [
+    {
+      "total_reviews": "1441842"
+    },
+    {
+      "total_reviews": "name\treview_count\tavg_rating"
+    },
+    {
+      "total_reviews": "Ancient Chinese Wisdom Analysis\t29104\t4.7760"
+    },
+    {
+      "total_reviews": "Wutai Mountain Blessed Rat Guardian Pendant\t29619\t4.7836"
+    },
+    {
+      "total_reviews": "Wutai Mountain Blessed Ox Guardian Pendant\t29916\t4.7721"
+    },
+    {
+      "total_reviews": "Wutai Mountain Blessed Tiger Guardian Pendant\t32698\t4.7854"
+    },
+    {
+      "total_reviews": "Wutai Mountain Blessed Rabbit Guardian Pendant\t35219\t4.7780"
+    },
+    {
+      "total_reviews": "Wutai Mountain Blessed Dragon Guardian Pendant\t32406\t4.7705"
+    },
+    {
+      "total_reviews": "Wutai Mountain Blessed Snake Guardian Pendant\t29066\t4.7768"
+    },
+    {
+      "total_reviews": "Wutai Mountain Blessed Horse Guardian Pendant\t32908\t4.7773"
+    },
+    {
+      "total_reviews": "Wutai Mountain Blessed Goat Guardian Pendant\t35400\t4.7744"
+    },
+    {
+      "total_reviews": "Wutai Mountain Blessed Monkey Guardian Pendant\t30355\t4.7808"
+    },
+    {
+      "total_reviews": "language\tcount"
+    },
+    {
+      "total_reviews": "English\t846414"
+    },
+    {
+      "total_reviews": "Chinese\t147967"
+    },
+    {
+      "total_reviews": "German\t132201"
+    },
+    {
+      "total_reviews": "French\t132079"
+    },
+    {
+      "total_reviews": "Spanish\t91636"
+    },
+    {
+      "total_reviews": "Italian\t91545"
+    },
+    {
+      "total_reviews": "rating\tcount\tpercentage"
+    },
+    {
+      "total_reviews": "5\t1143473\t79.31"
+    },
+    {
+      "total_reviews": "4\t257464\t17.86"
+    },
+    {
+      "total_reviews": "3\t40905\t2.84"
+    },
+    {
+      "total_reviews": "userName\trating\tcontent_preview\tlocation\tcreatedAt"
+    },
+    {
+      "total_reviews": "Isabella F.\t5\tNULL\tUtrecht, Netherlands\t2025-12-06 22:47:21"
+    },
+    {
+      "total_reviews": "Lawrence T.585\t5\tNULL\tPhoenix, United States\t2025-12-08 00:44:56"
+    },
+    {
+      "total_reviews": "Benjamin C.\t5\tNULL\tBerlin, Germany\t2025-06-05 12:09:23"
+    },
+    {
+      "total_reviews": "Michael R.\t5\tNULL\tParis, France\t2026-01-17 03:02:24"
+    },
+    {
+      "total_reviews": "Abigail B.\t4\tNULL\tLeicester, United Kingdom\t2025-08-28 17:34:32"
+    }
+  ],
+  "messages": [],
+  "stdout": "total_reviews\n1441842\nname\treview_count\tavg_rating\nAncient Chinese Wisdom Analysis\t29104\t4.7760\nWutai Mountain Blessed Rat Guardian Pendant\t29619\t4.7836\nWutai Mountain Blessed Ox Guardian Pendant\t29916\t4.7721\nWutai Mountain Blessed Tiger Guardian Pendant\t32698\t4.7854\nWutai Mountain Blessed Rabbit Guardian Pendant\t35219\t4.7780\nWutai Mountain Blessed Dragon Guardian Pendant\t32406\t4.7705\nWutai Mountain Blessed Snake Guardian Pendant\t29066\t4.7768\nWutai Mountain Blessed Horse Guardian Pendant\t32908\t4.7773\nWutai Mountain Blessed Goat Guardian Pendant\t35400\t4.7744\nWutai Mountain Blessed Monkey Guardian Pendant\t30355\t4.7808\nlanguage\tcount\nEnglish\t846414\nChinese\t147967\nGerman\t132201\nFrench\t132079\nSpanish\t91636\nItalian\t91545\nrating\tcount\tpercentage\n5\t1143473\t79.31\n4\t257464\t17.86\n3\t40905\t2.84\nuserName\trating\tcontent_preview\tlocation\tcreatedAt\nIsabella F.\t5\tNULL\tUtrecht, Netherlands\t2025-12-06 22:47:21\nLawrence T.585\t5\tNULL\tPhoenix, United States\t2025-12-08 00:44:56\nBenjamin C.\t5\tNULL\tBerlin, Germany\t2025-06-05 12:09:23\nMichael R.\t5\tNULL\tParis, France\t2026-01-17 03:02:24\nAbigail B.\t4\tNULL\tLeicester, United Kingdom\t2025-08-28 17:34:32\n",
+  "stderr": "",
+  "execution_time_ms": 15710
+}

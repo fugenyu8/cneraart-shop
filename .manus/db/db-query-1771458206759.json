@@ -1,0 +1,9 @@
+{
+  "query": "\nUPDATE products \nSET categoryId = 10\nWHERE name LIKE '%Aries%Sun Sign%'\n   OR name LIKE '%Taurus%Sun Sign%'\n   OR name LIKE '%Gemini%Sun Sign%'\n   OR name LIKE '%Cancer%Sun Sign%'\n   OR name LIKE '%Leo%Sun Sign%'\n   OR name LIKE '%Virgo%Sun Sign%'\n   OR name LIKE '%Libra%Sun Sign%'\n   OR name LIKE '%Scorpio%Sun Sign%'\n   OR name LIKE '%Sagittarius%Sun Sign%'\n   OR name LIKE '%Capricorn%Sun Sign%'\n   OR name LIKE '%Aquarius%Sun Sign%'\n   OR name LIKE '%Pisces%Sun Sign%';\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nUPDATE products \nSET categoryId = 10\nWHERE name LIKE '%Aries%Sun Sign%'\n   OR name LIKE '%Taurus%Sun Sign%'\n   OR name LIKE '%Gemini%Sun Sign%'\n   OR name LIKE '%Cancer%Sun Sign%'\n   OR name LIKE '%Leo%Sun Sign%'\n   OR name LIKE '%Virgo%Sun Sign%'\n   OR name LIKE '%Libra%Sun Sign%'\n   OR name LIKE '%Scorpio%Sun Sign%'\n   OR name LIKE '%Sagittarius%Sun Sign%'\n   OR name LIKE '%Capricorn%Sun Sign%'\n   OR name LIKE '%Aquarius%Sun Sign%'\n   OR name LIKE '%Pisces%Sun Sign%';\n",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 57
+}

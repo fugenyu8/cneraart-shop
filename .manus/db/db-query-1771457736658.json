@@ -1,0 +1,9 @@
+{
+  "query": "ALTER TABLE reviews ADD COLUMN userName VARCHAR(100) AFTER userId;\nALTER TABLE reviews ADD COLUMN comment TEXT AFTER title;\nALTER TABLE reviews ADD COLUMN ipAddress VARCHAR(45) AFTER comment;\nALTER TABLE reviews ADD COLUMN location VARCHAR(255) AFTER ipAddress;\nALTER TABLE reviews ADD COLUMN isVerified BOOLEAN DEFAULT FALSE AFTER location;\nALTER TABLE reviews MODIFY COLUMN userId INT NULL;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute ALTER TABLE reviews ADD COLUMN userName VARCHAR(100) AFTER userId;\nALTER TABLE reviews ADD COLUMN comment TEXT AFTER title;\nALTER TABLE reviews ADD COLUMN ipAddress VARCHAR(45) AFTER comment;\nALTER TABLE reviews ADD COLUMN location VARCHAR(255) AFTER ipAddress;\nALTER TABLE reviews ADD COLUMN isVerified BOOLEAN DEFAULT FALSE AFTER location;\nALTER TABLE reviews MODIFY COLUMN userId INT NULL;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 992
+}
