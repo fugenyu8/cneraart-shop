@@ -10,6 +10,16 @@ import * as db from "../db";
 import { getPendingFortuneBookings, updateFortuneBookingStatus, getUserById } from "../db-fortune-helpers";
 import { generatePDFReport } from "../pdfGenerator";
 import { storagePut } from "../storage";
+import { getRecommendedProducts } from "../productRecommendation";
+import {
+  generateRadarChart,
+  generateBarChart,
+  generateBaguaChart,
+  extractFaceScores,
+  extractPalmScores,
+  extractFengshuiScores
+} from "../chartGenerator";
+import { sendReportEmail } from "../emailService";
 
 export type ServiceType = "face" | "palm" | "fengshui";
 
@@ -20,13 +30,14 @@ export interface ProcessReportInput {
   questionDescription?: string;
   userName?: string;
   userLanguage?: string;
+  userEmail?: string; // 用户邮箱
 }
 
 /**
  * 处理报告生成流程
  */
 export async function processFortuneReport(input: ProcessReportInput) {
-  const { bookingId, serviceType, imageUrls, questionDescription, userName, userLanguage = 'zh' } = input;
+  const { bookingId, serviceType, imageUrls, questionDescription, userName, userLanguage = 'zh', userEmail } = input;
 
   try {
     // 1. 更新booking状态为"分析中"
@@ -58,7 +69,47 @@ export async function processFortuneReport(input: ProcessReportInput) {
       reportMarkdown = await translateReport(reportMarkdown, userLanguage);
     }
 
-    // 4. 生成PDF报告
+    // 4. 获取推荐产品
+    const recommendedProducts = await getRecommendedProducts(serviceType, 3);
+
+    // 5. 生成数据可视化图表
+    let chartBuffer: Buffer | undefined;
+    try {
+      switch (serviceType) {
+        case "face": {
+          const { labels, values } = extractFaceScores(reportMarkdown);
+          chartBuffer = await generateRadarChart({
+            labels,
+            values,
+            title: '面相十二宫位分析'
+          });
+          break;
+        }
+        case "palm": {
+          const { labels, values } = extractPalmScores(reportMarkdown);
+          chartBuffer = await generateBarChart({
+            labels,
+            values,
+            title: '手相三大主线评分'
+          });
+          break;
+        }
+        case "fengshui": {
+          const { directions, scores } = extractFengshuiScores(reportMarkdown);
+          chartBuffer = await generateBaguaChart({
+            directions,
+            scores,
+            title: '风水八卦方位分析'
+          });
+          break;
+        }
+      }
+    } catch (error) {
+      console.error('图表生成失败:', error);
+      // 图表生成失败不影响报告生成
+    }
+
+    // 6. 生成PDF报告
     const reportId = `REPORT-${bookingId}-${Date.now()}`;
     const pdfBuffer = await generatePDFReport({
       serviceType,
@@ -66,20 +117,37 @@ export async function processFortuneReport(input: ProcessReportInput) {
       userName: userName || '尊贵的客户',
       reportDate: new Date(),
       reportId,
+      recommendedProducts,
+      chartBuffer,
     });
 
-    // 5. 上传PDF到S3
+    // 7. 上传PDF到S3
     const fileKey = `fortune-reports/${bookingId}/${reportId}.pdf`;
     const { url: pdfUrl } = await storagePut(fileKey, pdfBuffer, 'application/pdf');
 
-    // 6. 保存报告到数据库
+    // 8. 保存报告到数据库
     // TODO: 实现createFortuneReport函数或使用现有的报告存储机制
 
-    // 7. 更新booking状态为"已完成"
+    // 9. 更新booking状态为"已完成"
     await updateFortuneBookingStatus(bookingId, "completed");
 
-    // 8. 发送通知给用户(可选)
-    // TODO: 实现邮件或站内通知
+    // 10. 发送邮件通知给用户
+    if (userEmail) {
+      try {
+        await sendReportEmail({
+          to: userEmail,
+          userName: userName || '尊贵的客户',
+          serviceType,
+          reportId,
+          pdfUrl,
+          reportDate: new Date()
+        });
+        console.log(`报告邮件已发送至: ${userEmail}`);
+      } catch (error) {
+        console.error('邮件发送失败:', error);
+        // 邮件发送失败不影响报告生成
+      }
+    }
 
     return {
       success: true,

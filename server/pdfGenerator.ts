@@ -2,9 +2,20 @@ import PDFDocument from 'pdfkit';
 import { PassThrough } from 'stream';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import QRCode from 'qrcode';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+interface RecommendedProduct {
+  id: number;
+  name: string;
+  imageUrl: string;
+  price: string;
+  description: string;
+  productUrl: string; // 产品详情页URL
+  qrCodeBuffer?: Buffer; // 二维码Buffer(预先生成)
+}
 
 interface PDFReportOptions {
   serviceType: 'face' | 'palm' | 'fengshui';
@@ -12,6 +23,8 @@ interface PDFReportOptions {
   userName: string;
   reportDate: Date;
   reportId: string;
+  recommendedProducts?: RecommendedProduct[]; // 推荐产品列表
+  chartBuffer?: Buffer; // 数据可视化图表
 }
 
 interface ReportSection {
@@ -195,6 +208,41 @@ export async function generatePDFReport(options: PDFReportOptions): Promise<Buff
 
       let yPosition = 80;
 
+      // 如果有图表,在第一页显示
+      if (options.chartBuffer) {
+        doc.fillColor(colors.primary);
+        doc.fontSize(18);
+        doc.font('SourceHanSerif');
+        doc.text('数据可视化分析', 70, yPosition);
+        yPosition += 30;
+
+        // 金色装饰线
+        doc.strokeColor(colors.primary);
+        doc.lineWidth(2);
+        doc.moveTo(70, yPosition);
+        doc.lineTo(doc.page.width - 70, yPosition);
+        doc.stroke();
+        yPosition += 20;
+
+        // 显示图表
+        const chartWidth = 450;
+        const chartHeight = 300;
+        const chartX = (doc.page.width - chartWidth) / 2;
+        doc.image(options.chartBuffer, chartX, yPosition, {
+          width: chartWidth,
+          height: chartHeight
+        });
+        yPosition += chartHeight + 40;
+
+        // 如果空间不够,开新页
+        if (yPosition > doc.page.height - 150) {
+          doc.addPage();
+          doc.fillColor(colors.background);
+          doc.rect(0, 0, doc.page.width, doc.page.height).fill();
+          yPosition = 80;
+        }
+      }
+
       // 遍历所有章节
       for (let i = 0; i < sections.length; i++) {
         const section = sections[i];
@@ -284,6 +332,109 @@ export async function generatePDFReport(options: PDFReportOptions): Promise<Buff
         }
 
         yPosition += 10; // 章节间距
+      }
+
+      // ==================== 产品推荐页 ====================
+      if (options.recommendedProducts && options.recommendedProducts.length > 0) {
+        doc.addPage();
+        doc.fillColor(colors.background);
+        doc.rect(0, 0, doc.page.width, doc.page.height).fill();
+
+        // 标题
+        doc.fillColor(colors.primary);
+        doc.fontSize(20);
+        doc.font('SourceHanSerif');
+        doc.text('开光法物推荐', 50, 80, {
+          align: 'center',
+          width: doc.page.width - 100
+        });
+
+        // 金色装饰线
+        doc.strokeColor(colors.primary);
+        doc.lineWidth(2);
+        doc.moveTo(70, 120);
+        doc.lineTo(doc.page.width - 70, 120);
+        doc.stroke();
+
+        // 推荐说明
+        doc.fillColor(colors.text);
+        doc.fontSize(11);
+        doc.font('SourceHanSans');
+        doc.text(
+          '根据您的分析报告，我们特别为您推荐以下五台山开光法物，助您增强运势，趋吉避凶。',
+          70,
+          140,
+          {
+            width: doc.page.width - 140,
+            align: 'center'
+          }
+        );
+
+        let yPos = 180;
+        const productsPerPage = 2; // 每页显示2个产品
+
+        for (let i = 0; i < options.recommendedProducts.length; i++) {
+          const product = options.recommendedProducts[i];
+
+          // 检查是否需要新页面
+          if (i > 0 && i % productsPerPage === 0) {
+            doc.addPage();
+            doc.fillColor(colors.background);
+            doc.rect(0, 0, doc.page.width, doc.page.height).fill();
+            yPos = 80;
+          }
+
+          // 产品卡片背景
+          doc.fillColor('#FFFFFF');
+          doc.rect(70, yPos, doc.page.width - 140, 200).fill();
+
+          // 产品边框
+          doc.strokeColor(colors.primary);
+          doc.lineWidth(1);
+          doc.rect(70, yPos, doc.page.width - 140, 200).stroke();
+
+          // 产品名称
+          doc.fillColor(colors.primary);
+          doc.fontSize(14);
+          doc.font('SourceHanSerif');
+          doc.text(product.name, 90, yPos + 20, {
+            width: 200
+          });
+
+          // 产品价格
+          doc.fillColor('#D4AF37');
+          doc.fontSize(16);
+          doc.font('SourceHanSerif');
+          doc.text(`￥${product.price}`, 90, yPos + 50);
+
+          // 产品描述
+          doc.fillColor(colors.text);
+          doc.fontSize(10);
+          doc.font('SourceHanSans');
+          doc.text(product.description, 90, yPos + 80, {
+            width: 200,
+            height: 80
+          });
+
+          // 显示二维码
+          if (product.qrCodeBuffer) {
+            doc.image(product.qrCodeBuffer, doc.page.width - 180, yPos + 50, {
+              width: 100,
+              height: 100
+            });
+
+            // 二维码说明
+            doc.fillColor('#666666');
+            doc.fontSize(9);
+            doc.font('SourceHanSans');
+            doc.text('扫码查看详情', doc.page.width - 180, yPos + 160, {
+              width: 100,
+              align: 'center'
+            });
+          }
+
+          yPos += 220; // 下一个产品的位置
+        }
       }
 
       // ==================== 结尾页 ====================
