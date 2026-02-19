@@ -1,0 +1,52 @@
+{
+  "query": "SELECT id, name, slug, parentId FROM categories WHERE parentId = 8 OR id = 8 ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug, parentId FROM categories WHERE parentId = 8 OR id = 8 ORDER BY id;",
+  "rows": [
+    {
+      "id": "90001",
+      "name": "生肖守护",
+      "slug": "zodiac-guardians",
+      "parentId": "8"
+    },
+    {
+      "id": "90002",
+      "name": "太阳星座守护",
+      "slug": "sun-sign-guardians",
+      "parentId": "8"
+    },
+    {
+      "id": "90003",
+      "name": "月亮星座守护",
+      "slug": "moon-sign-guardians",
+      "parentId": "8"
+    },
+    {
+      "id": "90004",
+      "name": "招财旺运",
+      "slug": "wealth-fortune",
+      "parentId": "8"
+    },
+    {
+      "id": "90005",
+      "name": "平安健康",
+      "slug": "health-safety",
+      "parentId": "8"
+    },
+    {
+      "id": "90006",
+      "name": "智慧学业",
+      "slug": "wisdom-study",
+      "parentId": "8"
+    },
+    {
+      "id": "90007",
+      "name": "心灵平和",
+      "slug": "inner-peace",
+      "parentId": "8"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tparentId\n90001\t生肖守护\tzodiac-guardians\t8\n90002\t太阳星座守护\tsun-sign-guardians\t8\n90003\t月亮星座守护\tmoon-sign-guardians\t8\n90004\t招财旺运\twealth-fortune\t8\n90005\t平安健康\thealth-safety\t8\n90006\t智慧学业\twisdom-study\t8\n90007\t心灵平和\tinner-peace\t8\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

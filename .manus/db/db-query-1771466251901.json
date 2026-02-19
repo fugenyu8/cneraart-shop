@@ -1,0 +1,16 @@
+{
+  "query": "SELECT id, name, categoryId, status FROM products WHERE name LIKE '%Ancient Chinese Wisdom%' LIMIT 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, categoryId, status FROM products WHERE name LIKE '%Ancient Chinese Wisdom%' LIMIT 1;",
+  "rows": [
+    {
+      "id": "120007",
+      "name": "Ancient Chinese Wisdom Analysis",
+      "categoryId": "9",
+      "status": "published"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tcategoryId\tstatus\n120007\tAncient Chinese Wisdom Analysis\t9\tpublished\n",
+  "stderr": "",
+  "execution_time_ms": 71
+}

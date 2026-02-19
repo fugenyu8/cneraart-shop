@@ -148,6 +148,7 @@ export async function getPublishedProducts(params?: {
   categoryId?: number;
   search?: string;
   featured?: boolean;
+  blessedOnly?: boolean;
   limit?: number;
   offset?: number;
 }): Promise<Product[]> {
@@ -155,6 +156,11 @@ export async function getPublishedProducts(params?: {
   if (!db) return [];
 
   const conditions = [eq(products.status, "published")];
+
+  // 如果只显示开光法物,排除服务类分类(categoryId=1-7是服务类)
+  if (params?.blessedOnly) {
+    conditions.push(sql`${products.categoryId} > 7`);
+  }
 
   if (params?.categoryId) {
     conditions.push(eq(products.categoryId, params.categoryId));

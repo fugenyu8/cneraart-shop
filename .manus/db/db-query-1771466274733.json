@@ -1,0 +1,80 @@
+{
+  "query": "SELECT p.id, p.name, p.categoryId, c.name as category_name, c.parentId\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nWHERE p.status = 'published'\nORDER BY p.categoryId\nLIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, p.categoryId, c.name as category_name, c.parentId\nFROM products p\nLEFT JOIN categories c ON p.categoryId = c.id\nWHERE p.status = 'published'\nORDER BY p.categoryId\nLIMIT 10;",
+  "rows": [
+    {
+      "id": "570003",
+      "name": "Feng Shui Home Analysis Service",
+      "categoryId": "NULL",
+      "category_name": "NULL",
+      "parentId": "NULL"
+    },
+    {
+      "id": "570002",
+      "name": "Palm Reading Analysis Service",
+      "categoryId": "NULL",
+      "category_name": "NULL",
+      "parentId": "NULL"
+    },
+    {
+      "id": "570001",
+      "name": "Face Reading Analysis Service",
+      "categoryId": "NULL",
+      "category_name": "NULL",
+      "parentId": "NULL"
+    },
+    {
+      "id": "510060",
+      "name": "Fortune Energy Analysis Report",
+      "categoryId": "1",
+      "category_name": "命理服务",
+      "parentId": "NULL"
+    },
+    {
+      "id": "510061",
+      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony",
+      "categoryId": "1",
+      "category_name": "命理服务",
+      "parentId": "NULL"
+    },
+    {
+      "id": "120007",
+      "name": "Ancient Chinese Wisdom Analysis",
+      "categoryId": "9",
+      "category_name": "NULL",
+      "parentId": "NULL"
+    },
+    {
+      "id": "510056",
+      "name": "Wutai Mountain Incense Offering Service",
+      "categoryId": "60001",
+      "category_name": "代客祈福",
+      "parentId": "NULL"
+    },
+    {
+      "id": "510057",
+      "name": "Wutai Mountain Lamp Offering Service",
+      "categoryId": "60001",
+      "category_name": "代客祈福",
+      "parentId": "NULL"
+    },
+    {
+      "id": "510059",
+      "name": "Complete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet",
+      "categoryId": "60001",
+      "category_name": "代客祈福",
+      "parentId": "NULL"
+    },
+    {
+      "id": "510008",
+      "name": "Wutai Mountain Blessed Goat Guardian Pendant",
+      "categoryId": "90001",
+      "category_name": "生肖守护",
+      "parentId": "8"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tcategoryId\tcategory_name\tparentId\n570003\tFeng Shui Home Analysis Service\tNULL\tNULL\tNULL\n570002\tPalm Reading Analysis Service\tNULL\tNULL\tNULL\n570001\tFace Reading Analysis Service\tNULL\tNULL\tNULL\n510060\tFortune Energy Analysis Report\t1\t命理服务\tNULL\n510061\tDestiny Analysis + Wutai Mountain Blessing Ceremony\t1\t命理服务\tNULL\n120007\tAncient Chinese Wisdom Analysis\t9\tNULL\tNULL\n510056\tWutai Mountain Incense Offering Service\t60001\t代客祈福\tNULL\n510057\tWutai Mountain Lamp Offering Service\t60001\t代客祈福\tNULL\n510059\tComplete Blessing Ceremony: Lamp Offering, Incense & Consecration with Amulet\t60001\t代客祈福\tNULL\n510008\tWutai Mountain Blessed Goat Guardian Pendant\t90001\t生肖守护\t8\n",
+  "stderr": "",
+  "execution_time_ms": 56
+}

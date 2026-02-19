@@ -22,13 +22,16 @@ export default function Products() {
   const [categoryId, setCategoryId] = useState<number | undefined>(initialCategoryId);
   const [sortBy, setSortBy] = useState("newest");
 
+  // 获取开光法物的子分类ID列表
+  const { data: categories } = trpc.categories.list.useQuery();
+  const blessedCategoryIds = categories?.filter(cat => cat.parentId === 8).map(cat => cat.id) || [];
+  
   const { data: products, isLoading } = trpc.products.list.useQuery({
     search: search || undefined,
     categoryId,
+    blessedOnly: true, // 只显示开光法物
     limit: 50,
   });
-
-  const { data: categories } = trpc.categories.list.useQuery();
 
   // 获取开光法物的子分类(parentId = 8)
   const subcategories = categories?.filter(cat => cat.parentId === 8).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)) || [];
@@ -76,13 +79,6 @@ export default function Products() {
 
         {/* 快速筛选按钮 */}
         <div className="mb-4 md:mb-6 flex flex-wrap gap-2 md:gap-3 justify-center px-4">
-          <Button
-            variant={categoryId === undefined ? "default" : "outline"}
-            onClick={() => setCategoryId(undefined)}
-            className="rounded-full text-sm md:text-base h-9 md:h-10 px-3 md:px-4"
-          >
-            {t("products.all_products")}
-          </Button>
           {quickFilters.map((filter) => (
             <Button
               key={filter.id}
