@@ -40,8 +40,9 @@ export default function ProductDetail() {
   // 语言检测 - 根据产品名称判断语言
   const isEnglishProduct = useMemo(() => {
     if (!product) return false;
-    // 检测产品名称是否为英语(包含英文字母)
-    return /[a-zA-Z]/.test(product.name);
+    // 默认使用中文界面，除非产品明确标记为英文
+    // 只有当产品名称全部是英文字母时才使用英文界面
+    return /^[a-zA-Z\s\-&]+$/.test(product.name.trim());
   }, [product]);
   
   // 英语翻译

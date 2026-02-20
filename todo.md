@@ -1415,3 +1415,11 @@ PayPal支付凭证(明天完成)
 - [x] 删除产品图片记录 - 已删除
 - [x] 删除产品记录 - 已删除
 - [x] 验证只保留后两个产品 - 已验证,只显示79美金和19美金产品
+
+## 修复评论区域语言不一致(2026-02-20)
+
+- [x] 查找评论组件文件 - ProductDetail.tsx
+- [x] 修复"Your Review"翻译为"您的评价" - 修复isEnglishProduct逻辑
+- [x] 修复"Submit Review"翻译为"提交评价" - 修复isEnglishProduct逻辑
+- [x] 修复"Cancel"翻译为"取消" - 修复isEnglishProduct逻辑
+- [x] 验证所有翻译一致性 - 已验证,评论表单全部中文显示
