@@ -63,10 +63,8 @@ export default function Home() {
   }, [carouselImages.length]);
 
   // 语言切换
-  const changeLanguage = async (lng: string) => {
-    await i18n.changeLanguage(lng);
-    // 刷新页面以确保所有组件都使用新语言
-    window.location.reload();
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
   };
 
   return (

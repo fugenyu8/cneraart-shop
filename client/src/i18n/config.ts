@@ -44,12 +44,17 @@ i18n
     },
     react: {
       useSuspense: false,
+      bindI18n: 'languageChanged loaded',
+      bindI18nStore: 'added removed',
+      transEmptyNodeValue: '',
+      transSupportBasicHtmlNodes: true,
+      transKeepBasicHtmlNodesFor: ['br', 'strong', 'i'],
     },
     detection: {
       order: ['localStorage', 'navigator'],
       caches: ['localStorage'],
     },
-    debug: true,
+    debug: false,
   });
 
 export default i18n;
