@@ -40,6 +40,11 @@ export default function ProductDetail() {
   // 语言检测 - 根据产品名称判断语言
   const isEnglishProduct = useMemo(() => {
     if (!product) return false;
+    // 命理服务强制使用中文界面
+    const fortuneServiceSlugs = ['face-reading-analysis-service', 'palm-reading-analysis-service', 'feng-shui-analysis-service'];
+    if (fortuneServiceSlugs.includes(product.slug)) {
+      return false;
+    }
     // 默认使用中文界面，除非产品明确标记为英文
     // 只有当产品名称全部是英文字母时才使用英文界面
     return /^[a-zA-Z\s\-&]+$/.test(product.name.trim());
@@ -54,7 +59,7 @@ export default function ProductDetail() {
       inStock: '有货',
       outOfStock: '无货',
       quantity: '数量',
-      addToCart: '请回法物',
+      addToCart: '加入购物车',
       productDetails: '产品详情',
       blessingDescription: '开光说明',
       efficacyDescription: '效用说明',
