@@ -179,7 +179,9 @@
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Schicksalsanalyse + Segenzeremonie am Wutai-Berg",
       "description": "Liebe Freunde, sehnen Sie sich danach, Ihren Lebensweg zu verstehen und gleichzeitig heilige Segensenergie für die Zukunft zu erhalten? Für nur 79 $ erhalten Sie einen vollständigen „Bericht zur Schicksalsenergie-Analyse“ und können zudem eine exklusive Segenszeremonie genießen, die unser Team am Wutai-Berg, einem heiligen Ort des chinesischen Buddhismus, für Sie durchführt! Erleuchten Sie den Weg für sich und Ihre Liebsten.\n\n**Ihr exklusives Paket beinhaltet:**\n\n**Bericht zur Schicksalsanalyse (Lieferung innerhalb von 3-5 Tagen)**\n- Basierend auf Ihrem Geburtsdatum und Ihrer Geburtszeit, eine personalisierte Interpretation Ihrer Schicksalsstruktur und Energieinteraktionen\n- Detaillierte Analyse Ihrer großen Glückszyklen und Jahresflüsse, um Ihnen zu helfen, wichtige Chancen und Vorsichtsmaßnahmen für 2026-2027 zu erkennen\n- Umfasst Anleitungen in mehreren Dimensionen wie Karriere, Vermögen, Beziehungen und Gesundheit\n- Kombiniert die traditionelle Fünf-Elemente-Philosophie mit modernen Lebensanwendungen und bietet praktische Ratschläge\n\n**Stellvertretender Segensdienst am Wutai-Berg (Video-Lieferung innerhalb von 10-15 Tagen)**\n- Sie können wählen zwischen **Lichtopfer** (erleuchtet den Weg der Weisheit) oder **Räucherstäbchenopfer** (bittet um Frieden, beseitigt Hindernisse)\n- Unser Team wird persönlich die Tempel am Wutai-Berg besuchen und die Segenszeremonie vollständig dokumentieren\n- Das Video wird die Rezitation Ihres Namens, Ihre Gebetswünsche und den Ablauf der Zeremonie enthalten – für Transparenz und Aufrichtigkeit\n- Jede Lampe, jedes Räucherstäbchen wird speziell für Sie angezündet\n\n**Wie können Sie teilnehmen?**\n1. Klicken Sie auf den Kauflink und wählen Sie das 79 $-Segenspaket\n2. Nach Abschluss der Zahlung senden Sie bitte Ihren Namen, Ihre Geburtsdaten und Ihre Gebetspräferenz (Lichtopfer oder Räucherstäbchenopfer) an: seondo@cneraart.com\n   Beispiel: 12. Dezember 1978, 12:20 Uhr, New York, USA\n3. Sie erhalten den „Bericht zur Schicksalsenergie-Analyse“ innerhalb von 3-5 Werktagen per E-Mail\n4. Das Segensvideo wird Ihnen 10-15 Tage nach Abschluss der Zeremonie an Ihre E-Mail-Adresse gesendet\n\n**Warum dieses Upgrade wählen?**\n- Nicht nur eine Vorhersage – es verleiht Ihrem Leben auch Segensenergie\n- Alte Weisheit + heilige Rituale, doppelter Schutz\n- Vollständige Videoaufzeichnung – aufrichtig, glaubwürdig, überprüfbar\n- Geeignet für vielfältige Wünsche: beruflicher Erfolg, familiäre Harmonie, Schicksalswende, akademischer Fortschritt usw.\n\nEin Bericht, eine helle Lampe, ein Wunsch, eine Transformation.\n\nMögen wir Hand in Hand die Tür des Schicksals öffnen und eine strahlende Zukunft begrüßen.\n\n**Hinweis:** Der Segensdienst ist ein stellvertretender religiöser Opferdienst. Wir respektieren alle Glaubensrichtungen – Aufrichtigkeit ist das Wichtigste. Dieser Dienst folgt streng der traditionellen kulturellen Interpretation und bietet lediglich richtungsweisende Anleitungen. Alle Ergebnisse dienen nur als Referenz."
-    }
+    },
+    "all_title": "Alle Produkte",
+    "all_subtitle": "Ausgewählter geweihter Schmuck und spirituelle Dienste"
   },
   "product_detail": {
     "back": "Zurück zu Produkten",
@@ -451,7 +453,15 @@
     "wisdom_study": "Weisheit & Studium",
     "wisdom_study_desc": "Weisheit freischalten, akademischer Fortschritt und Prüfungserfolg",
     "inner_peace": "Innerer Frieden",
-    "inner_peace_desc": "Beruhigen Sie den Geist, beseitigen Sie Sorgen, erreichen Sie innere Ruhe"
+    "inner_peace_desc": "Beruhigen Sie den Geist, beseitigen Sie Sorgen, erreichen Sie innere Ruhe",
+    "blessed_title": "Geweihte Schutzartefakte",
+    "blessed_subtitle": "Traditionelle Rituale, Meisterweihe, ausgewählter geweihter Schmuck zum Schutz Ihrer Lebensreise",
+    "destiny_title": "Schicksal & Vermögen",
+    "destiny_subtitle": "BaZi-Analyse, Schicksalsdeutung, Entschlüsselung der Geheimnisse des Schicksals",
+    "prayer_title": "Gebetsdienste",
+    "prayer_subtitle": "Lampenopfer, Gebetsdienst, hingebungsvolle Gebete der Meister vom Berg Wutai",
+    "fortune_title": "Gesicht, Hand & Feng Shui",
+    "fortune_subtitle": "Alte Weisheit der Gesichts- und Handlesekunst, Enthüllung des Lebensschicksals"
   },
   "guardianFinder": {
     "title": "Finden Sie Ihren Schutzanhänger",

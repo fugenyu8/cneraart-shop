@@ -241,7 +241,15 @@
     "wisdom_study": "Kebijaksanaan & Studi",
     "wisdom_study_desc": "Membuka kebijaksanaan, kemajuan akademis dan kesuksesan ujian",
     "inner_peace": "Kedamaian Batin",
-    "inner_peace_desc": "Menenangkan pikiran, menghilangkan kekhawatiran, mencapai ketenangan batin"
+    "inner_peace_desc": "Menenangkan pikiran, menghilangkan kekhawatiran, mencapai ketenangan batin",
+    "blessed_title": "Blessed Protective Artifacts",
+    "blessed_subtitle": "Traditional rituals, master consecration, curated blessed jewelry",
+    "destiny_title": "Destiny & Fortune",
+    "destiny_subtitle": "BaZi chart analysis, fortune reading, decoding destiny secrets",
+    "prayer_title": "Prayer Services",
+    "prayer_subtitle": "Lamp offering, prayer service, devoted prayers by Mount Wutai masters",
+    "fortune_title": "Face, Palm & Feng Shui",
+    "fortune_subtitle": "Ancient wisdom of face and palm reading, revealing life destiny"
   },
   "products": {
     "510060": {
@@ -331,7 +339,9 @@
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Analisis Takdir + Upacara Pemberkatan Gunung Wutai",
       "description": "Sahabat yang terkasih, apakah Anda ingin memahami jalur hidup Anda dan pada saat yang sama menyuntikkan energi berkah ilahi ke masa depan? Hanya dengan $79, Anda akan mendapatkan \"Laporan Analisis Energi Numerologi\" lengkap, dan Anda juga dapat menikmati upacara pemberkatan eksklusif yang akan diadakan oleh tim kami untuk Anda di Gunung Wutai, tempat suci Buddhisme Tiongkok! Menerangi jalan ke depan untuk Anda dan orang yang Anda cintai.\n\n**Paket Eksklusif Anda meliputi:**\n\n**Laporan Analisis Numerologi (dikirim dalam 3-5 hari)**\n- Berdasarkan tanggal lahir Anda (Bazi), interpretasi personal mengenai struktur numerologi dan interaksi energi Anda\n- Analisis mendalam tentang periode keberuntungan besar dan tahun-tahun yang berjalan, membantu Anda memahami peluang dan hal-hal penting di tahun 2026-2027\n- Mencakup panduan multidimensi seperti karier, kekayaan, hubungan, kesehatan, dll.\n- Menggabungkan filosofi Lima Elemen tradisional dengan aplikasi kehidupan modern, memberikan saran yang praktis dan dapat diterapkan\n\n**Layanan Doa Pengganti di Gunung Wutai (video dikirim dalam 10-15 hari)**\n- Anda dapat memilih untuk **menyalakan lampu** (menerangi jalan kebijaksanaan) atau **membakar dupa** (memohon kedamaian, menghilangkan rintangan)\n- Tim kami akan secara pribadi pergi ke kuil Gunung Wutai dan merekam seluruh proses upacara doa\n- Video akan berisi pembacaan nama Anda, doa permohonan, dan proses upacara – memastikan transparansi dan ketulusan\n- Setiap lampu, setiap dupa, dinyalakan khusus untuk Anda\n\n**Bagaimana cara berpartisipasi?**\n1. Klik tautan pembelian, pilih paket doa $79\n2. Setelah pembayaran selesai, harap kirimkan nama, informasi tanggal lahir, dan preferensi doa Anda (menyalakan lampu atau membakar dupa) ke: seondo@cneraart.com\n   Contoh: 12 Desember 1978 12:20 PM, New York, AS\n3. Anda akan menerima \"Laporan Analisis Energi Numerologi\" melalui email dalam 3-5 hari kerja\n4. Dalam 10-15 hari setelah upacara doa selesai, video doa akan dikirim ke email Anda\n\n**Mengapa memilih versi yang ditingkatkan ini?**\n- Bukan hanya prediksi – tetapi juga menyuntikkan energi berkah ke dalam hidup Anda\n- Kebijaksanaan kuno + ritual suci, perlindungan ganda\n- Rekaman video lengkap – tulus, dapat dipercaya, dan transparan\n- Berlaku untuk berbagai keinginan: kesuksesan karier, keharmonisan keluarga, perubahan nasib, kemajuan akademik, dll.\n\nSatu laporan, satu pelita, satu keinginan, satu transformasi.\n\nSemoga kita bergandengan tangan, membuka pintu takdir, dan menyambut masa depan yang cerah.\n\n**Catatan:** Layanan doa adalah perwakilan persembahan keagamaan. Kami menghormati semua keyakinan – ketulusan adalah yang terpenting. Layanan ini secara ketat mengikuti interpretasi budaya tradisional dan hanya memberikan panduan arah. Semua hasil hanya untuk referensi."
-    }
+    },
+    "all_title": "All Products",
+    "all_subtitle": "Curated blessed jewelry and spiritual services"
   },
   "common": {
     "site_name": "Cneraart",

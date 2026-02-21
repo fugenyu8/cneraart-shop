@@ -179,7 +179,9 @@
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Análisis del Destino + Ceremonia de Bendición de la Montaña Wutai",
       "description": "Estimado amigo, ¿anhela comprender la trayectoria de su vida y, al mismo tiempo, infundir energía de bendición divina en su futuro? ¡Por solo $79, recibirá un \"Informe Completo de Análisis de Energía Natal\" y, además, podrá disfrutar de una exclusiva ceremonia de bendición realizada por nuestro equipo en el sagrado lugar budista de China, la Montaña Wutai! Iluminando el camino a seguir para usted y sus seres queridos.\n\n**Su paquete exclusivo incluye:**\n\n**Informe de Análisis Natal (entrega en 3-5 días)**\n- Interpretación personalizada de su estructura natal e interacción energética basada en sus ocho caracteres natales (Bazi)\n- Análisis profundo de sus períodos de suerte y años de tránsito, ayudándole a aprovechar oportunidades clave y precauciones para 2026-2027\n- Guía multidimensional que abarca carrera, fortuna, relaciones, salud y más\n- Integración de la filosofía tradicional de los Cinco Elementos con aplicaciones modernas, ofreciendo consejos prácticos y viables\n\n**Servicio de Bendición Delegada en la Montaña Wutai (entrega de video en 10-15 días)**\n- Puede elegir entre **ofrenda de lámparas** (iluminando el camino de la sabiduría) o **quemar incienso** (orando por la paz y eliminando obstáculos)\n- Nuestro equipo viajará personalmente a los templos de la Montaña Wutai, documentando toda la ceremonia de bendición\n- El video incluirá la recitación de su nombre, oraciones por sus deseos y el proceso de la ceremonia, asegurando transparencia y sinceridad\n- Cada lámpara, cada varilla de incienso, se encenderá exclusivamente para usted\n\n**¿Cómo participar?**\n1. Haga clic en el enlace de compra y seleccione el paquete de bendición de $79\n2. Una vez completado el pago, envíe su nombre, información de nacimiento y preferencia de bendición (ofrenda de lámparas o quemar incienso) a: seondo@cneraart.com\n   Ejemplo: 12 de diciembre de 1978, 12:20 PM, Nueva York, EE. UU.\n3. Recibirá el \"Informe de Análisis de Energía Natal\" por correo electrónico en un plazo de 3 a 5 días hábiles\n4. El video de la bendición se enviará a su correo electrónico dentro de los 10 a 15 días posteriores a la finalización de la ceremonia de bendición\n\n**¿Por qué elegir esta versión mejorada?**\n- No es solo una predicción, sino que también infunde energía de bendición en su vida\n- Sabiduría antigua + ritual sagrado, doble protección\n- Grabación de video completa: sincera, creíble y transparente\n- Aplicable a una variedad de deseos: éxito profesional, armonía familiar, cambio de suerte, eliminación de obstáculos, progreso académico, etc.\n\nUn informe, una lámpara brillante, un deseo, una transformación.\n\nQue juntos abramos la puerta del destino y demos la bienvenida a un futuro brillante.\n\n**Nota:** El servicio de bendición es una ofrenda religiosa delegada. Respetamos todas las creencias; la sinceridad es lo más importante. Este servicio sigue estrictamente las interpretaciones de la cultura tradicional y solo proporciona orientación. Todos los resultados son solo para referencia."
-    }
+    },
+    "all_title": "Todos los Productos",
+    "all_subtitle": "Joyería bendecida y servicios espirituales seleccionados"
   },
   "product_detail": {
     "back": "Back to Products",
@@ -451,7 +453,15 @@
     "wisdom_study": "Sabiduría y Estudio",
     "wisdom_study_desc": "Desbloquear sabiduría, progreso académico y éxito en exámenes",
     "inner_peace": "Paz Interior",
-    "inner_peace_desc": "Calmar la mente, eliminar preocupaciones, lograr tranquilidad interior"
+    "inner_peace_desc": "Calmar la mente, eliminar preocupaciones, lograr tranquilidad interior",
+    "blessed_title": "Artefactos Protectores Bendecidos",
+    "blessed_subtitle": "Rituales tradicionales, consagración del maestro, joyería bendecida seleccionada",
+    "destiny_title": "Destino y Fortuna",
+    "destiny_subtitle": "Análisis BaZi, lectura del destino, decodificación de los secretos del destino",
+    "prayer_title": "Servicios de Oración",
+    "prayer_subtitle": "Ofrenda de lámparas, servicio de oración, oraciones devotas de los maestros del Monte Wutai",
+    "fortune_title": "Rostro, Palma y Feng Shui",
+    "fortune_subtitle": "Sabiduría antigua de lectura facial y de palma, revelando el destino de vida"
   },
   "guardianFinder": {
     "title": "Encuentra Tu Colgante Guardián",

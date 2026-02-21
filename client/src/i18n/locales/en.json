@@ -117,7 +117,9 @@
     "stock_low": "Only {{count}} left",
     "no_products": "No products available",
     "try_other_filters": "Try different search criteria",
-    "viewAll": "View All Products"
+    "viewAll": "View All Products",
+    "all_title": "All Products",
+    "all_subtitle": "Curated blessed jewelry and spiritual services, inheriting ancient wisdom, protecting your life journey"
   },
   "product_detail": {
     "back": "Back to Products",
@@ -424,7 +426,15 @@
     "wisdom_study": "Wisdom & Study",
     "wisdom_study_desc": "Unlock wisdom, academic progress, and exam success",
     "inner_peace": "Inner Peace",
-    "inner_peace_desc": "Calm the mind, eliminate worries, achieve inner tranquility"
+    "inner_peace_desc": "Calm the mind, eliminate worries, achieve inner tranquility",
+    "blessed_title": "Blessed Protective Artifacts",
+    "blessed_subtitle": "Traditional rituals, master consecration, curated blessed jewelry to protect your life journey",
+    "destiny_title": "Destiny & Fortune",
+    "destiny_subtitle": "BaZi chart analysis, fortune reading, decoding the secrets of destiny",
+    "prayer_title": "Prayer Services",
+    "prayer_subtitle": "Lamp offering, prayer service, devoted prayers by Mount Wutai masters",
+    "fortune_title": "Face, Palm & Feng Shui",
+    "fortune_subtitle": "Ancient wisdom of face and palm reading, revealing life destiny"
   },
   "guardianFinder": {
     "title": "Find Your Guardian Pendant",

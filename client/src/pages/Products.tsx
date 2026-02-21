@@ -22,26 +22,30 @@ export default function Products() {
   const [categoryId, setCategoryId] = useState<number | undefined>(initialCategoryId);
   const [sortBy, setSortBy] = useState("newest");
 
-  // 获取开光法物的子分类ID列表
+  // 获取分类列表
   const { data: categories } = trpc.categories.list.useQuery();
-  const blessedCategoryIds = categories?.filter(cat => cat.parentId === 8).map(cat => cat.id) || [];
   
   const { data: products, isLoading } = trpc.products.list.useQuery({
     search: search || undefined,
     categoryId,
-    // blessedOnly: true, // 移除此限制,允许显示所有产品包括命理服务
     limit: 50,
   });
 
-  // 获取开光法物的子分类(parentId = 8)
-  const subcategories = categories?.filter(cat => cat.parentId === 8).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)) || [];
-  
-  // 快速筛选按钮 - 使用动态子分类
-  const quickFilters = subcategories.map(cat => ({
-    id: cat.id,
-    label: t(`categories.${cat.slug.replace(/-/g, '_')}`),
-    slug: cat.slug
-  }));
+  // 根据当前分类ID获取标题和副标题
+  const getCategoryTitle = () => {
+    if (!categoryId) return { title: t("products.all_title"), subtitle: t("products.all_subtitle") };
+    const categoryMap: Record<number, { titleKey: string; subtitleKey: string }> = {
+      1: { titleKey: "categories.blessed_title", subtitleKey: "categories.blessed_subtitle" },
+      2: { titleKey: "categories.destiny_title", subtitleKey: "categories.destiny_subtitle" },
+      3: { titleKey: "categories.prayer_title", subtitleKey: "categories.prayer_subtitle" },
+      4: { titleKey: "categories.fortune_title", subtitleKey: "categories.fortune_subtitle" },
+    };
+    const mapping = categoryMap[categoryId];
+    if (mapping) return { title: t(mapping.titleKey), subtitle: t(mapping.subtitleKey) };
+    const cat = categories?.find(c => c.id === categoryId);
+    return { title: cat?.name || "", subtitle: "" };
+  };
+  const { title: pageTitle, subtitle: pageSubtitle } = getCategoryTitle();
 
   return (
     <div className="min-h-screen bg-background">
@@ -76,23 +80,30 @@ export default function Products() {
         {/* 页面标题 */}
         <div className="text-center mb-6 md:mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 gradient-text">
-            {categoryId === 1 ? t("fortuneServices.pageTitle") : t("products.title")}
+            {pageTitle}
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-            {categoryId === 1 ? t("fortuneServices.pageSubtitle") : t("products.subtitle")}
+            {pageSubtitle}
           </p>
         </div>
 
-        {/* 快速筛选按钮 */}
+        {/* 分类快速筛选按钮 */}
         <div className="mb-4 md:mb-6 flex flex-wrap gap-2 md:gap-3 justify-center px-4">
-          {quickFilters.map((filter) => (
+          <Button
+            variant={!categoryId ? "default" : "outline"}
+            onClick={() => setCategoryId(undefined)}
+            className="rounded-full text-sm md:text-base h-9 md:h-10 px-3 md:px-4"
+          >
+            {t("products.all_categories")}
+          </Button>
+          {categories?.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)).map((cat) => (
             <Button
-              key={filter.id}
-              variant={categoryId === filter.id ? "default" : "outline"}
-              onClick={() => setCategoryId(filter.id)}
+              key={cat.id}
+              variant={categoryId === cat.id ? "default" : "outline"}
+              onClick={() => setCategoryId(cat.id)}
               className="rounded-full text-sm md:text-base h-9 md:h-10 px-3 md:px-4"
             >
-              {filter.label}
+              {cat.name}
             </Button>
           ))}
         </div>
@@ -156,8 +167,7 @@ export default function Products() {
             )}
             {categoryId && (
               <Badge variant="secondary">
-                {quickFilters.find(f => f.id === categoryId)?.label || 
-                 categories?.find(c => c.id === categoryId)?.name}
+                {categories?.find(c => c.id === categoryId)?.name}
               </Badge>
             )}
           </div>

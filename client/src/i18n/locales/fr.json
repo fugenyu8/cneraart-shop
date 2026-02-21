@@ -179,7 +179,9 @@
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Analyse de Destin + Cérémonie de Bénédiction du Mont Wutai",
       "description": "Chers amis, aspirez-vous à comprendre votre parcours de vie tout en insufflant une énergie de bénédiction sacrée à votre avenir? Pour seulement 79$, vous recevrez un «Rapport d'Analyse Énergétique du Destin» complet, et pourrez également profiter d'une cérémonie de bénédiction exclusive organisée par notre équipe au Mont Wutai, terre sainte du bouddhisme chinois! Illuminez le chemin devant vous et vos proches.\n\n**Votre forfait exclusif comprend:**\n\n**Rapport d'Analyse du Destin (livraison sous 3-5 jours)**\n- Interprétation personnalisée de votre structure de destin et de l'interaction des énergies basée sur vos Huit Caractères de Naissance (Bazi)\n- Analyse approfondie de vos périodes de chance (Dayun) et années courantes (Liunian) pour vous aider à saisir les opportunités clés et les précautions à prendre en 2026-2027\n- Conseils couvrant plusieurs dimensions: carrière, fortune, relations, santé, etc.\n- Intègre la philosophie traditionnelle des Cinq Éléments et les applications de la vie moderne, offrant des suggestions pratiques et réalisables\n\n**Service de Bénédiction par procuration au Mont Wutai (livraison vidéo sous 10-15 jours)**\n- Vous pouvez choisir d'**offrir des lumières** (illuminer le chemin de la sagesse) ou d'**offrir de l'encens** (prier pour la paix, éliminer les obstacles)\n- Notre équipe se rendra personnellement aux temples du Mont Wutai pour enregistrer toute la cérémonie de bénédiction\n- La vidéo inclura la récitation de votre nom, la prière de vos vœux et le déroulement de la cérémonie – garantissant transparence et sincérité\n- Chaque lampe, chaque bâton d'encens est allumé spécialement pour vous\n\n**Comment participer?**\n1. Cliquez sur le lien d'achat et choisissez le forfait de bénédiction à 79$\n2. Après le paiement, veuillez envoyer votre nom, vos informations de naissance et votre préférence de bénédiction (offrande de lumières ou d'encens) à: seondo@cneraart.com\n   Exemple: 12 décembre 1978 12:20 PM, New York, États-Unis\n3. Vous recevrez le «Rapport d'Analyse Énergétique du Destin» par e-mail dans les 3-5 jours ouvrables\n4. La vidéo de bénédiction sera envoyée à votre boîte de réception dans les 10-15 jours suivant la fin de la cérémonie de bénédiction\n\n**Pourquoi choisir cette version améliorée?**\n- Ce n'est pas seulement une prédiction – cela insuffle également une énergie de bénédiction dans votre vie\n- Sagesse ancienne + Rituel sacré, double protection\n- Enregistrement vidéo complet – sincère, fiable et vérifiable\n- Convient à une variété de souhaits: succès professionnel, harmonie familiale, transformation de la malchance, progrès scolaire, etc.\n\nUn rapport, une lumière éclairante, un vœu, une transformation.\n\nPuissions-nous unir nos forces pour ouvrir la porte du destin et accueillir un avenir lumineux.\n\n**Remarque:** Le service de bénédiction est une offrande religieuse par procuration. Nous respectons toutes les croyances – la sincérité est primordiale. Ce service suit strictement les interprétations culturelles traditionnelles et ne fournit que des orientations. Tous les résultats sont donnés à titre indicatif uniquement."
-    }
+    },
+    "all_title": "Tous les Produits",
+    "all_subtitle": "Bijoux bénis et services spirituels sélectionnés"
   },
   "product_detail": {
     "back": "Back to Products",
@@ -451,7 +453,15 @@
     "wisdom_study": "Sagesse & Étude",
     "wisdom_study_desc": "Débloquer la sagesse, progrès académique et réussite aux examens",
     "inner_peace": "Paix Intérieure",
-    "inner_peace_desc": "Calmer l'esprit, éliminer les soucis, atteindre la tranquillité intérieure"
+    "inner_peace_desc": "Calmer l'esprit, éliminer les soucis, atteindre la tranquillité intérieure",
+    "blessed_title": "Artefacts Protecteurs Bénis",
+    "blessed_subtitle": "Rituels traditionnels, consécration par le maître, bijoux bénis sélectionnés pour protéger votre parcours de vie",
+    "destiny_title": "Destin & Fortune",
+    "destiny_subtitle": "Analyse BaZi, lecture du destin, décodage des secrets du destin",
+    "prayer_title": "Services de Prière",
+    "prayer_subtitle": "Offrande de lampes, service de prière, prières dévouées des maîtres du Mont Wutai",
+    "fortune_title": "Visage, Paume & Feng Shui",
+    "fortune_subtitle": "Sagesse ancienne de la lecture du visage et de la paume, révélant le destin de vie"
   },
   "guardianFinder": {
     "title": "Trouvez Votre Pendentif Gardien",
