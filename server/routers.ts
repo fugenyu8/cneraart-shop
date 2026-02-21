@@ -5,6 +5,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import * as db from "./db";
+import { sql } from "drizzle-orm";
 
 // 管理员权限中间件
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -16,6 +17,29 @@ const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
 
 export const appRouter = router({
   system: systemRouter,
+
+  // TEMP: Debug endpoint to check legacy tables
+  debug: router({
+    checkLegacy: publicProcedure.query(async () => {
+      const database = await db.getDb();
+      if (!database) return { error: 'no db' };
+      try {
+        const tables = await database.execute(sql`SHOW TABLES LIKE '%product%'`);
+        let legacyCount = null;
+        let legacyCats = null;
+        try {
+          legacyCount = await database.execute(sql`SELECT COUNT(*) as cnt FROM products_legacy`);
+          legacyCats = await database.execute(sql`SELECT categoryId, COUNT(*) as cnt FROM products_legacy GROUP BY categoryId ORDER BY categoryId`);
+        } catch(e) { legacyCount = 'table not found'; }
+        const currentCount = await database.execute(sql`SELECT COUNT(*) as cnt FROM products`);
+        const currentCats = await database.execute(sql`SELECT categoryId, COUNT(*) as cnt FROM products GROUP BY categoryId ORDER BY categoryId`);
+        const allCats = await database.execute(sql`SELECT id, name, slug, parentId FROM categories ORDER BY id`);
+        return { tables, legacyCount, legacyCats, currentCount, currentCats, allCats };
+      } catch(e: any) {
+        return { error: e.message };
+      }
+    }),
+  }),
   
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
