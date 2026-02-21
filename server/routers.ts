@@ -31,9 +31,8 @@ export const appRouter = router({
         try {
           const [lc] = await conn.execute("SELECT COUNT(*) as cnt FROM products_legacy");
           const [lcols] = await conn.execute("SHOW COLUMNS FROM products_legacy");
-          const [lcats] = await conn.execute("SELECT category_id, COUNT(*) as cnt FROM products_legacy GROUP BY category_id ORDER BY category_id");
-          const [lprods] = await conn.execute("SELECT id, name, category_id, status, regular_price FROM products_legacy ORDER BY category_id, id");
-          legacyData = { count: lc, byCat: lcats, products: lprods, columns: lcols };
+          const [lsample] = await conn.execute("SELECT * FROM products_legacy LIMIT 2");
+          legacyData = { count: lc, columns: lcols, sample: lsample };
         } catch(e: any) { legacyData = { error: e.message }; }
         const [currentCount] = await conn.execute("SELECT COUNT(*) as cnt FROM products");
         const [currentCats] = await conn.execute("SELECT categoryId, COUNT(*) as cnt FROM products GROUP BY categoryId ORDER BY categoryId");
