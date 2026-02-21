@@ -21,21 +21,26 @@ export const appRouter = router({
   // TEMP: Debug endpoint to check legacy tables
   debug: router({
     checkLegacy: publicProcedure.query(async () => {
-      const database = await db.getDb();
-      if (!database) return { error: 'no db' };
+      const mysql2 = await import('mysql2/promise');
+      const url = process.env.DATABASE_URL;
+      if (!url) return { error: 'no DATABASE_URL' };
+      const conn = await mysql2.createConnection(url);
       try {
-        const tables = await database.execute(sql`SHOW TABLES LIKE '%product%'`);
-        let legacyCount = null;
-        let legacyCats = null;
+        const [tables] = await conn.execute("SHOW TABLES LIKE '%product%'");
+        let legacyData: any = null;
         try {
-          legacyCount = await database.execute(sql`SELECT COUNT(*) as cnt FROM products_legacy`);
-          legacyCats = await database.execute(sql`SELECT categoryId, COUNT(*) as cnt FROM products_legacy GROUP BY categoryId ORDER BY categoryId`);
-        } catch(e) { legacyCount = 'table not found'; }
-        const currentCount = await database.execute(sql`SELECT COUNT(*) as cnt FROM products`);
-        const currentCats = await database.execute(sql`SELECT categoryId, COUNT(*) as cnt FROM products GROUP BY categoryId ORDER BY categoryId`);
-        const allCats = await database.execute(sql`SELECT id, name, slug, parentId FROM categories ORDER BY id`);
-        return { tables, legacyCount, legacyCats, currentCount, currentCats, allCats };
+          const [lc] = await conn.execute("SELECT COUNT(*) as cnt FROM products_legacy");
+          const [lcats] = await conn.execute("SELECT categoryId, COUNT(*) as cnt FROM products_legacy WHERE status='published' GROUP BY categoryId ORDER BY categoryId");
+          const [lprods] = await conn.execute("SELECT id, name, categoryId, status, regularPrice FROM products_legacy ORDER BY categoryId, id");
+          legacyData = { count: lc, byCat: lcats, products: lprods };
+        } catch(e: any) { legacyData = { error: e.message }; }
+        const [currentCount] = await conn.execute("SELECT COUNT(*) as cnt FROM products");
+        const [currentCats] = await conn.execute("SELECT categoryId, COUNT(*) as cnt FROM products GROUP BY categoryId ORDER BY categoryId");
+        const [allCats] = await conn.execute("SELECT id, name, slug, parentId FROM categories ORDER BY id");
+        await conn.end();
+        return { tables, legacy: legacyData, current: { count: currentCount, byCat: currentCats }, categories: allCats };
       } catch(e: any) {
+        await conn.end().catch(() => {});
         return { error: e.message };
       }
     }),
