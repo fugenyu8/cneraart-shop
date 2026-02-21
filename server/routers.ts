@@ -5,7 +5,6 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
 import * as db from "./db";
-import { sql } from "drizzle-orm";
 
 // 管理员权限中间件
 const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
@@ -18,52 +17,6 @@ const adminProcedure = protectedProcedure.use(({ ctx, next }) => {
 export const appRouter = router({
   system: systemRouter,
 
-  // TEMP: Debug endpoint to check legacy tables
-  debug: router({
-    execSql: publicProcedure.input(z.object({ sql: z.string() })).mutation(async ({ input }) => {
-      const mysql2 = await import('mysql2/promise');
-      const url = process.env.DATABASE_URL;
-      if (!url) return { error: 'no DATABASE_URL' };
-      const conn = await mysql2.createConnection(url);
-      try {
-        const statements = input.sql.split(';').map(s => s.trim()).filter(s => s.length > 0);
-        const results: any[] = [];
-        for (const stmt of statements) {
-          const [rows] = await conn.execute(stmt);
-          results.push({ stmt: stmt.substring(0, 100), result: rows });
-        }
-        await conn.end();
-        return { success: true, results };
-      } catch(e: any) {
-        await conn.end().catch(() => {});
-        return { error: e.message };
-      }
-    }),
-    checkLegacy: publicProcedure.query(async () => {
-      const mysql2 = await import('mysql2/promise');
-      const url = process.env.DATABASE_URL;
-      if (!url) return { error: 'no DATABASE_URL' };
-      const conn = await mysql2.createConnection(url);
-      try {
-        const [tables] = await conn.execute("SHOW TABLES LIKE '%product%'");
-        let legacyData: any = null;
-        try {
-          const [lc] = await conn.execute("SELECT COUNT(*) as cnt FROM products_legacy");
-          const [lcols] = await conn.execute("SHOW COLUMNS FROM products_legacy");
-          const [lsample] = await conn.execute("SELECT * FROM products_legacy LIMIT 2");
-          legacyData = { count: lc, columns: lcols, sample: lsample };
-        } catch(e: any) { legacyData = { error: e.message }; }
-        const [currentCount] = await conn.execute("SELECT COUNT(*) as cnt FROM products");
-        const [currentCats] = await conn.execute("SELECT categoryId, COUNT(*) as cnt FROM products GROUP BY categoryId ORDER BY categoryId");
-        const [allCats] = await conn.execute("SELECT id, name, slug, parentId FROM categories ORDER BY id");
-        await conn.end();
-        return { tables, legacy: legacyData, current: { count: currentCount, byCat: currentCats }, categories: allCats };
-      } catch(e: any) {
-        await conn.end().catch(() => {});
-        return { error: e.message };
-      }
-    }),
-  }),
   
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
