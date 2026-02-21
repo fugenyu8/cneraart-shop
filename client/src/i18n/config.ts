@@ -39,6 +39,8 @@ i18n
       id: { translation: id },
     },
     fallbackLng: 'zh',
+    supportedLngs: ['en', 'zh', 'de', 'fr', 'es', 'it', 'pt', 'ru', 'ja', 'ko', 'ar', 'hi', 'th', 'vi', 'id'],
+    nonExplicitSupportedLngs: true,
     interpolation: {
       escapeValue: false,
     },
