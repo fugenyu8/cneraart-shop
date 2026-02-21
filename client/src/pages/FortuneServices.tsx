@@ -62,6 +62,8 @@ export default function FortuneServices() {
             <Link href="/cart">
               <span className="text-amber-300 hover:text-amber-200 cursor-pointer">{t("nav.cart")}</span>
             </Link>
+            <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-200">📝 {t("common.report")}</a>
+            <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-200">💬 {t("common.service")}</a>
           </div>
         </div>
       </nav>
