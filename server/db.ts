@@ -541,6 +541,20 @@ export async function createOrder(orderData: {
 
   const orderId = order.insertId;
 
+  // 记录优惠券使用，确保优惠券不会被重复使用
+  if (orderData.couponId) {
+    // 插入使用记录
+    await db.insert(couponUsages).values({
+      couponId: orderData.couponId,
+      userId: orderData.userId,
+      orderId: Number(orderId),
+    });
+    // 增加优惠券已使用次数
+    await db.update(coupons)
+      .set({ usageCount: sql`usageCount + 1` })
+      .where(eq(coupons.id, orderData.couponId));
+  }
+
   // 创建订单商品
   for (const item of orderData.items) {
     const product = await getProductById(item.productId);
