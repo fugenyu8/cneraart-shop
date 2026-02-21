@@ -161,10 +161,10 @@ export default function Home() {
 
           {/* 文字叠加 */}
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-2xl" style={{ fontFamily: 'Cinzel, serif' }}>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-2xl" style={{ fontFamily: '"Playfair Display", "Noto Serif SC", serif' }}>
               {t('hero.title')}
             </h1>
-            <p className="text-base md:text-xl text-white/90 font-light drop-shadow-lg" style={{ fontFamily: 'Cormorant Garamond, serif' }}>
+            <p className="text-base md:text-xl text-white/90 font-light drop-shadow-lg" style={{ fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
               {t('hero.subtitle')}
             </p>
           </div>
@@ -198,7 +198,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {/* 1. 开光护佑法物 */}
-            <Link href="/products?category=8">
+            <Link href="/products?category=1">
               <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
@@ -219,7 +219,7 @@ export default function Home() {
             </Link>
 
             {/* 2. 命理运势 */}
-            <Link href="/products?category=1">
+            <Link href="/products?category=2">
               <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
@@ -239,8 +239,8 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* 3. 面相手相风水 (合并) */}
-            <Link href="/fortune">
+            {/* 3. 面相手相风水 */}
+            <Link href="/products?category=4">
               <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">
@@ -261,7 +261,7 @@ export default function Home() {
             </Link>
 
             {/* 4. 代客祈福 */}
-            <Link href="/products?category=60001">
+            <Link href="/products?category=3">
               <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 {/* 金色祥云纹理背景 */}
                 <div className="absolute inset-0 opacity-5">

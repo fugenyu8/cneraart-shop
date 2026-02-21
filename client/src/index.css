@@ -1,10 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* 引入中文书法字体 - 标题使用 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Ma+Shan+Zheng&family=ZCOOL+XiaoWei&display=swap');
-/* 英文优雅字体 */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+/* 字体：与报告系统一致的衬线字体风格 */
+/* Noto Serif SC (中文标题) · Noto Sans SC (中文正文) · Playfair Display (英文标题) */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -140,7 +138,7 @@
   
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Noto Serif SC', 'Cormorant Garamond', serif;
+    font-family: 'Noto Sans SC', 'Noto Serif SC', system-ui, sans-serif;
     font-feature-settings: "rlig" 1, "calt" 1;
     background: linear-gradient(180deg, 
       oklch(12% 0.05 270) 0%, 
@@ -167,7 +165,7 @@
   
   /* 标题使用书法字体 */
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Ma Shan Zheng', 'Noto Serif SC', 'Cinzel', serif;
+    font-family: 'Noto Serif SC', 'Playfair Display', serif;
     @apply font-bold;
     letter-spacing: 0.05em;
   }
