@@ -20,6 +20,25 @@ export const appRouter = router({
 
   // TEMP: Debug endpoint to check legacy tables
   debug: router({
+    execSql: publicProcedure.input(z.object({ sql: z.string() })).mutation(async ({ input }) => {
+      const mysql2 = await import('mysql2/promise');
+      const url = process.env.DATABASE_URL;
+      if (!url) return { error: 'no DATABASE_URL' };
+      const conn = await mysql2.createConnection(url);
+      try {
+        const statements = input.sql.split(';').map(s => s.trim()).filter(s => s.length > 0);
+        const results: any[] = [];
+        for (const stmt of statements) {
+          const [rows] = await conn.execute(stmt);
+          results.push({ stmt: stmt.substring(0, 100), result: rows });
+        }
+        await conn.end();
+        return { success: true, results };
+      } catch(e: any) {
+        await conn.end().catch(() => {});
+        return { error: e.message };
+      }
+    }),
     checkLegacy: publicProcedure.query(async () => {
       const mysql2 = await import('mysql2/promise');
       const url = process.env.DATABASE_URL;
