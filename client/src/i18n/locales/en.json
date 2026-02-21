@@ -341,7 +341,9 @@
     "learn_more": "Learn More",
     "site_name": "Cneraart",
     "cart": "Cart",
-    "back_home": "Back to Home"
+    "back_home": "Back to Home",
+    "report": "Energy Report",
+    "service": "Customer Service"
   },
   "status": {
     "pending": "Pending",

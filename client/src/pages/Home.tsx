@@ -101,6 +101,14 @@ export default function Home() {
               {t('topBar.login')}
             </a>
             <span>|</span>
+            <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              📝 {t('common.report')}
+            </a>
+            <span>|</span>
+            <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              💬 {t('common.service')}
+            </a>
+            <span>|</span>
             <select
               value={i18n.language}
               onChange={(e) => changeLanguage(e.target.value)}

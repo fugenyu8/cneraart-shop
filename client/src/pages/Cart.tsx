@@ -115,6 +115,10 @@ export default function Cart() {
                 <h1 className="text-2xl font-bold gradient-text">源・华渡</h1>
               </a>
             </Link>
+            <div className="flex items-center gap-3">
+              <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors">📝 能量报告</a>
+              <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors">💬 智能客服</a>
+            </div>
           </div>
         </div>
       </nav>

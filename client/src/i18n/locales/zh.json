@@ -411,7 +411,9 @@
     "uploading": "上传中...",
     "site_name": "源・华渡",
     "cart": "购物车",
-    "back_home": "返回首页"
+    "back_home": "返回首页",
+    "report": "能量报告",
+    "service": "智能客服"
   },
   "status": {
     "pending": "待处理",

@@ -322,9 +322,17 @@ export default function ProductDetail() {
                 <h1 className="text-2xl font-bold gradient-text">源・华渡</h1>
               </a>
             </Link>
-            <Link href="/cart">
-              <Button variant="outline">{t('product_detail.cart')}</Button>
-            </Link>
+            <div className="flex items-center gap-3">
+              <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="sm" className="text-xs md:text-sm">📝 {t('common.report')}</Button>
+              </a>
+              <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer">
+                <Button variant="ghost" size="sm" className="text-xs md:text-sm">💬 {t('common.service')}</Button>
+              </a>
+              <Link href="/cart">
+                <Button variant="outline">{t('product_detail.cart')}</Button>
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
