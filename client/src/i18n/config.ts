@@ -16,6 +16,8 @@ import hi from './locales/hi.json';
 import th from './locales/th.json';
 import vi from './locales/vi.json';
 import id from './locales/id.json';
+import tr from './locales/tr.json';
+import zhHant from './locales/zh-Hant.json';
 
 i18n
   .use(LanguageDetector)
@@ -37,9 +39,11 @@ i18n
       th: { translation: th },
       vi: { translation: vi },
       id: { translation: id },
+      tr: { translation: tr },
+      'zh-Hant': { translation: zhHant },
     },
     fallbackLng: 'zh',
-    supportedLngs: ['en', 'zh', 'de', 'fr', 'es', 'it', 'pt', 'ru', 'ja', 'ko', 'ar', 'hi', 'th', 'vi', 'id'],
+    supportedLngs: ['en', 'zh', 'zh-Hant', 'de', 'fr', 'es', 'it', 'pt', 'ru', 'ja', 'ko', 'ar', 'hi', 'th', 'vi', 'id', 'tr'],
     nonExplicitSupportedLngs: true,
     interpolation: {
       escapeValue: false,

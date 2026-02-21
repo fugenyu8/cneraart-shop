@@ -129,6 +129,8 @@ export default function Home() {
               <option value="th" className="bg-[#8B0000] text-[#F5DEB3]">ไทย</option>
               <option value="vi" className="bg-[#8B0000] text-[#F5DEB3]">Tiếng Việt</option>
               <option value="id" className="bg-[#8B0000] text-[#F5DEB3]">Bahasa Indonesia</option>
+              <option value="tr" className="bg-[#8B0000] text-[#F5DEB3]">Türkçe</option>
+              <option value="zh-Hant" className="bg-[#8B0000] text-[#F5DEB3]">繁體中文</option>
             </select>
           </div>
         </div>
