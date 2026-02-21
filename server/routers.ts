@@ -30,9 +30,10 @@ export const appRouter = router({
         let legacyData: any = null;
         try {
           const [lc] = await conn.execute("SELECT COUNT(*) as cnt FROM products_legacy");
-          const [lcats] = await conn.execute("SELECT categoryId, COUNT(*) as cnt FROM products_legacy WHERE status='published' GROUP BY categoryId ORDER BY categoryId");
-          const [lprods] = await conn.execute("SELECT id, name, categoryId, status, regularPrice FROM products_legacy ORDER BY categoryId, id");
-          legacyData = { count: lc, byCat: lcats, products: lprods };
+          const [lcols] = await conn.execute("SHOW COLUMNS FROM products_legacy");
+          const [lcats] = await conn.execute("SELECT category_id, COUNT(*) as cnt FROM products_legacy GROUP BY category_id ORDER BY category_id");
+          const [lprods] = await conn.execute("SELECT id, name, category_id, status, regular_price FROM products_legacy ORDER BY category_id, id");
+          legacyData = { count: lc, byCat: lcats, products: lprods, columns: lcols };
         } catch(e: any) { legacyData = { error: e.message }; }
         const [currentCount] = await conn.execute("SELECT COUNT(*) as cnt FROM products");
         const [currentCats] = await conn.execute("SELECT categoryId, COUNT(*) as cnt FROM products GROUP BY categoryId ORDER BY categoryId");
