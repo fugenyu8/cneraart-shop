@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,17 @@ import { Search, Sparkles, SlidersHorizontal } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
+
+// 子分类slug到i18n key的映射
+const SUBCATEGORY_I18N_MAP: Record<string, { nameKey: string; descKey: string }> = {
+  "zodiac-guardians": { nameKey: "categories.zodiac_guardians", descKey: "categories.zodiac_guardians_desc" },
+  "sun-sign-guardians": { nameKey: "categories.sun_sign_guardians", descKey: "categories.sun_sign_guardians_desc" },
+  "moon-sign-guardians": { nameKey: "categories.moon_sign_guardians", descKey: "categories.moon_sign_guardians_desc" },
+  "wealth-fortune": { nameKey: "categories.wealth_fortune", descKey: "categories.wealth_fortune_desc" },
+  "health-safety": { nameKey: "categories.health_safety", descKey: "categories.health_safety_desc" },
+  "wisdom-study": { nameKey: "categories.wisdom_study", descKey: "categories.wisdom_study_desc" },
+  "inner-peace": { nameKey: "categories.inner_peace", descKey: "categories.inner_peace_desc" },
+};
 
 export default function Products() {
   const { t } = useTranslation();
@@ -28,8 +39,34 @@ export default function Products() {
   const { data: products, isLoading } = trpc.products.list.useQuery({
     search: search || undefined,
     categoryId,
-    limit: 50,
+    limit: 100,
   });
+
+  // 分离顶级分类和子分类
+  const topCategories = useMemo(() => {
+    if (!categories) return [];
+    return categories.filter(c => !c.parentId).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+  }, [categories]);
+
+  const subCategories = useMemo(() => {
+    if (!categories) return [];
+    // 当选中开光护佑法物(categoryId=1)时，显示其子分类
+    if (categoryId === 1) {
+      return categories.filter(c => c.parentId === 1).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+    }
+    return [];
+  }, [categories, categoryId]);
+
+  // 获取翻译后的分类名称
+  const getCategoryName = (cat: { slug: string; name: string }) => {
+    const mapping = SUBCATEGORY_I18N_MAP[cat.slug];
+    if (mapping) {
+      const translated = t(mapping.nameKey);
+      // 如果翻译key存在且不等于key本身，使用翻译
+      if (translated !== mapping.nameKey) return translated;
+    }
+    return cat.name;
+  };
 
   // 根据当前分类ID获取标题和副标题
   const getCategoryTitle = () => {
@@ -42,10 +79,26 @@ export default function Products() {
     };
     const mapping = categoryMap[categoryId];
     if (mapping) return { title: t(mapping.titleKey), subtitle: t(mapping.subtitleKey) };
+    // 检查是否是子分类
     const cat = categories?.find(c => c.id === categoryId);
-    return { title: cat?.name || "", subtitle: "" };
+    if (cat) {
+      const i18nMapping = SUBCATEGORY_I18N_MAP[cat.slug];
+      if (i18nMapping) {
+        const translatedName = t(i18nMapping.nameKey);
+        const translatedDesc = t(i18nMapping.descKey);
+        return {
+          title: translatedName !== i18nMapping.nameKey ? translatedName : cat.name,
+          subtitle: translatedDesc !== i18nMapping.descKey ? translatedDesc : (cat.description || ""),
+        };
+      }
+      return { title: cat.name, subtitle: cat.description || "" };
+    }
+    return { title: "", subtitle: "" };
   };
   const { title: pageTitle, subtitle: pageSubtitle } = getCategoryTitle();
+
+  // 判断当前是否在开光护佑法物的子分类视图中
+  const isInBlessedCategory = categoryId === 1 || (categories?.find(c => c.id === categoryId)?.parentId === 1);
 
   return (
     <div className="min-h-screen bg-background">
@@ -87,8 +140,8 @@ export default function Products() {
           </p>
         </div>
 
-        {/* 分类快速筛选按钮 */}
-        <div className="mb-4 md:mb-6 flex flex-wrap gap-2 md:gap-3 justify-center px-4">
+        {/* 顶级分类快速筛选按钮 */}
+        <div className="mb-3 md:mb-4 flex flex-wrap gap-2 md:gap-3 justify-center px-4">
           <Button
             variant={!categoryId ? "default" : "outline"}
             onClick={() => setCategoryId(undefined)}
@@ -96,17 +149,42 @@ export default function Products() {
           >
             {t("products.all_categories")}
           </Button>
-          {categories?.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)).map((cat) => (
+          {topCategories.map((cat) => (
             <Button
               key={cat.id}
-              variant={categoryId === cat.id ? "default" : "outline"}
+              variant={categoryId === cat.id || (categories?.find(c => c.id === categoryId)?.parentId === cat.id) ? "default" : "outline"}
               onClick={() => setCategoryId(cat.id)}
               className="rounded-full text-sm md:text-base h-9 md:h-10 px-3 md:px-4"
             >
-              {cat.name}
+              {getCategoryName(cat)}
             </Button>
           ))}
         </div>
+
+        {/* 子分类筛选按钮（仅在开光护佑法物下显示） */}
+        {isInBlessedCategory && subCategories.length > 0 && (
+          <div className="mb-4 md:mb-6 flex flex-wrap gap-2 md:gap-3 justify-center px-4">
+            <Button
+              variant={categoryId === 1 ? "secondary" : "ghost"}
+              onClick={() => setCategoryId(1)}
+              size="sm"
+              className="rounded-full text-xs md:text-sm h-8 md:h-9 px-3 md:px-4 border border-border/50"
+            >
+              {t("products.all_categories")}
+            </Button>
+            {subCategories.map((sub) => (
+              <Button
+                key={sub.id}
+                variant={categoryId === sub.id ? "secondary" : "ghost"}
+                onClick={() => setCategoryId(sub.id)}
+                size="sm"
+                className="rounded-full text-xs md:text-sm h-8 md:h-9 px-3 md:px-4 border border-border/50"
+              >
+                {getCategoryName(sub)}
+              </Button>
+            ))}
+          </div>
+        )}
 
         {/* 筛选和搜索 */}
         <div className="mb-6 md:mb-8 space-y-3 md:space-y-4">
@@ -132,11 +210,9 @@ export default function Products() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">{t("products.all_categories")}</SelectItem>
-                {categories?.map((cat) => (
+                {categories?.filter(c => !c.parentId).map((cat) => (
                   <SelectItem key={cat.id} value={cat.id.toString()}>
-                    {cat.slug === "zodiac-guardian" ? t("categories.zodiac_guardian") : 
-                     cat.slug === "constellation-guardian" ? t("categories.constellation_guardian") : 
-                     cat.name}
+                    {getCategoryName(cat)}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -167,7 +243,10 @@ export default function Products() {
             )}
             {categoryId && (
               <Badge variant="secondary">
-                {categories?.find(c => c.id === categoryId)?.name}
+                {(() => {
+                  const cat = categories?.find(c => c.id === categoryId);
+                  return cat ? getCategoryName(cat) : "";
+                })()}
               </Badge>
             )}
           </div>

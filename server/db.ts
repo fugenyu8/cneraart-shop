@@ -163,7 +163,16 @@ export async function getPublishedProducts(params?: {
   }
 
   if (params?.categoryId) {
-    conditions.push(eq(products.categoryId, params.categoryId));
+    // 当查询开光护佑法物(categoryId=1)时，同时返回其所有子分类的产品
+    if (params.categoryId === 1) {
+      // 查询所有parentId=1的子分类
+      const subCats = await db.select().from(categories).where(eq(categories.parentId, 1));
+      const subCatIds = subCats.map(c => c.id);
+      const allCatIds = [1, ...subCatIds];
+      conditions.push(inArray(products.categoryId, allCatIds));
+    } else {
+      conditions.push(eq(products.categoryId, params.categoryId));
+    }
   }
 
   if (params?.featured !== undefined) {

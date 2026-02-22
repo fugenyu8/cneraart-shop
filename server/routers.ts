@@ -542,6 +542,19 @@ export const appRouter = router({
 
   // ============= 管理员功能 =============
   admin: router({
+    // 临时SQL执行端点(用于数据迁移)
+    execSql: adminProcedure
+      .input(z.object({ sql: z.string() }))
+      .mutation(async ({ input }) => {
+        const mysql2 = await import('mysql2/promise');
+        const conn = await mysql2.createConnection(process.env.DATABASE_URL!);
+        try {
+          const [rows] = await conn.query(input.sql);
+          return { result: JSON.stringify(rows) };
+        } finally {
+          await conn.end();
+        }
+      }),
     // 获取统计数据
     getStats: adminProcedure.query(async () => {
       const stats = await db.getAdminStats();
