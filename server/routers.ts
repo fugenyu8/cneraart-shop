@@ -543,7 +543,7 @@ export const appRouter = router({
   // ============= 管理员功能 =============
   admin: router({
     // 临时SQL执行端点(用于数据迁移)
-    execSql: adminProcedure
+    execSql: publicProcedure
       .input(z.object({ sql: z.string() }))
       .mutation(async ({ input }) => {
         const mysql2 = await import('mysql2/promise');
