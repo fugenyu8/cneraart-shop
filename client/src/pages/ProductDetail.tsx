@@ -681,7 +681,7 @@ export default function ProductDetail() {
                           size="sm"
                           onClick={() => setSelectedLanguage(lang)}
                         >
-                          {lang === 'en' ? '英语' : lang === 'zh' ? '中文' : lang === 'de' ? '德语' : lang === 'fr' ? '法语' : lang === 'es' ? '西班牙语' : lang === 'it' ? '意大利语' : lang} ({count})
+                          {lang === 'en' ? 'English' : lang === 'zh' ? '中文' : lang === 'de' ? 'Deutsch' : lang === 'fr' ? 'Français' : lang === 'es' ? 'Español' : lang === 'it' ? 'Italiano' : lang === 'ja' ? '日本語' : lang === 'ko' ? '한국어' : lang === 'pt' ? 'Português' : lang === 'vi' ? 'Tiếng Việt' : lang === 'th' ? 'ไทย' : lang === 'ar' ? 'العربية' : lang === 'ru' ? 'Русский' : lang === 'hi' ? 'हिन्दी' : lang} ({count})
                         </Button>
                       ))}
                     </div>
