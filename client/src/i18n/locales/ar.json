@@ -352,7 +352,8 @@
   },
   "common": {
     "site_name": "Cneraart",
-    "cart": "عربة التسوق"
+    "cart": "عربة التسوق",
+    "service": "خدمة العملاء"
   },
   "guardianFinder": {
     "title": "ابحث عن قلادتك الحامية",

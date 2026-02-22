@@ -352,7 +352,8 @@
   },
   "common": {
     "site_name": "Cneraart",
-    "cart": "장바구니"
+    "cart": "장바구니",
+    "service": "고객 서비스"
   },
   "guardianFinder": {
     "title": "당신의 수호 펜던트 찾기",

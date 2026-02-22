@@ -352,7 +352,8 @@
   },
   "common": {
     "site_name": "Cneraart",
-    "cart": "Carrinho"
+    "cart": "Carrinho",
+    "service": "Atendimento ao Cliente"
   },
   "guardianFinder": {
     "title": "Encontre Seu Pingente Guardião",

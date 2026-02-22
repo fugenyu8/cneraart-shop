@@ -352,7 +352,8 @@
   },
   "common": {
     "site_name": "Cneraart",
-    "cart": "Корзина"
+    "cart": "Корзина",
+    "service": "Служба Поддержки"
   },
   "guardianFinder": {
     "title": "Найдите Свой Защитный Кулон",

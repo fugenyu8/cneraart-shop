@@ -345,7 +345,8 @@
   },
   "common": {
     "site_name": "Cneraart",
-    "cart": "Keranjang"
+    "cart": "Keranjang",
+    "service": "Layanan Pelanggan"
   },
   "guardianFinder": {
     "title": "Temukan Liontin Pelindung Anda",

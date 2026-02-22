@@ -8,8 +8,10 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { getLoginUrl } from "@/const";
 import { Sparkles, Trash2, Plus, Minus, ShoppingBag, Tag } from "lucide-react";
 import { toast } from "sonner";
+import { useTranslation } from "react-i18next";
 
 export default function Cart() {
+  const { t } = useTranslation();
   const { isAuthenticated } = useAuth();
   const [, setLocation] = useLocation();
   const [couponCode, setCouponCode] = useState("");
@@ -116,8 +118,8 @@ export default function Cart() {
               </a>
             </Link>
             <div className="flex items-center gap-3">
-              <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors">📝 能量报告</a>
-              <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors">💬 智能客服</a>
+              <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors">📝 {t('common.report')}</a>
+              <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer" className="text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors">💬 {t('common.service')}</a>
             </div>
           </div>
         </div>

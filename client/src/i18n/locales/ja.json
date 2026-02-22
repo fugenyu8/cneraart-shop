@@ -352,7 +352,8 @@
   },
   "common": {
     "site_name": "Cneraart",
-    "cart": "カート"
+    "cart": "カート",
+    "service": "カスタマーサービス"
   },
   "guardianFinder": {
     "title": "あなたの守護ペンダントを見つける",

@@ -352,7 +352,8 @@
   },
   "common": {
     "site_name": "Cneraart",
-    "cart": "Giỏ Hàng"
+    "cart": "Giỏ Hàng",
+    "service": "Dịch Vụ Khách Hàng"
   },
   "guardianFinder": {
     "title": "Tìm Mặt Dây Chuyền Hộ Mệnh Của Bạn",

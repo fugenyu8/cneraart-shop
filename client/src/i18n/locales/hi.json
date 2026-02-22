@@ -352,7 +352,8 @@
   },
   "common": {
     "site_name": "Cneraart",
-    "cart": "कार्ट"
+    "cart": "कार्ट",
+    "service": "ग्राहक सेवा"
   },
   "guardianFinder": {
     "title": "अपना संरक्षक लटकन खोजें",

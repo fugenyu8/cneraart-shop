@@ -352,7 +352,8 @@
   },
   "common": {
     "site_name": "Cneraart",
-    "cart": "ตะกร้า"
+    "cart": "ตะกร้า",
+    "service": "บริการลูกค้า"
   },
   "guardianFinder": {
     "title": "ค้นหาจี้ผู้พิทักษ์ของคุณ",

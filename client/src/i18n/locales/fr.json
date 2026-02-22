@@ -372,7 +372,8 @@
     "currency": "Devise",
     "learn_more": "En savoir plus",
     "site_name": "Cneraart",
-    "cart": "Panier"
+    "cart": "Panier",
+    "service": "Service Client"
   },
   "status": {
     "pending": "En attente",
