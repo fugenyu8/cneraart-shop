@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -9,17 +9,6 @@ import { Search, Sparkles, SlidersHorizontal } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
-
-// 子分类slug到i18n key的映射
-const SUBCATEGORY_I18N_MAP: Record<string, { nameKey: string; descKey: string }> = {
-  "zodiac-guardians": { nameKey: "categories.zodiac_guardians", descKey: "categories.zodiac_guardians_desc" },
-  "sun-sign-guardians": { nameKey: "categories.sun_sign_guardians", descKey: "categories.sun_sign_guardians_desc" },
-  "moon-sign-guardians": { nameKey: "categories.moon_sign_guardians", descKey: "categories.moon_sign_guardians_desc" },
-  "wealth-fortune": { nameKey: "categories.wealth_fortune", descKey: "categories.wealth_fortune_desc" },
-  "health-safety": { nameKey: "categories.health_safety", descKey: "categories.health_safety_desc" },
-  "wisdom-study": { nameKey: "categories.wisdom_study", descKey: "categories.wisdom_study_desc" },
-  "inner-peace": { nameKey: "categories.inner_peace", descKey: "categories.inner_peace_desc" },
-};
 
 export default function Products() {
   const { t } = useTranslation();
@@ -33,72 +22,26 @@ export default function Products() {
   const [categoryId, setCategoryId] = useState<number | undefined>(initialCategoryId);
   const [sortBy, setSortBy] = useState("newest");
 
-  // 获取分类列表
+  // 获取开光法物的子分类ID列表
   const { data: categories } = trpc.categories.list.useQuery();
+  const blessedCategoryIds = categories?.filter(cat => cat.parentId === 1).map(cat => cat.id) || [];
   
   const { data: products, isLoading } = trpc.products.list.useQuery({
     search: search || undefined,
     categoryId,
-    limit: 100,
+    // blessedOnly: true, // 移除此限制,允许显示所有产品包括命理服务
+    limit: 50,
   });
 
-  // 分离顶级分类和子分类
-  const topCategories = useMemo(() => {
-    if (!categories) return [];
-    return categories.filter(c => !c.parentId).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
-  }, [categories]);
-
-  const subCategories = useMemo(() => {
-    if (!categories) return [];
-    // 当选中开光护佑法物(categoryId=1)时，显示其子分类
-    if (categoryId === 1) {
-      return categories.filter(c => c.parentId === 1).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
-    }
-    return [];
-  }, [categories, categoryId]);
-
-  // 获取翻译后的分类名称
-  const getCategoryName = (cat: { slug: string; name: string }) => {
-    const mapping = SUBCATEGORY_I18N_MAP[cat.slug];
-    if (mapping) {
-      const translated = t(mapping.nameKey);
-      // 如果翻译key存在且不等于key本身，使用翻译
-      if (translated !== mapping.nameKey) return translated;
-    }
-    return cat.name;
-  };
-
-  // 根据当前分类ID获取标题和副标题
-  const getCategoryTitle = () => {
-    if (!categoryId) return { title: t("products.all_title"), subtitle: t("products.all_subtitle") };
-    const categoryMap: Record<number, { titleKey: string; subtitleKey: string }> = {
-      1: { titleKey: "categories.blessed_title", subtitleKey: "categories.blessed_subtitle" },
-      2: { titleKey: "categories.destiny_title", subtitleKey: "categories.destiny_subtitle" },
-      3: { titleKey: "categories.prayer_title", subtitleKey: "categories.prayer_subtitle" },
-      4: { titleKey: "categories.fortune_title", subtitleKey: "categories.fortune_subtitle" },
-    };
-    const mapping = categoryMap[categoryId];
-    if (mapping) return { title: t(mapping.titleKey), subtitle: t(mapping.subtitleKey) };
-    // 检查是否是子分类
-    const cat = categories?.find(c => c.id === categoryId);
-    if (cat) {
-      const i18nMapping = SUBCATEGORY_I18N_MAP[cat.slug];
-      if (i18nMapping) {
-        const translatedName = t(i18nMapping.nameKey);
-        const translatedDesc = t(i18nMapping.descKey);
-        return {
-          title: translatedName !== i18nMapping.nameKey ? translatedName : cat.name,
-          subtitle: translatedDesc !== i18nMapping.descKey ? translatedDesc : (cat.description || ""),
-        };
-      }
-      return { title: cat.name, subtitle: cat.description || "" };
-    }
-    return { title: "", subtitle: "" };
-  };
-  const { title: pageTitle, subtitle: pageSubtitle } = getCategoryTitle();
-
-  // 判断当前是否在开光护佑法物的子分类视图中
-  const isInBlessedCategory = categoryId === 1 || (categories?.find(c => c.id === categoryId)?.parentId === 1);
+  // 获取开光法物的子分类(parentId = 1)
+  const subcategories = categories?.filter(cat => cat.parentId === 1).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)) || [];
+  
+  // 快速筛选按钮 - 使用动态子分类
+  const quickFilters = subcategories.map(cat => ({
+    id: cat.id,
+    label: t(`categories.${cat.slug.replace(/-/g, '_')}`),
+    slug: cat.slug
+  }));
 
   return (
     <div className="min-h-screen bg-background">
@@ -115,12 +58,6 @@ export default function Products() {
               </a>
             </Link>
             <div className="flex items-center gap-4">
-              <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="sm" className="text-xs md:text-sm">📝 {t("common.report")}</Button>
-              </a>
-              <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="sm" className="text-xs md:text-sm">💬 {t("common.service")}</Button>
-              </a>
               <Link href="/cart">
                 <Button variant="outline">{t("common.cart")}</Button>
               </Link>
@@ -133,58 +70,26 @@ export default function Products() {
         {/* 页面标题 */}
         <div className="text-center mb-6 md:mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 gradient-text">
-            {pageTitle}
+            {categoryId === 2 ? t("fortuneServices.pageTitle") : t("products.title")}
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-            {pageSubtitle}
+            {categoryId === 2 ? t("fortuneServices.pageSubtitle") : t("products.subtitle")}
           </p>
         </div>
 
-        {/* 顶级分类快速筛选按钮 */}
-        <div className="mb-3 md:mb-4 flex flex-wrap gap-2 md:gap-3 justify-center px-4">
-          <Button
-            variant={!categoryId ? "default" : "outline"}
-            onClick={() => setCategoryId(undefined)}
-            className="rounded-full text-sm md:text-base h-9 md:h-10 px-3 md:px-4"
-          >
-            {t("products.all_categories")}
-          </Button>
-          {topCategories.map((cat) => (
+        {/* 快速筛选按钮 */}
+        <div className="mb-4 md:mb-6 flex flex-wrap gap-2 md:gap-3 justify-center px-4">
+          {quickFilters.map((filter) => (
             <Button
-              key={cat.id}
-              variant={categoryId === cat.id || (categories?.find(c => c.id === categoryId)?.parentId === cat.id) ? "default" : "outline"}
-              onClick={() => setCategoryId(cat.id)}
+              key={filter.id}
+              variant={categoryId === filter.id ? "default" : "outline"}
+              onClick={() => setCategoryId(filter.id)}
               className="rounded-full text-sm md:text-base h-9 md:h-10 px-3 md:px-4"
             >
-              {getCategoryName(cat)}
+              {filter.label}
             </Button>
           ))}
         </div>
-
-        {/* 子分类筛选按钮（仅在开光护佑法物下显示） */}
-        {isInBlessedCategory && subCategories.length > 0 && (
-          <div className="mb-4 md:mb-6 flex flex-wrap gap-2 md:gap-3 justify-center px-4">
-            <Button
-              variant={categoryId === 1 ? "secondary" : "ghost"}
-              onClick={() => setCategoryId(1)}
-              size="sm"
-              className="rounded-full text-xs md:text-sm h-8 md:h-9 px-3 md:px-4 border border-border/50"
-            >
-              {t("products.all_categories")}
-            </Button>
-            {subCategories.map((sub) => (
-              <Button
-                key={sub.id}
-                variant={categoryId === sub.id ? "secondary" : "ghost"}
-                onClick={() => setCategoryId(sub.id)}
-                size="sm"
-                className="rounded-full text-xs md:text-sm h-8 md:h-9 px-3 md:px-4 border border-border/50"
-              >
-                {getCategoryName(sub)}
-              </Button>
-            ))}
-          </div>
-        )}
 
         {/* 筛选和搜索 */}
         <div className="mb-6 md:mb-8 space-y-3 md:space-y-4">
@@ -210,9 +115,11 @@ export default function Products() {
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">{t("products.all_categories")}</SelectItem>
-                {categories?.filter(c => !c.parentId).map((cat) => (
+                {categories?.map((cat) => (
                   <SelectItem key={cat.id} value={cat.id.toString()}>
-                    {getCategoryName(cat)}
+                    {cat.slug === "zodiac-guardian" ? t("categories.zodiac_guardian") : 
+                     cat.slug === "constellation-guardian" ? t("categories.constellation_guardian") : 
+                     cat.name}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -243,10 +150,8 @@ export default function Products() {
             )}
             {categoryId && (
               <Badge variant="secondary">
-                {(() => {
-                  const cat = categories?.find(c => c.id === categoryId);
-                  return cat ? getCategoryName(cat) : "";
-                })()}
+                {quickFilters.find(f => f.id === categoryId)?.label || 
+                 categories?.find(c => c.id === categoryId)?.name}
               </Badge>
             )}
           </div>

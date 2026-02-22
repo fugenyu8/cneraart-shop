@@ -37,18 +37,11 @@ export default function ProductDetail() {
   const submitReviewMutation = trpc.products.submitReview.useMutation();
   const utils = trpc.useUtils();
   
-  // 语言检测 - 根据产品名称判断语言
+  // 语言检测 - 根据用户选择的i18n语言决定UI标签语言
   const isEnglishProduct = useMemo(() => {
-    if (!product) return false;
-    // 命理服务强制使用中文界面
-    const fortuneServiceSlugs = ['face-reading-analysis-service', 'palm-reading-analysis-service', 'feng-shui-analysis-service'];
-    if (fortuneServiceSlugs.includes(product.slug)) {
-      return false;
-    }
-    // 默认使用中文界面，除非产品明确标记为英文
-    // 只有当产品名称全部是英文字母时才使用英文界面
-    return /^[a-zA-Z\s\-&]+$/.test(product.name.trim());
-  }, [product]);
+    // 尊重用户选择的语言，不再根据产品名称自动判断
+    return i18n.language !== 'zh';
+  }, [i18n.language]);
   
   // 英语翻译
   const translations = {
@@ -122,15 +115,7 @@ export default function ProductDetail() {
   
   const lang = isEnglishProduct ? translations.en : translations.zh;
   
-  // 根据产品语言自动切换i18n语言
-  useEffect(() => {
-    if (product) {
-      const targetLang = isEnglishProduct ? 'en' : 'zh';
-      if (i18n.language !== targetLang) {
-        i18n.changeLanguage(targetLang);
-      }
-    }
-  }, [product, isEnglishProduct, i18n]);
+  // 不再自动切换全局语言 - 尊重用户选择的语言设置
   
   // 评价筛选和排序逻辑
   const filteredAndSortedReviews = useMemo(() => {
