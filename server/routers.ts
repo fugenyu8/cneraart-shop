@@ -65,10 +65,28 @@ export const appRouter = router({
         }
 
         const images = await db.getProductImages(product.id);
-        const reviews = await db.getProductReviews(product.id);
-        const averageRating = await db.getProductAverageRating(product.id);
+        const reviews = await db.getProductReviews(product.id, 50);
+        const reviewStats = await db.getProductReviewStats(product.id);
 
-        return { ...product, images, reviews, averageRating };
+        return { ...product, images, reviews, reviewStats, averageRating: reviewStats.avgRating };
+      }),
+    // 分页获取产品评论
+    getReviews: publicProcedure
+      .input(z.object({
+        productId: z.number(),
+        limit: z.number().min(1).max(100).default(50),
+        offset: z.number().min(0).default(0),
+        language: z.string().optional(),
+        rating: z.number().min(1).max(5).optional(),
+      }))
+      .query(async ({ input }) => {
+        const reviews = await db.getProductReviewsPaginated(input.productId, {
+          limit: input.limit,
+          offset: input.offset,
+          language: input.language,
+          rating: input.rating,
+        });
+        return reviews;
       }),
 
     // 获取精选产品(公开)

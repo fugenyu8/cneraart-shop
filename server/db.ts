@@ -557,6 +557,7 @@ export async function createOrder(orderData: {
       couponId: orderData.couponId,
       userId: orderData.userId,
       orderId: Number(orderId),
+      discountAmount: orderData.discount.toString(),
     });
     // 增加优惠券已使用次数
     await db.update(coupons)
@@ -653,7 +654,7 @@ export async function updateOrderPaymentStatus(
 
 // ============= 产品评价 =============
 
-export async function getProductReviews(productId: number): Promise<Review[]> {
+export async function getProductReviews(productId: number, limit: number = 50): Promise<Review[]> {
   const db = await getDb();
   if (!db) return [];
 
@@ -661,7 +662,55 @@ export async function getProductReviews(productId: number): Promise<Review[]> {
     .select()
     .from(reviews)
     .where(and(eq(reviews.productId, productId), eq(reviews.isApproved, true)))
-    .orderBy(desc(reviews.createdAt));
+    .orderBy(desc(reviews.createdAt))
+    .limit(limit);
+}
+
+export async function getProductReviewsPaginated(productId: number, opts: { limit: number; offset: number; language?: string; rating?: number }): Promise<Review[]> {
+  const db = await getDb();
+  if (!db) return [];
+
+  const conditions: any[] = [eq(reviews.productId, productId), eq(reviews.isApproved, true)];
+  if (opts.language) conditions.push(eq(reviews.language, opts.language));
+  if (opts.rating) conditions.push(eq(reviews.rating, opts.rating));
+
+  return await db
+    .select()
+    .from(reviews)
+    .where(and(...conditions))
+    .orderBy(desc(reviews.createdAt))
+    .limit(opts.limit)
+    .offset(opts.offset);
+}
+
+export async function getProductReviewStats(productId: number): Promise<{ total: number; byRating: Record<number, number>; byLanguage: Record<string, number>; avgRating: number }> {
+  const db = await getDb();
+  if (!db) return { total: 0, byRating: {}, byLanguage: {}, avgRating: 0 };
+
+  const [countResult] = await db
+    .select({ count: sql<number>`COUNT(*)`, avg: sql<number>`AVG(rating)` })
+    .from(reviews)
+    .where(and(eq(reviews.productId, productId), eq(reviews.isApproved, true)));
+  const total = Number(countResult?.count ?? 0);
+  const avgRating = Number(countResult?.avg ?? 0);
+
+  const ratingRows = await db
+    .select({ rating: reviews.rating, count: sql<number>`COUNT(*)` })
+    .from(reviews)
+    .where(and(eq(reviews.productId, productId), eq(reviews.isApproved, true)))
+    .groupBy(reviews.rating);
+  const byRating: Record<number, number> = {};
+  ratingRows.forEach(r => { byRating[r.rating] = Number(r.count); });
+
+  const langRows = await db
+    .select({ language: reviews.language, count: sql<number>`COUNT(*)` })
+    .from(reviews)
+    .where(and(eq(reviews.productId, productId), eq(reviews.isApproved, true)))
+    .groupBy(reviews.language);
+  const byLanguage: Record<string, number> = {};
+  langRows.forEach(r => { byLanguage[r.language || 'en'] = Number(r.count); });
+
+  return { total, byRating, byLanguage, avgRating };
 }
 
 export async function getProductAverageRating(productId: number): Promise<number> {

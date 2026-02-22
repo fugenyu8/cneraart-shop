@@ -1,0 +1,1 @@
+ALTER TABLE `reviews` ADD `language` varchar(10) DEFAULT 'en';

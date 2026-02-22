@@ -24,7 +24,9 @@ export default function ProductDetail() {
   const [questionDescription, setQuestionDescription] = useState("");
   
   // 评价系统状态
-  const [reviewsToShow, setReviewsToShow] = useState(10); // 每次显示10条
+  const [allReviews, setAllReviews] = useState<any[]>([]); // 已加载的评论
+  const [reviewOffset, setReviewOffset] = useState(0); // 分页偏移
+  const [isLoadingMore, setIsLoadingMore] = useState(false); // 加载更多中
   const [selectedRating, setSelectedRating] = useState<number | null>(null); // 筛选评分
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null); // 筛选语言
   const [sortBy, setSortBy] = useState<'newest' | 'highest' | 'lowest'>('newest'); // 排序方式
@@ -36,6 +38,65 @@ export default function ProductDetail() {
   const addToCartMutation = trpc.cart.add.useMutation();
   const submitReviewMutation = trpc.products.submitReview.useMutation();
   const utils = trpc.useUtils();
+
+  // 初始化评论列表（当product加载完成时）
+  useEffect(() => {
+    if (product?.reviews) {
+      setAllReviews(product.reviews);
+      setReviewOffset(product.reviews.length);
+    }
+  }, [product?.id]); // 只在产品ID变化时重置
+
+  // 加载更多评论
+  const loadMoreReviews = async () => {
+    if (!product || isLoadingMore) return;
+    setIsLoadingMore(true);
+    try {
+      const moreReviews = await utils.client.products.getReviews.query({
+        productId: product.id,
+        limit: 50,
+        offset: reviewOffset,
+        language: selectedLanguage || undefined,
+        rating: selectedRating || undefined,
+      });
+      setAllReviews(prev => [...prev, ...moreReviews]);
+      setReviewOffset(prev => prev + moreReviews.length);
+    } catch (err) {
+      console.error('Failed to load more reviews:', err);
+    } finally {
+      setIsLoadingMore(false);
+    }
+  };
+
+  // 当筛选条件变化时，重新从后端加载
+  const reloadFilteredReviews = async () => {
+    if (!product) return;
+    setIsLoadingMore(true);
+    try {
+      const filtered = await utils.client.products.getReviews.query({
+        productId: product.id,
+        limit: 50,
+        offset: 0,
+        language: selectedLanguage || undefined,
+        rating: selectedRating || undefined,
+      });
+      setAllReviews(filtered);
+      setReviewOffset(filtered.length);
+    } catch (err) {
+      console.error('Failed to reload reviews:', err);
+    } finally {
+      setIsLoadingMore(false);
+    }
+  };
+
+  useEffect(() => {
+    if (product && (selectedRating !== null || selectedLanguage !== null)) {
+      reloadFilteredReviews();
+    } else if (product?.reviews && selectedRating === null && selectedLanguage === null) {
+      setAllReviews(product.reviews);
+      setReviewOffset(product.reviews.length);
+    }
+  }, [selectedRating, selectedLanguage]);
   
   // 语言检测 - 根据用户选择的i18n语言决定UI标签语言
   const isEnglishProduct = useMemo(() => {
@@ -117,24 +178,10 @@ export default function ProductDetail() {
   
   // 不再自动切换全局语言 - 尊重用户选择的语言设置
   
-  // 评价筛选和排序逻辑
-  const filteredAndSortedReviews = useMemo(() => {
-    if (!product?.reviews) return [];
-    
-    let filtered = [...product.reviews];
-    
-    // 按评分筛选
-    if (selectedRating !== null) {
-      filtered = filtered.filter(r => r.rating === selectedRating);
-    }
-    
-    // 按语言筛选
-    if (selectedLanguage !== null) {
-      filtered = filtered.filter(r => (r as any).language === selectedLanguage);
-    }
-    
-    // 排序
-    filtered.sort((a, b) => {
+  // 评论排序（前端排序已加载的评论）
+  const sortedReviews = useMemo(() => {
+    const sorted = [...allReviews];
+    sorted.sort((a, b) => {
       if (sortBy === 'newest') {
         return new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
       } else if (sortBy === 'highest') {
@@ -143,34 +190,15 @@ export default function ProductDetail() {
         return a.rating - b.rating;
       }
     });
-    
-    return filtered;
-  }, [product?.reviews, selectedRating, selectedLanguage, sortBy]);
-  
-  // 当前显示的评价
-  const displayedReviews = filteredAndSortedReviews.slice(0, reviewsToShow);
-  const hasMoreReviews = reviewsToShow < filteredAndSortedReviews.length;
-  
-  // 评价语言统计
-  const languageCounts = useMemo(() => {
-    if (!product?.reviews) return {};
-    const counts: Record<string, number> = {};
-    product.reviews.forEach(r => {
-      const lang = (r as any).language || 'en'; // 使用any类型绕过类型检查
-      counts[lang] = (counts[lang] || 0) + 1;
-    });
-    return counts;
-  }, [product?.reviews]);
-  
-  // 评分统计
-  const ratingCounts = useMemo(() => {
-    if (!product?.reviews) return {};
-    const counts: Record<number, number> = {};
-    product.reviews.forEach(r => {
-      counts[r.rating] = (counts[r.rating] || 0) + 1;
-    });
-    return counts;
-  }, [product?.reviews]);
+    return sorted;
+  }, [allReviews, sortBy]);
+
+  // 使用后端返回的统计数据
+  const reviewStats = product?.reviewStats || { total: 0, byRating: {}, byLanguage: {}, avgRating: 0 };
+  const ratingCounts = reviewStats.byRating;
+  const languageCounts = reviewStats.byLanguage;
+  const totalReviewCount = reviewStats.total;
+  const hasMoreReviews = reviewOffset < totalReviewCount;
 
   const handleAddToCart = async () => {
     if (!isAuthenticated) {
@@ -399,7 +427,7 @@ export default function ProductDetail() {
                   ))}
                 </div>
                 <span className="text-sm text-muted-foreground">
-                  {product.averageRating.toFixed(1)} ({t('product_detail.reviews_count', { count: product.reviews.length })})
+                  {product.averageRating.toFixed(1)} ({t('product_detail.reviews_count', { count: totalReviewCount })})
                 </span>
               </div>
             )}
@@ -533,7 +561,7 @@ export default function ProductDetail() {
             {(product.suitableFor || product.efficacy || product.wearingGuide) && (
               <TabsTrigger value="efficacy" className="text-sm md:text-base py-3">{lang.efficacyDescription}</TabsTrigger>
             )}
-            <TabsTrigger value="reviews" className="text-sm md:text-base py-3">{lang.customerReviews} ({product.reviews.length})</TabsTrigger>
+            <TabsTrigger value="reviews" className="text-sm md:text-base py-3">{lang.customerReviews} ({totalReviewCount.toLocaleString()})</TabsTrigger>
           </TabsList>
 
           <TabsContent value="description" className="mt-6">
@@ -607,7 +635,7 @@ export default function ProductDetail() {
           )}
 
           <TabsContent value="reviews" className="mt-6">
-            {product.reviews.length > 0 ? (
+            {totalReviewCount > 0 ? (
               <div className="space-y-6">
                 {/* 筛选和排序控件 */}
                 <div className="flex flex-col md:flex-row gap-4 p-4 bg-muted/30 rounded-lg">
@@ -620,7 +648,7 @@ export default function ProductDetail() {
                         size="sm"
                         onClick={() => setSelectedRating(null)}
                       >
-                        {lang.all} ({product.reviews.length})
+                        {lang.all} ({totalReviewCount.toLocaleString()})
                       </Button>
                       {[5, 4, 3].map(rating => (
                         <Button
@@ -785,9 +813,9 @@ export default function ProductDetail() {
                 {/* 评价列表 */}
                 <div className="space-y-4">
                   <p className="text-sm text-muted-foreground">
-                    显示 {displayedReviews.length} / {filteredAndSortedReviews.length} 条评价
+                    {isEnglishProduct ? `Showing ${sortedReviews.length} of ${totalReviewCount.toLocaleString()} reviews` : `显示 ${sortedReviews.length} / ${totalReviewCount.toLocaleString()} 条评价`}
                   </p>
-                  {displayedReviews.map((review) => (
+                  {sortedReviews.map((review) => (
                     <Card key={review.id} className="bg-card">
                       <CardContent className="p-4 md:p-6">
                         <div className="flex items-start justify-between mb-3">
@@ -826,9 +854,10 @@ export default function ProductDetail() {
                   <Button
                     variant="outline"
                     className="w-full"
-                    onClick={() => setReviewsToShow(prev => prev + 10)}
+                    onClick={loadMoreReviews}
+                    disabled={isLoadingMore}
                   >
-                    {lang.loadMore} ({filteredAndSortedReviews.length - reviewsToShow} {lang.remaining})
+                    {isLoadingMore ? (isEnglishProduct ? 'Loading...' : '加载中...') : `${lang.loadMore} (${(totalReviewCount - reviewOffset).toLocaleString()} ${lang.remaining})`}
                   </Button>
                 )}
               </div>

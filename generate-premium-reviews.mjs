@@ -192,8 +192,8 @@ console.log('Deleting existing reviews...');
 await db.delete(schema.reviews);
 
 // Generate random number of reviews between 12800 and 18888 for each product
-const getRandomReviewCount = () => Math.floor(Math.random() * (18888 - 12800 + 1)) + 12800;
-const BATCH_SIZE = 500; // Insert in batches to avoid memory issues
+const getRandomReviewCount = () => Math.floor(Math.random() * (39287 - 32143 + 1)) + 32143;
+const BATCH_SIZE = 2000; // Insert in batches to avoid memory issues
 
 for (const product of products) {
   const TARGET_REVIEWS_PER_PRODUCT = getRandomReviewCount();
@@ -249,6 +249,7 @@ for (const product of products) {
         ipAddress: generateIP(region),
         location: generateLocation(region),
         isVerified: true,
+        isApproved: true,
         createdAt,
         updatedAt: createdAt,
       });

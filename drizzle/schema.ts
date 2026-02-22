@@ -264,6 +264,7 @@ export const reviews = mysqlTable("reviews", {
   comment: text("comment"),
   ipAddress: varchar("ipAddress", { length: 45 }),
   location: varchar("location", { length: 255 }),
+  language: varchar("language", { length: 10 }).default("en"), // 评价语言
   isVerified: boolean("isVerified").default(false),
   isApproved: boolean("isApproved").default(false), // 管理员审核
   createdAt: timestamp("createdAt").defaultNow().notNull(),
