@@ -149,7 +149,7 @@ export default function Account() {
                                 )}
                                 <div className="flex-1">
                                   <p className="text-white text-sm font-medium">
-                                    {item.product?.name || t("account.product_unavailable")}
+                                    {getLocalized(item.product?.name) || t("account.product_unavailable")}
                                   </p>
                                   <p className="text-slate-400 text-sm">
                                     {t("account.quantity")}: {item.quantity} × ${parseFloat(item.price).toFixed(2)}

@@ -157,7 +157,7 @@ export default function AdminOrderDetail() {
                       />
                     )}
                     <div className="flex-1">
-                      <p className="text-white font-medium">{item.product?.name || "商品已删除"}</p>
+                      <p className="text-white font-medium">{getLocalized(item.product?.name) || "商品已删除"}</p>
                       <p className="text-sm text-slate-400">
                         ${parseFloat(item.price).toFixed(2)} × {item.quantity}
                       </p>

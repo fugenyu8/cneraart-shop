@@ -288,7 +288,7 @@ export default function OrderDetail() {
                   />
                 )}
                 <div className="flex-1">
-                  <p className="font-medium">{item.product?.name || t("product_unavailable")}</p>
+                  <p className="font-medium">{getLocalized(item.product?.name) || t("product_unavailable")}</p>
                   <p className="text-sm text-muted-foreground">
                     {t("quantity")}: {item.quantity}
                   </p>

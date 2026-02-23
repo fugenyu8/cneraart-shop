@@ -21,6 +21,7 @@ import { toast } from "sonner";
 import { storagePut } from "@/lib/storage";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
+import { getLocalized } from "@/lib/localized";
 
 /**
  * 服务订单管理页面
@@ -165,7 +166,7 @@ export default function ServiceOrders() {
               filteredAndSortedOrders.map((item: any) => (
                 <TableRow key={item.order.id}>
                   <TableCell>#{item.order.id}</TableCell>
-                  <TableCell>{item.items.product?.name || "-"}</TableCell>
+                  <TableCell>{getLocalized(item.items.product?.name) || "-"}</TableCell>
                   <TableCell>{item.user?.name || item.user?.email || "-"}</TableCell>
                   <TableCell>
                     {new Date(item.order.createdAt).toLocaleDateString()}
@@ -226,7 +227,7 @@ export default function ServiceOrders() {
                 <div className="rounded-lg bg-slate-900/50 p-4">
                   {orderDetail.items.map((item: any, idx: number) => (
                     <p key={idx}>
-                      <strong>{t("admin.serviceOrders.service")}:</strong> {item.product?.name || "-"}
+                      <strong>{t("admin.serviceOrders.service")}:</strong> {getLocalized(item.product?.name) || "-"}
                     </p>
                   ))}
                 </div>
