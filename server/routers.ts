@@ -1088,12 +1088,12 @@ export const appRouter = router({
 
     // ============= 三系统统一监控 =============
     systemMonitor: router({
-      // 获取三个系统的实时状态
+      // 获取三个系统的实时状态（含响应时间测量）
       getSystemStatus: adminProcedure.query(async () => {
         const systems = [
-          { name: '商城主站', domain: 'www.cneraart.com', healthUrl: 'https://www.cneraart.com/api/health' },
-          { name: '客户服务', domain: 'service.cneraart.com', healthUrl: 'https://service.cneraart.com/api/health' },
-          { name: '能量报告', domain: 'report.cneraart.com', healthUrl: 'https://report.cneraart.com/api/health' },
+          { name: '商城主站', domain: 'www.cneraart.com', healthUrl: 'https://www.cneraart.com/api/health', type: 'json' as const },
+          { name: '客户服务', domain: 'service.cneraart.com', healthUrl: 'https://service.cneraart.com/', type: 'html' as const },
+          { name: '能量报告', domain: 'report.cneraart.com', healthUrl: 'https://report.cneraart.com/health', type: 'json' as const },
         ];
 
         const results = await Promise.all(
@@ -1101,21 +1101,26 @@ export const appRouter = router({
             try {
               const controller = new AbortController();
               const timeout = setTimeout(() => controller.abort(), 8000);
+              const startTime = Date.now();
               const res = await fetch(sys.healthUrl, { signal: controller.signal });
+              const responseTime = Date.now() - startTime;
               clearTimeout(timeout);
               if (res.ok) {
-                const data = await res.json();
+                let data: any = {};
+                if (sys.type === 'json') {
+                  try { data = await res.json(); } catch { data = {}; }
+                }
                 return {
                   ...sys,
                   status: 'online' as const,
                   uptime: data.uptime || 0,
                   memory: data.memory || null,
                   version: data.version || 'unknown',
-                  responseTime: Date.now(),
+                  responseTime,
                   lastChecked: Date.now(),
                 };
               }
-              return { ...sys, status: 'degraded' as const, uptime: 0, memory: null, version: 'unknown', responseTime: 0, lastChecked: Date.now() };
+              return { ...sys, status: 'degraded' as const, uptime: 0, memory: null, version: 'unknown', responseTime, lastChecked: Date.now() };
             } catch (e: any) {
               return { ...sys, status: 'offline' as const, uptime: 0, memory: null, version: 'unknown', responseTime: 0, lastChecked: Date.now(), error: e.message };
             }
@@ -1124,29 +1129,39 @@ export const appRouter = router({
         return results;
       }),
 
-      // 获取每日数据汇总
+      // 获取每日数据汇总（增强版：包含商城+评价+优惠券+能量报告）
       getDailySummary: adminProcedure
         .input(z.object({
-          date: z.string().optional(), // YYYY-MM-DD format, defaults to today
+          date: z.string().optional(),
         }).optional())
         .query(async ({ input }) => {
           const targetDate = input?.date || new Date().toISOString().split('T')[0];
           const startOfDay = new Date(targetDate + 'T00:00:00Z');
           const endOfDay = new Date(targetDate + 'T23:59:59Z');
 
-          // 商城数据
-          const shopStats = await db.getDailyShopStats(startOfDay, endOfDay);
+          // 并行获取所有数据
+          const [shopStats, reviewStats, couponStats, reportStats] = await Promise.all([
+            db.getDailyShopStats(startOfDay, endOfDay),
+            db.getDailyReviewStats(startOfDay, endOfDay),
+            db.getDailyCouponStats(startOfDay, endOfDay),
+            db.getDailyDestinyReportStats(startOfDay, endOfDay).catch(() => ({
+              newReports: 0, completedReports: 0, failedReports: 0, processingReports: 0, totalReports: 0
+            })),
+          ]);
           
           return {
             date: targetDate,
             shop: shopStats,
+            reviews: reviewStats,
+            coupons: couponStats,
+            reports: reportStats,
             lastUpdated: Date.now(),
           };
         }),
 
-      // 获取最近7天趋势数据
+      // 获取最近7天趋势数据（增强版：包含商城+能量报告）
       getWeeklyTrend: adminProcedure.query(async () => {
-        const days: Array<{ date: string; orders: number; revenue: number; newUsers: number }> = [];
+        const shopDays: Array<{ date: string; orders: number; revenue: number; newUsers: number }> = [];
         for (let i = 6; i >= 0; i--) {
           const date = new Date();
           date.setDate(date.getDate() - i);
@@ -1154,14 +1169,23 @@ export const appRouter = router({
           const startOfDay = new Date(dateStr + 'T00:00:00Z');
           const endOfDay = new Date(dateStr + 'T23:59:59Z');
           const stats = await db.getDailyShopStats(startOfDay, endOfDay);
-          days.push({
+          shopDays.push({
             date: dateStr,
             orders: stats.newOrders,
             revenue: stats.revenue,
             newUsers: stats.newUsers,
           });
         }
-        return days;
+
+        // 能量报告7天趋势
+        let reportDays: Array<{ date: string; newReports: number; completedReports: number; failedReports: number }> = [];
+        try {
+          reportDays = await db.getWeeklyDestinyReportTrend();
+        } catch {
+          reportDays = shopDays.map(d => ({ date: d.date, newReports: 0, completedReports: 0, failedReports: 0 }));
+        }
+
+        return { shop: shopDays, reports: reportDays };
       }),
     }),
 

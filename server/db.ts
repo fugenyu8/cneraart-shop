@@ -1713,3 +1713,124 @@ export async function getDestinyReportDetail(reportId: number) {
     await conn.end();
   }
 }
+
+// ============= 增强统计 - 跨系统每日数据 =============
+
+export async function getDailyReviewStats(startOfDay: Date, endOfDay: Date) {
+  const db = await getDb();
+  if (!db) return { newReviews: 0, pendingReviews: 0, approvedReviews: 0 };
+
+  const newResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(reviews)
+    .where(and(gte(reviews.createdAt, startOfDay), lte(reviews.createdAt, endOfDay)));
+  const newReviews = newResult[0]?.count || 0;
+
+  const pendingResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(reviews)
+    .where(eq(reviews.isApproved, false));
+  const pendingReviews = pendingResult[0]?.count || 0;
+
+  const approvedResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(reviews)
+    .where(and(gte(reviews.createdAt, startOfDay), lte(reviews.createdAt, endOfDay), eq(reviews.isApproved, true)));
+  const approvedReviews = approvedResult[0]?.count || 0;
+
+  return { newReviews, pendingReviews, approvedReviews };
+}
+
+export async function getDailyCouponStats(startOfDay: Date, endOfDay: Date) {
+  const db = await getDb();
+  if (!db) return { usedToday: 0, activeCoupons: 0, totalDiscount: 0 };
+
+  const usedResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(couponUsages)
+    .where(and(gte(couponUsages.createdAt, startOfDay), lte(couponUsages.createdAt, endOfDay)));
+  const usedToday = usedResult[0]?.count || 0;
+
+  const activeResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(coupons)
+    .where(eq(coupons.isActive, true));
+  const activeCoupons = activeResult[0]?.count || 0;
+
+  const discountResult = await db
+    .select({ total: sql<number>`COALESCE(SUM(CAST(${couponUsages.discountAmount} AS DECIMAL(10,2))), 0)` })
+    .from(couponUsages)
+    .where(and(gte(couponUsages.createdAt, startOfDay), lte(couponUsages.createdAt, endOfDay)));
+  const totalDiscount = discountResult[0]?.total || 0;
+
+  return { usedToday, activeCoupons, totalDiscount };
+}
+
+export async function getDailyDestinyReportStats(startOfDay: Date, endOfDay: Date) {
+  // destiny_reports 表直接用原生SQL查询
+  const mysql2 = await import('mysql2/promise');
+  const conn = await mysql2.createConnection(process.env.DATABASE_URL!);
+  try {
+    const dateStr = startOfDay.toISOString().split('T')[0];
+
+    const [newRows] = await conn.query(
+      'SELECT COUNT(*) as cnt FROM destiny_reports WHERE DATE(createdAt) = ?', [dateStr]
+    ) as any;
+    const newReports = newRows[0]?.cnt || 0;
+
+    const [completedRows] = await conn.query(
+      'SELECT COUNT(*) as cnt FROM destiny_reports WHERE DATE(updatedAt) = ? AND status = ?', [dateStr, 'completed']
+    ) as any;
+    const completedReports = completedRows[0]?.cnt || 0;
+
+    const [failedRows] = await conn.query(
+      'SELECT COUNT(*) as cnt FROM destiny_reports WHERE DATE(updatedAt) = ? AND status = ?', [dateStr, 'failed']
+    ) as any;
+    const failedReports = failedRows[0]?.cnt || 0;
+
+    const [processingRows] = await conn.query(
+      'SELECT COUNT(*) as cnt FROM destiny_reports WHERE status = ?', ['processing']
+    ) as any;
+    const processingReports = processingRows[0]?.cnt || 0;
+
+    const [totalRows] = await conn.query('SELECT COUNT(*) as cnt FROM destiny_reports') as any;
+    const totalReports = totalRows[0]?.cnt || 0;
+
+    return { newReports, completedReports, failedReports, processingReports, totalReports };
+  } finally {
+    await conn.end();
+  }
+}
+
+export async function getWeeklyDestinyReportTrend() {
+  const mysql2 = await import('mysql2/promise');
+  const conn = await mysql2.createConnection(process.env.DATABASE_URL!);
+  try {
+    const days: Array<{ date: string; newReports: number; completedReports: number; failedReports: number }> = [];
+    for (let i = 6; i >= 0; i--) {
+      const date = new Date();
+      date.setDate(date.getDate() - i);
+      const dateStr = date.toISOString().split('T')[0];
+
+      const [newRows] = await conn.query(
+        'SELECT COUNT(*) as cnt FROM destiny_reports WHERE DATE(createdAt) = ?', [dateStr]
+      ) as any;
+      const [completedRows] = await conn.query(
+        'SELECT COUNT(*) as cnt FROM destiny_reports WHERE DATE(updatedAt) = ? AND status = ?', [dateStr, 'completed']
+      ) as any;
+      const [failedRows] = await conn.query(
+        'SELECT COUNT(*) as cnt FROM destiny_reports WHERE DATE(updatedAt) = ? AND status = ?', [dateStr, 'failed']
+      ) as any;
+
+      days.push({
+        date: dateStr,
+        newReports: newRows[0]?.cnt || 0,
+        completedReports: completedRows[0]?.cnt || 0,
+        failedReports: failedRows[0]?.cnt || 0,
+      });
+    }
+    return days;
+  } finally {
+    await conn.end();
+  }
+}
