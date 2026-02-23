@@ -30,6 +30,7 @@ import {
   MessageSquare,
   FileText,
   Headphones,
+  AlertTriangle,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -101,22 +102,24 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     },
   });
 
-  // 如果未登录或不是管理员,重定向到首页
-  if (!isLoading && (!user || user.role !== "admin")) {
-    navigate("/");
-    return null;
-  }
+  // 密码门优先：先通过密码验证，再检查 admin 登录态
+  // 不再直接重定向到首页
 
   if (isLoading) {
     return (
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
-        <div className="text-center">
-          <Sparkles className="w-12 h-12 mx-auto mb-4 text-[oklch(82%_0.18_85)] animate-pulse" />
-          <p className="text-slate-400">{t("common.loading")}</p>
+      <AdminPasswordGate>
+        <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+          <div className="text-center">
+            <Sparkles className="w-12 h-12 mx-auto mb-4 text-[oklch(82%_0.18_85)] animate-pulse" />
+            <p className="text-slate-400">{t("common.loading")}</p>
+          </div>
         </div>
-      </div>
+      </AdminPasswordGate>
     );
   }
+
+  // 通过密码门后，如果未登录 admin 账号，显示提示信息
+  const needsAdminLogin = !user || user.role !== "admin";
 
   const menuItems = [
     {
@@ -240,46 +243,75 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
         {/* User Profile */}
         <div className="p-4 border-t border-slate-800">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className={`w-full ${
-                  sidebarOpen ? "justify-start" : "justify-center"
-                } hover:bg-slate-800/50`}
-              >
-                <Avatar className="w-8 h-8">
-                  <AvatarFallback className="bg-[oklch(82%_0.18_85)]/20 text-[oklch(82%_0.18_85)]">
-                    {user?.name?.[0]?.toUpperCase() || "A"}
-                  </AvatarFallback>
-                </Avatar>
-                {sidebarOpen && (
-                  <span className="ml-3 text-sm font-medium text-slate-300 truncate">
-                    {user?.name}
-                  </span>
-                )}
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56 bg-slate-900 border-slate-800">
-              <DropdownMenuLabel className="text-slate-300">
-                {user?.email}
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator className="bg-slate-800" />
-              <DropdownMenuItem
-                onClick={handleLogout}
-                className="text-red-400 hover:text-red-300 hover:bg-slate-800 cursor-pointer"
-              >
-                <LogOut className="w-4 h-4 mr-2" />
-                {t("nav.logout")}
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className={`w-full ${
+                    sidebarOpen ? "justify-start" : "justify-center"
+                  } hover:bg-slate-800/50`}
+                >
+                  <Avatar className="w-8 h-8">
+                    <AvatarFallback className="bg-[oklch(82%_0.18_85)]/20 text-[oklch(82%_0.18_85)]">
+                      {user?.name?.[0]?.toUpperCase() || "A"}
+                    </AvatarFallback>
+                  </Avatar>
+                  {sidebarOpen && (
+                    <span className="ml-3 text-sm font-medium text-slate-300 truncate">
+                      {user?.name}
+                    </span>
+                  )}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56 bg-slate-900 border-slate-800">
+                <DropdownMenuLabel className="text-slate-300">
+                  {user?.email}
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator className="bg-slate-800" />
+                <DropdownMenuItem
+                  onClick={handleLogout}
+                  className="text-red-400 hover:text-red-300 hover:bg-slate-800 cursor-pointer"
+                >
+                  <LogOut className="w-4 h-4 mr-2" />
+                  {t("nav.logout")}
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <div className="flex items-center gap-3 px-2">
+              <Avatar className="w-8 h-8">
+                <AvatarFallback className="bg-slate-700 text-slate-400">
+                  ?
+                </AvatarFallback>
+              </Avatar>
+              {sidebarOpen && (
+                <span className="text-sm font-medium text-slate-500 truncate">
+                  未登录
+                </span>
+              )}
+            </div>
+          )}
         </div>
       </aside>
 
       {/* Main Content */}
       <main className="flex-1 overflow-y-auto">
-        <div className="container mx-auto p-6">{children}</div>
+        <div className="container mx-auto p-6">
+          {needsAdminLogin && (
+            <div className="mb-6 p-4 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-start gap-3">
+              <AlertTriangle className="w-5 h-5 text-amber-400 mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-amber-300 font-medium">需要管理员账号登录</p>
+                <p className="text-amber-400/70 text-sm mt-1">
+                  您已通过密码验证进入后台，但数据接口需要管理员账号登录后才能正常加载。
+                  请先前往 <a href="/" className="underline hover:text-amber-300">首页</a> 使用管理员账号登录，然后再返回此页面。
+                </p>
+              </div>
+            </div>
+          )}
+          {children}
+        </div>
       </main>
     </div>
     </AdminPasswordGate>
