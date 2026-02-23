@@ -102,7 +102,9 @@ export default function ProductDetail() {
   // 语言检测 - 根据用户选择的i18n语言决定UI标签语言
   const isEnglishProduct = useMemo(() => {
     // 尊重用户选择的语言，不再根据产品名称自动判断
-    return i18n.language !== 'zh';
+    // 支持所有中文变体：zh, zh-CN, zh-Hans, zh-TW, zh-Hant 等
+    const currentLang = i18n.language || '';
+    return !currentLang.startsWith('zh');
   }, [i18n.language]);
   
   // 英语翻译
