@@ -23,6 +23,10 @@ import {
   CheckCircle2,
   XCircle,
   Loader2,
+  Eye,
+  Hand,
+  Home,
+  Ban,
 } from "lucide-react";
 
 function StatCard({
@@ -80,6 +84,25 @@ function MiniBarChart({ data, maxValue, color = "oklch(82%_0.18_85)" }: { data: 
   );
 }
 
+function TrendChart({ title, data, dates, color }: { title: string; data: number[]; dates: string[]; color: string }) {
+  const maxValue = Math.max(...data, 1);
+  return (
+    <Card className="bg-slate-900/50 border-slate-800">
+      <CardHeader className="pb-2">
+        <CardTitle className="text-sm text-slate-400">{title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <MiniBarChart data={data} maxValue={maxValue} color={color} />
+        <div className="flex justify-between mt-2 text-xs text-slate-500">
+          {dates.map((d) => (
+            <span key={d}>{d.substring(5)}</span>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
 export default function DailyReport() {
   const [selectedDate, setSelectedDate] = useState(() => new Date().toISOString().split("T")[0]);
 
@@ -105,21 +128,28 @@ export default function DailyReport() {
   const trendOrders = useMemo(() => shopTrend?.map((d) => d.orders) || [], [shopTrend]);
   const trendRevenue = useMemo(() => shopTrend?.map((d) => d.revenue) || [], [shopTrend]);
   const trendUsers = useMemo(() => shopTrend?.map((d) => d.newUsers) || [], [shopTrend]);
-  const maxOrders = Math.max(...trendOrders, 1);
-  const maxRevenue = Math.max(...trendRevenue, 1);
-  const maxUsers = Math.max(...trendUsers, 1);
+  const shopDates = useMemo(() => shopTrend?.map((d) => d.date) || [], [shopTrend]);
 
   // 报告趋势数据
   const reportTrend = weeklyTrend?.reports;
   const trendNewReports = useMemo(() => reportTrend?.map((d) => d.newReports) || [], [reportTrend]);
   const trendCompletedReports = useMemo(() => reportTrend?.map((d) => d.completedReports) || [], [reportTrend]);
-  const maxNewReports = Math.max(...trendNewReports, 1);
-  const maxCompletedReports = Math.max(...trendCompletedReports, 1);
+  const reportDates = useMemo(() => reportTrend?.map((d) => d.date) || [], [reportTrend]);
+
+  // 命理服务趋势数据
+  const fortuneTrend = weeklyTrend?.fortune;
+  const trendNewBookings = useMemo(() => fortuneTrend?.map((d) => d.newBookings) || [], [fortuneTrend]);
+  const trendCompletedBookings = useMemo(() => fortuneTrend?.map((d) => d.completedBookings) || [], [fortuneTrend]);
+  const trendFace = useMemo(() => fortuneTrend?.map((d) => d.face) || [], [fortuneTrend]);
+  const trendPalm = useMemo(() => fortuneTrend?.map((d) => d.palm) || [], [fortuneTrend]);
+  const trendFengshui = useMemo(() => fortuneTrend?.map((d) => d.fengshui) || [], [fortuneTrend]);
+  const fortuneDates = useMemo(() => fortuneTrend?.map((d) => d.date) || [], [fortuneTrend]);
 
   const shop = dailyData?.shop;
   const reviews = dailyData?.reviews;
   const coupons = dailyData?.coupons;
   const reports = dailyData?.reports;
+  const fortune = dailyData?.fortune;
 
   return (
     <AdminLayout>
@@ -128,7 +158,7 @@ export default function DailyReport() {
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold text-white mb-2">每日数据</h1>
-            <p className="text-slate-400">三系统运营数据汇总</p>
+            <p className="text-slate-400">三大系统运营数据汇总</p>
           </div>
           <div className="flex items-center gap-2">
             <Button
@@ -180,7 +210,7 @@ export default function DailyReport() {
             {/* ====== 商城数据 ====== */}
             <div>
               <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                <ShoppingCart className="w-5 h-5 text-[oklch(82%_0.18_85)]" />
+                <ShoppingCart className="w-5 h-5 text-blue-400" />
                 商城数据 · {selectedDate}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
@@ -229,13 +259,80 @@ export default function DailyReport() {
               </div>
             </div>
 
+            {/* ====== 命理服务数据 ====== */}
+            <div>
+              <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-[oklch(82%_0.18_85)]" />
+                命理服务 · {selectedDate}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-8 gap-4">
+                <StatCard
+                  title="新预约"
+                  value={fortune?.newBookings || 0}
+                  icon={Sparkles}
+                  color="text-[oklch(82%_0.18_85)]"
+                  bgColor="bg-[oklch(82%_0.18_85)]/10"
+                />
+                <StatCard
+                  title="面相"
+                  value={fortune?.byType?.face || 0}
+                  icon={Eye}
+                  color="text-pink-400"
+                  bgColor="bg-pink-500/10"
+                />
+                <StatCard
+                  title="手相"
+                  value={fortune?.byType?.palm || 0}
+                  icon={Hand}
+                  color="text-orange-400"
+                  bgColor="bg-orange-500/10"
+                />
+                <StatCard
+                  title="风水"
+                  value={fortune?.byType?.fengshui || 0}
+                  icon={Home}
+                  color="text-cyan-400"
+                  bgColor="bg-cyan-500/10"
+                />
+                <StatCard
+                  title="已完成"
+                  value={fortune?.completedBookings || 0}
+                  icon={CheckCircle2}
+                  color="text-green-400"
+                  bgColor="bg-green-500/10"
+                />
+                <StatCard
+                  title="进行中"
+                  value={fortune?.inProgressBookings || 0}
+                  icon={Loader2}
+                  color="text-blue-400"
+                  bgColor="bg-blue-500/10"
+                />
+                <StatCard
+                  title="已取消"
+                  value={fortune?.cancelledBookings || 0}
+                  icon={Ban}
+                  color="text-red-400"
+                  bgColor="bg-red-500/10"
+                />
+                <StatCard
+                  title="待处理(全局)"
+                  value={fortune?.totalPendingAll || 0}
+                  icon={Clock}
+                  color="text-yellow-400"
+                  bgColor="bg-yellow-500/10"
+                  subtitle="所有待处理"
+                />
+              </div>
+            </div>
+
             {/* ====== 评价 & 优惠券 ====== */}
             <div>
               <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
                 <Star className="w-5 h-5 text-yellow-400" />
                 评价 & 优惠券 · {selectedDate}
               </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-4">
                 <StatCard
                   title="新评价"
                   value={reviews?.newReviews || 0}
@@ -257,6 +354,14 @@ export default function DailyReport() {
                   icon={CheckCircle2}
                   color="text-green-400"
                   bgColor="bg-green-500/10"
+                />
+                <StatCard
+                  title="服务评价"
+                  value={fortune?.newReviews || 0}
+                  icon={Star}
+                  color="text-amber-400"
+                  bgColor="bg-amber-500/10"
+                  subtitle="命理服务评价"
                 />
                 <StatCard
                   title="优惠券使用"
@@ -331,93 +436,55 @@ export default function DailyReport() {
             </div>
 
             {/* ====== 7天趋势 ====== */}
-            {shopTrend && shopTrend.length > 0 && (
-              <div>
-                <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-[oklch(82%_0.18_85)]" />
-                  近7天趋势
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-                  {/* 订单趋势 */}
-                  <Card className="bg-slate-900/50 border-slate-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-sm text-slate-400">订单趋势</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <MiniBarChart data={trendOrders} maxValue={maxOrders} color="oklch(62% 0.19 250)" />
-                      <div className="flex justify-between mt-2 text-xs text-slate-500">
-                        {shopTrend.map((d) => (
-                          <span key={d.date}>{d.date.substring(5)}</span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
+            <div>
+              <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-[oklch(82%_0.18_85)]" />
+                近7天趋势
+              </h2>
 
-                  {/* 营收趋势 */}
-                  <Card className="bg-slate-900/50 border-slate-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-sm text-slate-400">营收趋势 ($)</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <MiniBarChart data={trendRevenue} maxValue={maxRevenue} color="oklch(72% 0.19 150)" />
-                      <div className="flex justify-between mt-2 text-xs text-slate-500">
-                        {shopTrend.map((d) => (
-                          <span key={d.date}>{d.date.substring(5)}</span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* 用户趋势 */}
-                  <Card className="bg-slate-900/50 border-slate-800">
-                    <CardHeader className="pb-2">
-                      <CardTitle className="text-sm text-slate-400">新用户趋势</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <MiniBarChart data={trendUsers} maxValue={maxUsers} color="oklch(72% 0.19 300)" />
-                      <div className="flex justify-between mt-2 text-xs text-slate-500">
-                        {shopTrend.map((d) => (
-                          <span key={d.date}>{d.date.substring(5)}</span>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  {/* 新报告趋势 */}
-                  {reportTrend && reportTrend.length > 0 && (
-                    <>
-                      <Card className="bg-slate-900/50 border-slate-800">
-                        <CardHeader className="pb-2">
-                          <CardTitle className="text-sm text-slate-400">新报告趋势</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <MiniBarChart data={trendNewReports} maxValue={maxNewReports} color="oklch(62% 0.19 270)" />
-                          <div className="flex justify-between mt-2 text-xs text-slate-500">
-                            {reportTrend.map((d) => (
-                              <span key={d.date}>{d.date.substring(5)}</span>
-                            ))}
-                          </div>
-                        </CardContent>
-                      </Card>
-
-                      <Card className="bg-slate-900/50 border-slate-800">
-                        <CardHeader className="pb-2">
-                          <CardTitle className="text-sm text-slate-400">完成报告趋势</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <MiniBarChart data={trendCompletedReports} maxValue={maxCompletedReports} color="oklch(72% 0.19 150)" />
-                          <div className="flex justify-between mt-2 text-xs text-slate-500">
-                            {reportTrend.map((d) => (
-                              <span key={d.date}>{d.date.substring(5)}</span>
-                            ))}
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </>
-                  )}
+              {/* 商城趋势 */}
+              {shopTrend && shopTrend.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-sm font-medium text-slate-400 mb-3 flex items-center gap-2">
+                    <ShoppingCart className="w-4 h-4" /> 商城
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <TrendChart title="订单趋势" data={trendOrders} dates={shopDates} color="oklch(62% 0.19 250)" />
+                    <TrendChart title="营收趋势 ($)" data={trendRevenue} dates={shopDates} color="oklch(72% 0.19 150)" />
+                    <TrendChart title="新用户趋势" data={trendUsers} dates={shopDates} color="oklch(72% 0.19 300)" />
+                  </div>
                 </div>
-              </div>
-            )}
+              )}
+
+              {/* 命理服务趋势 */}
+              {fortuneTrend && fortuneTrend.length > 0 && (
+                <div className="mb-6">
+                  <h3 className="text-sm font-medium text-slate-400 mb-3 flex items-center gap-2">
+                    <Sparkles className="w-4 h-4" /> 命理服务
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                    <TrendChart title="新预约趋势" data={trendNewBookings} dates={fortuneDates} color="oklch(82% 0.18 85)" />
+                    <TrendChart title="完成趋势" data={trendCompletedBookings} dates={fortuneDates} color="oklch(72% 0.19 150)" />
+                    <TrendChart title="面相趋势" data={trendFace} dates={fortuneDates} color="oklch(72% 0.19 350)" />
+                    <TrendChart title="手相趋势" data={trendPalm} dates={fortuneDates} color="oklch(72% 0.19 50)" />
+                    <TrendChart title="风水趋势" data={trendFengshui} dates={fortuneDates} color="oklch(72% 0.19 200)" />
+                  </div>
+                </div>
+              )}
+
+              {/* 能量报告趋势 */}
+              {reportTrend && reportTrend.length > 0 && (
+                <div>
+                  <h3 className="text-sm font-medium text-slate-400 mb-3 flex items-center gap-2">
+                    <FileText className="w-4 h-4" /> 能量报告
+                  </h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <TrendChart title="新报告趋势" data={trendNewReports} dates={reportDates} color="oklch(62% 0.19 270)" />
+                    <TrendChart title="完成报告趋势" data={trendCompletedReports} dates={reportDates} color="oklch(72% 0.19 150)" />
+                  </div>
+                </div>
+              )}
+            </div>
           </>
         )}
       </div>

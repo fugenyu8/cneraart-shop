@@ -1140,12 +1140,16 @@ export const appRouter = router({
           const endOfDay = new Date(targetDate + 'T23:59:59Z');
 
           // 并行获取所有数据
-          const [shopStats, reviewStats, couponStats, reportStats] = await Promise.all([
+          const [shopStats, reviewStats, couponStats, reportStats, fortuneStats] = await Promise.all([
             db.getDailyShopStats(startOfDay, endOfDay),
             db.getDailyReviewStats(startOfDay, endOfDay),
             db.getDailyCouponStats(startOfDay, endOfDay),
             db.getDailyDestinyReportStats(startOfDay, endOfDay).catch(() => ({
               newReports: 0, completedReports: 0, failedReports: 0, processingReports: 0, totalReports: 0
+            })),
+            db.getDailyFortuneStats(startOfDay, endOfDay).catch(() => ({
+              newBookings: 0, completedBookings: 0, inProgressBookings: 0, cancelledBookings: 0,
+              byType: { face: 0, palm: 0, fengshui: 0 }, totalPendingAll: 0, totalInProgressAll: 0, newReviews: 0
             })),
           ]);
           
@@ -1155,6 +1159,7 @@ export const appRouter = router({
             reviews: reviewStats,
             coupons: couponStats,
             reports: reportStats,
+            fortune: fortuneStats,
             lastUpdated: Date.now(),
           };
         }),
@@ -1185,7 +1190,15 @@ export const appRouter = router({
           reportDays = shopDays.map(d => ({ date: d.date, newReports: 0, completedReports: 0, failedReports: 0 }));
         }
 
-        return { shop: shopDays, reports: reportDays };
+        // 命理服务7天趋势
+        let fortuneDays: Array<{ date: string; newBookings: number; completedBookings: number; face: number; palm: number; fengshui: number }> = [];
+        try {
+          fortuneDays = await db.getWeeklyFortuneTrend();
+        } catch {
+          fortuneDays = shopDays.map(d => ({ date: d.date, newBookings: 0, completedBookings: 0, face: 0, palm: 0, fengshui: 0 }));
+        }
+
+        return { shop: shopDays, reports: reportDays, fortune: fortuneDays };
       }),
     }),
 

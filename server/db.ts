@@ -19,6 +19,7 @@ import {
   faceRules,
   palmRules,
   fengshuiRules,
+  fortuneServiceReviews,
   type Category,
   type Product,
   type ProductImage,
@@ -882,11 +883,123 @@ export async function getAdminStats() {
     price: parseFloat(item.price),
   }));
 
-  // 简单的趋势计算(这里使用随机数模拟,实际应该对比上月数据)
-  const revenueTrend = Math.floor(Math.random() * 20) - 5; // -5% to +15%
-  const ordersTrend = Math.floor(Math.random() * 20) - 5;
-  const productsTrend = Math.floor(Math.random() * 10);
-  const customersTrend = Math.floor(Math.random() * 15);
+  // 真实趋势计算：对比本月和上月数据
+  const now = new Date();
+  const thisMonthStart = new Date(now.getFullYear(), now.getMonth(), 1);
+  const lastMonthStart = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+  const lastMonthEnd = new Date(now.getFullYear(), now.getMonth(), 0, 23, 59, 59);
+
+  // 本月营收
+  const thisMonthRevenueResult = await db
+    .select({ total: sql<number>`COALESCE(SUM(CAST(${orders.total} AS DECIMAL(10,2))), 0)` })
+    .from(orders)
+    .where(and(gte(orders.createdAt, thisMonthStart), eq(orders.paymentStatus, "paid")));
+  const thisMonthRevenue = thisMonthRevenueResult[0]?.total || 0;
+
+  // 上月营收
+  const lastMonthRevenueResult = await db
+    .select({ total: sql<number>`COALESCE(SUM(CAST(${orders.total} AS DECIMAL(10,2))), 0)` })
+    .from(orders)
+    .where(and(gte(orders.createdAt, lastMonthStart), lte(orders.createdAt, lastMonthEnd), eq(orders.paymentStatus, "paid")));
+  const lastMonthRevenue = lastMonthRevenueResult[0]?.total || 0;
+
+  // 本月订单数
+  const thisMonthOrdersResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(orders)
+    .where(gte(orders.createdAt, thisMonthStart));
+  const thisMonthOrders = thisMonthOrdersResult[0]?.count || 0;
+
+  // 上月订单数
+  const lastMonthOrdersResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(orders)
+    .where(and(gte(orders.createdAt, lastMonthStart), lte(orders.createdAt, lastMonthEnd)));
+  const lastMonthOrders = lastMonthOrdersResult[0]?.count || 0;
+
+  // 本月新客户
+  const thisMonthCustomersResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(users)
+    .where(gte(users.createdAt, thisMonthStart));
+  const thisMonthCustomers = thisMonthCustomersResult[0]?.count || 0;
+
+  // 上月新客户
+  const lastMonthCustomersResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(users)
+    .where(and(gte(users.createdAt, lastMonthStart), lte(users.createdAt, lastMonthEnd)));
+  const lastMonthCustomers = lastMonthCustomersResult[0]?.count || 0;
+
+  // 计算趋势百分比
+  const calcTrend = (current: number, previous: number) => {
+    if (previous === 0) return current > 0 ? 100 : 0;
+    return Math.round(((current - previous) / previous) * 100);
+  };
+
+  const revenueTrend = calcTrend(thisMonthRevenue, lastMonthRevenue);
+  const ordersTrend = calcTrend(thisMonthOrders, lastMonthOrders);
+  const productsTrend = 0; // 产品数量不需要趋势
+  const customersTrend = calcTrend(thisMonthCustomers, lastMonthCustomers);
+
+  // ====== 命理服务统计 ======
+  // 命理预约总数
+  const fortuneBookingsResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings);
+  const totalFortuneBookings = fortuneBookingsResult[0]?.count || 0;
+
+  // 命理预约按状态统计
+  const fortunePendingResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings)
+    .where(eq(fortuneBookings.status, "pending"));
+  const fortunePending = fortunePendingResult[0]?.count || 0;
+
+  const fortuneCompletedResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings)
+    .where(eq(fortuneBookings.status, "completed"));
+  const fortuneCompleted = fortuneCompletedResult[0]?.count || 0;
+
+  const fortuneInProgressResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings)
+    .where(eq(fortuneBookings.status, "in_progress"));
+  const fortuneInProgress = fortuneInProgressResult[0]?.count || 0;
+
+  // 命理预约按类型统计
+  const fortuneByTypeResult = await db
+    .select({
+      serviceType: fortuneBookings.serviceType,
+      count: sql<number>`COUNT(*)`,
+    })
+    .from(fortuneBookings)
+    .groupBy(fortuneBookings.serviceType);
+  const fortuneByType = {
+    face: 0,
+    palm: 0,
+    fengshui: 0,
+  };
+  fortuneByTypeResult.forEach((r) => {
+    if (r.serviceType in fortuneByType) {
+      fortuneByType[r.serviceType as keyof typeof fortuneByType] = r.count;
+    }
+  });
+
+  // 命理服务评价统计
+  const fortuneReviewsResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneServiceReviews);
+  const totalFortuneReviews = fortuneReviewsResult[0]?.count || 0;
+
+  // ====== 能量报告统计 ======
+  let destinyReportStats = { total: 0, todayCount: 0, statusCounts: {} as Record<string, number> };
+  try {
+    destinyReportStats = await getDestinyReportStats();
+  } catch (e) {
+    // destiny_reports 表可能不存在
+  }
 
   return {
     totalRevenue,
@@ -899,6 +1012,17 @@ export async function getAdminStats() {
     customersTrend,
     recentOrders,
     topProducts,
+    // 命理服务
+    fortuneStats: {
+      totalBookings: totalFortuneBookings,
+      pending: fortunePending,
+      completed: fortuneCompleted,
+      inProgress: fortuneInProgress,
+      byType: fortuneByType,
+      totalReviews: totalFortuneReviews,
+    },
+    // 能量报告
+    destinyStats: destinyReportStats,
   };
 }
 
@@ -1833,4 +1957,132 @@ export async function getWeeklyDestinyReportTrend() {
   } finally {
     await conn.end();
   }
+}
+
+// ============= 命理服务每日统计 =============
+
+export async function getDailyFortuneStats(startOfDay: Date, endOfDay: Date) {
+  const db = await getDb();
+  if (!db) {
+    return {
+      newBookings: 0,
+      completedBookings: 0,
+      inProgressBookings: 0,
+      cancelledBookings: 0,
+      byType: { face: 0, palm: 0, fengshui: 0 },
+      totalPendingAll: 0,
+      totalInProgressAll: 0,
+      newReviews: 0,
+    };
+  }
+
+  // 当日新预约
+  const newResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings)
+    .where(and(gte(fortuneBookings.createdAt, startOfDay), lte(fortuneBookings.createdAt, endOfDay)));
+  const newBookings = newResult[0]?.count || 0;
+
+  // 当日完成
+  const completedResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings)
+    .where(and(
+      gte(fortuneBookings.updatedAt, startOfDay),
+      lte(fortuneBookings.updatedAt, endOfDay),
+      eq(fortuneBookings.status, "completed")
+    ));
+  const completedBookings = completedResult[0]?.count || 0;
+
+  // 当日进行中
+  const inProgressResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings)
+    .where(and(
+      gte(fortuneBookings.updatedAt, startOfDay),
+      lte(fortuneBookings.updatedAt, endOfDay),
+      eq(fortuneBookings.status, "in_progress")
+    ));
+  const inProgressBookings = inProgressResult[0]?.count || 0;
+
+  // 当日取消
+  const cancelledResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings)
+    .where(and(
+      gte(fortuneBookings.updatedAt, startOfDay),
+      lte(fortuneBookings.updatedAt, endOfDay),
+      eq(fortuneBookings.status, "cancelled")
+    ));
+  const cancelledBookings = cancelledResult[0]?.count || 0;
+
+  // 当日按类型统计
+  const byTypeResult = await db
+    .select({
+      serviceType: fortuneBookings.serviceType,
+      count: sql<number>`COUNT(*)`,
+    })
+    .from(fortuneBookings)
+    .where(and(gte(fortuneBookings.createdAt, startOfDay), lte(fortuneBookings.createdAt, endOfDay)))
+    .groupBy(fortuneBookings.serviceType);
+  const byType = { face: 0, palm: 0, fengshui: 0 };
+  byTypeResult.forEach((r) => {
+    if (r.serviceType in byType) {
+      byType[r.serviceType as keyof typeof byType] = r.count;
+    }
+  });
+
+  // 全局待处理
+  const totalPendingResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings)
+    .where(eq(fortuneBookings.status, "pending"));
+  const totalPendingAll = totalPendingResult[0]?.count || 0;
+
+  // 全局进行中
+  const totalInProgressResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings)
+    .where(eq(fortuneBookings.status, "in_progress"));
+  const totalInProgressAll = totalInProgressResult[0]?.count || 0;
+
+  // 当日新服务评价
+  const reviewResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneServiceReviews)
+    .where(and(gte(fortuneServiceReviews.createdAt, startOfDay), lte(fortuneServiceReviews.createdAt, endOfDay)));
+  const newReviews = reviewResult[0]?.count || 0;
+
+  return {
+    newBookings,
+    completedBookings,
+    inProgressBookings,
+    cancelledBookings,
+    byType,
+    totalPendingAll,
+    totalInProgressAll,
+    newReviews,
+  };
+}
+
+// 命理服务7天趋势
+export async function getWeeklyFortuneTrend() {
+  const days: Array<{ date: string; newBookings: number; completedBookings: number; face: number; palm: number; fengshui: number }> = [];
+  for (let i = 6; i >= 0; i--) {
+    const date = new Date();
+    date.setDate(date.getDate() - i);
+    const dateStr = date.toISOString().split('T')[0];
+    const startOfDay = new Date(dateStr + 'T00:00:00Z');
+    const endOfDay = new Date(dateStr + 'T23:59:59Z');
+    const stats = await getDailyFortuneStats(startOfDay, endOfDay);
+    days.push({
+      date: dateStr,
+      newBookings: stats.newBookings,
+      completedBookings: stats.completedBookings,
+      face: stats.byType.face,
+      palm: stats.byType.palm,
+      fengshui: stats.byType.fengshui,
+    });
+  }
+  return days;
 }
