@@ -1387,3 +1387,70 @@ export async function createFortuneBooking(data: {
 
   return result.insertId;
 }
+
+
+/**
+ * 获取每日商城统计数据
+ */
+export async function getDailyShopStats(startOfDay: Date, endOfDay: Date) {
+  const db = await getDb();
+  if (!db) {
+    return { newOrders: 0, revenue: 0, newUsers: 0, paidOrders: 0, pendingOrders: 0, serviceBookings: 0 };
+  }
+
+  // 当日新订单数
+  const ordersResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(orders)
+    .where(and(gte(orders.createdAt, startOfDay), lte(orders.createdAt, endOfDay)));
+  const newOrders = ordersResult[0]?.count || 0;
+
+  // 当日营收(已支付)
+  const revenueResult = await db
+    .select({ total: sql<number>`COALESCE(SUM(CAST(${orders.total} AS DECIMAL(10,2))), 0)` })
+    .from(orders)
+    .where(and(
+      gte(orders.createdAt, startOfDay),
+      lte(orders.createdAt, endOfDay),
+      eq(orders.paymentStatus, "paid")
+    ));
+  const revenue = revenueResult[0]?.total || 0;
+
+  // 当日新注册用户
+  const usersResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(users)
+    .where(and(gte(users.createdAt, startOfDay), lte(users.createdAt, endOfDay)));
+  const newUsers = usersResult[0]?.count || 0;
+
+  // 当日已支付订单数
+  const paidResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(orders)
+    .where(and(
+      gte(orders.createdAt, startOfDay),
+      lte(orders.createdAt, endOfDay),
+      eq(orders.paymentStatus, "paid")
+    ));
+  const paidOrders = paidResult[0]?.count || 0;
+
+  // 当日待处理订单
+  const pendingResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(orders)
+    .where(and(
+      gte(orders.createdAt, startOfDay),
+      lte(orders.createdAt, endOfDay),
+      eq(orders.status, "pending")
+    ));
+  const pendingOrders = pendingResult[0]?.count || 0;
+
+  // 当日命理服务预约
+  const bookingsResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(fortuneBookings)
+    .where(and(gte(fortuneBookings.createdAt, startOfDay), lte(fortuneBookings.createdAt, endOfDay)));
+  const serviceBookings = bookingsResult[0]?.count || 0;
+
+  return { newOrders, revenue, newUsers, paidOrders, pendingOrders, serviceBookings };
+}

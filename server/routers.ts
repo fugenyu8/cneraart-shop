@@ -1027,6 +1027,85 @@ export const appRouter = router({
           return { success: true };
         }),
     }),
+
+    // ============= 三系统统一监控 =============
+    systemMonitor: router({
+      // 获取三个系统的实时状态
+      getSystemStatus: adminProcedure.query(async () => {
+        const systems = [
+          { name: '商城主站', domain: 'www.cneraart.com', healthUrl: 'https://www.cneraart.com/api/health' },
+          { name: '客户服务', domain: 'service.cneraart.com', healthUrl: 'https://service.cneraart.com/api/health' },
+          { name: '能量报告', domain: 'report.cneraart.com', healthUrl: 'https://report.cneraart.com/api/health' },
+        ];
+
+        const results = await Promise.all(
+          systems.map(async (sys) => {
+            try {
+              const controller = new AbortController();
+              const timeout = setTimeout(() => controller.abort(), 8000);
+              const res = await fetch(sys.healthUrl, { signal: controller.signal });
+              clearTimeout(timeout);
+              if (res.ok) {
+                const data = await res.json();
+                return {
+                  ...sys,
+                  status: 'online' as const,
+                  uptime: data.uptime || 0,
+                  memory: data.memory || null,
+                  version: data.version || 'unknown',
+                  responseTime: Date.now(),
+                  lastChecked: Date.now(),
+                };
+              }
+              return { ...sys, status: 'degraded' as const, uptime: 0, memory: null, version: 'unknown', responseTime: 0, lastChecked: Date.now() };
+            } catch (e: any) {
+              return { ...sys, status: 'offline' as const, uptime: 0, memory: null, version: 'unknown', responseTime: 0, lastChecked: Date.now(), error: e.message };
+            }
+          })
+        );
+        return results;
+      }),
+
+      // 获取每日数据汇总
+      getDailySummary: adminProcedure
+        .input(z.object({
+          date: z.string().optional(), // YYYY-MM-DD format, defaults to today
+        }).optional())
+        .query(async ({ input }) => {
+          const targetDate = input?.date || new Date().toISOString().split('T')[0];
+          const startOfDay = new Date(targetDate + 'T00:00:00Z');
+          const endOfDay = new Date(targetDate + 'T23:59:59Z');
+
+          // 商城数据
+          const shopStats = await db.getDailyShopStats(startOfDay, endOfDay);
+          
+          return {
+            date: targetDate,
+            shop: shopStats,
+            lastUpdated: Date.now(),
+          };
+        }),
+
+      // 获取最近7天趋势数据
+      getWeeklyTrend: adminProcedure.query(async () => {
+        const days: Array<{ date: string; orders: number; revenue: number; newUsers: number }> = [];
+        for (let i = 6; i >= 0; i--) {
+          const date = new Date();
+          date.setDate(date.getDate() - i);
+          const dateStr = date.toISOString().split('T')[0];
+          const startOfDay = new Date(dateStr + 'T00:00:00Z');
+          const endOfDay = new Date(dateStr + 'T23:59:59Z');
+          const stats = await db.getDailyShopStats(startOfDay, endOfDay);
+          days.push({
+            date: dateStr,
+            orders: stats.newOrders,
+            revenue: stats.revenue,
+            newUsers: stats.newUsers,
+          });
+        }
+        return days;
+      }),
+    }),
   }),
 
   // ============= 命理测算服务 =============

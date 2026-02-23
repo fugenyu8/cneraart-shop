@@ -24,6 +24,8 @@ import Prayer from "./pages/Prayer";
 import ReportView from "./pages/ReportView";
 import ServiceOrders from "./pages/admin/ServiceOrders";
 import BatchShipmentUpload from "./pages/admin/BatchShipmentUpload";
+import SystemMonitor from "./pages/admin/SystemMonitor";
+import DailyReport from "./pages/admin/DailyReport";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -48,6 +50,8 @@ function Router() {
       <Route path={"/report/:bookingId"} component={ReportView} />
       <Route path={"/admin/service-orders"} component={ServiceOrders} />
       <Route path={"/admin/batch-shipment"} component={BatchShipmentUpload} />
+      <Route path={"/admin/system-monitor"} component={SystemMonitor} />
+      <Route path={"/admin/daily-report"} component={DailyReport} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

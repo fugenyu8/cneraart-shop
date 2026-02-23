@@ -12,4 +12,11 @@ export const ENV = {
   smtpPort: parseInt(process.env.SMTP_PORT ?? "587"),
   smtpUser: process.env.SMTP_USER ?? "",
   smtpPass: process.env.SMTP_PASS ?? "",
+  // Cloudflare R2
+  r2AccountId: process.env.R2_ACCOUNT_ID ?? "",
+  r2AccessKeyId: process.env.R2_ACCESS_KEY_ID ?? "",
+  r2SecretAccessKey: process.env.R2_SECRET_ACCESS_KEY ?? "",
+  r2BucketName: process.env.R2_BUCKET_NAME ?? "cneraart-assets",
+  r2PublicUrl: process.env.R2_PUBLIC_URL ?? "",
+  r2Endpoint: process.env.R2_ENDPOINT ?? "",
 };

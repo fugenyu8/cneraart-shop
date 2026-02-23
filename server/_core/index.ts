@@ -41,6 +41,29 @@ async function startServer() {
   app.use("/api", uploadRouter);
   // Fortune service image upload
   app.post("/api/upload-fortune-image", uploadFortuneImageHandler, handleFortuneImageUpload);
+  // CDN & Cache headers for static assets
+  app.use((req, res, next) => {
+    const url = req.url;
+    // Images and fonts: cache 1 year (immutable)
+    if (/\.(jpg|jpeg|png|gif|webp|svg|ico|woff2?|ttf|eot)$/i.test(url)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+      res.setHeader('Vary', 'Accept-Encoding');
+    }
+    // JS/CSS with hash: cache 1 year
+    else if (/\.[a-f0-9]{8}\.(js|css)$/i.test(url)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    }
+    // Other static assets: cache 1 day
+    else if (/\.(js|css|json)$/i.test(url)) {
+      res.setHeader('Cache-Control', 'public, max-age=86400');
+    }
+    // Enable CORS for CDN assets
+    if (/\.(jpg|jpeg|png|gif|webp|svg|woff2?|ttf|eot|js|css)$/i.test(url)) {
+      res.setHeader('Access-Control-Allow-Origin', '*');
+    }
+    next();
+  });
+
   // tRPC API
   app.use(
     "/api/trpc",
@@ -49,6 +72,18 @@ async function startServer() {
       createContext,
     })
   );
+  // System health check API for monitoring
+  app.get('/api/health', (req, res) => {
+    res.json({
+      status: 'ok',
+      system: 'cneraart-shop',
+      uptime: process.uptime(),
+      memory: process.memoryUsage(),
+      timestamp: Date.now(),
+      version: process.env.RAILWAY_GIT_COMMIT_SHA || 'dev',
+    });
+  });
+
   // development mode uses Vite, production mode uses static files
   if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);

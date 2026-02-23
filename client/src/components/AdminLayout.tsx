@@ -23,6 +23,10 @@ import {
   X,
   LogOut,
   Sparkles,
+  Activity,
+  BarChart3,
+  Truck,
+  Star,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -83,6 +87,26 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       icon: Users,
       label: t("admin.customers"),
       path: "/admin/customers",
+    },
+    {
+      icon: Truck,
+      label: "物流管理",
+      path: "/admin/batch-shipment",
+    },
+    {
+      icon: Star,
+      label: "服务订单",
+      path: "/admin/service-orders",
+    },
+    {
+      icon: Activity,
+      label: "系统监控",
+      path: "/admin/system-monitor",
+    },
+    {
+      icon: BarChart3,
+      label: "每日数据",
+      path: "/admin/daily-report",
     },
     {
       icon: Settings,
