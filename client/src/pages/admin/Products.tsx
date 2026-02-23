@@ -4,8 +4,8 @@ import { Link } from "wouter";
 import AdminLayout from "@/components/AdminLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
 import { getLocalized } from "@/lib/localized";
+import {
   Table,
   TableBody,
   TableCell,
