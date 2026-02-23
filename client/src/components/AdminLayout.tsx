@@ -37,6 +37,59 @@ interface AdminLayoutProps {
   children: React.ReactNode;
 }
 
+const ADMIN_PASS_KEY = "cneraart_admin_auth";
+const ADMIN_PASSWORD = "fugenyu*168";
+
+function AdminPasswordGate({ children }: { children: React.ReactNode }) {
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const [authenticated, setAuthenticated] = useState(() => {
+    try {
+      return sessionStorage.getItem(ADMIN_PASS_KEY) === "1";
+    } catch { return false; }
+  });
+
+  if (authenticated) return <>{children}</>;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (password === ADMIN_PASSWORD) {
+      setAuthenticated(true);
+      try { sessionStorage.setItem(ADMIN_PASS_KEY, "1"); } catch {}
+    } else {
+      setError("密码错误，请重试");
+      setPassword("");
+    }
+  };
+
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      <form onSubmit={handleSubmit} className="bg-slate-900/80 border border-slate-800 rounded-xl p-8 w-full max-w-sm shadow-2xl">
+        <div className="text-center mb-6">
+          <Sparkles className="w-10 h-10 mx-auto mb-3 text-[oklch(82%_0.18_85)]" />
+          <h2 className="text-xl font-bold text-white">管理后台</h2>
+          <p className="text-sm text-slate-400 mt-1">请输入访问密码</p>
+        </div>
+        <input
+          type="password"
+          value={password}
+          onChange={(e) => { setPassword(e.target.value); setError(""); }}
+          placeholder="请输入密码"
+          className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white placeholder:text-slate-500 focus:outline-none focus:border-[oklch(82%_0.18_85)] transition-colors mb-3"
+          autoFocus
+        />
+        {error && <p className="text-red-400 text-sm mb-3">{error}</p>}
+        <button
+          type="submit"
+          className="w-full py-3 rounded-lg bg-[oklch(82%_0.18_85)] text-slate-900 font-semibold hover:opacity-90 transition-opacity"
+        >
+          进入后台
+        </button>
+      </form>
+    </div>
+  );
+}
+
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const { user, isLoading } = useAuth();
   const [location, navigate] = useLocation();
@@ -69,62 +122,62 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     {
       icon: LayoutDashboard,
       label: t("admin.dashboard"),
-      path: "/admin",
+      path: "/wobifa888",
     },
     {
       icon: Package,
       label: t("admin.products"),
-      path: "/admin/products",
+      path: "/wobifa888/products",
     },
     {
       icon: ShoppingCart,
       label: t("admin.orders"),
-      path: "/admin/orders",
+      path: "/wobifa888/orders",
     },
     {
       icon: Tag,
       label: t("admin.coupons"),
-      path: "/admin/coupons",
+      path: "/wobifa888/coupons",
     },
     {
       icon: Users,
       label: t("admin.customers"),
-      path: "/admin/customers",
+      path: "/wobifa888/customers",
     },
     {
       icon: Truck,
       label: "物流管理",
-      path: "/admin/batch-shipment",
+      path: "/wobifa888/batch-shipment",
     },
     {
       icon: Star,
       label: "服务订单",
-      path: "/admin/service-orders",
+      path: "/wobifa888/service-orders",
     },
     {
       icon: Activity,
       label: "系统监控",
-      path: "/admin/system-monitor",
+      path: "/wobifa888/system-monitor",
     },
     {
       icon: BarChart3,
       label: "每日数据",
-      path: "/admin/daily-report",
+      path: "/wobifa888/daily-report",
     },
     {
       icon: MessageSquare,
       label: "评价管理",
-      path: "/admin/reviews",
+      path: "/wobifa888/reviews",
     },
     {
       icon: FileText,
       label: "能量报告",
-      path: "/admin/destiny-reports",
+      path: "/wobifa888/destiny-reports",
     },
     {
       icon: Settings,
       label: t("admin.settings"),
-      path: "/admin/settings",
+      path: "/wobifa888/settings",
     },
   ];
 
@@ -133,6 +186,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   };
 
   return (
+    <AdminPasswordGate>
     <div className="flex h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Sidebar */}
       <aside
@@ -228,5 +282,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         <div className="container mx-auto p-6">{children}</div>
       </main>
     </div>
+    </AdminPasswordGate>
   );
 }

@@ -74,7 +74,7 @@ export default function AdminProducts() {
             <h1 className="text-3xl font-bold text-white mb-2">{t("admin.products")}</h1>
             <p className="text-slate-400">管理您的产品库存和信息</p>
           </div>
-          <Link href="/admin/products/new">
+          <Link href="/wobifa888/products/new">
             <Button className="bg-[oklch(82%_0.18_85)] hover:bg-[oklch(82%_0.18_85)]/90 text-slate-900">
               <Plus className="w-4 h-4 mr-2" />
               {t("admin.add_product")}
@@ -176,7 +176,7 @@ export default function AdminProducts() {
                             <Eye className="w-4 h-4" />
                           </Button>
                         </Link>
-                        <Link href={`/admin/products/${product.id}/edit`}>
+                        <Link href={`/wobifa888/products/${product.id}/edit`}>
                           <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white">
                             <Edit className="w-4 h-4" />
                           </Button>
@@ -198,7 +198,7 @@ export default function AdminProducts() {
           ) : (
             <div className="text-center py-12">
               <p className="text-slate-400 mb-4">暂无产品</p>
-              <Link href="/admin/products/new">
+              <Link href="/wobifa888/products/new">
                 <Button className="bg-[oklch(82%_0.18_85)] hover:bg-[oklch(82%_0.18_85)]/90 text-slate-900">
                   <Plus className="w-4 h-4 mr-2" />
                   添加第一个产品

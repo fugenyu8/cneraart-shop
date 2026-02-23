@@ -20,7 +20,7 @@ import { toast } from "sonner";
 
 export default function AdminOrderDetail() {
   const { t } = useTranslation();
-  const [, params] = useRoute("/admin/orders/:id");
+  const [, params] = useRoute("/wobifa888/orders/:id");
   const orderId = params?.id ? parseInt(params.id) : 0;
 
   const [trackingNumber, setTrackingNumber] = useState("");
@@ -107,7 +107,7 @@ export default function AdminOrderDetail() {
       <AdminLayout>
         <div className="text-center py-12">
           <p className="text-slate-400 mb-4">订单不存在</p>
-          <Link href="/admin/orders">
+          <Link href="/wobifa888/orders">
             <Button variant="outline">返回订单列表</Button>
           </Link>
         </div>
@@ -121,7 +121,7 @@ export default function AdminOrderDetail() {
         {/* 页面标题 */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <Link href="/admin/orders">
+            <Link href="/wobifa888/orders">
               <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white">
                 <ArrowLeft className="w-5 h-5" />
               </Button>

@@ -22,7 +22,7 @@ import { storagePut } from "@/lib/storage";
 export default function ProductForm() {
   const { t } = useTranslation();
   const [, navigate] = useLocation();
-  const [, params] = useRoute("/admin/products/:id/edit");
+  const [, params] = useRoute("/wobifa888/products/:id/edit");
   const productId = params?.id ? parseInt(params.id) : null;
   const isEditMode = productId !== null;
 
@@ -64,7 +64,7 @@ export default function ProductForm() {
   const createMutation = trpc.admin.products.create.useMutation({
     onSuccess: () => {
       toast.success(isEditMode ? "产品已更新" : "产品已创建");
-      navigate("/admin/products");
+      navigate("/wobifa888/products");
     },
     onError: (error: any) => {
       toast.error(error.message || "操作失败");
@@ -237,7 +237,7 @@ export default function ProductForm() {
         <div className="mb-6">
           <Button
             variant="ghost"
-            onClick={() => navigate("/admin/products")}
+            onClick={() => navigate("/wobifa888/products")}
             className="mb-4 text-slate-400 hover:text-white"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -601,7 +601,7 @@ export default function ProductForm() {
             <Button
               type="button"
               variant="outline"
-              onClick={() => navigate("/admin/products")}
+              onClick={() => navigate("/wobifa888/products")}
               className="border-slate-700 text-slate-300 hover:bg-slate-800"
             >
               取消

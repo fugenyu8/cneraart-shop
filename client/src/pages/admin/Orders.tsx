@@ -125,7 +125,7 @@ export default function AdminOrders() {
                     </TableCell>
                     <TableCell>
                       <div className="flex items-center justify-end gap-2">
-                        <Link href={`/admin/orders/${order.id}`}>
+                        <Link href={`/wobifa888/orders/${order.id}`}>
                           <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white">
                             <Eye className="w-4 h-4" />
                           </Button>

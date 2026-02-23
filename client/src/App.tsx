@@ -39,27 +39,27 @@ function Router() {
       <Route path={"/products"} component={Products} />
       <Route path={"/products/:slug"} component={ProductDetail} />
       <Route path={"/cart"} component={Cart} />
-      <Route path={"/admin"} component={AdminDashboard} />
-      <Route path={"/admin/products"} component={AdminProducts} />
-      <Route path={"/admin/products/new"} component={ProductForm} />
-      <Route path={"/admin/products/:id/edit"} component={ProductForm} />
+      <Route path={"/wobifa888"} component={AdminDashboard} />
+      <Route path={"/wobifa888/products"} component={AdminProducts} />
+      <Route path={"/wobifa888/products/new"} component={ProductForm} />
+      <Route path={"/wobifa888/products/:id/edit"} component={ProductForm} />
       <Route path={"/checkout"} component={Checkout} />
-      <Route path={"/admin/orders"} component={AdminOrders} />
-      <Route path={"/admin/orders/:id"} component={AdminOrderDetail} />
+      <Route path={"/wobifa888/orders"} component={AdminOrders} />
+      <Route path={"/wobifa888/orders/:id"} component={AdminOrderDetail} />
       <Route path={"/account"} component={Account} />
       <Route path={"/orders/:id"} component={OrderDetail} />
       <Route path={"/fortune"} component={FortuneServices} />
       <Route path={"/destiny"} component={Destiny} />
       <Route path={"/prayer"} component={Prayer} />
       <Route path={"/report/:bookingId"} component={ReportView} />
-      <Route path={"/admin/service-orders"} component={ServiceOrders} />
-      <Route path={"/admin/batch-shipment"} component={BatchShipmentUpload} />
-      <Route path={"/admin/system-monitor"} component={SystemMonitor} />
-      <Route path={"/admin/daily-report"} component={DailyReport} />
-      <Route path={"/admin/customers"} component={AdminCustomers} />
-      <Route path={"/admin/coupons"} component={AdminCoupons} />
-      <Route path={"/admin/reviews"} component={AdminReviews} />
-      <Route path={"/admin/destiny-reports"} component={AdminDestinyReports} />
+      <Route path={"/wobifa888/service-orders"} component={ServiceOrders} />
+      <Route path={"/wobifa888/batch-shipment"} component={BatchShipmentUpload} />
+      <Route path={"/wobifa888/system-monitor"} component={SystemMonitor} />
+      <Route path={"/wobifa888/daily-report"} component={DailyReport} />
+      <Route path={"/wobifa888/customers"} component={AdminCustomers} />
+      <Route path={"/wobifa888/coupons"} component={AdminCoupons} />
+      <Route path={"/wobifa888/reviews"} component={AdminReviews} />
+      <Route path={"/wobifa888/destiny-reports"} component={AdminDestinyReports} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
