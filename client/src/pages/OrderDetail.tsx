@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 import { ArrowLeft, Package, Truck, CheckCircle, Clock } from "lucide-react";
 import ShipmentTracking from "@/components/ShipmentTracking";
 import { useTranslation } from "react-i18next";
+import { getLocalized } from "@/lib/localized";
 
 export default function OrderDetail() {
   const { t } = useTranslation();
@@ -282,7 +283,7 @@ export default function OrderDetail() {
                 {item.product?.images?.[0] && (
                   <img
                     src={item.product.images[0].imageUrl}
-                    alt={item.product.name}
+                    alt={getLocalized(item.product.name)}
                     className="h-20 w-20 rounded-md object-cover"
                   />
                 )}

@@ -41,7 +41,7 @@ export type InsertCategory = typeof categories.$inferInsert;
  */
 export const products = mysqlTable("products", {
   id: int("id").autoincrement().primaryKey(),
-  name: varchar("name", { length: 200 }).notNull(),
+  name: text("name").notNull(),
   slug: varchar("slug", { length: 200 }).notNull().unique(),
   description: text("description"),
   shortDescription: text("shortDescription"),

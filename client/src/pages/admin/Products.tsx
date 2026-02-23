@@ -5,6 +5,7 @@ import AdminLayout from "@/components/AdminLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
+import { getLocalized } from "@/lib/localized";
   Table,
   TableBody,
   TableCell,
@@ -62,7 +63,7 @@ export default function AdminProducts() {
   };
 
   const filteredProducts = products?.filter((product: any) =>
-    search ? product.name.toLowerCase().includes(search.toLowerCase()) : true
+    search ? getLocalized(product.name).toLowerCase().includes(search.toLowerCase()) : true
   );
 
   return (
@@ -130,12 +131,12 @@ export default function AdminProducts() {
                         {product.images?.[0] && (
                           <img
                             src={product.images[0].url}
-                            alt={product.name}
+                            alt={getLocalized(product.name)}
                             className="w-12 h-12 rounded object-cover"
                           />
                         )}
                         <div>
-                          <p className="font-medium text-white">{product.name}</p>
+                          <p className="font-medium text-white">{getLocalized(product.name)}</p>
                           <p className="text-sm text-slate-400">{product.slug}</p>
                         </div>
                       </div>
@@ -185,7 +186,7 @@ export default function AdminProducts() {
                           variant="ghost"
                           size="icon"
                           className="text-red-400 hover:text-red-300"
-                          onClick={() => handleDelete(product.id, product.name)}
+                          onClick={() => handleDelete(product.id, getLocalized(product.name))}
                         >
                           <Trash2 className="w-4 h-4" />
                         </Button>

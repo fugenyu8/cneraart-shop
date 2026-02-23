@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { trpc } from "@/lib/trpc";
 import { Loader2, Package, MapPin, User, LogOut } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { getLocalized } from "@/lib/localized";
 
 export default function Account() {
   const { t } = useTranslation();
@@ -142,7 +143,7 @@ export default function Account() {
                                 {item.product?.images?.[0] && (
                                   <img
                                     src={item.product.images[0].url}
-                                    alt={item.product.name}
+                                    alt={getLocalized(item.product.name)}
                                     className="w-16 h-16 rounded object-cover"
                                   />
                                 )}

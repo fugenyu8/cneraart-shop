@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
+import { getLocalized } from "@/lib/localized";
 
 export default function GuardianFinder() {
   const { t } = useTranslation();
@@ -83,13 +84,13 @@ export default function GuardianFinder() {
                         <div className="aspect-square overflow-hidden">
                           <img
                             src={product.images[0]}
-                            alt={product.name}
+                            alt={getLocalized(product.name)}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                           />
                         </div>
                         <div className="p-4">
                           <h4 className="font-medium text-[#5D4E37] mb-2 line-clamp-2">
-                            {product.name}
+                            {getLocalized(product.name)}
                           </h4>
                           <div className="flex items-center gap-2">
                             <span className="text-lg font-semibold text-[#8B1A1A]">
@@ -122,13 +123,13 @@ export default function GuardianFinder() {
                         <div className="aspect-square overflow-hidden">
                           <img
                             src={product.images[0]}
-                            alt={product.name}
+                            alt={getLocalized(product.name)}
                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                           />
                         </div>
                         <div className="p-4">
                           <h4 className="font-medium text-[#5D4E37] mb-2 line-clamp-2">
-                            {product.name}
+                            {getLocalized(product.name)}
                           </h4>
                           <div className="flex items-center gap-2">
                             <span className="text-lg font-semibold text-[#8B1A1A]">

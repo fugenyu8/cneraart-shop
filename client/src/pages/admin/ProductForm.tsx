@@ -18,6 +18,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { ArrowLeft, Upload, X, Loader2 } from "lucide-react";
 import { storagePut } from "@/lib/storage";
+import { getLocalized } from "@/lib/localized";
 
 export default function ProductForm() {
   const { t } = useTranslation();
@@ -81,10 +82,10 @@ export default function ProductForm() {
   useEffect(() => {
     if (product) {
       setFormData({
-        name: product.name,
+        name: getLocalized(product.name),
         slug: product.slug,
-        description: product.description || "",
-        shortDescription: product.shortDescription || "",
+        description: getLocalized(product.description) || "",
+        shortDescription: getLocalized(product.shortDescription) || "",
         regularPrice: product.regularPrice,
         salePrice: product.salePrice || "",
         sku: product.sku || "",
@@ -96,7 +97,7 @@ export default function ProductForm() {
         blessingTemple: product.blessingTemple || "",
         blessingMaster: product.blessingMaster || "",
         blessingDate: product.blessingDate ? new Date(product.blessingDate).toISOString().split("T")[0] : "",
-        blessingDescription: product.blessingDescription || "",
+        blessingDescription: getLocalized(product.blessingDescription) || "",
       });
       if (product.images) {
         setImages(product.images.map((img: any) => ({

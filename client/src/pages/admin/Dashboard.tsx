@@ -3,6 +3,7 @@ import AdminLayout from "@/components/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { trpc } from "@/lib/trpc";
 import { Package, ShoppingCart, Users, DollarSign, TrendingUp, TrendingDown } from "lucide-react";
+import { getLocalized } from "@/lib/localized";
 
 export default function AdminDashboard() {
   const { t } = useTranslation();
@@ -143,7 +144,7 @@ export default function AdminDashboard() {
                       <span className="text-[oklch(82%_0.18_85)] font-bold">#{index + 1}</span>
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-white">{product.name}</p>
+                      <p className="font-medium text-white">{getLocalized(product.name)}</p>
                       <p className="text-sm text-slate-400">销量: {product.salesCount}</p>
                     </div>
                     <div className="text-right">

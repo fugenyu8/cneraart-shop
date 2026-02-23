@@ -9,6 +9,7 @@ import { getLoginUrl } from "@/const";
 import { Sparkles, Trash2, Plus, Minus, ShoppingBag, Tag } from "lucide-react";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
+import { getLocalized } from "@/lib/localized";
 
 export default function Cart() {
   const { t } = useTranslation();
@@ -158,7 +159,7 @@ export default function Cart() {
                           {item.images[0] ? (
                             <img
                               src={item.images[0].url}
-                              alt={item.product.name}
+                              alt={getLocalized(item.product.name)}
                               className="w-full h-full object-cover"
                             />
                           ) : (
@@ -172,7 +173,7 @@ export default function Cart() {
                         <div className="flex-1">
                           <Link href={`/products/${item.product.slug}`}>
                             <h3 className="font-bold mb-1 hover:text-accent transition-colors">
-                              {item.product.name}
+                              {getLocalized(item.product.name)}
                             </h3>
                           </Link>
                           <p className="text-sm text-muted-foreground mb-3">

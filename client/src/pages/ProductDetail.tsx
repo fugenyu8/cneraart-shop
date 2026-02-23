@@ -12,6 +12,7 @@ import OptimizedImage from "@/components/OptimizedImage";
 import ImageLightbox from "@/components/ImageLightbox";
 import FortuneServiceUpload from "@/components/FortuneServiceUpload";
 import { toast } from "sonner";
+import { getLocalized } from "@/lib/localized";
 
 export default function ProductDetail() {
   const { t, i18n } = useTranslation();
@@ -369,7 +370,7 @@ export default function ProductDetail() {
                 <>
                   <OptimizedImage
                     src={product.images[selectedImage].url}
-                    alt={product.name}
+                    alt={getLocalized(product.name)}
                     className="w-full h-full"
                     priority={selectedImage === 0}
                     objectFit="cover"
@@ -399,7 +400,7 @@ export default function ProductDetail() {
                   >
                     <OptimizedImage
                       src={image.url}
-                      alt={`${product.name} ${index + 1}`}
+                      alt={`${getLocalized(product.name)} ${index + 1}`}
                       className="w-full h-full"
                       objectFit="cover"
                     />
@@ -411,7 +412,7 @@ export default function ProductDetail() {
 
           {/* 右侧 - 产品信息 */}
           <div>
-            <h1 className="text-2xl md:text-4xl font-light mb-4 tracking-wide">{product.name}</h1>
+            <h1 className="text-2xl md:text-4xl font-light mb-4 tracking-wide">{getLocalized(product.name)}</h1>
 
             {/* 评分 */}
             {product.averageRating > 0 && (
@@ -446,7 +447,7 @@ export default function ProductDetail() {
             </div>
 
             {/* 简短描述 */}
-            <p className="text-muted-foreground mb-6 leading-relaxed">{product.shortDescription}</p>
+            <p className="text-muted-foreground mb-6 leading-relaxed">{getLocalized(product.shortDescription)}</p>
 
             {/* 开光信息 */}
             {product.blessingTemple && (
@@ -555,10 +556,10 @@ export default function ProductDetail() {
 
         {/* 详细信息标签页 */}
         <Tabs defaultValue="description" className="mb-8 md:mb-12">
-          <TabsList className={`grid w-full ${product.suitableFor || product.efficacy || product.wearingGuide ? 'grid-cols-4' : 'grid-cols-3'} bg-card h-auto`}>
+          <TabsList className={`grid w-full ${getLocalized(product.suitableFor) || getLocalized(product.efficacy) || getLocalized(product.wearingGuide) ? 'grid-cols-4' : 'grid-cols-3'} bg-card h-auto`}>
             <TabsTrigger value="description" className="text-sm md:text-base py-3">{lang.productDetails}</TabsTrigger>
             <TabsTrigger value="blessing" className="text-sm md:text-base py-3">{lang.blessingDescription}</TabsTrigger>
-            {(product.suitableFor || product.efficacy || product.wearingGuide) && (
+            {(getLocalized(product.suitableFor) || getLocalized(product.efficacy) || getLocalized(product.wearingGuide)) && (
               <TabsTrigger value="efficacy" className="text-sm md:text-base py-3">{lang.efficacyDescription}</TabsTrigger>
             )}
             <TabsTrigger value="reviews" className="text-sm md:text-base py-3">{lang.customerReviews} ({totalReviewCount.toLocaleString()})</TabsTrigger>
@@ -569,7 +570,7 @@ export default function ProductDetail() {
               <CardContent className="p-4 md:p-6">
                 <div className="prose prose-invert max-w-none">
                   <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
-                    {product.description}
+                    {getLocalized(product.description)}
                   </div>
                 </div>
               </CardContent>
@@ -581,50 +582,50 @@ export default function ProductDetail() {
               <CardContent className="p-4 md:p-6">
                 <div className="prose prose-invert max-w-none">
                   <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
-                    {product.blessingDescription || t('product_detail.blessing_default')}
+                    {getLocalized(product.blessingDescription) || t('product_detail.blessing_default')}
                   </div>
                 </div>
               </CardContent>
             </Card>
           </TabsContent>
 
-          {(product.suitableFor || product.efficacy || product.wearingGuide) && (
+          {(getLocalized(product.suitableFor) || getLocalized(product.efficacy) || getLocalized(product.wearingGuide)) && (
             <TabsContent value="efficacy" className="mt-6">
               <Card className="bg-card">
                 <CardContent className="p-4 md:p-6">
                   <div className="space-y-6">
-                    {product.suitableFor && (
+                    {getLocalized(product.suitableFor) && (
                       <div>
                         <h3 className="text-lg font-semibold mb-3 flex items-center gap-2">
                           <Shield className="w-5 h-5 text-accent" />
                           {lang.suitableFor}
                         </h3>
                         <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
-                          {product.suitableFor}
+                          {getLocalized(product.suitableFor)}
                         </div>
                       </div>
                     )}
                     
-                    {product.efficacy && (
+                    {getLocalized(product.efficacy) && (
                       <div>
                         <h3 className="text-lg font-medium mb-3 text-accent flex items-center gap-2">
                           <Sparkles className="w-5 h-5" />
                           {lang.efficacy}
                         </h3>
                         <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
-                          {product.efficacy}
+                          {getLocalized(product.efficacy)}
                         </div>
                       </div>
                     )}
                     
-                    {product.wearingGuide && (
+                    {getLocalized(product.wearingGuide) && (
                       <div>
                         <h3 className="text-lg font-medium mb-3 text-accent flex items-center gap-2">
                           <Info className="w-5 h-5" />
                           {lang.wearingGuide}
                         </h3>
                         <div className="text-muted-foreground leading-relaxed whitespace-pre-wrap font-light text-base">
-                          {product.wearingGuide}
+                          {getLocalized(product.wearingGuide)}
                         </div>
                       </div>
                     )}

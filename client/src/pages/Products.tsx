@@ -9,6 +9,7 @@ import { Search, Sparkles, SlidersHorizontal } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
+import { getLocalized } from "@/lib/localized";
 
 export default function Products() {
   const { t } = useTranslation();
@@ -174,7 +175,7 @@ export default function Products() {
                       <div className="w-full h-full group-hover:scale-110 transition-transform duration-500">
                         <OptimizedImage
                           src={product.images[0].url}
-                          alt={product.name}
+                          alt={getLocalized(product.name)}
                           className="w-full h-full"
                           objectFit="cover"
                         />
@@ -197,10 +198,10 @@ export default function Products() {
                   </div>
                   <CardContent className="p-3 md:p-4">
                     <h3 className="text-sm md:text-base font-medium mb-1 md:mb-2 group-hover:text-accent transition-colors line-clamp-1">
-                      {product.name}
+                      {getLocalized(product.name)}
                     </h3>
                     <p className="text-xs md:text-sm text-muted-foreground mb-2 md:mb-3 line-clamp-2">
-                      {product.shortDescription}
+                      {getLocalized(product.shortDescription)}
                     </p>
                     <div className="flex items-center justify-between">
                       <div>

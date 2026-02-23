@@ -12,6 +12,7 @@ import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Loader2, ArrowLeft } from "lucide-react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { getLocalized } from "@/lib/localized";
 
 export default function Checkout() {
   const { t } = useTranslation();
@@ -175,7 +176,7 @@ export default function Checkout() {
             },
           },
           items: cartItems.map((item: any) => ({
-            name: item.product.name,
+            name: getLocalized(item.product.name),
             quantity: item.quantity.toString(),
             unit_amount: {
               currency_code: "USD",
@@ -419,12 +420,12 @@ export default function Checkout() {
                         {item.product.images?.[0] && (
                           <img
                             src={item.product.images[0].url}
-                            alt={item.product.name}
+                            alt={getLocalized(item.product.name)}
                             className="w-16 h-16 rounded object-cover"
                           />
                         )}
                         <div className="flex-1">
-                          <p className="text-white text-sm font-medium">{item.product.name}</p>
+                          <p className="text-white text-sm font-medium">{getLocalized(item.product.name)}</p>
                           <p className="text-slate-400 text-sm">{t('checkout.quantity_label')}: {item.quantity}</p>
                           <p className="text-[oklch(82%_0.18_85)] text-sm font-semibold">
                             ${(parseFloat(item.product.salePrice || item.product.regularPrice) * item.quantity).toFixed(2)}

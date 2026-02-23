@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import {
+import { getLocalized } from "@/lib/localized";
   Select,
   SelectContent,
   SelectItem,
@@ -151,7 +152,7 @@ export default function AdminOrderDetail() {
                     {item.product?.images?.[0] && (
                       <img
                         src={item.product.images[0].url}
-                        alt={item.product.name}
+                        alt={getLocalized(item.product.name)}
                         className="w-20 h-20 object-cover rounded"
                       />
                     )}
