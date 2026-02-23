@@ -27,6 +27,9 @@ import {
   BarChart3,
   Truck,
   Star,
+  MessageSquare,
+  FileText,
+  Headphones,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -107,6 +110,16 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       icon: BarChart3,
       label: "每日数据",
       path: "/admin/daily-report",
+    },
+    {
+      icon: MessageSquare,
+      label: "评价管理",
+      path: "/admin/reviews",
+    },
+    {
+      icon: FileText,
+      label: "能量报告",
+      path: "/admin/destiny-reports",
     },
     {
       icon: Settings,

@@ -895,10 +895,19 @@ export const appRouter = router({
     // 优惠券管理
     coupons: router({
       // 获取所有优惠券
-      listAll: adminProcedure.query(async () => {
-        // TODO: 实现优惠券列表查询
-        return [];
-      }),
+      listAll: adminProcedure
+        .input(
+          z.object({
+            isActive: z.boolean().optional(),
+            limit: z.number().min(1).max(100).default(50),
+            offset: z.number().min(0).default(0),
+          }).optional()
+        )
+        .query(async ({ input }) => {
+          const coupons = await db.getAllCouponsForAdmin(input);
+          const total = await db.getCouponCount();
+          return { coupons, total };
+        }),
 
       // 创建优惠券
       create: adminProcedure
@@ -909,14 +918,63 @@ export const appRouter = router({
             discountType: z.enum(["percentage", "fixed", "buy_x_get_y"]),
             discountValue: z.number(),
             minPurchase: z.number().optional(),
+            maxDiscount: z.number().optional(),
             usageLimit: z.number().optional(),
+            perUserLimit: z.number().optional(),
             startDate: z.date().optional(),
             endDate: z.date().optional(),
           })
         )
-        .mutation(async () => {
-          // TODO: 实现优惠券创建
+        .mutation(async ({ input }) => {
+          await db.createCoupon({
+            ...input,
+            discountValue: String(input.discountValue),
+            minPurchase: input.minPurchase ? String(input.minPurchase) : undefined,
+            maxDiscount: input.maxDiscount ? String(input.maxDiscount) : undefined,
+          });
           return { success: true };
+        }),
+
+      // 更新优惠券
+      update: adminProcedure
+        .input(
+          z.object({
+            couponId: z.number(),
+            description: z.string().optional(),
+            discountValue: z.number().optional(),
+            minPurchase: z.number().optional(),
+            maxDiscount: z.number().optional(),
+            usageLimit: z.number().optional(),
+            perUserLimit: z.number().optional(),
+            startDate: z.date().optional(),
+            endDate: z.date().optional(),
+            isActive: z.boolean().optional(),
+          })
+        )
+        .mutation(async ({ input }) => {
+          const { couponId, ...data } = input;
+          await db.updateCoupon(couponId, {
+            ...data,
+            discountValue: data.discountValue ? String(data.discountValue) : undefined,
+            minPurchase: data.minPurchase ? String(data.minPurchase) : undefined,
+            maxDiscount: data.maxDiscount ? String(data.maxDiscount) : undefined,
+          });
+          return { success: true };
+        }),
+
+      // 切换优惠券状态
+      toggleActive: adminProcedure
+        .input(z.object({ couponId: z.number(), isActive: z.boolean() }))
+        .mutation(async ({ input }) => {
+          await db.toggleCouponActive(input.couponId, input.isActive);
+          return { success: true };
+        }),
+
+      // 获取优惠券使用记录
+      getUsages: adminProcedure
+        .input(z.object({ couponId: z.number() }))
+        .query(async ({ input }) => {
+          return db.getCouponUsages(input.couponId);
         }),
     }),
 
@@ -1104,6 +1162,78 @@ export const appRouter = router({
           });
         }
         return days;
+      }),
+    }),
+
+    // 用户管理
+    customers: router({
+      // 获取所有用户
+      listAll: adminProcedure
+        .input(
+          z.object({
+            search: z.string().optional(),
+            role: z.enum(["user", "admin"]).optional(),
+            limit: z.number().min(1).max(100).default(50),
+            offset: z.number().min(0).default(0),
+          }).optional()
+        )
+        .query(async ({ input }) => {
+          const users = await db.getAllUsersForAdmin(input);
+          const total = await db.getUserCount(input?.role);
+          return { users, total };
+        }),
+
+      // 获取用户详情
+      getById: adminProcedure
+        .input(z.object({ userId: z.number() }))
+        .query(async ({ input }) => {
+          const user = await db.getUserById(input.userId);
+          if (!user) throw new TRPCError({ code: "NOT_FOUND", message: "用户不存在" });
+          // 获取用户的订单和地址
+          const userOrders = await db.getUserOrders(user.id);
+          const userAddresses = await db.getUserAddresses(user.id);
+          return { ...user, orders: userOrders, addresses: userAddresses };
+        }),
+
+      // 修改用户角色
+      updateRole: adminProcedure
+        .input(z.object({ userId: z.number(), role: z.enum(["user", "admin"]) }))
+        .mutation(async ({ input }) => {
+          await db.updateUserRole(input.userId, input.role);
+          return { success: true };
+        }),
+    }),
+
+    // 能量报告管理
+    destinyReports: router({
+      // 获取报告列表
+      listAll: adminProcedure
+        .input(
+          z.object({
+            status: z.string().optional(),
+            search: z.string().optional(),
+            limit: z.number().min(1).max(100).default(50),
+            offset: z.number().min(0).default(0),
+          }).optional()
+        )
+        .query(async ({ input }) => {
+          const reports = await db.getDestinyReportsForAdmin(input);
+          const total = await db.getDestinyReportCount(input?.status);
+          return { reports, total };
+        }),
+
+      // 获取报告详情
+      getById: adminProcedure
+        .input(z.object({ reportId: z.number() }))
+        .query(async ({ input }) => {
+          const report = await db.getDestinyReportDetail(input.reportId);
+          if (!report) throw new TRPCError({ code: "NOT_FOUND", message: "报告不存在" });
+          return report;
+        }),
+
+      // 获取报告统计
+      getStats: adminProcedure.query(async () => {
+        return db.getDestinyReportStats();
       }),
     }),
   }),

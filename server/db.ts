@@ -1,4 +1,4 @@
-import { eq, desc, and, gte, lte, like, inArray, sql } from "drizzle-orm";
+import { eq, desc, and, or, gte, lte, like, inArray, sql } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import {
   InsertUser,
@@ -1453,4 +1453,263 @@ export async function getDailyShopStats(startOfDay: Date, endOfDay: Date) {
   const serviceBookings = bookingsResult[0]?.count || 0;
 
   return { newOrders, revenue, newUsers, paidOrders, pendingOrders, serviceBookings };
+}
+
+// ============= 管理后台 - 用户管理 =============
+
+export async function getAllUsersForAdmin(options?: {
+  search?: string;
+  role?: "user" | "admin";
+  limit?: number;
+  offset?: number;
+}) {
+  const db = await getDb();
+  if (!db) return [];
+
+  const conditions = [];
+  if (options?.role) {
+    conditions.push(eq(users.role, options.role));
+  }
+  if (options?.search) {
+    conditions.push(
+      or(
+        like(users.name, `%${options.search}%`),
+        like(users.email, `%${options.search}%`)
+      )!
+    );
+  }
+
+  const query = db
+    .select()
+    .from(users)
+    .orderBy(desc(users.createdAt))
+    .limit(options?.limit || 50)
+    .offset(options?.offset || 0);
+
+  if (conditions.length > 0) {
+    return query.where(and(...conditions));
+  }
+  return query;
+}
+
+export async function getUserCount(role?: "user" | "admin") {
+  const db = await getDb();
+  if (!db) return 0;
+
+  const conditions = [];
+  if (role) {
+    conditions.push(eq(users.role, role));
+  }
+
+  const result = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(users)
+    .where(conditions.length > 0 ? and(...conditions) : undefined);
+
+  return result[0]?.count || 0;
+}
+
+export async function updateUserRole(userId: number, role: "user" | "admin") {
+  const db = await getDb();
+  if (!db) return;
+  await db.update(users).set({ role }).where(eq(users.id, userId));
+}
+
+// ============= 管理后台 - 优惠券管理 =============
+
+export async function getAllCouponsForAdmin(options?: {
+  isActive?: boolean;
+  limit?: number;
+  offset?: number;
+}) {
+  const db = await getDb();
+  if (!db) return [];
+
+  const conditions = [];
+  if (options?.isActive !== undefined) {
+    conditions.push(eq(coupons.isActive, options.isActive));
+  }
+
+  const query = db
+    .select()
+    .from(coupons)
+    .orderBy(desc(coupons.createdAt))
+    .limit(options?.limit || 50)
+    .offset(options?.offset || 0);
+
+  if (conditions.length > 0) {
+    return query.where(and(...conditions));
+  }
+  return query;
+}
+
+export async function getCouponCount() {
+  const db = await getDb();
+  if (!db) return 0;
+  const result = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(coupons);
+  return result[0]?.count || 0;
+}
+
+export async function createCoupon(data: {
+  code: string;
+  description?: string;
+  discountType: "percentage" | "fixed" | "buy_x_get_y";
+  discountValue: string;
+  minPurchase?: string;
+  maxDiscount?: string;
+  usageLimit?: number;
+  perUserLimit?: number;
+  startDate?: Date;
+  endDate?: Date;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+
+  await db.insert(coupons).values({
+    code: data.code,
+    description: data.description,
+    discountType: data.discountType,
+    discountValue: data.discountValue,
+    minPurchase: data.minPurchase,
+    maxDiscount: data.maxDiscount,
+    usageLimit: data.usageLimit,
+    perUserLimit: data.perUserLimit,
+    startDate: data.startDate,
+    endDate: data.endDate,
+    isActive: true,
+  });
+}
+
+export async function updateCoupon(couponId: number, data: {
+  description?: string;
+  discountValue?: string;
+  minPurchase?: string;
+  maxDiscount?: string;
+  usageLimit?: number;
+  perUserLimit?: number;
+  startDate?: Date;
+  endDate?: Date;
+  isActive?: boolean;
+}) {
+  const db = await getDb();
+  if (!db) return;
+  await db.update(coupons).set(data).where(eq(coupons.id, couponId));
+}
+
+export async function toggleCouponActive(couponId: number, isActive: boolean) {
+  const db = await getDb();
+  if (!db) return;
+  await db.update(coupons).set({ isActive }).where(eq(coupons.id, couponId));
+}
+
+export async function getCouponUsages(couponId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  return db
+    .select({
+      id: couponUsages.id,
+      userId: couponUsages.userId,
+      orderId: couponUsages.orderId,
+      discountAmount: couponUsages.discountAmount,
+      createdAt: couponUsages.createdAt,
+      userName: users.name,
+      userEmail: users.email,
+    })
+    .from(couponUsages)
+    .leftJoin(users, eq(couponUsages.userId, users.id))
+    .where(eq(couponUsages.couponId, couponId))
+    .orderBy(desc(couponUsages.createdAt));
+}
+
+// ============= 管理后台 - 能量报告管理 =============
+
+export async function getDestinyReportsForAdmin(options?: {
+  status?: string;
+  search?: string;
+  limit?: number;
+  offset?: number;
+}) {
+  const db = await getDb();
+  if (!db) return [];
+
+  // destiny_reports 表在同一个数据库中，直接用原生SQL查询
+  const mysql2 = await import('mysql2/promise');
+  const conn = await mysql2.createConnection(process.env.DATABASE_URL!);
+  try {
+    let query = 'SELECT id, userId, email, name, birthDate, birthTime, birthLocation, status, segment1Status, segment1RetryCount, segment2Status, segment2RetryCount, segment3Status, segment3RetryCount, segment4Status, segment4RetryCount, segment5Status, segment5RetryCount, integrityCheckPassed, reportContentPath, deliveredAt, followUpEmailSentAt, createdAt, updatedAt FROM destiny_reports';
+    const params: any[] = [];
+    const conditions: string[] = [];
+
+    if (options?.status) {
+      conditions.push('status = ?');
+      params.push(options.status);
+    }
+    if (options?.search) {
+      conditions.push('(email LIKE ? OR name LIKE ?)');
+      params.push(`%${options.search}%`, `%${options.search}%`);
+    }
+
+    if (conditions.length > 0) {
+      query += ' WHERE ' + conditions.join(' AND ');
+    }
+    query += ' ORDER BY createdAt DESC';
+    query += ` LIMIT ${options?.limit || 50} OFFSET ${options?.offset || 0}`;
+
+    const [rows] = await conn.query(query, params);
+    return rows;
+  } finally {
+    await conn.end();
+  }
+}
+
+export async function getDestinyReportCount(status?: string) {
+  const mysql2 = await import('mysql2/promise');
+  const conn = await mysql2.createConnection(process.env.DATABASE_URL!);
+  try {
+    let query = 'SELECT COUNT(*) as cnt FROM destiny_reports';
+    const params: any[] = [];
+    if (status) {
+      query += ' WHERE status = ?';
+      params.push(status);
+    }
+    const [rows] = await conn.query(query, params) as any;
+    return rows[0]?.cnt || 0;
+  } finally {
+    await conn.end();
+  }
+}
+
+export async function getDestinyReportStats() {
+  const mysql2 = await import('mysql2/promise');
+  const conn = await mysql2.createConnection(process.env.DATABASE_URL!);
+  try {
+    const [statusRows] = await conn.query('SELECT status, COUNT(*) as cnt FROM destiny_reports GROUP BY status') as any;
+    const statusCounts: Record<string, number> = {};
+    statusRows.forEach((r: any) => { statusCounts[r.status] = r.cnt; });
+
+    const [totalRows] = await conn.query('SELECT COUNT(*) as cnt FROM destiny_reports') as any;
+    const total = totalRows[0]?.cnt || 0;
+
+    // 今日新增
+    const today = new Date().toISOString().split('T')[0];
+    const [todayRows] = await conn.query('SELECT COUNT(*) as cnt FROM destiny_reports WHERE DATE(createdAt) = ?', [today]) as any;
+    const todayCount = todayRows[0]?.cnt || 0;
+
+    return { total, todayCount, statusCounts };
+  } finally {
+    await conn.end();
+  }
+}
+
+export async function getDestinyReportDetail(reportId: number) {
+  const mysql2 = await import('mysql2/promise');
+  const conn = await mysql2.createConnection(process.env.DATABASE_URL!);
+  try {
+    const [rows] = await conn.query('SELECT * FROM destiny_reports WHERE id = ?', [reportId]) as any;
+    return rows[0] || null;
+  } finally {
+    await conn.end();
+  }
 }

@@ -26,6 +26,10 @@ import ServiceOrders from "./pages/admin/ServiceOrders";
 import BatchShipmentUpload from "./pages/admin/BatchShipmentUpload";
 import SystemMonitor from "./pages/admin/SystemMonitor";
 import DailyReport from "./pages/admin/DailyReport";
+import AdminCustomers from "./pages/admin/Customers";
+import AdminCoupons from "./pages/admin/Coupons";
+import AdminReviews from "./pages/admin/Reviews";
+import AdminDestinyReports from "./pages/admin/DestinyReports";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -52,6 +56,10 @@ function Router() {
       <Route path={"/admin/batch-shipment"} component={BatchShipmentUpload} />
       <Route path={"/admin/system-monitor"} component={SystemMonitor} />
       <Route path={"/admin/daily-report"} component={DailyReport} />
+      <Route path={"/admin/customers"} component={AdminCustomers} />
+      <Route path={"/admin/coupons"} component={AdminCoupons} />
+      <Route path={"/admin/reviews"} component={AdminReviews} />
+      <Route path={"/admin/destiny-reports"} component={AdminDestinyReports} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
