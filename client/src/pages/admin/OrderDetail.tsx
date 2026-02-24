@@ -6,17 +6,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { getLocalized } from "@/lib/localized";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { trpc } from "@/lib/trpc";
-import { ArrowLeft, Package, MapPin, CreditCard } from "lucide-react";
+import {
+  ArrowLeft,
+  Package,
+  MapPin,
+  CreditCard,
+  Banknote,
+  CheckCircle2,
+  AlertTriangle,
+  Clock,
+} from "lucide-react";
 import { toast } from "sonner";
 
 export default function AdminOrderDetail() {
@@ -26,6 +28,7 @@ export default function AdminOrderDetail() {
 
   const [trackingNumber, setTrackingNumber] = useState("");
   const [shippingCarrier, setShippingCarrier] = useState("");
+  const [transactionId, setTransactionId] = useState("");
 
   // 获取订单详情
   const { data: order, isLoading, refetch } = trpc.admin.orders.getById.useQuery({ orderId });
@@ -54,8 +57,20 @@ export default function AdminOrderDetail() {
     },
   });
 
+  // 确认线下付款
+  const confirmPaymentMutation = trpc.orders.confirmOfflinePayment.useMutation({
+    onSuccess: () => {
+      toast.success("付款已确认！系统将自动处理后续流程。");
+      setTransactionId("");
+      refetch();
+    },
+    onError: (error: any) => {
+      toast.error("确认失败: " + (error.message || "未知错误"));
+    },
+  });
+
   const handleUpdateStatus = (status: "pending" | "processing" | "shipped" | "delivered" | "cancelled") => {
-    if (confirm(`确定要将订单状态更新为“${getStatusLabel(status)}”吗?`)) {
+    if (confirm(`确定要将订单状态更新为"${getStatusLabel(status)}"吗?`)) {
       updateStatusMutation.mutate({ orderId, status });
     }
   };
@@ -69,6 +84,14 @@ export default function AdminOrderDetail() {
       orderId,
       trackingNumber,
       shippingCarrier,
+    });
+  };
+
+  const handleConfirmPayment = () => {
+    if (!confirm("确认已收到该订单的付款？确认后系统将自动处理订单。")) return;
+    confirmPaymentMutation.mutate({
+      orderId,
+      paymentId: transactionId || undefined,
     });
   };
 
@@ -95,6 +118,21 @@ export default function AdminOrderDetail() {
     return <Badge variant={config.variant} className={config.color}>{config.label}</Badge>;
   };
 
+  const getPaymentStatusBadge = (status: string) => {
+    switch (status) {
+      case "paid":
+        return <Badge className="bg-green-500/20 text-green-400 border-green-500/30">已付款</Badge>;
+      case "pending":
+        return <Badge className="bg-yellow-500/20 text-yellow-400 border-yellow-500/30">待付款</Badge>;
+      case "failed":
+        return <Badge className="bg-red-500/20 text-red-400 border-red-500/30">付款失败</Badge>;
+      case "refunded":
+        return <Badge className="bg-purple-500/20 text-purple-400 border-purple-500/30">已退款</Badge>;
+      default:
+        return <Badge className="bg-slate-500/20 text-slate-400">{status}</Badge>;
+    }
+  };
+
   if (isLoading) {
     return (
       <AdminLayout>
@@ -116,6 +154,10 @@ export default function AdminOrderDetail() {
     );
   }
 
+  const isOfflinePayment = order.paymentMethod === "bank_transfer" || order.paymentMethod === "alipay";
+  const isPaymentPending = order.paymentStatus === "pending";
+  const needsPaymentConfirmation = isOfflinePayment && isPaymentPending;
+
   return (
     <AdminLayout>
       <div className="space-y-6">
@@ -132,8 +174,68 @@ export default function AdminOrderDetail() {
               <p className="text-slate-400">订单号: {order.orderNumber}</p>
             </div>
           </div>
-          {getStatusBadge(order.status)}
+          <div className="flex items-center gap-2">
+            {getPaymentStatusBadge(order.paymentStatus)}
+            {getStatusBadge(order.status)}
+          </div>
         </div>
+
+        {/* ====== 待确认付款醒目提醒 ====== */}
+        {needsPaymentConfirmation && (
+          <div className="relative overflow-hidden rounded-xl border-2 border-red-500/50 bg-gradient-to-r from-red-950/80 via-red-900/60 to-orange-950/80 shadow-lg shadow-red-500/10">
+            <div className="absolute inset-0 bg-red-500/5 animate-pulse" />
+            <div className="relative p-5">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="relative">
+                  <div className="p-2 rounded-full bg-red-500/20 border border-red-500/30">
+                    <AlertTriangle className="w-6 h-6 text-red-400" />
+                  </div>
+                  <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500" />
+                  </span>
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-red-300">
+                    该订单需要确认付款
+                  </h3>
+                  <p className="text-sm text-red-400/80">
+                    客户通过{order.paymentMethod === "bank_transfer" ? "银行转账 (SWIFT/TT)" : "支付宝"}付款，请核实收款后确认
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-end gap-4">
+                <div className="flex-1 space-y-2">
+                  <Label htmlFor="txId" className="text-red-300/80 text-sm">
+                    转账流水号 <span className="text-slate-500">(选填)</span>
+                  </Label>
+                  <Input
+                    id="txId"
+                    placeholder="输入银行流水号或支付宝交易号..."
+                    value={transactionId}
+                    onChange={(e) => setTransactionId(e.target.value)}
+                    className="bg-slate-900/80 border-red-500/30 text-white placeholder:text-slate-500"
+                  />
+                </div>
+                <Button
+                  onClick={handleConfirmPayment}
+                  disabled={confirmPaymentMutation.isPending}
+                  className="bg-green-600 hover:bg-green-500 text-white px-6 h-10"
+                >
+                  {confirmPaymentMutation.isPending ? (
+                    "确认中..."
+                  ) : (
+                    <>
+                      <CheckCircle2 className="w-4 h-4 mr-2" />
+                      确认已收款
+                    </>
+                  )}
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* 左侧:订单商品和收货信息 */}
@@ -192,6 +294,48 @@ export default function AdminOrderDetail() {
 
           {/* 右侧:订单状态和物流信息 */}
           <div className="space-y-6">
+            {/* 支付信息 */}
+            <Card className={`bg-slate-900/50 border-slate-800 ${needsPaymentConfirmation ? "border-red-500/40" : ""}`}>
+              <CardHeader>
+                <CardTitle className="text-white flex items-center gap-2">
+                  {order.paymentMethod === "bank_transfer" ? (
+                    <Banknote className="w-5 h-5" />
+                  ) : (
+                    <CreditCard className="w-5 h-5" />
+                  )}
+                  支付信息
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">支付方式</span>
+                  <span className="text-white font-medium">
+                    {order.paymentMethod === "bank_transfer" ? "银行转账 (SWIFT/TT)" :
+                     order.paymentMethod === "alipay" ? "支付宝" :
+                     order.paymentMethod === "paypal" ? "PayPal" : order.paymentMethod}
+                  </span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-slate-400">付款状态</span>
+                  {getPaymentStatusBadge(order.paymentStatus)}
+                </div>
+                {order.paymentId && (
+                  <div className="flex justify-between items-center">
+                    <span className="text-slate-400">交易号</span>
+                    <span className="text-white font-mono text-sm">{order.paymentId}</span>
+                  </div>
+                )}
+                {needsPaymentConfirmation && (
+                  <div className="mt-2 p-2 rounded bg-yellow-950/30 border border-yellow-500/20">
+                    <div className="flex items-center gap-2 text-yellow-300 text-sm">
+                      <Clock className="w-4 h-4" />
+                      等待确认收款
+                    </div>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+
             {/* 订单金额 */}
             <Card className="bg-slate-900/50 border-slate-800">
               <CardHeader>

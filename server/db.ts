@@ -993,6 +993,37 @@ export async function getAdminStats() {
     .from(fortuneServiceReviews);
   const totalFortuneReviews = fortuneReviewsResult[0]?.count || 0;
 
+  // ====== 待确认线下付款统计 ======
+  const pendingOfflineResult = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(orders)
+    .where(
+      and(
+        eq(orders.paymentStatus, "pending"),
+        or(
+          eq(orders.paymentMethod, "bank_transfer"),
+          eq(orders.paymentMethod, "alipay")
+        )
+      )
+    );
+  const pendingOfflinePayments = pendingOfflineResult[0]?.count || 0;
+
+  // 获取待确认付款的订单列表（最新5条）
+  const pendingOfflineOrders = await db
+    .select()
+    .from(orders)
+    .where(
+      and(
+        eq(orders.paymentStatus, "pending"),
+        or(
+          eq(orders.paymentMethod, "bank_transfer"),
+          eq(orders.paymentMethod, "alipay")
+        )
+      )
+    )
+    .orderBy(desc(orders.createdAt))
+    .limit(5);
+
   // ====== 能量报告统计 ======
   let destinyReportStats = { total: 0, todayCount: 0, statusCounts: {} as Record<string, number> };
   try {
@@ -1023,6 +1054,9 @@ export async function getAdminStats() {
     },
     // 能量报告
     destinyStats: destinyReportStats,
+    // 待确认线下付款
+    pendingOfflinePayments,
+    pendingOfflineOrders,
   };
 }
 

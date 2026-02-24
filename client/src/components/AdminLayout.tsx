@@ -31,6 +31,7 @@ import {
   FileText,
   Headphones,
   AlertTriangle,
+  Banknote,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -121,7 +122,18 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   // 通过密码门后，如果未登录 admin 账号，显示提示信息
   const needsAdminLogin = !user || user.role !== "admin";
 
-  const menuItems = [
+  // 获取待确认付款数量
+  const { data: stats } = trpc.admin.getStats.useQuery(undefined, {
+    refetchInterval: 30000, // 每30秒自动刷新
+  });
+  const pendingPaymentCount = stats?.pendingOfflinePayments || 0;
+
+  const menuItems: Array<{
+    icon: any;
+    label: string;
+    path: string;
+    badge?: boolean;
+  }> = [
     {
       icon: LayoutDashboard,
       label: t("admin.dashboard"),
@@ -136,6 +148,12 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       icon: ShoppingCart,
       label: t("admin.orders"),
       path: "/wobifa888/orders",
+    },
+    {
+      icon: Banknote,
+      label: "待确认付款",
+      path: "/wobifa888/pending-payments",
+      badge: true,
     },
     {
       icon: Tag,
@@ -230,11 +248,32 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
                   className={`flex items-center gap-3 px-4 py-3 mx-2 rounded-lg transition-all ${
                     isActive
                       ? "bg-[oklch(82%_0.18_85)]/20 text-[oklch(82%_0.18_85)] shadow-lg shadow-[oklch(82%_0.18_85)]/20"
+                      : item.badge && pendingPaymentCount > 0
+                      ? "text-red-400 hover:bg-red-950/30 hover:text-red-300 bg-red-950/10"
                       : "text-slate-400 hover:bg-slate-800/50 hover:text-white"
                   }`}
                 >
-                  <Icon className="w-5 h-5 flex-shrink-0" />
-                  {sidebarOpen && <span className="font-medium">{item.label}</span>}
+                  <div className="relative">
+                    <Icon className="w-5 h-5 flex-shrink-0" />
+                    {item.badge && pendingPaymentCount > 0 && !sidebarOpen && (
+                      <span className="absolute -top-1.5 -right-1.5 flex h-4 w-4">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-4 w-4 bg-red-500 items-center justify-center text-[9px] text-white font-bold">
+                          {pendingPaymentCount}
+                        </span>
+                      </span>
+                    )}
+                  </div>
+                  {sidebarOpen && (
+                    <span className="font-medium flex-1 flex items-center justify-between">
+                      {item.label}
+                      {item.badge && pendingPaymentCount > 0 && (
+                        <span className="ml-2 inline-flex items-center justify-center h-5 min-w-[20px] px-1.5 text-[10px] font-bold rounded-full bg-red-500 text-white animate-pulse">
+                          {pendingPaymentCount}
+                        </span>
+                      )}
+                    </span>
+                  )}
                 </a>
               </Link>
             );

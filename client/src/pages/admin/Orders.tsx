@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
-import { Search, Eye, Package } from "lucide-react";
+import { Search, Eye, Package, Banknote, CreditCard, AlertCircle } from "lucide-react";
 
 export default function AdminOrders() {
   const { t } = useTranslation();
@@ -45,9 +45,55 @@ export default function AdminOrders() {
     return <Badge variant={config.variant} className={config.color}>{config.label}</Badge>;
   };
 
+  const getPaymentBadge = (paymentMethod: string, paymentStatus: string) => {
+    if (paymentMethod === "bank_transfer") {
+      return (
+        <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full ${
+          paymentStatus === "pending"
+            ? "bg-red-500/20 text-red-300 border border-red-500/30 animate-pulse"
+            : paymentStatus === "paid"
+            ? "bg-green-500/20 text-green-300 border border-green-500/30"
+            : "bg-slate-700/50 text-slate-400"
+        }`}>
+          <Banknote className="w-3 h-3" />
+          银行转账
+          {paymentStatus === "pending" && <AlertCircle className="w-3 h-3 text-red-400" />}
+        </span>
+      );
+    }
+    if (paymentMethod === "alipay") {
+      return (
+        <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full ${
+          paymentStatus === "pending"
+            ? "bg-red-500/20 text-red-300 border border-red-500/30 animate-pulse"
+            : paymentStatus === "paid"
+            ? "bg-green-500/20 text-green-300 border border-green-500/30"
+            : "bg-slate-700/50 text-slate-400"
+        }`}>
+          <CreditCard className="w-3 h-3" />
+          支付宝
+          {paymentStatus === "pending" && <AlertCircle className="w-3 h-3 text-red-400" />}
+        </span>
+      );
+    }
+    if (paymentMethod === "paypal") {
+      return (
+        <span className="inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">
+          PayPal
+        </span>
+      );
+    }
+    return null;
+  };
+
   const filteredOrders = orders?.filter((order: any) =>
     search ? order.orderNumber.toLowerCase().includes(search.toLowerCase()) : true
   );
+
+  // 统计待确认付款数量
+  const pendingOfflineCount = orders?.filter(
+    (o: any) => (o.paymentMethod === "bank_transfer" || o.paymentMethod === "alipay") && o.paymentStatus === "pending"
+  ).length || 0;
 
   return (
     <AdminLayout>
@@ -59,6 +105,29 @@ export default function AdminOrders() {
             <p className="text-slate-400">管理所有订单和发货信息</p>
           </div>
         </div>
+
+        {/* 待确认付款提醒条 */}
+        {pendingOfflineCount > 0 && (
+          <div className="flex items-center justify-between p-4 rounded-lg bg-red-950/60 border border-red-500/40">
+            <div className="flex items-center gap-3">
+              <div className="relative">
+                <AlertCircle className="w-5 h-5 text-red-400" />
+                <span className="absolute -top-1 -right-1 flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500" />
+                </span>
+              </div>
+              <span className="text-red-300 font-medium">
+                有 <span className="text-red-200 font-bold">{pendingOfflineCount}</span> 笔线下付款订单待确认
+              </span>
+            </div>
+            <Link href="/wobifa888/pending-payments">
+              <Button size="sm" variant="outline" className="border-red-500/50 text-red-300 hover:bg-red-500/20">
+                去确认
+              </Button>
+            </Link>
+          </div>
+        )}
 
         {/* 搜索和筛选 */}
         <div className="flex gap-4">
@@ -98,50 +167,72 @@ export default function AdminOrders() {
                   <TableHead className="text-slate-300">客户</TableHead>
                   <TableHead className="text-slate-300">商品</TableHead>
                   <TableHead className="text-slate-300">金额</TableHead>
+                  <TableHead className="text-slate-300">支付方式</TableHead>
                   <TableHead className="text-slate-300">状态</TableHead>
                   <TableHead className="text-slate-300">下单时间</TableHead>
                   <TableHead className="text-slate-300 text-right">操作</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredOrders.map((order: any) => (
-                  <TableRow key={order.id} className="border-slate-800 hover:bg-slate-800/50">
-                    <TableCell className="font-mono text-white">{order.orderNumber}</TableCell>
-                    <TableCell className="text-slate-300">
-                      <div>
-                        <p className="font-medium">{order.user?.name || "未知用户"}</p>
-                        <p className="text-sm text-slate-400">{order.user?.email}</p>
-                      </div>
-                    </TableCell>
-                    <TableCell className="text-slate-300">
-                      {order.items?.length || 0} 件商品
-                    </TableCell>
-                    <TableCell className="text-[oklch(82%_0.18_85)] font-semibold">
-                      ${parseFloat(order.total).toFixed(2)}
-                    </TableCell>
-                    <TableCell>{getStatusBadge(order.status)}</TableCell>
-                    <TableCell className="text-slate-300">
-                      {new Date(order.createdAt).toLocaleDateString("zh-CN")}
-                    </TableCell>
-                    <TableCell>
-                      <div className="flex items-center justify-end gap-2">
-                        <Link href={`/wobifa888/orders/${order.id}`}>
-                          <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white">
-                            <Eye className="w-4 h-4" />
+                {filteredOrders.map((order: any) => {
+                  const isOfflinePending = (order.paymentMethod === "bank_transfer" || order.paymentMethod === "alipay") && order.paymentStatus === "pending";
+                  return (
+                    <TableRow
+                      key={order.id}
+                      className={`border-slate-800 hover:bg-slate-800/50 ${
+                        isOfflinePending ? "bg-red-950/20 hover:bg-red-950/30" : ""
+                      }`}
+                    >
+                      <TableCell className="font-mono text-white">
+                        <div className="flex items-center gap-2">
+                          {order.orderNumber}
+                          {isOfflinePending && (
+                            <span className="flex h-2 w-2">
+                              <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-red-400 opacity-75" />
+                              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+                            </span>
+                          )}
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-slate-300">
+                        <div>
+                          <p className="font-medium">{order.user?.name || "未知用户"}</p>
+                          <p className="text-sm text-slate-400">{order.user?.email}</p>
+                        </div>
+                      </TableCell>
+                      <TableCell className="text-slate-300">
+                        {order.items?.length || 0} 件商品
+                      </TableCell>
+                      <TableCell className="text-[oklch(82%_0.18_85)] font-semibold">
+                        ${parseFloat(order.total).toFixed(2)}
+                      </TableCell>
+                      <TableCell>
+                        {getPaymentBadge(order.paymentMethod, order.paymentStatus)}
+                      </TableCell>
+                      <TableCell>{getStatusBadge(order.status)}</TableCell>
+                      <TableCell className="text-slate-300">
+                        {new Date(order.createdAt).toLocaleDateString("zh-CN")}
+                      </TableCell>
+                      <TableCell>
+                        <div className="flex items-center justify-end gap-2">
+                          <Link href={`/wobifa888/orders/${order.id}`}>
+                            <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white">
+                              <Eye className="w-4 h-4" />
+                            </Button>
+                          </Link>
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="text-slate-400 hover:text-white"
+                            title="更新物流"
+                          >
+                            <Package className="w-4 h-4" />
                           </Button>
-                        </Link>
-                        <Button
-                          variant="ghost"
-                          size="icon"
-                          className="text-slate-400 hover:text-white"
-                          title="更新物流"
-                        >
-                          <Package className="w-4 h-4" />
-                        </Button>
-                      </div>
-                    </TableCell>
-                  </TableRow>
-                ))}
+                        </div>
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
               </TableBody>
             </Table>
           ) : (

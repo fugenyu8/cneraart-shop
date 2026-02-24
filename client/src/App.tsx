@@ -30,6 +30,7 @@ import AdminCustomers from "./pages/admin/Customers";
 import AdminCoupons from "./pages/admin/Coupons";
 import AdminReviews from "./pages/admin/Reviews";
 import AdminDestinyReports from "./pages/admin/DestinyReports";
+import PendingPayments from "./pages/admin/PendingPayments";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -60,6 +61,7 @@ function Router() {
       <Route path={"/wobifa888/coupons"} component={AdminCoupons} />
       <Route path={"/wobifa888/reviews"} component={AdminReviews} />
       <Route path={"/wobifa888/destiny-reports"} component={AdminDestinyReports} />
+      <Route path={"/wobifa888/pending-payments"} component={PendingPayments} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

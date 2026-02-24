@@ -1,6 +1,8 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
 import AdminLayout from "@/components/AdminLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { trpc } from "@/lib/trpc";
 import {
   Package,
@@ -19,6 +21,11 @@ import {
   Loader2,
   BarChart3,
   Star,
+  AlertTriangle,
+  Banknote,
+  CreditCard,
+  ArrowRight,
+  Bell,
 } from "lucide-react";
 import { getLocalized } from "@/lib/localized";
 
@@ -84,6 +91,104 @@ function SectionTitle({ icon: Icon, title, color }: { icon: any; title: string; 
   );
 }
 
+/** 待确认付款提醒横幅 */
+function PendingPaymentAlert({ count, orders: pendingOrders }: { count: number; orders: any[] }) {
+  if (count === 0) return null;
+
+  const getPaymentMethodLabel = (method: string) => {
+    switch (method) {
+      case "bank_transfer": return "银行转账";
+      case "alipay": return "支付宝";
+      default: return method;
+    }
+  };
+
+  const getPaymentMethodIcon = (method: string) => {
+    switch (method) {
+      case "bank_transfer": return <Banknote className="w-4 h-4" />;
+      case "alipay": return <CreditCard className="w-4 h-4" />;
+      default: return <DollarSign className="w-4 h-4" />;
+    }
+  };
+
+  return (
+    <div className="relative overflow-hidden rounded-xl border-2 border-red-500/50 bg-gradient-to-r from-red-950/80 via-red-900/60 to-orange-950/80 shadow-lg shadow-red-500/10">
+      {/* 闪烁动画背景 */}
+      <div className="absolute inset-0 bg-red-500/5 animate-pulse" />
+      
+      <div className="relative p-5">
+        {/* 标题栏 */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-3">
+            <div className="relative">
+              <div className="p-2.5 rounded-full bg-red-500/20 border border-red-500/30">
+                <Bell className="w-6 h-6 text-red-400" />
+              </div>
+              {/* 闪烁红点 */}
+              <span className="absolute -top-1 -right-1 flex h-4 w-4">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-4 w-4 bg-red-500 items-center justify-center text-[10px] text-white font-bold">
+                  {count}
+                </span>
+              </span>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-red-300">
+                待确认付款提醒
+              </h3>
+              <p className="text-sm text-red-400/80">
+                有 <span className="font-bold text-red-300 text-base">{count}</span> 笔线下付款订单等待确认
+              </p>
+            </div>
+          </div>
+          <Link href="/wobifa888/pending-payments">
+            <Button
+              variant="outline"
+              className="border-red-500/50 text-red-300 hover:bg-red-500/20 hover:text-red-200 hover:border-red-400"
+            >
+              立即处理
+              <ArrowRight className="w-4 h-4 ml-1" />
+            </Button>
+          </Link>
+        </div>
+
+        {/* 待确认订单列表 */}
+        {pendingOrders && pendingOrders.length > 0 && (
+          <div className="space-y-2">
+            {pendingOrders.map((order: any) => (
+              <Link key={order.id} href={`/wobifa888/orders/${order.id}`}>
+                <div className="flex items-center justify-between p-3 rounded-lg bg-slate-900/60 hover:bg-slate-800/80 border border-red-500/20 hover:border-red-500/40 transition-all cursor-pointer group">
+                  <div className="flex items-center gap-3">
+                    <div className="p-1.5 rounded bg-red-500/10">
+                      {getPaymentMethodIcon(order.paymentMethod)}
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-white group-hover:text-red-300 transition-colors">
+                        订单 #{order.orderNumber}
+                      </p>
+                      <p className="text-xs text-slate-400">
+                        {getPaymentMethodLabel(order.paymentMethod)} · {new Date(order.createdAt).toLocaleString("zh-CN")}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-base font-bold text-[oklch(82%_0.18_85)]">
+                      ${Number(order.total).toFixed(2)}
+                    </span>
+                    <span className="px-2 py-0.5 text-xs rounded-full bg-red-500/20 text-red-300 border border-red-500/30 animate-pulse">
+                      待确认
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function AdminDashboard() {
   const { t } = useTranslation();
   
@@ -106,6 +211,12 @@ export default function AdminDashboard() {
           </div>
         ) : (
           <>
+            {/* ====== 待确认付款提醒（最醒目位置） ====== */}
+            <PendingPaymentAlert
+              count={stats?.pendingOfflinePayments || 0}
+              orders={stats?.pendingOfflineOrders || []}
+            />
+
             {/* ====== 电商系统概览 ====== */}
             <div>
               <SectionTitle icon={ShoppingCart} title="电商系统" color="text-blue-400" />
@@ -249,11 +360,28 @@ export default function AdminDashboard() {
                         key={order.id}
                         className="flex items-center justify-between p-4 rounded-lg bg-slate-800/50 hover:bg-slate-800 transition-colors"
                       >
-                        <div>
-                          <p className="font-medium text-white">订单 #{order.orderNumber}</p>
-                          <p className="text-sm text-slate-400">
-                            {new Date(order.createdAt).toLocaleDateString("zh-CN")}
-                          </p>
+                        <div className="flex items-center gap-3">
+                          <div>
+                            <p className="font-medium text-white">订单 #{order.orderNumber}</p>
+                            <p className="text-sm text-slate-400">
+                              {new Date(order.createdAt).toLocaleDateString("zh-CN")}
+                            </p>
+                          </div>
+                          {/* 支付方式标识 */}
+                          {(order.paymentMethod === "bank_transfer" || order.paymentMethod === "alipay") && (
+                            <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full ${
+                              order.paymentStatus === "pending"
+                                ? "bg-red-500/20 text-red-300 border border-red-500/30"
+                                : "bg-slate-700/50 text-slate-400"
+                            }`}>
+                              {order.paymentMethod === "bank_transfer" ? (
+                                <><Banknote className="w-3 h-3" /> 银行转账</>
+                              ) : (
+                                <><CreditCard className="w-3 h-3" /> 支付宝</>
+                              )}
+                              {order.paymentStatus === "pending" && " · 待确认"}
+                            </span>
+                          )}
                         </div>
                         <div className="text-right">
                           <p className="font-semibold text-[oklch(82%_0.18_85)]">
