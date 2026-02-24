@@ -55,7 +55,7 @@ export default function Products() {
                 <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-secondary rounded-full flex items-center justify-center">
                   <Sparkles className="w-6 h-6 text-foreground" />
                 </div>
-                <h1 className="text-2xl font-bold gradient-text">{t("common.site_name")}</h1>
+                <h1 className="text-lg md:text-2xl font-bold gradient-text">{t("common.site_name")}</h1>
               </a>
             </Link>
             <div className="flex items-center gap-4">
@@ -162,7 +162,7 @@ export default function Products() {
         {isLoading ? (
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-6">
             {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-              <div key={i} className="product-card h-96 image-placeholder"></div>
+              <div key={i} className="product-card h-64 md:h-96 image-placeholder"></div>
             ))}
           </div>
         ) : products && products.length > 0 ? (
@@ -170,7 +170,7 @@ export default function Products() {
             {products.map((product) => (
               <Link key={product.id} href={`/products/${product.slug}`}>
                 <Card className="product-card cursor-pointer group h-full">
-                  <div className="relative h-56 overflow-hidden">
+                  <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
                     {product.images[0] ? (
                       <div className="w-full h-full group-hover:scale-110 transition-transform duration-500">
                         <OptimizedImage

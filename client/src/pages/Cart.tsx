@@ -115,7 +115,7 @@ export default function Cart() {
                 <div className="w-10 h-10 bg-gradient-to-br from-primary via-accent to-secondary rounded-full flex items-center justify-center">
                   <Sparkles className="w-6 h-6 text-foreground" />
                 </div>
-                <h1 className="text-2xl font-bold gradient-text">源・华渡</h1>
+                <h1 className="text-lg md:text-2xl font-bold gradient-text">{t('common.site_name')}</h1>
               </a>
             </Link>
             <div className="flex items-center gap-3">
@@ -155,7 +155,7 @@ export default function Cart() {
                     <CardContent className="p-4 md:p-6">
                       <div className="flex gap-3 md:gap-6 flex-col sm:flex-row">
                         {/* 产品图片 */}
-                        <div className="w-full sm:w-24 h-48 sm:h-24 rounded-lg overflow-hidden border border-border flex-shrink-0">
+                        <div className="w-full sm:w-24 h-32 sm:h-24 rounded-lg overflow-hidden border border-border flex-shrink-0">
                           {item.images[0] ? (
                             <img
                               src={item.images[0].url}

@@ -48,11 +48,11 @@ export default function FortuneServices() {
         <div className="container mx-auto flex items-center justify-between py-4">
           <Link href="/">
             <span className="flex items-center gap-2 cursor-pointer">
-              <span className="text-2xl">☯</span>
-              <span className="text-xl font-bold text-amber-400">源・华渡</span>
+              <span className="text-xl md:text-2xl">☧</span>
+              <span className="text-base md:text-xl font-bold text-amber-400">{t('common.site_name')}</span>
             </span>
           </Link>
-          <div className="flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6">
             <Link href="/products">
               <span className="text-amber-300 hover:text-amber-200 cursor-pointer">{t("nav.products")}</span>
             </Link>
@@ -65,18 +65,22 @@ export default function FortuneServices() {
             <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-200">📝 {t("common.report")}</a>
             <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer" className="text-amber-300 hover:text-amber-200">💬 {t("common.service")}</a>
           </div>
+          <div className="flex md:hidden items-center gap-3 text-xs">
+            <Link href="/products"><span className="text-amber-300">{t("nav.products")}</span></Link>
+            <Link href="/cart"><span className="text-amber-300">{t("nav.cart")}</span></Link>
+          </div>
         </div>
       </nav>
 
       {/* 页头 */}
-      <div className="container mx-auto py-20 text-center">
-        <div className="inline-block mb-6">
-          <div className="text-7xl mb-4">☯</div>
+<div className="container mx-auto py-10 md:py-20 text-center px-4">
+        <div className="inline-block mb-4 md:mb-6">
+          <div className="text-4xl md:text-7xl mb-2 md:mb-4">☧</div>
         </div>
-        <h1 className="mb-6 text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 drop-shadow-[0_0_30px_rgba(251,191,36,0.5)]">
+        <h1 className="mb-4 md:mb-6 text-3xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 drop-shadow-[0_0_30px_rgba(251,191,36,0.5)]">
           {t("fortuneServices.pageTitle")}
         </h1>
-        <p className="text-xl text-amber-200/90 max-w-3xl mx-auto leading-relaxed">
+        <p className="text-sm md:text-xl text-amber-200/90 max-w-3xl mx-auto leading-relaxed">
           {t("fortuneServices.pageSubtitle")}
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
@@ -101,10 +105,10 @@ export default function FortuneServices() {
             
             {/* 内容 */}
             <div className="relative z-10">
-              <div className="mb-6 text-center text-6xl drop-shadow-[0_0_20px_rgba(251,191,36,0.6)]">
+              <div className="mb-4 md:mb-6 text-center text-4xl md:text-6xl drop-shadow-[0_0_20px_rgba(251,191,36,0.6)]">
                 {service.icon}
               </div>
-              <h2 className="mb-3 text-center text-2xl font-bold text-amber-400">
+              <h2 className="mb-2 md:mb-3 text-center text-xl md:text-2xl font-bold text-amber-400">
                 {t(`fortuneServices.${service.id}Title`)}
               </h2>
               <p className="mb-6 text-center text-base text-amber-100/80 leading-relaxed">
@@ -145,7 +149,7 @@ export default function FortuneServices() {
       {/* 服务流程 */}
       <div className="border-t border-amber-900/30 bg-black/40 backdrop-blur-sm py-20">
         <div className="container mx-auto">
-          <h2 className="mb-4 text-center text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300">
+          <h2 className="mb-4 text-center text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-yellow-300">
             {t("fortuneServices.serviceProcess")}
           </h2>
           <div className="flex items-center justify-center gap-4 mb-16">
@@ -154,7 +158,7 @@ export default function FortuneServices() {
             <div className="h-px w-16 bg-gradient-to-l from-transparent to-amber-400/50"></div>
           </div>
           
-          <div className="grid gap-10 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-10">
             {[1, 2, 3, 4].map((step) => (
               <div key={step} className="text-center group">
                 <div className="mb-6 inline-flex h-20 w-20 items-center justify-center rounded-full border-3 border-amber-500 bg-gradient-to-br from-amber-900/50 to-black/50 text-3xl font-bold text-amber-300 shadow-lg shadow-amber-600/30 transition-all duration-300 group-hover:scale-110 group-hover:shadow-amber-400/50">
@@ -175,7 +179,7 @@ export default function FortuneServices() {
       {/* 信任保障 */}
       <div className="border-t border-amber-900/30 bg-gradient-to-b from-black/40 to-black/60 py-16">
         <div className="container mx-auto text-center">
-          <h3 className="text-3xl font-bold text-amber-400 mb-8">
+          <h3 className="text-2xl md:text-3xl font-bold text-amber-400 mb-6 md:mb-8">
             {t("fortuneServices.trustTitle")}
           </h3>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">

@@ -11,48 +11,21 @@ import { videos } from "@/config/videos";
 export default function Home() {
   const { t, i18n } = useTranslation();
   const { user } = useAuth();
-  // 产品查询已删除(用户要求删除NEW ARRIVALS/BEST SELLERS区域)
 
-  // 轮播图片列表(用户提供的35张五台山照片)
+  // 精选8张轮播图片（从35张中精选，减少加载量）
   const carouselImages = [
     "/wutai/carousel-01.jpg",
-    "/wutai/carousel-02.jpg",
-    "/wutai/carousel-03.jpg",
-    "/wutai/carousel-04.jpg",
     "/wutai/carousel-05.jpg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/sZZKTEnCtwYCDXUf.jpg",
-    "/wutai/carousel-07.jpg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/uLzmWkptPKJVjHvn.jpg",
     "/wutai/carousel-09.jpg",
-    "/wutai/carousel-10.jpg",
-    "/wutai/carousel-11.jpg",
-    "/wutai/carousel-12.jpg",
     "/wutai/carousel-13.jpg",
-    "/wutai/carousel-14.jpg",
-    "/wutai/carousel-15.jpg",
-    "/wutai/carousel-16.jpg",
-    "/wutai/carousel-17.jpg",
     "/wutai/carousel-18.jpg",
-    "/wutai/carousel-19.jpg",
-    "/wutai/carousel-20.jpg",
-    "/wutai/carousel-21.jpg",
     "/wutai/carousel-22.jpg",
-    "/wutai/carousel-23.jpg",
-    "/wutai/carousel-24.jpg",
-    "/wutai/carousel-25.jpg",
-    "/wutai/carousel-26.jpg",
     "/wutai/carousel-27.jpg",
-    "/wutai/carousel-28.jpg",
-    "/wutai/carousel-29.jpg",
-    "/wutai/carousel-30.jpg",
     "/wutai/carousel-31.jpg",
-    "/wutai/carousel-32.jpg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/pIrEJiFlrQAnEGWu.jpg",
-    "/wutai/carousel-34.jpg",
-    "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/IuolpyutsAQJwedV.jpg",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // 自动轮播(每5秒切换)
   useEffect(() => {
@@ -69,12 +42,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F3]">
-      {/* 顶部栏 - 参照service.cneraart.com */}
-      <div className="bg-[#8B0000] text-[#F5DEB3] py-2 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
+      {/* 顶部栏 - 移动端优化 */}
+      <div className="bg-[#8B0000] text-[#F5DEB3] py-2 px-3 md:px-4">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
           {/* 左侧:五台山背书 - 自动滚动 */}
-          <div className="flex-1 mr-4 overflow-hidden">
-            <div className="flex items-center gap-4 text-xs md:text-sm whitespace-nowrap animate-scroll">
+          <div className="flex-1 mr-2 overflow-hidden">
+            <div className="flex items-center gap-4 text-[10px] md:text-sm whitespace-nowrap animate-scroll">
               <span className="font-semibold">{t('topBar.wutaishan')}</span>
               <span>{t('topBar.credential1')}</span>
               <span>-</span>
@@ -91,8 +64,8 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 右侧:注册/登录/语言 */}
-          <div className="flex items-center gap-2 text-xs md:text-sm flex-shrink-0">
+          {/* 右侧:桌面端显示完整链接 */}
+          <div className="hidden md:flex items-center gap-2 text-xs md:text-sm flex-shrink-0">
             <a href={getLoginUrl()} className="hover:text-white transition-colors">
               {t('topBar.register')}
             </a>
@@ -112,10 +85,10 @@ export default function Home() {
             <select
               value={i18n.language}
               onChange={(e) => changeLanguage(e.target.value)}
-              className="bg-transparent border-none text-[#F5DEB3] hover:text-white cursor-pointer transition-colors focus:outline-none"
+              className="bg-transparent border-none text-[#F5DEB3] hover:text-white cursor-pointer transition-colors focus:outline-none text-sm"
             >
-              <option value="zh" className="bg-[#8B0000] text-[#F5DEB3]">中文</option>
               <option value="en" className="bg-[#8B0000] text-[#F5DEB3]">English</option>
+              <option value="zh" className="bg-[#8B0000] text-[#F5DEB3]">中文</option>
               <option value="de" className="bg-[#8B0000] text-[#F5DEB3]">Deutsch</option>
               <option value="fr" className="bg-[#8B0000] text-[#F5DEB3]">Français</option>
               <option value="es" className="bg-[#8B0000] text-[#F5DEB3]">Español</option>
@@ -133,12 +106,58 @@ export default function Home() {
               <option value="zh-Hant" className="bg-[#8B0000] text-[#F5DEB3]">繁體中文</option>
             </select>
           </div>
+
+          {/* 移动端:汉堡菜单 + 语言选择 */}
+          <div className="flex md:hidden items-center gap-2 flex-shrink-0">
+            <select
+              value={i18n.language}
+              onChange={(e) => changeLanguage(e.target.value)}
+              className="bg-transparent border border-[#F5DEB3]/30 text-[#F5DEB3] rounded px-1 py-0.5 text-[11px] focus:outline-none"
+            >
+              <option value="en" className="bg-[#8B0000]">EN</option>
+              <option value="zh" className="bg-[#8B0000]">中文</option>
+              <option value="de" className="bg-[#8B0000]">DE</option>
+              <option value="fr" className="bg-[#8B0000]">FR</option>
+              <option value="es" className="bg-[#8B0000]">ES</option>
+              <option value="ja" className="bg-[#8B0000]">日本語</option>
+              <option value="ko" className="bg-[#8B0000]">한국어</option>
+              <option value="zh-Hant" className="bg-[#8B0000]">繁體</option>
+            </select>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-[#F5DEB3] p-1"
+              aria-label="Menu"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {menuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
+
+        {/* 移动端下拉菜单 */}
+        {menuOpen && (
+          <div className="md:hidden border-t border-[#F5DEB3]/20 mt-2 pt-2 pb-1 space-y-2 text-xs">
+            <a href={getLoginUrl()} className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+              {t('topBar.register')} / {t('topBar.login')}
+            </a>
+            <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+              📝 {t('common.report')}
+            </a>
+            <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+              💬 {t('common.service')}
+            </a>
+          </div>
+        )}
       </div>
 
-      {/* Hero Section - 10张照片轮播 */}
+      {/* Hero Section - 移动端高度缩小 */}
       <section className="relative">
-        <div className="relative h-[500px] md:h-[600px] overflow-hidden">
+        <div className="relative h-[280px] sm:h-[380px] md:h-[500px] lg:h-[600px] overflow-hidden">
           {/* 轮播图片 */}
           {carouselImages.map((image, index) => (
             <div
@@ -159,26 +178,26 @@ export default function Home() {
           {/* 渐变遮罩 */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
 
-          {/* 文字叠加 */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-8">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-2xl" style={{ fontFamily: '"Playfair Display", "Noto Serif SC", serif' }}>
+          {/* 文字叠加 - 移动端字体缩小 */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 md:px-8">
+            <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 md:mb-4 tracking-wider drop-shadow-2xl" style={{ fontFamily: '"Playfair Display", "Noto Serif SC", serif' }}>
               {t('hero.title')}
             </h1>
-            <p className="text-base md:text-xl text-white/90 font-light drop-shadow-lg" style={{ fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
+            <p className="text-sm sm:text-base md:text-xl text-white/90 font-light drop-shadow-lg max-w-lg md:max-w-none" style={{ fontFamily: '"Noto Sans SC", system-ui, sans-serif' }}>
               {t('hero.subtitle')}
             </p>
           </div>
 
-          {/* 轮播指示器 */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2">
+          {/* 轮播指示器 - 移动端更小 */}
+          <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-1.5 md:gap-2">
             {carouselImages.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentImageIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all ${
+                className={`h-1.5 md:h-2 rounded-full transition-all ${
                   index === currentImageIndex
-                    ? "bg-white w-8"
-                    : "bg-white/50 hover:bg-white/75"
+                    ? "bg-white w-5 md:w-8"
+                    : "bg-white/50 hover:bg-white/75 w-1.5 md:w-2"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
@@ -187,32 +206,27 @@ export default function Home() {
         </div>
       </section>
 
-
-
-      {/* 服务卡片区 */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+      {/* 服务卡片区 - 移动端优化 */}
+      <section className="relative py-10 md:py-20 px-3 md:px-4 bg-gradient-to-b from-gray-50 to-white">
         {/* 五台山背景图 */}
         <div className="absolute inset-0 opacity-[0.38]">
-          <img src="/services/wutai-bg.jpg" alt="五台山寺庙" className="w-full h-full object-cover" />
+          <img src="/services/wutai-bg.jpg" alt="Wutai Temple" className="w-full h-full object-cover" loading="lazy" />
         </div>
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 lg:gap-8">
             {/* 1. 开光护佑法物 */}
             <Link href="/products?category=1">
-              <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
-                {/* 金色祥云纹理背景 */}
+              <div className="group relative bg-black/85 backdrop-blur-sm border border-[#D4AF37] md:border-2 rounded-xl md:rounded-2xl p-3 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
                 </div>
-                
-                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                  {/* 实物照片 */}
-                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/beads.png" alt="开光佛珠" className="w-full h-full object-cover" />
+                <div className="relative z-10 flex flex-col items-center text-center space-y-2 md:space-y-4">
+                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border border-[#D4AF37] md:border-2 shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
+                    <img src="/services/beads.png" alt="Blessed Items" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div>
-                              <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.blessedItems.title')}</h3>
-                    <p className="text-xs font-light text-[#E8D4A0]">{t('serviceCards.blessedItems.subtitle')}</p>
+                    <h3 className="text-xs md:text-lg font-medium text-[#FFD700] mb-1 md:mb-2 leading-tight">{t('serviceCards.blessedItems.title')}</h3>
+                    <p className="text-[10px] md:text-xs font-light text-[#E8D4A0] hidden sm:block">{t('serviceCards.blessedItems.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -220,41 +234,35 @@ export default function Home() {
 
             {/* 2. 命理运势 */}
             <Link href="/products?category=2">
-              <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
-                {/* 金色祥云纹理背景 */}
+              <div className="group relative bg-black/85 backdrop-blur-sm border border-[#D4AF37] md:border-2 rounded-xl md:rounded-2xl p-3 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
                 </div>
-                
-                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                  {/* 实物照片 */}
-                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/compass1.jpg" alt="命理运势" className="w-full h-full object-cover" />
+                <div className="relative z-10 flex flex-col items-center text-center space-y-2 md:space-y-4">
+                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border border-[#D4AF37] md:border-2 shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
+                    <img src="/services/compass1.jpg" alt="Destiny" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div>
-                    <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.destiny.title')}</h3>
-                    <p className="text-xs font-light text-[#E8D4A0]">{t('serviceCards.destiny.subtitle')}</p>
+                    <h3 className="text-xs md:text-lg font-medium text-[#FFD700] mb-1 md:mb-2 leading-tight">{t('serviceCards.destiny.title')}</h3>
+                    <p className="text-[10px] md:text-xs font-light text-[#E8D4A0] hidden sm:block">{t('serviceCards.destiny.subtitle')}</p>
                   </div>
                 </div>
               </div>
             </Link>
 
-            {/* 3. 面相手相风水 (合并) */}
+            {/* 3. 面相手相风水 */}
             <Link href="/fortune">
-              <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
-                {/* 金色祥云纹理背景 */}
+              <div className="group relative bg-black/85 backdrop-blur-sm border border-[#D4AF37] md:border-2 rounded-xl md:rounded-2xl p-3 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
                 </div>
-                
-                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                  {/* 实物照片 */}
-                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/palmistry.jpg" alt="面相手相" className="w-full h-full object-cover" />
+                <div className="relative z-10 flex flex-col items-center text-center space-y-2 md:space-y-4">
+                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border border-[#D4AF37] md:border-2 shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
+                    <img src="/services/palmistry.jpg" alt="Palmistry" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div>
-                    <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.palmistry.title')}</h3>
-                    <p className="text-xs font-light text-[#E8D4A0]">{t('serviceCards.palmistry.subtitle')}</p>
+                    <h3 className="text-xs md:text-lg font-medium text-[#FFD700] mb-1 md:mb-2 leading-tight">{t('serviceCards.palmistry.title')}</h3>
+                    <p className="text-[10px] md:text-xs font-light text-[#E8D4A0] hidden sm:block">{t('serviceCards.palmistry.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -262,20 +270,17 @@ export default function Home() {
 
             {/* 4. 代客祈福 */}
             <Link href="/products?category=3">
-              <div className="group relative bg-black/85 backdrop-blur-sm border-2 border-[#D4AF37] rounded-2xl p-4 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
-                {/* 金色祥云纹理背景 */}
+              <div className="group relative bg-black/85 backdrop-blur-sm border border-[#D4AF37] md:border-2 rounded-xl md:rounded-2xl p-3 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
                 </div>
-                
-                <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                  {/* 实物照片 */}
-                  <div className="w-32 h-32 rounded-full overflow-hidden border-2 border-[#D4AF37] shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/lotus-lamp.jpg" alt="莲花灯" className="w-full h-full object-cover" />
+                <div className="relative z-10 flex flex-col items-center text-center space-y-2 md:space-y-4">
+                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border border-[#D4AF37] md:border-2 shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
+                    <img src="/services/lotus-lamp.jpg" alt="Prayer" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div>
-                    <h3 className="text-base md:text-lg font-medium text-[#FFD700] mb-2">{t('serviceCards.prayer.title')}</h3>
-                    <p className="text-xs font-light text-[#E8D4A0]">{t('serviceCards.prayer.subtitle')}</p>
+                    <h3 className="text-xs md:text-lg font-medium text-[#FFD700] mb-1 md:mb-2 leading-tight">{t('serviceCards.prayer.title')}</h3>
+                    <p className="text-[10px] md:text-xs font-light text-[#E8D4A0] hidden sm:block">{t('serviceCards.prayer.subtitle')}</p>
                   </div>
                 </div>
               </div>
@@ -284,13 +289,11 @@ export default function Home() {
         </div>
       </section>
 
-
-
-      {/* ABOUT US Section - 深红色背景 */}
-      <section className="py-20 px-4 bg-[#8B0000] text-white relative overflow-hidden">
+      {/* ABOUT US Section - 移动端优化 */}
+      <section className="py-10 md:py-20 px-3 md:px-4 bg-[#8B0000] text-white relative overflow-hidden">
         {/* 书法装饰背景 */}
         <div className="absolute inset-0 opacity-10">
-          <div className="text-9xl font-serif leading-none">
+          <div className="text-6xl md:text-9xl font-serif leading-none">
             藏坂假弘王釋出洛魂裁<br/>
             出茶堅衛主后古其詩<br/>
             殿機將宗后座會熱日
@@ -298,21 +301,21 @@ export default function Home() {
         </div>
 
         <div className="max-w-4xl mx-auto relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-serif font-semibold mb-8 tracking-wide">{t('aboutUs.title')}</h2>
+          <div className="text-center mb-6 md:mb-12">
+            <h2 className="text-2xl md:text-4xl font-serif font-semibold mb-4 md:mb-8 tracking-wide">{t('aboutUs.title')}</h2>
           </div>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-8 space-y-6">
-            <p className="text-lg leading-relaxed">
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 md:p-8 space-y-4 md:space-y-6">
+            <p className="text-sm md:text-lg leading-relaxed">
               {t('aboutUs.paragraph1')}
             </p>
-            <p className="text-lg leading-relaxed">
+            <p className="text-sm md:text-lg leading-relaxed">
               {t('aboutUs.paragraph2')}
             </p>
           </div>
 
           {/* 五台山高僧开光仪式视频 */}
-          <div className="mt-12">
+          <div className="mt-8 md:mt-12">
             <VideoPlayer 
               videoUrl={videos.consecrationRitual.url}
               title={t('aboutUs.videoTitle') || videos.consecrationRitual.titleEn}
@@ -322,21 +325,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 五台山背书页脚 */}
-      <footer className="relative py-16 text-center overflow-hidden">
-        {/* 五台山寺庙背景图 */}
+      {/* 五台山背书页脚 - 移动端优化 */}
+      <footer className="relative py-10 md:py-16 text-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{backgroundImage: 'url(/footer-bg.jpg)'}}
         >
-          {/* 半透明黑色遮罩 */}
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
         <div className="max-w-4xl mx-auto px-4 relative z-10">
-          <div className="text-sm space-y-3">
-            <p className="font-semibold text-2xl text-[#FFD700] drop-shadow-lg">{t('footer.wutaishan')}</p>
-            <p className="text-base text-[#E8D4A0] drop-shadow-md">{t('footer.heritage')}</p>
+          <div className="text-sm space-y-2 md:space-y-3">
+            <p className="font-semibold text-xl md:text-2xl text-[#FFD700] drop-shadow-lg">{t('footer.wutaishan')}</p>
+            <p className="text-xs md:text-base text-[#E8D4A0] drop-shadow-md">{t('footer.heritage')}</p>
           </div>
         </div>
       </footer>

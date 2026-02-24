@@ -42,7 +42,7 @@ i18n
       tr: { translation: tr },
       'zh-Hant': { translation: zhHant },
     },
-    fallbackLng: 'zh',
+    fallbackLng: 'en',
     supportedLngs: ['en', 'zh', 'zh-Hant', 'de', 'fr', 'es', 'it', 'pt', 'ru', 'ja', 'ko', 'ar', 'hi', 'th', 'vi', 'id', 'tr'],
     nonExplicitSupportedLngs: true,
     interpolation: {
@@ -57,8 +57,9 @@ i18n
       transKeepBasicHtmlNodesFor: ['br', 'strong', 'i'],
     },
     detection: {
-      order: ['localStorage', 'navigator'],
+      order: ['localStorage'],
       caches: ['localStorage'],
+      lookupLocalStorage: 'i18nextLng',
     },
     debug: false,
   });
