@@ -64,6 +64,58 @@ async function startServer() {
     next();
   });
 
+  // Stripe Webhook (需要 raw body，必须在 json parser 之前注册)
+  app.post("/api/stripe-webhook",
+    express.raw({ type: "application/json" }),
+    async (req, res) => {
+      try {
+        const { constructWebhookEvent } = await import("../stripe");
+        const sig = req.headers["stripe-signature"] as string;
+        if (!sig) {
+          res.status(400).json({ error: "Missing stripe-signature header" });
+          return;
+        }
+
+        const event = constructWebhookEvent(req.body, sig);
+
+        // 处理支付成功事件
+        if (event.type === "payment_intent.succeeded") {
+          const paymentIntent = event.data.object as any;
+          const orderId = paymentIntent.metadata?.orderId;
+          if (orderId) {
+            const db = await import("../db");
+            await db.updateOrderPaymentStatus(
+              parseInt(orderId),
+              "paid",
+              paymentIntent.id
+            );
+            console.log(`[Stripe Webhook] Order ${orderId} marked as paid via ${paymentIntent.id}`);
+          }
+        }
+
+        // 处理支付失败事件
+        if (event.type === "payment_intent.payment_failed") {
+          const paymentIntent = event.data.object as any;
+          const orderId = paymentIntent.metadata?.orderId;
+          if (orderId) {
+            const db = await import("../db");
+            await db.updateOrderPaymentStatus(
+              parseInt(orderId),
+              "failed",
+              paymentIntent.id
+            );
+            console.log(`[Stripe Webhook] Order ${orderId} payment failed via ${paymentIntent.id}`);
+          }
+        }
+
+        res.json({ received: true });
+      } catch (err: any) {
+        console.error("[Stripe Webhook] Error:", err.message);
+        res.status(400).json({ error: err.message });
+      }
+    }
+  );
+
   // tRPC API
   app.use(
     "/api/trpc",

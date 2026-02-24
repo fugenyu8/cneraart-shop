@@ -528,6 +528,48 @@ export const appRouter = router({
         return { success: true };
       }),
 
+    // 管理员：确认线下付款（银行转账/支付宝）
+    confirmOfflinePayment: adminProcedure
+      .input(
+        z.object({
+          orderId: z.number(),
+          paymentId: z.string().optional(), // 转账流水号
+          note: z.string().optional(),
+        })
+      )
+      .mutation(async ({ input }) => {
+        const order = await db.getOrderById(input.orderId);
+        if (!order) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "订单不存在" });
+        }
+        if (order.paymentStatus === "paid") {
+          throw new TRPCError({ code: "BAD_REQUEST", message: "订单已支付" });
+        }
+
+        await db.updateOrderPaymentStatus(
+          input.orderId,
+          "paid",
+          input.paymentId || `offline_${Date.now()}`
+        );
+
+        return { success: true };
+      }),
+
+    // 管理员：获取待确认付款的订单列表
+    getPendingPayments: adminProcedure
+      .input(
+        z.object({
+          page: z.number().default(1),
+          pageSize: z.number().default(20),
+        }).optional()
+      )
+      .query(async ({ input }) => {
+        const page = input?.page ?? 1;
+        const pageSize = input?.pageSize ?? 20;
+        const result = await db.getOrdersByPaymentStatus("pending", page, pageSize);
+        return result;
+      }),
+
     // 获取订单物流跟踪信息
     getTracking: protectedProcedure
       .input(z.object({ orderId: z.number() }))

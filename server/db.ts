@@ -2086,3 +2086,36 @@ export async function getWeeklyFortuneTrend() {
   }
   return days;
 }
+
+
+// ============= 线下支付管理 =============
+
+export async function getOrdersByPaymentStatus(
+  paymentStatus: "pending" | "paid" | "failed" | "refunded",
+  page: number = 1,
+  pageSize: number = 20
+) {
+  const db = await getDb();
+  if (!db) return { orders: [], total: 0 };
+
+  const offset = (page - 1) * pageSize;
+
+  const [orderList, countResult] = await Promise.all([
+    db
+      .select()
+      .from(orders)
+      .where(eq(orders.paymentStatus, paymentStatus))
+      .orderBy(desc(orders.createdAt))
+      .limit(pageSize)
+      .offset(offset),
+    db
+      .select({ count: sql<number>`count(*)` })
+      .from(orders)
+      .where(eq(orders.paymentStatus, paymentStatus)),
+  ]);
+
+  return {
+    orders: orderList,
+    total: countResult[0]?.count ?? 0,
+  };
+}
