@@ -3,7 +3,7 @@
  */
 
 import { getDb } from "./db";
-import { fortuneBookings, users } from "../drizzle/schema";
+import { fortuneBookings, fortuneReports, users } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 
 /**
@@ -46,6 +46,48 @@ export async function getUserById(userId: number) {
     .select()
     .from(users)
     .where(eq(users.id, userId))
+    .limit(1);
+
+  return result[0] || null;
+}
+
+/**
+ * 保存命理分析报告到数据库
+ */
+export async function createFortuneReport(data: {
+  taskId: string;
+  userId: number;
+  serviceType: "face" | "palm" | "fengshui";
+  overallSummary: string;
+  sectionsJson: any;
+  score: number;
+}) {
+  const db = await getDb();
+  if (!db) return null;
+
+  const result = await db.insert(fortuneReports).values({
+    taskId: data.taskId,
+    userId: data.userId,
+    serviceType: data.serviceType,
+    overallSummary: data.overallSummary,
+    sectionsJson: data.sectionsJson,
+    score: data.score,
+  });
+
+  return result;
+}
+
+/**
+ * 根据 taskId 获取报告
+ */
+export async function getFortuneReportByTaskId(taskId: string) {
+  const db = await getDb();
+  if (!db) return null;
+
+  const result = await db
+    .select()
+    .from(fortuneReports)
+    .where(eq(fortuneReports.taskId, taskId))
     .limit(1);
 
   return result[0] || null;
