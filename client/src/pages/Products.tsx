@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -22,10 +22,24 @@ export default function Products() {
   const [search, setSearch] = useState("");
   const [categoryId, setCategoryId] = useState<number | undefined>(initialCategoryId);
   const [sortBy, setSortBy] = useState("newest");
+  const [hasAutoSelected, setHasAutoSelected] = useState(false);
 
   // 获取开光法物的子分类ID列表
   const { data: categories } = trpc.categories.list.useQuery();
   const blessedCategoryIds = categories?.filter(cat => cat.parentId === 1).map(cat => cat.id) || [];
+
+  // 当从首页进入（category=1 是父分类）或无分类参数时，自动选中第一个子分类
+  useEffect(() => {
+    if (!hasAutoSelected && categories && blessedCategoryIds.length > 0) {
+      const subcats = categories.filter(cat => cat.parentId === 1).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
+      if (subcats.length > 0) {
+        if (categoryId === undefined || categoryId === 1) {
+          setCategoryId(subcats[0].id);
+        }
+        setHasAutoSelected(true);
+      }
+    }
+  }, [categories, blessedCategoryIds, categoryId, hasAutoSelected]);
   
   const { data: products, isLoading } = trpc.products.list.useQuery({
     search: search || undefined,
