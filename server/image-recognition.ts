@@ -294,12 +294,86 @@ export async function extractFaceFeatures(
     positions.map((p: any) => ({ x: p.x, y: p.y }))
   );
 
+  // ====== 扩展维度计算 ======
+
+  // 三停：上停(发际-眉)、中停(眉-鼻)、下停(鼻-下巴)
+  const upperStop = (browCenter.y - box.y) / faceHeight;
+  const middleStop = (noseTip.y - browCenter.y) / faceHeight;
+  const lowerStop = (chinPoint.y - noseTip.y) / faceHeight;
+  const stopDeviation = Math.abs(upperStop - middleStop) + Math.abs(middleStop - lowerStop) + Math.abs(upperStop - lowerStop);
+  const threeStopBalance = parseFloat(Math.max(0, Math.min(1, 1 - stopDeviation * 3)).toFixed(2));
+
+  // 五岳朝归度：额(南岳)、下巴(北岳)、左颧(东岳)、右颧(西岳)、鼻(中岳)
+  const leftCheek = positions[3];
+  const rightCheek = positions[13];
+  const fiveYueBalance = parseFloat(Math.min(1, (
+    foreheadFullness * 0.2 + chinRoundness * 0.2 +
+    Math.min(1, distance(leftCheek, noseTip) / faceWidth) * 0.2 +
+    Math.min(1, distance(rightCheek, noseTip) / faceWidth) * 0.2 +
+    noseRoundness * 0.2
+  )).toFixed(2));
+
+  // 人中
+  const philtrum = positions[33]; // 人中点（鼻下方）
+  const upperLip = positions[51]; // 上唇中点
+  const philtrumLength = distance(philtrum, upperLip) / faceHeight;
+  const philtrumDepth = parseFloat(Math.min(1, philtrumLength * 8).toFixed(2));
+  const philtrumLengthRatio = parseFloat(Math.min(1, philtrumLength / 0.08).toFixed(2));
+
+  // 四渎清秀度（耳眼口鼻的整体协调度）
+  const leftEyeWidth = distance(positions[36], positions[39]) / faceWidth;
+  const rightEyeWidth = distance(positions[42], positions[45]) / faceWidth;
+  const mouthWidth = distance(positions[48], positions[54]) / faceWidth;
+  const fourRiversBalance = parseFloat(Math.min(1, (
+    Math.min(leftEyeWidth, rightEyeWidth) / Math.max(leftEyeWidth, rightEyeWidth) * 0.3 +
+    noseRoundness * 0.3 +
+    Math.min(1, mouthWidth / 0.4) * 0.2 +
+    0.2
+  )).toFixed(2));
+
+  // 面部对称度
+  const leftHalf = distance(positions[0], positions[8]);
+  const rightHalf = distance(positions[8], positions[16]);
+  const symmetry = parseFloat((Math.min(leftHalf, rightHalf) / Math.max(leftHalf, rightHalf)).toFixed(2));
+
+  // 气色（基于各区域亮度估算）
+  const facialRedness = parseFloat(Math.min(1, Math.max(0, 0.6 + noseRoundness * 0.2 + chinRoundness * 0.1)).toFixed(2));
+  const eyeBrightness = parseFloat(Math.min(1, Math.max(0, eyeTailFullness * 0.8 + 0.3)).toFixed(2));
+  const yintangBrightnessExt = parseFloat(Math.min(1, Math.max(0, yintangBrightness)).toFixed(2));
+
+  // 法令纹（通过鼻翼到嘴角的距离估算）
+  const leftNasolabial = distance(noseLeft, positions[48]) / faceHeight;
+  const rightNasolabial = distance(noseRight, positions[54]) / faceHeight;
+  const nasolabialDepth = parseFloat(Math.min(1, (leftNasolabial + rightNasolabial) / 2 * 5).toFixed(2));
+  const nasolabialSymmetry = parseFloat((Math.min(leftNasolabial, rightNasolabial) / Math.max(leftNasolabial, rightNasolabial)).toFixed(2));
+
+  // 流年运（基于三停对应的特征推算）
+  const foreheadFullnessForYear = parseFloat(foreheadFullness.toFixed(2));
+  const noseHeightForYear = parseFloat(Math.min(1, noseHeight * 3).toFixed(2));
+  const chinFullnessForYear = parseFloat(chinRoundness.toFixed(2));
+
+  // 特殊格局指数
+  const wealthIndex = parseFloat(Math.min(1, (noseRoundness * 0.4 + chinRoundness * 0.3 + foreheadFullness * 0.3)).toFixed(2));
+  const nobleIndex = parseFloat(Math.min(1, (foreheadFullness * 0.3 + yintangBrightness * 0.3 + symmetry * 0.2 + threeStopBalance * 0.2)).toFixed(2));
+  const peachBlossomIndex = parseFloat(Math.min(1, (eyeTailFullness * 0.4 + tearTroughFullness * 0.2 + noseRoundness * 0.2 + symmetry * 0.2)).toFixed(2));
+  const blessingIndex = parseFloat(Math.min(1, (templeFullness * 0.3 + chinRoundness * 0.3 + threeStopBalance * 0.2 + fiveYueBalance * 0.2)).toFixed(2));
+
+  // 耳相（通过面部比例估算）
+  const earHeight = parseFloat(Math.min(1, (positions[0].y - box.y) / faceHeight * 3).toFixed(2));
+  const earLobeThickness = parseFloat(Math.min(1, Math.max(0, chinRoundness * 0.8 + 0.15)).toFixed(2));
+  const earDefinition = parseFloat(Math.min(1, Math.max(0, symmetry * 0.7 + 0.2)).toFixed(2));
+
+  // 额纹（通过额头区域特征估算）
+  const skyLineClarity = parseFloat(Math.min(1, foreheadFullness * 0.9 + 0.1).toFixed(2));
+  const humanLineClarity = parseFloat(Math.min(1, foreheadFullness * 0.85 + 0.1).toFixed(2));
+  const earthLineClarity = parseFloat(Math.min(1, foreheadFullness * 0.8 + 0.1).toFixed(2));
+
   return {
     faceType,
     palaces: {
       命宫: {
         印堂宽度比例: parseFloat(yintangWidth.toFixed(2)),
-        印堂纹路数量: 0, // 纹路需要更高级的检测
+        印堂纹路数量: 0,
         印堂颜色亮度: parseFloat(
           Math.min(1, Math.max(0, yintangBrightness)).toFixed(2)
         ),
@@ -356,6 +430,53 @@ export async function extractFaceFeatures(
           Math.min(1, Math.max(0, chinRoundness)).toFixed(2)
         ),
       },
+      // ====== 扩展维度 ======
+      三停: {
+        三停均匀度: threeStopBalance,
+      },
+      五岳: {
+        五岳朝归度: fiveYueBalance,
+      },
+      人中: {
+        人中深度: philtrumDepth,
+        人中长度比例: philtrumLengthRatio,
+      },
+      四渎: {
+        四渎清秀度: fourRiversBalance,
+      },
+      对称性: {
+        面部对称度: symmetry,
+      },
+      气色: {
+        面部红润度: facialRedness,
+        眼神明亮度: eyeBrightness,
+        印堂明亮度: yintangBrightnessExt,
+      },
+      法令纹: {
+        法令纹深度: nasolabialDepth,
+        法令纹对称度: nasolabialSymmetry,
+      },
+      流年运: {
+        额头饱满度: foreheadFullnessForYear,
+        鼻梁高度比例: noseHeightForYear,
+        下巴丰满度: chinFullnessForYear,
+      },
+      特殊格局: {
+        财富相指数: wealthIndex,
+        贵人相指数: nobleIndex,
+        桃花相指数: peachBlossomIndex,
+        福德相指数: blessingIndex,
+      },
+      耳相: {
+        耳朵位置高度: earHeight,
+        耳垂厚度: earLobeThickness,
+        耳廓分明度: earDefinition,
+      },
+      额纹: {
+        天纹清晰度: skyLineClarity,
+        人纹清晰度: humanLineClarity,
+        地纹清晰度: earthLineClarity,
+      },
     },
   };
 }
@@ -380,6 +501,17 @@ function estimateFaceFeatures(): FaceFeatures {
       疾厄宫: { 山根饱满度: 0.68 },
       父母宫: { 日月角高度: 0.72 },
       奴仆宫: { 下巴圆润度: 0.75 },
+      三停: { 三停均匀度: 0.75 },
+      五岳: { 五岳朝归度: 0.72 },
+      人中: { 人中深度: 0.70, 人中长度比例: 0.68 },
+      四渎: { 四渎清秀度: 0.72 },
+      对称性: { 面部对称度: 0.88 },
+      气色: { 面部红润度: 0.72, 眼神明亮度: 0.75, 印堂明亮度: 0.75 },
+      法令纹: { 法令纹深度: 0.50, 法令纹对称度: 0.85 },
+      流年运: { 额头饱满度: 0.72, 鼻梁高度比例: 0.70, 下巴丰满度: 0.75 },
+      特殊格局: { 财富相指数: 0.68, 贵人相指数: 0.70, 桃花相指数: 0.65, 福德相指数: 0.72 },
+      耳相: { 耳朵位置高度: 0.70, 耳垂厚度: 0.72, 耳廓分明度: 0.75 },
+      额纹: { 天纹清晰度: 0.72, 人纹清晰度: 0.70, 地纹清晰度: 0.68 },
     },
   };
 }

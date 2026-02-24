@@ -175,11 +175,12 @@ function generateIssuesList(
 
   if (calculationResult.items) {
     for (const item of calculationResult.items) {
-      if (item.score < 60) {
+      // 规则库分数范围为 -10 到 +10，负分表示问题
+      if (item.score < 0) {
         issues.push({
           type: item.category || item.title,
           description: item.interpretation,
-          severity: item.score < 40 ? "高" : item.score < 50 ? "中" : "低",
+          severity: item.score <= -7 ? "高" : item.score <= -3 ? "中" : "低",
           solution: item.suggestion || "建议咨询专业风水师进行调整",
         });
       }

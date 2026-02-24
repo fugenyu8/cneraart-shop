@@ -1,8 +1,10 @@
 import { getFaceRules, getPalmRules } from "./db";
 
 /**
- * 命理计算引擎 - 核心逻辑
- * 根据图像识别提取的特征参数,匹配规则库,计算评分和吉凶判断
+ * 命理计算引擎 - 核心逻辑（增强版）
+ * 规则库 score 范围：-10 到 +10
+ * 输出评分范围：0-100（归一化百分制）
+ * 归一化公式：outputScore = (ruleScore + 10) / 20 * 100 = (ruleScore + 10) * 5
  */
 
 interface FeatureParam {
@@ -32,12 +34,35 @@ interface PalmFeatures {
   hills: HillFeatures;
 }
 
-interface CalculationResult {
+export interface CalculationResult {
   [key: string]: {
-    score: number;
-    category: string;
+    score: number;        // 0-100 百分制
+    rawScore: number;     // -10 到 +10 原始分
+    category: string;     // 大吉/吉/中吉/平/小凶/凶
+    level: number;        // 1-6 等级
+    matchedCount: number; // 匹配的规则数
     interpretations: string[];
+    categories: string[]; // 匹配规则的分类标签
   };
+}
+
+/**
+ * 将规则原始分（-10到+10）归一化为百分制（0-100）
+ */
+function normalizeScore(rawScore: number): number {
+  return Math.round(Math.max(0, Math.min(100, (rawScore + 10) * 5)));
+}
+
+/**
+ * 根据百分制评分判断吉凶等级
+ */
+function getCategory(score: number): { category: string; level: number } {
+  if (score >= 90) return { category: "大吉", level: 6 };
+  if (score >= 75) return { category: "吉", level: 5 };
+  if (score >= 65) return { category: "中吉", level: 4 };
+  if (score >= 50) return { category: "平", level: 3 };
+  if (score >= 35) return { category: "小凶", level: 2 };
+  return { category: "凶", level: 1 };
 }
 
 /**
@@ -49,11 +74,9 @@ function matchCondition(
   conditionValue: string
 ): boolean {
   if (typeof value === "string") {
-    // 字符串类型直接比较
     return operator === "=" && value === conditionValue;
   }
 
-  // 数值类型比较
   const numValue = Number(value);
   if (isNaN(numValue)) return false;
 
@@ -63,13 +86,15 @@ function matchCondition(
     case "<":
       return numValue < Number(conditionValue);
     case "=":
-      return numValue === Number(conditionValue);
+      return Math.abs(numValue - Number(conditionValue)) < 0.001;
     case ">=":
       return numValue >= Number(conditionValue);
     case "<=":
       return numValue <= Number(conditionValue);
     case "between": {
-      const [min, max] = conditionValue.split("-").map(Number);
+      const parts = conditionValue.split("-").map(Number);
+      if (parts.length !== 2) return false;
+      const [min, max] = parts;
       return numValue >= min && numValue <= max;
     }
     default:
@@ -78,7 +103,8 @@ function matchCondition(
 }
 
 /**
- * 面相计算引擎
+ * 面相计算引擎（增强版）
+ * 支持十二宫位 + 扩展维度（三停/五岳/人中/四渎/对称性/气色/法令纹/流年运/特殊格局/耳相/额纹）
  */
 export async function calculateFacePhysiognomy(
   features: FaceFeatures
@@ -86,14 +112,17 @@ export async function calculateFacePhysiognomy(
   const rules = await getFaceRules();
   const result: CalculationResult = {};
 
-  // 如果没有palaces字段,直接返回空结果
-  if (!features.palaces || typeof features.palaces !== 'object') {
+  if (!features.palaces || typeof features.palaces !== "object") {
     return result;
   }
 
-  // 遍历每个宫位的特征
+  // 遍历每个宫位/维度的特征
   for (const [palaceName, palaceFeatures] of Object.entries(features.palaces)) {
-    const matchedRules = [];
+    const matchedRules: Array<{
+      score: number;
+      interpretation: string;
+      category: string;
+    }> = [];
 
     // 查找匹配的规则
     for (const rule of rules) {
@@ -103,33 +132,46 @@ export async function calculateFacePhysiognomy(
       if (featureValue === undefined) continue;
 
       if (
-        matchCondition(
-          featureValue,
-          rule.conditionOperator,
-          rule.conditionValue
-        )
+        matchCondition(featureValue, rule.conditionOperator, rule.conditionValue)
       ) {
-        matchedRules.push(rule);
+        matchedRules.push({
+          score: rule.score,
+          interpretation: rule.interpretation,
+          category: rule.category || "综合",
+        });
       }
     }
 
-    // 如果有匹配的规则,计算评分和解读
+    // 计算评分和解读
     if (matchedRules.length > 0) {
-      const totalScore = matchedRules.reduce(
-        (sum, rule) => sum + rule.score,
-        0
-      );
-      const avgScore = Math.round(totalScore / matchedRules.length);
+      // 加权平均：取所有匹配规则的平均分
+      const totalRawScore = matchedRules.reduce((sum, r) => sum + r.score, 0);
+      const avgRawScore = totalRawScore / matchedRules.length;
+      const normalizedScore = normalizeScore(avgRawScore);
+      const { category, level } = getCategory(normalizedScore);
 
-      // 根据评分判断吉凶
-      let category = "中";
-      if (avgScore >= 80) category = "吉";
-      else if (avgScore < 60) category = "凶";
+      // 收集所有分类标签
+      const categories = Array.from(new Set(matchedRules.map((r) => r.category)));
 
       result[palaceName] = {
-        score: avgScore,
+        score: normalizedScore,
+        rawScore: parseFloat(avgRawScore.toFixed(1)),
         category,
-        interpretations: matchedRules.map((rule) => rule.interpretation),
+        level,
+        matchedCount: matchedRules.length,
+        interpretations: matchedRules.map((r) => r.interpretation),
+        categories,
+      };
+    } else {
+      // 没有匹配规则时，给一个中等默认值
+      result[palaceName] = {
+        score: 65,
+        rawScore: 3,
+        category: "中吉",
+        level: 4,
+        matchedCount: 0,
+        interpretations: [`${palaceName}整体表现平稳，无明显吉凶特征，运势平和。`],
+        categories: ["综合"],
       };
     }
   }
@@ -138,7 +180,8 @@ export async function calculateFacePhysiognomy(
 }
 
 /**
- * 手相计算引擎
+ * 手相计算引擎（增强版）
+ * 支持五大主线 + 辅助线 + 八大丘位 + 手型五行 + 特殊纹路
  */
 export async function calculatePalmPhysiognomy(
   features: PalmFeatures
@@ -146,14 +189,18 @@ export async function calculatePalmPhysiognomy(
   const rules = await getPalmRules();
   const result: CalculationResult = {};
 
-  // 如果没有lines字段,跳过纹路处理
-  if (features.lines && typeof features.lines === 'object') {
-    // 处理纹路特征
+  // 处理纹路特征（主线 + 辅助线）
+  if (features.lines && typeof features.lines === "object") {
     for (const [lineName, lineFeatures] of Object.entries(features.lines)) {
-      const matchedRules = [];
+      const matchedRules: Array<{
+        score: number;
+        interpretation: string;
+        category: string;
+      }> = [];
 
       for (const rule of rules) {
-        if (rule.lineName !== lineName) continue;
+        // 匹配 lineName 或 hillName（兼容两种字段）
+        if (rule.lineName !== lineName && rule.hillName !== lineName) continue;
 
         const featureValue = lineFeatures[rule.featureName];
         if (featureValue === undefined) continue;
@@ -165,38 +212,55 @@ export async function calculatePalmPhysiognomy(
             rule.conditionValue
           )
         ) {
-          matchedRules.push(rule);
+          matchedRules.push({
+            score: rule.score,
+            interpretation: rule.interpretation,
+            category: rule.category || "综合",
+          });
         }
       }
 
       if (matchedRules.length > 0) {
-        const totalScore = matchedRules.reduce(
-          (sum, rule) => sum + rule.score,
-          0
-        );
-        const avgScore = Math.round(totalScore / matchedRules.length);
-
-        let category = "中";
-        if (avgScore >= 80) category = "吉";
-        else if (avgScore < 60) category = "凶";
+        const totalRawScore = matchedRules.reduce((sum, r) => sum + r.score, 0);
+        const avgRawScore = totalRawScore / matchedRules.length;
+        const normalizedScore = normalizeScore(avgRawScore);
+        const { category, level } = getCategory(normalizedScore);
+        const categories = Array.from(new Set(matchedRules.map((r) => r.category)));
 
         result[lineName] = {
-          score: avgScore,
+          score: normalizedScore,
+          rawScore: parseFloat(avgRawScore.toFixed(1)),
           category,
-          interpretations: matchedRules.map((rule) => rule.interpretation),
+          level,
+          matchedCount: matchedRules.length,
+          interpretations: matchedRules.map((r) => r.interpretation),
+          categories,
+        };
+      } else {
+        result[lineName] = {
+          score: 65,
+          rawScore: 3,
+          category: "中吉",
+          level: 4,
+          matchedCount: 0,
+          interpretations: [`${lineName}整体表现平稳，纹路清晰，运势平和。`],
+          categories: ["综合"],
         };
       }
     }
   }
 
-  // 如果没有hills字段,跳过丘位处理
-  if (features.hills && typeof features.hills === 'object') {
-    // 处理丘位特征
+  // 处理丘位特征
+  if (features.hills && typeof features.hills === "object") {
     for (const [hillName, hillFeatures] of Object.entries(features.hills)) {
-      const matchedRules = [];
+      const matchedRules: Array<{
+        score: number;
+        interpretation: string;
+        category: string;
+      }> = [];
 
       for (const rule of rules) {
-        if (rule.hillName !== hillName) continue;
+        if (rule.hillName !== hillName && rule.lineName !== hillName) continue;
 
         const featureValue = hillFeatures[rule.featureName];
         if (featureValue === undefined) continue;
@@ -208,25 +272,39 @@ export async function calculatePalmPhysiognomy(
             rule.conditionValue
           )
         ) {
-          matchedRules.push(rule);
+          matchedRules.push({
+            score: rule.score,
+            interpretation: rule.interpretation,
+            category: rule.category || "综合",
+          });
         }
       }
 
       if (matchedRules.length > 0) {
-        const totalScore = matchedRules.reduce(
-          (sum, rule) => sum + rule.score,
-          0
-        );
-        const avgScore = Math.round(totalScore / matchedRules.length);
-
-        let category = "中";
-        if (avgScore >= 80) category = "吉";
-        else if (avgScore < 60) category = "凶";
+        const totalRawScore = matchedRules.reduce((sum, r) => sum + r.score, 0);
+        const avgRawScore = totalRawScore / matchedRules.length;
+        const normalizedScore = normalizeScore(avgRawScore);
+        const { category, level } = getCategory(normalizedScore);
+        const categories = Array.from(new Set(matchedRules.map((r) => r.category)));
 
         result[hillName] = {
-          score: avgScore,
+          score: normalizedScore,
+          rawScore: parseFloat(avgRawScore.toFixed(1)),
           category,
-          interpretations: matchedRules.map((rule) => rule.interpretation),
+          level,
+          matchedCount: matchedRules.length,
+          interpretations: matchedRules.map((r) => r.interpretation),
+          categories,
+        };
+      } else {
+        result[hillName] = {
+          score: 65,
+          rawScore: 3,
+          category: "中吉",
+          level: 4,
+          matchedCount: 0,
+          interpretations: [`${hillName}丘位饱满度适中，整体运势平稳。`],
+          categories: ["综合"],
         };
       }
     }
@@ -236,51 +314,124 @@ export async function calculatePalmPhysiognomy(
 }
 
 /**
- * 生成默认解读(当AI调用失败时使用)
+ * 计算综合评分和运势概览
+ */
+export function calculateOverallScore(
+  calculationResult: CalculationResult
+): {
+  overallScore: number;
+  overallCategory: string;
+  overallLevel: number;
+  dimensionCount: number;
+  topDimensions: Array<{ name: string; score: number; category: string }>;
+  weakDimensions: Array<{ name: string; score: number; category: string }>;
+  categoryDistribution: Record<string, number>;
+} {
+  const entries = Object.entries(calculationResult);
+  if (entries.length === 0) {
+    return {
+      overallScore: 65,
+      overallCategory: "中吉",
+      overallLevel: 4,
+      dimensionCount: 0,
+      topDimensions: [],
+      weakDimensions: [],
+      categoryDistribution: {},
+    };
+  }
+
+  // 加权平均（十二宫位权重更高）
+  const mainPalaces = [
+    "命宫", "财帛宫", "官禄宫", "田宅宫", "妻妾宫", "儿女宫",
+    "兄弟宫", "福德宫", "迁移宫", "疾厄宫", "父母宫", "奴仆宫",
+    "生命线", "智慧线", "感情线", "命运线", "太阳线",
+  ];
+
+  let weightedTotal = 0;
+  let weightTotal = 0;
+
+  for (const [name, data] of entries) {
+    const weight = mainPalaces.includes(name) ? 2 : 1;
+    weightedTotal += data.score * weight;
+    weightTotal += weight;
+  }
+
+  const overallScore = Math.round(weightedTotal / weightTotal);
+  const { category: overallCategory, level: overallLevel } = getCategory(overallScore);
+
+  // 排序找出最强和最弱维度
+  const sorted = entries
+    .map(([name, data]) => ({ name, score: data.score, category: data.category }))
+    .sort((a, b) => b.score - a.score);
+
+  const topDimensions = sorted.slice(0, 5);
+  const weakDimensions = sorted.slice(-3).reverse();
+
+  // 吉凶分布统计
+  const categoryDistribution: Record<string, number> = {};
+  for (const [, data] of entries) {
+    categoryDistribution[data.category] = (categoryDistribution[data.category] || 0) + 1;
+  }
+
+  return {
+    overallScore,
+    overallCategory,
+    overallLevel,
+    dimensionCount: entries.length,
+    topDimensions,
+    weakDimensions,
+    categoryDistribution,
+  };
+}
+
+/**
+ * 生成默认解读（当报告模板引擎失败时使用）
  */
 export function generateDefaultInterpretation(
   calculationResult: CalculationResult,
   serviceType: "face" | "palm"
 ): { overallSummary: string; sections: any[] } {
+  const overall = calculateOverallScore(calculationResult);
   const sections = [];
-  let totalScore = 0;
-  let count = 0;
 
-  for (const [name, data] of Object.entries(calculationResult)) {
-    totalScore += data.score;
-    count++;
+  // 按分数排序生成章节
+  const sorted = Object.entries(calculationResult).sort(
+    (a, b) => b[1].score - a[1].score
+  );
 
+  for (const [name, data] of sorted) {
     sections.push({
       title: `${name}分析`,
       content: data.interpretations.join("。") + "。",
       score: data.score,
+      category: data.category,
     });
   }
 
-  const avgScore = count > 0 ? Math.round(totalScore / count) : 70;
-
+  // 根据综合评分生成总结
   let overallSummary = "";
+  const topNames = overall.topDimensions.slice(0, 3).map((d) => d.name).join("、");
+  const weakNames = overall.weakDimensions.map((d) => d.name).join("、");
+
   if (serviceType === "face") {
-    if (avgScore >= 80) {
-      overallSummary =
-        "您的面相整体呈现吉祥之相,多个宫位评分优秀,预示着运势顺遂,前程似锦。您性格开朗,心境平和,善于把握机会,在人生的道路上将稳步向前。建议保持积极的心态,继续努力,必能收获美好的未来。";
-    } else if (avgScore >= 60) {
-      overallSummary =
-        "您的面相整体平稳,各宫位表现均衡,预示着运势平稳发展。您性格稳重,做事踏实,虽然可能不会有大起大落,但只要持之以恒,必能积累财富,成就事业。建议在稳健的基础上,适当开拓进取,把握机遇。";
+    if (overall.overallScore >= 80) {
+      overallSummary = `综合面相评分${overall.overallScore}分，整体呈现${overall.overallCategory}之相。您的${topNames}等宫位表现尤为突出，预示着运势亨通，前程似锦。面相五官端正，气色明润，主人聪慧过人，心胸开阔。在事业、财运、感情等方面均有良好的发展潜力。建议保持积极心态，善于把握机遇，必能成就一番事业。`;
+    } else if (overall.overallScore >= 65) {
+      overallSummary = `综合面相评分${overall.overallScore}分，整体呈现${overall.overallCategory}之相。您的${topNames}等宫位表现较好，整体运势平稳向上。面相显示您性格稳重，做事踏实，虽然${weakNames}等方面需要注意，但只要持之以恒，必能积累财富，成就事业。建议在稳健的基础上适当开拓进取。`;
+    } else if (overall.overallScore >= 50) {
+      overallSummary = `综合面相评分${overall.overallScore}分，整体呈现${overall.overallCategory}之相。面相各宫位表现较为均衡，${topNames}等方面有一定优势，但${weakNames}等方面需要特别留意。建议调整心态，积极面对挑战，通过自身努力改善运势。多行善积德，广结善缘，运势自然好转。`;
     } else {
-      overallSummary =
-        "您的面相显示部分宫位需要注意,建议在生活中多加留意,调整心态,积极面对挑战。命运掌握在自己手中,通过努力和智慧,完全可以改善运势,创造美好的未来。建议保持乐观,勤奋进取,善待他人。";
+      overallSummary = `综合面相评分${overall.overallScore}分，部分宫位需要注意调整。${weakNames}等方面显示近期可能面临一些挑战，但命运掌握在自己手中。建议保持乐观心态，注意身体健康，多与贵人交往。通过修身养性、积善行德，完全可以改善运势，创造美好未来。`;
     }
   } else {
-    if (avgScore >= 80) {
-      overallSummary =
-        "您的手相显示整体运势良好,多条纹路和丘位评分优秀,预示着健康长寿,事业有成,感情美满。您生命力旺盛,智慧超群,善于把握机会,在人生的各个领域都有望取得不俗的成就。建议继续保持积极的心态,勇往直前。";
-    } else if (avgScore >= 60) {
-      overallSummary =
-        "您的手相整体平稳,各纹路和丘位表现均衡,预示着人生平稳发展。您性格稳重,做事踏实,虽然可能不会有大起大落,但只要持之以恒,必能积累财富,成就事业。建议在稳健的基础上,适当开拓进取,把握机遇。";
+    if (overall.overallScore >= 80) {
+      overallSummary = `综合手相评分${overall.overallScore}分，整体呈现${overall.overallCategory}之相。您的${topNames}等纹路/丘位表现优秀，预示着健康长寿、事业有成、感情美满。掌纹清晰有力，生命力旺盛，智慧超群，在人生各个领域都有望取得不俗成就。建议继续保持积极心态，勇往直前。`;
+    } else if (overall.overallScore >= 65) {
+      overallSummary = `综合手相评分${overall.overallScore}分，整体呈现${overall.overallCategory}之相。您的${topNames}等方面表现较好，整体运势平稳。掌纹显示您性格稳重，做事有条理，${weakNames}等方面虽需注意，但只要持之以恒，必能积累财富。建议在稳健基础上适当开拓进取。`;
+    } else if (overall.overallScore >= 50) {
+      overallSummary = `综合手相评分${overall.overallScore}分，整体呈现${overall.overallCategory}之相。手相各纹路和丘位表现较为均衡，${topNames}等方面有一定优势。建议注意${weakNames}等方面的调养，保持良好的生活习惯，运势将逐步提升。`;
     } else {
-      overallSummary =
-        "您的手相显示部分纹路和丘位需要注意,建议在生活中多加留意,调整心态,积极面对挑战。命运掌握在自己手中,通过努力和智慧,完全可以改善运势,创造美好的未来。建议保持乐观,勤奋进取,善待他人。";
+      overallSummary = `综合手相评分${overall.overallScore}分，部分纹路和丘位需要注意。建议在生活中多加留意，调整心态，积极面对挑战。命运掌握在自己手中，通过努力和智慧，完全可以改善运势。保持乐观，勤奋进取，善待他人。`;
     }
   }
 
