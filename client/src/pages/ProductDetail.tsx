@@ -310,13 +310,13 @@ export default function ProductDetail() {
     : 0;
 
   // 判断是否为命理服务(根据slug判断)
-  const isFortuneService = product.slug.includes('reading') || product.slug.includes('feng-shui');
+  const isFortuneService = product.slug.includes('reading') || product.slug.includes('feng-shui') || product.slug.includes('fengshui');
   
   // 确定服务类型
   const getServiceType = (): "face" | "palm" | "fengshui" | undefined => {
     if (product.slug.includes('face-reading')) return 'face';
     if (product.slug.includes('palm-reading')) return 'palm';
-    if (product.slug.includes('feng-shui')) return 'fengshui';
+    if (product.slug.includes('feng-shui') || product.slug.includes('fengshui')) return 'fengshui';
     return undefined;
   };
   

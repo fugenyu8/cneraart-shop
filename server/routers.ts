@@ -437,7 +437,7 @@ export const appRouter = router({
           for (const item of input.items) {
             const product = await db.getProductById(item.productId);
             // 检查是否为命理服务(根据slug判断)
-            if (product && (product.slug.includes('reading') || product.slug.includes('feng-shui'))) {
+            if (product && (product.slug.includes('reading') || product.slug.includes('feng-shui') || product.slug.includes('fengshui'))) {
               // 从购物车中获取serviceData
               const cartItem = cartItems.find(ci => ci.productId === item.productId);
               const serviceData = cartItem?.serviceData as any;

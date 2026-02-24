@@ -71,10 +71,10 @@ export default function Products() {
         {/* 页面标题 */}
         <div className="text-center mb-6 md:mb-12">
           <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-4 gradient-text">
-            {categoryId === 2 ? t("fortuneServices.pageTitle") : t("products.title")}
+            {categoryId === 2 ? t("destiny.title") : t("products.title")}
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-            {categoryId === 2 ? t("fortuneServices.pageSubtitle") : t("products.subtitle")}
+            {categoryId === 2 ? t("destiny.subtitle") : t("products.subtitle")}
           </p>
         </div>
 
