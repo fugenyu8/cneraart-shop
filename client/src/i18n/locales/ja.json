@@ -42,7 +42,8 @@
   "aboutUs": {
     "title": "私たちについて",
     "paragraph1": "五台山の大師が自ら千年の古代東洋の叡智を開く。易経、生辰八字、紫微斗数、梅花易数、金口訣、大六爻を根基とし、五行の相生相克と西洋星座を結合し、事業、財富、健康、人間関係の運勢を深く解析—機会を明示し、障害を警告—あなたが人生の流れを乗りこなし、視野を広げるのを助けます。",
-    "paragraph2": "私たちは開光、読経などの伝統的な儀軌に従い、厳粛かつ正式に、すべての福物に清浄な願力を注ぎ込み、心身のエネルギーを調和させ、心を安定させます。千年の知恵で現代生活の困惑に答え、専属の福佑で人生の順調と福運の隆盛を守護します。"
+    "paragraph2": "私たちは開光、読経などの伝統的な儀軌に従い、厳粛かつ正式に、すべての福物に清浄な願力を注ぎ込み、心身のエネルギーを調和させ、心を安定させます。千年の知恵で現代生活の困惑に答え、専属の福佑で人生の順調と福運の隆盛を守護します。",
+    "videoTitle": "高僧による開光儀式"
   },
   "footer": {
     "wutaishan": "五台山 · 五大仏教聖地の一つ · ユネスコ世界遺産",
@@ -85,7 +86,8 @@
       "step4": "分析レポートはメールで送信されます"
     },
     "get_report": "レポートを取得",
-    "tab_service": "サービス詳細"
+    "tab_service": "サービス詳細",
+    "uploading_images": "画像をアップロード中..."
   },
   "checkout": {
     "title": "Checkout",
@@ -261,84 +263,32 @@
   "products": {
     "510060": {
       "name": "命理エネルギー分析レポート",
-      "description": "生年月日時の四柱推命に基づく詳細な命理分析。命理構造の解読と流年運勢分析を含み、3-5日以内に専用レポートをお届けします。"
+      "description": "生年月日時の四柱推命に基づく詳細な命理分析。命理構造の解読と流年運勢分析を含み、3-5日以内に専用レポートをお届けします。",
+      "shortDesc": "解锁古老东方智慧,探索您的命理能量密码"
     },
     "510061": {
       "name": "命理分析 + 五台山ご祈祷儀式",
-      "description": "完全な命理レポート + 五台山代理ご祈祷サービス（供灯/お線香）,動画記録付き,10-15日でお届け"
+      "description": "完全な命理レポート + 五台山代理ご祈祷サービス（供灯/お線香）,動画記録付き,10-15日でお届け",
+      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
     },
-    "title": {
-      "name": "未定義",
-      "description": "未定義"
-    },
-    "subtitle": {
-      "name": "",
-      "description": ""
-    },
-    "all_products": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "search_placeholder": {
-      "name": "",
-      "description": ""
-    },
-    "select_category": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "all_categories": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "sort_newest": {
-      "name": "",
-      "description": ""
-    },
-    "sort_price_low": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "sort_price_high": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "sort_popular": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "total_count": {
-      "name": "",
-      "description": ""
-    },
-    "search_label": {
-      "name": "",
-      "description": ""
-    },
-    "sale_badge": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "sold_out": {
-      "name": "",
-      "description": ""
-    },
-    "stock_low": {
-      "name": "",
-      "description": ""
-    },
-    "no_products": {
-      "name": "",
-      "description": ""
-    },
-    "try_other_filters": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "viewAll": {
-      "name": "",
-      "description": ""
-    },
+    "title": "开光饰品",
+    "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
+    "all_products": "全部产品",
+    "search_placeholder": "搜索产品...",
+    "select_category": "选择分类",
+    "all_categories": "全部分类",
+    "sort_newest": "最新上架",
+    "sort_price_low": "价格从低到高",
+    "sort_price_high": "价格从高到低",
+    "sort_popular": "最受欢迎",
+    "total_count": "共 {{count}} 件产品",
+    "search_label": "搜索",
+    "sale_badge": "特惠",
+    "sold_out": "已售罄",
+    "stock_low": "仅剩 {{count}} 件",
+    "no_products": "暂无产品",
+    "try_other_filters": "请尝试其他搜索条件",
+    "viewAll": "查看所有产品",
     "fortune-energy-analysis-report": {
       "name": "運勢エネルギー分析レポート",
       "description": "古くからの東洋の知恵を解き放ち、あなたの運命エネルギーコードを探求しましょう\n\n**サービス内容:**\n\n**1. 命理構造分析**\nあなたの生年月日時に基づき、先天的な才能、性格特性、人生の軌跡を深く読み解きます。私たちの命理師が五行学説（金木水火土）を駆使し、あなたに明らかにします:\n- 天干地支の組み合わせがあなたの性格と人間関係にどのように影響するか\n- 特殊な吉神（例えば天乙貴人、太極貴人）があなたの運勢に与える加護\n- 命宮、事業宮、財帛宮など十二宮位と人生の巡り合わせとの深いつながり\n\n**2. 流年運勢分析 (2026-2027)**\n今後一年のエネルギーの流れと運勢の変化を詳細に解説します:\n- 五行の相生相克があなたのキャリア発展、恋愛の方向性、意思決定のタイミングにどのように影響するか\n- 現代の生活シーンと結びつけ、実践的なアドバイスを提供——機会を掴み、リスクを回避する方法\n- 財運、健康、人間関係などの重要な分野に特化したガイダンス\n\n二つのレポートは相補的に作用し、過去、現在、未来を貫く完全な命理マップをあなたのために描きます！\n\n**購入後の流れ:**\n1. 支払いが完了しましたら、あなたの詳細な生年月日情報（生年月日、正確な時間、出生地）を以下のメールアドレスにお送りください: seondo@cneraart.com\n   例: 1978年12月12日 午後12時20分, アメリカ ニューヨーク\n2. 私たちの命理師が、古くからの中国五行哲学を駆使し、あなた独自のエネルギーパターンを個別分析します\n3. 3〜5営業日以内に、専用の「命理エネルギー分析レポート」を電子メールでお受け取りいただけます\n\n**プライバシーとパーソナライゼーションの保証:**\n私たちはあなたのプライバシーを非常に重視しています——すべての情報は厳重に秘密保持されます。これは「占い」ではなく、あなたのエネルギーパターンを理解することで、より明確に、より自信を持って生きる手助けをするものです。\n\n**私たちを選ぶ理由:**\n- わずか$19で、古代の知恵と現代の実践を融合した、深くパーソナライズされたレポートを入手できます\n- キャリアアップ、人間関係の調和、感情のバランス、健康の最適化、または自己成長の指針を求めている方に特に適しています\n- 何千年も磨かれた性格診断のような、ユニークな洞察体験！\n\n**注:** 本サービスは伝統文化の解釈に厳密に従い、方向性のある指針のみを提供します。すべての結果は参考情報としてのみご活用ください。"
@@ -353,7 +303,25 @@
   "common": {
     "site_name": "Cneraart",
     "cart": "カート",
-    "service": "カスタマーサービス"
+    "service": "カスタマーサービス",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "confirm": "确认",
+    "cancel": "取消",
+    "save": "保存",
+    "edit": "编辑",
+    "delete": "删除",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "view_more": "查看更多",
+    "language": "语言",
+    "currency": "货币",
+    "learn_more": "了解更多",
+    "uploading": "アップロード中...",
+    "back_home": "返回首页",
+    "report": "能量报告"
   },
   "guardianFinder": {
     "title": "あなたの守護ペンダントを見つける",
@@ -493,5 +461,207 @@
     "trust2Desc": "Each prayer is photographed to ensure authenticity and credibility",
     "trust3Title": "Email Feedback",
     "trust3Desc": "After prayer completion, photos and certificates will be sent to your email"
+  },
+  "services": {
+    "title": "サービス一覧",
+    "subtitle": "古代東洋の知恵 · 現代のスピリチュアルガイダンス",
+    "blessed": {
+      "title": "開光法物",
+      "description": "五台山高僧が開光した神聖な法器、あなたの人生を守護",
+      "cta": "開光法物を探す"
+    },
+    "fortune": {
+      "title": "占いサービス",
+      "destiny": {
+        "title": "運命分析",
+        "description": "古代中国の知恵で人生の運勢と運命を解読"
+      },
+      "palm": {
+        "title": "手相・人相分析",
+        "description": "手相と人相で古代の知恵を解き明かす"
+      },
+      "fengshui": {
+        "title": "家居風水分析",
+        "description": "住空間と宇宙エネルギーの調和"
+      }
+    },
+    "prayer": {
+      "title": "代理祈福サービス",
+      "description": "灯明、お香、各種祈福儀式であなたとご家族の幸福を祈る",
+      "cta": "祈福サービスを探す"
+    }
+  },
+  "blessing": {
+    "title": "開光の流れ",
+    "subtitle": "五台山高僧主持、古法伝承",
+    "step1": {
+      "title": "聖水浄化",
+      "description": "聖水、沈香、古代の真言で仏前にて浄化"
+    },
+    "step2": {
+      "title": "読経加持",
+      "description": "高僧が心を込めて経文を唱え、仏号が響き渡る"
+    },
+    "step3": {
+      "title": "聖地灌頂",
+      "description": "文殊菩薩の智慧の光と五爺財神の富貴の力を授かる"
+    },
+    "scrollHint": "スクロールして詳細を見る"
+  },
+  "home": {
+    "hero_title": "古老东方的祝福",
+    "hero_subtitle": "守护您的人生旅程·传承千年智慧",
+    "cta_products": "探索开光饰品",
+    "cta_fortune": "前约命理分析",
+    "featured_title": "精选开光饰品",
+    "featured_subtitle": "每一件都经过五台山开光,承载守护之力",
+    "blessing_title": "五台山圣地开光法会",
+    "blessing_subtitle": "由五台山高僧主持，文殊菩萨智慧加持、五爷庙财神庇佑，古法传承千年灵验无比",
+    "blessing_step1": "圣水清净仪轨",
+    "blessing_step1_desc": "以圣水、沉香、古咒于大殿佛前洗涤一切不净，迎接佛光普照",
+    "blessing_step2": "庄严诵经法会",
+    "blessing_step2_desc": "高僧大德虔诚诵经，佛号不断，经文回荡，法力无边",
+    "blessing_step3": "神圣能量灌顶",
+    "blessing_step3_desc": "承文殊菩萨智慧之光、五爷财神富贵之力，赋予守护与祥瑞",
+    "blessing_step4": "证书认证",
+    "blessing_step4_desc": "颁发开光证书",
+    "testimonials_title": "客户见证",
+    "testimonials_subtitle": "全球数千位客户获得祝福与守护",
+    "footer_about": "关于我们",
+    "footer_about_desc": "源・华渡致力于传播东方文化,提供正统开光饰品和命理服务。",
+    "footer_links": "快速链接",
+    "footer_contact": "联系我们",
+    "footer_copyright": "版权所有",
+    "services_title": "我们的神圣服务",
+    "services_subtitle": "古老东方智慧 · 现代灵性指导",
+    "service_blessed_items": "开光法物",
+    "service_blessed_items_desc": "经五台山高僧开光的神圣法器",
+    "service_fortune": "命理运势分析",
+    "service_fortune_desc": "中国古老智慧,解读人生运势与命运指引",
+    "service_palmistry": "手相面相分析",
+    "service_palmistry_desc": "通过手相和面相揭示古老智慧",
+    "service_fengshui": "家居风水",
+    "service_fengshui_desc": "调和居住空间与宇宙能量",
+    "service_blessing": "代祈福服务",
+    "service_blessing_desc": "供灯、烧香及各种祈福仪式",
+    "service_fortune_collection": "命理服务",
+    "service_fortune_collection_desc": "中国古老智慧，解读人生运势与命运指引",
+    "service_fortune_short": "命理运势分析",
+    "service_palmistry_short": "手相面相分析",
+    "service_fengshui_short": "家居风水分析"
+  },
+  "allProducts": {
+    "title": "全商品",
+    "search_placeholder": "商品を検索...",
+    "filter_all": "全カテゴリ",
+    "sort_label": "並び替え",
+    "sort_latest": "新着順",
+    "sort_price_low": "価格の安い順",
+    "sort_price_high": "価格の高い順",
+    "sort_popular": "人気順",
+    "no_results": "商品が見つかりません",
+    "no_results_desc": "検索条件を変更してください",
+    "view_details": "詳細を見る",
+    "add_to_cart": "カートに追加",
+    "out_of_stock": "売り切れ",
+    "in_stock": "在庫あり",
+    "only_left": "残り{{count}}点"
+  },
+  "cart": {
+    "title": "购物车",
+    "empty": "购物车是空的",
+    "empty_desc": "快去选购您喜欢的产品吧",
+    "browse_products": "浏览产品",
+    "item_total": "商品小计",
+    "coupon_code": "优惠券代码",
+    "coupon_placeholder": "输入优惠券",
+    "apply_coupon": "应用",
+    "coupon_applied": "已应用优惠券",
+    "subtotal": "小计",
+    "discount": "优惠券折扣",
+    "shipping": "运费",
+    "free_shipping": "免费",
+    "shipping_note": "再购买 ${{amount}} 即可享受免运费",
+    "total": "总计",
+    "checkout": "去结算",
+    "continue_shopping": "继续购物",
+    "remove": "移除",
+    "update_failed": "更新失败",
+    "remove_success": "已移除",
+    "remove_failed": "移除失败",
+    "invalid_coupon": "优惠券无效"
+  },
+  "account": {
+    "my_account": "我的账户",
+    "orders": "我的订单",
+    "addresses": "收货地址",
+    "profile": "个人信息",
+    "order_number": "订单号",
+    "order_date": "日期",
+    "order_status": "状态",
+    "order_total": "总计",
+    "view_details": "查看详情",
+    "order_not_found": "订单不存在",
+    "back_to_account": "返回账户",
+    "back_to_orders": "返回订单列表",
+    "order_details": "订单详情",
+    "order_status_pending": "待处理",
+    "order_status_processing": "处理中",
+    "order_status_shipped": "已发货",
+    "order_status_delivered": "已送达",
+    "order_status_cancelled": "已取消",
+    "total_amount": "订单金额",
+    "payment_method": "支付方式",
+    "order_timeline": "订单进度",
+    "order_placed": "订单已提交",
+    "order_processing": "订单处理中",
+    "order_being_prepared": "正在备货",
+    "waiting_for_processing": "等待处理",
+    "order_shipped": "订单已发货",
+    "carrier": "快递公司",
+    "tracking_number": "运单号",
+    "waiting_for_shipment": "等待发货",
+    "order_delivered": "订单已送达",
+    "order_completed": "订单已完成",
+    "waiting_for_delivery": "等待送达",
+    "shipping_address": "收货地址",
+    "order_items": "订单商品",
+    "product_unavailable": "商品不可用",
+    "quantity": "数量",
+    "subtotal": "小计",
+    "discount": "优惠",
+    "shipping": "运费",
+    "tax": "税费",
+    "total": "总计"
+  },
+  "status": {
+    "pending": "待处理",
+    "processing": "处理中",
+    "shipped": "已发货",
+    "delivered": "已送达",
+    "cancelled": "已取消"
+  },
+  "reportView": {
+    "faceReadingReport": "面相分析报告",
+    "palmReadingReport": "手相分析报告",
+    "fengshuiReport": "风水分析报告",
+    "download": "下载报告",
+    "downloading": "下载中...",
+    "downloadSuccess": "报告下载成功",
+    "downloadError": "下载失败,请重试",
+    "generatedAt": "生成时间",
+    "notFound": "报告未找到",
+    "notFoundDesc": "抱歉,找不到您请求的报告。请检查链接是否正确。",
+    "processing": "报告生成中",
+    "processingDesc": "您的报告正在生成中,请稍后再来查看。我们会在报告完成后通过邮件通知您。",
+    "report": "分析レポート",
+    "statusCompleted": "完了",
+    "statusProcessing": "処理中",
+    "statusPending": "保留中",
+    "statusFailed": "失敗",
+    "processingTime": "レポートは通常48時間以内に配信されます",
+    "backToOrders": "注文に戻る",
+    "downloadPDF": "PDFダウンロード",
+    "exploreProducts": "商品を探す"
   }
 }

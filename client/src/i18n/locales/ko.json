@@ -42,7 +42,8 @@
   "aboutUs": {
     "title": "회사 소개",
     "paragraph1": "오대산 대사가 직접 수천 년의 고대 동양 지혜를 열다. 역경, 생진팔자, 자미두수, 매화역수, 금구결, 대육효를 근기로 하고, 오행의 상생상극과 서양 별자리를 결합하여 사업, 재부, 건강, 인간관계 운세를 깊이 해석—기회를 명시하고 장애를 경고—당신이 인생의 흐름을 타고 시야를 넓히도록 돕습니다.",
-    "paragraph2": "우리는 개광, 독경 등 전통 의궤를 따르며, 엄숙하고 법에 맞게, 모든 복물에 청정한 원력을 주입하고, 심신 에너지를 조화시키며 마음을 안정시킵니다. 천년의 지혜로 현대 생활의 곤혹을 해답하고, 전속 복우로 인생의 순조와 복운의 창성을 수호합니다."
+    "paragraph2": "우리는 개광, 독경 등 전통 의궤를 따르며, 엄숙하고 법에 맞게, 모든 복물에 청정한 원력을 주입하고, 심신 에너지를 조화시키며 마음을 안정시킵니다. 천년의 지혜로 현대 생활의 곤혹을 해답하고, 전속 복우로 인생의 순조와 복운의 창성을 수호합니다.",
+    "videoTitle": "고승 개광 의식"
   },
   "footer": {
     "wutaishan": "오대산 · 오대 불교 성지 중 하나 · 유네스코 세계문화유산",
@@ -85,7 +86,8 @@
       "step4": "분석 보고서는 이메일로 전송됩니다"
     },
     "get_report": "보고서 받기",
-    "tab_service": "서비스 세부정보"
+    "tab_service": "서비스 세부정보",
+    "uploading_images": "이미지 업로드 중..."
   },
   "checkout": {
     "title": "Checkout",
@@ -261,84 +263,32 @@
   "products": {
     "510060": {
       "name": "명리학 에너지 분석 보고서",
-      "description": "사주팔자를 기반으로 한 심층 명리 분석, 명리 구조 해석 및 유년 운세 분석 포함, 3-5일 내 맞춤 보고서 제공"
+      "description": "사주팔자를 기반으로 한 심층 명리 분석, 명리 구조 해석 및 유년 운세 분석 포함, 3-5일 내 맞춤 보고서 제공",
+      "shortDesc": "解锁古老东方智慧,探索您的命理能量密码"
     },
     "510061": {
       "name": "명리 분석 + 오대산 기복 의식",
-      "description": "완벽한 명리 보고서 + 오대산 대리 기복 서비스(등불 공양/향 올리기), 영상 기록 포함, 10-15일 이내 배송"
+      "description": "완벽한 명리 보고서 + 오대산 대리 기복 서비스(등불 공양/향 올리기), 영상 기록 포함, 10-15일 이내 배송",
+      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
     },
-    "title": {
-      "name": "정의되지 않음",
-      "description": "정의되지 않음"
-    },
-    "subtitle": {
-      "name": "",
-      "description": ""
-    },
-    "all_products": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "search_placeholder": {
-      "name": "null",
-      "description": "null"
-    },
-    "select_category": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "all_categories": {
-      "name": "",
-      "description": ""
-    },
-    "sort_newest": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "sort_price_low": {
-      "name": "null",
-      "description": "null"
-    },
-    "sort_price_high": {
-      "name": "정의되지 않음",
-      "description": "정의되지 않음"
-    },
-    "sort_popular": {
-      "name": "정의되지 않음",
-      "description": "정의되지 않음"
-    },
-    "total_count": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "search_label": {
-      "name": "",
-      "description": ""
-    },
-    "sale_badge": {
-      "name": "정의되지 않음",
-      "description": "정의되지 않음"
-    },
-    "sold_out": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "stock_low": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "no_products": {
-      "name": "",
-      "description": ""
-    },
-    "try_other_filters": {
-      "name": "정의되지 않음",
-      "description": "정의되지 않음"
-    },
-    "viewAll": {
-      "name": "undefined",
-      "description": "undefined"
-    },
+    "title": "开光饰品",
+    "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
+    "all_products": "全部产品",
+    "search_placeholder": "搜索产品...",
+    "select_category": "选择分类",
+    "all_categories": "全部分类",
+    "sort_newest": "最新上架",
+    "sort_price_low": "价格从低到高",
+    "sort_price_high": "价格从高到低",
+    "sort_popular": "最受欢迎",
+    "total_count": "共 {{count}} 件产品",
+    "search_label": "搜索",
+    "sale_badge": "特惠",
+    "sold_out": "已售罄",
+    "stock_low": "仅剩 {{count}} 件",
+    "no_products": "暂无产品",
+    "try_other_filters": "请尝试其他搜索条件",
+    "viewAll": "查看所有产品",
     "fortune-energy-analysis-report": {
       "name": "운세 에너지 분석 보고서",
       "description": "오래된 동양의 지혜를 잠금 해제하고 당신의 운명 에너지 코드를 탐색하세요.\n\n**서비스 포함:**\n\n**1. 운명 구조 분석**\n당신의 사주팔자를 기반으로 선천적 재능, 성격 특성 및 인생 궤적을 심층적으로 해석합니다. 저희 운명 전문가들은 오행학설(금목수화토)을 활용하여 다음을 밝혀낼 것입니다:\n- 천간지지의 조합이 당신의 성격과 인간관계에 미치는 영향\n- 특별한 길신(예: 천을귀인, 태극귀인)이 당신의 운세에 미치는 가호\n- 명궁, 사업궁, 재백궁 등 십이궁위와 인생 여정의 심층적인 연관성\n\n**2. 세운 운세 분석 (2026-2027)**\n앞으로 1년간의 에너지 흐름과 운세 변화를 상세히 해석합니다:\n- 오행의 상생상극이 당신의 사업 발전, 감정의 흐름 및 의사결정 시기에 미치는 영향\n- 현대 생활 시나리오와 결합하여 실용적인 조언 제공 – 기회를 잡고 위험을 회피하는 방법\n- 재물운, 건강, 인간관계 등 핵심 분야에 대한 맞춤형 지침\n\n두 보고서는 상호 보완적이며, 당신에게 과거, 현재, 미래를 아우르는 완전한 운명 지도를 그려드립니다!\n\n**구매 후 절차:**\n1. 결제 완료 후, 당신의 상세한 생년월일 정보(출생 연월일, 정확한 시간, 출생 장소)를 다음 주소로 보내주십시오: seondo@cneraart.com\n   예시: 1978년 12월 12일 12:20 PM, 미국 뉴욕\n2. 저희 운명 전문가들은 고대 중국 오행 철학을 활용하여 당신만의 독특한 에너지 패턴을 맞춤 분석할 것입니다.\n3. 3-5 영업일 이내에 이메일을 통해 맞춤형 《운명 에너지 분석 보고서》를 받으실 수 있습니다.\n\n**개인 정보 보호 및 맞춤형 보장:**\n저희는 당신의 개인 정보를 매우 중요하게 생각합니다 – 모든 정보는 엄격하게 기밀로 유지됩니다. 이것은 \"점술\"이 아니라, 당신의 에너지 패턴을 이해함으로써 당신이 더 명확하고 자신감 있게 살아가도록 돕는 것입니다.\n\n**왜 우리를 선택해야 할까요?**\n- 단 $19로, 고대 지혜와 현대적 실천이 융합된 심층적인 맞춤형 보고서를 받을 수 있습니다.\n- 경력 발전, 감정 조화, 정서적 균형, 건강 최적화 또는 개인 성장 지침을 찾는 당신에게 특히 적합합니다.\n- 독특한 통찰력 경험 – 수천 년의 연마를 거친 성격 평가와 같습니다!\n\n**참고:** 본 서비스는 전통 문화 해석을 엄격히 준수하며, 방향성 지침만을 제공합니다. 모든 결과는 참고용입니다."
@@ -353,7 +303,25 @@
   "common": {
     "site_name": "Cneraart",
     "cart": "장바구니",
-    "service": "고객 서비스"
+    "service": "고객 서비스",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "confirm": "确认",
+    "cancel": "取消",
+    "save": "保存",
+    "edit": "编辑",
+    "delete": "删除",
+    "search": "搜索",
+    "filter": "筛选",
+    "sort": "排序",
+    "view_more": "查看更多",
+    "language": "语言",
+    "currency": "货币",
+    "learn_more": "了解更多",
+    "uploading": "업로드 중...",
+    "back_home": "返回首页",
+    "report": "能量报告"
   },
   "guardianFinder": {
     "title": "당신의 수호 펜던트 찾기",
@@ -493,5 +461,207 @@
     "trust2Desc": "Each prayer is photographed to ensure authenticity and credibility",
     "trust3Title": "Email Feedback",
     "trust3Desc": "After prayer completion, photos and certificates will be sent to your email"
+  },
+  "services": {
+    "title": "서비스",
+    "subtitle": "고대 동양 지혜 · 현대 영적 안내",
+    "blessed": {
+      "title": "개광 법물",
+      "description": "오대산 고승이 개광한 신성한 법기, 당신의 인생 여정을 수호",
+      "cta": "개광 법물 탐색"
+    },
+    "fortune": {
+      "title": "운세 서비스",
+      "destiny": {
+        "title": "운명 분석",
+        "description": "고대 중국 지혜로 인생 운세와 운명 해석"
+      },
+      "palm": {
+        "title": "수상·관상 분석",
+        "description": "수상과 관상으로 고대 지혜를 밝히다"
+      },
+      "fengshui": {
+        "title": "가정 풍수 분석",
+        "description": "거주 공간과 우주 에너지의 조화"
+      }
+    },
+    "prayer": {
+      "title": "대리 기복 서비스",
+      "description": "등공양, 향공양 및 각종 기복 의식",
+      "cta": "기복 서비스 탐색"
+    }
+  },
+  "blessing": {
+    "title": "개광 과정",
+    "subtitle": "오대산 고승 주관, 고법 전승",
+    "step1": {
+      "title": "성수 정화",
+      "description": "성수, 침향, 고대 주문으로 부처님 앞에서 정화"
+    },
+    "step2": {
+      "title": "독경 가지",
+      "description": "고승이 정성을 다해 경전을 독송"
+    },
+    "step3": {
+      "title": "성지 관정",
+      "description": "문수보살의 지혜의 빛과 오야재신의 부귀의 힘을 받음"
+    },
+    "scrollHint": "스크롤하여 더 보기"
+  },
+  "home": {
+    "hero_title": "古老东方的祝福",
+    "hero_subtitle": "守护您的人生旅程·传承千年智慧",
+    "cta_products": "探索开光饰品",
+    "cta_fortune": "前约命理分析",
+    "featured_title": "精选开光饰品",
+    "featured_subtitle": "每一件都经过五台山开光,承载守护之力",
+    "blessing_title": "五台山圣地开光法会",
+    "blessing_subtitle": "由五台山高僧主持，文殊菩萨智慧加持、五爷庙财神庇佑，古法传承千年灵验无比",
+    "blessing_step1": "圣水清净仪轨",
+    "blessing_step1_desc": "以圣水、沉香、古咒于大殿佛前洗涤一切不净，迎接佛光普照",
+    "blessing_step2": "庄严诵经法会",
+    "blessing_step2_desc": "高僧大德虔诚诵经，佛号不断，经文回荡，法力无边",
+    "blessing_step3": "神圣能量灌顶",
+    "blessing_step3_desc": "承文殊菩萨智慧之光、五爷财神富贵之力，赋予守护与祥瑞",
+    "blessing_step4": "证书认证",
+    "blessing_step4_desc": "颁发开光证书",
+    "testimonials_title": "客户见证",
+    "testimonials_subtitle": "全球数千位客户获得祝福与守护",
+    "footer_about": "关于我们",
+    "footer_about_desc": "源・华渡致力于传播东方文化,提供正统开光饰品和命理服务。",
+    "footer_links": "快速链接",
+    "footer_contact": "联系我们",
+    "footer_copyright": "版权所有",
+    "services_title": "我们的神圣服务",
+    "services_subtitle": "古老东方智慧 · 现代灵性指导",
+    "service_blessed_items": "开光法物",
+    "service_blessed_items_desc": "经五台山高僧开光的神圣法器",
+    "service_fortune": "命理运势分析",
+    "service_fortune_desc": "中国古老智慧,解读人生运势与命运指引",
+    "service_palmistry": "手相面相分析",
+    "service_palmistry_desc": "通过手相和面相揭示古老智慧",
+    "service_fengshui": "家居风水",
+    "service_fengshui_desc": "调和居住空间与宇宙能量",
+    "service_blessing": "代祈福服务",
+    "service_blessing_desc": "供灯、烧香及各种祈福仪式",
+    "service_fortune_collection": "命理服务",
+    "service_fortune_collection_desc": "中国古老智慧，解读人生运势与命运指引",
+    "service_fortune_short": "命理运势分析",
+    "service_palmistry_short": "手相面相分析",
+    "service_fengshui_short": "家居风水分析"
+  },
+  "allProducts": {
+    "title": "전체 상품",
+    "search_placeholder": "상품 검색...",
+    "filter_all": "전체 카테고리",
+    "sort_label": "정렬",
+    "sort_latest": "최신순",
+    "sort_price_low": "낮은 가격순",
+    "sort_price_high": "높은 가격순",
+    "sort_popular": "인기순",
+    "no_results": "상품을 찾을 수 없습니다",
+    "no_results_desc": "검색 조건을 변경해 주세요",
+    "view_details": "상세 보기",
+    "add_to_cart": "장바구니에 추가",
+    "out_of_stock": "품절",
+    "in_stock": "재고 있음",
+    "only_left": "{{count}}개 남음"
+  },
+  "cart": {
+    "title": "购物车",
+    "empty": "购物车是空的",
+    "empty_desc": "快去选购您喜欢的产品吧",
+    "browse_products": "浏览产品",
+    "item_total": "商品小计",
+    "coupon_code": "优惠券代码",
+    "coupon_placeholder": "输入优惠券",
+    "apply_coupon": "应用",
+    "coupon_applied": "已应用优惠券",
+    "subtotal": "小计",
+    "discount": "优惠券折扣",
+    "shipping": "运费",
+    "free_shipping": "免费",
+    "shipping_note": "再购买 ${{amount}} 即可享受免运费",
+    "total": "总计",
+    "checkout": "去结算",
+    "continue_shopping": "继续购物",
+    "remove": "移除",
+    "update_failed": "更新失败",
+    "remove_success": "已移除",
+    "remove_failed": "移除失败",
+    "invalid_coupon": "优惠券无效"
+  },
+  "account": {
+    "my_account": "我的账户",
+    "orders": "我的订单",
+    "addresses": "收货地址",
+    "profile": "个人信息",
+    "order_number": "订单号",
+    "order_date": "日期",
+    "order_status": "状态",
+    "order_total": "总计",
+    "view_details": "查看详情",
+    "order_not_found": "订单不存在",
+    "back_to_account": "返回账户",
+    "back_to_orders": "返回订单列表",
+    "order_details": "订单详情",
+    "order_status_pending": "待处理",
+    "order_status_processing": "处理中",
+    "order_status_shipped": "已发货",
+    "order_status_delivered": "已送达",
+    "order_status_cancelled": "已取消",
+    "total_amount": "订单金额",
+    "payment_method": "支付方式",
+    "order_timeline": "订单进度",
+    "order_placed": "订单已提交",
+    "order_processing": "订单处理中",
+    "order_being_prepared": "正在备货",
+    "waiting_for_processing": "等待处理",
+    "order_shipped": "订单已发货",
+    "carrier": "快递公司",
+    "tracking_number": "运单号",
+    "waiting_for_shipment": "等待发货",
+    "order_delivered": "订单已送达",
+    "order_completed": "订单已完成",
+    "waiting_for_delivery": "等待送达",
+    "shipping_address": "收货地址",
+    "order_items": "订单商品",
+    "product_unavailable": "商品不可用",
+    "quantity": "数量",
+    "subtotal": "小计",
+    "discount": "优惠",
+    "shipping": "运费",
+    "tax": "税费",
+    "total": "总计"
+  },
+  "status": {
+    "pending": "待处理",
+    "processing": "处理中",
+    "shipped": "已发货",
+    "delivered": "已送达",
+    "cancelled": "已取消"
+  },
+  "reportView": {
+    "faceReadingReport": "面相分析报告",
+    "palmReadingReport": "手相分析报告",
+    "fengshuiReport": "风水分析报告",
+    "download": "下载报告",
+    "downloading": "下载中...",
+    "downloadSuccess": "报告下载成功",
+    "downloadError": "下载失败,请重试",
+    "generatedAt": "生成时间",
+    "notFound": "报告未找到",
+    "notFoundDesc": "抱歉,找不到您请求的报告。请检查链接是否正确。",
+    "processing": "报告生成中",
+    "processingDesc": "您的报告正在生成中,请稍后再来查看。我们会在报告完成后通过邮件通知您。",
+    "report": "분석 보고서",
+    "statusCompleted": "완료",
+    "statusProcessing": "처리 중",
+    "statusPending": "대기 중",
+    "statusFailed": "실패",
+    "processingTime": "보고서는 보통 48시간 이내에 전달됩니다",
+    "backToOrders": "주문으로 돌아가기",
+    "downloadPDF": "PDF 다운로드",
+    "exploreProducts": "상품 탐색"
   }
 }

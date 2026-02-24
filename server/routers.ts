@@ -1566,9 +1566,48 @@ export const appRouter = router({
         })
       )
       .query(async ({ input, ctx }) => {
-        // 这里需要在db.ts中添加相应的查询函数
-        // 暂时返回空数组
-        return [];
+        const { fortuneTasks, fortuneReports } = await import("../drizzle/schema");
+        const { eq, desc, and } = await import("drizzle-orm");
+        const database = await import("./db").then(m => m.getDb());
+        if (!database) return [];
+
+        // 构建查询条件
+        const conditions = [eq(fortuneTasks.userId, ctx.user.id)];
+        if (input.serviceType) {
+          conditions.push(eq(fortuneTasks.serviceType, input.serviceType));
+        }
+
+        const tasks = await database
+          .select()
+          .from(fortuneTasks)
+          .where(and(...conditions))
+          .orderBy(desc(fortuneTasks.createdAt))
+          .limit(input.limit)
+          .offset(input.offset);
+
+        // 获取已完成任务的报告
+        const tasksWithReports = await Promise.all(
+          tasks.map(async (task) => {
+            let report = null;
+            if (task.status === "completed") {
+              const [r] = await database
+                .select()
+                .from(fortuneReports)
+                .where(eq(fortuneReports.taskId, task.taskId))
+                .limit(1);
+              report = r || null;
+            }
+            return {
+              ...task,
+              report: report ? {
+                overallSummary: report.overallSummary,
+                score: report.score,
+              } : null,
+            };
+          })
+        );
+
+        return tasksWithReports;
       }),
   }),
 });

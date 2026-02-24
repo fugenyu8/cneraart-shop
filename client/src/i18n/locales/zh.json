@@ -653,6 +653,15 @@
     "notFound": "报告未找到",
     "notFoundDesc": "抱歉,找不到您请求的报告。请检查链接是否正确。",
     "processing": "报告生成中",
-    "processingDesc": "您的报告正在生成中,请稍后再来查看。我们会在报告完成后通过邮件通知您。"
+    "processingDesc": "您的报告正在生成中,请稍后再来查看。我们会在报告完成后通过邮件通知您。",
+    "report": "分析报告",
+    "statusCompleted": "已完成",
+    "statusProcessing": "分析中",
+    "statusPending": "待处理",
+    "statusFailed": "失败",
+    "processingTime": "报告通常在48小时内交付",
+    "backToOrders": "返回订单",
+    "downloadPDF": "下载PDF报告",
+    "exploreProducts": "探索产品"
   }
 }

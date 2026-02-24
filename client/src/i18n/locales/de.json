@@ -84,35 +84,22 @@
   "products": {
     "510060": {
       "name": "Numerologischer Energieanalyse-Bericht",
-      "description": "Tiefgehende numerologische Analyse basierend auf den Acht Zeichen der Geburt (Bazi), einschließlich der Interpretation der Schicksalsstruktur und der Jahresglücks-Analyse. Exklusiver Bericht innerhalb von 3-5 Tagen geliefert."
+      "description": "Tiefgehende numerologische Analyse basierend auf den Acht Zeichen der Geburt (Bazi), einschließlich der Interpretation der Schicksalsstruktur und der Jahresglücks-Analyse. Exklusiver Bericht innerhalb von 3-5 Tagen geliefert.",
+      "shortDesc": "解锁古老东方智慧,探索您的命理能量密码"
     },
     "510061": {
       "name": "Numerologische Analyse + Wutaishan Segnungszeremonie",
-      "description": "Vollständiger numerologischer Bericht + Stellvertretender Segnungsdienst am Wutaishan (Lichtopfer/Räucherstäbchen), inklusive Videoaufzeichnung, Lieferung in 10-15 Tagen"
+      "description": "Vollständiger numerologischer Bericht + Stellvertretender Segnungsdienst am Wutaishan (Lichtopfer/Räucherstäbchen), inklusive Videoaufzeichnung, Lieferung in 10-15 Tagen",
+      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
     },
-    "title": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "search_placeholder": {
-      "name": "",
-      "description": ""
-    },
+    "title": "开光饰品",
+    "search_placeholder": "搜索产品...",
     "filter_all": "Alle Kategorien",
     "sort_label": "Sortieren nach",
     "sort_latest": "Neueste",
-    "sort_price_low": {
-      "name": "",
-      "description": ""
-    },
-    "sort_price_high": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "sort_popular": {
-      "name": "null",
-      "description": "null"
-    },
+    "sort_price_low": "价格从低到高",
+    "sort_price_high": "价格从高到低",
+    "sort_popular": "最受欢迎",
     "no_results": "Keine Produkte gefunden",
     "no_results_desc": "Versuchen Sie, Ihre Suche oder Filter anzupassen",
     "view_details": "Details anzeigen",
@@ -120,58 +107,19 @@
     "out_of_stock": "Ausverkauft",
     "in_stock": "Auf Lager",
     "only_left": "Nur noch {{count}} übrig",
-    "subtitle": {
-      "name": "",
-      "description": ""
-    },
-    "all_products": {
-      "name": "",
-      "description": ""
-    },
-    "select_category": {
-      "name": "",
-      "description": ""
-    },
-    "all_categories": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "sort_newest": {
-      "name": "",
-      "description": ""
-    },
-    "total_count": {
-      "name": "undefiniert",
-      "description": "undefiniert"
-    },
-    "search_label": {
-      "name": "",
-      "description": ""
-    },
-    "sale_badge": {
-      "name": "",
-      "description": ""
-    },
-    "sold_out": {
-      "name": "",
-      "description": ""
-    },
-    "stock_low": {
-      "name": "",
-      "description": ""
-    },
-    "no_products": {
-      "name": "undefined",
-      "description": "undefined"
-    },
-    "try_other_filters": {
-      "name": "",
-      "description": ""
-    },
-    "viewAll": {
-      "name": "null",
-      "description": "null"
-    },
+    "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
+    "all_products": "全部产品",
+    "select_category": "选择分类",
+    "all_categories": "全部分类",
+    "sort_newest": "最新上架",
+    "total_count": "共 {{count}} 件产品",
+    "search_label": "搜索",
+    "sale_badge": "特惠",
+    "sold_out": "已售罄",
+    "stock_low": "仅剩 {{count}} 件",
+    "no_products": "暂无产品",
+    "try_other_filters": "请尝试其他搜索条件",
+    "viewAll": "查看所有产品",
     "fortune-energy-analysis-report": {
       "name": "Energieanalysebericht des Schicksals",
       "description": "Entdecken Sie die alte östliche Weisheit und entschlüsseln Sie Ihren numerologischen Energiecode\n\n**Der Service beinhaltet:**\n\n**1. Analyse der numerologischen Struktur**\nBasierend auf Ihrem Geburtsdatum und Ihrer Geburtszeit wird Ihre angeborene Begabung, Ihre Persönlichkeitsmerkmale und Ihr Lebensweg tiefgehend interpretiert. Unsere Numerologie-Meister nutzen die Fünf-Elemente-Lehre (Metall, Holz, Wasser, Feuer, Erde), um Ihnen Folgendes zu offenbaren:\n- Wie die Kombination der Himmelsstämme und Erdzweige Ihre Persönlichkeit und zwischenmenschlichen Beziehungen beeinflusst\n- Die Segnungen besonderer glückverheißender Sterne und Gottheiten (wie Tian Yi Gui Ren, Tai Ji Gui Ren) auf Ihr Schicksal\n- Die tiefen Verbindungen zwischen den zwölf Palästen wie dem Lebenspalast, dem Karrierepalast, dem Wohlstandspalast und Ihren Lebenserfahrungen\n\n**2. Analyse der Jahresglücksentwicklung (2026-2027)**\nEine detaillierte Interpretation des Energieflusses und der Schicksalsveränderungen im kommenden Jahr:\n- Wie die Wechselwirkungen der Fünf Elemente Ihre Karriereentwicklung, romantische Beziehungen und Entscheidungszeitpunkte beeinflussen\n- Praktische Ratschläge, kombiniert mit modernen Lebensszenarien – wie man Chancen ergreift und Risiken vermeidet\n- Exklusive Anleitungen für Schlüsselbereiche wie Finanzen, Gesundheit und zwischenmenschliche Beziehungen\n\nDie beiden Berichte ergänzen sich gegenseitig und zeichnen eine vollständige numerologische Karte, die Vergangenheit, Gegenwart und Zukunft durchdringt!\n\n**Ablauf nach dem Kauf:**\n1. Nach Abschluss der Zahlung senden Sie bitte Ihre detaillierten Geburtsinformationen (Geburtsjahr, -monat, -tag, genaue Uhrzeit, Geburtsort) an: seondo@cneraart.com\n   Beispiel: 12. Dezember 1978, 12:20 PM, New York, USA\n2. Unsere Numerologie-Meister werden die alte chinesische Fünf-Elemente-Philosophie nutzen, um Ihr einzigartiges Energiemuster maßgeschneidert zu analysieren\n3. Sie erhalten Ihren exklusiven „Numerologischen Energieanalysebericht“ innerhalb von 3-5 Werktagen per E-Mail\n\n**Datenschutz und Personalisierungsgarantie:**\nWir legen größten Wert auf Ihre Privatsphäre – alle Informationen werden streng vertraulich behandelt. Dies ist kein „Wahrsagen“, sondern eine Unterstützung, um durch das Verständnis Ihrer Energiemuster klarer und selbstbewusster zu leben.\n\n**Warum uns wählen?**\n- Für nur 19 $ erhalten Sie einen tiefgehenden, personalisierten Bericht, der alte Weisheit mit moderner Praxis verbindet\n- Besonders geeignet für diejenigen, die beruflichen Aufstieg, harmonische Beziehungen, emotionales Gleichgewicht, Gesundheitsoptimierung oder persönliche Wachstumsanleitung suchen\n- Ein einzigartiges Einsichtserlebnis – wie eine über Jahrtausende verfeinerte Persönlichkeitsbewertung!\n\n**Hinweis:** Dieser Service folgt streng der traditionellen kulturellen Interpretation und bietet nur eine richtungsweisende Orientierung. Alle Ergebnisse dienen nur als Referenz."
@@ -220,7 +168,8 @@
       "step4": "Der Analysebericht wird Ihnen per E-Mail zugesandt"
     },
     "get_report": "Bericht Erhalten",
-    "tab_service": "Servicedetails"
+    "tab_service": "Servicedetails",
+    "uploading_images": "Bilder werden hochgeladen..."
   },
   "cart": {
     "title": "Warenkorb",
@@ -297,10 +246,42 @@
     "order_date": "Datum",
     "order_status": "Status",
     "order_total": "Gesamt",
-    "view_details": "Details anzeigen"
+    "view_details": "Details anzeigen",
+    "order_not_found": "订单不存在",
+    "back_to_account": "返回账户",
+    "back_to_orders": "返回订单列表",
+    "order_details": "订单详情",
+    "order_status_pending": "待处理",
+    "order_status_processing": "处理中",
+    "order_status_shipped": "已发货",
+    "order_status_delivered": "已送达",
+    "order_status_cancelled": "已取消",
+    "total_amount": "订单金额",
+    "payment_method": "支付方式",
+    "order_timeline": "订单进度",
+    "order_placed": "订单已提交",
+    "order_processing": "订单处理中",
+    "order_being_prepared": "正在备货",
+    "waiting_for_processing": "等待处理",
+    "order_shipped": "订单已发货",
+    "carrier": "快递公司",
+    "tracking_number": "运单号",
+    "waiting_for_shipment": "等待发货",
+    "order_delivered": "订单已送达",
+    "order_completed": "订单已完成",
+    "waiting_for_delivery": "等待送达",
+    "shipping_address": "收货地址",
+    "order_items": "订单商品",
+    "product_unavailable": "商品不可用",
+    "quantity": "数量",
+    "subtotal": "小计",
+    "discount": "优惠",
+    "shipping": "运费",
+    "tax": "税费",
+    "total": "总计"
   },
   "admin": {
-    "dashboard": "Dashboard",
+    "dashboard": "Übersicht",
     "products": "Produkte",
     "orders": "Bestellungen",
     "coupons": "Gutscheine",
@@ -321,7 +302,7 @@
       "title": "Serviceauftragsverwaltung",
       "subtitle": "Alle Serviceaufträge anzeigen und verwalten",
       "orderId": "Auftragsnummer",
-      "service": "Service",
+      "service": "Dienstleistung",
       "customer": "Kunde",
       "date": "Datum",
       "status": {
@@ -373,7 +354,10 @@
     "learn_more": "Mehr erfahren",
     "site_name": "Cneraart",
     "cart": "Warenkorb",
-    "service": "Kundendienst"
+    "service": "Kundendienst",
+    "uploading": "Wird hochgeladen...",
+    "back_home": "返回首页",
+    "report": "能量报告"
   },
   "status": {
     "pending": "Ausstehend",
@@ -385,7 +369,8 @@
   "aboutUs": {
     "title": "ÜBER UNS",
     "paragraph1": "Der Meister des Wutai-Berges erschließt persönlich Jahrtausende alter östlicher Weisheit, basierend auf dem I Ging, Geburtskarten, Zi Wei Dou Shu, Pflaumenblüten-I Ging, Goldenen Schlüsselversen und den Großen Sechs Yao. Durch die Integration der Zyklen von Erzeugung und Einschränkung der Fünf Elemente mit westlicher Astrologie analysieren wir tiefgehend Karriere, Reichtum, Gesundheit und zwischenmenschliche Schicksale—offenbaren Chancen, warnen vor Hindernissen—um Ihnen zu helfen, die Strömungen des Lebens zu navigieren und Ihren Horizont zu erweitern.",
-    "paragraph2": "Wir folgen traditionellen Ritualen wie Weihe und Sutra-Rezitation, feierlich und ordnungsgemäß, und erfüllen jeden gesegneten Gegenstand mit reiner Aspiration, harmonisieren Körper- und Geistenergie und beruhigen den Geist. Mit Jahrtausenden von Weisheit beantworten wir die Rätsel des modernen Lebens und nutzen exklusive Segnungen, um ein reibungsloses Leben und blühendes Glück zu schützen."
+    "paragraph2": "Wir folgen traditionellen Ritualen wie Weihe und Sutra-Rezitation, feierlich und ordnungsgemäß, und erfüllen jeden gesegneten Gegenstand mit reiner Aspiration, harmonisieren Körper- und Geistenergie und beruhigen den Geist. Mit Jahrtausenden von Weisheit beantworten wir die Rätsel des modernen Lebens und nutzen exklusive Segnungen, um ein reibungsloses Leben und blühendes Glück zu schützen.",
+    "videoTitle": "Weihezeremonie durch erfahrene Mönche"
   },
   "footer": {
     "wutaishan": "Berg Wutai · Einer der Fünf Heiligen Buddhistischen Berge · UNESCO-Weltkulturerbe",
@@ -469,38 +454,38 @@
     "subtitle": "Geben Sie Ihr Geburtsdatum ein und wir empfehlen Ihnen die perfekten Tierkreis- und Sternzeichen-Schutzanhänger",
     "birthdateLabel": "Birthdate",
     "findButton": "Find",
-    "searching": "Searching...",
+    "searching": "Suche...",
     "pleaseSelectDate": "Please select date",
-    "yourZodiac": "Your Zodiac",
-    "yourConstellation": "Your Constellation"
+    "yourZodiac": "Dein chinesisches Tierkreiszeichen",
+    "yourConstellation": "Dein Sternzeichen"
   },
   "zodiac": {
-    "鼠": "Rat",
-    "牛": "Ox",
+    "鼠": "Ratte",
+    "牛": "Ochse",
     "虎": "Tiger",
-    "兔": "Rabbit",
-    "龙": "Dragon",
-    "蛇": "Snake",
-    "马": "Horse",
-    "羊": "Goat",
-    "猴": "Monkey",
-    "鸡": "Rooster",
-    "狗": "Dog",
-    "猪": "Pig"
+    "兔": "Hase",
+    "龙": "Drache",
+    "蛇": "Schlange",
+    "马": "Pferd",
+    "羊": "Ziege",
+    "猴": "Affe",
+    "鸡": "Hahn",
+    "狗": "Hund",
+    "猪": "Schwein"
   },
   "constellation": {
-    "Aries": "Aries",
-    "Taurus": "Taurus",
-    "Gemini": "Gemini",
-    "Cancer": "Cancer",
-    "Leo": "Leo",
-    "Virgo": "Virgo",
-    "Libra": "Libra",
-    "Scorpio": "Scorpio",
-    "Sagittarius": "Sagittarius",
-    "Capricorn": "Capricorn",
-    "Aquarius": "Aquarius",
-    "Pisces": "Pisces"
+    "Aries": "Widder",
+    "Taurus": "Stier",
+    "Gemini": "Zwillinge",
+    "Cancer": "Krebs",
+    "Leo": "Löwe",
+    "Virgo": "Jungfrau",
+    "Libra": "Waage",
+    "Scorpio": "Skorpion",
+    "Sagittarius": "Schütze",
+    "Capricorn": "Steinbock",
+    "Aquarius": "Wassermann",
+    "Pisces": "Fische"
   },
   "fortuneUpload": {
     "title": "Bilder hochladen",
@@ -524,83 +509,169 @@
     "req4": "Alle Bilder sind streng vertraulich und werden nach der Analyse automatisch gelöscht"
   },
   "destiny": {
-    "title": "Destiny Analysis",
-    "subtitle": "In-depth Zi Wei Dou Shu analysis to reveal your life's trajectory",
-    "formTitle": "Submit Your Birth Information",
-    "formDesc": "Please fill in the following information accurately for a professional destiny analysis report",
+    "title": "Schicksalsanalyse",
+    "subtitle": "Tiefgehende Zi Wei Dou Shu Analyse zur Enthüllung deines Lebensweges",
+    "formTitle": "Gib deine Geburtsdaten ein",
+    "formDesc": "Bitte fülle die folgenden Informationen genau aus für einen professionellen Schicksalsanalyse-Bericht",
     "name": "Name",
-    "namePlaceholder": "Enter your name",
-    "email": "Email",
-    "emailPlaceholder": "For receiving the report",
-    "gender": "Gender",
-    "genderPlaceholder": "Select gender",
-    "male": "Male",
-    "female": "Female",
-    "birthDate": "Birth Date",
-    "year": "Year",
-    "month": "Month",
-    "day": "Day",
-    "birthTime": "Birth Time",
+    "namePlaceholder": "Gib deinen Namen ein",
+    "email": "E-Mail",
+    "emailPlaceholder": "Zum Empfang des Berichts",
+    "gender": "Geschlecht",
+    "genderPlaceholder": "Geschlecht auswählen",
+    "male": "Männlich",
+    "female": "Weiblich",
+    "birthDate": "Geburtsdatum",
+    "year": "Jahr",
+    "month": "Monat",
+    "day": "Tag",
+    "birthTime": "Geburtszeit",
     "optional": "Optional",
-    "hour": "Hour",
+    "hour": "Stunde",
     "minute": "Minute",
-    "question": "Your Questions",
-    "questionPlaceholder": "e.g., Career, Wealth, Marriage, Health, etc.",
-    "submit": "Submit Analysis Request",
-    "submitting": "Submitting...",
-    "submitSuccess": "Submitted Successfully",
-    "submitSuccessDesc": "Your request has been submitted. The report will be sent to your email within 48 hours",
-    "requiredFields": "Please fill in all required fields",
-    "deliveryTime": "* Professional masters will complete the analysis within 48 hours and send a detailed report via email",
+    "question": "Ihre Fragen",
+    "questionPlaceholder": "z.B. Karriere, Wohlstand, Ehe, Gesundheit, etc.",
+    "submit": "Analyseanfrage absenden",
+    "submitting": "Wird gesendet...",
+    "submitSuccess": "Erfolgreich gesendet",
+    "submitSuccessDesc": "Ihre Anfrage wurde übermittelt. Der Bericht wird Ihnen innerhalb von 48 Stunden per E-Mail zugesandt.",
+    "requiredFields": "Bitte füllen Sie alle Pflichtfelder aus",
+    "deliveryTime": "* Professionelle Meister fertigen die Analyse innerhalb von 48 Stunden an und senden einen detaillierten Bericht per E-Mail",
     "feature1Title": "Zi Wei Dou Shu",
-    "feature1Desc": "Thousand-year-old destiny science essence, in-depth chart analysis",
-    "feature2Title": "Annual Fortune",
-    "feature2Desc": "Predict future trends and seize life opportunities",
-    "feature3Title": "Professional Masters",
-    "feature3Desc": "Personally analyzed by senior masters from Mount Wutai for accuracy"
+    "feature1Desc": "Tausend Jahre alte Schicksalswissenschaft, tiefgehende Chartanalyse",
+    "feature2Title": "Jahresglück",
+    "feature2Desc": "Zukünftige Trends vorhersagen und Lebenschancen nutzen",
+    "feature3Title": "Professionelle Meister",
+    "feature3Desc": "Persönliche Analyse durch erfahrene Meister vom Wutai Shan für höchste Genauigkeit"
   },
   "prayer": {
-    "title": "Prayer Service",
-    "subtitle": "Masters from Mount Wutai pray for you, convey wishes, and seek peace",
-    "lampService": "Lamp Offering",
-    "lampDesc": "Light a prayer lamp for you at Mount Wutai sacred site to illuminate the path and dispel darkness",
-    "lampFeature1": "Lamp offering at Manjushri Bodhisattva Monastery",
-    "lampFeature2": "Master chanting and dedication for merit completion",
-    "lampFeature3": "Provide lamp offering photos and prayer certificate",
-    "perLamp": "lamp",
-    "incenseService": "Incense Offering",
-    "incenseDesc": "Offer incense for you at Mount Wutai sacred site to convey wishes and seek auspiciousness",
-    "incenseFeature1": "Incense offering at Main Hall",
-    "incenseFeature2": "Master praying and dedication on behalf",
-    "incenseFeature3": "Provide incense offering photos and prayer certificate",
-    "perIncense": "stick",
-    "formTitle": "Submit Prayer Request",
-    "formDesc": "Please fill in the following information, we will pray sincerely for you",
+    "title": "Gebetsdienst",
+    "subtitle": "Meister vom Wutai Shan beten für Sie, übermitteln Wünsche und suchen Frieden",
+    "lampService": "Lampenopfer",
+    "lampDesc": "Anzünden einer Gebetslampe für Sie an der heiligen Stätte des Wutai Shan, um den Weg zu erleuchten und Dunkelheit zu vertreiben",
+    "lampFeature1": "Lampenopfer im Manjushri Bodhisattva Kloster",
+    "lampFeature2": "Meister rezitieren Sutren und widmen das Verdienst",
+    "lampFeature3": "Bereitstellung von Fotos der Lampenopfer und Gebetszertifikat",
+    "perLamp": "Lampe",
+    "incenseService": "Räucheropfer",
+    "incenseDesc": "Räucherstäbchenopfer für Sie an der heiligen Stätte des Wutai Shan, um Wünsche zu übermitteln und Glück zu erbitten",
+    "incenseFeature1": "Räucheropfer in der Haupthalle",
+    "incenseFeature2": "Meister beten und widmen im Auftrag",
+    "incenseFeature3": "Bereitstellung von Fotos der Räucheropfer und Gebetszertifikat",
+    "perIncense": "Stäbchen",
+    "formTitle": "Gebetsanfrage absenden",
+    "formDesc": "Bitte füllen Sie die folgenden Informationen aus, wir beten aufrichtig für Sie",
     "name": "Name",
-    "namePlaceholder": "Enter your name or the name of the prayer recipient",
-    "email": "Email",
-    "emailPlaceholder": "For receiving prayer certificate",
-    "serviceType": "Prayer Method",
-    "serviceTypePlaceholder": "Select prayer method",
-    "prayerFor": "Prayer Recipient",
-    "prayerForPlaceholder": "e.g., Myself, Family, Friends, etc.",
-    "wish": "Prayer Wish",
-    "wishPlaceholder": "Write your wish, e.g., Peace and Health, Career Success, Academic Progress, etc.",
+    "namePlaceholder": "Geben Sie Ihren Namen oder den Namen des Gebetsempfängers ein",
+    "email": "E-Mail",
+    "emailPlaceholder": "Zum Empfang des Gebetszertifikats",
+    "serviceType": "Gebetsart",
+    "serviceTypePlaceholder": "Gebetsart auswählen",
+    "prayerFor": "Gebetsempfänger",
+    "prayerForPlaceholder": "z.B. Ich selbst, Familie, Freunde, etc.",
+    "wish": "Gebetswunsch",
+    "wishPlaceholder": "Schreiben Sie Ihren Wunsch, z.B. Frieden und Gesundheit, beruflicher Erfolg, akademischer Fortschritt, etc.",
     "optional": "Optional",
-    "quantity": "Quantity",
-    "lamps": "lamps",
-    "incenses": "sticks",
-    "submit": "Submit Prayer Request",
-    "submitting": "Submitting...",
-    "submitSuccess": "Submitted Successfully",
-    "submitSuccessDesc": "Your prayer request has been submitted, we will pray sincerely for you",
-    "requiredFields": "Please fill in all required fields",
-    "deliveryTime": "* We will complete the prayer within 3 business days and send the prayer certificate and photos via email",
-    "trust1Title": "Mount Wutai Sacred Site",
-    "trust1Desc": "One of the five major Buddhist sacred sites in the world, Manjushri Bodhisattva Monastery",
-    "trust2Title": "Authentic Photos",
-    "trust2Desc": "Each prayer is photographed to ensure authenticity and credibility",
-    "trust3Title": "Email Feedback",
-    "trust3Desc": "After prayer completion, photos and certificates will be sent to your email"
+    "quantity": "Menge",
+    "lamps": "Lampen",
+    "incenses": "Stäbchen",
+    "submit": "Gebetsanfrage absenden",
+    "submitting": "Wird gesendet...",
+    "submitSuccess": "Erfolgreich gesendet",
+    "submitSuccessDesc": "Ihre Gebetsanfrage wurde übermittelt, wir werden aufrichtig für Sie beten",
+    "requiredFields": "Bitte füllen Sie alle Pflichtfelder aus",
+    "deliveryTime": "* Wir vollenden das Gebet innerhalb von 3 Werktagen und senden Ihnen das Gebetszertifikat sowie Fotos per E-Mail zu",
+    "trust1Title": "Heiliger Berg Wutai",
+    "trust1Desc": "Einer der fünf großen buddhistischen Heiligtümer der Welt, Kloster des Bodhisattva Manjushri",
+    "trust2Title": "Authentische Fotos",
+    "trust2Desc": "Jedes Gebet wird fotografisch dokumentiert, um Authentizität und Glaubwürdigkeit zu gewährleisten",
+    "trust3Title": "Feedback per E-Mail",
+    "trust3Desc": "Nach Abschluss des Gebets erhalten Sie Fotos und Zertifikate per E-Mail"
+  },
+  "services": {
+    "title": "Unsere Dienstleistungen",
+    "subtitle": "Alte östliche Weisheit · Moderne spirituelle Führung",
+    "blessed": {
+      "title": "Geweihte Heiligtümer",
+      "description": "Heilige Dharma-Instrumente, geweiht von den ehrwürdigen Mönchen des Berges Wutai, schützen Ihren Lebensweg",
+      "cta": "Geweihte Heiligtümer entdecken"
+    },
+    "fortune": {
+      "title": "Glücks- und Schicksalsdienste",
+      "destiny": {
+        "title": "Schicksalsanalyse",
+        "description": "Alte chinesische Weisheit zur Deutung von Lebensglück und Schicksalsführung"
+      },
+      "palm": {
+        "title": "Hand- und Gesichtsanalyse",
+        "description": "Enthüllung alter Weisheiten durch Handlesen und Gesichtsanalyse"
+      },
+      "fengshui": {
+        "title": "Feng Shui Analyse für Zuhause",
+        "description": "Harmonisierung der Wohnräume mit kosmischer Energie"
+      }
+    },
+    "prayer": {
+      "title": "Gebetsdienste",
+      "description": "Lampenspende, Räucherzeremonien und verschiedene Gebetsrituale für Sie und Ihre Familie",
+      "cta": "Gebetsdienste entdecken"
+    }
+  },
+  "blessing": {
+    "title": "Weiheprozess",
+    "subtitle": "Geführt von den ehrwürdigen Mönchen des Berges Wutai, alte Tradition",
+    "step1": {
+      "title": "Reinigung mit heiligem Wasser",
+      "description": "Reinigung mit heiligem Wasser, Adlerholz-Räucherwerk und alten Mantras vor dem Buddha"
+    },
+    "step2": {
+      "title": "Sutra-Rezitation & Segnung",
+      "description": "Ehrwürdige Mönche rezitieren mit Hingabe Sutras, der Name Buddhas hallt wider"
+    },
+    "step3": {
+      "title": "Heilige Ermächtigung",
+      "description": "Empfang des Weisheitslichts des Bodhisattva Manjushri und des Wohlstandssegens von Wu Ye"
+    },
+    "scrollHint": "Scrollen für mehr"
+  },
+  "allProducts": {
+    "title": "Alle Produkte",
+    "search_placeholder": "Produkte suchen...",
+    "filter_all": "Alle Kategorien",
+    "sort_label": "Sortieren nach",
+    "sort_latest": "Neueste",
+    "sort_price_low": "Preis: Niedrig bis Hoch",
+    "sort_price_high": "Preis: Hoch bis Niedrig",
+    "sort_popular": "Beliebteste",
+    "no_results": "Keine Produkte gefunden",
+    "no_results_desc": "Bitte versuchen Sie, Ihre Suche oder Filter anzupassen",
+    "view_details": "Details ansehen",
+    "add_to_cart": "In den Warenkorb",
+    "out_of_stock": "Ausverkauft",
+    "in_stock": "Auf Lager",
+    "only_left": "Nur noch {{count}} verfügbar"
+  },
+  "reportView": {
+    "faceReadingReport": "面相分析报告",
+    "palmReadingReport": "手相分析报告",
+    "fengshuiReport": "风水分析报告",
+    "download": "下载报告",
+    "downloading": "下载中...",
+    "downloadSuccess": "报告下载成功",
+    "downloadError": "下载失败,请重试",
+    "generatedAt": "生成时间",
+    "notFound": "报告未找到",
+    "notFoundDesc": "抱歉,找不到您请求的报告。请检查链接是否正确。",
+    "processing": "报告生成中",
+    "processingDesc": "您的报告正在生成中,请稍后再来查看。我们会在报告完成后通过邮件通知您。",
+    "report": "Analysebericht",
+    "statusCompleted": "Abgeschlossen",
+    "statusProcessing": "In Bearbeitung",
+    "statusPending": "Ausstehend",
+    "statusFailed": "Fehlgeschlagen",
+    "processingTime": "Berichte werden in der Regel innerhalb von 48 Stunden geliefert",
+    "backToOrders": "Zurück zu den Bestellungen",
+    "downloadPDF": "PDF herunterladen",
+    "exploreProducts": "Produkte entdecken"
   }
 }

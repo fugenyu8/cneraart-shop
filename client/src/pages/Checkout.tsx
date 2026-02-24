@@ -69,9 +69,8 @@ export default function Checkout() {
   const createOrderMutation = trpc.orders.create.useMutation({
     onSuccess: (data) => {
       toast.success(t('checkout.order_success'));
-      // TODO: 跳转到支付页面
-      console.log("Order created:", data);
-      navigate("/");
+      // 跳转到订单确认页
+      navigate(`/orders/${data.orderId}`);
     },
     onError: (error: any) => {
       toast.error(error.message || t('checkout.order_error'));

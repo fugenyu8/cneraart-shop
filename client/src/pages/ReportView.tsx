@@ -3,9 +3,11 @@ import { useParams, Link } from "wouter";
 import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { toast as showToast } from "sonner";
 import { trpc } from "@/lib/trpc";
 import { Streamdown } from "streamdown";
+import { Download, ArrowLeft, Clock, CheckCircle, AlertCircle, FileText } from "lucide-react";
 
 export default function ReportView() {
   const { t } = useTranslation();
@@ -18,21 +20,35 @@ export default function ReportView() {
   );
 
   const handleDownloadPDF = async () => {
-    if (!booking?.report) return;
-    
+    if (!booking) return;
+
     setIsDownloading(true);
     try {
-      // 创建PDF下载链接
-      const element = document.createElement("a");
-      const blob = new Blob([booking.report], { type: "text/markdown" });
-      element.href = URL.createObjectURL(blob);
-      element.download = `${booking.serviceType}-report-${bookingId}.md`;
-      document.body.appendChild(element);
-      element.click();
-      document.body.removeChild(element);
-      URL.revokeObjectURL(element.href);
-      
-      showToast.success(t("reportView.downloadSuccess"));
+      // 优先使用 reportUrl（S3 上的 PDF）
+      if (booking.reportUrl) {
+        const link = document.createElement("a");
+        link.href = booking.reportUrl;
+        link.download = `${booking.serviceType}-report-${bookingId}.pdf`;
+        link.target = "_blank";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        showToast.success(t("reportView.downloadSuccess"));
+        return;
+      }
+
+      // 如果没有 PDF URL，下载 Markdown 报告
+      if (booking.report) {
+        const element = document.createElement("a");
+        const blob = new Blob([booking.report], { type: "text/markdown;charset=utf-8" });
+        element.href = URL.createObjectURL(blob);
+        element.download = `${booking.serviceType}-report-${bookingId}.md`;
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+        URL.revokeObjectURL(element.href);
+        showToast.success(t("reportView.downloadSuccess"));
+      }
     } catch (error) {
       showToast.error(t("common.error"), {
         description: t("reportView.downloadError"),
@@ -42,12 +58,36 @@ export default function ReportView() {
     }
   };
 
+  // 获取服务类型的显示名称
+  const getServiceTitle = (type: string) => {
+    switch (type) {
+      case "face": return t("reportView.faceReadingReport");
+      case "palm": return t("reportView.palmReadingReport");
+      case "fengshui": return t("reportView.fengshuiReport");
+      default: return t("reportView.report");
+    }
+  };
+
+  // 获取状态 badge
+  const getStatusBadge = (status: string) => {
+    switch (status) {
+      case "completed":
+        return <Badge className="bg-green-100 text-green-800 border-green-200"><CheckCircle className="w-3 h-3 mr-1" />{t("reportView.statusCompleted")}</Badge>;
+      case "in_progress":
+        return <Badge className="bg-amber-100 text-amber-800 border-amber-200"><Clock className="w-3 h-3 mr-1 animate-spin" />{t("reportView.statusProcessing")}</Badge>;
+      case "pending":
+        return <Badge className="bg-blue-100 text-blue-800 border-blue-200"><Clock className="w-3 h-3 mr-1" />{t("reportView.statusPending")}</Badge>;
+      default:
+        return <Badge className="bg-red-100 text-red-800 border-red-200"><AlertCircle className="w-3 h-3 mr-1" />{t("reportView.statusFailed")}</Badge>;
+    }
+  };
+
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-900 mx-auto mb-4"></div>
-          <p className="text-muted-foreground">{t("common.loading")}</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[oklch(82%_0.18_85)] mx-auto mb-4"></div>
+          <p className="text-slate-400">{t("common.loading")}</p>
         </div>
       </div>
     );
@@ -55,15 +95,15 @@ export default function ReportView() {
 
   if (error || !booking) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 flex items-center justify-center">
-        <Card className="max-w-md">
+      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center">
+        <Card className="max-w-md bg-slate-900/50 border-slate-800">
           <CardHeader>
-            <CardTitle className="text-center text-red-600">{t("reportView.notFound")}</CardTitle>
+            <CardTitle className="text-center text-red-400">{t("reportView.notFound")}</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-muted-foreground mb-4">{t("reportView.notFoundDesc")}</p>
+            <p className="text-slate-400 mb-4">{t("reportView.notFoundDesc")}</p>
             <Link href="/">
-              <Button>{t("nav.home")}</Button>
+              <Button className="bg-[oklch(82%_0.18_85)] hover:bg-[oklch(82%_0.18_85)]/90 text-slate-900">{t("nav.home")}</Button>
             </Link>
           </CardContent>
         </Card>
@@ -73,19 +113,26 @@ export default function ReportView() {
 
   if (booking.status !== "completed") {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50 flex items-center justify-center">
-        <Card className="max-w-md">
+      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center">
+        <Card className="max-w-md bg-slate-900/50 border-slate-800">
           <CardHeader>
-            <CardTitle className="text-center">{t("reportView.processing")}</CardTitle>
+            <CardTitle className="text-center text-white flex items-center justify-center gap-2">
+              <Clock className="w-5 h-5 text-[oklch(82%_0.18_85)] animate-pulse" />
+              {t("reportView.processing")}
+            </CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <div className="animate-pulse mb-4">
-              <div className="h-2 bg-amber-200 rounded-full w-full mb-2"></div>
-              <div className="h-2 bg-amber-200 rounded-full w-3/4 mx-auto"></div>
+            {/* 进度条 */}
+            <div className="w-full bg-slate-800 rounded-full h-2 mb-4">
+              <div className="bg-[oklch(82%_0.18_85)] h-2 rounded-full animate-pulse" style={{ width: '60%' }}></div>
             </div>
-            <p className="text-muted-foreground mb-4">{t("reportView.processingDesc")}</p>
-            <Link href="/">
-              <Button>{t("nav.home")}</Button>
+            <p className="text-slate-400 mb-2">{t("reportView.processingDesc")}</p>
+            <p className="text-slate-500 text-sm mb-6">{t("reportView.processingTime")}</p>
+            <Link href="/my-orders">
+              <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                {t("reportView.backToOrders")}
+              </Button>
             </Link>
           </CardContent>
         </Card>
@@ -94,55 +141,68 @@ export default function ReportView() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50">
-      {/* Header */}
-      <header className="bg-gradient-to-r from-red-900 to-amber-900 text-white py-4 shadow-lg">
-        <div className="container mx-auto flex items-center justify-between">
-          <Link href="/">
-            <a className="text-2xl font-bold">☯ {t("common.site_name")}</a>
-          </Link>
-          <nav className="flex gap-6">
-            <Link href="/products"><a className="hover:text-amber-200">{t("nav.products")}</a></Link>
-            <Link href="/fortune"><a className="hover:text-amber-200">{t("nav.fortune_services")}</a></Link>
-            <Link href="/cart"><a className="hover:text-amber-200">{t("nav.cart")}</a></Link>
-          </nav>
-        </div>
-      </header>
-
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
       {/* Report Content */}
-      <div className="container mx-auto py-8">
-        <Card className="max-w-4xl mx-auto">
-          <CardHeader className="bg-gradient-to-r from-amber-100 to-orange-100">
-            <div className="flex items-center justify-between">
-              <CardTitle className="text-2xl">
-                {booking.serviceType === "face" && t("reportView.faceReadingReport")}
-                {booking.serviceType === "palm" && t("reportView.palmReadingReport")}
-                {booking.serviceType === "fengshui" && t("reportView.fengshuiReport")}
-              </CardTitle>
+      <div className="container mx-auto px-4 py-8">
+        {/* 顶部导航 */}
+        <div className="flex items-center justify-between mb-6">
+          <Link href="/my-orders">
+            <Button variant="ghost" className="text-slate-400 hover:text-white">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              {t("reportView.backToOrders")}
+            </Button>
+          </Link>
+          {getStatusBadge(booking.status)}
+        </div>
+
+        <Card className="max-w-4xl mx-auto bg-slate-900/50 border-slate-800">
+          <CardHeader className="bg-gradient-to-r from-slate-800/50 to-slate-900/50 border-b border-slate-800">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <CardTitle className="text-xl sm:text-2xl text-white flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-[oklch(82%_0.18_85)]" />
+                  {getServiceTitle(booking.serviceType)}
+                </CardTitle>
+                <p className="text-sm text-slate-400 mt-2">
+                  {t("reportView.generatedAt")}: {new Date(booking.createdAt).toLocaleString()}
+                </p>
+              </div>
               <Button
                 onClick={handleDownloadPDF}
                 disabled={isDownloading}
-                variant="outline"
-                className="bg-white"
+                className="bg-[oklch(82%_0.18_85)] hover:bg-[oklch(82%_0.18_85)]/90 text-slate-900 shrink-0"
               >
-                {isDownloading ? t("reportView.downloading") : t("reportView.download")}
+                <Download className="w-4 h-4 mr-2" />
+                {isDownloading ? t("reportView.downloading") : (booking.reportUrl ? t("reportView.downloadPDF") : t("reportView.download"))}
               </Button>
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
-              {t("reportView.generatedAt")}: {new Date(booking.createdAt).toLocaleString()}
-            </p>
           </CardHeader>
-          <CardContent className="pt-6">
-            <div className="prose prose-amber max-w-none">
+          <CardContent className="pt-6 px-4 sm:px-6">
+            <div className="prose prose-invert prose-amber max-w-none 
+              prose-headings:text-[oklch(82%_0.18_85)] 
+              prose-p:text-slate-300 
+              prose-strong:text-white
+              prose-table:text-slate-300
+              prose-th:text-[oklch(82%_0.18_85)]
+              prose-td:border-slate-700
+              prose-th:border-slate-700
+              prose-hr:border-slate-800">
               <Streamdown>{booking.report || ""}</Streamdown>
             </div>
           </CardContent>
         </Card>
 
-        {/* Back Button */}
-        <div className="text-center mt-8">
-          <Link href="/">
-            <Button variant="outline">{t("common.back_home")}</Button>
+        {/* 底部操作 */}
+        <div className="flex justify-center gap-4 mt-8">
+          <Link href="/my-orders">
+            <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800">
+              {t("reportView.backToOrders")}
+            </Button>
+          </Link>
+          <Link href="/products">
+            <Button className="bg-[oklch(82%_0.18_85)] hover:bg-[oklch(82%_0.18_85)]/90 text-slate-900">
+              {t("reportView.exploreProducts")}
+            </Button>
           </Link>
         </div>
       </div>
