@@ -9,6 +9,7 @@ import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { uploadRouter } from "../upload";
 import { uploadFortuneImageHandler, handleFortuneImageUpload } from "../uploadFortuneImage";
+import { runComplianceMigration } from "../compliance-migration";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -152,6 +153,17 @@ async function startServer() {
 
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
+    
+    // Run one-time compliance migration after server starts
+    runComplianceMigration().then(success => {
+      if (success) {
+        console.log("[Server] Compliance migration completed successfully");
+      } else {
+        console.warn("[Server] Compliance migration skipped or failed");
+      }
+    }).catch(err => {
+      console.error("[Server] Compliance migration error:", err);
+    });
   });
 }
 
