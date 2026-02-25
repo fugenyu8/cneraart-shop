@@ -18,9 +18,6 @@ import AdminOrders from "./pages/admin/Orders";
 import AdminOrderDetail from "./pages/admin/OrderDetail";
 import Account from "./pages/Account";
 import OrderDetail from "./pages/OrderDetail";
-import FortuneServices from "./pages/FortuneServices";
-import Destiny from "./pages/Destiny";
-import Prayer from "./pages/Prayer";
 import ReportView from "./pages/ReportView";
 import ServiceOrders from "./pages/admin/ServiceOrders";
 import BatchShipmentUpload from "./pages/admin/BatchShipmentUpload";
@@ -49,9 +46,6 @@ function Router() {
       <Route path={"/wobifa888/orders/:id"} component={AdminOrderDetail} />
       <Route path={"/account"} component={Account} />
       <Route path={"/orders/:id"} component={OrderDetail} />
-      <Route path={"/fortune"} component={FortuneServices} />
-      <Route path={"/destiny"} component={Destiny} />
-      <Route path={"/prayer"} component={Prayer} />
       <Route path={"/report/:bookingId"} component={ReportView} />
       <Route path={"/wobifa888/service-orders"} component={ServiceOrders} />
       <Route path={"/wobifa888/batch-shipment"} component={BatchShipmentUpload} />
@@ -63,6 +57,7 @@ function Router() {
       <Route path={"/wobifa888/destiny-reports"} component={AdminDestinyReports} />
       <Route path={"/wobifa888/pending-payments"} component={PendingPayments} />
       <Route path={"/404"} component={NotFound} />
+      {/* Removed routes: /fortune, /destiny, /prayer - services migrated to VIP platform */}
       {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>

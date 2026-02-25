@@ -1,8 +1,8 @@
 {
   "topBar": {
     "wutaishan": "Núi Ngũ Đài",
-    "credential1": "Một trong năm ngọn núi Phật giáo linh thiêng",
-    "credential2": "Đứng đầu bốn ngọn núi Phật giáo lớn của Trung Quốc",
+    "credential1": "Một trong năm ngọn núi văn hóa linh thiêng",
+    "credential2": "Đứng đầu bốn ngọn núi văn hóa lớn của Trung Quốc",
     "credential3": "Di sản thế giới UNESCO",
     "register": "Đăng ký",
     "login": "Đăng nhập"
@@ -42,12 +42,12 @@
   "aboutUs": {
     "title": "VỀ CHÚNG TÔI",
     "paragraph1": "Đại sư Ngũ Đài Sơn cá nhân mở khóa hàng ngàn năm trí tuệ cổ đại phương Đông, dựa trên Dịch Kinh, biểu đồ sinh, Tử Vi Đẩu Số, Dịch Kinh Hoa Mai, Câu Kim Khẩu Quyết, và Đại Lục Hào. Tích hợp chu kỳ sinh khắc của Ngũ Hành với chiêm tinh phương Tây, chúng tôi phân tích sâu sắc sự nghiệp, tài sản, sức khỏe và vận mệnh nhân sự—tiết lộ cơ hội, cảnh báo chướng ngại—để giúp bạn điều hướng dòng chảy cuộc sống và mở rộng tầm nhìn.",
-    "paragraph2": "Chúng tôi tuân theo các nghi lễ truyền thống như khai quang và tụng kinh, trang nghiêm và đúng pháp, truyền vào mỗi vật phẩm phước đức nguyện lực thanh tịnh, hài hòa năng lượng thân tâm và an định tâm thần. Với hàng ngàn năm trí tuệ, chúng tôi giải đáp những bối rối của cuộc sống hiện đại, sử dụng phước lành độc quyền để bảo vệ cuộc sống thuận lợi và vận may thịnh vượng.",
+    "paragraph2": "Chúng tôi tuân theo các nghi lễ truyền thống như khai quang và tụng niệm, trang nghiêm và đúng pháp, truyền vào mỗi vật phẩm phước đức nguyện lực thanh tịnh, hài hòa năng lượng thân tâm và an định tâm thần. Với hàng ngàn năm trí tuệ, chúng tôi giải đáp những bối rối của cuộc sống hiện đại, sử dụng phước lành độc quyền để bảo vệ cuộc sống thuận lợi và vận may thịnh vượng.",
     "videoTitle": "Lễ Cúng Dường bởi Chư Tăng Cao Cấp"
   },
   "footer": {
-    "wutaishan": "Núi Ngũ Đài · Một trong năm ngọn núi Phật giáo linh thiêng · Di sản thế giới UNESCO",
-    "heritage": "Đứng đầu bốn ngọn núi Phật giáo lớn của Trung Quốc · Đạo tràng Văn Thù Bồ Tát · Di sản Phật giáo ngàn năm"
+    "wutaishan": "Núi Ngũ Đài · Một trong năm ngọn núi văn hóa linh thiêng · Di sản thế giới UNESCO",
+    "heritage": "Đứng đầu bốn ngọn núi văn hóa lớn của Trung Quốc · Đạo tràng Văn Thù Bồ Tát · Di sản văn hóa ngàn năm"
   },
   "product_detail": {
     "back": "Quay lại Sản Phẩm",
@@ -58,7 +58,7 @@
     "adding": "Đang Yêu Cầu...",
     "buy_now": "Mua Ngay",
     "blessing_info": "Thông Tin Ban Phước",
-    "temple": "Ban Phước Tại Chùa",
+    "temple": "Ban Phước Tại Di sản Văn hóa",
     "master": "Ban Phước Bởi Thầy",
     "date": "Ngày Ban Phước",
     "tab_description": "Chi Tiết Sản Phẩm",
@@ -294,11 +294,9 @@
     "inner_peace": "Bình An Nội Tâm",
     "inner_peace_desc": "Xoa dịu tâm trí, loại bỏ lo lắng, đạt được sự thanh thản nội tâm",
     "blessed_title": "Bảo Vật Phật Pháp Hộ Mệnh",
-    "blessed_subtitle": "Traditional rituals, master consecration, curated blessed jewelry",
+    "blessed_subtitle": "Traditional rituals, master imbuing ceremony, curated imbued jewelry",
     "destiny_title": "Định Mệnh & Vận Mệnh",
     "destiny_subtitle": "BaZi chart analysis, fortune reading, decoding destiny secrets",
-    "prayer_title": "Dịch Vụ Cầu Nguyện",
-    "prayer_subtitle": "Dâng đèn, dịch vụ cầu nguyện, tụng kinh chuyên tâm bởi các bậc thầy núi Ngũ Đài",
     "fortune_title": "Xem Mặt, Xem Bàn Tay & Phong Thủy",
     "fortune_subtitle": "Trí tuệ cổ xưa về xem mặt và xem bàn tay, khai mở vận mệnh cuộc đời"
   },
@@ -311,7 +309,7 @@
     "510061": {
       "name": "Phân tích Mệnh lý + Nghi thức Cầu phúc Ngũ Đài Sơn",
       "description": "Báo cáo mệnh lý đầy đủ + Dịch vụ cầu phúc hộ tại Ngũ Đài Sơn (cúng đèn/thắp hương), bao gồm video ghi lại, giao hàng trong 10-15 ngày",
-      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
+      "shortDesc": "深度命理解析 + 五台山圣地祈愿,双重守护您的人生之路"
     },
     "title": "开光饰品",
     "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
@@ -337,10 +335,10 @@
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Phân tích vận mệnh + Nghi lễ ban phước tại Ngũ Đài Sơn",
-      "description": "Bạn thân mến, bạn có khao khát hiểu rõ quỹ đạo cuộc đời mình, đồng thời truyền năng lượng phước lành thiêng liêng vào tương lai không? Chỉ với $79, bạn sẽ nhận được \"Báo cáo phân tích năng lượng mệnh lý\" đầy đủ, và còn được hưởng nghi lễ cầu phúc độc quyền do đội ngũ của chúng tôi thực hiện tại Ngũ Đài Sơn – thánh địa Phật giáo ở Trung Quốc! Thắp sáng con đường phía trước cho bạn và những người thân yêu của bạn.\n\n**Gói dịch vụ độc quyền của bạn bao gồm:**\n\n**Báo cáo phân tích mệnh lý (Giao trong 3-5 ngày)**\n- Dựa trên ngày giờ sinh của bạn, giải thích cá nhân hóa về cấu trúc mệnh lý và sự tương tác năng lượng của bạn\n- Phân tích sâu sắc đại vận lưu niên của bạn, giúp bạn nắm bắt cơ hội và những điều cần lưu ý trong giai đoạn 2026-2027\n- Bao gồm hướng dẫn đa chiều về sự nghiệp, tài lộc, tình cảm, sức khỏe, v.v.\n- Kết hợp triết lý Ngũ hành truyền thống với ứng dụng cuộc sống hiện đại, cung cấp lời khuyên thiết thực\n\n**Dịch vụ cầu phúc hộ trì tại Ngũ Đài Sơn (Video giao trong 10-15 ngày)**\n- Bạn có thể chọn **cúng đèn** (thắp sáng con đường trí tuệ) hoặc **thắp hương** (cầu bình an, tiêu trừ chướng ngại)\n- Đội ngũ của chúng tôi sẽ đích thân đến chùa Ngũ Đài Sơn, ghi lại toàn bộ quá trình nghi lễ cầu phúc\n- Video sẽ bao gồm việc đọc tên bạn, lời cầu nguyện và quá trình nghi lễ – đảm bảo sự minh bạch và chân thành\n- Mỗi ngọn đèn, mỗi nén hương đều được thắp riêng cho bạn\n\n**Làm thế nào để tham gia?**\n1. Nhấp vào liên kết mua hàng, chọn gói cầu phúc $79\n2. Sau khi thanh toán, vui lòng gửi tên, thông tin ngày giờ sinh và sở thích cầu phúc của bạn (cúng đèn hoặc thắp hương) đến địa chỉ: seondo@cneraart.com\n   Ví dụ: 12 tháng 12 năm 1978 12:20 PM, New York, Hoa Kỳ\n3. Bạn sẽ nhận được \"Báo cáo phân tích năng lượng mệnh lý\" qua email trong vòng 3-5 ngày làm việc\n4. Trong vòng 10-15 ngày sau khi nghi lễ cầu phúc hoàn tất, video cầu phúc sẽ được gửi đến email của bạn\n\n**Tại sao chọn phiên bản nâng cấp này?**\n- Không chỉ là dự đoán – mà còn truyền năng lượng phước lành vào cuộc sống của bạn\n- Trí tuệ cổ xưa + nghi lễ thiêng liêng, bảo hộ kép\n- Ghi lại toàn bộ bằng video – chân thành, đáng tin cậy, minh bạch có thể kiểm tra\n- Phù hợp với nhiều tâm nguyện: thành công sự nghiệp, gia đình hòa thuận, chuyển vận hóa giải, học hành tiến bộ, v.v.\n\nMột báo cáo, một ngọn đèn sáng, một tâm nguyện, một sự chuyển đổi.\n\nNguyện chúng ta cùng nhau mở cánh cửa vận mệnh, đón chào tương lai tươi sáng.\n\n**Lưu ý:** Dịch vụ cầu phúc là đại diện cho việc cúng dường tôn giáo. Chúng tôi tôn trọng mọi tín ngưỡng – sự thành tâm là quan trọng nhất. Dịch vụ này tuân thủ nghiêm ngặt cách giải thích văn hóa truyền thống, chỉ cung cấp hướng dẫn định hướng. Tất cả kết quả chỉ mang tính chất tham khảo."
+      "description": "Bạn thân mến, bạn có khao khát hiểu rõ quỹ đạo cuộc đời mình, đồng thời truyền năng lượng phước lành thiêng liêng vào tương lai không? Chỉ với $79, bạn sẽ nhận được \"Báo cáo phân tích năng lượng mệnh lý\" đầy đủ, và còn được hưởng nghi lễ cầu phúc độc quyền do đội ngũ của chúng tôi thực hiện tại Ngũ Đài Sơn – thánh địa văn hóa ở Trung Quốc! Thắp sáng con đường phía trước cho bạn và những người thân yêu của bạn.\n\n**Gói dịch vụ độc quyền của bạn bao gồm:**\n\n**Báo cáo phân tích mệnh lý (Giao trong 3-5 ngày)**\n- Dựa trên ngày giờ sinh của bạn, giải thích cá nhân hóa về cấu trúc mệnh lý và sự tương tác năng lượng của bạn\n- Phân tích sâu sắc đại vận lưu niên của bạn, giúp bạn nắm bắt cơ hội và những điều cần lưu ý trong giai đoạn 2026-2027\n- Bao gồm hướng dẫn đa chiều về sự nghiệp, tài lộc, tình cảm, sức khỏe, v.v.\n- Kết hợp triết lý Ngũ hành truyền thống với ứng dụng cuộc sống hiện đại, cung cấp lời khuyên thiết thực\n\n**Dịch vụ cầu phúc hộ trì tại Ngũ Đài Sơn (Video giao trong 10-15 ngày)**\n- Bạn có thể chọn **cúng đèn** (thắp sáng con đường trí tuệ) hoặc **thắp hương** (cầu bình an, tiêu trừ chướng ngại)\n- Đội ngũ của chúng tôi sẽ đích thân đến di sản văn hóa Ngũ Đài Sơn, ghi lại toàn bộ quá trình nghi lễ cầu phúc\n- Video sẽ bao gồm việc đọc tên bạn, lời cầu nguyện và quá trình nghi lễ – đảm bảo sự minh bạch và chân thành\n- Mỗi ngọn đèn, mỗi nén hương đều được thắp riêng cho bạn\n\n**Làm thế nào để tham gia?**\n1. Nhấp vào liên kết mua hàng, chọn gói cầu phúc $79\n2. Sau khi thanh toán, vui lòng gửi tên, thông tin ngày giờ sinh và sở thích cầu phúc của bạn (cúng đèn hoặc thắp hương) đến địa chỉ: seondo@cneraart.com\n   Ví dụ: 12 tháng 12 năm 1978 12:20 PM, New York, Hoa Kỳ\n3. Bạn sẽ nhận được \"Báo cáo phân tích năng lượng mệnh lý\" qua email trong vòng 3-5 ngày làm việc\n4. Trong vòng 10-15 ngày sau khi nghi lễ cầu phúc hoàn tất, video cầu phúc sẽ được gửi đến email của bạn\n\n**Tại sao chọn phiên bản nâng cấp này?**\n- Không chỉ là dự đoán – mà còn truyền năng lượng phước lành vào cuộc sống của bạn\n- Trí tuệ cổ xưa + nghi lễ thiêng liêng, bảo hộ kép\n- Ghi lại toàn bộ bằng video – chân thành, đáng tin cậy, minh bạch có thể kiểm tra\n- Phù hợp với nhiều tâm nguyện: thành công sự nghiệp, gia đình hòa thuận, chuyển vận hóa giải, học hành tiến bộ, v.v.\n\nMột báo cáo, một ngọn đèn sáng, một tâm nguyện, một sự chuyển đổi.\n\nNguyện chúng ta cùng nhau mở cánh cửa vận mệnh, đón chào tương lai tươi sáng.\n\n**Lưu ý:** Dịch vụ cầu phúc là đại diện cho việc cúng dường tôn giáo. Chúng tôi tôn trọng mọi tín ngưỡng – sự thành tâm là quan trọng nhất. Dịch vụ này tuân thủ nghiêm ngặt cách giải thích văn hóa truyền thống, chỉ cung cấp hướng dẫn định hướng. Tất cả kết quả chỉ mang tính chất tham khảo."
     },
     "all_title": "Tất cả sản phẩm",
-    "all_subtitle": "Curated blessed jewelry and spiritual services"
+    "all_subtitle": "Curated imbued jewelry and spiritual services"
   },
   "common": {
     "site_name": "Cneraart",
@@ -466,7 +464,7 @@
     "lampService": "Cúng Đèn",
     "lampDesc": "Thắp một ngọn đèn cầu nguyện cho bạn tại thánh địa núi Ngũ Đài để soi sáng đường đi và xua tan bóng tối",
     "lampFeature1": "Cúng đèn tại Tự Viện Văn Thù Bồ Tát",
-    "lampFeature2": "Cao tăng tụng kinh và dâng công đức hoàn thành phúc lành",
+    "lampFeature2": "Cao tăng tụng niệm và dâng công đức hoàn thành phúc lành",
     "lampFeature3": "Cung cấp hình ảnh cúng đèn và giấy chứng nhận cầu nguyện",
     "perLamp": "ngọn đèn",
     "incenseService": "Cúng Hương",
@@ -498,7 +496,7 @@
     "requiredFields": "Vui lòng điền đầy đủ các trường bắt buộc",
     "deliveryTime": "* Chúng tôi sẽ hoàn thành nghi lễ cầu nguyện trong vòng 3 ngày làm việc và gửi giấy chứng nhận cùng ảnh qua email",
     "trust1Title": "Thánh Địa Núi Ngũ Đài",
-    "trust1Desc": "Một trong năm thánh địa Phật giáo lớn trên thế giới, Tự viện Bồ Tát Văn Thù",
+    "trust1Desc": "Một trong năm thánh địa văn hóa lớn trên thế giới, Tự viện Bồ Tát Văn Thù",
     "trust2Title": "Ảnh Thật Xác",
     "trust2Desc": "Mỗi nghi lễ cầu nguyện đều được chụp ảnh để đảm bảo tính xác thực và uy tín",
     "trust3Title": "Phản Hồi Qua Email",
@@ -538,11 +536,11 @@
     "subtitle": "Do các Hòa Thượng Cao Tăng Núi Ngũ Đài Chủ Lễ, Truyền Thống Cổ Xưa",
     "step1": {
       "title": "Thanh Tịnh Bằng Nước Thánh",
-      "description": "Thanh tịnh với nước thánh, trầm hương và chú cổ trước Phật"
+      "description": "Thanh tịnh với nước tinh khiết, trầm hương và chú cổ trước Phật"
     },
     "step2": {
       "title": "Niệm Kinh & Cầu Nguyện",
-      "description": "Chư tăng niệm kinh thành kính, danh hiệu Phật vang vọng"
+      "description": "Chư tăng niệm bài tụng thành kính, danh hiệu Phật vang vọng"
     },
     "step3": {
       "title": "Truyền Tam Muội Thánh Mật",
@@ -558,11 +556,11 @@
     "featured_title": "精选开光饰品",
     "featured_subtitle": "每一件都经过五台山开光,承载守护之力",
     "blessing_title": "五台山圣地开光法会",
-    "blessing_subtitle": "由五台山高僧主持，文殊菩萨智慧加持、五爷庙财神庇佑，古法传承千年灵验无比",
-    "blessing_step1": "圣水清净仪轨",
-    "blessing_step1_desc": "以圣水、沉香、古咒于大殿佛前洗涤一切不净，迎接佛光普照",
+    "blessing_subtitle": "由五台山文化传承人主持，文殊菩萨智慧加持、五爷庙财神庇佑，古法传承千年灵验无比",
+    "blessing_step1": "净水清净仪轨",
+    "blessing_step1_desc": "Thanh tẩy bằng nước tinh khiết, trầm hương và bài tụng cổ tại di sản văn hóa, đón nhận năng lượng văn hóa",
     "blessing_step2": "庄严诵经法会",
-    "blessing_step2_desc": "高僧大德虔诚诵经，佛号不断，经文回荡，法力无边",
+    "blessing_step2_desc": "Người kế thừa văn hóa tụng niệm thành kính, âm thanh cổ xưa vang vọng, sức mạnh văn hóa vô biên",
     "blessing_step3": "神圣能量灌顶",
     "blessing_step3_desc": "承文殊菩萨智慧之光、五爷财神富贵之力，赋予守护与祥瑞",
     "blessing_step4": "证书认证",
@@ -577,15 +575,15 @@
     "services_title": "我们的神圣服务",
     "services_subtitle": "古老东方智慧 · 现代灵性指导",
     "service_blessed_items": "开光法物",
-    "service_blessed_items_desc": "经五台山高僧开光的神圣法器",
+    "service_blessed_items_desc": "经五台山文化传承人开光的神圣法器",
     "service_fortune": "命理运势分析",
     "service_fortune_desc": "中国古老智慧,解读人生运势与命运指引",
     "service_palmistry": "手相面相分析",
     "service_palmistry_desc": "通过手相和面相揭示古老智慧",
     "service_fengshui": "家居风水",
     "service_fengshui_desc": "调和居住空间与宇宙能量",
-    "service_blessing": "代祈福服务",
-    "service_blessing_desc": "供灯、烧香及各种祈福仪式",
+    "service_blessing": "文化仪式服务",
+    "service_blessing_desc": "供灯、烧香及各种文化仪式",
     "service_fortune_collection": "命理服务",
     "service_fortune_collection_desc": "中国古老智慧，解读人生运势与命运指引",
     "service_fortune_short": "命理运势分析",

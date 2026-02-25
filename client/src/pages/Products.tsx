@@ -24,7 +24,7 @@ export default function Products() {
   const [sortBy, setSortBy] = useState("newest");
   const [hasAutoSelected, setHasAutoSelected] = useState(false);
 
-  // 获取开光法物的子分类ID列表
+  // 获取启蕴信物的子分类ID列表
   const { data: categories } = trpc.categories.list.useQuery();
   const blessedCategoryIds = categories?.filter(cat => cat.parentId === 1).map(cat => cat.id) || [];
 
@@ -48,7 +48,7 @@ export default function Products() {
     limit: 50,
   });
 
-  // 获取开光法物的子分类(parentId = 1)
+  // 获取启蕴信物的子分类(parentId = 1)
   const subcategories = categories?.filter(cat => cat.parentId === 1).sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0)) || [];
   
   // 快速筛选按钮 - 使用动态子分类

@@ -1,8 +1,8 @@
 {
   "topBar": {
     "wutaishan": "오대산",
-    "credential1": "세계 5대 불교 성지 중 하나",
-    "credential2": "중국 4대 불교 명산의 으뜸",
+    "credential1": "세계 5대 동방 문화 성지 중 하나",
+    "credential2": "중국 4대 동방 문화 명산의 으뜸",
     "credential3": "유네스코 세계문화유산",
     "register": "가입",
     "login": "로그인"
@@ -13,8 +13,8 @@
   },
   "serviceCards": {
     "blessedItems": {
-      "title": "개광 호위 법물",
-      "subtitle": "전통 의식, 대사 가지"
+      "title": "기운 의식 호위 수호 신물",
+      "subtitle": "전통 의식, 전승자 기운"
     },
     "destiny": {
       "title": "명리 운세",
@@ -25,8 +25,8 @@
       "subtitle": "고대 지혜, 현재 해석"
     },
     "prayer": {
-      "title": "대리 기도",
-      "subtitle": "등불 공양, 기도 서비스"
+      "title": "대리 기원",
+      "subtitle": "등불 공양, 기원 서비스"
     }
   },
   "nav": {
@@ -41,32 +41,32 @@
   },
   "aboutUs": {
     "title": "회사 소개",
-    "paragraph1": "오대산 대사가 직접 수천 년의 고대 동양 지혜를 열다. 역경, 생진팔자, 자미두수, 매화역수, 금구결, 대육효를 근기로 하고, 오행의 상생상극과 서양 별자리를 결합하여 사업, 재부, 건강, 인간관계 운세를 깊이 해석—기회를 명시하고 장애를 경고—당신이 인생의 흐름을 타고 시야를 넓히도록 돕습니다.",
-    "paragraph2": "우리는 개광, 독경 등 전통 의궤를 따르며, 엄숙하고 법에 맞게, 모든 복물에 청정한 원력을 주입하고, 심신 에너지를 조화시키며 마음을 안정시킵니다. 천년의 지혜로 현대 생활의 곤혹을 해답하고, 전속 복우로 인생의 순조와 복운의 창성을 수호합니다.",
-    "videoTitle": "고승 개광 의식"
+    "paragraph1": "오대산 전승자가 직접 수천 년의 고대 동양 지혜를 열다. 역경, 생진팔자, 자미두수, 매화역수, 금구결, 대육효를 근기로 하고, 오행의 상생상극과 서양 별자리를 결합하여 사업, 재부, 건강, 인간관계 운세를 깊이 해석—기회를 명시하고 장애를 경고—당신이 인생의 흐름을 타고 시야를 넓히도록 돕습니다.",
+    "paragraph2": "우리는 기운 의식, 영창 등 전통 의궤를 따르며, 엄숙하고 법에 맞게, 모든 복물에 청정한 원력을 주입하고, 심신 에너지를 조화시키며 마음을 안정시킵니다. 천년의 지혜로 현대 생활의 곤혹을 해답하고, 전속 복우로 인생의 순조와 복운의 창성을 수호합니다.",
+    "videoTitle": "문화 전승자 기운 의식 의식"
   },
   "footer": {
-    "wutaishan": "오대산 · 오대 불교 성지 중 하나 · 유네스코 세계문화유산",
-    "heritage": "중국 사대 불교 명산의 으뜸 · 문수보살 도량 · 천년 불교 문화 유산"
+    "wutaishan": "오대산 · 오대 동방 문화 성지 중 하나 · 유네스코 세계문화유산",
+    "heritage": "중국 사대 동방 문화 명산의 으뜸 · 문수문화 수호 도량 · 천년 동방 문화 문화 유산"
   },
   "product_detail": {
     "back": "Back to Products",
     "cart": "Cart",
     "not_found": "Product Not Found",
     "quantity": "Quantity",
-    "add_to_cart": "Request Blessed Item",
+    "add_to_cart": "Request Imbued Item",
     "adding": "Requesting...",
     "buy_now": "Buy Now",
     "blessing_info": "Blessing Information",
-    "temple": "Blessed at Temple",
-    "master": "Blessed by Master",
+    "temple": "Imbued at Heritage Site",
+    "master": "Imbued by Master",
     "date": "Blessing Date",
     "tab_description": "Product Details",
     "tab_blessing": "Blessing Description",
     "tab_reviews": "Customer Reviews",
     "tab_efficacy": "효능 설명",
     "efficacy_suitable_for": "적합한 대상",
-    "efficacy_effects": "개광 효과",
+    "efficacy_effects": "기운 의식 효과",
     "efficacy_wearing_tips": "착용 조언",
     "no_reviews": "No reviews yet",
     "verified_purchase": "Verified Purchase",
@@ -77,12 +77,12 @@
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
     "out_of_stock": "Out of Stock",
-    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary...",
+    "blessing_default": "Each item has been imbued through traditional ceremonies at Mount Wutai Cultural Guardian sanctuary...",
     "service_guide": {
       "title": "📋 서비스 구매 프로세스",
       "step1": "결제 후 주문 확인 이메일을 받게 됩니다",
       "step2": "이메일 회신 또는 주문 메모를 통해 사진과 질문을 제출하세요",
-      "step3": "오대산 대사가 48시간 이내에 분석을 완료합니다",
+      "step3": "오대산 전승자가 48시간 이내에 분석을 완료합니다",
       "step4": "분석 보고서는 이메일로 전송됩니다"
     },
     "get_report": "보고서 받기",
@@ -293,12 +293,10 @@
     "wisdom_study_desc": "지혜를 열고 학업 진보와 시험 성공",
     "inner_peace": "내면의 평화",
     "inner_peace_desc": "마음을 진정시키고 걱정을 없애고 내면의 평온함 달성",
-    "blessed_title": "개광 보호 법물",
-    "blessed_subtitle": "전통 의례, 대사 가지, 엄선된 개광 장신구",
+    "blessed_title": "기운 의식 보호 수호 신물",
+    "blessed_subtitle": "전통 의례, 전승자 기운, 엄선된 기운 의식 장신구",
     "destiny_title": "명리 운세",
     "destiny_subtitle": "팔자 명판, 운세 분석, 운명의 비밀 해독",
-    "prayer_title": "대객 기복",
-    "prayer_subtitle": "공등 기복, 대전 심원, 오대산 대사의 경건한 기원",
     "fortune_title": "면상 수상 풍수",
     "fortune_subtitle": "천년 상술의 지혜를 계승, 인생 운세 분석"
   },
@@ -309,9 +307,9 @@
       "shortDesc": "解锁古老东方智慧,探索您的命理能量密码"
     },
     "510061": {
-      "name": "명리 분석 + 오대산 기복 의식",
-      "description": "완벽한 명리 보고서 + 오대산 대리 기복 서비스(등불 공양/향 올리기), 영상 기록 포함, 10-15일 이내 배송",
-      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
+      "name": "명리 분석 + 오대산 기원 의식 의식",
+      "description": "완벽한 명리 보고서 + 오대산 대리 기원 의식 서비스(등불 공양/향 올리기), 영상 기록 포함, 10-15일 이내 배송",
+      "shortDesc": "深度命理解析 + 五台山圣地祈愿,双重守护您的人生之路"
     },
     "title": "开光饰品",
     "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
@@ -337,10 +335,10 @@
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "운명 분석 + 오대산 축복 의식",
-      "description": "친애하는 친구 여러분, 자신의 인생 궤적을 이해하고 동시에 미래에 신성한 축복 에너지를 불어넣고 싶으신가요? 단돈 $79로, 완전한 《운명 에너지 분석 보고서》를 받으실 수 있으며, 저희 팀이 중국 불교 성지인 오대산에서 여러분을 위해 거행하는 특별한 기원 의식을 누리실 수 있습니다! 여러분과 사랑하는 사람들의 앞날을 밝혀드립니다.\n\n**여러분의 전용 패키지 포함 내역:**\n\n**운명 분석 보고서 (3-5일 이내 전달)**\n- 여러분의 생년월일시를 기반으로, 운명 구조와 에너지 상호작용을 개별적으로 해석합니다.\n- 2026-2027년의 중요한 기회와 주의사항을 파악할 수 있도록 대운과 유년을 심층 분석합니다.\n- 사업, 재물운, 애정, 건강 등 다양한 차원의 지침을 포함합니다.\n- 전통 오행 철학과 현대 생활 적용을 융합하여 실현 가능한 조언을 제공합니다.\n\n**오대산 대리 기원 서비스 (10-15일 이내 영상 전달)**\n- **등불 공양**(지혜의 길을 밝힘) 또는 **향 공양**(평안 기원, 장애 제거) 중 선택하실 수 있습니다.\n- 저희 팀이 오대산 사찰에 직접 방문하여 기원 의식 전 과정을 기록합니다.\n- 영상에는 여러분의 이름 낭독, 소원 기도 및 의식 과정이 포함됩니다 – 투명성과 진정성을 보장합니다.\n- 모든 등불, 모든 향은 오직 여러분을 위해 밝혀집니다.\n\n**참여 방법은?**\n1. 구매 링크를 클릭하여 $79 기원 패키지를 선택하세요.\n2. 결제 완료 후, 이름, 생년월일시 정보 및 기원 선호도(등불 공양 또는 향 공양)를 seondo@cneraart.com으로 보내주세요.\n   예시: 1978년 12월 12일 12:20 PM, 미국 뉴욕\n3. 3-5영업일 이내에 이메일로 《운명 에너지 분석 보고서》를 받으실 것입니다.\n4. 기원 의식 완료 후 10-15일 이내에 기원 영상이 이메일로 발송됩니다.\n\n**왜 이 업그레이드 버전을 선택해야 할까요?**\n- 단순한 예측을 넘어 – 여러분의 삶에 축복 에너지를 불어넣습니다.\n- 고대 지혜 + 신성한 의식, 이중 보호.\n- 전 과정 영상 기록 – 진정성 있고 신뢰할 수 있으며 투명하게 확인할 수 있습니다.\n- 다양한 소원에 적용 가능: 사업 성공, 가정 화목, 운세 전환 및 액막이, 학업 증진 등.\n\n하나의 보고서, 하나의 밝은 등불, 하나의 소원, 하나의 변화.\n\n저희와 함께 운명의 문을 열고 밝은 미래를 맞이하시길 바랍니다.\n\n**참고:** 기원 서비스는 대리 종교 공양입니다. 저희는 모든 신앙을 존중합니다 – 진심이 가장 중요합니다. 본 서비스는 전통 문화 해석을 엄격히 따르며, 방향성 지침만을 제공합니다. 모든 결과는 참고용입니다."
+      "description": "친애하는 친구 여러분, 자신의 인생 궤적을 이해하고 동시에 미래에 신성한 축복 에너지를 불어넣고 싶으신가요? 단돈 $79로, 완전한 《운명 에너지 분석 보고서》를 받으실 수 있으며, 저희 팀이 중국 동방 문화 성지인 오대산에서 여러분을 위해 거행하는 특별한 기원 의식을 누리실 수 있습니다! 여러분과 사랑하는 사람들의 앞날을 밝혀드립니다.\n\n**여러분의 전용 패키지 포함 내역:**\n\n**운명 분석 보고서 (3-5일 이내 전달)**\n- 여러분의 생년월일시를 기반으로, 운명 구조와 에너지 상호작용을 개별적으로 해석합니다.\n- 2026-2027년의 중요한 기회와 주의사항을 파악할 수 있도록 대운과 유년을 심층 분석합니다.\n- 사업, 재물운, 애정, 건강 등 다양한 차원의 지침을 포함합니다.\n- 전통 오행 철학과 현대 생활 적용을 융합하여 실현 가능한 조언을 제공합니다.\n\n**오대산 대리 기원 서비스 (10-15일 이내 영상 전달)**\n- **등불 공양**(지혜의 길을 밝힘) 또는 **향 공양**(평안 기원, 장애 제거) 중 선택하실 수 있습니다.\n- 저희 팀이 오대산 사찰에 직접 방문하여 기원 의식 전 과정을 기록합니다.\n- 영상에는 여러분의 이름 낭독, 소원 기원 및 의식 과정이 포함됩니다 – 투명성과 진정성을 보장합니다.\n- 모든 등불, 모든 향은 오직 여러분을 위해 밝혀집니다.\n\n**참여 방법은?**\n1. 구매 링크를 클릭하여 $79 기원 패키지를 선택하세요.\n2. 결제 완료 후, 이름, 생년월일시 정보 및 기원 선호도(등불 공양 또는 향 공양)를 seondo@cneraart.com으로 보내주세요.\n   예시: 1978년 12월 12일 12:20 PM, 미국 뉴욕\n3. 3-5영업일 이내에 이메일로 《운명 에너지 분석 보고서》를 받으실 것입니다.\n4. 기원 의식 완료 후 10-15일 이내에 기원 영상이 이메일로 발송됩니다.\n\n**왜 이 업그레이드 버전을 선택해야 할까요?**\n- 단순한 예측을 넘어 – 여러분의 삶에 축복 에너지를 불어넣습니다.\n- 고대 지혜 + 신성한 의식, 이중 보호.\n- 전 과정 영상 기록 – 진정성 있고 신뢰할 수 있으며 투명하게 확인할 수 있습니다.\n- 다양한 소원에 적용 가능: 사업 성공, 가정 화목, 운세 전환 및 액막이, 학업 증진 등.\n\n하나의 보고서, 하나의 밝은 등불, 하나의 소원, 하나의 변화.\n\n저희와 함께 운명의 문을 열고 밝은 미래를 맞이하시길 바랍니다.\n\n**참고:** 기원 서비스는 대리 종교 공양입니다. 저희는 모든 신앙을 존중합니다 – 진심이 가장 중요합니다. 본 서비스는 전통 문화 해석을 엄격히 따르며, 방향성 지침만을 제공합니다. 모든 결과는 참고용입니다."
     },
     "all_title": "전체 상품",
-    "all_subtitle": "엄선된 개광 장신구와 영적 서비스"
+    "all_subtitle": "엄선된 기운 의식 장신구와 영적 서비스"
   },
   "common": {
     "site_name": "Cneraart",
@@ -457,60 +455,60 @@
     "feature1Desc": "Thousand-year-old destiny science essence, in-depth chart analysis",
     "feature2Title": "Annual Fortune",
     "feature2Desc": "Predict future trends and seize life opportunities",
-    "feature3Title": "Professional Masters",
-    "feature3Desc": "Personally analyzed by senior masters from Mount Wutai for accuracy"
+    "feature3Title": "Professional Lineage Holders",
+    "feature3Desc": "Personally analyzed by senior cultural lineage holders from Mount Wutai for accuracy"
   },
   "prayer": {
-    "title": "Prayer Service",
-    "subtitle": "Masters from Mount Wutai pray for you, convey wishes, and seek peace",
+    "title": "Cultural Wish Ceremony",
+    "subtitle": "Cultural lineage holders from Mount Wutai conduct ceremony for you, convey wishes, and seek peace",
     "lampService": "Lamp Offering",
-    "lampDesc": "Light a prayer lamp for you at Mount Wutai sacred site to illuminate the path and dispel darkness",
-    "lampFeature1": "Lamp offering at Manjushri Bodhisattva Monastery",
-    "lampFeature2": "Master chanting and dedication for merit completion",
-    "lampFeature3": "Provide lamp offering photos and prayer certificate",
+    "lampDesc": "Light a wish lamp for you at Mount Wutai heritage site to illuminate the path and dispel darkness",
+    "lampFeature1": "Lamp offering at Mount Wutai cultural heritage site",
+    "lampFeature2": "Lineage holder chanting and dedication for ceremony completion",
+    "lampFeature3": "Provide lamp offering photos and ceremony certificate",
     "perLamp": "lamp",
     "incenseService": "Incense Offering",
-    "incenseDesc": "Offer incense for you at Mount Wutai sacred site to convey wishes and seek auspiciousness",
-    "incenseFeature1": "Incense offering at Main Hall",
-    "incenseFeature2": "Master praying and dedication on behalf",
-    "incenseFeature3": "Provide incense offering photos and prayer certificate",
+    "incenseDesc": "Offer incense for you at Mount Wutai heritage site to convey wishes and seek auspiciousness",
+    "incenseFeature1": "Incense offering at heritage site main hall",
+    "incenseFeature2": "Lineage holder conducting ceremony and dedication on behalf",
+    "incenseFeature3": "Provide incense offering photos and ceremony certificate",
     "perIncense": "stick",
-    "formTitle": "Submit Prayer Request",
-    "formDesc": "Please fill in the following information, we will pray sincerely for you",
+    "formTitle": "Submit Wish Ceremony Request",
+    "formDesc": "Please fill in the following information, we will conduct sincerely for you",
     "name": "Name",
-    "namePlaceholder": "Enter your name or the name of the prayer recipient",
+    "namePlaceholder": "Enter your name or the name of the wish ceremony recipient",
     "email": "Email",
-    "emailPlaceholder": "For receiving prayer certificate",
-    "serviceType": "Prayer Method",
-    "serviceTypePlaceholder": "Select prayer method",
-    "prayerFor": "Prayer Recipient",
+    "emailPlaceholder": "For receiving ceremony certificate",
+    "serviceType": "Wish Ceremony Method",
+    "serviceTypePlaceholder": "Select wish ceremony method",
+    "prayerFor": "Wish Ceremony Recipient",
     "prayerForPlaceholder": "e.g., Myself, Family, Friends, etc.",
-    "wish": "Prayer Wish",
+    "wish": "Wish Ceremony Wish",
     "wishPlaceholder": "Write your wish, e.g., Peace and Health, Career Success, Academic Progress, etc.",
     "optional": "Optional",
     "quantity": "Quantity",
     "lamps": "lamps",
     "incenses": "sticks",
-    "submit": "Submit Prayer Request",
+    "submit": "Submit Wish Ceremony Request",
     "submitting": "Submitting...",
     "submitSuccess": "Submitted Successfully",
-    "submitSuccessDesc": "Your prayer request has been submitted, we will pray sincerely for you",
+    "submitSuccessDesc": "Your ceremony request has been submitted, we will conduct sincerely for you",
     "requiredFields": "Please fill in all required fields",
-    "deliveryTime": "* We will complete the prayer within 3 business days and send the prayer certificate and photos via email",
-    "trust1Title": "Mount Wutai Sacred Site",
-    "trust1Desc": "One of the five major Buddhist sacred sites in the world, Manjushri Bodhisattva Monastery",
+    "deliveryTime": "* We will complete the wish ceremony within 3 business days and send the ceremony certificate and photos via email",
+    "trust1Title": "Mount Wutai Heritage Site",
+    "trust1Desc": "UNESCO World Heritage Site in the world, Mount Wutai Cultural Heritage Site",
     "trust2Title": "Authentic Photos",
-    "trust2Desc": "Each prayer is photographed to ensure authenticity and credibility",
+    "trust2Desc": "Each wish ceremony is photographed to ensure authenticity and credibility",
     "trust3Title": "Email Feedback",
-    "trust3Desc": "After prayer completion, photos and certificates will be sent to your email"
+    "trust3Desc": "After wish ceremony completion, photos and certificates will be sent to your email"
   },
   "services": {
     "title": "서비스",
     "subtitle": "고대 동양 지혜 · 현대 영적 안내",
     "blessed": {
-      "title": "개광 법물",
-      "description": "오대산 고승이 개광한 신성한 법기, 당신의 인생 여정을 수호",
-      "cta": "개광 법물 탐색"
+      "title": "기운 의식 수호 신물",
+      "description": "오대산 문화 전승자이 기운 의식한 신성한 법기, 당신의 인생 여정을 수호",
+      "cta": "기운 의식 수호 신물 탐색"
     },
     "fortune": {
       "title": "운세 서비스",
@@ -528,25 +526,25 @@
       }
     },
     "prayer": {
-      "title": "대리 기복 서비스",
-      "description": "등공양, 향공양 및 각종 기복 의식",
-      "cta": "기복 서비스 탐색"
+      "title": "대리 기원 의식 서비스",
+      "description": "등공양, 향공양 및 각종 기원 의식 의식",
+      "cta": "기원 의식 서비스 탐색"
     }
   },
   "blessing": {
-    "title": "개광 과정",
-    "subtitle": "오대산 고승 주관, 고법 전승",
+    "title": "기운 의식 과정",
+    "subtitle": "오대산 문화 전승자 주관, 고법 전승",
     "step1": {
-      "title": "성수 정화",
-      "description": "성수, 침향, 고대 주문으로 부처님 앞에서 정화"
+      "title": "정수 정화",
+      "description": "정수, 침향, 고대 주문으로 부처님 앞에서 정화"
     },
     "step2": {
-      "title": "독경 가지",
-      "description": "고승이 정성을 다해 경전을 독송"
+      "title": "영창 기운",
+      "description": "문화 전승자이 정성을 다해 영창을 독송"
     },
     "step3": {
       "title": "성지 관정",
-      "description": "문수보살의 지혜의 빛과 오야재신의 부귀의 힘을 받음"
+      "description": "문수문화 수호의 지혜의 빛과 오야재신의 부귀의 힘을 받음"
     },
     "scrollHint": "스크롤하여 더 보기"
   },
@@ -558,11 +556,11 @@
     "featured_title": "精选开光饰品",
     "featured_subtitle": "每一件都经过五台山开光,承载守护之力",
     "blessing_title": "五台山圣地开光法会",
-    "blessing_subtitle": "由五台山高僧主持，文殊菩萨智慧加持、五爷庙财神庇佑，古法传承千年灵验无比",
-    "blessing_step1": "圣水清净仪轨",
-    "blessing_step1_desc": "以圣水、沉香、古咒于大殿佛前洗涤一切不净，迎接佛光普照",
+    "blessing_subtitle": "由五台山文化传承人主持，文殊菩萨智慧加持、五爷庙财神庇佑，古法传承千年灵验无比",
+    "blessing_step1": "净水清净仪轨",
+    "blessing_step1_desc": "문화유산지에서 정수, 침향, 고대 영창으로 정화하여 문화 에너지를 맞이함",
     "blessing_step2": "庄严诵经法会",
-    "blessing_step2_desc": "高僧大德虔诚诵经，佛号不断，经文回荡，法力无边",
+    "blessing_step2_desc": "문화 전승자가 경건하게 영창하며, 고대의 울림이 메아리치고, 문화의 힘이 무한함",
     "blessing_step3": "神圣能量灌顶",
     "blessing_step3_desc": "承文殊菩萨智慧之光、五爷财神富贵之力，赋予守护与祥瑞",
     "blessing_step4": "证书认证",
@@ -577,15 +575,15 @@
     "services_title": "我们的神圣服务",
     "services_subtitle": "古老东方智慧 · 现代灵性指导",
     "service_blessed_items": "开光法物",
-    "service_blessed_items_desc": "经五台山高僧开光的神圣法器",
+    "service_blessed_items_desc": "经五台山文化传承人开光的神圣法器",
     "service_fortune": "命理运势分析",
     "service_fortune_desc": "中国古老智慧,解读人生运势与命运指引",
     "service_palmistry": "手相面相分析",
     "service_palmistry_desc": "通过手相和面相揭示古老智慧",
     "service_fengshui": "家居风水",
     "service_fengshui_desc": "调和居住空间与宇宙能量",
-    "service_blessing": "代祈福服务",
-    "service_blessing_desc": "供灯、烧香及各种祈福仪式",
+    "service_blessing": "文化仪式服务",
+    "service_blessing_desc": "供灯、烧香及各种文化仪式",
     "service_fortune_collection": "命理服务",
     "service_fortune_collection_desc": "中国古老智慧，解读人生运势与命运指引",
     "service_fortune_short": "命理运势分析",

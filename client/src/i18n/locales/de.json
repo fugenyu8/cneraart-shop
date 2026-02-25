@@ -1,8 +1,8 @@
 {
   "topBar": {
     "wutaishan": "Berg Wutai",
-    "credential1": "Einer der fünf heiligen buddhistischen Berge",
-    "credential2": "Erster der vier großen buddhistischen Berge Chinas",
+    "credential1": "Einer der fünf heiligen culturalischen Berge",
+    "credential2": "Erster der vier großen culturalischen Berge Chinas",
     "credential3": "UNESCO-Weltkulturerbe",
     "register": "Registrieren",
     "login": "Anmelden"
@@ -40,33 +40,33 @@
     "fortune_services": "Physiognomie & Feng Shui"
   },
   "home": {
-    "hero_title": "Alte östliche Segnungen",
+    "hero_title": "Alte östliche Schutz",
     "hero_subtitle": "Schutz Ihrer Lebensreise · Weitergabe jahrtausendealter Weisheit",
     "cta_products": "Gesegnete Gegenstände entdecken",
     "cta_fortune": "Schicksalsanalyse",
-    "featured_title": "Ausgewählte gesegnete Gegenstände",
+    "featured_title": "Ausgewählte Guardian Tokens",
     "featured_subtitle": "Jedes Stück wird am Berg Wutai gesegnet und trägt die Kraft des Schutzes",
     "blessing_title": "Heilige Segenszeremonie am Berg Wutai",
-    "blessing_subtitle": "Alte Rituale durchgeführt von ehrwürdigen Mönchen am heiligen Berg Wutai - Heimat des Manjusri Bodhisattva, Lord Wuye Tempel und des Gottes des Reichtums",
+    "blessing_subtitle": "Alte Rituale durchgeführt von ehrwürdigen Traditionsträgern am heiligen Berg Wutai - Heimat des Manjusri Cultural Guardian, Lord Wuye Kulturstätte und des Gottes des Reichtums",
     "blessing_step1": "Heilige Reinigung",
-    "blessing_step1_desc": "Gereinigt mit gesegnetem Räucherwerk, heiligem Wasser und alten Mantras am Tempelaltar",
-    "blessing_step2": "Heilige Sutra-Rezitationszeremonie",
-    "blessing_step2_desc": "Ehrwürdige Mönche rezitieren heilige Sutras mit tiefer Hingabe und erfüllen den Tempel mit göttlicher Energie",
+    "blessing_step1_desc": "Gereinigt mit gesegnetem Räucherwerk, heiligem Wasser und alten Mantras am Kulturstättealtar",
+    "blessing_step2": "Feierliche Chanting-Zeremonie",
+    "blessing_step2_desc": "Kulturelle Traditionsträger chanten mit tiefer Hingabe und erfüllen die Kulturstätte mit kultureller Energie",
     "blessing_step3": "Göttliche Energieweihe",
-    "blessing_step3_desc": "Gesegnet durch die Weisheit des Manjusri Bodhisattva und die Wohlstandskraft von Lord Wuye",
+    "blessing_step3_desc": "Gesegnet durch die Weisheit des Manjusri Cultural Guardian und die Wohlstandskraft von Lord Wuye",
     "blessing_step4": "Zertifizierung",
     "blessing_step4_desc": "Ausstellung des Segenszertifikats",
     "testimonials_title": "Kundenstimmen",
-    "testimonials_subtitle": "Tausende Kunden weltweit haben Segnungen und Schutz erhalten",
+    "testimonials_subtitle": "Tausende Kunden weltweit haben Schutz und Schutz erhalten",
     "footer_about": "Über uns",
-    "footer_about_desc": "Yuan·Huadu widmet sich der Verbreitung östlicher Kultur und bietet authentische gesegnete Gegenstände und Wahrsagedienste an.",
+    "footer_about_desc": "Yuan·Huadu widmet sich der Verbreitung östlicher Kultur und bietet authentische Guardian Tokens und Wahrsagedienste an.",
     "footer_links": "Schnelllinks",
     "footer_contact": "Kontakt",
     "footer_copyright": "Alle Rechte vorbehalten",
     "services_title": "Unsere heiligen Dienste",
     "services_subtitle": "Alte östliche Weisheit · Moderne spirituelle Führung",
     "service_blessed_items": "Gesegnete Artefakte",
-    "service_blessed_items_desc": "Heilige Gegenstände, geweiht von Mönchen des Berges Wutai",
+    "service_blessed_items_desc": "Heilige Gegenstände, geweiht von Traditionsträgern des Berges Wutai",
     "service_fortune": "Schicksals- und Glücksanalyse",
     "service_fortune_desc": "Alte chinesische Weisheit für Lebensweg und Glücksführung",
     "service_palmistry": "Handlesen & Gesichtslesen",
@@ -90,7 +90,7 @@
     "510061": {
       "name": "Numerologische Analyse + Wutaishan Segnungszeremonie",
       "description": "Vollständiger numerologischer Bericht + Stellvertretender Segnungsdienst am Wutaishan (Lichtopfer/Räucherstäbchen), inklusive Videoaufzeichnung, Lieferung in 10-15 Tagen",
-      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
+      "shortDesc": "深度命理解析 + 五台山圣地祈愿,双重守护您的人生之路"
     },
     "title": "开光饰品",
     "search_placeholder": "搜索产品...",
@@ -122,11 +122,11 @@
     "viewAll": "查看所有产品",
     "fortune-energy-analysis-report": {
       "name": "Energieanalysebericht des Schicksals",
-      "description": "Entdecken Sie die alte östliche Weisheit und entschlüsseln Sie Ihren numerologischen Energiecode\n\n**Der Service beinhaltet:**\n\n**1. Analyse der numerologischen Struktur**\nBasierend auf Ihrem Geburtsdatum und Ihrer Geburtszeit wird Ihre angeborene Begabung, Ihre Persönlichkeitsmerkmale und Ihr Lebensweg tiefgehend interpretiert. Unsere Numerologie-Meister nutzen die Fünf-Elemente-Lehre (Metall, Holz, Wasser, Feuer, Erde), um Ihnen Folgendes zu offenbaren:\n- Wie die Kombination der Himmelsstämme und Erdzweige Ihre Persönlichkeit und zwischenmenschlichen Beziehungen beeinflusst\n- Die Segnungen besonderer glückverheißender Sterne und Gottheiten (wie Tian Yi Gui Ren, Tai Ji Gui Ren) auf Ihr Schicksal\n- Die tiefen Verbindungen zwischen den zwölf Palästen wie dem Lebenspalast, dem Karrierepalast, dem Wohlstandspalast und Ihren Lebenserfahrungen\n\n**2. Analyse der Jahresglücksentwicklung (2026-2027)**\nEine detaillierte Interpretation des Energieflusses und der Schicksalsveränderungen im kommenden Jahr:\n- Wie die Wechselwirkungen der Fünf Elemente Ihre Karriereentwicklung, romantische Beziehungen und Entscheidungszeitpunkte beeinflussen\n- Praktische Ratschläge, kombiniert mit modernen Lebensszenarien – wie man Chancen ergreift und Risiken vermeidet\n- Exklusive Anleitungen für Schlüsselbereiche wie Finanzen, Gesundheit und zwischenmenschliche Beziehungen\n\nDie beiden Berichte ergänzen sich gegenseitig und zeichnen eine vollständige numerologische Karte, die Vergangenheit, Gegenwart und Zukunft durchdringt!\n\n**Ablauf nach dem Kauf:**\n1. Nach Abschluss der Zahlung senden Sie bitte Ihre detaillierten Geburtsinformationen (Geburtsjahr, -monat, -tag, genaue Uhrzeit, Geburtsort) an: seondo@cneraart.com\n   Beispiel: 12. Dezember 1978, 12:20 PM, New York, USA\n2. Unsere Numerologie-Meister werden die alte chinesische Fünf-Elemente-Philosophie nutzen, um Ihr einzigartiges Energiemuster maßgeschneidert zu analysieren\n3. Sie erhalten Ihren exklusiven „Numerologischen Energieanalysebericht“ innerhalb von 3-5 Werktagen per E-Mail\n\n**Datenschutz und Personalisierungsgarantie:**\nWir legen größten Wert auf Ihre Privatsphäre – alle Informationen werden streng vertraulich behandelt. Dies ist kein „Wahrsagen“, sondern eine Unterstützung, um durch das Verständnis Ihrer Energiemuster klarer und selbstbewusster zu leben.\n\n**Warum uns wählen?**\n- Für nur 19 $ erhalten Sie einen tiefgehenden, personalisierten Bericht, der alte Weisheit mit moderner Praxis verbindet\n- Besonders geeignet für diejenigen, die beruflichen Aufstieg, harmonische Beziehungen, emotionales Gleichgewicht, Gesundheitsoptimierung oder persönliche Wachstumsanleitung suchen\n- Ein einzigartiges Einsichtserlebnis – wie eine über Jahrtausende verfeinerte Persönlichkeitsbewertung!\n\n**Hinweis:** Dieser Service folgt streng der traditionellen kulturellen Interpretation und bietet nur eine richtungsweisende Orientierung. Alle Ergebnisse dienen nur als Referenz."
+      "description": "Entdecken Sie die alte östliche Weisheit und entschlüsseln Sie Ihren numerologischen Energiecode\n\n**Der Service beinhaltet:**\n\n**1. Analyse der numerologischen Struktur**\nBasierend auf Ihrem Geburtsdatum und Ihrer Geburtszeit wird Ihre angeborene Begabung, Ihre Persönlichkeitsmerkmale und Ihr Lebensweg tiefgehend interpretiert. Unsere Numerologie-Meister nutzen die Fünf-Elemente-Lehre (Metall, Holz, Wasser, Feuer, Erde), um Ihnen Folgendes zu offenbaren:\n- Wie die Kombination der Himmelsstämme und Erdzweige Ihre Persönlichkeit und zwischenmenschlichen Beziehungen beeinflusst\n- Die Schutz besonderer glückverheißender Sterne und Gottheiten (wie Tian Yi Gui Ren, Tai Ji Gui Ren) auf Ihr Schicksal\n- Die tiefen Verbindungen zwischen den zwölf Palästen wie dem Lebenspalast, dem Karrierepalast, dem Wohlstandspalast und Ihren Lebenserfahrungen\n\n**2. Analyse der Jahresglücksentwicklung (2026-2027)**\nEine detaillierte Interpretation des Energieflusses und der Schicksalsveränderungen im kommenden Jahr:\n- Wie die Wechselwirkungen der Fünf Elemente Ihre Karriereentwicklung, romantische Beziehungen und Entscheidungszeitpunkte beeinflussen\n- Praktische Ratschläge, kombiniert mit modernen Lebensszenarien – wie man Chancen ergreift und Risiken vermeidet\n- Exklusive Anleitungen für Schlüsselbereiche wie Finanzen, Gesundheit und zwischenmenschliche Beziehungen\n\nDie beiden Berichte ergänzen sich gegenseitig und zeichnen eine vollständige numerologische Karte, die Vergangenheit, Gegenwart und Zukunft durchdringt!\n\n**Ablauf nach dem Kauf:**\n1. Nach Abschluss der Zahlung senden Sie bitte Ihre detaillierten Geburtsinformationen (Geburtsjahr, -monat, -tag, genaue Uhrzeit, Geburtsort) an: seondo@cneraart.com\n   Beispiel: 12. Dezember 1978, 12:20 PM, New York, USA\n2. Unsere Numerologie-Meister werden die alte chinesische Fünf-Elemente-Philosophie nutzen, um Ihr einzigartiges Energiemuster maßgeschneidert zu analysieren\n3. Sie erhalten Ihren exklusiven „Numerologischen Energieanalysebericht“ innerhalb von 3-5 Werktagen per E-Mail\n\n**Datenschutz und Personalisierungsgarantie:**\nWir legen größten Wert auf Ihre Privatsphäre – alle Informationen werden streng vertraulich behandelt. Dies ist kein „Wahrsagen“, sondern eine Unterstützung, um durch das Verständnis Ihrer Energiemuster klarer und selbstbewusster zu leben.\n\n**Warum uns wählen?**\n- Für nur 19 $ erhalten Sie einen tiefgehenden, personalisierten Bericht, der alte Weisheit mit moderner Praxis verbindet\n- Besonders geeignet für diejenigen, die beruflichen Aufstieg, harmonische Beziehungen, emotionales Gleichgewicht, Gesundheitsoptimierung oder persönliche Wachstumsanleitung suchen\n- Ein einzigartiges Einsichtserlebnis – wie eine über Jahrtausende verfeinerte Persönlichkeitsbewertung!\n\n**Hinweis:** Dieser Service folgt streng der traditionellen kulturellen Interpretation und bietet nur eine richtungsweisende Orientierung. Alle Ergebnisse dienen nur als Referenz."
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Schicksalsanalyse + Segenzeremonie am Wutai-Berg",
-      "description": "Liebe Freunde, sehnen Sie sich danach, Ihren Lebensweg zu verstehen und gleichzeitig heilige Segensenergie für die Zukunft zu erhalten? Für nur 79 $ erhalten Sie einen vollständigen „Bericht zur Schicksalsenergie-Analyse“ und können zudem eine exklusive Segenszeremonie genießen, die unser Team am Wutai-Berg, einem heiligen Ort des chinesischen Buddhismus, für Sie durchführt! Erleuchten Sie den Weg für sich und Ihre Liebsten.\n\n**Ihr exklusives Paket beinhaltet:**\n\n**Bericht zur Schicksalsanalyse (Lieferung innerhalb von 3-5 Tagen)**\n- Basierend auf Ihrem Geburtsdatum und Ihrer Geburtszeit, eine personalisierte Interpretation Ihrer Schicksalsstruktur und Energieinteraktionen\n- Detaillierte Analyse Ihrer großen Glückszyklen und Jahresflüsse, um Ihnen zu helfen, wichtige Chancen und Vorsichtsmaßnahmen für 2026-2027 zu erkennen\n- Umfasst Anleitungen in mehreren Dimensionen wie Karriere, Vermögen, Beziehungen und Gesundheit\n- Kombiniert die traditionelle Fünf-Elemente-Philosophie mit modernen Lebensanwendungen und bietet praktische Ratschläge\n\n**Stellvertretender Segensdienst am Wutai-Berg (Video-Lieferung innerhalb von 10-15 Tagen)**\n- Sie können wählen zwischen **Lichtopfer** (erleuchtet den Weg der Weisheit) oder **Räucherstäbchenopfer** (bittet um Frieden, beseitigt Hindernisse)\n- Unser Team wird persönlich die Tempel am Wutai-Berg besuchen und die Segenszeremonie vollständig dokumentieren\n- Das Video wird die Rezitation Ihres Namens, Ihre Gebetswünsche und den Ablauf der Zeremonie enthalten – für Transparenz und Aufrichtigkeit\n- Jede Lampe, jedes Räucherstäbchen wird speziell für Sie angezündet\n\n**Wie können Sie teilnehmen?**\n1. Klicken Sie auf den Kauflink und wählen Sie das 79 $-Segenspaket\n2. Nach Abschluss der Zahlung senden Sie bitte Ihren Namen, Ihre Geburtsdaten und Ihre Gebetspräferenz (Lichtopfer oder Räucherstäbchenopfer) an: seondo@cneraart.com\n   Beispiel: 12. Dezember 1978, 12:20 Uhr, New York, USA\n3. Sie erhalten den „Bericht zur Schicksalsenergie-Analyse“ innerhalb von 3-5 Werktagen per E-Mail\n4. Das Segensvideo wird Ihnen 10-15 Tage nach Abschluss der Zeremonie an Ihre E-Mail-Adresse gesendet\n\n**Warum dieses Upgrade wählen?**\n- Nicht nur eine Vorhersage – es verleiht Ihrem Leben auch Segensenergie\n- Alte Weisheit + heilige Rituale, doppelter Schutz\n- Vollständige Videoaufzeichnung – aufrichtig, glaubwürdig, überprüfbar\n- Geeignet für vielfältige Wünsche: beruflicher Erfolg, familiäre Harmonie, Schicksalswende, akademischer Fortschritt usw.\n\nEin Bericht, eine helle Lampe, ein Wunsch, eine Transformation.\n\nMögen wir Hand in Hand die Tür des Schicksals öffnen und eine strahlende Zukunft begrüßen.\n\n**Hinweis:** Der Segensdienst ist ein stellvertretender religiöser Opferdienst. Wir respektieren alle Glaubensrichtungen – Aufrichtigkeit ist das Wichtigste. Dieser Dienst folgt streng der traditionellen kulturellen Interpretation und bietet lediglich richtungsweisende Anleitungen. Alle Ergebnisse dienen nur als Referenz."
+      "description": "Liebe Freunde, sehnen Sie sich danach, Ihren Lebensweg zu verstehen und gleichzeitig heilige Segensenergie für die Zukunft zu erhalten? Für nur 79 $ erhalten Sie einen vollständigen „Bericht zur Schicksalsenergie-Analyse“ und können zudem eine exklusive Segenszeremonie genießen, die unser Team am Wutai-Berg, einem heiligen Ort des chinesischen östliche Kultur, für Sie durchführt! Erleuchten Sie den Weg für sich und Ihre Liebsten.\n\n**Ihr exklusives Paket beinhaltet:**\n\n**Bericht zur Schicksalsanalyse (Lieferung innerhalb von 3-5 Tagen)**\n- Basierend auf Ihrem Geburtsdatum und Ihrer Geburtszeit, eine personalisierte Interpretation Ihrer Schicksalsstruktur und Energieinteraktionen\n- Detaillierte Analyse Ihrer großen Glückszyklen und Jahresflüsse, um Ihnen zu helfen, wichtige Chancen und Vorsichtsmaßnahmen für 2026-2027 zu erkennen\n- Umfasst Anleitungen in mehreren Dimensionen wie Karriere, Vermögen, Beziehungen und Gesundheit\n- Kombiniert die traditionelle Fünf-Elemente-Philosophie mit modernen Lebensanwendungen und bietet praktische Ratschläge\n\n**Stellvertretender Segensdienst am Wutai-Berg (Video-Lieferung innerhalb von 10-15 Tagen)**\n- Sie können wählen zwischen **Lichtopfer** (erleuchtet den Weg der Weisheit) oder **Räucherstäbchenopfer** (bittet um Frieden, beseitigt Hindernisse)\n- Unser Team wird persönlich die Kulturstätte am Wutai-Berg besuchen und die Segenszeremonie vollständig dokumentieren\n- Das Video wird die Rezitation Ihres Namens, Ihre Gebetswünsche und den Ablauf der Zeremonie enthalten – für Transparenz und Aufrichtigkeit\n- Jede Lampe, jedes Räucherstäbchen wird speziell für Sie angezündet\n\n**Wie können Sie teilnehmen?**\n1. Klicken Sie auf den Kauflink und wählen Sie das 79 $-Segenspaket\n2. Nach Abschluss der Zahlung senden Sie bitte Ihren Namen, Ihre Geburtsdaten und Ihre Gebetspräferenz (Lichtopfer oder Räucherstäbchenopfer) an: seondo@cneraart.com\n   Beispiel: 12. Dezember 1978, 12:20 Uhr, New York, USA\n3. Sie erhalten den „Bericht zur Schicksalsenergie-Analyse“ innerhalb von 3-5 Werktagen per E-Mail\n4. Das Segensvideo wird Ihnen 10-15 Tage nach Abschluss der Zeremonie an Ihre E-Mail-Adresse gesendet\n\n**Warum dieses Upgrade wählen?**\n- Nicht nur eine Vorhersage – es verleiht Ihrem Leben auch Segensenergie\n- Alte Weisheit + heilige Rituale, doppelter Schutz\n- Vollständige Videoaufzeichnung – aufrichtig, glaubwürdig, überprüfbar\n- Geeignet für vielfältige Wünsche: beruflicher Erfolg, familiäre Harmonie, Schicksalswende, akademischer Fortschritt usw.\n\nEin Bericht, eine helle Lampe, ein Wunsch, eine Transformation.\n\nMögen wir Hand in Hand die Tür des Schicksals öffnen und eine strahlende Zukunft begrüßen.\n\n**Hinweis:** Der Segensdienst ist ein stellvertretender religiöser Opferdienst. Wir respektieren alle Glaubensrichtungen – Aufrichtigkeit ist das Wichtigste. Dieser Dienst folgt streng der traditionellen kulturellen Interpretation und bietet lediglich richtungsweisende Anleitungen. Alle Ergebnisse dienen nur als Referenz."
     },
     "all_title": "Alle Produkte",
     "all_subtitle": "Ausgewählter geweihter Schmuck und spirituelle Dienste"
@@ -140,7 +140,7 @@
     "adding": "Wird hinzugefügt...",
     "buy_now": "Jetzt kaufen",
     "blessing_info": "Segnungsinformationen",
-    "temple": "Gesegnet im Tempel",
+    "temple": "Imbued at Heritage Site",
     "master": "Gesegnet von Meister",
     "date": "Segnungsdatum",
     "tab_description": "Produktdetails",
@@ -159,7 +159,7 @@
     "in_stock": "Auf Lager",
     "only_left": "Nur noch {{count}} verfügbar",
     "out_of_stock": "Ausverkauft",
-    "blessing_default": "Jeder Artikel wurde durch traditionelle Zeremonien im Manjushri-Bodhisattva-Heiligtum des Berges Wutai gesegnet...",
+    "blessing_default": "Jeder Artikel wurde durch traditionelle Zeremonien im Cultural-Cultural Guardian-Heiligtum des Berges Wutai gesegnet...",
     "service_guide": {
       "title": "📋 Service-Kaufprozess",
       "step1": "Nach der Zahlung erhalten Sie eine Auftragsbestätigungs-E-Mail",
@@ -411,12 +411,12 @@
   "aboutUs": {
     "title": "ÜBER UNS",
     "paragraph1": "Der Meister des Wutai-Berges erschließt persönlich Jahrtausende alter östlicher Weisheit, basierend auf dem I Ging, Geburtskarten, Zi Wei Dou Shu, Pflaumenblüten-I Ging, Goldenen Schlüsselversen und den Großen Sechs Yao. Durch die Integration der Zyklen von Erzeugung und Einschränkung der Fünf Elemente mit westlicher Astrologie analysieren wir tiefgehend Karriere, Reichtum, Gesundheit und zwischenmenschliche Schicksale—offenbaren Chancen, warnen vor Hindernissen—um Ihnen zu helfen, die Strömungen des Lebens zu navigieren und Ihren Horizont zu erweitern.",
-    "paragraph2": "Wir folgen traditionellen Ritualen wie Weihe und Sutra-Rezitation, feierlich und ordnungsgemäß, und erfüllen jeden gesegneten Gegenstand mit reiner Aspiration, harmonisieren Körper- und Geistenergie und beruhigen den Geist. Mit Jahrtausenden von Weisheit beantworten wir die Rätsel des modernen Lebens und nutzen exklusive Segnungen, um ein reibungsloses Leben und blühendes Glück zu schützen.",
-    "videoTitle": "Weihezeremonie durch erfahrene Mönche"
+    "paragraph2": "Wir folgen traditionellen Ritualen wie der Imbuing-Zeremonie und dem Chanting, feierlich und ordnungsgemäß, und erfüllen jedes Guardian Token mit reiner Aspiration, harmonisieren Körper- und Geistenergie und beruhigen den Geist. Mit Jahrtausenden von Weisheit beantworten wir die Rätsel des modernen Lebens und nutzen exklusiven Schutz, um ein reibungsloses Leben und blühendes Glück zu gewährleisten.",
+    "videoTitle": "Imbuing-Zeremoniezeremonie durch erfahrene Traditionsträger"
   },
   "footer": {
-    "wutaishan": "Berg Wutai · Einer der Fünf Heiligen Buddhistischen Berge · UNESCO-Weltkulturerbe",
-    "heritage": "Erster der Vier Großen Buddhistischen Berge Chinas · Manjushri Bodhisattva Dojo · Jahrtausendealtes Buddhistisches Erbe"
+    "wutaishan": "Berg Wutai · Einer der Fünf Heiligen Culturalischen Berge · UNESCO-Weltkulturerbe",
+    "heritage": "Erster der Vier Großen Culturalischen Berge Chinas · Cultural Guardian Dojo · Jahrtausendealtes Culturalisches Erbe"
   },
   "toast": {
     "success": "Erfolg",
@@ -486,8 +486,6 @@
     "blessed_subtitle": "Traditionelle Rituale, Meisterweihe, ausgewählter geweihter Schmuck zum Schutz Ihrer Lebensreise",
     "destiny_title": "Schicksal & Vermögen",
     "destiny_subtitle": "BaZi-Analyse, Schicksalsdeutung, Entschlüsselung der Geheimnisse des Schicksals",
-    "prayer_title": "Gebetsdienste",
-    "prayer_subtitle": "Lampenopfer, Gebetsdienst, hingebungsvolle Gebete der Meister vom Berg Wutai",
     "fortune_title": "Gesicht, Hand & Feng Shui",
     "fortune_subtitle": "Alte Weisheit der Gesichts- und Handlesekunst, Enthüllung des Lebensschicksals"
   },
@@ -591,7 +589,7 @@
     "subtitle": "Meister vom Wutai Shan beten für Sie, übermitteln Wünsche und suchen Frieden",
     "lampService": "Lampenopfer",
     "lampDesc": "Anzünden einer Gebetslampe für Sie an der heiligen Stätte des Wutai Shan, um den Weg zu erleuchten und Dunkelheit zu vertreiben",
-    "lampFeature1": "Lampenopfer im Manjushri Bodhisattva Kloster",
+    "lampFeature1": "Lampenopfer im Cultural Guardian Kloster",
     "lampFeature2": "Meister rezitieren Sutren und widmen das Verdienst",
     "lampFeature3": "Bereitstellung von Fotos der Lampenopfer und Gebetszertifikat",
     "perLamp": "Lampe",
@@ -624,7 +622,7 @@
     "requiredFields": "Bitte füllen Sie alle Pflichtfelder aus",
     "deliveryTime": "* Wir vollenden das Gebet innerhalb von 3 Werktagen und senden Ihnen das Gebetszertifikat sowie Fotos per E-Mail zu",
     "trust1Title": "Heiliger Berg Wutai",
-    "trust1Desc": "Einer der fünf großen buddhistischen Heiligtümer der Welt, Kloster des Bodhisattva Manjushri",
+    "trust1Desc": "Einer der fünf großen culturalischen Heiligtümer der Welt, Kloster des Cultural Guardian Cultural",
     "trust2Title": "Authentische Fotos",
     "trust2Desc": "Jedes Gebet wird fotografisch dokumentiert, um Authentizität und Glaubwürdigkeit zu gewährleisten",
     "trust3Title": "Feedback per E-Mail",
@@ -635,7 +633,7 @@
     "subtitle": "Alte östliche Weisheit · Moderne spirituelle Führung",
     "blessed": {
       "title": "Geweihte Heiligtümer",
-      "description": "Heilige Dharma-Instrumente, geweiht von den ehrwürdigen Mönchen des Berges Wutai, schützen Ihren Lebensweg",
+      "description": "Heilige Dharma-Instrumente, geweiht von den ehrwürdigen Traditionsträgern des Berges Wutai, schützen Ihren Lebensweg",
       "cta": "Geweihte Heiligtümer entdecken"
     },
     "fortune": {
@@ -660,19 +658,19 @@
     }
   },
   "blessing": {
-    "title": "Weiheprozess",
-    "subtitle": "Geführt von den ehrwürdigen Mönchen des Berges Wutai, alte Tradition",
+    "title": "Imbuing-Zeremonieprozess",
+    "subtitle": "Geführt von den ehrwürdigen Traditionsträgern des Berges Wutai, alte Tradition",
     "step1": {
       "title": "Reinigung mit heiligem Wasser",
-      "description": "Reinigung mit heiligem Wasser, Adlerholz-Räucherwerk und alten Mantras vor dem Buddha"
+      "description": "Reinigung mit heiligem Wasser, Adlerholz-Räucherwerk und alten Mantras vor dem cultural"
     },
     "step2": {
-      "title": "Sutra-Rezitation & Segnung",
-      "description": "Ehrwürdige Mönche rezitieren mit Hingabe Sutras, der Name Buddhas hallt wider"
+      "title": "Chanting & Energieinfusion",
+      "description": "Kulturelle Traditionsträger chanten mit Hingabe, alte Klänge hallen wider"
     },
     "step3": {
       "title": "Heilige Ermächtigung",
-      "description": "Empfang des Weisheitslichts des Bodhisattva Manjushri und des Wohlstandssegens von Wu Ye"
+      "description": "Empfang des Weisheitslichts des Cultural Guardian Cultural und des Wohlstandssegens von Cultural Heritage"
     },
     "scrollHint": "Scrollen für mehr"
   },

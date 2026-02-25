@@ -1,8 +1,8 @@
 {
   "topBar": {
     "wutaishan": "Gunung Wutai",
-    "credential1": "Salah satu dari lima gunung Buddha suci",
-    "credential2": "Yang pertama dari empat gunung Buddha besar Tiongkok",
+    "credential1": "Salah satu dari lima gunung cultural suci",
+    "credential2": "Yang pertama dari empat gunung cultural besar Tiongkok",
     "credential3": "Situs Warisan Dunia UNESCO",
     "register": "Daftar",
     "login": "Masuk"
@@ -42,12 +42,12 @@
   "aboutUs": {
     "title": "TENTANG KAMI",
     "paragraph1": "Guru Gunung Wutai secara pribadi membuka ribuan tahun kebijaksanaan Timur kuno, berakar pada I Ching, bagan kelahiran, Zi Wei Dou Shu, I Ching Bunga Plum, Ayat Kunci Emas, dan Enam Yao Besar. Mengintegrasikan siklus generasi dan pembatasan Lima Elemen dengan astrologi Barat, kami menganalisis secara mendalam karier, kekayaan, kesehatan, dan nasib interpersonal—mengungkapkan peluang, memperingatkan hambatan—untuk membantu Anda menavigasi arus kehidupan dan memperluas wawasan Anda.",
-    "paragraph2": "Kami mengikuti ritual tradisional seperti pemberkatan dan pembacaan sutra, khidmat dan sesuai, menanamkan setiap barang yang diberkati dengan aspirasi murni, menyelaraskan energi tubuh dan pikiran, dan menenangkan jiwa. Dengan ribuan tahun kebijaksanaan, kami menjawab kebingungan kehidupan modern, menggunakan berkat eksklusif untuk melindungi kehidupan yang harmonis dan keberuntungan yang berkembang.",
+    "paragraph2": "Kami mengikuti ritual tradisional seperti pemberkatan dan pembacaan chant, khidmat dan sesuai, menanamkan setiap barang yang diberkati dengan aspirasi murni, menyelaraskan energi tubuh dan pikiran, dan menenangkan jiwa. Dengan ribuan tahun kebijaksanaan, kami menjawab kebingungan kehidupan modern, menggunakan berkat eksklusif untuk melindungi kehidupan yang harmonis dan keberuntungan yang berkembang.",
     "videoTitle": "Upacara Pengudusan oleh Biksu Senior"
   },
   "footer": {
-    "wutaishan": "Gunung Wutai · Salah satu dari lima gunung Buddha suci · Situs Warisan Dunia UNESCO",
-    "heritage": "Yang pertama dari empat gunung Buddha besar Tiongkok · Dojo Manjushri Bodhisattva · Warisan Buddha ribuan tahun"
+    "wutaishan": "Gunung Wutai · Salah satu dari lima gunung cultural suci · Situs Warisan Dunia UNESCO",
+    "heritage": "Yang pertama dari empat gunung cultural besar Tiongkok · Dojo Cultural Guardian · Warisan cultural ribuan tahun"
   },
   "product_detail": {
     "back": "Kembali ke Produk",
@@ -58,7 +58,7 @@
     "adding": "Memesan...",
     "buy_now": "Beli Sekarang",
     "blessing_info": "Informasi Berkah",
-    "temple": "Diberkati di Kuil",
+    "temple": "Diresapi di Situs Warisan patrimônioya",
     "master": "Diberkati oleh Guru",
     "date": "Tanggal Berkah",
     "tab_description": "Detail Produk",
@@ -77,7 +77,7 @@
     "in_stock": "Tersedia",
     "only_left": "Hanya tersisa {{count}}",
     "out_of_stock": "Habis",
-    "blessing_default": "Setiap barang telah diberkati melalui upacara tradisional di tempat suci Bodhisattva Manjusri Gunung Wutai...",
+    "blessing_default": "Setiap barang telah diberkati melalui upacara tradisional di tempat suci Cultural Guardian Manjusri Gunung Wutai...",
     "get_report": "Dapatkan Laporan",
     "tab_service": "Detail Layanan",
     "uploading_images": "Mengunggah gambar...",
@@ -294,11 +294,9 @@
     "inner_peace": "Kedamaian Batin",
     "inner_peace_desc": "Menenangkan pikiran, menghilangkan kekhawatiran, mencapai ketenangan batin",
     "blessed_title": "Artefak Pelindung Berkah",
-    "blessed_subtitle": "Traditional rituals, master consecration, curated blessed jewelry",
+    "blessed_subtitle": "Traditional rituals, master imbuing ceremony, curated imbued jewelry",
     "destiny_title": "Takdir & Keberuntungan",
     "destiny_subtitle": "BaZi chart analysis, fortune reading, decoding destiny secrets",
-    "prayer_title": "Layanan Doa",
-    "prayer_subtitle": "Persembahan lampu, layanan doa, doa khusyuk oleh para master Gunung Wutai",
     "fortune_title": "Wajah, Telapak Tangan & Feng Shui",
     "fortune_subtitle": "Kebijaksanaan kuno membaca wajah dan telapak tangan, mengungkap takdir hidup"
   },
@@ -311,7 +309,7 @@
     "510061": {
       "name": "Analisis Numerologi + Upacara Doa Gunung Wutai",
       "description": "Laporan Numerologi Lengkap + Layanan Doa Pengganti di Gunung Wutai (Persembahan Lampu/Dupa), termasuk rekaman video, pengiriman 10-15 hari",
-      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
+      "shortDesc": "深度命理解析 + 五台山圣地祈愿,双重守护您的人生之路"
     },
     "title": "开光饰品",
     "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
@@ -337,10 +335,10 @@
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Analisis Takdir + Upacara Pemberkatan Gunung Wutai",
-      "description": "Sahabat yang terkasih, apakah Anda ingin memahami jalur hidup Anda dan pada saat yang sama menyuntikkan energi berkah ilahi ke masa depan? Hanya dengan $79, Anda akan mendapatkan \"Laporan Analisis Energi Numerologi\" lengkap, dan Anda juga dapat menikmati upacara pemberkatan eksklusif yang akan diadakan oleh tim kami untuk Anda di Gunung Wutai, tempat suci Buddhisme Tiongkok! Menerangi jalan ke depan untuk Anda dan orang yang Anda cintai.\n\n**Paket Eksklusif Anda meliputi:**\n\n**Laporan Analisis Numerologi (dikirim dalam 3-5 hari)**\n- Berdasarkan tanggal lahir Anda (Bazi), interpretasi personal mengenai struktur numerologi dan interaksi energi Anda\n- Analisis mendalam tentang periode keberuntungan besar dan tahun-tahun yang berjalan, membantu Anda memahami peluang dan hal-hal penting di tahun 2026-2027\n- Mencakup panduan multidimensi seperti karier, kekayaan, hubungan, kesehatan, dll.\n- Menggabungkan filosofi Lima Elemen tradisional dengan aplikasi kehidupan modern, memberikan saran yang praktis dan dapat diterapkan\n\n**Layanan Doa Pengganti di Gunung Wutai (video dikirim dalam 10-15 hari)**\n- Anda dapat memilih untuk **menyalakan lampu** (menerangi jalan kebijaksanaan) atau **membakar dupa** (memohon kedamaian, menghilangkan rintangan)\n- Tim kami akan secara pribadi pergi ke kuil Gunung Wutai dan merekam seluruh proses upacara doa\n- Video akan berisi pembacaan nama Anda, doa permohonan, dan proses upacara – memastikan transparansi dan ketulusan\n- Setiap lampu, setiap dupa, dinyalakan khusus untuk Anda\n\n**Bagaimana cara berpartisipasi?**\n1. Klik tautan pembelian, pilih paket doa $79\n2. Setelah pembayaran selesai, harap kirimkan nama, informasi tanggal lahir, dan preferensi doa Anda (menyalakan lampu atau membakar dupa) ke: seondo@cneraart.com\n   Contoh: 12 Desember 1978 12:20 PM, New York, AS\n3. Anda akan menerima \"Laporan Analisis Energi Numerologi\" melalui email dalam 3-5 hari kerja\n4. Dalam 10-15 hari setelah upacara doa selesai, video doa akan dikirim ke email Anda\n\n**Mengapa memilih versi yang ditingkatkan ini?**\n- Bukan hanya prediksi – tetapi juga menyuntikkan energi berkah ke dalam hidup Anda\n- Kebijaksanaan kuno + ritual suci, perlindungan ganda\n- Rekaman video lengkap – tulus, dapat dipercaya, dan transparan\n- Berlaku untuk berbagai keinginan: kesuksesan karier, keharmonisan keluarga, perubahan nasib, kemajuan akademik, dll.\n\nSatu laporan, satu pelita, satu keinginan, satu transformasi.\n\nSemoga kita bergandengan tangan, membuka pintu takdir, dan menyambut masa depan yang cerah.\n\n**Catatan:** Layanan doa adalah perwakilan persembahan keagamaan. Kami menghormati semua keyakinan – ketulusan adalah yang terpenting. Layanan ini secara ketat mengikuti interpretasi budaya tradisional dan hanya memberikan panduan arah. Semua hasil hanya untuk referensi."
+      "description": "Sahabat yang terkasih, apakah Anda ingin memahami jalur hidup Anda dan pada saat yang sama menyuntikkan energi berkah ilahi ke masa depan? Hanya dengan $79, Anda akan mendapatkan \"Laporan Analisis Energi Numerologi\" lengkap, dan Anda juga dapat menikmati upacara pemberkatan eksklusif yang akan diadakan oleh tim kami untuk Anda di Gunung Wutai, situs warisan budaya Tiongkok! Menerangi jalan ke depan untuk Anda dan orang yang Anda cintai.\n\n**Paket Eksklusif Anda meliputi:**\n\n**Laporan Analisis Numerologi (dikirim dalam 3-5 hari)**\n- Berdasarkan tanggal lahir Anda (Bazi), interpretasi personal mengenai struktur numerologi dan interaksi energi Anda\n- Analisis mendalam tentang periode keberuntungan besar dan tahun-tahun yang berjalan, membantu Anda memahami peluang dan hal-hal penting di tahun 2026-2027\n- Mencakup panduan multidimensi seperti karier, kekayaan, hubungan, kesehatan, dll.\n- Menggabungkan filosofi Lima Elemen tradisional dengan aplikasi kehidupan modern, memberikan saran yang praktis dan dapat diterapkan\n\n**Layanan Doa Pengganti di Gunung Wutai (video dikirim dalam 10-15 hari)**\n- Anda dapat memilih untuk **menyalakan lampu** (menerangi jalan kebijaksanaan) atau **membakar dupa** (memohon kedamaian, menghilangkan rintangan)\n- Tim kami akan secara pribadi pergi ke situs warisan Gunung Wutai dan merekam seluruh proses upacara doa\n- Video akan berisi pembacaan nama Anda, doa permohonan, dan proses upacara – memastikan transparansi dan ketulusan\n- Setiap lampu, setiap dupa, dinyalakan khusus untuk Anda\n\n**Bagaimana cara berpartisipasi?**\n1. Klik tautan pembelian, pilih paket doa $79\n2. Setelah pembayaran selesai, harap kirimkan nama, informasi tanggal lahir, dan preferensi doa Anda (menyalakan lampu atau membakar dupa) ke: seondo@cneraart.com\n   Contoh: 12 Desember 1978 12:20 PM, New York, AS\n3. Anda akan menerima \"Laporan Analisis Energi Numerologi\" melalui email dalam 3-5 hari kerja\n4. Dalam 10-15 hari setelah upacara doa selesai, video doa akan dikirim ke email Anda\n\n**Mengapa memilih versi yang ditingkatkan ini?**\n- Bukan hanya prediksi – tetapi juga menyuntikkan energi berkah ke dalam hidup Anda\n- Kebijaksanaan kuno + ritual suci, perlindungan ganda\n- Rekaman video lengkap – tulus, dapat dipercaya, dan transparan\n- Berlaku untuk berbagai keinginan: kesuksesan karier, keharmonisan keluarga, perubahan nasib, kemajuan akademik, dll.\n\nSatu laporan, satu pelita, satu keinginan, satu transformasi.\n\nSemoga kita bergandengan tangan, membuka pintu takdir, dan menyambut masa depan yang cerah.\n\n**Catatan:** Layanan doa adalah pengalaman budaya tradisional. Kami menghormati semua keyakinan – ketulusan adalah yang terpenting. Layanan ini secara ketat mengikuti interpretasi budaya tradisional dan hanya memberikan panduan arah. Semua hasil hanya untuk referensi."
     },
     "all_title": "Semua Produk",
-    "all_subtitle": "Curated blessed jewelry and spiritual services"
+    "all_subtitle": "Curated imbued jewelry and spiritual services"
   },
   "common": {
     "site_name": "Cneraart",
@@ -465,7 +463,7 @@
     "subtitle": "Master dari Gunung Wutai mendoakan Anda, menyampaikan harapan, dan mencari kedamaian",
     "lampService": "Persembahan Lampu",
     "lampDesc": "Menyalakan lampu doa untuk Anda di situs suci Gunung Wutai untuk menerangi jalan dan mengusir kegelapan",
-    "lampFeature1": "Persembahan lampu di Biara Bodhisattva Manjusri",
+    "lampFeature1": "Persembahan lampu di Biara Cultural Guardian Manjusri",
     "lampFeature2": "Master melantunkan doa dan dedikasi untuk penyelesaian jasa",
     "lampFeature3": "Menyediakan foto persembahan lampu dan sertifikat doa",
     "perLamp": "lampu",
@@ -498,7 +496,7 @@
     "requiredFields": "Harap isi semua kolom yang wajib diisi",
     "deliveryTime": "* Kami akan menyelesaikan doa dalam 3 hari kerja dan mengirimkan sertifikat doa serta foto melalui email",
     "trust1Title": "Situs Suci Gunung Wutai",
-    "trust1Desc": "Salah satu dari lima situs suci Buddha utama di dunia, Biara Bodhisattva Manjusri",
+    "trust1Desc": "Salah satu dari lima situs suci cultural utama di dunia, Biara Cultural Guardian Manjusri",
     "trust2Title": "Foto Otentik",
     "trust2Desc": "Setiap doa difoto untuk memastikan keaslian dan kredibilitas",
     "trust3Title": "Umpan Balik Email",
@@ -509,7 +507,7 @@
     "subtitle": "Kebijaksanaan Timur Kuno · Panduan Spiritual Modern",
     "blessed": {
       "title": "Barang Suci yang Diberkati",
-      "description": "Alat dharma suci yang diberkati oleh biksu senior Gunung Wutai, melindungi perjalanan hidup Anda",
+      "description": "Alat dharma suci yang diberkati oleh pemegang warisan senior Gunung Wutai, melindungi perjalanan hidup Anda",
       "cta": "Jelajahi Barang yang Diberkati"
     },
     "fortune": {
@@ -538,15 +536,15 @@
     "subtitle": "Dipimpin oleh Para Biksu Senior Gunung Wutai, Tradisi Kuno",
     "step1": {
       "title": "Penyucian Air Suci",
-      "description": "Penyucian dengan air suci, dupa gaharu, dan mantra kuno di hadapan Buddha"
+      "description": "Penyucian dengan air murni, dupa gaharu, dan mantra kuno di hadapan cultural"
     },
     "step2": {
-      "title": "Pembacaan Sutra & Berkah",
-      "description": "Para biksu senior melantunkan sutra dengan penuh pengabdian, nama Buddha bergema"
+      "title": "Pembacaan chant & Berkah",
+      "description": "Para pemegang warisan senior melantunkan chant dengan penuh pengabdian, nama cultural bergema"
     },
     "step3": {
       "title": "Pemberdayaan Suci",
-      "description": "Menerima cahaya kebijaksanaan Bodhisattva Manjusri dan berkah kekayaan Wu Ye"
+      "description": "Menerima cahaya kebijaksanaan Cultural Guardian Manjusri dan berkah kekayaan Cultural Heritage"
     },
     "scrollHint": "Gulir untuk melihat lebih banyak"
   },
@@ -558,11 +556,11 @@
     "featured_title": "精选开光饰品",
     "featured_subtitle": "每一件都经过五台山开光,承载守护之力",
     "blessing_title": "五台山圣地开光法会",
-    "blessing_subtitle": "由五台山高僧主持，文殊菩萨智慧加持、五爷庙财神庇佑，古法传承千年灵验无比",
-    "blessing_step1": "圣水清净仪轨",
-    "blessing_step1_desc": "以圣水、沉香、古咒于大殿佛前洗涤一切不净，迎接佛光普照",
+    "blessing_subtitle": "由五台山文化传承人主持，文殊菩萨智慧加持、五爷庙财神庇佑，古法传承千年灵验无比",
+    "blessing_step1": "净水清净仪轨",
+    "blessing_step1_desc": "Pemurnian dengan air murni, dupa agarwood, dan mantra kuno di situs warisan, menyambut energi budaya",
     "blessing_step2": "庄严诵经法会",
-    "blessing_step2_desc": "高僧大德虔诚诵经，佛号不断，经文回荡，法力无边",
+    "blessing_step2_desc": "Pemegang warisan budaya melantunkan dengan khusyuk, suara kuno bergema, kekuatan budaya tak terbatas",
     "blessing_step3": "神圣能量灌顶",
     "blessing_step3_desc": "承文殊菩萨智慧之光、五爷财神富贵之力，赋予守护与祥瑞",
     "blessing_step4": "证书认证",
@@ -577,15 +575,15 @@
     "services_title": "我们的神圣服务",
     "services_subtitle": "古老东方智慧 · 现代灵性指导",
     "service_blessed_items": "开光法物",
-    "service_blessed_items_desc": "经五台山高僧开光的神圣法器",
+    "service_blessed_items_desc": "经五台山文化传承人开光的神圣法器",
     "service_fortune": "命理运势分析",
     "service_fortune_desc": "中国古老智慧,解读人生运势与命运指引",
     "service_palmistry": "手相面相分析",
     "service_palmistry_desc": "通过手相和面相揭示古老智慧",
     "service_fengshui": "家居风水",
     "service_fengshui_desc": "调和居住空间与宇宙能量",
-    "service_blessing": "代祈福服务",
-    "service_blessing_desc": "供灯、烧香及各种祈福仪式",
+    "service_blessing": "文化仪式服务",
+    "service_blessing_desc": "供灯、烧香及各种文化仪式",
     "service_fortune_collection": "命理服务",
     "service_fortune_collection_desc": "中国古老智慧，解读人生运势与命运指引",
     "service_fortune_short": "命理运势分析",

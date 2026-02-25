@@ -1,6 +1,6 @@
 /**
  * 产品推荐系统
- * 根据服务类型和报告内容推荐相关的开光法物
+ * 根据服务类型和报告内容推荐相关的文化信物
  */
 
 import * as db from './db';
@@ -27,9 +27,9 @@ export async function getRecommendedProducts(
 ): Promise<RecommendedProduct[]> {
   // 定义每个服务类型推荐的产品关键词
   const recommendationRules: Record<ServiceType, string[]> = {
-    face: ['文殊菩萨', '护身符', '智慧', '事业', '平安'],
-    palm: ['黄金手链', '开光手串', '财运', '招财', '手链'],
-    fengshui: ['风水摆件', '貔貅', '五帝钱', '招财', '镇宅']
+    face: ['智慧', '事业', '平安', '守护', '文殊'],
+    palm: ['手链', '手串', '财运', '招财', '守护'],
+    fengshui: ['摆件', '守护', '招财', '镇宅', '平安']
   };
 
   const keywords = recommendationRules[serviceType];
@@ -123,7 +123,7 @@ export async function getRecommendedProducts(
 }
 
 /**
- * 根据用户生肖推荐本命佛产品
+ * 根据用户生肖推荐守护信物
  */
 export async function getZodiacRecommendations(birthYear: number): Promise<RecommendedProduct[]> {
   // 计算生肖
@@ -131,20 +131,20 @@ export async function getZodiacRecommendations(birthYear: number): Promise<Recom
   const zodiacIndex = (birthYear - 1900) % 12;
   const zodiacAnimal = zodiacAnimals[zodiacIndex];
   
-  // 生肖对应的本命佛
+  // 生肖对应的守护文化象征
   const zodiacBuddha: Record<string, string> = {
     '鼠': '千手观音',
-    '牛': '虚空藏菩萨',
-    '虎': '虚空藏菩萨',
-    '兔': '文殊菩萨',
-    '龙': '普贤菩萨',
-    '蛇': '普贤菩萨',
-    '马': '大势至菩萨',
+    '牛': '虚空藏',
+    '虎': '虚空藏',
+    '兔': '文殊',
+    '龙': '普贤',
+    '蛇': '普贤',
+    '马': '大势至',
     '羊': '大日如来',
     '猴': '大日如来',
-    '鸡': '不动尊菩萨',
-    '狗': '阿弥陀佛',
-    '猪': '阿弥陀佛'
+    '鸡': '不动尊',
+    '狗': '阿弥陀',
+    '猪': '阿弥陀'
   };
   
   const buddha = zodiacBuddha[zodiacAnimal];
@@ -186,7 +186,7 @@ export async function getZodiacRecommendations(birthYear: number): Promise<Recom
       name: product.name,
       imageUrl: primaryImage?.url || '',
       price: price.toString(),
-      description: `${zodiacAnimal}年生人本命佛 · ${product.shortDescription || ''}`,
+      description: `${zodiacAnimal}年生人守护信物 · ${product.shortDescription || ''}`,
       productUrl,
       qrCodeBuffer
     });

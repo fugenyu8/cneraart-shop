@@ -56,7 +56,7 @@ function generateReportEmailHTML(options: SendReportEmailOptions): string {
           <tr>
             <td style="background: linear-gradient(135deg, #8B0000 0%, #D4AF37 100%); padding: 40px 30px; text-align: center;">
               <h1 style="margin: 0; color: #ffffff; font-size: 28px; font-weight: bold;">源・华渡</h1>
-              <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px; opacity: 0.9;">东方灵性智慧 · 五台山开光法物</p>
+              <p style="margin: 10px 0 0 0; color: #ffffff; font-size: 14px; opacity: 0.9;">东方文化智慧 · 五台山启蕴信物</p>
             </td>
           </tr>
 
@@ -66,7 +66,7 @@ function generateReportEmailHTML(options: SendReportEmailOptions): string {
               <h2 style="margin: 0 0 20px 0; color: #8B0000; font-size: 22px;">尊敬的${options.userName}，您好！</h2>
               
               <p style="margin: 0 0 15px 0; color: #333333; font-size: 16px; line-height: 1.6;">
-                感谢您选择源・华渡的${serviceName}服务。您的专属报告已由五台山大师完成推演，现已生成完毕。
+                感谢您选择源・华渡的${serviceName}服务。您的专属报告已由五台山文化传承人完成推演，现已生成完毕。
               </p>
 
               <div style="background-color: #FFF9E6; border-left: 4px solid #D4AF37; padding: 20px; margin: 25px 0; border-radius: 4px;">
@@ -87,8 +87,8 @@ function generateReportEmailHTML(options: SendReportEmailOptions): string {
               <ul style="margin: 0 0 25px 0; padding-left: 20px; color: #333333; font-size: 15px; line-height: 1.8;">
                 <li>深度${serviceName}解读</li>
                 <li>数据可视化图表分析</li>
-                <li>专业改运建议</li>
-                <li>五台山开光法物推荐</li>
+                <li>专业运势建议</li>
+                <li>五台山启蕴信物推荐</li>
               </ul>
 
               <!-- 下载按钮 -->
@@ -111,13 +111,13 @@ function generateReportEmailHTML(options: SendReportEmailOptions): string {
 
               <!-- 产品推荐区 -->
               <div style="text-align: center;">
-                <h3 style="margin: 0 0 15px 0; color: #8B0000; font-size: 18px;">✨ 五台山开光法物</h3>
+                <h3 style="margin: 0 0 15px 0; color: #8B0000; font-size: 18px;">✨ 五台山启蕴信物</h3>
                 <p style="margin: 0 0 20px 0; color: #666666; font-size: 14px;">
-                  根据您的报告，我们为您精选了相关的开光法物<br/>
-                  助您增强运势，趋吉避凶
+                  根据您的报告，我们为您精选了相关的文化信物<br/>
+                  助您增强运势，守护人生
                 </p>
                 <a href="${ENV.viteAppLogo || 'https://www.cneraart.com'}/products" style="display: inline-block; color: #D4AF37; text-decoration: none; font-size: 14px; border: 1px solid #D4AF37; padding: 10px 25px; border-radius: 20px;">
-                  查看推荐法物 →
+                  查看推荐信物 →
                 </a>
               </div>
             </td>

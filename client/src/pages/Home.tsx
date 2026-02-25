@@ -206,85 +206,77 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 服务卡片区 - 移动端优化 */}
+      {/* 服务卡片区 - 只保留启蕴守护饰品，居中展示 */}
       <section className="relative py-10 md:py-20 px-3 md:px-4 bg-gradient-to-b from-gray-50 to-white">
         {/* 五台山背景图 */}
         <div className="absolute inset-0 opacity-[0.38]">
           <img src="/services/wutai-bg.jpg" alt="Wutai Temple" className="w-full h-full object-cover" loading="lazy" />
         </div>
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 lg:gap-8">
-            {/* 1. 开光护佑法物 */}
-            <Link href="/products?category=1">
-              <div className="group relative bg-black/85 backdrop-blur-sm border border-[#D4AF37] md:border-2 rounded-xl md:rounded-2xl p-3 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
+        <div className="max-w-4xl mx-auto">
+          {/* 标题 */}
+          <div className="text-center mb-6 md:mb-10 relative z-10">
+            <h2 className="text-xl md:text-3xl font-serif font-semibold text-[#8B0000] mb-2 md:mb-4">{t('home.services_title')}</h2>
+            <p className="text-sm md:text-base text-gray-600">{t('home.services_subtitle')}</p>
+          </div>
+          <div className="flex justify-center">
+            {/* 启蕴守护饰品 - 居中大卡片 */}
+            <Link href="/products">
+              <div className="group relative bg-black/85 backdrop-blur-sm border border-[#D4AF37] md:border-2 rounded-xl md:rounded-2xl p-6 md:p-10 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden max-w-md w-full">
                 <div className="absolute inset-0 opacity-5">
                   <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
                 </div>
-                <div className="relative z-10 flex flex-col items-center text-center space-y-2 md:space-y-4">
-                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border border-[#D4AF37] md:border-2 shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/beads.png" alt="Blessed Items" className="w-full h-full object-cover" loading="lazy" />
+                <div className="relative z-10 flex flex-col items-center text-center space-y-3 md:space-y-5">
+                  <div className="w-28 h-28 md:w-40 md:h-40 rounded-full overflow-hidden border border-[#D4AF37] md:border-2 shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
+                    <img src="/services/beads.png" alt="Qi-Yun Jewelry" className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div>
-                    <h3 className="text-xs md:text-lg font-medium text-[#FFD700] mb-1 md:mb-2 leading-tight">{t('serviceCards.blessedItems.title')}</h3>
-                    <p className="text-[10px] md:text-xs font-light text-[#E8D4A0] hidden sm:block">{t('serviceCards.blessedItems.subtitle')}</p>
+                    <h3 className="text-base md:text-xl font-medium text-[#FFD700] mb-1 md:mb-2 leading-tight">{t('serviceCards.blessedItems.title')}</h3>
+                    <p className="text-xs md:text-sm font-light text-[#E8D4A0]">{t('serviceCards.blessedItems.subtitle')}</p>
+                  </div>
+                  <div className="mt-2">
+                    <span className="inline-block px-4 py-2 md:px-6 md:py-2.5 bg-[#D4AF37]/20 border border-[#D4AF37]/50 rounded-full text-[#FFD700] text-xs md:text-sm group-hover:bg-[#D4AF37]/30 transition-colors">
+                      {t('home.cta_products')}
+                    </span>
                   </div>
                 </div>
               </div>
             </Link>
+          </div>
+        </div>
+      </section>
 
-            {/* 2. 命理运势 */}
-            <Link href="/products?category=2">
-              <div className="group relative bg-black/85 backdrop-blur-sm border border-[#D4AF37] md:border-2 rounded-xl md:rounded-2xl p-3 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
-                </div>
-                <div className="relative z-10 flex flex-col items-center text-center space-y-2 md:space-y-4">
-                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border border-[#D4AF37] md:border-2 shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/compass1.jpg" alt="Destiny" className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs md:text-lg font-medium text-[#FFD700] mb-1 md:mb-2 leading-tight">{t('serviceCards.destiny.title')}</h3>
-                    <p className="text-[10px] md:text-xs font-light text-[#E8D4A0] hidden sm:block">{t('serviceCards.destiny.subtitle')}</p>
-                  </div>
-                </div>
+      {/* 启蕴仪式流程 Section */}
+      <section className="py-10 md:py-20 px-3 md:px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8 md:mb-14">
+            <h2 className="text-xl md:text-3xl font-serif font-semibold text-[#8B0000] mb-2 md:mb-4">{t('home.blessing_title')}</h2>
+            <p className="text-sm md:text-base text-gray-600 max-w-2xl mx-auto">{t('home.blessing_subtitle')}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {/* 第一步：净化启蕴 */}
+            <div className="text-center p-4 md:p-6 rounded-xl bg-gradient-to-b from-[#FFF8E7] to-white border border-[#D4AF37]/20">
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-full bg-[#8B0000]/10 flex items-center justify-center">
+                <span className="text-2xl md:text-3xl">🌿</span>
               </div>
-            </Link>
-
-            {/* 3. 面相手相风水 */}
-            <Link href="/fortune">
-              <div className="group relative bg-black/85 backdrop-blur-sm border border-[#D4AF37] md:border-2 rounded-xl md:rounded-2xl p-3 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
-                </div>
-                <div className="relative z-10 flex flex-col items-center text-center space-y-2 md:space-y-4">
-                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border border-[#D4AF37] md:border-2 shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/palmistry.jpg" alt="Palmistry" className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs md:text-lg font-medium text-[#FFD700] mb-1 md:mb-2 leading-tight">{t('serviceCards.palmistry.title')}</h3>
-                    <p className="text-[10px] md:text-xs font-light text-[#E8D4A0] hidden sm:block">{t('serviceCards.palmistry.subtitle')}</p>
-                  </div>
-                </div>
+              <h3 className="text-base md:text-lg font-semibold text-[#8B0000] mb-2">{t('home.blessing_step1')}</h3>
+              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">{t('home.blessing_step1_desc')}</p>
+            </div>
+            {/* 第二步：传承吟诵 */}
+            <div className="text-center p-4 md:p-6 rounded-xl bg-gradient-to-b from-[#FFF8E7] to-white border border-[#D4AF37]/20">
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-full bg-[#8B0000]/10 flex items-center justify-center">
+                <span className="text-2xl md:text-3xl">📿</span>
               </div>
-            </Link>
-
-            {/* 4. 代客祈福 */}
-            <Link href="/products?category=3">
-              <div className="group relative bg-black/85 backdrop-blur-sm border border-[#D4AF37] md:border-2 rounded-xl md:rounded-2xl p-3 md:p-6 hover:shadow-2xl hover:shadow-[#D4AF37]/20 hover:-translate-y-2 hover:bg-black/90 transition-all duration-300 cursor-pointer overflow-hidden">
-                <div className="absolute inset-0 opacity-5">
-                  <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 50%, rgba(212, 175, 55, 0.3) 0%, transparent 50%)'}}></div>
-                </div>
-                <div className="relative z-10 flex flex-col items-center text-center space-y-2 md:space-y-4">
-                  <div className="w-20 h-20 md:w-32 md:h-32 rounded-full overflow-hidden border border-[#D4AF37] md:border-2 shadow-lg shadow-[#D4AF37]/30 group-hover:scale-110 transition-transform">
-                    <img src="/services/lotus-lamp.jpg" alt="Prayer" className="w-full h-full object-cover" loading="lazy" />
-                  </div>
-                  <div>
-                    <h3 className="text-xs md:text-lg font-medium text-[#FFD700] mb-1 md:mb-2 leading-tight">{t('serviceCards.prayer.title')}</h3>
-                    <p className="text-[10px] md:text-xs font-light text-[#E8D4A0] hidden sm:block">{t('serviceCards.prayer.subtitle')}</p>
-                  </div>
-                </div>
+              <h3 className="text-base md:text-lg font-semibold text-[#8B0000] mb-2">{t('home.blessing_step2')}</h3>
+              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">{t('home.blessing_step2_desc')}</p>
+            </div>
+            {/* 第三步：能量赋予 */}
+            <div className="text-center p-4 md:p-6 rounded-xl bg-gradient-to-b from-[#FFF8E7] to-white border border-[#D4AF37]/20">
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-4 rounded-full bg-[#8B0000]/10 flex items-center justify-center">
+                <span className="text-2xl md:text-3xl">✨</span>
               </div>
-            </Link>
+              <h3 className="text-base md:text-lg font-semibold text-[#8B0000] mb-2">{t('home.blessing_step3')}</h3>
+              <p className="text-xs md:text-sm text-gray-600 leading-relaxed">{t('home.blessing_step3_desc')}</p>
+            </div>
           </div>
         </div>
       </section>
@@ -314,11 +306,11 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 五台山高僧开光仪式视频 */}
+          {/* 启蕴仪式视频 */}
           <div className="mt-8 md:mt-12">
             <VideoPlayer 
-              videoUrl={videos.consecrationRitual.url}
-              title={t('aboutUs.videoTitle') || videos.consecrationRitual.titleEn}
+              videoUrl={videos.imbuingCeremony.url}
+              title={t('aboutUs.videoTitle') || videos.imbuingCeremony.titleEn}
               className="max-w-3xl mx-auto"
             />
           </div>

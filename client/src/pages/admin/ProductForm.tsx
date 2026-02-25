@@ -484,29 +484,29 @@ export default function ProductForm() {
             </CardContent>
           </Card>
 
-          {/* 开光信息 */}
+          {/* 启蕴仪式信息 */}
           <Card className="bg-slate-900/50 border-slate-800">
             <CardHeader>
-              <CardTitle className="text-white">开光信息</CardTitle>
+              <CardTitle className="text-white">启蕴仪式信息</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="blessingTemple" className="text-slate-300">
-                    开光寺庙
+                    启蕴圣地
                   </Label>
                   <Input
                     id="blessingTemple"
                     value={formData.blessingTemple}
                     onChange={(e) => setFormData({ ...formData, blessingTemple: e.target.value })}
                     className="bg-slate-800 border-slate-700 text-white"
-                    placeholder="例如: 五台山五爷庙"
+                    placeholder="例如: 五台山文化圣地"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="blessingMaster" className="text-slate-300">
-                    开光大师
+                    文化传承人
                   </Label>
                   <Input
                     id="blessingMaster"
@@ -518,7 +518,7 @@ export default function ProductForm() {
 
                 <div>
                   <Label htmlFor="blessingDate" className="text-slate-300">
-                    开光日期
+                    启蕴日期
                   </Label>
                   <Input
                     id="blessingDate"
@@ -531,7 +531,7 @@ export default function ProductForm() {
 
                 <div className="col-span-2">
                   <Label htmlFor="blessingDescription" className="text-slate-300">
-                    开光仪式说明
+                    启蕴仪式说明
                   </Label>
                   <Textarea
                     id="blessingDescription"

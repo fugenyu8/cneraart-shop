@@ -36,7 +36,7 @@ export const appRouter = router({
           categoryId: z.number().optional(),
           search: z.string().optional(),
           featured: z.boolean().optional(),
-          blessedOnly: z.boolean().optional(), // 只显示开光法物
+          blessedOnly: z.boolean().optional(), // 只显示启蕴信物
           limit: z.number().min(1).max(100).default(20),
           offset: z.number().min(0).default(0),
         })

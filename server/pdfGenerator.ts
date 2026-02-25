@@ -344,7 +344,7 @@ export async function generatePDFReport(options: PDFReportOptions): Promise<Buff
         doc.fillColor(colors.primary);
         doc.fontSize(20);
         doc.font('SourceHanSerif');
-        doc.text('开光法物推荐', 50, 80, {
+        doc.text('启蕴信物推荐', 50, 80, {
           align: 'center',
           width: doc.page.width - 100
         });
@@ -361,7 +361,7 @@ export async function generatePDFReport(options: PDFReportOptions): Promise<Buff
         doc.fontSize(11);
         doc.font('SourceHanSans');
         doc.text(
-          '根据您的分析报告，我们特别为您推荐以下五台山开光法物，助您增强运势，趋吉避凶。',
+          '根据您的分析报告，我们特别为您推荐以下五台山启蕴信物，助您增强运势，守护人生。',
           70,
           140,
           {

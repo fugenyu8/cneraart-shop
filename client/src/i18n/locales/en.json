@@ -1,9 +1,9 @@
 {
   "topBar": {
     "wutaishan": "Mount Wutai",
-    "credential1": "One of the Five Sacred Buddhist Mountains",
-    "credential2": "Premier of China's Four Great Buddhist Mountains",
-    "credential3": "UNESCO World Heritage Site",
+    "credential1": "UNESCO World Heritage Site",
+    "credential2": "Premier of China's Four Great Cultural Mountains",
+    "credential3": "Millennium Eastern Cultural Heritage Site",
     "register": "Register",
     "login": "Login"
   },
@@ -14,17 +14,16 @@
     "cart": "Cart",
     "account": "My Account",
     "login": "Login",
-    "logout": "Logout",
-    "fortune_services": "Physiognomy & Feng Shui"
+    "logout": "Logout"
   },
   "hero": {
     "title": "Ancient Eastern Wisdom",
-    "subtitle": "Elevate Energy · Resolve Troubles · Benefit All Beings"
+    "subtitle": "Elevate Energy · Protect Your Journey · Cultural Heritage"
   },
   "serviceCards": {
     "blessedItems": {
-      "title": "Blessed Protective Artifacts",
-      "subtitle": "Traditional Rituals, Master Consecration"
+      "title": "Imbued Guardian Tokens",
+      "subtitle": "Traditional Rituals, Cultural Heritage"
     },
     "destiny": {
       "title": "Destiny & Fortune",
@@ -33,49 +32,43 @@
     "palmistry": {
       "title": "Face, Palm & Feng Shui",
       "subtitle": "Ancient Wisdom, Present Insights"
-    },
-    "prayer": {
-      "title": "Prayer Services",
-      "subtitle": "Lamp Offering, Prayer Service"
     }
   },
   "home": {
-    "hero_title": "Ancient Eastern Blessings",
+    "hero_title": "Ancient Eastern Guardian",
     "hero_subtitle": "Protecting Your Life Journey · Passing Down Thousand-Year Wisdom",
-    "cta_products": "Explore Blessed Items",
+    "cta_products": "Explore Guardian Tokens",
     "cta_fortune": "Fortune Analysis",
-    "featured_title": "Featured Blessed Items",
-    "featured_subtitle": "Each piece is blessed at Wutai Mountain, carrying the power of protection",
-    "blessing_title": "Sacred Blessing Ceremony at Mount Wutai",
-    "blessing_subtitle": "Ancient rituals performed by venerable monks at the sacred Mount Wutai - Home of Manjusri Bodhisattva, Lord Wuye Temple, and the God of Wealth",
-    "blessing_step1": "Sacred Purification",
-    "blessing_step1_desc": "Cleansed with blessed incense, holy water, and ancient mantras at the temple altar",
-    "blessing_step2": "Sacred Sutra Chanting Ceremony",
-    "blessing_step2_desc": "Venerable monks chant sacred sutras with deep devotion, filling the temple with divine energy",
-    "blessing_step3": "Divine Energy Consecration",
-    "blessing_step3_desc": "Blessed by Manjusri Bodhisattva's wisdom and Lord Wuye's prosperity power",
+    "featured_title": "Featured Imbued Guardian Tokens",
+    "featured_subtitle": "Each piece undergoes the Imbuing Ceremony at Mount Wutai, carrying the power of cultural heritage",
+    "blessing_title": "Imbuing Ceremony at Mount Wutai Cultural Heritage Site",
+    "blessing_subtitle": "Ancient rituals performed by cultural lineage holders at the sacred Mount Wutai, a millennium cultural heritage site of Eastern wisdom",
+    "blessing_step1": "Purification Ritual",
+    "blessing_step1_desc": "Cleansed with pure water, agarwood incense, and ancient rituals at the heritage site",
+    "blessing_step2": "Chanting & Energy Infusion Ceremony",
+    "blessing_step2_desc": "Cultural lineage holders chant with deep devotion, infusing millennium cultural energy",
+    "blessing_step3": "Cultural Energy Empowerment",
+    "blessing_step3_desc": "Empowered by the millennium cultural heritage of Mount Wutai, bestowing protection and auspiciousness",
     "blessing_step4": "Certification",
-    "blessing_step4_desc": "Issue blessing certificate",
+    "blessing_step4_desc": "Issue Imbuing Ceremony certificate",
     "testimonials_title": "Customer Testimonials",
-    "testimonials_subtitle": "Thousands of customers worldwide have received blessings and protection",
+    "testimonials_subtitle": "Thousands of customers worldwide have received protection and blessings",
     "footer_about": "About Us",
-    "footer_about_desc": "Yuan·Huadu is dedicated to spreading Eastern culture and providing authentic blessed items and fortune-telling services.",
+    "footer_about_desc": "Yuan·Huadu is dedicated to spreading Eastern culture and providing authentic imbued guardian tokens and cultural services.",
     "footer_links": "Quick Links",
     "footer_contact": "Contact Us",
     "footer_copyright": "All Rights Reserved",
-    "services_title": "Our Sacred Services",
-    "services_subtitle": "Ancient Eastern Wisdom · Modern Spiritual Guidance",
-    "service_blessed_items": "Blessed Artifacts",
-    "service_blessed_items_desc": "Sacred items consecrated by Mount Wutai monks",
+    "services_title": "Our Cultural Services",
+    "services_subtitle": "Ancient Eastern Wisdom · Modern Cultural Heritage",
+    "service_blessed_items": "Imbued Guardian Tokens",
+    "service_blessed_items_desc": "Guardian tokens imbued through Mount Wutai ceremonies",
     "service_fortune": "Fortune & Destiny Analysis",
     "service_fortune_desc": "Ancient Chinese wisdom for life path and fortune guidance",
     "service_palmistry": "Palmistry & Face Reading",
     "service_palmistry_desc": "Ancient wisdom through hand and facial analysis",
     "service_fengshui": "Home Feng Shui",
     "service_fengshui_desc": "Harmonize your living space with cosmic energy",
-    "service_blessing": "Prayer Services",
-    "service_blessing_desc": "Lamp offerings, incense, and blessing rituals",
-    "service_fortune_collection": "Fortune Services",
+    "service_fortune_collection": "Cultural Services",
     "service_fortune_collection_desc": "Ancient Chinese wisdom for life path and fortune guidance",
     "service_fortune_short": "Destiny Analysis",
     "service_palmistry_short": "Palm & Face Reading",
@@ -85,14 +78,14 @@
     "510060": {
       "name": "Numerology Energy Analysis Report",
       "description": "In-depth numerology analysis based on the Four Pillars of Destiny (Bazi), including interpretation of your numerological structure and analysis of annual fortunes. Exclusive report delivered within 3-5 days.",
-      "shortDesc": "解锁古老东方智慧,探索您的命理能量密码"
+      "shortDesc": "Unlock ancient Eastern wisdom, explore your numerology energy code"
     },
     "510061": {
-      "name": "Numerology Analysis + Wutai Mountain Blessing Ritual",
-      "description": "Complete Numerology Report + Wutai Mountain Proxy Blessing Service (Lamp Offering/Incense Offering), includes video recording, delivered in 10-15 days",
-      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
+      "name": "Numerology Analysis + Wutai Mountain Cultural Ceremony",
+      "description": "Complete Numerology Report + Wutai Mountain Cultural Wish Ceremony (Lamp Offering/Incense Offering), includes video recording, delivered in 10-15 days",
+      "shortDesc": "In-depth numerology analysis + Wutai Mountain cultural ceremony, dual protection for your life journey"
     },
-    "title": "Sacred Jewelry",
+    "title": "Guardian Jewelry",
     "search_placeholder": "Search products...",
     "filter_all": "All Categories",
     "sort_label": "Sort By",
@@ -107,7 +100,7 @@
     "out_of_stock": "Out of Stock",
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
-    "subtitle": "Curated blessed jewelry, inheriting ancient wisdom, protecting your life journey",
+    "subtitle": "Curated imbued guardian jewelry, inheriting ancient wisdom, protecting your life journey",
     "all_products": "All Products",
     "select_category": "Select Category",
     "all_categories": "All Categories",
@@ -121,14 +114,14 @@
     "try_other_filters": "Try different search criteria",
     "viewAll": "View All Products",
     "all_title": "All Products",
-    "all_subtitle": "Curated blessed jewelry and spiritual services, inheriting ancient wisdom, protecting your life journey",
+    "all_subtitle": "Curated imbued guardian jewelry and cultural services, inheriting ancient wisdom, protecting your life journey",
     "fortune-energy-analysis-report": {
       "name": "Fortune Energy Analysis Report",
-      "description": "解锁古老东方智慧,探索您的命理能量密码\n\n**服务包含:**\n\n**1. 命理结构分析**\n基于您的生辰八字,深度解读您的先天禀赋、性格特质与人生轨迹。我们的命理大师将运用五行学说(金木水火土),为您揭示:\n- 天干地支组合如何影响您的性格与人际关系\n- 特殊星曜吉神(如天乙贵人、太极贵人)对您运势的加持\n- 命宫、事业宫、财帛宫等十二宫位与人生际遇的深层联系\n\n**2. 流年运势分析(2026-2027)**\n详细解读未来一年的能量流转与运势变化:\n- 五行生克如何影响您的事业发展、感情走向与决策时机\n- 结合现代生活场景,提供实用建议——如何把握机遇、规避风险\n- 针对财运、健康、人际关系等关键领域的专属指引\n\n两份报告相辅相成,为您绘制一幅贯通过去、现在与未来的完整命理地图!\n\n**购买后流程:**\n1. 完成支付后,请将您的详细生辰信息(出生年月日、精确时间、出生地点)发送至: seondo@cneraart.com\n   示例: 1978年12月12日 12:20 PM,美国纽约\n2. 我们的命理大师将运用古老的中国五行哲学,为您量身分析独特的能量模式\n3. 您将在3-5个工作日内通过电子邮件收到专属的《命理能量分析报告》\n\n**隐私与个性化保证:**\n我们高度重视您的隐私——所有信息将被严格保密。这不是\"算命\",而是通过理解您的能量模式,帮助您更清晰、更自信地生活。\n\n**为什么选择我们?**\n- 仅需$19,即可获得深度个性化报告,融合古老智慧与现代实践\n- 特别适合寻求事业晋升、感情和谐、情绪平衡、健康优化或个人成长指引的您\n- 独特的洞察体验——如同经过千年淬炼的性格评估!\n\n**注:** 本服务严格遵循传统文化解读,仅提供方向性指引。所有结果仅供参考。"
+      "description": "Unlock ancient Eastern wisdom and explore your numerology energy code\n\n**Service Includes:**\n\n**1. Numerology Structure Analysis**\nBased on your birth date and time (Four Pillars), our cultural lineage holders will provide an in-depth interpretation of your innate talents, personality traits, and life trajectory using Five Elements theory (Metal, Wood, Water, Fire, Earth):\n- How the Heavenly Stems and Earthly Branches combinations influence your personality and relationships\n- How special auspicious stars (such as Tianyi Noble, Taiji Noble) enhance your fortune\n- The deep connections between the Twelve Palaces and your life experiences\n\n**2. Annual Fortune Analysis (2026-2027)**\nDetailed interpretation of energy flow and fortune changes for the coming year:\n- How the Five Elements cycles affect your career development, relationships, and decision timing\n- Practical advice combined with modern life scenarios—how to seize opportunities and avoid risks\n- Exclusive guidance for key areas including wealth, health, and interpersonal relationships\n\nThe two reports complement each other, creating a complete numerology map spanning past, present, and future!\n\n**After Purchase:**\n1. After payment, please send your detailed birth information (date, exact time, birthplace) to: seondo@cneraart.com\n   Example: December 12, 1978, 12:20 PM, New York, USA\n2. Our cultural lineage holders will use ancient Chinese Five Elements philosophy to analyze your unique energy patterns\n3. You will receive your exclusive Numerology Energy Analysis Report via email within 3-5 business days\n\n**Privacy & Personalization Guarantee:**\nWe highly value your privacy—all information is strictly confidential. This is not fortune-telling, but understanding your energy patterns to help you live more clearly and confidently.\n\n**Why Choose Us?**\n- For just $19, get an in-depth personalized report blending ancient wisdom with modern practice\n- Perfect for those seeking career advancement, relationship harmony, emotional balance, health optimization, or personal growth guidance\n- A unique insight experience—like a personality assessment refined over millennia!\n\n**Note:** This service strictly follows traditional cultural interpretation and provides directional guidance only. All results are for reference only."
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
-      "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony",
-      "description": "亲爱的朋友,您是否渴望了解自己的人生轨迹,同时为未来注入神圣的祝福能量?仅需$79,您将获得完整的《命理能量分析报告》,更能享受我们团队在中国佛教圣地——五台山为您举行的专属祈福仪式!为您和您所爱之人点亮前行的道路。\n\n**您的专属套餐包含:**\n\n**命理分析报告(3-5日内交付)**\n- 基于您的生辰八字,个性化解读您的命理结构与能量互动\n- 深度剖析您的大运流年,助您把握2026-2027年的关键机遇与注意事项\n- 涵盖事业、财运、感情、健康等多维度指引\n- 融合传统五行哲学与现代生活应用,提供切实可行的建议\n\n**五台山代祈福服务(10-15日内交付视频)**\n- 您可选择**供灯**(点亮智慧之路)或**上香**(祈求平安、消除障碍)\n- 我们的团队将亲赴五台山寺庙,全程记录祈福仪式\n- 视频将包含您的姓名诵念、心愿祈祷及仪式过程——确保透明与真诚\n- 每一盏灯、每一炷香,都专为您而点燃\n\n**如何参与?**\n1. 点击购买链接,选择$79祈福套餐\n2. 支付完成后,请将您的姓名、生辰信息及祈福偏好(供灯或上香)发送至: seondo@cneraart.com\n   示例: 1978年12月12日 12:20 PM,美国纽约\n3. 您将在3-5个工作日内通过电子邮件收到《命理能量分析报告》\n4. 祈福仪式完成后10-15天内,祈福视频将发送至您的邮箱\n\n**为什么选择此升级版?**\n- 不仅是预测——更为您的人生注入祝福能量\n- 古老智慧 + 神圣仪式,双重守护\n- 全程视频记录——真诚可信,透明可查\n- 适用于多种心愿:事业成功、家庭和谐、转运化煞、学业进步等\n\n一份报告,一盏明灯,一个心愿,一次转变。\n\n愿我们携手,叩开命运之门,迎接光明未来。\n\n**注:** 祈福服务为代理宗教供奉。我们尊重所有信仰——诚心最重要。本服务严格遵循传统文化解读,仅提供方向性指引。所有结果仅供参考。"
+      "name": "Destiny Analysis + Wutai Mountain Cultural Ceremony",
+      "description": "Dear friend, do you wish to understand your life trajectory while infusing your future with positive cultural energy? For just $79, you'll receive a complete Numerology Energy Analysis Report, plus our team will conduct an exclusive cultural wish ceremony at China's cultural heritage site—Mount Wutai! Lighting the path forward for you and your loved ones.\n\n**Your Exclusive Package Includes:**\n\n**Numerology Analysis Report (Delivered within 3-5 days)**\n- Personalized interpretation of your numerology structure and energy interactions based on your birth data\n- In-depth analysis of your major life cycles, helping you seize key opportunities in 2026-2027\n- Covering career, wealth, relationships, health, and other dimensions\n- Blending traditional Five Elements philosophy with modern life applications for practical advice\n\n**Wutai Mountain Cultural Wish Ceremony (Video delivered within 10-15 days)**\n- Choose **Lamp Lighting** (illuminating the path of wisdom) or **Incense Offering** (wishing for peace, removing obstacles)\n- Our team will visit the Mount Wutai cultural heritage site and record the entire ceremony\n- The video will include your name recitation, wish prayers, and the ceremony process—ensuring transparency and sincerity\n- Every lamp and every incense stick is lit exclusively for you\n\n**How to Participate?**\n1. Click the purchase link and select the $79 package\n2. After payment, send your name, birth information, and ceremony preference (lamp or incense) to: seondo@cneraart.com\n   Example: December 12, 1978, 12:20 PM, New York, USA\n3. You'll receive the Numerology Energy Analysis Report via email within 3-5 business days\n4. The ceremony video will be sent to your email within 10-15 days after the ceremony\n\n**Why Choose This Upgraded Version?**\n- Not just prediction—infuse your life with positive cultural energy\n- Ancient wisdom + cultural ceremony, dual protection\n- Full video recording—sincere, credible, and transparent\n- Suitable for various wishes: career success, family harmony, fortune improvement, academic progress, etc.\n\nOne report, one lamp, one wish, one transformation.\n\nMay we together open the door of destiny and welcome a bright future.\n\n**Note:** This service is a traditional cultural experience. We respect all cultural beliefs—sincerity matters most. This service strictly follows traditional cultural interpretation and provides directional guidance only. All results are for reference only."
     }
   },
   "product_detail": {
@@ -136,19 +129,20 @@
     "cart": "Cart",
     "not_found": "Product Not Found",
     "quantity": "Quantity",
-    "add_to_cart": "Request Blessed Item",
+    "add_to_cart": "Request Guardian Token",
     "adding": "Requesting...",
     "buy_now": "Buy Now",
-    "blessing_info": "Blessing Information",
-    "temple": "Blessed at Temple",
-    "master": "Blessed by Master",
-    "date": "Blessing Date",
+    "blessing_info": "Imbuing Information",
+    "temple": "Imbued at Heritage Site",
+    "master": "Cultural Lineage Holder",
+    "date": "Imbuing Date",
     "tab_description": "Product Details",
-    "tab_blessing": "Blessing Description",
+    "tab_blessing": "Imbuing Description",
     "tab_reviews": "Customer Reviews",
     "tab_efficacy": "Efficacy Information",
+    "tab_service": "Service Details",
     "efficacy_suitable_for": "Suitable For",
-    "efficacy_effects": "Blessing Effects",
+    "efficacy_effects": "Imbuing Effects",
     "efficacy_wearing_tips": "Wearing Tips",
     "no_reviews": "No reviews yet",
     "verified_purchase": "Verified Purchase",
@@ -159,16 +153,15 @@
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
     "out_of_stock": "Out of Stock",
-    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary...",
+    "blessing_default": "Each item has undergone the authentic Imbuing Ceremony at the Mount Wutai cultural heritage site, conducted by cultural lineage holders following ancient rituals, infusing millennium cultural energy. The Imbuing Ceremony consists of three stages: Purification, Chanting & Energy Infusion, and Cultural Empowerment, ensuring each guardian token carries the unique cultural heritage and protective power of Mount Wutai.",
     "service_guide": {
       "title": "📋 Service Purchase Process",
       "step1": "After payment, you will receive an order confirmation email",
       "step2": "Please submit photos and questions via email reply or order notes",
-      "step3": "Master of Mount Wutai will complete the analysis within 48 hours",
+      "step3": "Mount Wutai cultural lineage holders will complete the analysis within 48 hours",
       "step4": "The analysis report will be sent to you via email"
     },
     "get_report": "Get Report",
-    "tab_service": "Service Details",
     "uploading_images": "Uploading images..."
   },
   "cart": {
@@ -410,13 +403,13 @@
   },
   "aboutUs": {
     "title": "ABOUT US",
-    "paragraph1": "Master of Mount Wutai personally unlocks millennia of ancient Eastern wisdom, grounded in the I Ching, birth charts, Zi Wei Dou Shu, Plum Blossom I Ching, Golden Key Verses, and the Great Six Yao. Integrating the Five Elements' cycles of generation and restraint with Western astrology, we deeply analyze career, wealth, health, and interpersonal fortunes—revealing opportunities, warning of obstacles—to help you navigate life's currents and broaden your horizons.",
-    "paragraph2": "We follow traditional rituals such as consecration and sutra chanting, solemn and proper, infusing each blessed item with pure aspiration, harmonizing body and mind energy, and calming the spirit. With millennia of wisdom, we answer modern life's perplexities, using exclusive blessings to protect a smooth life and flourishing fortune.",
-    "videoTitle": "Consecration Ceremony by Senior Monks"
+    "paragraph1": "Cultural lineage holders of Mount Wutai personally unlock millennia of ancient Eastern wisdom, grounded in the I Ching, birth charts, Zi Wei Dou Shu, Plum Blossom I Ching, Golden Key Verses, and the Great Six Yao. Integrating the Five Elements' cycles of generation and restraint with Western astrology, we deeply analyze career, wealth, health, and interpersonal fortunes—revealing opportunities, warning of obstacles—to help you navigate life's currents and broaden your horizons.",
+    "paragraph2": "We follow traditional rituals such as the Imbuing Ceremony and ancient chanting, solemn and proper, infusing each guardian token with pure aspiration, harmonizing body and mind energy, and calming the spirit. With millennia of wisdom, we answer modern life's perplexities, using exclusive protection to ensure a smooth life and flourishing fortune.",
+    "videoTitle": "Imbuing Ceremony Recording"
   },
   "footer": {
-    "wutaishan": "Mount Wutai · One of the Five Sacred Buddhist Mountains · UNESCO World Heritage Site",
-    "heritage": "First of China's Four Great Buddhist Mountains · Manjushri Bodhisattva Dojo · Millennium Buddhist Heritage"
+    "wutaishan": "Mount Wutai · UNESCO World Heritage Site · Millennium Eastern Cultural Heritage Site",
+    "heritage": "Premier of China's Four Great Cultural Mountains · Eastern Cultural Treasure · Millennium Cultural Heritage"
   },
   "toast": {
     "success": "Success",
@@ -440,7 +433,7 @@
     "palmFeature3": "Career Line",
     "palmFeature4": "Marriage Line",
     "fengshuiTitle": "Feng Shui",
-    "fengshuiDescription": "Master's feng shui wisdom to harmonize home energy, resolve negativity and attract prosperity",
+    "fengshuiDescription": "Cultural lineage holder's feng shui wisdom to harmonize home energy, resolve negativity and attract prosperity",
     "fengshuiFeature1": "Layout Analysis",
     "fengshuiFeature2": "Color Harmony",
     "fengshuiFeature3": "Resolve Negative Energy",
@@ -453,7 +446,7 @@
     "step1Desc": "Select face, palm or feng shui",
     "step2Title": "Upload Image",
     "step2Desc": "Upload clear photos",
-    "step3Title": "Master Analysis",
+    "step3Title": "Lineage Holder Analysis",
     "step3Desc": "Traditional wisdom + expertise",
     "step4Title": "View Report",
     "step4Desc": "Get detailed report",
@@ -469,7 +462,7 @@
     "zodiac_guardian": "Zodiac Guardian",
     "constellation_guardian": "Constellation Guardian",
     "zodiac_guardians": "Zodiac Guardians",
-    "zodiac_guardians_desc": "Exclusive zodiac guardian artifacts based on your birth year",
+    "zodiac_guardians_desc": "Exclusive zodiac guardian tokens based on your birth year",
     "sun_sign_guardians": "Sun Sign Guardians",
     "sun_sign_guardians_desc": "Guardians for your outer personality and life direction based on your birth date",
     "moon_sign_guardians": "Moon Sign Guardians",
@@ -482,12 +475,10 @@
     "wisdom_study_desc": "Unlock wisdom, academic progress, and exam success",
     "inner_peace": "Inner Peace",
     "inner_peace_desc": "Calm the mind, eliminate worries, achieve inner tranquility",
-    "blessed_title": "Blessed Protective Artifacts",
-    "blessed_subtitle": "Traditional rituals, master consecration, curated blessed jewelry to protect your life journey",
+    "blessed_title": "Imbued Guardian Tokens",
+    "blessed_subtitle": "Traditional rituals, cultural heritage, curated imbued guardian jewelry to protect your life journey",
     "destiny_title": "Destiny & Fortune",
     "destiny_subtitle": "BaZi chart analysis, fortune reading, decoding the secrets of destiny",
-    "prayer_title": "Prayer Services",
-    "prayer_subtitle": "Lamp offering, prayer service, devoted prayers by Mount Wutai masters",
     "fortune_title": "Face, Palm & Feng Shui",
     "fortune_subtitle": "Ancient wisdom of face and palm reading, revealing life destiny"
   },
@@ -543,7 +534,7 @@
     "minImagesRequired": "At least {{min}} images required",
     "questionLabel": "Question Description (Optional)",
     "questionPlaceholder": "Please describe your specific questions or concerns, such as: career development, wealth trends, relationships, etc...",
-    "questionHint": "Providing detailed questions helps our masters analyze more accurately",
+    "questionHint": "Providing detailed questions helps our lineage holders analyze more accurately",
     "requirements": "Upload Requirements",
     "req1": "Images must be clear with sufficient lighting",
     "req2": "Supports JPG, PNG and other common formats",
@@ -578,57 +569,57 @@
     "submitSuccess": "Submitted Successfully",
     "submitSuccessDesc": "Your request has been submitted. The report will be sent to your email within 48 hours",
     "requiredFields": "Please fill in all required fields",
-    "deliveryTime": "* Professional masters will complete the analysis within 48 hours and send a detailed report via email",
+    "deliveryTime": "* Professional cultural lineage holders will complete the analysis within 48 hours and send a detailed report via email",
     "feature1Title": "Zi Wei Dou Shu",
     "feature1Desc": "Thousand-year-old destiny science essence, in-depth chart analysis",
     "feature2Title": "Annual Fortune",
     "feature2Desc": "Predict future trends and seize life opportunities",
-    "feature3Title": "Professional Masters",
-    "feature3Desc": "Personally analyzed by senior masters from Mount Wutai for accuracy"
+    "feature3Title": "Professional Lineage Holders",
+    "feature3Desc": "Personally analyzed by senior cultural lineage holders from Mount Wutai for accuracy"
   },
   "prayer": {
-    "title": "Prayer Service",
-    "subtitle": "Masters from Mount Wutai pray for you, convey wishes, and seek peace",
+    "title": "Cultural Wish Ceremony",
+    "subtitle": "Cultural lineage holders at Mount Wutai conduct wish ceremonies, conveying wishes and seeking peace",
     "lampService": "Lamp Offering",
-    "lampDesc": "Light a prayer lamp for you at Mount Wutai sacred site to illuminate the path and dispel darkness",
-    "lampFeature1": "Lamp offering at Manjushri Bodhisattva Monastery",
-    "lampFeature2": "Master chanting and dedication for merit completion",
-    "lampFeature3": "Provide lamp offering photos and prayer certificate",
+    "lampDesc": "Light a wish lamp for you at Mount Wutai heritage site to illuminate the path and dispel darkness",
+    "lampFeature1": "Lamp offering at Mount Wutai cultural heritage site",
+    "lampFeature2": "Lineage holder chanting and dedication for ceremony completion",
+    "lampFeature3": "Provide lamp offering photos and ceremony certificate",
     "perLamp": "lamp",
     "incenseService": "Incense Offering",
-    "incenseDesc": "Offer incense for you at Mount Wutai sacred site to convey wishes and seek auspiciousness",
+    "incenseDesc": "Offer incense for you at Mount Wutai heritage site to convey wishes and seek auspiciousness",
     "incenseFeature1": "Incense offering at Main Hall",
-    "incenseFeature2": "Master praying and dedication on behalf",
-    "incenseFeature3": "Provide incense offering photos and prayer certificate",
+    "incenseFeature2": "Lineage holder conducting ceremony on behalf",
+    "incenseFeature3": "Provide incense offering photos and ceremony certificate",
     "perIncense": "stick",
-    "formTitle": "Submit Prayer Request",
-    "formDesc": "Please fill in the following information, we will pray sincerely for you",
+    "formTitle": "Submit Wish Ceremony Request",
+    "formDesc": "Please fill in the following information, we will conduct the ceremony sincerely for you",
     "name": "Name",
-    "namePlaceholder": "Enter your name or the name of the prayer recipient",
+    "namePlaceholder": "Enter your name or the name of the ceremony recipient",
     "email": "Email",
-    "emailPlaceholder": "For receiving prayer certificate",
-    "serviceType": "Prayer Method",
-    "serviceTypePlaceholder": "Select prayer method",
-    "prayerFor": "Prayer Recipient",
+    "emailPlaceholder": "For receiving ceremony certificate",
+    "serviceType": "Ceremony Method",
+    "serviceTypePlaceholder": "Select ceremony method",
+    "prayerFor": "Ceremony Recipient",
     "prayerForPlaceholder": "e.g., Myself, Family, Friends, etc.",
-    "wish": "Prayer Wish",
+    "wish": "Your Wish",
     "wishPlaceholder": "Write your wish, e.g., Peace and Health, Career Success, Academic Progress, etc.",
     "optional": "Optional",
     "quantity": "Quantity",
     "lamps": "lamps",
     "incenses": "sticks",
-    "submit": "Submit Prayer Request",
+    "submit": "Submit Ceremony Request",
     "submitting": "Submitting...",
     "submitSuccess": "Submitted Successfully",
-    "submitSuccessDesc": "Your prayer request has been submitted, we will pray sincerely for you",
+    "submitSuccessDesc": "Your ceremony request has been submitted, we will conduct it sincerely for you",
     "requiredFields": "Please fill in all required fields",
-    "deliveryTime": "* We will complete the prayer within 3 business days and send the prayer certificate and photos via email",
-    "trust1Title": "Mount Wutai Sacred Site",
-    "trust1Desc": "One of the five major Buddhist sacred sites in the world, Manjushri Bodhisattva Monastery",
+    "deliveryTime": "* We will complete the ceremony within 3 business days and send the certificate and photos via email",
+    "trust1Title": "Mount Wutai Heritage Site",
+    "trust1Desc": "UNESCO World Heritage Site, millennium Eastern cultural heritage site",
     "trust2Title": "Authentic Photos",
-    "trust2Desc": "Each prayer is photographed to ensure authenticity and credibility",
+    "trust2Desc": "Each ceremony is photographed to ensure authenticity and credibility",
     "trust3Title": "Email Feedback",
-    "trust3Desc": "After prayer completion, photos and certificates will be sent to your email"
+    "trust3Desc": "After ceremony completion, photos and certificates will be sent to your email"
   },
   "reportView": {
     "faceReadingReport": "Face Reading Report",
@@ -655,14 +646,14 @@
   },
   "services": {
     "title": "Our Services",
-    "subtitle": "Ancient Eastern Wisdom · Modern Spiritual Guidance",
+    "subtitle": "Ancient Eastern Wisdom · Modern Cultural Heritage",
     "blessed": {
-      "title": "Consecrated Sacred Items",
-      "description": "Sacred dharma instruments consecrated by Wutai Mountain senior monks, protecting your life journey",
-      "cta": "Explore Consecrated Items"
+      "title": "Imbued Guardian Tokens",
+      "description": "Guardian tokens imbued through Mount Wutai cultural heritage ceremonies, protecting your life journey",
+      "cta": "Explore Guardian Tokens"
     },
     "fortune": {
-      "title": "Fortune Services",
+      "title": "Cultural Services",
       "destiny": {
         "title": "Destiny Analysis",
         "description": "Ancient Chinese wisdom, interpreting life fortune and destiny guidance"
@@ -675,27 +666,22 @@
         "title": "Home Feng Shui Analysis",
         "description": "Harmonizing living spaces with cosmic energy"
       }
-    },
-    "prayer": {
-      "title": "Prayer Services",
-      "description": "Lamp offerings, incense burning, and various prayer ceremonies for you and your family",
-      "cta": "Explore Prayer Services"
     }
   },
   "blessing": {
-    "title": "Consecration Process",
-    "subtitle": "Led by Wutai Mountain Senior Monks, Ancient Tradition",
+    "title": "Imbuing Ceremony Process",
+    "subtitle": "Led by Mount Wutai Cultural Lineage Holders, Ancient Tradition",
     "step1": {
-      "title": "Holy Water Purification",
-      "description": "Purification with holy water, agarwood incense, and ancient mantras before the Buddha"
+      "title": "Purification Ritual",
+      "description": "Purification with pure water, agarwood incense, and ancient rituals at the heritage site"
     },
     "step2": {
-      "title": "Sutra Chanting & Blessing",
-      "description": "Senior monks chant sutras with devotion, Buddha's name resounding"
+      "title": "Chanting & Energy Infusion",
+      "description": "Cultural lineage holders chant with devotion, infusing millennium cultural energy"
     },
     "step3": {
-      "title": "Sacred Empowerment",
-      "description": "Receiving the wisdom light of Manjushri Bodhisattva and the wealth blessing of Wu Ye"
+      "title": "Cultural Empowerment",
+      "description": "Empowered by the millennium cultural heritage of Mount Wutai, bestowing protection and auspiciousness"
     },
     "scrollHint": "Scroll to see more"
   },

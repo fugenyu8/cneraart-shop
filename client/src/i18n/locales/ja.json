@@ -1,8 +1,8 @@
 {
   "topBar": {
     "wutaishan": "五台山",
-    "credential1": "世界五大仏教聖地の一つ",
-    "credential2": "中国四大仏教名山の筆頭",
+    "credential1": "世界五大東方文化聖地の一つ",
+    "credential2": "中国四大東方文化名山の筆頭",
     "credential3": "ユネスコ世界遺産",
     "register": "登録",
     "login": "ログイン"
@@ -13,8 +13,8 @@
   },
   "serviceCards": {
     "blessedItems": {
-      "title": "開光護佑法物",
-      "subtitle": "伝統儀式、大師加持"
+      "title": "啓蘊儀式護佑守護信物",
+      "subtitle": "伝統儀式、伝承者啓蘊"
     },
     "destiny": {
       "title": "命理運勢",
@@ -25,7 +25,7 @@
       "subtitle": "古代の知恵、現在を読み解く"
     },
     "prayer": {
-      "title": "代理祈福",
+      "title": "代理祈願儀式",
       "subtitle": "灯明供養、祈願サービス"
     }
   },
@@ -41,32 +41,32 @@
   },
   "aboutUs": {
     "title": "私たちについて",
-    "paragraph1": "五台山の大師が自ら千年の古代東洋の叡智を開く。易経、生辰八字、紫微斗数、梅花易数、金口訣、大六爻を根基とし、五行の相生相克と西洋星座を結合し、事業、財富、健康、人間関係の運勢を深く解析—機会を明示し、障害を警告—あなたが人生の流れを乗りこなし、視野を広げるのを助けます。",
-    "paragraph2": "私たちは開光、読経などの伝統的な儀軌に従い、厳粛かつ正式に、すべての福物に清浄な願力を注ぎ込み、心身のエネルギーを調和させ、心を安定させます。千年の知恵で現代生活の困惑に答え、専属の福佑で人生の順調と福運の隆盛を守護します。",
-    "videoTitle": "高僧による開光儀式"
+    "paragraph1": "五台山の伝承者が自ら千年の古代東洋の叡智を開く。易経、生辰八字、紫微斗数、梅花易数、金口訣、大六爻を根基とし、五行の相生相克と西洋星座を結合し、事業、財富、健康、人間関係の運勢を深く解析—機会を明示し、障害を警告—あなたが人生の流れを乗りこなし、視野を広げるのを助けます。",
+    "paragraph2": "私たちは啓蘊儀式、詠唱などの伝統的な儀軌に従い、厳粛かつ正式に、すべての福物に清浄な願力を注ぎ込み、心身のエネルギーを調和させ、心を安定させます。千年の知恵で現代生活の困惑に答え、専属の福佑で人生の順調と福運の隆盛を守護します。",
+    "videoTitle": "文化伝承者による啓蘊儀式儀式"
   },
   "footer": {
-    "wutaishan": "五台山 · 五大仏教聖地の一つ · ユネスコ世界遺産",
-    "heritage": "中国四大仏教名山の筆頭 · 文殊菩薩道場 · 千年の仏教文化遺産"
+    "wutaishan": "五台山 · 五大東方文化聖地の一つ · ユネスコ世界遺産",
+    "heritage": "中国四大東方文化名山の筆頭 · 文化守護道場 · 千年の東方文化文化遺産"
   },
   "product_detail": {
     "back": "Back to Products",
     "cart": "Cart",
     "not_found": "Product Not Found",
     "quantity": "Quantity",
-    "add_to_cart": "Request Blessed Item",
+    "add_to_cart": "Request Imbued Item",
     "adding": "Requesting...",
     "buy_now": "Buy Now",
     "blessing_info": "Blessing Information",
-    "temple": "Blessed at Temple",
-    "master": "Blessed by Master",
+    "temple": "Imbued at Heritage Site",
+    "master": "Imbued by Master",
     "date": "Blessing Date",
     "tab_description": "Product Details",
     "tab_blessing": "Blessing Description",
     "tab_reviews": "Customer Reviews",
     "tab_efficacy": "効能説明",
     "efficacy_suitable_for": "適用対象",
-    "efficacy_effects": "開光効果",
+    "efficacy_effects": "啓蘊儀式効果",
     "efficacy_wearing_tips": "着用のアドバイス",
     "no_reviews": "No reviews yet",
     "verified_purchase": "Verified Purchase",
@@ -77,12 +77,12 @@
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
     "out_of_stock": "Out of Stock",
-    "blessing_default": "Each item has been blessed through traditional ceremonies at Mount Wutai Manjushri Bodhisattva sanctuary...",
+    "blessing_default": "Each item has been imbued through traditional ceremonies at Mount Wutai Cultural Guardian sanctuary...",
     "service_guide": {
       "title": "📋 サービス購入プロセス",
       "step1": "お支払い後、注文確認メールが届きます",
       "step2": "メール返信または注文メモで写真と質問を送信してください",
-      "step3": "五台山の大師が48時間以内に分析を完了します",
+      "step3": "五台山の伝承者が48時間以内に分析を完了します",
       "step4": "分析レポートはメールで送信されます"
     },
     "get_report": "レポートを取得",
@@ -293,12 +293,10 @@
     "wisdom_study_desc": "知恵を解き放ち、学業の進歩と試験の成功",
     "inner_peace": "内なる平和",
     "inner_peace_desc": "心を落ち着かせ、悩みを取り除き、内なる静けさを達成",
-    "blessed_title": "開光護佑法物",
-    "blessed_subtitle": "伝統的な儀式、大師の加持、厳選された開光ジュエリー",
+    "blessed_title": "啓蘊儀式護佑守護信物",
+    "blessed_subtitle": "伝統的な儀式、伝承者の啓蘊、厳選された啓蘊儀式ジュエリー",
     "destiny_title": "命理運勢",
     "destiny_subtitle": "八字命盤、運勢分析、運命の秘密を解読",
-    "prayer_title": "代客祈福",
-    "prayer_subtitle": "供灯祈福、代伝心願、五台山大師の虔誠な祈願",
     "fortune_title": "面相手相風水",
     "fortune_subtitle": "千年の相術の知恵を受け継ぎ、人生の運勢を解析"
   },
@@ -309,9 +307,9 @@
       "shortDesc": "解锁古老东方智慧,探索您的命理能量密码"
     },
     "510061": {
-      "name": "命理分析 + 五台山ご祈祷儀式",
-      "description": "完全な命理レポート + 五台山代理ご祈祷サービス（供灯/お線香）,動画記録付き,10-15日でお届け",
-      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
+      "name": "命理分析 + 五台山ご祈願儀式",
+      "description": "完全な命理レポート + 五台山代理ご祈願サービス（灯火祈願/お線香）,動画記録付き,10-15日でお届け",
+      "shortDesc": "深度命理解析 + 五台山圣地祈願儀式,双重守护您的人生之路"
     },
     "title": "开光饰品",
     "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
@@ -336,11 +334,11 @@
       "description": "古くからの東洋の知恵を解き放ち、あなたの運命エネルギーコードを探求しましょう\n\n**サービス内容:**\n\n**1. 命理構造分析**\nあなたの生年月日時に基づき、先天的な才能、性格特性、人生の軌跡を深く読み解きます。私たちの命理師が五行学説（金木水火土）を駆使し、あなたに明らかにします:\n- 天干地支の組み合わせがあなたの性格と人間関係にどのように影響するか\n- 特殊な吉神（例えば天乙貴人、太極貴人）があなたの運勢に与える加護\n- 命宮、事業宮、財帛宮など十二宮位と人生の巡り合わせとの深いつながり\n\n**2. 流年運勢分析 (2026-2027)**\n今後一年のエネルギーの流れと運勢の変化を詳細に解説します:\n- 五行の相生相克があなたのキャリア発展、恋愛の方向性、意思決定のタイミングにどのように影響するか\n- 現代の生活シーンと結びつけ、実践的なアドバイスを提供——機会を掴み、リスクを回避する方法\n- 財運、健康、人間関係などの重要な分野に特化したガイダンス\n\n二つのレポートは相補的に作用し、過去、現在、未来を貫く完全な命理マップをあなたのために描きます！\n\n**購入後の流れ:**\n1. 支払いが完了しましたら、あなたの詳細な生年月日情報（生年月日、正確な時間、出生地）を以下のメールアドレスにお送りください: seondo@cneraart.com\n   例: 1978年12月12日 午後12時20分, アメリカ ニューヨーク\n2. 私たちの命理師が、古くからの中国五行哲学を駆使し、あなた独自のエネルギーパターンを個別分析します\n3. 3〜5営業日以内に、専用の「命理エネルギー分析レポート」を電子メールでお受け取りいただけます\n\n**プライバシーとパーソナライゼーションの保証:**\n私たちはあなたのプライバシーを非常に重視しています——すべての情報は厳重に秘密保持されます。これは「占い」ではなく、あなたのエネルギーパターンを理解することで、より明確に、より自信を持って生きる手助けをするものです。\n\n**私たちを選ぶ理由:**\n- わずか$19で、古代の知恵と現代の実践を融合した、深くパーソナライズされたレポートを入手できます\n- キャリアアップ、人間関係の調和、感情のバランス、健康の最適化、または自己成長の指針を求めている方に特に適しています\n- 何千年も磨かれた性格診断のような、ユニークな洞察体験！\n\n**注:** 本サービスは伝統文化の解釈に厳密に従い、方向性のある指針のみを提供します。すべての結果は参考情報としてのみご活用ください。"
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
-      "name": "運命分析＋五台山祈福儀式",
-      "description": "親愛なる友人の皆様、ご自身の人生の軌跡を知り、同時に未来に神聖な祝福のエネルギーを注ぎたいと願っていますか？わずか$79で、完全な「命理エネルギー分析レポート」を受け取れるだけでなく、当チームが中国仏教の聖地である五台山で皆様のために執り行う特別な祈福儀式をお楽しみいただけます！皆様と皆様が愛する方々の前途を明るく照らします。\n\n**お客様専用パッケージ内容：**\n\n**命理分析レポート（3〜5日以内に納品）**\n- お客様の生年月日時に基づき、お客様の命理構造とエネルギーの相互作用を個別解釈\n- 大運と流年を深く分析し、2026年から2027年の重要な機会と注意事項を把握するお手伝い\n- 仕事、財運、恋愛、健康など多角的な指針を網羅\n- 伝統的な五行哲学と現代生活への応用を融合し、実践的なアドバイスを提供\n\n**五台山代理祈福サービス（10〜15日以内に動画納品）**\n- 「**供灯**」（知恵の道を照らす）または「**上香**」（平安を祈り、障害を取り除く）をお選びいただけます\n- 当チームが五台山の寺院に赴き、祈福儀式の全過程を記録いたします\n- 動画にはお客様のお名前の読誦、願い事の祈祷、儀式の様子が含まれます——透明性と誠実さを保証\n- すべての灯り、すべてのお香は、お客様のためだけに灯されます\n\n**参加方法：**\n1. 購入リンクをクリックし、$79の祈福パッケージを選択してください\n2. 支払い完了後、お客様のお名前、生年月日情報、および祈福のご希望（供灯または上香）を以下のメールアドレスまでお送りください：seondo@cneraart.com\n   例：1978年12月12日 12:20 PM、アメリカ ニューヨーク\n3. 3〜5営業日以内に「命理エネルギー分析レポート」をEメールで受け取ります\n4. 祈福儀式完了後10〜15日以内に、祈福動画がお客様のメールアドレスに送信されます\n\n**このアップグレード版を選ぶ理由：**\n- 予測だけでなく——お客様の人生に祝福のエネルギーを注入します\n- 古代の知恵＋神聖な儀式、二重の守護\n- 全過程動画記録——誠実で信頼でき、透明性が確認できます\n- さまざまな願い事に適用可能：仕事の成功、家庭円満、運気転換、学業向上など\n\n一つのレポート、一つの明かり、一つの願い、一つの変化。\n\n私たちが手を取り合い、運命の扉を開き、輝かしい未来を迎えられますように。\n\n**注：** 祈福サービスは代理宗教奉納です。私たちはすべての信仰を尊重します——誠実な心が最も重要です。本サービスは伝統文化の解釈に厳密に従い、方向性のある指針のみを提供します。すべての結果は参考としてのみご利用ください。"
+      "name": "運命分析＋五台山祈願儀式儀式",
+      "description": "親愛なる友人の皆様、ご自身の人生の軌跡を知り、同時に未来に神聖な祝福のエネルギーを注ぎたいと願っていますか？わずか$79で、完全な「命理エネルギー分析レポート」を受け取れるだけでなく、当チームが中国東方文化の聖地である五台山で皆様のために執り行う特別な祈願儀式儀式をお楽しみいただけます！皆様と皆様が愛する方々の前途を明るく照らします。\n\n**お客様専用パッケージ内容：**\n\n**命理分析レポート（3〜5日以内に納品）**\n- お客様の生年月日時に基づき、お客様の命理構造とエネルギーの相互作用を個別解釈\n- 大運と流年を深く分析し、2026年から2027年の重要な機会と注意事項を把握するお手伝い\n- 仕事、財運、恋愛、健康など多角的な指針を網羅\n- 伝統的な五行哲学と現代生活への応用を融合し、実践的なアドバイスを提供\n\n**五台山代理祈願儀式サービス（10〜15日以内に動画納品）**\n- 「**灯火祈願**」（知恵の道を照らす）または「**上香**」（平安を祈り、障害を取り除く）をお選びいただけます\n- 当チームが五台山の文化遺産地に赴き、祈願儀式儀式の全過程を記録いたします\n- 動画にはお客様のお名前の読誦、願い事の祈願、儀式の様子が含まれます——透明性と誠実さを保証\n- すべての灯り、すべてのお香は、お客様のためだけに灯されます\n\n**参加方法：**\n1. 購入リンクをクリックし、$79の祈願儀式パッケージを選択してください\n2. 支払い完了後、お客様のお名前、生年月日情報、および祈願儀式のご希望（灯火祈願または上香）を以下のメールアドレスまでお送りください：seondo@cneraart.com\n   例：1978年12月12日 12:20 PM、アメリカ ニューヨーク\n3. 3〜5営業日以内に「命理エネルギー分析レポート」をEメールで受け取ります\n4. 祈願儀式儀式完了後10〜15日以内に、祈願儀式動画がお客様のメールアドレスに送信されます\n\n**このアップグレード版を選ぶ理由：**\n- 予測だけでなく——お客様の人生に祝福のエネルギーを注入します\n- 古代の知恵＋神聖な儀式、二重の守護\n- 全過程動画記録——誠実で信頼でき、透明性が確認できます\n- さまざまな願い事に適用可能：仕事の成功、家庭円満、運気転換、学業向上など\n\n一つのレポート、一つの明かり、一つの願い、一つの変化。\n\n私たちが手を取り合い、運命の扉を開き、輝かしい未来を迎えられますように。\n\n**注：** 祈願儀式サービスは代理宗教奉納です。私たちはすべての信仰を尊重します——誠実な心が最も重要です。本サービスは伝統文化の解釈に厳密に従い、方向性のある指針のみを提供します。すべての結果は参考としてのみご利用ください。"
     },
     "all_title": "全商品",
-    "all_subtitle": "厳選された開光ジュエリーとスピリチュアルサービス"
+    "all_subtitle": "厳選された啓蘊儀式ジュエリーとスピリチュアルサービス"
   },
   "common": {
     "site_name": "Cneraart",
@@ -457,60 +455,60 @@
     "feature1Desc": "Thousand-year-old destiny science essence, in-depth chart analysis",
     "feature2Title": "Annual Fortune",
     "feature2Desc": "Predict future trends and seize life opportunities",
-    "feature3Title": "Professional Masters",
-    "feature3Desc": "Personally analyzed by senior masters from Mount Wutai for accuracy"
+    "feature3Title": "Professional Lineage Holders",
+    "feature3Desc": "Personally analyzed by senior cultural lineage holders from Mount Wutai for accuracy"
   },
   "prayer": {
-    "title": "Prayer Service",
-    "subtitle": "Masters from Mount Wutai pray for you, convey wishes, and seek peace",
+    "title": "Cultural Wish Ceremony",
+    "subtitle": "Cultural lineage holders from Mount Wutai conduct ceremony for you, convey wishes, and seek peace",
     "lampService": "Lamp Offering",
-    "lampDesc": "Light a prayer lamp for you at Mount Wutai sacred site to illuminate the path and dispel darkness",
-    "lampFeature1": "Lamp offering at Manjushri Bodhisattva Monastery",
-    "lampFeature2": "Master chanting and dedication for merit completion",
-    "lampFeature3": "Provide lamp offering photos and prayer certificate",
+    "lampDesc": "Light a wish lamp for you at Mount Wutai heritage site to illuminate the path and dispel darkness",
+    "lampFeature1": "Lamp offering at Mount Wutai cultural heritage site",
+    "lampFeature2": "Lineage holder chanting and dedication for ceremony completion",
+    "lampFeature3": "Provide lamp offering photos and ceremony certificate",
     "perLamp": "lamp",
     "incenseService": "Incense Offering",
-    "incenseDesc": "Offer incense for you at Mount Wutai sacred site to convey wishes and seek auspiciousness",
-    "incenseFeature1": "Incense offering at Main Hall",
-    "incenseFeature2": "Master praying and dedication on behalf",
-    "incenseFeature3": "Provide incense offering photos and prayer certificate",
+    "incenseDesc": "Offer incense for you at Mount Wutai heritage site to convey wishes and seek auspiciousness",
+    "incenseFeature1": "Incense offering at heritage site main hall",
+    "incenseFeature2": "Lineage holder conducting ceremony and dedication on behalf",
+    "incenseFeature3": "Provide incense offering photos and ceremony certificate",
     "perIncense": "stick",
-    "formTitle": "Submit Prayer Request",
-    "formDesc": "Please fill in the following information, we will pray sincerely for you",
+    "formTitle": "Submit Wish Ceremony Request",
+    "formDesc": "Please fill in the following information, we will conduct sincerely for you",
     "name": "Name",
-    "namePlaceholder": "Enter your name or the name of the prayer recipient",
+    "namePlaceholder": "Enter your name or the name of the wish ceremony recipient",
     "email": "Email",
-    "emailPlaceholder": "For receiving prayer certificate",
-    "serviceType": "Prayer Method",
-    "serviceTypePlaceholder": "Select prayer method",
-    "prayerFor": "Prayer Recipient",
+    "emailPlaceholder": "For receiving ceremony certificate",
+    "serviceType": "Wish Ceremony Method",
+    "serviceTypePlaceholder": "Select wish ceremony method",
+    "prayerFor": "Wish Ceremony Recipient",
     "prayerForPlaceholder": "e.g., Myself, Family, Friends, etc.",
-    "wish": "Prayer Wish",
+    "wish": "Wish Ceremony Wish",
     "wishPlaceholder": "Write your wish, e.g., Peace and Health, Career Success, Academic Progress, etc.",
     "optional": "Optional",
     "quantity": "Quantity",
     "lamps": "lamps",
     "incenses": "sticks",
-    "submit": "Submit Prayer Request",
+    "submit": "Submit Wish Ceremony Request",
     "submitting": "Submitting...",
     "submitSuccess": "Submitted Successfully",
-    "submitSuccessDesc": "Your prayer request has been submitted, we will pray sincerely for you",
+    "submitSuccessDesc": "Your ceremony request has been submitted, we will conduct sincerely for you",
     "requiredFields": "Please fill in all required fields",
-    "deliveryTime": "* We will complete the prayer within 3 business days and send the prayer certificate and photos via email",
-    "trust1Title": "Mount Wutai Sacred Site",
-    "trust1Desc": "One of the five major Buddhist sacred sites in the world, Manjushri Bodhisattva Monastery",
+    "deliveryTime": "* We will complete the wish ceremony within 3 business days and send the ceremony certificate and photos via email",
+    "trust1Title": "Mount Wutai Heritage Site",
+    "trust1Desc": "UNESCO World Heritage Site in the world, Mount Wutai Cultural Heritage Site",
     "trust2Title": "Authentic Photos",
-    "trust2Desc": "Each prayer is photographed to ensure authenticity and credibility",
+    "trust2Desc": "Each wish ceremony is photographed to ensure authenticity and credibility",
     "trust3Title": "Email Feedback",
-    "trust3Desc": "After prayer completion, photos and certificates will be sent to your email"
+    "trust3Desc": "After wish ceremony completion, photos and certificates will be sent to your email"
   },
   "services": {
     "title": "サービス一覧",
     "subtitle": "古代東洋の知恵 · 現代のスピリチュアルガイダンス",
     "blessed": {
-      "title": "開光法物",
-      "description": "五台山高僧が開光した神聖な法器、あなたの人生を守護",
-      "cta": "開光法物を探す"
+      "title": "啓蘊儀式守護信物",
+      "description": "五台山文化伝承者が啓蘊儀式した神聖な法器、あなたの人生を守護",
+      "cta": "啓蘊儀式守護信物を探す"
     },
     "fortune": {
       "title": "占いサービス",
@@ -528,25 +526,25 @@
       }
     },
     "prayer": {
-      "title": "代理祈福サービス",
-      "description": "灯明、お香、各種祈福儀式であなたとご家族の幸福を祈る",
-      "cta": "祈福サービスを探す"
+      "title": "代理祈願儀式サービス",
+      "description": "灯明、お香、各種祈願儀式儀式であなたとご家族の幸福を祈る",
+      "cta": "祈願儀式サービスを探す"
     }
   },
   "blessing": {
-    "title": "開光の流れ",
-    "subtitle": "五台山高僧主持、古法伝承",
+    "title": "啓蘊儀式の流れ",
+    "subtitle": "五台山文化伝承者主持、古法伝承",
     "step1": {
-      "title": "聖水浄化",
-      "description": "聖水、沈香、古代の真言で仏前にて浄化"
+      "title": "浄水浄化",
+      "description": "浄水、沈香、古代の真言で文化前にて浄化"
     },
     "step2": {
-      "title": "読経加持",
-      "description": "高僧が心を込めて経文を唱え、仏号が響き渡る"
+      "title": "詠唱啓蘊",
+      "description": "文化伝承者が心を込めて経文を唱え、文化号が響き渡る"
     },
     "step3": {
       "title": "聖地灌頂",
-      "description": "文殊菩薩の智慧の光と五爺財神の富貴の力を授かる"
+      "description": "文化守護の智慧の光と五爺財神の富貴の力を授かる"
     },
     "scrollHint": "スクロールして詳細を見る"
   },
@@ -558,11 +556,11 @@
     "featured_title": "精选开光饰品",
     "featured_subtitle": "每一件都经过五台山开光,承载守护之力",
     "blessing_title": "五台山圣地开光法会",
-    "blessing_subtitle": "由五台山高僧主持，文殊菩萨智慧加持、五爷庙财神庇佑，古法传承千年灵验无比",
-    "blessing_step1": "圣水清净仪轨",
-    "blessing_step1_desc": "以圣水、沉香、古咒于大殿佛前洗涤一切不净，迎接佛光普照",
+    "blessing_subtitle": "由五台山文化伝承者主持，文殊菩萨智慧啓蘊、五爷庙财神庇佑，古法传承千年灵验无比",
+    "blessing_step1": "净水清净仪轨",
+    "blessing_step1_desc": "文化遺産地にて浄水、沈香、古代の詠唱で浄化し、文化エネルギーを迎え入れる",
     "blessing_step2": "庄严诵经法会",
-    "blessing_step2_desc": "高僧大德虔诚诵经，佛号不断，经文回荡，法力无边",
+    "blessing_step2_desc": "文化伝承者が敬虔に詠唱し、古代の響きが鳴り渡り、文化の力は無限",
     "blessing_step3": "神圣能量灌顶",
     "blessing_step3_desc": "承文殊菩萨智慧之光、五爷财神富贵之力，赋予守护与祥瑞",
     "blessing_step4": "证书认证",
@@ -576,16 +574,16 @@
     "footer_copyright": "版权所有",
     "services_title": "我们的神圣服务",
     "services_subtitle": "古老东方智慧 · 现代灵性指导",
-    "service_blessed_items": "开光法物",
-    "service_blessed_items_desc": "经五台山高僧开光的神圣法器",
+    "service_blessed_items": "开光守護信物",
+    "service_blessed_items_desc": "经五台山文化伝承者开光的神圣法器",
     "service_fortune": "命理运势分析",
     "service_fortune_desc": "中国古老智慧,解读人生运势与命运指引",
     "service_palmistry": "手相面相分析",
     "service_palmistry_desc": "通过手相和面相揭示古老智慧",
     "service_fengshui": "家居风水",
     "service_fengshui_desc": "调和居住空间与宇宙能量",
-    "service_blessing": "代祈福服务",
-    "service_blessing_desc": "供灯、烧香及各种祈福仪式",
+    "service_blessing": "代祈願儀式服务",
+    "service_blessing_desc": "灯火祈願、烧香及各种祈願儀式仪式",
     "service_fortune_collection": "命理服务",
     "service_fortune_collection_desc": "中国古老智慧，解读人生运势与命运指引",
     "service_fortune_short": "命理运势分析",

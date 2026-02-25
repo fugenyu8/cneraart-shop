@@ -1,8 +1,8 @@
 {
   "topBar": {
     "wutaishan": "Monte Wutai",
-    "credential1": "Una de las cinco montañas budistas sagradas",
-    "credential2": "Primera de las cuatro grandes montañas budistas de China",
+    "credential1": "Una de las cinco montañas culturales sagradas",
+    "credential2": "Primera de las cuatro grandes montañas culturals de China",
     "credential3": "Sitio del Patrimonio Mundial de la UNESCO",
     "register": "Registrarse",
     "login": "Iniciar sesión"
@@ -14,7 +14,7 @@
   "serviceCards": {
     "blessedItems": {
       "title": "Artefactos protectores bendecidos",
-      "subtitle": "Rituales tradicionales, consagración del maestro"
+      "subtitle": "Rituales tradicionales, ceremonia de imbuición del maestro"
     },
     "destiny": {
       "title": "Destino y fortuna",
@@ -46,16 +46,16 @@
     "cta_fortune": "Análisis del destino",
     "featured_title": "Objetos bendecidos destacados",
     "featured_subtitle": "Cada pieza está bendecida en el monte Wutai, portando el poder de protección",
-    "blessing_title": "Ceremonia de bendición sagrada en el monte Wutai",
-    "blessing_subtitle": "Rituales antiguos realizados por monjes venerables en el sagrado monte Wutai - Hogar de Manjusri Bodhisattva, templo de Lord Wuye y el Dios de la riqueza",
-    "blessing_step1": "Purificación sagrada",
-    "blessing_step1_desc": "Purificado con incienso bendecido, agua sagrada y mantras antiguos en el altar del templo",
-    "blessing_step2": "Ceremonia sagrada de recitación de sutras",
-    "blessing_step2_desc": "Los monjes venerables recitan sutras sagrados con profunda devoción, llenando el templo de energía divina",
-    "blessing_step3": "Consagración de energía divina",
-    "blessing_step3_desc": "Bendecido por la sabiduría de Manjusri Bodhisattva y el poder de prosperidad de Lord Wuye",
+    "blessing_title": "Ceremonia de ceremonia cultural sagrada en el monte Wutai",
+    "blessing_subtitle": "Rituales antiguos realizados por portadores del linaje cultural en el monte Wutai - Patrimonio Cultural del Monte Wutai, sitio del patrimonio de Wuye y el Dios de la riqueza",
+    "blessing_step1": "Purificación ritual",
+    "blessing_step1_desc": "Purificado con incienso bendecido, agua pura y mantras antiguos en el sitio del patrimonio",
+    "blessing_step2": "Ceremonia solemne de cánticos",
+    "blessing_step2_desc": "Los portadores del linaje cultural cantan con devoción con profunda devoción, llenando el sitio de energía cultural",
+    "blessing_step3": "Ceremonia de Imbuición de energía divina",
+    "blessing_step3_desc": "Bendecido por la sabiduría de Manjusri Cultural Guardian y el poder de prosperidad de Lord Wuye",
     "blessing_step4": "Certificación",
-    "blessing_step4_desc": "Emisión del certificado de bendición",
+    "blessing_step4_desc": "Emisión del certificado de ceremonia cultural",
     "testimonials_title": "Testimonios de clientes",
     "testimonials_subtitle": "Miles de clientes en todo el mundo han recibido bendiciones y protección",
     "footer_about": "Sobre nosotros",
@@ -66,7 +66,7 @@
     "services_title": "Nuestros servicios sagrados",
     "services_subtitle": "Sabiduría oriental antigua · Guía espiritual moderna",
     "service_blessed_items": "Artefactos bendecidos",
-    "service_blessed_items_desc": "Objetos sagrados consagrados por monjes del monte Wutai",
+    "service_blessed_items_desc": "Tokens guardianes imbuidos por portadores del linaje cultural del monte Wutai",
     "service_fortune": "Análisis del destino y la fortuna",
     "service_fortune_desc": "Sabiduría china antigua para el camino de vida y guía de la fortuna",
     "service_palmistry": "Quiromancia y lectura facial",
@@ -74,7 +74,7 @@
     "service_fengshui": "Feng Shui del hogar",
     "service_fengshui_desc": "Armoniza tu espacio vital con la energía cósmica",
     "service_blessing": "Servicios de oración",
-    "service_blessing_desc": "Ofrendas de lámparas, incienso y rituales de bendición",
+    "service_blessing_desc": "Ofrendas de lámparas, incienso y rituales de ceremonia cultural",
     "service_fortune_collection": "Servicios de adivinación",
     "service_fortune_collection_desc": "Sabiduría china antigua para el camino de vida y guía de la fortuna",
     "service_fortune_short": "Análisis del destino",
@@ -90,7 +90,7 @@
     "510061": {
       "name": "Análisis de Numerología + Ritual de Bendición en Wutaishan",
       "description": "Informe completo de numerología + Servicio de oración en Wutaishan (ofrenda de lámparas/incienso), incluye grabación de video, entrega en 10-15 días",
-      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
+      "shortDesc": "深度命理解析 + 五台山圣地祈愿,双重守护您的人生之路"
     },
     "title": "开光饰品",
     "search_placeholder": "搜索产品...",
@@ -122,11 +122,11 @@
     "viewAll": "查看所有产品",
     "fortune-energy-analysis-report": {
       "name": "Informe de Análisis Energético de la Fortuna",
-      "description": "Desbloquee la antigua sabiduría oriental y explore su código de energía de numerología.\n\n**El servicio incluye:**\n\n**1. Análisis de la Estructura de la Numerología**\nBasado en su fecha y hora de nacimiento (Bazi), interpretamos profundamente sus talentos innatos, rasgos de personalidad y trayectoria vital. Nuestros maestros de numerología utilizarán la teoría de los Cinco Elementos (metal, madera, agua, fuego y tierra) para revelarle:\n- Cómo la combinación de los Troncos Celestes y las Ramas Terrestres influye en su personalidad y relaciones interpersonales.\n- La bendición de las estrellas auspiciosas especiales (como Tian Yi Gui Ren, Tai Ji Gui Ren) en su fortuna.\n- La conexión profunda entre las doce casas (como la Casa de la Vida, la Casa de la Carrera, la Casa de la Riqueza) y los eventos de su vida.\n\n**2. Análisis de la Fortuna Anual (2026-2027)**\nInterpretación detallada del flujo de energía y los cambios de fortuna para el próximo año:\n- Cómo la interacción de los Cinco Elementos afecta el desarrollo de su carrera, las tendencias de sus relaciones y el momento de sus decisiones.\n- Consejos prácticos combinados con escenarios de la vida moderna: cómo aprovechar las oportunidades y evitar riesgos.\n- Orientación exclusiva para áreas clave como la riqueza, la salud y las relaciones interpersonales.\n\n¡Ambos informes se complementan entre sí, trazando un mapa numerológico completo que abarca el pasado, el presente y el futuro!\n\n**Proceso después de la compra:**\n1. Una vez completado el pago, envíe su información detallada de nacimiento (fecha de nacimiento, hora exacta, lugar de nacimiento) a: seondo@cneraart.com\n   Ejemplo: 12 de diciembre de 1978, 12:20 PM, Nueva York, EE. UU.\n2. Nuestros maestros de numerología utilizarán la antigua filosofía china de los Cinco Elementos para analizar su patrón energético único de forma personalizada.\n3. Recibirá su \"Informe de Análisis Energético de Numerología\" exclusivo por correo electrónico en un plazo de 3 a 5 días hábiles.\n\n**Garantía de privacidad y personalización:**\nDamos gran importancia a su privacidad: toda la información se mantendrá estrictamente confidencial. Esto no es \"adivinación\", sino una forma de ayudarle a vivir con más claridad y confianza al comprender sus patrones energéticos.\n\n**¿Por qué elegirnos?**\n- Por solo $19, obtendrá un informe personalizado y profundo que fusiona la sabiduría antigua con la práctica moderna.\n- Especialmente adecuado para quienes buscan una promoción profesional, armonía en las relaciones, equilibrio emocional, optimización de la salud o orientación para el crecimiento personal.\n- Una experiencia de conocimiento única, ¡como una evaluación de personalidad refinada a lo largo de milenios!\n\n**Nota:** Este servicio sigue estrictamente las interpretaciones culturales tradicionales y solo proporciona orientación direccional. Todos los resultados son solo de referencia."
+      "description": "Desbloquee la antigua sabiduría oriental y explore su código de energía de numerología.\n\n**El servicio incluye:**\n\n**1. Análisis de la Estructura de la Numerología**\nBasado en su fecha y hora de nacimiento (Bazi), interpretamos profundamente sus talentos innatos, rasgos de personalidad y trayectoria vital. Nuestros maestros de numerología utilizarán la teoría de los Cinco Elementos (metal, madera, agua, fuego y tierra) para revelarle:\n- Cómo la combinación de los Troncos Celestes y las Ramas Terrestres influye en su personalidad y relaciones interpersonales.\n- La ceremonia cultural de las estrellas auspiciosas especiales (como Tian Yi Gui Ren, Tai Ji Gui Ren) en su fortuna.\n- La conexión profunda entre las doce casas (como la Casa de la Vida, la Casa de la Carrera, la Casa de la Riqueza) y los eventos de su vida.\n\n**2. Análisis de la Fortuna Anual (2026-2027)**\nInterpretación detallada del flujo de energía y los cambios de fortuna para el próximo año:\n- Cómo la interacción de los Cinco Elementos afecta el desarrollo de su carrera, las tendencias de sus relaciones y el momento de sus decisiones.\n- Consejos prácticos combinados con escenarios de la vida moderna: cómo aprovechar las oportunidades y evitar riesgos.\n- Orientación exclusiva para áreas clave como la riqueza, la salud y las relaciones interpersonales.\n\n¡Ambos informes se complementan entre sí, trazando un mapa numerológico completo que abarca el pasado, el presente y el futuro!\n\n**Proceso después de la compra:**\n1. Una vez completado el pago, envíe su información detallada de nacimiento (fecha de nacimiento, hora exacta, lugar de nacimiento) a: seondo@cneraart.com\n   Ejemplo: 12 de diciembre de 1978, 12:20 PM, Nueva York, EE. UU.\n2. Nuestros maestros de numerología utilizarán la antigua filosofía china de los Cinco Elementos para analizar su patrón energético único de forma personalizada.\n3. Recibirá su \"Informe de Análisis Energético de Numerología\" exclusivo por correo electrónico en un plazo de 3 a 5 días hábiles.\n\n**Garantía de privacidad y personalización:**\nDamos gran importancia a su privacidad: toda la información se mantendrá estrictamente confidencial. Esto no es \"adivinación\", sino una forma de ayudarle a vivir con más claridad y confianza al comprender sus patrones energéticos.\n\n**¿Por qué elegirnos?**\n- Por solo $19, obtendrá un informe personalizado y profundo que fusiona la sabiduría antigua con la práctica moderna.\n- Especialmente adecuado para quienes buscan una promoción profesional, armonía en las relaciones, equilibrio emocional, optimización de la salud o orientación para el crecimiento personal.\n- Una experiencia de conocimiento única, ¡como una evaluación de personalidad refinada a lo largo de milenios!\n\n**Nota:** Este servicio sigue estrictamente las interpretaciones culturales tradicionales y solo proporciona orientación direccional. Todos los resultados son solo de referencia."
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Análisis del Destino + Ceremonia de Bendición de la Montaña Wutai",
-      "description": "Estimado amigo, ¿anhela comprender la trayectoria de su vida y, al mismo tiempo, infundir energía de bendición divina en su futuro? ¡Por solo $79, recibirá un \"Informe Completo de Análisis de Energía Natal\" y, además, podrá disfrutar de una exclusiva ceremonia de bendición realizada por nuestro equipo en el sagrado lugar budista de China, la Montaña Wutai! Iluminando el camino a seguir para usted y sus seres queridos.\n\n**Su paquete exclusivo incluye:**\n\n**Informe de Análisis Natal (entrega en 3-5 días)**\n- Interpretación personalizada de su estructura natal e interacción energética basada en sus ocho caracteres natales (Bazi)\n- Análisis profundo de sus períodos de suerte y años de tránsito, ayudándole a aprovechar oportunidades clave y precauciones para 2026-2027\n- Guía multidimensional que abarca carrera, fortuna, relaciones, salud y más\n- Integración de la filosofía tradicional de los Cinco Elementos con aplicaciones modernas, ofreciendo consejos prácticos y viables\n\n**Servicio de Bendición Delegada en la Montaña Wutai (entrega de video en 10-15 días)**\n- Puede elegir entre **ofrenda de lámparas** (iluminando el camino de la sabiduría) o **quemar incienso** (orando por la paz y eliminando obstáculos)\n- Nuestro equipo viajará personalmente a los templos de la Montaña Wutai, documentando toda la ceremonia de bendición\n- El video incluirá la recitación de su nombre, oraciones por sus deseos y el proceso de la ceremonia, asegurando transparencia y sinceridad\n- Cada lámpara, cada varilla de incienso, se encenderá exclusivamente para usted\n\n**¿Cómo participar?**\n1. Haga clic en el enlace de compra y seleccione el paquete de bendición de $79\n2. Una vez completado el pago, envíe su nombre, información de nacimiento y preferencia de bendición (ofrenda de lámparas o quemar incienso) a: seondo@cneraart.com\n   Ejemplo: 12 de diciembre de 1978, 12:20 PM, Nueva York, EE. UU.\n3. Recibirá el \"Informe de Análisis de Energía Natal\" por correo electrónico en un plazo de 3 a 5 días hábiles\n4. El video de la bendición se enviará a su correo electrónico dentro de los 10 a 15 días posteriores a la finalización de la ceremonia de bendición\n\n**¿Por qué elegir esta versión mejorada?**\n- No es solo una predicción, sino que también infunde energía de bendición en su vida\n- Sabiduría antigua + ritual sagrado, doble protección\n- Grabación de video completa: sincera, creíble y transparente\n- Aplicable a una variedad de deseos: éxito profesional, armonía familiar, cambio de suerte, eliminación de obstáculos, progreso académico, etc.\n\nUn informe, una lámpara brillante, un deseo, una transformación.\n\nQue juntos abramos la puerta del destino y demos la bienvenida a un futuro brillante.\n\n**Nota:** El servicio de bendición es una ofrenda religiosa delegada. Respetamos todas las creencias; la sinceridad es lo más importante. Este servicio sigue estrictamente las interpretaciones de la cultura tradicional y solo proporciona orientación. Todos los resultados son solo para referencia."
+      "description": "Estimado amigo, ¿anhela comprender la trayectoria de su vida y, al mismo tiempo, infundir energía de ceremonia cultural divina en su futuro? ¡Por solo $79, recibirá un \"Informe Completo de Análisis de Energía Natal\" y, además, podrá disfrutar de una exclusiva ceremonia cultural realizada por nuestro equipo en el sitio de patrimonio cultural de China, la Montaña Wutai! Iluminando el camino a seguir para usted y sus seres queridos.\n\n**Su paquete exclusivo incluye:**\n\n**Informe de Análisis Natal (entrega en 3-5 días)**\n- Interpretación personalizada de su estructura natal e interacción energética basada en sus ocho caracteres natales (Bazi)\n- Análisis profundo de sus períodos de suerte y años de tránsito, ayudándole a aprovechar oportunidades clave y precauciones para 2026-2027\n- Guía multidimensional que abarca carrera, fortuna, relaciones, salud y más\n- Integración de la filosofía tradicional de los Cinco Elementos con aplicaciones modernas, ofreciendo consejos prácticos y viables\n\n**Servicio de Ceremonia Cultural en la Montaña Wutai (entrega de video en 10-15 días)**\n- Puede elegir entre **ofrenda de lámparas** (iluminando el camino de la sabiduría) o **quemar incienso** (orando por la paz y eliminando obstáculos)\n- Nuestro equipo viajará personalmente a los sitios del patrimonio de la Montaña Wutai, documentando toda la ceremonia cultural\n- El video incluirá la recitación de su nombre, oraciones por sus deseos y el proceso de la ceremonia, asegurando transparencia y sinceridad\n- Cada lámpara, cada varilla de incienso, se encenderá exclusivamente para usted\n\n**¿Cómo participar?**\n1. Haga clic en el enlace de compra y seleccione el paquete de ceremonia cultural de $79\n2. Una vez completado el pago, envíe su nombre, información de nacimiento y preferencia de ceremonia cultural (ofrenda de lámparas o quemar incienso) a: seondo@cneraart.com\n   Ejemplo: 12 de diciembre de 1978, 12:20 PM, Nueva York, EE. UU.\n3. Recibirá el \"Informe de Análisis de Energía Natal\" por correo electrónico en un plazo de 3 a 5 días hábiles\n4. El video de la ceremonia cultural se enviará a su correo electrónico dentro de los 10 a 15 días posteriores a la finalización de la ceremonia cultural\n\n**¿Por qué elegir esta versión mejorada?**\n- No es solo una predicción, sino que también infunde energía de ceremonia cultural en su vida\n- Sabiduría antigua + ritual sagrado, doble protección\n- Grabación de video completa: sincera, creíble y transparente\n- Aplicable a una variedad de deseos: éxito profesional, armonía familiar, cambio de suerte, eliminación de obstáculos, progreso académico, etc.\n\nUn informe, una lámpara brillante, un deseo, una transformación.\n\nQue juntos abramos la puerta del destino y demos la bienvenida a un futuro brillante.\n\n**Nota:** El servicio de ceremonia cultural es una experiencia cultural tradicional. Respetamos todas las creencias; la sinceridad es lo más importante. Este servicio sigue estrictamente las interpretaciones de la cultura tradicional y solo proporciona orientación. Todos los resultados son solo para referencia."
     },
     "all_title": "Todos los Productos",
     "all_subtitle": "Joyería bendecida y servicios espirituales seleccionados"
@@ -140,7 +140,7 @@
     "adding": "Solicitando...",
     "buy_now": "Comprar Ahora",
     "blessing_info": "Información de la Bendición",
-    "temple": "Bendecido en el Templo",
+    "temple": "Imbuido en el Sitio del Patrimonio",
     "master": "Bendecido por el Maestro",
     "date": "Fecha de la Bendición",
     "tab_description": "Detalles del Producto",
@@ -148,7 +148,7 @@
     "tab_reviews": "Reseñas de Clientes",
     "tab_efficacy": "Información de eficacia",
     "efficacy_suitable_for": "Adecuado para",
-    "efficacy_effects": "Efectos de bendición",
+    "efficacy_effects": "Efectos de ceremonia cultural",
     "efficacy_wearing_tips": "Consejos de uso",
     "no_reviews": "Aún no hay reseñas",
     "verified_purchase": "Compra Verificada",
@@ -159,7 +159,7 @@
     "in_stock": "En Stock",
     "only_left": "Solo quedan {{count}}",
     "out_of_stock": "Agotado",
-    "blessing_default": "Cada artículo ha sido bendecido mediante ceremonias tradicionales en el santuario del Bodhisattva Manjushri del Monte Wutai...",
+    "blessing_default": "Cada artículo ha sido bendecido mediante ceremonias tradicionales en el santuario del Cultural Guardian Cultural del Monte Wutai...",
     "service_guide": {
       "title": "📋 Proceso de compra de servicio",
       "step1": "Después del pago, recibirá un correo electrónico de confirmación del pedido",
@@ -411,12 +411,12 @@
   "aboutUs": {
     "title": "SOBRE NOSOTROS",
     "paragraph1": "El Maestro del Monte Wutai desbloquea personalmente milenios de sabiduría oriental antigua, fundamentada en el I Ching, cartas de nacimiento, Zi Wei Dou Shu, I Ching de la Flor de Ciruelo, Versos de la Llave Dorada y los Grandes Seis Yao. Integrando los ciclos de generación y restricción de los Cinco Elementos con la astrología occidental, analizamos profundamente carrera, riqueza, salud y fortunas interpersonales—revelando oportunidades, advirtiendo de obstáculos—para ayudarte a navegar las corrientes de la vida y ampliar tus horizontes.",
-    "paragraph2": "Seguimos rituales tradicionales como la consagración y el canto de sutras, solemnes y apropiados, infundiendo cada objeto bendito con aspiración pura, armonizando la energía del cuerpo y la mente y calmando el espíritu. Con milenios de sabiduría, respondemos a las perplejidades de la vida moderna, usando bendiciones exclusivas para proteger una vida armoniosa y una fortuna floreciente.",
-    "videoTitle": "Ceremonia de Consagración por Monjes Senior"
+    "paragraph2": "Seguimos rituales tradicionales como la ceremonia de imbuición y el cánticos, solemnes y apropiados, infundiendo cada objeto imbuido con aspiración pura, armonizando la energía del cuerpo y la mente y calmando el espíritu. Con milenios de sabiduría, respondemos a las perplejidades de la vida moderna, usando protección exclusiva para proteger una vida armoniosa y una fortuna floreciente.",
+    "videoTitle": "Ceremonia de Ceremonia de Imbuición por Monjes Senior"
   },
   "footer": {
-    "wutaishan": "Monte Wutai · Una de las Cinco Montañas Sagradas Budistas · Patrimonio Mundial de la UNESCO",
-    "heritage": "Primera de las Cuatro Grandes Montañas Budistas de China · Dojo de Manjushri Bodhisattva · Patrimonio Budista Milenario"
+    "wutaishan": "Monte Wutai · Una de las Cinco Montañas Sagradas Culturals · Patrimonio Mundial de la UNESCO",
+    "heritage": "Primera de las Cuatro Grandes Montañas Culturals de China · Dojo de Cultural Guardian · Patrimonio Cultural Milenario"
   },
   "toast": {
     "success": "Éxito",
@@ -483,11 +483,9 @@
     "inner_peace": "Paz Interior",
     "inner_peace_desc": "Calmar la mente, eliminar preocupaciones, lograr tranquilidad interior",
     "blessed_title": "Artefactos Protectores Bendecidos",
-    "blessed_subtitle": "Rituales tradicionales, consagración del maestro, joyería bendecida seleccionada",
+    "blessed_subtitle": "Rituales tradicionales, ceremonia de imbuición del maestro, joyería bendecida seleccionada",
     "destiny_title": "Destino y Fortuna",
     "destiny_subtitle": "Análisis BaZi, lectura del destino, decodificación de los secretos del destino",
-    "prayer_title": "Servicios de Oración",
-    "prayer_subtitle": "Ofrenda de lámparas, servicio de oración, oraciones devotas de los maestros del Monte Wutai",
     "fortune_title": "Rostro, Palma y Feng Shui",
     "fortune_subtitle": "Sabiduría antigua de lectura facial y de palma, revelando el destino de vida"
   },
@@ -591,7 +589,7 @@
     "subtitle": "Maestros del Monte Wutai rezan por ti, transmiten deseos y buscan la paz",
     "lampService": "Ofrenda de Lámpara",
     "lampDesc": "Encendemos una lámpara de oración por ti en el sitio sagrado del Monte Wutai para iluminar el camino y disipar la oscuridad",
-    "lampFeature1": "Ofrenda de lámpara en el Monasterio del Bodhisattva Manjushri",
+    "lampFeature1": "Ofrenda de lámpara en el Monasterio del Cultural Guardian Cultural",
     "lampFeature2": "Cantos y dedicación de méritos por parte del maestro",
     "lampFeature3": "Proporcionamos fotos de la ofrenda y certificado de oración",
     "perLamp": "lámpara",
@@ -624,7 +622,7 @@
     "requiredFields": "Por favor complete todos los campos obligatorios",
     "deliveryTime": "* Completaremos la oración dentro de 3 días hábiles y enviaremos el certificado y fotos por correo electrónico",
     "trust1Title": "Sitio Sagrado del Monte Wutai",
-    "trust1Desc": "Uno de los cinco principales sitios sagrados budistas del mundo, Monasterio del Bodhisattva Manjushri",
+    "trust1Desc": "Uno de los cinco principales sitios sagrados culturals del mundo, Monasterio del Cultural Guardian Cultural",
     "trust2Title": "Fotos Auténticas",
     "trust2Desc": "Cada oración es fotografiada para garantizar autenticidad y credibilidad",
     "trust3Title": "Retroalimentación por Correo",
@@ -635,7 +633,7 @@
     "subtitle": "Sabiduría Ancestral Oriental · Guía Espiritual Moderna",
     "blessed": {
       "title": "Objetos Sagrados Consagrados",
-      "description": "Instrumentos sagrados del dharma consagrados por monjes senior del Monte Wutai, protegiendo su camino de vida",
+      "description": "Instrumentos sagrados del dharma consagrados por portadores del linaje senior del Monte Wutai, protegiendo su camino de vida",
       "cta": "Explorar Objetos Consagrados"
     },
     "fortune": {
@@ -660,19 +658,19 @@
     }
   },
   "blessing": {
-    "title": "Proceso de Consagración",
-    "subtitle": "Dirigido por Monjes Senior del Monte Wutai, Tradición Ancestral",
+    "title": "Proceso de Ceremonia de Imbuición",
+    "subtitle": "Dirigido por Portadores del Linaje Cultural del Monte Wutai, Tradición Ancestral",
     "step1": {
-      "title": "Purificación con Agua Sagrada",
-      "description": "Purificación con agua sagrada, incienso de agarwood y antiguos mantras ante el Buda"
+      "title": "Purificación Ritual",
+      "description": "Purificación con agua pura, incienso de agarwood y antiguos mantras en el sitio del patrimonio"
     },
     "step2": {
-      "title": "Recitación de Sutras y Bendición",
-      "description": "Monjes senior recitan sutras con devoción, resonando el nombre del Buda"
+      "title": "Cánticos e Infusión de Energía",
+      "description": "Portadores del linaje cultural cantan con devoción, resonando la energía cultural"
     },
     "step3": {
-      "title": "Empoderamiento Sagrado",
-      "description": "Recibiendo la luz de sabiduría del Bodhisattva Manjushri y la bendición de riqueza de Wu Ye"
+      "title": "Empoderamiento Cultural",
+      "description": "Recibiendo la energía cultural milenaria del Monte Wutai, otorgando protección y prosperidad"
     },
     "scrollHint": "Desplázate para ver más"
   },

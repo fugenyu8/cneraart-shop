@@ -158,13 +158,13 @@ export async function getPublishedProducts(params?: {
 
   const conditions = [eq(products.status, "published")];
 
-  // 如果只显示开光法物,排除服务类分类(categoryId=1-7是服务类)
+  // 如果只显示启蕴信物,排除服务类分类(categoryId=1-7是服务类)
   if (params?.blessedOnly) {
     conditions.push(sql`${products.categoryId} > 7`);
   }
 
   if (params?.categoryId) {
-    // 当查询开光护佑法物(categoryId=1)时，同时返回其所有子分类的产品
+    // 当查询启蕴守护信物(categoryId=1)时，同时返回其所有子分类的产品
     if (params.categoryId === 1) {
       // 查询所有parentId=1的子分类
       const subCats = await db.select().from(categories).where(eq(categories.parentId, 1));
@@ -184,7 +184,7 @@ export async function getPublishedProducts(params?: {
     conditions.push(like(products.name, `%${params.search}%`));
   }
 
-  // 优先展示开光法物(categoryId=1),然后按创建时间倒序
+  // 优先展示启蕴信物(categoryId=1),然后按创建时间倒序
   let query = db.select().from(products).where(and(...conditions))
     .orderBy(
       sql`CASE WHEN ${products.categoryId} = 1 THEN 0 ELSE 1 END`,

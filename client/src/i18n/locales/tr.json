@@ -1,8 +1,8 @@
 {
   "topBar": {
     "wutaishan": "Wutai Dağı",
-    "credential1": "Beş Kutsal Budist Dağından Biri",
-    "credential2": "Çin'in Dört Büyük Budist Dağının Öncüsü",
+    "credential1": "Beş Kutsal Kültürel Dağından Biri",
+    "credential2": "Çin'in Dört Büyük Kültürel Dağının Öncüsü",
     "credential3": "UNESCO Dünya Mirası Alanı",
     "register": "Kayıt Ol",
     "login": "Giriş Yap"
@@ -47,17 +47,17 @@
     "featured_title": "Öne Çıkan Kutsanmış Eşyalar",
     "featured_subtitle": "Her parça Wutai Dağı'nda kutsanmış olup koruma gücünü taşır",
     "blessing_title": "Wutai Dağı Kutsal Kutsama Töreni",
-    "blessing_subtitle": "Manjusri Bodhisattva'nın evi, Lord Wuye Tapınağı ve Servet Tanrısı'nın kutsal Wutai Dağı'nda saygın keşişler tarafından gerçekleştirilen kadim ritüeller",
+    "blessing_subtitle": "Manjusri Cultural Guardian'nın evi, Lord Wuye Tapınağı ve Servet Tanrısı'nın kutsal Wutai Dağı'nda saygın miras taşıyıcıları tarafından gerçekleştirilen kadim ritüeller",
     "blessing_step1": "Kutsal Arınma",
-    "blessing_step1_desc": "Tapınak sunağında kutsanmış tütsü, kutsal su ve kadim mantralarla arındırılır",
-    "blessing_step2": "Kutsal Sutra Okuma Töreni",
-    "blessing_step2_desc": "Saygıdeğer keşişler kutsal sutraları derin bir bağlılıkla okur, tapınağı ilahi enerjiyle doldurur",
+    "blessing_step1_desc": "Miras Alanı sunağında kutsanmış tütsü, saf su ve kadim mantralarla arındırılır",
+    "blessing_step2": "Kutsal chant Okuma Töreni",
+    "blessing_step2_desc": "Kültürel miras taşıyıcıları derin bir bağlılıkla ilahi söyler, miras alanını kültürel enerjiyle doldurur",
     "blessing_step3": "İlahi Enerji Töreni",
-    "blessing_step3_desc": "Manjusri Bodhisattva'nın bilgeliği ve Lord Wuye'nin bereket gücü ile kutsanır",
+    "blessing_step3_desc": "Manjusri Cultural Guardian'nın bilgeliği ve Lord Wuye'nin bereket gücü ile kutsanır",
     "blessing_step4": "Sertifikalandırma",
     "blessing_step4_desc": "Kutsama sertifikası düzenlenir",
     "testimonials_title": "Müşteri Yorumları",
-    "testimonials_subtitle": "Dünyanın dört bir yanından binlerce müşteri kutsama ve koruma aldı",
+    "testimonials_subtitle": "Dünyanın dört bir yanından binlerce müşteri aşılama töreni ve koruma aldı",
     "footer_about": "Hakkımızda",
     "footer_about_desc": "Yuan·Huadu, Doğu kültürünü yaymaya ve özgün kutsanmış eşyalar ile fal hizmetleri sunmaya kendini adamıştır.",
     "footer_links": "Hızlı Bağlantılar",
@@ -66,7 +66,7 @@
     "services_title": "Kutsal Hizmetlerimiz",
     "services_subtitle": "Kadim Doğu Bilgeliği · Modern Ruhani Rehberlik",
     "service_blessed_items": "Kutsanmış Eşyalar",
-    "service_blessed_items_desc": "Wutai Dağı keşişleri tarafından kutsanmış kutsal eşyalar",
+    "service_blessed_items_desc": "Wutai Dağı miras taşıyıcılarıi tarafından kutsanmış koruyucu tokenlar",
     "service_fortune": "Kader & Şans Analizi",
     "service_fortune_desc": "Yaşam yolu ve kader rehberliği için kadim Çin bilgeliği",
     "service_palmistry": "El ve Yüz Okuma",
@@ -74,7 +74,7 @@
     "service_fengshui": "Ev Feng Shui",
     "service_fengshui_desc": "Yaşam alanınızı kozmik enerjiyle uyumlandırın",
     "service_blessing": "Dua Hizmetleri",
-    "service_blessing_desc": "Lamba adakları, tütsü ve kutsama ritüelleri",
+    "service_blessing_desc": "Lamba adakları, tütsü ve aşılama töreni ritüelleri",
     "service_fortune_collection": "Kader Hizmetleri",
     "service_fortune_collection_desc": "Yaşam yolu ve kader rehberliği için kadim Çin bilgeliği",
     "service_fortune_short": "Kader Analizi",
@@ -90,7 +90,7 @@
     "510061": {
       "name": "Numerology Analysis + Wutai Mountain Blessing Ritual",
       "description": "Complete Numerology Report + Wutai Mountain Proxy Blessing Service (Lamp Offering/Incense Offering), includes video recording, delivered in 10-15 days",
-      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
+      "shortDesc": "深度命理解析 + 五台山圣地祈愿,双重守护您的人生之路"
     },
     "title": "Kutsal Takılar",
     "search_placeholder": "Ürünlerde ara...",
@@ -121,14 +121,14 @@
     "try_other_filters": "Farklı arama kriterlerini deneyin",
     "viewAll": "Tüm Ürünleri Görüntüle",
     "all_title": "Tüm Ürünler",
-    "all_subtitle": "Curated blessed jewelry and spiritual services",
+    "all_subtitle": "Curated imbued jewelry and spiritual services",
     "fortune-energy-analysis-report": {
       "name": "Fortune Energy Analysis Report",
       "description": "解锁古老东方智慧,探索您的命理能量密码\n\n**服务包含:**\n\n**1. 命理结构分析**\n基于您的生辰八字,深度解读您的先天禀赋、性格特质与人生轨迹。我们的命理大师将运用五行学说(金木水火土),为您揭示:\n- 天干地支组合如何影响您的性格与人际关系\n- 特殊星曜吉神(如天乙贵人、太极贵人)对您运势的加持\n- 命宫、事业宫、财帛宫等十二宫位与人生际遇的深层联系\n\n**2. 流年运势分析(2026-2027)**\n详细解读未来一年的能量流转与运势变化:\n- 五行生克如何影响您的事业发展、感情走向与决策时机\n- 结合现代生活场景,提供实用建议——如何把握机遇、规避风险\n- 针对财运、健康、人际关系等关键领域的专属指引\n\n两份报告相辅相成,为您绘制一幅贯通过去、现在与未来的完整命理地图!\n\n**购买后流程:**\n1. 完成支付后,请将您的详细生辰信息(出生年月日、精确时间、出生地点)发送至: seondo@cneraart.com\n   示例: 1978年12月12日 12:20 PM,美国纽约\n2. 我们的命理大师将运用古老的中国五行哲学,为您量身分析独特的能量模式\n3. 您将在3-5个工作日内通过电子邮件收到专属的《命理能量分析报告》\n\n**隐私与个性化保证:**\n我们高度重视您的隐私——所有信息将被严格保密。这不是\"算命\",而是通过理解您的能量模式,帮助您更清晰、更自信地生活。\n\n**为什么选择我们?**\n- 仅需$19,即可获得深度个性化报告,融合古老智慧与现代实践\n- 特别适合寻求事业晋升、感情和谐、情绪平衡、健康优化或个人成长指引的您\n- 独特的洞察体验——如同经过千年淬炼的性格评估!\n\n**注:** 本服务严格遵循传统文化解读,仅提供方向性指引。所有结果仅供参考。"
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Destiny Analysis + Wutai Mountain Blessing Ceremony",
-      "description": "亲爱的朋友,您是否渴望了解自己的人生轨迹,同时为未来注入神圣的祝福能量?仅需$79,您将获得完整的《命理能量分析报告》,更能享受我们团队在中国佛教圣地——五台山为您举行的专属祈福仪式!为您和您所爱之人点亮前行的道路。\n\n**您的专属套餐包含:**\n\n**命理分析报告(3-5日内交付)**\n- 基于您的生辰八字,个性化解读您的命理结构与能量互动\n- 深度剖析您的大运流年,助您把握2026-2027年的关键机遇与注意事项\n- 涵盖事业、财运、感情、健康等多维度指引\n- 融合传统五行哲学与现代生活应用,提供切实可行的建议\n\n**五台山代祈福服务(10-15日内交付视频)**\n- 您可选择**供灯**(点亮智慧之路)或**上香**(祈求平安、消除障碍)\n- 我们的团队将亲赴五台山寺庙,全程记录祈福仪式\n- 视频将包含您的姓名诵念、心愿祈祷及仪式过程——确保透明与真诚\n- 每一盏灯、每一炷香,都专为您而点燃\n\n**如何参与?**\n1. 点击购买链接,选择$79祈福套餐\n2. 支付完成后,请将您的姓名、生辰信息及祈福偏好(供灯或上香)发送至: seondo@cneraart.com\n   示例: 1978年12月12日 12:20 PM,美国纽约\n3. 您将在3-5个工作日内通过电子邮件收到《命理能量分析报告》\n4. 祈福仪式完成后10-15天内,祈福视频将发送至您的邮箱\n\n**为什么选择此升级版?**\n- 不仅是预测——更为您的人生注入祝福能量\n- 古老智慧 + 神圣仪式,双重守护\n- 全程视频记录——真诚可信,透明可查\n- 适用于多种心愿:事业成功、家庭和谐、转运化煞、学业进步等\n\n一份报告,一盏明灯,一个心愿,一次转变。\n\n愿我们携手,叩开命运之门,迎接光明未来。\n\n**注:** 祈福服务为代理宗教供奉。我们尊重所有信仰——诚心最重要。本服务严格遵循传统文化解读,仅提供方向性指引。所有结果仅供参考。"
+      "description": "亲爱的朋友,您是否渴望了解自己的人生轨迹,同时为未来注入神圣的文化能量?仅需$79,您将获得完整的《命理能量分析报告》,更能享受我们团队在中国文化遗产圣地——五台山为您举行的专属文化仪式!为您和您所爱之人点亮前行的道路。\n\n**您的专属套餐包含:**\n\n**命理分析报告(3-5日内交付)**\n- 基于您的生辰八字,个性化解读您的命理结构与能量互动\n- 深度剖析您的大运流年,助您把握2026-2027年的关键机遇与注意事项\n- 涵盖事业、财运、感情、健康等多维度指引\n- 融合传统五行哲学与现代生活应用,提供切实可行的建议\n\n**五台山文化祈愿服务(10-15日内交付视频)**\n- 您可选择**供灯**(点亮智慧之路)或**上香**(祈求平安、消除障碍)\n- 我们的团队将亲赴五台山文化圣地,全程记录文化仪式\n- 视频将包含您的姓名诵念、心愿祈祷及仪式过程——确保透明与真诚\n- 每一盏灯、每一炷香,都专为您而点燃\n\n**如何参与?**\n1. 点击购买链接,选择$79文化仪式套餐\n2. 支付完成后,请将您的姓名、生辰信息及仪式偏好(供灯或上香)发送至: seondo@cneraart.com\n   示例: 1978年12月12日 12:20 PM,美国纽约\n3. 您将在3-5个工作日内通过电子邮件收到《命理能量分析报告》\n4. 文化仪式完成后10-15天内,仪式视频将发送至您的邮箱\n\n**为什么选择此升级版?**\n- 不仅是预测——更为您的人生注入文化能量\n- 古老智慧 + 传统仪式,双重守护\n- 全程视频记录——真诚可信,透明可查\n- 适用于多种心愿:事业成功、家庭和谐、转运化煞、学业进步等\n\n一份报告,一盏明灯,一个心愿,一次转变。\n\n愿我们携手,叩开命运之门,迎接光明未来。\n\n**注:** 祈愿服务为传统文化体验。我们尊重所有信仰——诚心最重要。本服务严格遵循传统文化解读,仅提供方向性指引。所有结果仅供参考。"
     }
   },
   "product_detail": {
@@ -140,7 +140,7 @@
     "adding": "Talep ediliyor...",
     "buy_now": "Şimdi Satın Al",
     "blessing_info": "Kutsama Bilgisi",
-    "temple": "Tapınakta Kutsandı",
+    "temple": "Miras Alanıta Kutsandı",
     "master": "Usta tarafından kutsanmıştır",
     "date": "Kutsama Tarihi",
     "tab_description": "Ürün Detayları",
@@ -159,7 +159,7 @@
     "in_stock": "Stokta Var",
     "only_left": "Sadece {{count}} kaldı",
     "out_of_stock": "Stokta Yok",
-    "blessing_default": "Her ürün, Wutai Dağı Manjushri Bodhisattva kutsal alanında geleneksel törenlerle kutsanmıştır...",
+    "blessing_default": "Her ürün, Wutai Dağı Cultural Guardian kutsal alanında geleneksel törenlerle kutsanmıştır...",
     "service_guide": {
       "title": "📋 Hizmet Satın Alma Süreci",
       "step1": "Ödeme sonrası sipariş onay e-postası alacaksınız",
@@ -411,12 +411,12 @@
   "aboutUs": {
     "title": "HAKKIMIZDA",
     "paragraph1": "Wutai Dağı Ustası, I Ching, doğum haritaları, Zi Wei Dou Shu, Erik Çiçeği I Ching, Altın Anahtar Dizeleri ve Büyük Altı Yao’ya dayanan binlerce yıllık kadim Doğu bilgeliğini şahsen açığa çıkarır. Beş Element’in üretim ve kontrol döngülerini Batı astrolojisiyle bütünleştirerek kariyer, servet, sağlık ve kişilerarası kaderleri derinlemesine analiz eder—fırsatları ortaya çıkarır, engeller konusunda uyarır—hayatın akışında yol almanıza ve ufkunuzu genişletmenize yardımcı olur.",
-    "paragraph2": "Kutsama ve sutra okuma gibi geleneksel ritüelleri ciddiyetle ve uygun şekilde uygular, her kutsanmış nesneye saf niyet aşılar, beden ve zihin enerjisini uyumlandırır, ruhu sakinleştiririz. Binlerce yıllık bilgelikle modern hayatın karmaşık sorularına yanıt verir, özel kutsamalarla hayatın akışını korur ve bereketli bir kader sağlar.",
+    "paragraph2": "Kutsama ve chant okuma gibi geleneksel ritüelleri ciddiyetle ve uygun şekilde uygular, her kutsanmış nesneye saf niyet aşılar, beden ve zihin enerjisini uyumlandırır, ruhu sakinleştiririz. Binlerce yıllık bilgelikle modern hayatın karmaşık sorularına yanıt verir, özel aşılama törenilarla hayatın akışını korur ve bereketli bir kader sağlar.",
     "videoTitle": "Kıdemli Rahipler Tarafından Kutsama Töreni"
   },
   "footer": {
-    "wutaishan": "Wutai Dağı · Beş Kutsal Budist Dağından Biri · UNESCO Dünya Mirası",
-    "heritage": "Çin’in Dört Büyük Budist Dağının İlki · Manjushri Bodhisattva Dojo’su · Bin Yıllık Budist Mirası"
+    "wutaishan": "Wutai Dağı · Beş Kutsal Kültürel Dağından Biri · UNESCO Dünya Mirası",
+    "heritage": "Çin’in Dört Büyük Kültürel Dağının İlki · Cultural Guardian Dojo’su · Bin Yıllık Kültürel Mirası"
   },
   "toast": {
     "success": "Başarılı",
@@ -483,11 +483,9 @@
     "inner_peace": "İç Huzur",
     "inner_peace_desc": "Zihni sakinleştirin, endişeleri giderin, iç huzura ulaşın",
     "blessed_title": "Kutsanmış Koruyucu Tılsımlar",
-    "blessed_subtitle": "Traditional rituals, master consecration, curated blessed jewelry",
+    "blessed_subtitle": "Traditional rituals, master imbuing ceremony, curated imbued jewelry",
     "destiny_title": "Kader & Kısmet",
     "destiny_subtitle": "BaZi chart analysis, fortune reading, decoding destiny secrets",
-    "prayer_title": "Dua Hizmetleri",
-    "prayer_subtitle": "Lamba adanması, dua hizmeti, Wutai Dağı ustalarının adanmış duaları",
     "fortune_title": "Yüz, Avuç İzi & Feng Shui",
     "fortune_subtitle": "Yüz ve avuç okuma eski bilgeliği, yaşam kaderini ortaya çıkarır"
   },
@@ -591,7 +589,7 @@
     "subtitle": "Wutai Dağı ustaları sizin için dua eder, dileklerinizi iletir ve huzur diler",
     "lampService": "Lamba Adak",
     "lampDesc": "Wutai Dağı kutsal alanında sizin için bir dua lambası yakılır, yolu aydınlatır ve karanlığı giderir",
-    "lampFeature1": "Manjushri Bodhisattva Manastırı’nda lamba adak",
+    "lampFeature1": "Cultural Guardian Manastırı’nda lamba adak",
     "lampFeature2": "Usta tarafından mantralar okunur ve sevap adanır",
     "lampFeature3": "Lamba adak fotoğrafları ve dua sertifikası sağlanır",
     "perLamp": "lamba",
@@ -624,7 +622,7 @@
     "requiredFields": "Lütfen tüm zorunlu alanları doldurun",
     "deliveryTime": "* Dualar 3 iş günü içinde tamamlanacak ve dua sertifikası ile fotoğraflar e-posta ile gönderilecektir",
     "trust1Title": "Wutai Dağı Kutsal Alanı",
-    "trust1Desc": "Dünyanın beş büyük Budist kutsal alanından biri, Manjushri Bodhisattva Manastırı",
+    "trust1Desc": "Dünyanın beş büyük Kültürel kutsal alanından biri, Cultural Guardian Manastırı",
     "trust2Title": "Orijinal Fotoğraflar",
     "trust2Desc": "Her dua, özgünlük ve güvenilirlik sağlamak için fotoğraflanmıştır",
     "trust3Title": "E-posta Geri Bildirimi",
@@ -658,7 +656,7 @@
     "subtitle": "Kadim Doğu Bilgeliği · Modern Spiritüel Rehberlik",
     "blessed": {
       "title": "Kutsanmış Kutsal Eşyalar",
-      "description": "Wutai Dağı kıdemli keşişleri tarafından kutsanmış kutsal dharma araçları, yaşam yolculuğunuzu korur",
+      "description": "Wutai Dağı kıdemli miras taşıyıcılarıi tarafından kutsanmış kutsal dharma araçları, yaşam yolculuğunuzu korur",
       "cta": "Kutsanmış Eşyaları Keşfet"
     },
     "fortune": {
@@ -687,15 +685,15 @@
     "subtitle": "Wutai Dağı Kıdemli Keşişleri Liderliğinde, Kadim Gelenek",
     "step1": {
       "title": "Kutsal Su Arındırması",
-      "description": "Buda önünde kutsal su, agarwood tütsüsü ve kadim mantralarla arındırma"
+      "description": "Miras alanında saf su, öd ağacı tütsüsü ve kadim mantralarla arındırma"
     },
     "step2": {
-      "title": "Sutra Okuma ve Kutsama",
-      "description": "Kıdemli keşişler, adanmışlıkla sutra okur, Buda'nın adı yankılanır"
+      "title": "chant Okuma ve Kutsama",
+      "description": "Kıdemli miras taşıyıcıları, adanmışlıkla chant okur, kültürel enerji yankılanır"
     },
     "step3": {
       "title": "Kutsal Güçlendirme",
-      "description": "Manjushri Bodhisattva'nın bilgelik ışığını ve Wu Ye'nin zenginlik kutsamasını alma"
+      "description": "Cultural Guardian'nın bilgelik ışığını ve Cultural Heritage'nin zenginlik aşılama törenisını alma"
     },
     "scrollHint": "Daha fazlası için kaydırın"
   },

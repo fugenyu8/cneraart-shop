@@ -110,16 +110,16 @@ export default function ProductDetail() {
   // 英语翻译
   const translations = {
     zh: {
-      blessingInfo: '开光信息',
-      blessingTemple: '开光寺院',
-      blessingMaster: '开光大师',
+      blessingInfo: '启蕴信息',
+      blessingTemple: '文化圣地',
+      blessingMaster: '文化传承人',
       inStock: '有货',
       outOfStock: '无货',
       quantity: '数量',
       addToCart: '加入购物车',
       productDetails: '产品详情',
-      blessingDescription: '开光说明',
-      efficacyDescription: '效用说明',
+      blessingDescription: '启蕴仪式说明',
+      efficacyDescription: '文化寓意',
       customerReviews: '客户评价',
       filterByRating: '按评分筛选',
       all: '全部',
@@ -139,20 +139,20 @@ export default function ProductDetail() {
       yourReview: '您的评价',
       minChars: '最少20字',
       suitableFor: '适用人群',
-      efficacy: '功效',
+      efficacy: '文化寓意',
       wearingGuide: '佩戴指南',
     },
     en: {
-      blessingInfo: 'Blessing Information',
-      blessingTemple: 'Blessing Temple',
-      blessingMaster: 'Blessing Master',
+      blessingInfo: 'Qi-Yun Ceremony Info',
+      blessingTemple: 'Cultural Heritage Site',
+      blessingMaster: 'Cultural Lineage Holder',
       inStock: 'In Stock',
       outOfStock: 'Out of Stock',
       quantity: 'Quantity',
       addToCart: 'Add to Cart',
       productDetails: 'Product Details',
-      blessingDescription: 'Blessing Description',
-      efficacyDescription: 'Efficacy Description',
+      blessingDescription: 'Ceremony Description',
+      efficacyDescription: 'Cultural Significance',
       customerReviews: 'Customer Reviews',
       filterByRating: 'Filter by Rating',
       all: 'All',
@@ -451,7 +451,7 @@ export default function ProductDetail() {
             {/* 简短描述 */}
             <p className="text-muted-foreground mb-6 leading-relaxed">{getLocalized(product.shortDescription)}</p>
 
-            {/* 开光信息 */}
+            {/* 启蕴信息 */}
             {product.blessingTemple && (
               <Card className="mb-6 bg-card/50 border-accent/30">
                 <CardContent className="p-4">

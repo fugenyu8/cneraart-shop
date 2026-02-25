@@ -1,8 +1,8 @@
 {
   "topBar": {
     "wutaishan": "Mont Wutai",
-    "credential1": "L'une des cinq montagnes bouddhistes sacrées",
-    "credential2": "Première des quatre grandes montagnes bouddhistes de Chine",
+    "credential1": "L'une des cinq montagnes culturelles sacrées",
+    "credential2": "Première des quatre grandes montagnes culturels de Chine",
     "credential3": "Site du patrimoine mondial de l'UNESCO",
     "register": "S'inscrire",
     "login": "Se connecter"
@@ -14,7 +14,7 @@
   "serviceCards": {
     "blessedItems": {
       "title": "Artefacts protecteurs bénis",
-      "subtitle": "Rituels traditionnels, consécration du maître"
+      "subtitle": "Rituels traditionnels, cérémonie d'imprégnation du maître"
     },
     "destiny": {
       "title": "Destin & fortune",
@@ -47,13 +47,13 @@
     "featured_title": "Objets bénis sélectionnés",
     "featured_subtitle": "Chaque pièce est bénie au mont Wutai, portant le pouvoir de protection",
     "blessing_title": "Cérémonie de bénédiction sacrée au mont Wutai",
-    "blessing_subtitle": "Rituels anciens effectués par des moines vénérables au mont Wutai sacré - Demeure de Manjusri Bodhisattva, temple de Lord Wuye et du Dieu de la richesse",
-    "blessing_step1": "Purification sacrée",
-    "blessing_step1_desc": "Purifié avec de l'encens béni, de l'eau sainte et des mantras anciens à l'autel du temple",
-    "blessing_step2": "Cérémonie sacrée de récitation de sutras",
-    "blessing_step2_desc": "Les moines vénérables récitent des sutras sacrés avec une profonde dévotion, remplissant le temple d'énergie divine",
-    "blessing_step3": "Consécration d'énergie divine",
-    "blessing_step3_desc": "Béni par la sagesse de Manjusri Bodhisattva et le pouvoir de prospérité de Lord Wuye",
+    "blessing_subtitle": "Rituels anciens effectués par des porteurs du lignage culturel au mont Wutai sacré - Demeure de Manjusri Cultural Guardian, heritage site de Lord Wuye et du Dieu de la richesse",
+    "blessing_step1": "Purification rituelle",
+    "blessing_step1_desc": "Purifié avec de l'encens béni, de l'eau sainte et des mantras anciens à l'autel du heritage site",
+    "blessing_step2": "Cérémonie solennelle de chants",
+    "blessing_step2_desc": "Les porteurs du lignage culturel chantent avec dévotion avec une profonde dévotion, remplissant le heritage site d'énergie divine",
+    "blessing_step3": "Cérémonie d'Imprégnation d'énergie divine",
+    "blessing_step3_desc": "Béni par la sagesse de Manjusri Cultural Guardian et le pouvoir de prospérité de Lord Wuye",
     "blessing_step4": "Certification",
     "blessing_step4_desc": "Délivrance du certificat de bénédiction",
     "testimonials_title": "Témoignages de clients",
@@ -66,7 +66,7 @@
     "services_title": "Nos services sacrés",
     "services_subtitle": "Sagesse orientale ancienne · Guidance spirituelle moderne",
     "service_blessed_items": "Artefacts bénis",
-    "service_blessed_items_desc": "Objets sacrés consacrés par les moines du mont Wutai",
+    "service_blessed_items_desc": "Objets sacrés consacrés par les porteurs du lignage culturel du mont Wutai",
     "service_fortune": "Analyse du destin et de la fortune",
     "service_fortune_desc": "Sagesse chinoise ancienne pour le chemin de vie et la guidance de la fortune",
     "service_palmistry": "Chiromancie et lecture du visage",
@@ -90,7 +90,7 @@
     "510061": {
       "name": "Analyse de la numérologie + Cérémonie de prière et de bénédiction du Mont Wutai",
       "description": "Rapport complet d'analyse numérologique + Service de prière et de bénédiction à distance au Mont Wutai (offrande de lampes/encens), incluant un enregistrement vidéo, livraison sous 10-15 jours.",
-      "shortDesc": "深度命理解析 + 五台山圣地祈福,双重守护您的人生之路"
+      "shortDesc": "深度命理解析 + 五台山圣地祈愿,双重守护您的人生之路"
     },
     "title": "开光饰品",
     "search_placeholder": "搜索产品...",
@@ -126,7 +126,7 @@
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Analyse de Destin + Cérémonie de Bénédiction du Mont Wutai",
-      "description": "Chers amis, aspirez-vous à comprendre votre parcours de vie tout en insufflant une énergie de bénédiction sacrée à votre avenir? Pour seulement 79$, vous recevrez un «Rapport d'Analyse Énergétique du Destin» complet, et pourrez également profiter d'une cérémonie de bénédiction exclusive organisée par notre équipe au Mont Wutai, terre sainte du bouddhisme chinois! Illuminez le chemin devant vous et vos proches.\n\n**Votre forfait exclusif comprend:**\n\n**Rapport d'Analyse du Destin (livraison sous 3-5 jours)**\n- Interprétation personnalisée de votre structure de destin et de l'interaction des énergies basée sur vos Huit Caractères de Naissance (Bazi)\n- Analyse approfondie de vos périodes de chance (Dayun) et années courantes (Liunian) pour vous aider à saisir les opportunités clés et les précautions à prendre en 2026-2027\n- Conseils couvrant plusieurs dimensions: carrière, fortune, relations, santé, etc.\n- Intègre la philosophie traditionnelle des Cinq Éléments et les applications de la vie moderne, offrant des suggestions pratiques et réalisables\n\n**Service de Bénédiction par procuration au Mont Wutai (livraison vidéo sous 10-15 jours)**\n- Vous pouvez choisir d'**offrir des lumières** (illuminer le chemin de la sagesse) ou d'**offrir de l'encens** (prier pour la paix, éliminer les obstacles)\n- Notre équipe se rendra personnellement aux temples du Mont Wutai pour enregistrer toute la cérémonie de bénédiction\n- La vidéo inclura la récitation de votre nom, la prière de vos vœux et le déroulement de la cérémonie – garantissant transparence et sincérité\n- Chaque lampe, chaque bâton d'encens est allumé spécialement pour vous\n\n**Comment participer?**\n1. Cliquez sur le lien d'achat et choisissez le forfait de bénédiction à 79$\n2. Après le paiement, veuillez envoyer votre nom, vos informations de naissance et votre préférence de bénédiction (offrande de lumières ou d'encens) à: seondo@cneraart.com\n   Exemple: 12 décembre 1978 12:20 PM, New York, États-Unis\n3. Vous recevrez le «Rapport d'Analyse Énergétique du Destin» par e-mail dans les 3-5 jours ouvrables\n4. La vidéo de bénédiction sera envoyée à votre boîte de réception dans les 10-15 jours suivant la fin de la cérémonie de bénédiction\n\n**Pourquoi choisir cette version améliorée?**\n- Ce n'est pas seulement une prédiction – cela insuffle également une énergie de bénédiction dans votre vie\n- Sagesse ancienne + Rituel sacré, double protection\n- Enregistrement vidéo complet – sincère, fiable et vérifiable\n- Convient à une variété de souhaits: succès professionnel, harmonie familiale, transformation de la malchance, progrès scolaire, etc.\n\nUn rapport, une lumière éclairante, un vœu, une transformation.\n\nPuissions-nous unir nos forces pour ouvrir la porte du destin et accueillir un avenir lumineux.\n\n**Remarque:** Le service de bénédiction est une offrande religieuse par procuration. Nous respectons toutes les croyances – la sincérité est primordiale. Ce service suit strictement les interprétations culturelles traditionnelles et ne fournit que des orientations. Tous les résultats sont donnés à titre indicatif uniquement."
+      "description": "Chers amis, aspirez-vous à comprendre votre parcours de vie tout en insufflant une énergie de bénédiction sacrée à votre avenir? Pour seulement 79$, vous recevrez un «Rapport d'Analyse Énergétique du Destin» complet, et pourrez également profiter d'une cérémonie de bénédiction exclusive organisée par notre équipe au Mont Wutai, site de patrimoine culturel chinois! Illuminez le chemin devant vous et vos proches.\n\n**Votre forfait exclusif comprend:**\n\n**Rapport d'Analyse du Destin (livraison sous 3-5 jours)**\n- Interprétation personnalisée de votre structure de destin et de l'interaction des énergies basée sur vos Huit Caractères de Naissance (Bazi)\n- Analyse approfondie de vos périodes de chance (Dayun) et années courantes (Liunian) pour vous aider à saisir les opportunités clés et les précautions à prendre en 2026-2027\n- Conseils couvrant plusieurs dimensions: carrière, fortune, relations, santé, etc.\n- Intègre la philosophie traditionnelle des Cinq Éléments et les applications de la vie moderne, offrant des suggestions pratiques et réalisables\n\n**Service de Bénédiction par procuration au Mont Wutai (livraison vidéo sous 10-15 jours)**\n- Vous pouvez choisir d'**offrir des lumières** (illuminer le chemin de la sagesse) ou d'**offrir de l'encens** (prier pour la paix, éliminer les obstacles)\n- Notre équipe se rendra personnellement aux heritage sites du Mont Wutai pour enregistrer toute la cérémonie de bénédiction\n- La vidéo inclura la récitation de votre nom, la prière de vos vœux et le déroulement de la cérémonie – garantissant transparence et sincérité\n- Chaque lampe, chaque bâton d'encens est allumé spécialement pour vous\n\n**Comment participer?**\n1. Cliquez sur le lien d'achat et choisissez le forfait de bénédiction à 79$\n2. Après le paiement, veuillez envoyer votre nom, vos informations de naissance et votre préférence de bénédiction (offrande de lumières ou d'encens) à: seondo@cneraart.com\n   Exemple: 12 décembre 1978 12:20 PM, New York, États-Unis\n3. Vous recevrez le «Rapport d'Analyse Énergétique du Destin» par e-mail dans les 3-5 jours ouvrables\n4. La vidéo de bénédiction sera envoyée à votre boîte de réception dans les 10-15 jours suivant la fin de la cérémonie de bénédiction\n\n**Pourquoi choisir cette version améliorée?**\n- Ce n'est pas seulement une prédiction – cela insuffle également une énergie de bénédiction dans votre vie\n- Sagesse ancienne + Rituel sacré, double protection\n- Enregistrement vidéo complet – sincère, fiable et vérifiable\n- Convient à une variété de souhaits: succès professionnel, harmonie familiale, transformation de la malchance, progrès scolaire, etc.\n\nUn rapport, une lumière éclairante, un vœu, une transformation.\n\nPuissions-nous unir nos forces pour ouvrir la porte du destin et accueillir un avenir lumineux.\n\n**Remarque:** Le service de bénédiction est une expérience culturelle traditionnelle. Nous respectons toutes les croyances – la sincérité est primordiale. Ce service suit strictement les interprétations culturelles traditionnelles et ne fournit que des orientations. Tous les résultats sont donnés à titre indicatif uniquement."
     },
     "all_title": "Tous les Produits",
     "all_subtitle": "Bijoux bénis et services spirituels sélectionnés"
@@ -140,7 +140,7 @@
     "adding": "Demande en cours...",
     "buy_now": "Acheter maintenant",
     "blessing_info": "Informations sur la bénédiction",
-    "temple": "Béni au temple",
+    "temple": "Béni au heritage site",
     "master": "Béni par le Maître",
     "date": "Date de bénédiction",
     "tab_description": "Détails du produit",
@@ -159,7 +159,7 @@
     "in_stock": "En stock",
     "only_left": "Il ne reste que {{count}}",
     "out_of_stock": "Rupture de stock",
-    "blessing_default": "Chaque article a été béni lors de cérémonies traditionnelles au sanctuaire du Bodhisattva Manjushri du Mont Wutai...",
+    "blessing_default": "Chaque article a été béni lors de cérémonies traditionnelles au sanctuaire du Cultural Guardian Cultural du Mont Wutai...",
     "service_guide": {
       "title": "📋 Processus d'achat de service",
       "step1": "Après le paiement, vous recevrez un e-mail de confirmation de commande",
@@ -411,12 +411,12 @@
   "aboutUs": {
     "title": "À PROPOS",
     "paragraph1": "Le Maître du Mont Wutai déverrouille personnellement des millénaires de sagesse orientale ancienne, ancrée dans le Yi Jing, les cartes de naissance, Zi Wei Dou Shu, le Yi Jing de la Fleur de Prunier, les Versets de la Clé d'Or et les Grands Six Yao. En intégrant les cycles de génération et de restriction des Cinq Éléments avec l'astrologie occidentale, nous analysons en profondeur carrière, richesse, santé et fortunes interpersonnelles—révélant opportunités, avertissant d'obstacles—pour vous aider à naviguer les courants de la vie et élargir vos horizons.",
-    "paragraph2": "Nous suivons des rituels traditionnels tels que la consécration et la récitation de sutras, solennels et appropriés, infusant chaque objet béni d'aspiration pure, harmonisant l'énergie du corps et de l'esprit et calmant l'esprit. Avec des millénaires de sagesse, nous répondons aux perplexités de la vie moderne, utilisant des bénédictions exclusives pour protéger une vie harmonieuse et une fortune florissante.",
-    "videoTitle": "Cérémonie de consécration par des moines seniors"
+    "paragraph2": "Nous suivons des rituels traditionnels tels que la cérémonie d'imprégnation et la chants, solennels et appropriés, infusant chaque objet béni d'aspiration pure, harmonisant l'énergie du corps et de l'esprit et calmant l'esprit. Avec des millénaires de sagesse, nous répondons aux perplexités de la vie moderne, utilisant des protection exclusive pour protéger une vie harmonieuse et une fortune florissante.",
+    "videoTitle": "Cérémonie de cérémonie d'imprégnation par des porteurs du lignage seniors"
   },
   "footer": {
-    "wutaishan": "Mont Wutai · L'une des Cinq Montagnes Sacrées Bouddhistes · Site du Patrimoine Mondial de l'UNESCO",
-    "heritage": "Première des Quatre Grandes Montagnes Bouddhistes de Chine · Dojo de Manjushri Bodhisattva · Patrimoine Bouddhiste Millénaire"
+    "wutaishan": "Mont Wutai · L'une des Cinq Montagnes Sacrées Culturels · Site du Patrimoine Mondial de l'UNESCO",
+    "heritage": "Première des Quatre Grandes Montagnes Culturels de Chine · Dojo de Cultural Guardian · Patrimoine Culturel Millénaire"
   },
   "toast": {
     "success": "Succès",
@@ -483,11 +483,9 @@
     "inner_peace": "Paix Intérieure",
     "inner_peace_desc": "Calmer l'esprit, éliminer les soucis, atteindre la tranquillité intérieure",
     "blessed_title": "Artefacts Protecteurs Bénis",
-    "blessed_subtitle": "Rituels traditionnels, consécration par le maître, bijoux bénis sélectionnés pour protéger votre parcours de vie",
+    "blessed_subtitle": "Rituels traditionnels, cérémonie d'imprégnation par le maître, bijoux bénis sélectionnés pour protéger votre parcours de vie",
     "destiny_title": "Destin & Fortune",
     "destiny_subtitle": "Analyse BaZi, lecture du destin, décodage des secrets du destin",
-    "prayer_title": "Services de Prière",
-    "prayer_subtitle": "Offrande de lampes, service de prière, prières dévouées des maîtres du Mont Wutai",
     "fortune_title": "Visage, Paume & Feng Shui",
     "fortune_subtitle": "Sagesse ancienne de la lecture du visage et de la paume, révélant le destin de vie"
   },
@@ -591,7 +589,7 @@
     "subtitle": "Des maîtres du Mont Wutai prient pour vous, transmettent vos vœux et recherchent la paix",
     "lampService": "Offrande de Lampe",
     "lampDesc": "Allumez une lampe de prière pour vous au site sacré du Mont Wutai afin d’éclairer votre chemin et dissiper les ténèbres",
-    "lampFeature1": "Offrande de lampe au monastère du Bodhisattva Manjushri",
+    "lampFeature1": "Offrande de lampe au monastère du Cultural Guardian Cultural",
     "lampFeature2": "Chant et dédicace des maîtres pour l’achèvement du mérite",
     "lampFeature3": "Fourniture de photos de l’offrande de lampe et certificat de prière",
     "perLamp": "lampe",
@@ -624,7 +622,7 @@
     "requiredFields": "Veuillez remplir tous les champs obligatoires",
     "deliveryTime": "* Nous compléterons la prière sous 3 jours ouvrables et enverrons le certificat de prière ainsi que les photos par email",
     "trust1Title": "Site sacré du Mont Wutai",
-    "trust1Desc": "L'un des cinq grands sites sacrés bouddhistes au monde, monastère du Bodhisattva Manjushri",
+    "trust1Desc": "L'un des cinq grands sites sacrés culturels au monde, monastère du Cultural Guardian Cultural",
     "trust2Title": "Photos authentiques",
     "trust2Desc": "Chaque prière est photographiée pour garantir authenticité et crédibilité",
     "trust3Title": "Retour par email",
@@ -660,19 +658,19 @@
     }
   },
   "blessing": {
-    "title": "Processus de Consécration",
-    "subtitle": "Dirigé par les Moines Seniors du Mont Wutai, Tradition Ancienne",
+    "title": "Processus de Cérémonie d'Imprégnation",
+    "subtitle": "Dirigé par les Porteurs du Lignage Culturel du Mont Wutai, Tradition Ancienne",
     "step1": {
-      "title": "Purification à l'Eau Sacrée",
-      "description": "Purification avec de l'eau bénite, de l'encens d'agar, et des mantras anciens devant le Bouddha"
+      "title": "Purification Rituelle",
+      "description": "Purification avec de l'eau pure, de l'encens d'agar, et des mantras anciens au site du patrimoine"
     },
     "step2": {
-      "title": "Chant des Sutras & Bénédiction",
-      "description": "Les moines seniors chantent les sutras avec dévotion, le nom du Bouddha résonnant"
+      "title": "Chants & Infusion d'Énergie",
+      "description": "Les porteurs du lignage culturel chantent avec dévotion, l'énergie culturelle résonnant"
     },
     "step3": {
-      "title": "Empuissancement Sacré",
-      "description": "Réception de la lumière de sagesse du Bodhisattva Manjushri et de la bénédiction de richesse de Wu Ye"
+      "title": "Empuissancement Culturel",
+      "description": "Réception de l'énergie culturelle millénaire du Mont Wutai, conférant protection et prospérité"
     },
     "scrollHint": "Faites défiler pour en voir plus"
   },
