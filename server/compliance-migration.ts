@@ -91,6 +91,8 @@ const enReplacements: [string, string][] = [
   ["Consecration Ceremony", "Imbuing Ceremony"],
   ["Consecration", "Imbuing Ceremony"],
   ["consecration", "imbuing ceremony"],
+  ["Consecrating", "Imbuing"],
+  ["consecrating", "imbuing"],
   ["Consecrated", "Imbued"],
   ["consecrated", "imbued"],
   ["Consecrate", "Imbue"],
