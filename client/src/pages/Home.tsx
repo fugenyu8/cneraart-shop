@@ -74,6 +74,10 @@ export default function Home() {
               {t('topBar.login')}
             </a>
             <span>|</span>
+            <a href="https://vip.cneraart.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              ⭐ VIP
+            </a>
+            <span>|</span>
             <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               📝 {t('common.report')}
             </a>
@@ -144,6 +148,9 @@ export default function Home() {
           <div className="md:hidden border-t border-[#F5DEB3]/20 mt-2 pt-2 pb-1 space-y-2 text-xs">
             <a href={getLoginUrl()} className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
               {t('topBar.register')} / {t('topBar.login')}
+            </a>
+            <a href="https://vip.cneraart.com" target="_blank" rel="noopener noreferrer" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+              ⭐ VIP 专属服务
             </a>
             <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
               📝 {t('common.report')}
