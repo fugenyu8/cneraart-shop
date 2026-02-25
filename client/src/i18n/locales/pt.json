@@ -294,7 +294,7 @@
     "inner_peace": "Paz Interior",
     "inner_peace_desc": "Acalmar a mente, eliminar preocupações, alcançar tranquilidade interior",
     "blessed_title": "Artefatos Protetores Abençoados",
-    "blessed_subtitle": "Traditional rituals, master imbuing ceremony, curated imbued jewelry",
+    "blessed_subtitle": "Traditional ceremonies, master imbuing ceremony, curated imbued jewelry",
     "destiny_title": "Destino & Fortuna",
     "destiny_subtitle": "BaZi chart analysis, fortune reading, decoding destiny secrets",
     "fortune_title": "Leitura de Rosto, Palma & Feng Shui",
@@ -309,10 +309,10 @@
     "510061": {
       "name": "Análise de Numerologia + Cerimônia de Oração na Montanha Wutai",
       "description": "Relatório completo de numerologia + Serviço de oração substituta na Montanha Wutai (oferta de luzes/incenso), incluindo gravação de vídeo, entrega em 10-15 dias",
-      "shortDesc": "深度命理解析 + 五台山圣地祈愿,双重守护您的人生之路"
+      "shortDesc": "深度命理解析 + 五台山文化圣地祈愿,双重守护您的人生之路"
     },
-    "title": "开光饰品",
-    "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
+    "title": "启蕴饰品",
+    "subtitle": "精选启蕴饰品，传承千年智慧，守护您的人生旅程",
     "all_products": "全部产品",
     "search_placeholder": "搜索产品...",
     "select_category": "选择分类",
@@ -338,7 +338,7 @@
       "description": "Querido(a) amigo(a), você anseia por compreender a trajetória da sua vida e, ao mesmo tempo, infundir no seu futuro uma energia de bênção sagrada? Por apenas $79, você receberá um Relatório Completo de Análise de Energia da Numerologia e poderá desfrutar de uma cerimônia de bênção exclusiva realizada pela nossa equipe na Montanha Wutai, um local sagrado do budismo chinês! Iluminando o caminho à frente para você e seus entes queridos.\n\n**Seu pacote exclusivo inclui:**\n\n**Relatório de Análise Numerológica (entrega em 3-5 dias)**\n- Com base na sua data e hora de nascimento (Bazi), uma interpretação personalizada da sua estrutura numerológica e interações energéticas\n- Análise aprofundada dos seus Grandes Ciclos e Anos Correntes, ajudando você a aproveitar oportunidades cruciais e a estar ciente de precauções em 2026-2027\n- Abrange orientações multifacetadas em carreira, finanças, relacionamentos, saúde e muito mais\n- Integra a filosofia tradicional dos Cinco Elementos com aplicações na vida moderna, oferecendo conselhos práticos e viáveis\n\n**Serviço de Oração e Bênção na Montanha Wutai (entrega de vídeo em 10-15 dias)**\n- Você pode escolher **oferta de luz** (iluminando o caminho da sabedoria) ou **oferta de incenso** (orando por paz e eliminando obstáculos)\n- Nossa equipe irá pessoalmente aos sítio do patrimônios da Montanha Wutai, registrando todo o processo da cerimônia de bênção\n- O vídeo incluirá a recitação do seu nome, a oração dos seus desejos e o processo da cerimônia – garantindo transparência e sinceridade\n- Cada luz, cada vareta de incenso, é acesa exclusivamente para você\n\n**Como participar?**\n1. Clique no link de compra e selecione o pacote de bênção de $79\n2. Após a conclusão do pagamento, envie seu nome, informações de nascimento e preferência de bênção (oferta de luz ou incenso) para: seondo@cneraart.com\n   Exemplo: 12 de dezembro de 1978, 12:20 PM, Nova York, EUA\n3. Você receberá o “Relatório de Análise de Energia da Numerologia” por e-mail em 3-5 dias úteis\n4. O vídeo da cerimônia de bênção será enviado para o seu e-mail dentro de 10-15 dias após a conclusão da cerimônia\n\n**Por que escolher esta versão aprimorada?**\n- Não é apenas uma previsão – mas também infunde energia de bênção em sua vida\n- Sabedoria antiga + rituais sagrados, dupla proteção\n- Gravação de vídeo completa – sincera, confiável e verificável\n- Adequado para diversos desejos: sucesso na carreira, harmonia familiar, mudança de sorte, progresso acadêmico, etc.\n\nUm relatório, uma luz guia, um desejo, uma transformação.\n\nQue possamos de mãos dadas, abrir a porta do destino e acolher um futuro brilhante.\n\n**Nota:** O serviço de bênção é uma representação de oferendas religiosas. Respeitamos todas as crenças – a sinceridade é o mais importante. Este serviço segue rigorosamente as interpretações da cultura tradicional, fornecendo apenas orientação direcional. Todos os resultados são apenas para referência."
     },
     "all_title": "Todos os Produtos",
-    "all_subtitle": "Curated imbued jewelry and spiritual services"
+    "all_subtitle": "Curated imbued jewelry and cultural services"
   },
   "common": {
     "site_name": "Cneraart",
@@ -504,7 +504,7 @@
   },
   "services": {
     "title": "Nossos Serviços",
-    "subtitle": "Sabedoria Oriental Antiga · Orientação Espiritual Moderna",
+    "subtitle": "Sabedoria Oriental Antiga · Orientação Ecultural Moderna",
     "blessed": {
       "title": "Itens Sagrados Consagrados",
       "description": "Instrumentos sagrados do dharma consagrados por portadores da linhagem seniores do Monte Wutai, protegendo sua jornada de vida",
@@ -536,7 +536,7 @@
     "subtitle": "Conduzido por Monges Seniores do Monte Wutai, Tradição Antiga",
     "step1": {
       "title": "Purificação com Água Sagrada",
-      "description": "Purificação com água pura, incenso de agarwood e mantras antigos no sítio do patrimônio"
+      "description": "Purificação com água pura, incenso de agarwood e heritage chants antigos no sítio do patrimônio"
     },
     "step2": {
       "title": "Cânticos e Infusão de Energia",
@@ -551,31 +551,31 @@
   "home": {
     "hero_title": "古老东方的祝福",
     "hero_subtitle": "守护您的人生旅程·传承千年智慧",
-    "cta_products": "探索开光饰品",
+    "cta_products": "探索启蕴饰品",
     "cta_fortune": "前约命理分析",
-    "featured_title": "精选开光饰品",
-    "featured_subtitle": "每一件都经过五台山开光,承载守护之力",
-    "blessing_title": "五台山圣地开光法会",
-    "blessing_subtitle": "由五台山文化传承人主持，文殊菩萨智慧加持、五爷庙财神庇佑，古法传承千年灵验无比",
+    "featured_title": "精选启蕴饰品",
+    "featured_subtitle": "每一件都经过五台山启蕴,承载守护之力",
+    "blessing_title": "五台山文化圣地启蕴法会",
+    "blessing_subtitle": "由五台山文化传承人主持，文殊智慧智慧启蕴、五爷庙文化庇佑，古法传承千年灵韵无比",
     "blessing_step1": "净水清净仪轨",
     "blessing_step1_desc": "Purificação com água pura, incenso de agarwood e cânticos antigos no sítio do patrimônio, acolhendo energia cultural",
-    "blessing_step2": "庄严诵经法会",
+    "blessing_step2": "庄严传承吟诵法会",
     "blessing_step2_desc": "Portadores da linhagem cultural cantam com devoção, sons antigos ressoam, poder cultural ilimitado",
-    "blessing_step3": "神圣能量灌顶",
-    "blessing_step3_desc": "承文殊菩萨智慧之光、五爷财神富贵之力，赋予守护与祥瑞",
+    "blessing_step3": "庄严能量灌顶",
+    "blessing_step3_desc": "承文殊智慧智慧之光、五爷财神富贵之力，赋予守护与祥瑞",
     "blessing_step4": "证书认证",
-    "blessing_step4_desc": "颁发开光证书",
+    "blessing_step4_desc": "颁发启蕴证书",
     "testimonials_title": "客户见证",
     "testimonials_subtitle": "全球数千位客户获得祝福与守护",
     "footer_about": "关于我们",
-    "footer_about_desc": "源・华渡致力于传播东方文化,提供正统开光饰品和命理服务。",
+    "footer_about_desc": "源・华渡致力于传播东方文化,提供正统启蕴饰品和命理服务。",
     "footer_links": "快速链接",
     "footer_contact": "联系我们",
     "footer_copyright": "版权所有",
-    "services_title": "我们的神圣服务",
-    "services_subtitle": "古老东方智慧 · 现代灵性指导",
-    "service_blessed_items": "开光法物",
-    "service_blessed_items_desc": "经五台山文化传承人开光的神圣法器",
+    "services_title": "我们的庄严服务",
+    "services_subtitle": "古老东方智慧 · 现代文化指导",
+    "service_blessed_items": "启蕴信物",
+    "service_blessed_items_desc": "经五台山文化传承人启蕴的庄严信物",
     "service_fortune": "命理运势分析",
     "service_fortune_desc": "中国古老智慧,解读人生运势与命运指引",
     "service_palmistry": "手相面相分析",

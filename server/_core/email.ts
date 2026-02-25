@@ -131,8 +131,8 @@ export async function sendReportCompletionEmail(
 <body>
   <div class="container">
     <div class="header">
-      <div class="logo">源・华渡 - 东方灵性商城</div>
-      <p style="color: #666; margin: 0;">Wutai Mountain Spiritual Heritage</p>
+      <div class="logo">源・华渡 - 东方文化商城</div>
+      <p style="color: #666; margin: 0;">Wutai Mountain Cultural Heritage</p>
     </div>
 
     <h1>Your ${serviceName} Report is Ready!</h1>
@@ -140,14 +140,14 @@ export async function sendReportCompletionEmail(
     <div class="content">
       <p>Dear ${userName},</p>
 
-      <p>We are pleased to inform you that your ${serviceName} report has been completed by our master practitioners.</p>
+      <p>We are pleased to inform you that your ${serviceName} report has been completed by our cultural practitioners.</p>
 
       <div class="highlight">
         <p style="margin: 0;"><strong>Your personalized report includes:</strong></p>
         <ul style="margin: 10px 0 0 0;">
           <li>Detailed analysis based on traditional wisdom</li>
           <li>Personalized insights and recommendations</li>
-          <li>Guidance for your spiritual journey</li>
+          <li>Guidance for your cultural journey</li>
         </ul>
       </div>
 
@@ -179,14 +179,14 @@ Your ${serviceName} Report is Ready!
 
 Dear ${userName},
 
-We are pleased to inform you that your ${serviceName} report has been completed by our master practitioners.
+We are pleased to inform you that your ${serviceName} report has been completed by our cultural practitioners.
 
 View your report here: ${reportUrl}
 
 Your report includes:
 - Detailed analysis based on traditional wisdom
 - Personalized insights and recommendations
-- Guidance for your spiritual journey
+- Guidance for your cultural journey
 
 If you have any questions, please contact us.
 
@@ -304,8 +304,8 @@ export async function sendOrderStatusEmail(
 <body>
   <div class="container">
     <div class="header">
-      <div class="logo">源・华渡 - 东方灵性商城</div>
-      <p style="color: #666; margin: 0;">Wutai Mountain Spiritual Heritage</p>
+      <div class="logo">源・华渡 - 东方文化商城</div>
+      <p style="color: #666; margin: 0;">Wutai Mountain Cultural Heritage</p>
     </div>
 
     <h1>Order Status Update</h1>

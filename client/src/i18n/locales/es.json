@@ -14,7 +14,7 @@
   "serviceCards": {
     "blessedItems": {
       "title": "Artefactos protectores bendecidos",
-      "subtitle": "Rituales tradicionales, ceremonia de imbuición del maestro"
+      "subtitle": "Ceremonyes tradicionales, ceremonia de imbuición del maestro"
     },
     "destiny": {
       "title": "Destino y fortuna",
@@ -47,9 +47,9 @@
     "featured_title": "Objetos bendecidos destacados",
     "featured_subtitle": "Cada pieza está bendecida en el monte Wutai, portando el poder de protección",
     "blessing_title": "Ceremonia de ceremonia cultural sagrada en el monte Wutai",
-    "blessing_subtitle": "Rituales antiguos realizados por portadores del linaje cultural en el monte Wutai - Patrimonio Cultural del Monte Wutai, sitio del patrimonio de Wuye y el Dios de la riqueza",
-    "blessing_step1": "Purificación ritual",
-    "blessing_step1_desc": "Purificado con incienso bendecido, agua pura y mantras antiguos en el sitio del patrimonio",
+    "blessing_subtitle": "Ceremonyes antiguos realizados por portadores del linaje cultural en el monte Wutai - Patrimonio Cultural del Monte Wutai, sitio del patrimonio de Wuye y el Dios de la riqueza",
+    "blessing_step1": "Purificación ceremony",
+    "blessing_step1_desc": "Purificado con incienso bendecido, agua pura y heritage chants antiguos en el sitio del patrimonio",
     "blessing_step2": "Ceremonia solemne de cánticos",
     "blessing_step2_desc": "Los portadores del linaje cultural cantan con devoción con profunda devoción, llenando el sitio de energía cultural",
     "blessing_step3": "Ceremonia de Imbuición de energía divina",
@@ -64,7 +64,7 @@
     "footer_contact": "Contáctenos",
     "footer_copyright": "Todos los derechos reservados",
     "services_title": "Nuestros servicios sagrados",
-    "services_subtitle": "Sabiduría oriental antigua · Guía espiritual moderna",
+    "services_subtitle": "Sabiduría oriental antigua · Guía ecultural moderna",
     "service_blessed_items": "Artefactos bendecidos",
     "service_blessed_items_desc": "Tokens guardianes imbuidos por portadores del linaje cultural del monte Wutai",
     "service_fortune": "Análisis del destino y la fortuna",
@@ -74,7 +74,7 @@
     "service_fengshui": "Feng Shui del hogar",
     "service_fengshui_desc": "Armoniza tu espacio vital con la energía cósmica",
     "service_blessing": "Servicios de oración",
-    "service_blessing_desc": "Ofrendas de lámparas, incienso y rituales de ceremonia cultural",
+    "service_blessing_desc": "Ofrendas de lámparas, incienso y ceremonyes de ceremonia cultural",
     "service_fortune_collection": "Servicios de adivinación",
     "service_fortune_collection_desc": "Sabiduría china antigua para el camino de vida y guía de la fortuna",
     "service_fortune_short": "Análisis del destino",
@@ -88,11 +88,11 @@
       "shortDesc": "解锁古老东方智慧,探索您的命理能量密码"
     },
     "510061": {
-      "name": "Análisis de Numerología + Ritual de Bendición en Wutaishan",
+      "name": "Análisis de Numerología + Ceremony de Bendición en Wutaishan",
       "description": "Informe completo de numerología + Servicio de oración en Wutaishan (ofrenda de lámparas/incienso), incluye grabación de video, entrega en 10-15 días",
-      "shortDesc": "深度命理解析 + 五台山圣地祈愿,双重守护您的人生之路"
+      "shortDesc": "深度命理解析 + 五台山文化圣地祈愿,双重守护您的人生之路"
     },
-    "title": "开光饰品",
+    "title": "启蕴饰品",
     "search_placeholder": "搜索产品...",
     "filter_all": "Todas las categorías",
     "sort_label": "Ordenar por",
@@ -107,7 +107,7 @@
     "out_of_stock": "Agotado",
     "in_stock": "En stock",
     "only_left": "Solo quedan {{count}}",
-    "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
+    "subtitle": "精选启蕴饰品，传承千年智慧，守护您的人生旅程",
     "all_products": "全部产品",
     "select_category": "选择分类",
     "all_categories": "全部分类",
@@ -126,10 +126,10 @@
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Análisis del Destino + Ceremonia de Bendición de la Montaña Wutai",
-      "description": "Estimado amigo, ¿anhela comprender la trayectoria de su vida y, al mismo tiempo, infundir energía de ceremonia cultural divina en su futuro? ¡Por solo $79, recibirá un \"Informe Completo de Análisis de Energía Natal\" y, además, podrá disfrutar de una exclusiva ceremonia cultural realizada por nuestro equipo en el sitio de patrimonio cultural de China, la Montaña Wutai! Iluminando el camino a seguir para usted y sus seres queridos.\n\n**Su paquete exclusivo incluye:**\n\n**Informe de Análisis Natal (entrega en 3-5 días)**\n- Interpretación personalizada de su estructura natal e interacción energética basada en sus ocho caracteres natales (Bazi)\n- Análisis profundo de sus períodos de suerte y años de tránsito, ayudándole a aprovechar oportunidades clave y precauciones para 2026-2027\n- Guía multidimensional que abarca carrera, fortuna, relaciones, salud y más\n- Integración de la filosofía tradicional de los Cinco Elementos con aplicaciones modernas, ofreciendo consejos prácticos y viables\n\n**Servicio de Ceremonia Cultural en la Montaña Wutai (entrega de video en 10-15 días)**\n- Puede elegir entre **ofrenda de lámparas** (iluminando el camino de la sabiduría) o **quemar incienso** (orando por la paz y eliminando obstáculos)\n- Nuestro equipo viajará personalmente a los sitios del patrimonio de la Montaña Wutai, documentando toda la ceremonia cultural\n- El video incluirá la recitación de su nombre, oraciones por sus deseos y el proceso de la ceremonia, asegurando transparencia y sinceridad\n- Cada lámpara, cada varilla de incienso, se encenderá exclusivamente para usted\n\n**¿Cómo participar?**\n1. Haga clic en el enlace de compra y seleccione el paquete de ceremonia cultural de $79\n2. Una vez completado el pago, envíe su nombre, información de nacimiento y preferencia de ceremonia cultural (ofrenda de lámparas o quemar incienso) a: seondo@cneraart.com\n   Ejemplo: 12 de diciembre de 1978, 12:20 PM, Nueva York, EE. UU.\n3. Recibirá el \"Informe de Análisis de Energía Natal\" por correo electrónico en un plazo de 3 a 5 días hábiles\n4. El video de la ceremonia cultural se enviará a su correo electrónico dentro de los 10 a 15 días posteriores a la finalización de la ceremonia cultural\n\n**¿Por qué elegir esta versión mejorada?**\n- No es solo una predicción, sino que también infunde energía de ceremonia cultural en su vida\n- Sabiduría antigua + ritual sagrado, doble protección\n- Grabación de video completa: sincera, creíble y transparente\n- Aplicable a una variedad de deseos: éxito profesional, armonía familiar, cambio de suerte, eliminación de obstáculos, progreso académico, etc.\n\nUn informe, una lámpara brillante, un deseo, una transformación.\n\nQue juntos abramos la puerta del destino y demos la bienvenida a un futuro brillante.\n\n**Nota:** El servicio de ceremonia cultural es una experiencia cultural tradicional. Respetamos todas las creencias; la sinceridad es lo más importante. Este servicio sigue estrictamente las interpretaciones de la cultura tradicional y solo proporciona orientación. Todos los resultados son solo para referencia."
+      "description": "Estimado amigo, ¿anhela comprender la trayectoria de su vida y, al mismo tiempo, infundir energía de ceremonia cultural divina en su futuro? ¡Por solo $79, recibirá un \"Informe Completo de Análisis de Energía Natal\" y, además, podrá disfrutar de una exclusiva ceremonia cultural realizada por nuestro equipo en el sitio de patrimonio cultural de China, la Montaña Wutai! Iluminando el camino a seguir para usted y sus seres queridos.\n\n**Su paquete exclusivo incluye:**\n\n**Informe de Análisis Natal (entrega en 3-5 días)**\n- Interpretación personalizada de su estructura natal e interacción energética basada en sus ocho caracteres natales (Bazi)\n- Análisis profundo de sus períodos de suerte y años de tránsito, ayudándole a aprovechar oportunidades clave y precauciones para 2026-2027\n- Guía multidimensional que abarca carrera, fortuna, relaciones, salud y más\n- Integración de la filosofía tradicional de los Cinco Elementos con aplicaciones modernas, ofreciendo consejos prácticos y viables\n\n**Servicio de Ceremonia Cultural en la Montaña Wutai (entrega de video en 10-15 días)**\n- Puede elegir entre **ofrenda de lámparas** (iluminando el camino de la sabiduría) o **quemar incienso** (orando por la paz y eliminando obstáculos)\n- Nuestro equipo viajará personalmente a los sitios del patrimonio de la Montaña Wutai, documentando toda la ceremonia cultural\n- El video incluirá la recitación de su nombre, oraciones por sus deseos y el proceso de la ceremonia, asegurando transparencia y sinceridad\n- Cada lámpara, cada varilla de incienso, se encenderá exclusivamente para usted\n\n**¿Cómo participar?**\n1. Haga clic en el enlace de compra y seleccione el paquete de ceremonia cultural de $79\n2. Una vez completado el pago, envíe su nombre, información de nacimiento y preferencia de ceremonia cultural (ofrenda de lámparas o quemar incienso) a: seondo@cneraart.com\n   Ejemplo: 12 de diciembre de 1978, 12:20 PM, Nueva York, EE. UU.\n3. Recibirá el \"Informe de Análisis de Energía Natal\" por correo electrónico en un plazo de 3 a 5 días hábiles\n4. El video de la ceremonia cultural se enviará a su correo electrónico dentro de los 10 a 15 días posteriores a la finalización de la ceremonia cultural\n\n**¿Por qué elegir esta versión mejorada?**\n- No es solo una predicción, sino que también infunde energía de ceremonia cultural en su vida\n- Sabiduría antigua + ceremony sagrado, doble protección\n- Grabación de video completa: sincera, creíble y transparente\n- Aplicable a una variedad de deseos: éxito profesional, armonía familiar, cambio de suerte, eliminación de obstáculos, progreso académico, etc.\n\nUn informe, una lámpara brillante, un deseo, una transformación.\n\nQue juntos abramos la puerta del destino y demos la bienvenida a un futuro brillante.\n\n**Nota:** El servicio de ceremonia cultural es una experiencia cultural tradicional. Respetamos todas las creencias; la sinceridad es lo más importante. Este servicio sigue estrictamente las interpretaciones de la cultura tradicional y solo proporciona orientación. Todos los resultados son solo para referencia."
     },
     "all_title": "Todos los Productos",
-    "all_subtitle": "Joyería bendecida y servicios espirituales seleccionados"
+    "all_subtitle": "Joyería bendecida y servicios eculturales seleccionados"
   },
   "product_detail": {
     "back": "Volver a Productos",
@@ -411,7 +411,7 @@
   "aboutUs": {
     "title": "SOBRE NOSOTROS",
     "paragraph1": "El Maestro del Monte Wutai desbloquea personalmente milenios de sabiduría oriental antigua, fundamentada en el I Ching, cartas de nacimiento, Zi Wei Dou Shu, I Ching de la Flor de Ciruelo, Versos de la Llave Dorada y los Grandes Seis Yao. Integrando los ciclos de generación y restricción de los Cinco Elementos con la astrología occidental, analizamos profundamente carrera, riqueza, salud y fortunas interpersonales—revelando oportunidades, advirtiendo de obstáculos—para ayudarte a navegar las corrientes de la vida y ampliar tus horizontes.",
-    "paragraph2": "Seguimos rituales tradicionales como la ceremonia de imbuición y el cánticos, solemnes y apropiados, infundiendo cada objeto imbuido con aspiración pura, armonizando la energía del cuerpo y la mente y calmando el espíritu. Con milenios de sabiduría, respondemos a las perplejidades de la vida moderna, usando protección exclusiva para proteger una vida armoniosa y una fortuna floreciente.",
+    "paragraph2": "Seguimos ceremonyes tradicionales como la ceremonia de imbuición y el cánticos, solemnes y apropiados, infundiendo cada objeto imbuido con aspiración pura, armonizando la energía del cuerpo y la mente y calmando el espíritu. Con milenios de sabiduría, respondemos a las perplejidades de la vida moderna, usando protección exclusiva para proteger una vida armoniosa y una fortuna floreciente.",
     "videoTitle": "Ceremonia de Ceremonia de Imbuición por Monjes Senior"
   },
   "footer": {
@@ -483,7 +483,7 @@
     "inner_peace": "Paz Interior",
     "inner_peace_desc": "Calmar la mente, eliminar preocupaciones, lograr tranquilidad interior",
     "blessed_title": "Artefactos Protectores Bendecidos",
-    "blessed_subtitle": "Rituales tradicionales, ceremonia de imbuición del maestro, joyería bendecida seleccionada",
+    "blessed_subtitle": "Ceremonyes tradicionales, ceremonia de imbuición del maestro, joyería bendecida seleccionada",
     "destiny_title": "Destino y Fortuna",
     "destiny_subtitle": "Análisis BaZi, lectura del destino, decodificación de los secretos del destino",
     "fortune_title": "Rostro, Palma y Feng Shui",
@@ -630,7 +630,7 @@
   },
   "services": {
     "title": "Nuestros Servicios",
-    "subtitle": "Sabiduría Ancestral Oriental · Guía Espiritual Moderna",
+    "subtitle": "Sabiduría Ancestral Oriental · Guía Ecultural Moderna",
     "blessed": {
       "title": "Objetos Sagrados Consagrados",
       "description": "Instrumentos sagrados del dharma consagrados por portadores del linaje senior del Monte Wutai, protegiendo su camino de vida",
@@ -661,8 +661,8 @@
     "title": "Proceso de Ceremonia de Imbuición",
     "subtitle": "Dirigido por Portadores del Linaje Cultural del Monte Wutai, Tradición Ancestral",
     "step1": {
-      "title": "Purificación Ritual",
-      "description": "Purificación con agua pura, incienso de agarwood y antiguos mantras en el sitio del patrimonio"
+      "title": "Purificación Ceremony",
+      "description": "Purificación con agua pura, incienso de agarwood y antiguos heritage chants en el sitio del patrimonio"
     },
     "step2": {
       "title": "Cánticos e Infusión de Energía",

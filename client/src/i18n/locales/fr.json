@@ -49,10 +49,10 @@
     "blessing_title": "Cérémonie de bénédiction sacrée au mont Wutai",
     "blessing_subtitle": "Rituels anciens effectués par des porteurs du lignage culturel au mont Wutai sacré - Demeure de Manjusri Cultural Guardian, heritage site de Lord Wuye et du Dieu de la richesse",
     "blessing_step1": "Purification rituelle",
-    "blessing_step1_desc": "Purifié avec de l'encens béni, de l'eau sainte et des mantras anciens à l'autel du heritage site",
+    "blessing_step1_desc": "Purifié avec de l'encens béni, de l'eau sainte et des heritage chants anciens à l'autel du heritage site",
     "blessing_step2": "Cérémonie solennelle de chants",
-    "blessing_step2_desc": "Les porteurs du lignage culturel chantent avec dévotion avec une profonde dévotion, remplissant le heritage site d'énergie divine",
-    "blessing_step3": "Cérémonie d'Imprégnation d'énergie divine",
+    "blessing_step2_desc": "Les porteurs du lignage culturel chantent avec dévotion avec une profonde dévotion, remplissant le heritage site d'énergie heritage",
+    "blessing_step3": "Cérémonie d'Imprégnation d'énergie heritage",
     "blessing_step3_desc": "Béni par la sagesse de Manjusri Cultural Guardian et le pouvoir de prospérité de Lord Wuye",
     "blessing_step4": "Certification",
     "blessing_step4_desc": "Délivrance du certificat de bénédiction",
@@ -90,9 +90,9 @@
     "510061": {
       "name": "Analyse de la numérologie + Cérémonie de prière et de bénédiction du Mont Wutai",
       "description": "Rapport complet d'analyse numérologique + Service de prière et de bénédiction à distance au Mont Wutai (offrande de lampes/encens), incluant un enregistrement vidéo, livraison sous 10-15 jours.",
-      "shortDesc": "深度命理解析 + 五台山圣地祈愿,双重守护您的人生之路"
+      "shortDesc": "深度命理解析 + 五台山文化圣地祈愿,双重守护您的人生之路"
     },
-    "title": "开光饰品",
+    "title": "启蕴饰品",
     "search_placeholder": "搜索产品...",
     "filter_all": "Toutes les catégories",
     "sort_label": "Trier par",
@@ -107,7 +107,7 @@
     "out_of_stock": "Rupture de stock",
     "in_stock": "En stock",
     "only_left": "Plus que {{count}} restant(s)",
-    "subtitle": "精选开光饰品，传承千年智慧，守护您的人生旅程",
+    "subtitle": "精选启蕴饰品，传承千年智慧，守护您的人生旅程",
     "all_products": "全部产品",
     "select_category": "选择分类",
     "all_categories": "全部分类",
@@ -662,7 +662,7 @@
     "subtitle": "Dirigé par les Porteurs du Lignage Culturel du Mont Wutai, Tradition Ancienne",
     "step1": {
       "title": "Purification Rituelle",
-      "description": "Purification avec de l'eau pure, de l'encens d'agar, et des mantras anciens au site du patrimoine"
+      "description": "Purification avec de l'eau pure, de l'encens d'agar, et des heritage chants anciens au site du patrimoine"
     },
     "step2": {
       "title": "Chants & Infusion d'Énergie",

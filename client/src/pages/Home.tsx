@@ -210,7 +210,7 @@ export default function Home() {
       <section className="relative py-10 md:py-20 px-3 md:px-4 bg-gradient-to-b from-gray-50 to-white">
         {/* 五台山背景图 */}
         <div className="absolute inset-0 opacity-[0.38]">
-          <img src="/services/wutai-bg.jpg" alt="Wutai Temple" className="w-full h-full object-cover" loading="lazy" />
+          <img src="/services/wutai-bg.jpg" alt="Wutai Heritage Site" className="w-full h-full object-cover" loading="lazy" />
         </div>
         <div className="max-w-4xl mx-auto">
           {/* 标题 */}

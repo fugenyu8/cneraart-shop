@@ -23,7 +23,7 @@
   "serviceCards": {
     "blessedItems": {
       "title": "Imbued Guardian Tokens",
-      "subtitle": "Traditional Rituals, Cultural Heritage"
+      "subtitle": "Traditional Ceremonies, Cultural Heritage"
     },
     "destiny": {
       "title": "Destiny & Fortune",
@@ -42,9 +42,9 @@
     "featured_title": "Featured Imbued Guardian Tokens",
     "featured_subtitle": "Each piece undergoes the Imbuing Ceremony at Mount Wutai, carrying the power of cultural heritage",
     "blessing_title": "Imbuing Ceremony at Mount Wutai Cultural Heritage Site",
-    "blessing_subtitle": "Ancient rituals performed by cultural lineage holders at the sacred Mount Wutai, a millennium cultural heritage site of Eastern wisdom",
-    "blessing_step1": "Purification Ritual",
-    "blessing_step1_desc": "Cleansed with pure water, agarwood incense, and ancient rituals at the heritage site",
+    "blessing_subtitle": "Ancient ceremonies performed by cultural lineage holders at the cultural Mount Wutai, a millennium cultural heritage site of Eastern wisdom",
+    "blessing_step1": "Purification Ceremony",
+    "blessing_step1_desc": "Cleansed with pure water, agarwood incense, and ancient ceremonies at the heritage site",
     "blessing_step2": "Chanting & Energy Infusion Ceremony",
     "blessing_step2_desc": "Cultural lineage holders chant with deep devotion, infusing millennium cultural energy",
     "blessing_step3": "Cultural Energy Empowerment",
@@ -52,7 +52,7 @@
     "blessing_step4": "Certification",
     "blessing_step4_desc": "Issue Imbuing Ceremony certificate",
     "testimonials_title": "Customer Testimonials",
-    "testimonials_subtitle": "Thousands of customers worldwide have received protection and blessings",
+    "testimonials_subtitle": "Thousands of customers worldwide have received protection and imbuings",
     "footer_about": "About Us",
     "footer_about_desc": "Yuan·Huadu is dedicated to spreading Eastern culture and providing authentic imbued guardian tokens and cultural services.",
     "footer_links": "Quick Links",
@@ -121,7 +121,7 @@
     },
     "destiny-analysis-wutai-mountain-blessing-ceremony": {
       "name": "Destiny Analysis + Wutai Mountain Cultural Ceremony",
-      "description": "Dear friend, do you wish to understand your life trajectory while infusing your future with positive cultural energy? For just $79, you'll receive a complete Numerology Energy Analysis Report, plus our team will conduct an exclusive cultural wish ceremony at China's cultural heritage site—Mount Wutai! Lighting the path forward for you and your loved ones.\n\n**Your Exclusive Package Includes:**\n\n**Numerology Analysis Report (Delivered within 3-5 days)**\n- Personalized interpretation of your numerology structure and energy interactions based on your birth data\n- In-depth analysis of your major life cycles, helping you seize key opportunities in 2026-2027\n- Covering career, wealth, relationships, health, and other dimensions\n- Blending traditional Five Elements philosophy with modern life applications for practical advice\n\n**Wutai Mountain Cultural Wish Ceremony (Video delivered within 10-15 days)**\n- Choose **Lamp Lighting** (illuminating the path of wisdom) or **Incense Offering** (wishing for peace, removing obstacles)\n- Our team will visit the Mount Wutai cultural heritage site and record the entire ceremony\n- The video will include your name recitation, wish prayers, and the ceremony process—ensuring transparency and sincerity\n- Every lamp and every incense stick is lit exclusively for you\n\n**How to Participate?**\n1. Click the purchase link and select the $79 package\n2. After payment, send your name, birth information, and ceremony preference (lamp or incense) to: seondo@cneraart.com\n   Example: December 12, 1978, 12:20 PM, New York, USA\n3. You'll receive the Numerology Energy Analysis Report via email within 3-5 business days\n4. The ceremony video will be sent to your email within 10-15 days after the ceremony\n\n**Why Choose This Upgraded Version?**\n- Not just prediction—infuse your life with positive cultural energy\n- Ancient wisdom + cultural ceremony, dual protection\n- Full video recording—sincere, credible, and transparent\n- Suitable for various wishes: career success, family harmony, fortune improvement, academic progress, etc.\n\nOne report, one lamp, one wish, one transformation.\n\nMay we together open the door of destiny and welcome a bright future.\n\n**Note:** This service is a traditional cultural experience. We respect all cultural beliefs—sincerity matters most. This service strictly follows traditional cultural interpretation and provides directional guidance only. All results are for reference only."
+      "description": "Dear friend, do you wish to understand your life trajectory while infusing your future with positive cultural energy? For just $79, you'll receive a complete Numerology Energy Analysis Report, plus our team will conduct an exclusive cultural wish ceremony at China's cultural heritage site—Mount Wutai! Lighting the path forward for you and your loved ones.\n\n**Your Exclusive Package Includes:**\n\n**Numerology Analysis Report (Delivered within 3-5 days)**\n- Personalized interpretation of your numerology structure and energy interactions based on your birth data\n- In-depth analysis of your major life cycles, helping you seize key opportunities in 2026-2027\n- Covering career, wealth, relationships, health, and other dimensions\n- Blending traditional Five Elements philosophy with modern life applications for practical advice\n\n**Wutai Mountain Cultural Wish Ceremony (Video delivered within 10-15 days)**\n- Choose **Lamp Lighting** (illuminating the path of wisdom) or **Incense Offering** (wishing for peace, removing obstacles)\n- Our team will visit the Mount Wutai cultural heritage site and record the entire ceremony\n- The video will include your name recitation, wish cultural intentions, and the ceremony process—ensuring transparency and sincerity\n- Every lamp and every incense stick is lit exclusively for you\n\n**How to Participate?**\n1. Click the purchase link and select the $79 package\n2. After payment, send your name, birth information, and ceremony preference (lamp or incense) to: seondo@cneraart.com\n   Example: December 12, 1978, 12:20 PM, New York, USA\n3. You'll receive the Numerology Energy Analysis Report via email within 3-5 business days\n4. The ceremony video will be sent to your email within 10-15 days after the ceremony\n\n**Why Choose This Upgraded Version?**\n- Not just prediction—infuse your life with positive cultural energy\n- Ancient wisdom + cultural ceremony, dual protection\n- Full video recording—sincere, credible, and transparent\n- Suitable for various wishes: career success, family harmony, fortune improvement, academic progress, etc.\n\nOne report, one lamp, one wish, one transformation.\n\nMay we together open the door of destiny and welcome a bright future.\n\n**Note:** This service is a traditional cultural experience. We respect all cultural beliefs—sincerity matters most. This service strictly follows traditional cultural interpretation and provides directional guidance only. All results are for reference only."
     }
   },
   "product_detail": {
@@ -153,7 +153,7 @@
     "in_stock": "In Stock",
     "only_left": "Only {{count}} left",
     "out_of_stock": "Out of Stock",
-    "blessing_default": "Each item has undergone the authentic Imbuing Ceremony at the Mount Wutai cultural heritage site, conducted by cultural lineage holders following ancient rituals, infusing millennium cultural energy. The Imbuing Ceremony consists of three stages: Purification, Chanting & Energy Infusion, and Cultural Empowerment, ensuring each guardian token carries the unique cultural heritage and protective power of Mount Wutai.",
+    "blessing_default": "Each item has undergone the authentic Imbuing Ceremony at the Mount Wutai cultural heritage site, conducted by cultural lineage holders following ancient ceremonies, infusing millennium cultural energy. The Imbuing Ceremony consists of three stages: Purification, Chanting & Energy Infusion, and Cultural Empowerment, ensuring each guardian token carries the unique cultural heritage and protective power of Mount Wutai.",
     "service_guide": {
       "title": "📋 Service Purchase Process",
       "step1": "After payment, you will receive an order confirmation email",
@@ -404,7 +404,7 @@
   "aboutUs": {
     "title": "ABOUT US",
     "paragraph1": "Cultural lineage holders of Mount Wutai personally unlock millennia of ancient Eastern wisdom, grounded in the I Ching, birth charts, Zi Wei Dou Shu, Plum Blossom I Ching, Golden Key Verses, and the Great Six Yao. Integrating the Five Elements' cycles of generation and restraint with Western astrology, we deeply analyze career, wealth, health, and interpersonal fortunes—revealing opportunities, warning of obstacles—to help you navigate life's currents and broaden your horizons.",
-    "paragraph2": "We follow traditional rituals such as the Imbuing Ceremony and ancient chanting, solemn and proper, infusing each guardian token with pure aspiration, harmonizing body and mind energy, and calming the spirit. With millennia of wisdom, we answer modern life's perplexities, using exclusive protection to ensure a smooth life and flourishing fortune.",
+    "paragraph2": "We follow traditional ceremonies such as the Imbuing Ceremony and ancient chanting, solemn and proper, infusing each guardian token with pure aspiration, harmonizing body and mind energy, and calming the spirit. With millennia of wisdom, we answer modern life's perplexities, using exclusive protection to ensure a smooth life and flourishing fortune.",
     "videoTitle": "Imbuing Ceremony Recording"
   },
   "footer": {
@@ -476,7 +476,7 @@
     "inner_peace": "Inner Peace",
     "inner_peace_desc": "Calm the mind, eliminate worries, achieve inner tranquility",
     "blessed_title": "Imbued Guardian Tokens",
-    "blessed_subtitle": "Traditional rituals, cultural heritage, curated imbued guardian jewelry to protect your life journey",
+    "blessed_subtitle": "Traditional ceremonies, cultural heritage, curated imbued guardian jewelry to protect your life journey",
     "destiny_title": "Destiny & Fortune",
     "destiny_subtitle": "BaZi chart analysis, fortune reading, decoding the secrets of destiny",
     "fortune_title": "Face, Palm & Feng Shui",
@@ -501,7 +501,7 @@
     "蛇": "Snake",
     "马": "Horse",
     "羊": "Goat",
-    "猴": "Monkey",
+    "猴": "Lineage Holderey",
     "鸡": "Rooster",
     "狗": "Dog",
     "猪": "Pig"
@@ -672,8 +672,8 @@
     "title": "Imbuing Ceremony Process",
     "subtitle": "Led by Mount Wutai Cultural Lineage Holders, Ancient Tradition",
     "step1": {
-      "title": "Purification Ritual",
-      "description": "Purification with pure water, agarwood incense, and ancient rituals at the heritage site"
+      "title": "Purification Ceremony",
+      "description": "Purification with pure water, agarwood incense, and ancient ceremonies at the heritage site"
     },
     "step2": {
       "title": "Chanting & Energy Infusion",
