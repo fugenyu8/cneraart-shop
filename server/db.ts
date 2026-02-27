@@ -558,7 +558,7 @@ export async function createOrder(orderData: {
       couponId: orderData.couponId,
       userId: orderData.userId,
       orderId: Number(orderId),
-      discountAmount: orderData.discount.toString(),
+      discountAmount: orderData.discount ? orderData.discount.toString() : '0',
     });
     // 增加优惠券已使用次数
     await db.update(coupons)

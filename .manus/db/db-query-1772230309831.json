@@ -1,0 +1,76 @@
+{
+  "query": "SELECT id, name, slug, description FROM categories ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, slug, description FROM categories ORDER BY id;",
+  "rows": [
+    {
+      "id": "1",
+      "name": "命理服务",
+      "slug": "fortune-services",
+      "description": "专业的面相、手相、风水分析服务"
+    },
+    {
+      "id": "6",
+      "name": "生肖守护",
+      "slug": "zodiac-guardian",
+      "description": "十二生肖守护吊坠，五台山古法开光加持，守护您的本命运势"
+    },
+    {
+      "id": "7",
+      "name": "星座守护",
+      "slug": "constellation-guardian",
+      "description": "十二星座守护吊坠，融合东方能量仪式与西方星座智慧"
+    },
+    {
+      "id": "60001",
+      "name": "代客祈福",
+      "slug": "prayer-services",
+      "description": "五台山代客祈福服务,包括供灯、供香等佛教仪式"
+    },
+    {
+      "id": "90001",
+      "name": "生肖守护",
+      "slug": "zodiac-guardians",
+      "description": "根据您的出生年份,为您提供专属的生肖守护法物"
+    },
+    {
+      "id": "90002",
+      "name": "太阳星座守护",
+      "slug": "sun-sign-guardians",
+      "description": "根据您的出生日期,守护您的外在性格与人生方向"
+    },
+    {
+      "id": "90003",
+      "name": "月亮星座守护",
+      "slug": "moon-sign-guardians",
+      "description": "守护您的情感世界与内心需求,加强情感能量"
+    },
+    {
+      "id": "90004",
+      "name": "招财旺运",
+      "slug": "wealth-fortune",
+      "description": "助力事业发展,招财纳福,提升财运"
+    },
+    {
+      "id": "90005",
+      "name": "平安健康",
+      "slug": "health-safety",
+      "description": "祛病消灾,保佑平安,增强体质"
+    },
+    {
+      "id": "90006",
+      "name": "智慧学业",
+      "slug": "wisdom-study",
+      "description": "开启智慧,学业进步,考试顺利"
+    },
+    {
+      "id": "90007",
+      "name": "心灵平和",
+      "slug": "inner-peace",
+      "description": "平复内心,消除烦恼,心灵宁静"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tslug\tdescription\n1\t命理服务\tfortune-services\t专业的面相、手相、风水分析服务\n6\t生肖守护\tzodiac-guardian\t十二生肖守护吊坠，五台山古法开光加持，守护您的本命运势\n7\t星座守护\tconstellation-guardian\t十二星座守护吊坠，融合东方能量仪式与西方星座智慧\n60001\t代客祈福\tprayer-services\t五台山代客祈福服务,包括供灯、供香等佛教仪式\n90001\t生肖守护\tzodiac-guardians\t根据您的出生年份,为您提供专属的生肖守护法物\n90002\t太阳星座守护\tsun-sign-guardians\t根据您的出生日期,守护您的外在性格与人生方向\n90003\t月亮星座守护\tmoon-sign-guardians\t守护您的情感世界与内心需求,加强情感能量\n90004\t招财旺运\twealth-fortune\t助力事业发展,招财纳福,提升财运\n90005\t平安健康\thealth-safety\t祛病消灾,保佑平安,增强体质\n90006\t智慧学业\twisdom-study\t开启智慧,学业进步,考试顺利\n90007\t心灵平和\tinner-peace\t平复内心,消除烦恼,心灵宁静\n",
+  "stderr": "",
+  "execution_time_ms": 228
+}

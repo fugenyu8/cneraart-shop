@@ -1,0 +1,1 @@
+ALTER TABLE `products` MODIFY COLUMN `name` text NOT NULL;

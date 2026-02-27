@@ -1,0 +1,10 @@
+{
+  "query": "\nSELECT COUNT(*) as review_count FROM reviews WHERE productId = 630001;\nSELECT id, productId, imageUrl FROM product_images WHERE productId = 630001 LIMIT 5;\nSELECT id, productId, rating, language, userName, LEFT(comment, 50) as comment_preview FROM reviews WHERE productId = 630001 LIMIT 5;\n",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute \nSELECT COUNT(*) as review_count FROM reviews WHERE productId = 630001;\nSELECT id, productId, imageUrl FROM product_images WHERE productId = 630001 LIMIT 5;\nSELECT id, productId, rating, language, userName, LEFT(comment, 50) as comment_preview FROM reviews WHERE productId = 630001 LIMIT 5;\n",
+  "returncode": 1,
+  "logs": [
+    "review_count",
+    "300",
+    "ERROR 1054 (42S22) at line 3: Unknown column 'imageurl' in 'field list'"
+  ]
+}

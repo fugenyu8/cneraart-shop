@@ -266,6 +266,8 @@ export const reviews = mysqlTable("reviews", {
   location: varchar("location", { length: 255 }),
   language: varchar("language", { length: 10 }).default("en"), // 评价语言
   isVerified: boolean("isVerified").default(false),
+  content: text("content"), // 评价内容(扩展字段)
+  isVerifiedPurchase: boolean("isVerifiedPurchase").default(false), // 已验证购买
   isApproved: boolean("isApproved").default(false), // 管理员审核
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),

@@ -78,6 +78,20 @@
       "when": 1771756905723,
       "tag": "0010_glamorous_agent_zero",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "5",
+      "when": 1772231066642,
+      "tag": "0011_lethal_warbound",
+      "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "5",
+      "when": 1772232093334,
+      "tag": "0012_cheerful_mongoose",
+      "breakpoints": true
     }
   ]
 }

@@ -1,0 +1,40 @@
+{
+  "query": "SELECT * FROM product_images WHERE productId = 630001",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT * FROM product_images WHERE productId = 630001",
+  "rows": [
+    {
+      "id": "630001",
+      "productId": "630001",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/naSodBzXaVrEtryw.jpg",
+      "fileKey": "health-safety/peach-wood-gourd-1.jpg",
+      "altText": "桃木葫芦挂件钥匙扣 图1",
+      "displayOrder": "0",
+      "isPrimary": "1",
+      "createdAt": "2026-02-27 22:19:13"
+    },
+    {
+      "id": "630002",
+      "productId": "630001",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/RxxvauiSbvIdJfmf.jpg",
+      "fileKey": "health-safety/peach-wood-gourd-2.jpg",
+      "altText": "桃木葫芦挂件钥匙扣 图2",
+      "displayOrder": "1",
+      "isPrimary": "0",
+      "createdAt": "2026-02-27 22:19:13"
+    },
+    {
+      "id": "630003",
+      "productId": "630001",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jgzfSQmCLMemYRMo.jpg",
+      "fileKey": "health-safety/peach-wood-gourd-3.jpg",
+      "altText": "桃木葫芦挂件钥匙扣 图3",
+      "displayOrder": "2",
+      "isPrimary": "0",
+      "createdAt": "2026-02-27 22:19:13"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tproductId\turl\tfileKey\taltText\tdisplayOrder\tisPrimary\tcreatedAt\n630001\t630001\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/naSodBzXaVrEtryw.jpg\thealth-safety/peach-wood-gourd-1.jpg\t桃木葫芦挂件钥匙扣 图1\t0\t1\t2026-02-27 22:19:13\n630002\t630001\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/RxxvauiSbvIdJfmf.jpg\thealth-safety/peach-wood-gourd-2.jpg\t桃木葫芦挂件钥匙扣 图2\t1\t0\t2026-02-27 22:19:13\n630003\t630001\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663348895853/jgzfSQmCLMemYRMo.jpg\thealth-safety/peach-wood-gourd-3.jpg\t桃木葫芦挂件钥匙扣 图3\t2\t0\t2026-02-27 22:19:13\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}
