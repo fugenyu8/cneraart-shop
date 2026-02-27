@@ -470,19 +470,12 @@ export default function ProductDetail() {
               </Card>
             )}
 
-            {/* 库存状态 */}
+            {/* 库存状态 - 始终有货 */}
             <div className="mb-6">
-              {product.stock > 0 ? (
-                <div className="flex items-center gap-2 text-success">
-                  <div className="w-2 h-2 bg-success rounded-full"></div>
-                  <span>{lang.inStock}</span>
-                </div>
-              ) : (
-                <div className="flex items-center gap-2 text-destructive">
-                  <div className="w-2 h-2 bg-destructive rounded-full"></div>
-                  <span>{lang.outOfStock}</span>
-                </div>
-              )}
+              <div className="flex items-center gap-2 text-success">
+                <div className="w-2 h-2 bg-success rounded-full"></div>
+                <span>{lang.inStock}</span>
+              </div>
             </div>
 
             {/* 数量选择 */}
@@ -501,8 +494,8 @@ export default function ProductDetail() {
                 <Button
                   variant="outline"
                   size="icon"
-                  onClick={() => setQuantity(Math.min(product.stock, quantity + 1))}
-                  disabled={quantity >= product.stock}
+                  onClick={() => setQuantity(quantity + 1)}
+                  disabled={false}
                 >
                   <Plus className="w-4 h-4" />
                 </Button>
@@ -544,7 +537,7 @@ export default function ProductDetail() {
                 className="btn-primary flex-1 h-12 md:h-11"
                 size="lg"
                 onClick={handleAddToCart}
-                disabled={product.stock <= 0 || addToCartMutation.isPending}
+                disabled={addToCartMutation.isPending}
               >
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 {addToCartMutation.isPending ? (isEnglishProduct ? 'Adding...' : '添加中...') : lang.addToCart}

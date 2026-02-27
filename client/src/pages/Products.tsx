@@ -204,11 +204,7 @@ export default function Products() {
                         {t("products.sale_badge")}
                       </div>
                     )}
-                    {product.stock <= 0 && (
-                      <div className="absolute inset-0 bg-background/80 flex items-center justify-center">
-                        <span className="text-lg font-bold text-muted-foreground">{t("products.sold_out")}</span>
-                      </div>
-                    )}
+
                   </div>
                   <CardContent className="p-3 md:p-4">
                     <h3 className="text-sm md:text-base font-medium mb-1 md:mb-2 group-hover:text-accent transition-colors line-clamp-1">
@@ -234,11 +230,7 @@ export default function Products() {
                           </span>
                         )}
                       </div>
-                      {product.stock > 0 && product.stock <= 10 && (
-                        <span className="text-[10px] md:text-xs text-warning">
-                          {t("products.stock_low", { count: product.stock })}
-                        </span>
-                      )}
+
                     </div>
                   </CardContent>
                 </Card>
