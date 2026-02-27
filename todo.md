@@ -1563,3 +1563,11 @@ PayPal支付凭证(明天完成)
 - [x] 为所有13个新产品生成多语言评论(每个300条,共3900条)
 - [x] 所有产品正确归类到平安健康(categoryId: 90005)
 - [x] 17张图片上传到CDN
+
+## Cloudflare R2 存储迁移(2026-02-28)
+- [x] 配置R2环境变量(Access Key, Secret, Endpoint, Bucket)
+- [x] 更新server/storage.ts使用R2
+- [x] 迁移现有132张产品图片到R2
+- [x] 更新数据库中的图片URL为R2 URL
+- [x] 验证产品图片正常显示
+- [x] 同步到GitHub

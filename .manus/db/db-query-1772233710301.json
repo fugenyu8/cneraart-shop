@@ -1,0 +1,64 @@
+{
+  "query": "SELECT id, productId, url, fileKey FROM product_images WHERE id IN (570001, 570002, 570003, 570004, 570005, 570006, 570007, 570008, 570009);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, productId, url, fileKey FROM product_images WHERE id IN (570001, 570002, 570003, 570004, 570005, 570006, 570007, 570008, 570009);",
+  "rows": [
+    {
+      "id": "570001",
+      "productId": "510060",
+      "url": "/fortune-19-main.jpg",
+      "fileKey": "fortune-19-main.jpg"
+    },
+    {
+      "id": "570002",
+      "productId": "510060",
+      "url": "/fortune-19-detail1.jpg",
+      "fileKey": "fortune-19-detail1.jpg"
+    },
+    {
+      "id": "570003",
+      "productId": "510060",
+      "url": "/fortune-19-detail2.jpg",
+      "fileKey": "fortune-19-detail2.jpg"
+    },
+    {
+      "id": "570004",
+      "productId": "510060",
+      "url": "/fortune-19-sample.png",
+      "fileKey": "fortune-19-sample.png"
+    },
+    {
+      "id": "570005",
+      "productId": "510061",
+      "url": "/fortune-79-main.jpg",
+      "fileKey": "fortune-79-main.jpg"
+    },
+    {
+      "id": "570006",
+      "productId": "510061",
+      "url": "/fortune-79-detail1.jpg",
+      "fileKey": "fortune-79-detail1.jpg"
+    },
+    {
+      "id": "570007",
+      "productId": "510061",
+      "url": "/fortune-79-detail2.jpg",
+      "fileKey": "fortune-79-detail2.jpg"
+    },
+    {
+      "id": "570008",
+      "productId": "510061",
+      "url": "/fortune-79-detail3.jpg",
+      "fileKey": "fortune-79-detail3.jpg"
+    },
+    {
+      "id": "570009",
+      "productId": "510061",
+      "url": "/fortune-79-sample.png",
+      "fileKey": "fortune-79-sample.png"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tproductId\turl\tfileKey\n570001\t510060\t/fortune-19-main.jpg\tfortune-19-main.jpg\n570002\t510060\t/fortune-19-detail1.jpg\tfortune-19-detail1.jpg\n570003\t510060\t/fortune-19-detail2.jpg\tfortune-19-detail2.jpg\n570004\t510060\t/fortune-19-sample.png\tfortune-19-sample.png\n570005\t510061\t/fortune-79-main.jpg\tfortune-79-main.jpg\n570006\t510061\t/fortune-79-detail1.jpg\tfortune-79-detail1.jpg\n570007\t510061\t/fortune-79-detail2.jpg\tfortune-79-detail2.jpg\n570008\t510061\t/fortune-79-detail3.jpg\tfortune-79-detail3.jpg\n570009\t510061\t/fortune-79-sample.png\tfortune-79-sample.png\n",
+  "stderr": "",
+  "execution_time_ms": 128
+}
