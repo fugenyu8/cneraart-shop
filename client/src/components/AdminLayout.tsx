@@ -32,6 +32,7 @@ import {
   Headphones,
   AlertTriangle,
   Banknote,
+  Upload,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -194,6 +195,11 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       icon: FileText,
       label: "能量报告",
       path: "/wobifa888/destiny-reports",
+    },
+    {
+      icon: Upload,
+      label: "批量导入产品",
+      path: "/wobifa888/batch-import",
     },
     {
       icon: Settings,

@@ -10,6 +10,7 @@ import { serveStatic, setupVite } from "./vite";
 import { uploadRouter } from "../upload";
 import { uploadFortuneImageHandler, handleFortuneImageUpload } from "../uploadFortuneImage";
 import { runComplianceMigration } from "../compliance-migration";
+import { batchImportRouter } from "../batchImport";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -42,6 +43,8 @@ async function startServer() {
   app.use("/api", uploadRouter);
   // Fortune service image upload
   app.post("/api/upload-fortune-image", uploadFortuneImageHandler, handleFortuneImageUpload);
+  // Batch import & export API
+  app.use("/api", batchImportRouter);
   // CDN & Cache headers for static assets
   app.use((req, res, next) => {
     const url = req.url;

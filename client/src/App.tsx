@@ -28,6 +28,7 @@ import AdminCoupons from "./pages/admin/Coupons";
 import AdminReviews from "./pages/admin/Reviews";
 import AdminDestinyReports from "./pages/admin/DestinyReports";
 import PendingPayments from "./pages/admin/PendingPayments";
+import BatchImport from "./pages/admin/BatchImport";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -56,6 +57,7 @@ function Router() {
       <Route path={"/wobifa888/reviews"} component={AdminReviews} />
       <Route path={"/wobifa888/destiny-reports"} component={AdminDestinyReports} />
       <Route path={"/wobifa888/pending-payments"} component={PendingPayments} />
+      <Route path={"/wobifa888/batch-import"} component={BatchImport} />
       <Route path={"/404"} component={NotFound} />
       {/* Removed routes: /fortune, /destiny, /prayer - services migrated to VIP platform */}
       {/* Final fallback route */}
