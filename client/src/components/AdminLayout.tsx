@@ -107,6 +107,16 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   // 密码门优先：先通过密码验证，再检查 admin 登录态
   // 不再直接重定向到首页
 
+  // 通过密码门后，如果未登录 admin 账号，显示提示信息
+  const needsAdminLogin = !user || user.role !== "admin";
+
+  // 获取待确认付款数量 - 必须在条件返回之前调用，保持 hooks 顺序一致
+  const { data: stats } = trpc.admin.getStats.useQuery(undefined, {
+    refetchInterval: 30000, // 每30秒自动刷新
+    enabled: !isLoading && !needsAdminLogin, // 仅在已登录 admin 时查询
+  });
+  const pendingPaymentCount = stats?.pendingOfflinePayments || 0;
+
   if (isLoading) {
     return (
       <AdminPasswordGate>
@@ -120,14 +130,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     );
   }
 
-  // 通过密码门后，如果未登录 admin 账号，显示提示信息
-  const needsAdminLogin = !user || user.role !== "admin";
 
-  // 获取待确认付款数量
-  const { data: stats } = trpc.admin.getStats.useQuery(undefined, {
-    refetchInterval: 30000, // 每30秒自动刷新
-  });
-  const pendingPaymentCount = stats?.pendingOfflinePayments || 0;
 
   const menuItems: Array<{
     icon: any;
