@@ -213,6 +213,11 @@ export const orders = mysqlTable("orders", {
   paymentId: varchar("paymentId", { length: 200 }), // PayPal交易ID
   paidAt: timestamp("paidAt"),
   
+  // 直接付款字段（微信/支付宝/银行卡）
+  directPayProof: text("directPayProof"), // 付款截图URL或流水号
+  directPayConfirmedAt: timestamp("directPayConfirmedAt"), // 管理员确认时间
+  directPayNote: text("directPayNote"), // 用户备注（如转账备注）
+  
   // 物流信息
   shippingCarrier: varchar("shippingCarrier", { length: 100 }),
   trackingNumber: varchar("trackingNumber", { length: 100 }),

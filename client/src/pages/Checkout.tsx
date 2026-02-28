@@ -13,20 +13,23 @@ import { toast } from "sonner";
 import {
   Loader2,
   ArrowLeft,
-  CreditCard,
   Wallet,
   CheckCircle2,
   Building2,
   Copy,
   AlertCircle,
-  Upload,
+  Tag,
 } from "lucide-react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { getLocalized } from "@/lib/localized";
 
+const ALIPAY_QR_URL =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663348895853/8WruFPRUxPMzzwD4ZeeUDg/alipay-qr_ed756fd8.jpg";
+const WECHAT_QR_URL =
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663348895853/8WruFPRUxPMzzwD4ZeeUDg/wechat-qr_f4763b7f.jpg";
+
 // ========== 银行转账信息组件 ==========
 function BankTransferInfo({
-  orderId,
   orderNumber,
   total,
 }: {
@@ -36,18 +39,20 @@ function BankTransferInfo({
 }) {
   const { t } = useTranslation();
 
-  const bankInfo = {
-    swiftCode: "CHASHKHH",
-    accountNumber: "63003689656",
-    accountName: "Zhongyu Taitong (beijing) Technology Development Co., Ltd.",
-    bankName: "JPMorgan Chase Bank N.A., Hong Kong Branch",
-    bankAddress:
-      "18/F, 20/F, 22-29/F, CHATER HOUSE, 8 CONNAUGHT ROAD CENTRAL, HONG KONG",
-    country: "Hong Kong",
-    accountType: "Business Account",
-    bankCode: "007",
-    branchCode: "863",
-  };
+  const bankAccounts = [
+    {
+      bank: "Bank of China (中国银行)",
+      accountNumber: "4002920200111432",
+      accountName: "Fu Genyu (付根玉)",
+      note: "Supports international wire transfer (USD/CNY)",
+    },
+    {
+      bank: "China Merchants Bank (招商银行)",
+      accountNumber: "5342 9302 2001 9578",
+      accountName: "Fu Genyu (付根玉)",
+      note: "Visa/Mastercard linked · Supports foreign currency",
+    },
+  ];
 
   const copyToClipboard = (text: string, label: string) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -73,47 +78,42 @@ function BankTransferInfo({
           <p className="text-3xl font-bold text-[oklch(82%_0.18_85)]">
             ${total.toFixed(2)} USD
           </p>
+          <p className="text-xs text-green-400 mt-1">✓ 10% direct payment discount applied</p>
         </div>
       </div>
 
-      {/* 银行账户信息 */}
-      <div className="bg-slate-800/80 rounded-lg border border-slate-700 divide-y divide-slate-700">
-        {[
-          { label: "SWIFT/BIC Code", value: bankInfo.swiftCode },
-          { label: t("checkout.account_number"), value: bankInfo.accountNumber },
-          { label: t("checkout.account_name"), value: bankInfo.accountName },
-          { label: t("checkout.bank_name"), value: bankInfo.bankName },
-          { label: t("checkout.bank_address"), value: bankInfo.bankAddress },
-          { label: t("checkout.country_region"), value: bankInfo.country },
-          { label: t("checkout.account_type"), value: bankInfo.accountType },
-          { label: t("checkout.bank_code"), value: bankInfo.bankCode },
-          { label: t("checkout.branch_code"), value: bankInfo.branchCode },
-        ].map((item, idx) => (
-          <div
-            key={idx}
-            className="flex items-center justify-between px-4 py-3 gap-4"
-          >
-            <div className="min-w-0 flex-1">
-              <p className="text-xs text-slate-500 mb-0.5">{item.label}</p>
-              <p className="text-sm text-slate-200 break-all">{item.value}</p>
-            </div>
-            <button
-              type="button"
-              onClick={() => copyToClipboard(item.value, item.label)}
-              className="shrink-0 p-1.5 rounded-md hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
-              title={t("checkout.copy")}
-            >
-              <Copy className="w-4 h-4" />
-            </button>
+      {/* 两个银行账户 */}
+      {bankAccounts.map((acct, i) => (
+        <div key={i} className="bg-slate-800/80 rounded-lg border border-slate-700 divide-y divide-slate-700">
+          <div className="px-4 py-3 bg-slate-700/40 rounded-t-lg">
+            <p className="text-xs font-semibold text-[oklch(82%_0.18_85)]">{acct.bank}</p>
+            <p className="text-xs text-slate-400 mt-0.5">{acct.note}</p>
           </div>
-        ))}
-      </div>
+          {[
+            { label: t("checkout.account_number"), value: acct.accountNumber },
+            { label: t("checkout.account_name"), value: acct.accountName },
+          ].map((item, idx) => (
+            <div key={idx} className="flex items-center justify-between px-4 py-3 gap-4">
+              <div className="min-w-0 flex-1">
+                <p className="text-xs text-slate-500 mb-0.5">{item.label}</p>
+                <p className="text-sm text-slate-200 break-all font-mono">{item.value}</p>
+              </div>
+              <button
+                type="button"
+                onClick={() => copyToClipboard(item.value, item.label)}
+                className="shrink-0 p-1.5 rounded-md hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+                title={t("checkout.copy")}
+              >
+                <Copy className="w-4 h-4" />
+              </button>
+            </div>
+          ))}
+        </div>
+      ))}
 
       {/* 付款备注 */}
       <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700">
-        <p className="text-xs text-slate-500 mb-1">
-          {t("checkout.payment_memo")}
-        </p>
+        <p className="text-xs text-slate-500 mb-1">{t("checkout.payment_memo")}</p>
         <div className="flex items-center justify-between gap-2">
           <p className="text-sm text-[oklch(82%_0.18_85)] font-mono break-all">
             {orderNumber || `ORD-${Date.now()}`}
@@ -121,32 +121,23 @@ function BankTransferInfo({
           <button
             type="button"
             onClick={() =>
-              copyToClipboard(
-                orderNumber || `ORD-${Date.now()}`,
-                t("checkout.payment_memo")
-              )
+              copyToClipboard(orderNumber || `ORD-${Date.now()}`, t("checkout.payment_memo"))
             }
             className="shrink-0 p-1.5 rounded-md hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
           >
             <Copy className="w-4 h-4" />
           </button>
         </div>
-        <p className="text-xs text-slate-500 mt-2">
-          {t("checkout.memo_format_hint")}
-        </p>
+        <p className="text-xs text-slate-500 mt-2">{t("checkout.memo_format_hint")}</p>
       </div>
 
-      {/* SWIFT/TT 说明 */}
-      <p className="text-xs text-slate-500 text-center">
-        {t("checkout.swift_remark")}
-      </p>
+      <p className="text-xs text-slate-500 text-center">{t("checkout.swift_remark")}</p>
     </div>
   );
 }
 
 // ========== 支付宝信息组件 ==========
 function AlipayInfo({
-  orderId,
   orderNumber,
   total,
 }: {
@@ -155,8 +146,6 @@ function AlipayInfo({
   total: number;
 }) {
   const { t } = useTranslation();
-  const alipayAccount = "13381009758";
-
   const copyToClipboard = (text: string, label: string) => {
     navigator.clipboard.writeText(text).then(() => {
       toast.success(`${label} ${t("checkout.copied")}`);
@@ -178,39 +167,31 @@ function AlipayInfo({
       <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700">
         <div className="text-center">
           <p className="text-slate-400 text-sm mb-1">{t("checkout.transfer_amount")}</p>
-          <p className="text-3xl font-bold text-[#1677FF]">
-            ${total.toFixed(2)} USD
-          </p>
+          <p className="text-3xl font-bold text-[#1677FF]">${total.toFixed(2)} USD</p>
+          <p className="text-xs text-green-400 mt-1">✓ 10% direct payment discount applied</p>
         </div>
       </div>
 
-      {/* 支付宝账号 */}
+      {/* 支付宝收款码 */}
+      <div className="bg-slate-800/80 rounded-lg border border-slate-700 p-4">
+        <p className="text-xs text-slate-500 mb-3 text-center">
+          {t("checkout.alipay_scan_qr") || "Open Alipay → Scan QR Code"}
+        </p>
+        <div className="flex justify-center">
+          <img
+            src={ALIPAY_QR_URL}
+            alt="Alipay QR Code"
+            className="w-52 h-52 object-contain rounded-lg border border-slate-600"
+          />
+        </div>
+        <p className="text-xs text-slate-400 text-center mt-2">根玉(**玉) · Fu Genyu</p>
+      </div>
+
+      {/* 付款备注 */}
       <div className="bg-slate-800/80 rounded-lg border border-slate-700 divide-y divide-slate-700">
         <div className="flex items-center justify-between px-4 py-4 gap-4">
           <div className="min-w-0 flex-1">
-            <p className="text-xs text-slate-500 mb-1">
-              {t("checkout.alipay_account")}
-            </p>
-            <p className="text-lg text-white font-mono font-semibold">
-              {alipayAccount}
-            </p>
-          </div>
-          <button
-            type="button"
-            onClick={() =>
-              copyToClipboard(alipayAccount, t("checkout.alipay_account"))
-            }
-            className="shrink-0 p-2 rounded-md hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
-            title={t("checkout.copy")}
-          >
-            <Copy className="w-5 h-5" />
-          </button>
-        </div>
-        <div className="flex items-center justify-between px-4 py-4 gap-4">
-          <div className="min-w-0 flex-1">
-            <p className="text-xs text-slate-500 mb-1">
-              {t("checkout.payment_memo")}
-            </p>
+            <p className="text-xs text-slate-500 mb-1">{t("checkout.payment_memo")}</p>
             <p className="text-sm text-[oklch(82%_0.18_85)] font-mono break-all">
               {orderNumber || `ORD-${Date.now()}`}
             </p>
@@ -218,10 +199,7 @@ function AlipayInfo({
           <button
             type="button"
             onClick={() =>
-              copyToClipboard(
-                orderNumber || `ORD-${Date.now()}`,
-                t("checkout.payment_memo")
-              )
+              copyToClipboard(orderNumber || `ORD-${Date.now()}`, t("checkout.payment_memo"))
             }
             className="shrink-0 p-2 rounded-md hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
           >
@@ -236,24 +214,115 @@ function AlipayInfo({
           {t("checkout.alipay_steps_title")}
         </p>
         <ol className="space-y-2 text-sm text-slate-400">
-          <li className="flex gap-2">
-            <span className="shrink-0 w-5 h-5 rounded-full bg-[#1677FF]/20 text-[#1677FF] text-xs flex items-center justify-center font-bold">
-              1
-            </span>
-            {t("checkout.alipay_step1")}
-          </li>
-          <li className="flex gap-2">
-            <span className="shrink-0 w-5 h-5 rounded-full bg-[#1677FF]/20 text-[#1677FF] text-xs flex items-center justify-center font-bold">
-              2
-            </span>
-            {t("checkout.alipay_step2")}
-          </li>
-          <li className="flex gap-2">
-            <span className="shrink-0 w-5 h-5 rounded-full bg-[#1677FF]/20 text-[#1677FF] text-xs flex items-center justify-center font-bold">
-              3
-            </span>
-            {t("checkout.alipay_step3")}
-          </li>
+          {[
+            t("checkout.alipay_step1"),
+            t("checkout.alipay_step2"),
+            t("checkout.alipay_step3"),
+          ].map((step, i) => (
+            <li key={i} className="flex gap-2">
+              <span className="shrink-0 w-5 h-5 rounded-full bg-[#1677FF]/20 text-[#1677FF] text-xs flex items-center justify-center font-bold">
+                {i + 1}
+              </span>
+              {step}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  );
+}
+
+// ========== 微信支付信息组件 ==========
+function WechatPayInfo({
+  orderNumber,
+  total,
+}: {
+  orderId: number | null;
+  orderNumber: string | null;
+  total: number;
+}) {
+  const { t } = useTranslation();
+  const copyToClipboard = (text: string, label: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      toast.success(`${label} ${t("checkout.copied")}`);
+    });
+  };
+
+  return (
+    <div className="space-y-4">
+      {/* 提示信息 */}
+      <div className="flex items-start gap-3 bg-green-900/20 border border-green-700/50 rounded-lg p-4">
+        <AlertCircle className="w-5 h-5 text-green-400 mt-0.5 shrink-0" />
+        <div className="text-sm text-green-200/90 space-y-1">
+          <p className="font-medium">WeChat Pay · 微信支付</p>
+          <p className="text-green-200/70">
+            Scan the QR code with WeChat to pay. After payment, please send a screenshot to confirm your order.
+          </p>
+        </div>
+      </div>
+
+      {/* 转账金额 */}
+      <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700">
+        <div className="text-center">
+          <p className="text-slate-400 text-sm mb-1">{t("checkout.transfer_amount")}</p>
+          <p className="text-3xl font-bold text-[#07C160]">${total.toFixed(2)} USD</p>
+          <p className="text-xs text-green-400 mt-1">✓ 10% direct payment discount applied</p>
+        </div>
+      </div>
+
+      {/* 微信收款码 */}
+      <div className="bg-slate-800/80 rounded-lg border border-slate-700 p-4">
+        <p className="text-xs text-slate-500 mb-3 text-center">
+          Open WeChat → Scan QR Code (扫一扫)
+        </p>
+        <div className="flex justify-center">
+          <img
+            src={WECHAT_QR_URL}
+            alt="WeChat Pay QR Code"
+            className="w-52 h-52 object-contain rounded-lg border border-slate-600"
+          />
+        </div>
+        <p className="text-xs text-slate-400 text-center mt-2">**玉 (付根玉) · Fu Genyu</p>
+      </div>
+
+      {/* 付款备注 */}
+      <div className="bg-slate-800/80 rounded-lg border border-slate-700 divide-y divide-slate-700">
+        <div className="flex items-center justify-between px-4 py-4 gap-4">
+          <div className="min-w-0 flex-1">
+            <p className="text-xs text-slate-500 mb-1">{t("checkout.payment_memo")}</p>
+            <p className="text-sm text-[oklch(82%_0.18_85)] font-mono break-all">
+              {orderNumber || `ORD-${Date.now()}`}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() =>
+              copyToClipboard(orderNumber || `ORD-${Date.now()}`, t("checkout.payment_memo"))
+            }
+            className="shrink-0 p-2 rounded-md hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+          >
+            <Copy className="w-5 h-5" />
+          </button>
+        </div>
+      </div>
+
+      {/* 操作步骤 */}
+      <div className="bg-slate-800/80 rounded-lg p-4 border border-slate-700">
+        <p className="text-sm text-slate-300 font-medium mb-3">How to pay:</p>
+        <ol className="space-y-2 text-sm text-slate-400">
+          {[
+            "Open WeChat and tap the Scan icon (扫一扫)",
+            `Scan the QR code above and pay $${total.toFixed(2)} USD`,
+            `Add order number "${orderNumber || "ORD-XXXX"}" in the payment note`,
+            "Send payment screenshot to confirm your order",
+          ].map((step, i) => (
+            <li key={i} className="flex gap-2">
+              <span className="shrink-0 w-5 h-5 rounded-full bg-[#07C160]/20 text-[#07C160] text-xs flex items-center justify-center font-bold">
+                {i + 1}
+              </span>
+              {step}
+            </li>
+          ))}
         </ol>
       </div>
     </div>
@@ -267,7 +336,7 @@ export default function Checkout() {
   const { user, isLoading: authLoading } = useAuth();
 
   // 支付方式选择
-  type PaymentMethodType = "paypal" | "bank_transfer" | "alipay";
+  type PaymentMethodType = "paypal" | "wechat" | "alipay" | "bank_transfer";
   const [selectedPayment, setSelectedPayment] =
     useState<PaymentMethodType>("paypal");
   const [createdOrderId, setCreatedOrderId] = useState<number | null>(null);
@@ -286,7 +355,10 @@ export default function Checkout() {
 
   // 优惠券状态
   const [couponCode, setCouponCode] = useState("");
-  const [appliedCoupon, setAppliedCoupon] = useState<any>(null);
+  const [appliedCoupon, setAppliedCoupon] = useState<{
+    code: string;
+    discount: number;
+  } | null>(null);
   const [couponError, setCouponError] = useState("");
 
   // 验证优惠券
@@ -298,13 +370,13 @@ export default function Checkout() {
         toast.success(t("checkout.coupon_success"));
       } else {
         setAppliedCoupon(null);
-        setCouponError(data.error || "优惠券无效");
+        setCouponError(data.error || "Invalid coupon");
         toast.error(data.error || t("checkout.coupon_invalid"));
       }
     },
     onError: (error: any) => {
       setAppliedCoupon(null);
-      setCouponError(error.message || "验证失败");
+      setCouponError(error.message || "Validation failed");
       toast.error(error.message || t("checkout.coupon_error"));
     },
   });
@@ -320,7 +392,7 @@ export default function Checkout() {
     enabled: !!user,
   });
 
-  // 创建订单 mutation（银行转账/支付宝：先创建订单，再展示收款信息）
+  // 创建订单 mutation（直接付款：先创建订单，再展示收款信息）
   const createOrderMutation = trpc.orders.create.useMutation({
     onSuccess: (data) => {
       setCreatedOrderId(Number(data.orderId));
@@ -369,26 +441,42 @@ export default function Checkout() {
     }
   }, [addresses]);
 
+  // 是否为直接付款方式（享10%折扣）
+  const isDirectPayment =
+    selectedPayment === "wechat" ||
+    selectedPayment === "alipay" ||
+    selectedPayment === "bank_transfer";
+
   // 计算订单金额
   const calculateTotals = () => {
     if (!cartItems || cartItems.length === 0) {
-      return { subtotal: 0, shipping: 0, tax: 0, discount: 0, total: 0 };
+      return { subtotal: 0, shipping: 0, tax: 0, discount: 0, directDiscount: 0, total: 0 };
     }
     const subtotal = cartItems.reduce((sum: number, item: any) => {
       const price = item.product.salePrice || item.product.regularPrice;
       return sum + parseFloat(price) * item.quantity;
     }, 0);
     const shipping = 0;
-    let discount = 0;
+
+    // 优惠券折扣
+    let couponDiscount = 0;
     if (appliedCoupon && appliedCoupon.discount) {
-      discount = Math.min(appliedCoupon.discount, subtotal);
+      couponDiscount = Math.min(appliedCoupon.discount, subtotal);
     }
+
+    // 直接付款10%折扣（在优惠券折扣后的余额上再打9折）
+    let directDiscount = 0;
+    if (isDirectPayment) {
+      directDiscount = parseFloat(((subtotal - couponDiscount) * 0.10).toFixed(2));
+    }
+
+    const discount = couponDiscount + directDiscount;
     const tax = (subtotal - discount) * 0.08;
     const total = subtotal - discount + shipping + tax;
-    return { subtotal, shipping, tax, discount, total };
+    return { subtotal, shipping, tax, discount, directDiscount, total };
   };
 
-  const { subtotal, shipping, tax, discount, total } = calculateTotals();
+  const { subtotal, shipping, tax, discount, directDiscount, total } = calculateTotals();
 
   // 应用优惠券
   const handleApplyCoupon = () => {
@@ -446,7 +534,7 @@ export default function Checkout() {
     paymentMethod,
   });
 
-  // 银行转账/支付宝：先创建订单
+  // 直接付款：先创建订单
   const handleOfflineCheckout = () => {
     if (!validateShipping() || !cartItems || cartItems.length === 0) return;
     if (createdOrderId) return;
@@ -538,6 +626,7 @@ export default function Checkout() {
     label: string;
     icon: React.ReactNode;
     description: string;
+    badge?: string;
   }[] = [
     {
       id: "paypal",
@@ -550,10 +639,15 @@ export default function Checkout() {
       description: t("checkout.paypal_desc"),
     },
     {
-      id: "bank_transfer",
-      label: t("checkout.bank_transfer"),
-      icon: <Building2 className="w-6 h-6" />,
-      description: t("checkout.bank_transfer_desc"),
+      id: "wechat",
+      label: "WeChat Pay",
+      icon: (
+        <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.295.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.601-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-3.74 3.43c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm3.99 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z" />
+        </svg>
+      ),
+      description: "10% off · Instant",
+      badge: "10% OFF",
     },
     {
       id: "alipay",
@@ -564,6 +658,14 @@ export default function Checkout() {
         </svg>
       ),
       description: t("checkout.alipay_desc"),
+      badge: "10% OFF",
+    },
+    {
+      id: "bank_transfer",
+      label: t("checkout.bank_transfer"),
+      icon: <Building2 className="w-6 h-6" />,
+      description: t("checkout.bank_transfer_desc"),
+      badge: "10% OFF",
     },
   ];
 
@@ -741,13 +843,19 @@ export default function Checkout() {
             {/* 支付方式选择 */}
             <Card className="bg-slate-900/50 border-slate-800">
               <CardHeader>
-                <CardTitle className="text-white">
+                <CardTitle className="text-white flex items-center gap-2">
                   {t("checkout.payment_method")}
+                  {isDirectPayment && (
+                    <span className="text-xs font-normal bg-green-500/20 text-green-400 border border-green-500/30 px-2 py-0.5 rounded-full flex items-center gap-1">
+                      <Tag className="w-3 h-3" />
+                      10% Direct Payment Discount
+                    </span>
+                  )}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 p-4 md:p-6">
                 {/* 支付方式选项卡 */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {paymentMethods.map((method) => (
                     <button
                       key={method.id}
@@ -757,12 +865,17 @@ export default function Checkout() {
                         setCreatedOrderId(null);
                         setCreatedOrderNumber(null);
                       }}
-                      className={`relative flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all duration-200 ${
+                      className={`relative flex flex-col items-center gap-2 p-3 rounded-xl border-2 transition-all duration-200 ${
                         selectedPayment === method.id
                           ? "border-[oklch(82%_0.18_85)] bg-[oklch(82%_0.18_85)]/10 shadow-lg shadow-[oklch(82%_0.18_85)]/10"
                           : "border-slate-700 bg-slate-800/50 hover:border-slate-600 hover:bg-slate-800"
                       }`}
                     >
+                      {method.badge && (
+                        <span className="absolute -top-2 -right-2 text-[10px] font-bold bg-green-500 text-white px-1.5 py-0.5 rounded-full">
+                          {method.badge}
+                        </span>
+                      )}
                       {selectedPayment === method.id && (
                         <CheckCircle2 className="absolute top-2 right-2 w-4 h-4 text-[oklch(82%_0.18_85)]" />
                       )}
@@ -776,7 +889,7 @@ export default function Checkout() {
                         {method.icon}
                       </div>
                       <span
-                        className={`text-sm font-medium ${
+                        className={`text-xs font-medium text-center ${
                           selectedPayment === method.id
                             ? "text-white"
                             : "text-slate-300"
@@ -784,7 +897,7 @@ export default function Checkout() {
                       >
                         {method.label}
                       </span>
-                      <span className="text-xs text-slate-500 text-center">
+                      <span className="text-[10px] text-slate-500 text-center leading-tight">
                         {method.description}
                       </span>
                     </button>
@@ -830,34 +943,34 @@ export default function Checkout() {
                     </div>
                   )}
 
-                  {/* 银行转账 */}
-                  {selectedPayment === "bank_transfer" && (
+                  {/* 微信支付 */}
+                  {selectedPayment === "wechat" && (
                     <div className="space-y-4">
                       {!createdOrderId ? (
                         <Button
                           type="button"
                           onClick={handleOfflineCheckout}
                           disabled={createOrderMutation.isPending}
-                          className="w-full h-12 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold text-base"
+                          className="w-full h-12 bg-gradient-to-r from-[#07C160] to-[#06AD56] hover:from-[#06AD56] hover:to-[#059A4C] text-white font-semibold text-base"
                         >
                           {createOrderMutation.isPending ? (
                             <Loader2 className="w-5 h-5 animate-spin mr-2" />
                           ) : (
-                            <Building2 className="w-5 h-5 mr-2" />
+                            <Wallet className="w-5 h-5 mr-2" />
                           )}
                           {createOrderMutation.isPending
                             ? t("checkout.creating_order")
-                            : t("checkout.confirm_and_view_bank_info")}
+                            : "Confirm & View WeChat QR Code"}
                         </Button>
                       ) : (
                         <>
                           <div className="flex items-center gap-2 bg-green-900/30 border border-green-700/50 rounded-lg p-3">
                             <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" />
                             <p className="text-sm text-green-300">
-                              {t("checkout.order_created_transfer_info")}
+                              Order created! Please scan the QR code and complete payment.
                             </p>
                           </div>
-                          <BankTransferInfo
+                          <WechatPayInfo
                             orderId={createdOrderId}
                             orderNumber={createdOrderNumber}
                             total={total}
@@ -902,6 +1015,50 @@ export default function Checkout() {
                             </p>
                           </div>
                           <AlipayInfo
+                            orderId={createdOrderId}
+                            orderNumber={createdOrderNumber}
+                            total={total}
+                          />
+                          <Button
+                            type="button"
+                            onClick={() => navigate(`/orders/${createdOrderId}`)}
+                            className="w-full h-11 bg-slate-700 hover:bg-slate-600 text-white"
+                          >
+                            {t("checkout.view_order_detail")}
+                          </Button>
+                        </>
+                      )}
+                    </div>
+                  )}
+
+                  {/* 银行转账 */}
+                  {selectedPayment === "bank_transfer" && (
+                    <div className="space-y-4">
+                      {!createdOrderId ? (
+                        <Button
+                          type="button"
+                          onClick={handleOfflineCheckout}
+                          disabled={createOrderMutation.isPending}
+                          className="w-full h-12 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold text-base"
+                        >
+                          {createOrderMutation.isPending ? (
+                            <Loader2 className="w-5 h-5 animate-spin mr-2" />
+                          ) : (
+                            <Building2 className="w-5 h-5 mr-2" />
+                          )}
+                          {createOrderMutation.isPending
+                            ? t("checkout.creating_order")
+                            : t("checkout.confirm_and_view_bank_info")}
+                        </Button>
+                      ) : (
+                        <>
+                          <div className="flex items-center gap-2 bg-green-900/30 border border-green-700/50 rounded-lg p-3">
+                            <CheckCircle2 className="w-5 h-5 text-green-400 shrink-0" />
+                            <p className="text-sm text-green-300">
+                              {t("checkout.order_created_transfer_info")}
+                            </p>
+                          </div>
+                          <BankTransferInfo
                             orderId={createdOrderId}
                             orderNumber={createdOrderNumber}
                             total={total}
@@ -1022,10 +1179,19 @@ export default function Checkout() {
                     <span>{t("checkout.subtotal")}</span>
                     <span>${subtotal.toFixed(2)}</span>
                   </div>
-                  {discount > 0 && (
+                  {appliedCoupon && appliedCoupon.discount > 0 && (
                     <div className="flex justify-between text-green-400">
-                      <span>{t("checkout.discount")}</span>
-                      <span>-${discount.toFixed(2)}</span>
+                      <span>Coupon ({appliedCoupon.code})</span>
+                      <span>-${(Math.min(appliedCoupon.discount, subtotal)).toFixed(2)}</span>
+                    </div>
+                  )}
+                  {isDirectPayment && directDiscount > 0 && (
+                    <div className="flex justify-between text-green-400">
+                      <span className="flex items-center gap-1">
+                        <Tag className="w-3 h-3" />
+                        Direct Payment 10% Off
+                      </span>
+                      <span>-${directDiscount.toFixed(2)}</span>
                     </div>
                   )}
                   <div className="flex justify-between text-slate-300">
