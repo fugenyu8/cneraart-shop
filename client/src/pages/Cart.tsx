@@ -13,7 +13,7 @@ import { getLocalized } from "@/lib/localized";
 
 export default function Cart() {
   const { t } = useTranslation();
-  const { isAuthenticated, isLoading: authLoading } = useAuth();
+  const { isAuthenticated, loading: authLoading } = useAuth();
   const [, setLocation] = useLocation();
   const [couponCode, setCouponCode] = useState("");
 

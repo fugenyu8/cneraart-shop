@@ -197,9 +197,9 @@ export default function ProductDetail() {
   }, [allReviews, sortBy]);
 
   // 使用后端返回的统计数据
-  const reviewStats = product?.reviewStats || { total: 0, byRating: {}, byLanguage: {}, avgRating: 0 };
-  const ratingCounts = reviewStats.byRating;
-  const languageCounts = reviewStats.byLanguage;
+  const reviewStats = product?.reviewStats || { total: 0, byRating: {} as Record<number, number>, byLanguage: {} as Record<string, number>, avgRating: 0 };
+  const ratingCounts = reviewStats.byRating as Record<number, number>;
+  const languageCounts = reviewStats.byLanguage as Record<string, number>;
   const totalReviewCount = reviewStats.total;
   const hasMoreReviews = reviewOffset < totalReviewCount;
 
