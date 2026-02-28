@@ -1695,3 +1695,8 @@ PayPal支付凭证(明天完成)
 - [x] 重启服务器使新路由生效
 - [x] 验证注册和登录 API 均正常工作（注册返回 user.id=1830022）
 - [x] 删除测试用户
+
+## 修复注册后登录状态丢失问题（2026-03-01）
+- [x] 诊断注册后cookie未正确设置的原因：verifySession要求appId非空，但邮箱注册用户appId为空字符串
+- [x] 修复verifySession，允许appId为空字符串（邮箱登录用户无OAuth无appId）
+- [ ] 推送到GitHub并验证生产环境

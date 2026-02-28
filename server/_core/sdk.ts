@@ -224,10 +224,11 @@ class SDKServer {
       });
       const { openId, appId, name } = payload as Record<string, unknown>;
 
+      // appId can be empty string for email-registered users (no OAuth)
       if (
         !isNonEmptyString(openId) ||
-        !isNonEmptyString(appId) ||
-        !isNonEmptyString(name)
+        typeof appId !== "string" ||
+        typeof name !== "string"
       ) {
         return null;
       }
