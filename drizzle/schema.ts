@@ -8,6 +8,7 @@ export const users = mysqlTable("users", {
   openId: varchar("openId", { length: 64 }).notNull().unique(),
   name: text("name"),
   email: varchar("email", { length: 320 }),
+  passwordHash: varchar("passwordHash", { length: 255 }), // 邮箱注册用户的密码哈希
   loginMethod: varchar("loginMethod", { length: 64 }),
   role: mysqlEnum("role", ["user", "admin"]).default("user").notNull(),
   preferredLanguage: varchar("preferredLanguage", { length: 10 }).default("zh").notNull(), // 用户语言偏好(zh/en/de/fr/es/it/pt/ru/ja/ko/ar/hi/th/vi/id)

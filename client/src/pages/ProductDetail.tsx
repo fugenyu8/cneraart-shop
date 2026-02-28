@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useParams, Link } from "wouter";
+import { useParams, Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -18,6 +18,7 @@ export default function ProductDetail() {
   const { t, i18n } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const { isAuthenticated } = useAuth();
+  const [, navigate] = useLocation();
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
@@ -205,7 +206,7 @@ export default function ProductDetail() {
 
   const handleAddToCart = async () => {
     if (!isAuthenticated) {
-      window.location.href = getLoginUrl();
+      navigate("/login?returnTo=" + encodeURIComponent(window.location.pathname));
       return;
     }
 

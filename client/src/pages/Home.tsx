@@ -66,13 +66,21 @@ export default function Home() {
 
           {/* 右侧:桌面端显示完整链接 */}
           <div className="hidden md:flex items-center gap-2 text-xs md:text-sm flex-shrink-0">
-            <a href={getLoginUrl()} className="hover:text-white transition-colors">
-              {t('topBar.register')}
-            </a>
-            <span>|</span>
-            <a href={getLoginUrl()} className="hover:text-white transition-colors">
-              {t('topBar.login')}
-            </a>
+            {user ? (
+              <Link href="/account" className="hover:text-white transition-colors">
+                👤 {user.name || user.email || t('topBar.account', 'Account')}
+              </Link>
+            ) : (
+              <>
+                <Link href="/register" className="hover:text-white transition-colors">
+                  {t('topBar.register')}
+                </Link>
+                <span>|</span>
+                <Link href="/login" className="hover:text-white transition-colors">
+                  {t('topBar.login')}
+                </Link>
+              </>
+            )}
             <span>|</span>
             <a href="https://vip.cneraart.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               ⭐ VIP
@@ -146,9 +154,20 @@ export default function Home() {
         {/* 移动端下拉菜单 */}
         {menuOpen && (
           <div className="md:hidden border-t border-[#F5DEB3]/20 mt-2 pt-2 pb-1 space-y-2 text-xs">
-            <a href={getLoginUrl()} className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
-              {t('topBar.register')} / {t('topBar.login')}
-            </a>
+            {user ? (
+              <Link href="/account" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+                👤 {user.name || user.email || 'Account'}
+              </Link>
+            ) : (
+              <>
+                <Link href="/register" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+                  {t('topBar.register')}
+                </Link>
+                <Link href="/login" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+                  {t('topBar.login')}
+                </Link>
+              </>
+            )}
             <a href="https://vip.cneraart.com" target="_blank" rel="noopener noreferrer" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
               ⭐ VIP 专属服务
             </a>

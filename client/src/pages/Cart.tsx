@@ -33,38 +33,16 @@ export default function Cart() {
 
   useEffect(() => {
     if (!authLoading && !isAuthenticated) {
-      const loginUrl = getLoginUrl("/cart");
-      if (loginUrl) {
-        window.location.href = loginUrl;
-      }
+      setLocation("/login?returnTo=/cart");
     }
   }, [isAuthenticated, authLoading]);
 
-  if (authLoading) {
+  if (authLoading || !isAuthenticated) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-600 mx-auto mb-4"></div>
           <p className="text-gray-600">{t('loading', '加载中...')}</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (!isAuthenticated) {
-    const loginUrl = getLoginUrl("/cart");
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-white mb-4">{t('pleaseSignIn', 'Please Sign In')}</h1>
-          <p className="text-slate-400 mb-6">{t('signInToViewCart', 'You need to sign in to view your cart.')}</p>
-          {loginUrl ? (
-            <p className="text-slate-400">{t('redirectingToLogin', 'Redirecting to login...')}</p>
-          ) : (
-            <Button onClick={() => setLocation("/")} className="bg-[oklch(82%_0.18_85)] hover:bg-[oklch(82%_0.18_85)]/90 text-slate-900">
-              {t('backToHome', 'Back to Home')}
-            </Button>
-          )}
         </div>
       </div>
     );

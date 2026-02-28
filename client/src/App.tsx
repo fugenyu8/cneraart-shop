@@ -30,6 +30,8 @@ import AdminDestinyReports from "./pages/admin/DestinyReports";
 import PendingPayments from "./pages/admin/PendingPayments";
 import BatchImport from "./pages/admin/BatchImport";
 import AdminSettings from "./pages/admin/Settings";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -39,6 +41,8 @@ function Router() {
       <Route path={"/products"} component={Products} />
       <Route path={"/products/:slug"} component={ProductDetail} />
       <Route path={"/cart"} component={Cart} />
+      <Route path={"/login"} component={Login} />
+      <Route path={"/register"} component={Register} />
       <Route path={"/wobifa888"} component={AdminDashboard} />
       <Route path={"/wobifa888/products"} component={AdminProducts} />
       <Route path={"/wobifa888/products/new"} component={ProductForm} />
