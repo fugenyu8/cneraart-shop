@@ -1,0 +1,110 @@
+{
+  "query": "SELECT p.id, p.name, COUNT(r.id) as reviewCount FROM products p LEFT JOIN reviews r ON p.id = r.productId WHERE p.slug LIKE '%zodiac%' OR p.slug LIKE '%guardian%' OR p.categoryId IN (SELECT id FROM categories WHERE slug LIKE '%zodiac%' OR slug LIKE '%guardian%') GROUP BY p.id, p.name ORDER BY p.id LIMIT 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT p.id, p.name, COUNT(r.id) as reviewCount FROM products p LEFT JOIN reviews r ON p.id = r.productId WHERE p.slug LIKE '%zodiac%' OR p.slug LIKE '%guardian%' OR p.categoryId IN (SELECT id FROM categories WHERE slug LIKE '%zodiac%' OR slug LIKE '%guardian%') GROUP BY p.id, p.name ORDER BY p.id LIMIT 20;",
+  "rows": [
+    {
+      "id": "510001",
+      "name": "Wutai Mountain Imbued Rat Guardian Pendant",
+      "reviewCount": "17799"
+    },
+    {
+      "id": "510002",
+      "name": "Wutai Mountain Imbued Ox Guardian Pendant",
+      "reviewCount": "14088"
+    },
+    {
+      "id": "510003",
+      "name": "Wutai Mountain Imbued Tiger Guardian Pendant",
+      "reviewCount": "14204"
+    },
+    {
+      "id": "510004",
+      "name": "Wutai Mountain Imbued Rabbit Guardian Pendant",
+      "reviewCount": "17241"
+    },
+    {
+      "id": "510005",
+      "name": "Wutai Mountain Imbued Dragon Guardian Pendant",
+      "reviewCount": "13395"
+    },
+    {
+      "id": "510006",
+      "name": "Wutai Mountain Imbued Snake Guardian Pendant",
+      "reviewCount": "16152"
+    },
+    {
+      "id": "510007",
+      "name": "Wutai Mountain Imbued Horse Guardian Pendant",
+      "reviewCount": "17296"
+    },
+    {
+      "id": "510008",
+      "name": "Wutai Mountain Imbued Goat Guardian Pendant",
+      "reviewCount": "15911"
+    },
+    {
+      "id": "510009",
+      "name": "Wutai Mountain Imbued Lineage Holderey Guardian Pendant",
+      "reviewCount": "16309"
+    },
+    {
+      "id": "510010",
+      "name": "Wutai Mountain Imbued Rooster Guardian Pendant",
+      "reviewCount": "17058"
+    },
+    {
+      "id": "510011",
+      "name": "Wutai Mountain Imbued Dog Guardian Pendant",
+      "reviewCount": "16704"
+    },
+    {
+      "id": "510012",
+      "name": "Wutai Mountain Imbued Pig Guardian Pendant",
+      "reviewCount": "13066"
+    },
+    {
+      "id": "510013",
+      "name": "Wutai Mountain Imbued Aries Guardian Pendant",
+      "reviewCount": "15587"
+    },
+    {
+      "id": "510014",
+      "name": "Wutai Mountain Imbued Taurus Guardian Pendant",
+      "reviewCount": "18205"
+    },
+    {
+      "id": "510015",
+      "name": "Wutai Mountain Imbued Gemini Guardian Pendant",
+      "reviewCount": "12905"
+    },
+    {
+      "id": "510016",
+      "name": "Wutai Mountain Imbued Cancer Guardian Pendant",
+      "reviewCount": "16975"
+    },
+    {
+      "id": "510017",
+      "name": "Wutai Mountain Imbued Leo Guardian Pendant",
+      "reviewCount": "16783"
+    },
+    {
+      "id": "510018",
+      "name": "Wutai Mountain Imbued Virgo Guardian Pendant",
+      "reviewCount": "18381"
+    },
+    {
+      "id": "510019",
+      "name": "Wutai Mountain Imbued Libra Guardian Pendant",
+      "reviewCount": "16995"
+    },
+    {
+      "id": "510020",
+      "name": "Wutai Mountain Imbued Scorpio Guardian Pendant",
+      "reviewCount": "14657"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\treviewCount\n510001\tWutai Mountain Imbued Rat Guardian Pendant\t17799\n510002\tWutai Mountain Imbued Ox Guardian Pendant\t14088\n510003\tWutai Mountain Imbued Tiger Guardian Pendant\t14204\n510004\tWutai Mountain Imbued Rabbit Guardian Pendant\t17241\n510005\tWutai Mountain Imbued Dragon Guardian Pendant\t13395\n510006\tWutai Mountain Imbued Snake Guardian Pendant\t16152\n510007\tWutai Mountain Imbued Horse Guardian Pendant\t17296\n510008\tWutai Mountain Imbued Goat Guardian Pendant\t15911\n510009\tWutai Mountain Imbued Lineage Holderey Guardian Pendant\t16309\n510010\tWutai Mountain Imbued Rooster Guardian Pendant\t17058\n510011\tWutai Mountain Imbued Dog Guardian Pendant\t16704\n510012\tWutai Mountain Imbued Pig Guardian Pendant\t13066\n510013\tWutai Mountain Imbued Aries Guardian Pendant\t15587\n510014\tWutai Mountain Imbued Taurus Guardian Pendant\t18205\n510015\tWutai Mountain Imbued Gemini Guardian Pendant\t12905\n510016\tWutai Mountain Imbued Cancer Guardian Pendant\t16975\n510017\tWutai Mountain Imbued Leo Guardian Pendant\t16783\n510018\tWutai Mountain Imbued Virgo Guardian Pendant\t18381\n510019\tWutai Mountain Imbued Libra Guardian Pendant\t16995\n510020\tWutai Mountain Imbued Scorpio Guardian Pendant\t14657\n",
+  "stderr": "",
+  "execution_time_ms": 1987
+}

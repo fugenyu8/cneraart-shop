@@ -1,0 +1,46 @@
+{
+  "query": "SELECT COUNT(*) as totalReviews FROM reviews; SELECT productId, COUNT(*) as cnt FROM reviews GROUP BY productId ORDER BY cnt DESC LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT COUNT(*) as totalReviews FROM reviews; SELECT productId, COUNT(*) as cnt FROM reviews GROUP BY productId ORDER BY cnt DESC LIMIT 10;",
+  "rows": [
+    {
+      "totalReviews": "829630"
+    },
+    {
+      "totalReviews": "productId\tcnt"
+    },
+    {
+      "totalReviews": "510021\t18796"
+    },
+    {
+      "totalReviews": "510018\t18381"
+    },
+    {
+      "totalReviews": "510014\t18205"
+    },
+    {
+      "totalReviews": "510057\t18042"
+    },
+    {
+      "totalReviews": "510031\t18015"
+    },
+    {
+      "totalReviews": "510053\t17804"
+    },
+    {
+      "totalReviews": "510001\t17799"
+    },
+    {
+      "totalReviews": "510029\t17706"
+    },
+    {
+      "totalReviews": "510049\t17600"
+    },
+    {
+      "totalReviews": "510007\t17296"
+    }
+  ],
+  "messages": [],
+  "stdout": "totalReviews\n829630\nproductId\tcnt\n510021\t18796\n510018\t18381\n510014\t18205\n510057\t18042\n510031\t18015\n510053\t17804\n510001\t17799\n510029\t17706\n510049\t17600\n510007\t17296\n",
+  "stderr": "",
+  "execution_time_ms": 867
+}

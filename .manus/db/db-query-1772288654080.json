@@ -1,0 +1,70 @@
+{
+  "query": "SELECT id, name, salePrice, regularPrice FROM products WHERE id >= 700043 ORDER BY id LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, name, salePrice, regularPrice FROM products WHERE id >= 700043 ORDER BY id LIMIT 10;",
+  "rows": [
+    {
+      "id": "700043",
+      "name": "Obsidian Teardrop Pendant - 约38*27*13mm",
+      "salePrice": "47.00",
+      "regularPrice": "49.00"
+    },
+    {
+      "id": "700044",
+      "name": "Obsidian Lucky Bead Bracelet - 主石直径约：10mm",
+      "salePrice": "48.00",
+      "regularPrice": "50.00"
+    },
+    {
+      "id": "700045",
+      "name": "White Chalcedony Peace & Prosperity Pendant - 宽约：2cm",
+      "salePrice": "46.00",
+      "regularPrice": "48.00"
+    },
+    {
+      "id": "700046",
+      "name": "Bodhi Apricot Blossom Mist Bracelet - 珠子直径约：10mm",
+      "salePrice": "47.00",
+      "regularPrice": "49.00"
+    },
+    {
+      "id": "700047",
+      "name": "Obsidian Teardrop Pendant - 约38*27*13mm",
+      "salePrice": "47.00",
+      "regularPrice": "49.00"
+    },
+    {
+      "id": "700048",
+      "name": "Obsidian Lucky Bead Bracelet - 主石直径约：10mm",
+      "salePrice": "48.00",
+      "regularPrice": "50.00"
+    },
+    {
+      "id": "700049",
+      "name": "White Chalcedony Peace & Prosperity Pendant - 宽约：2cm",
+      "salePrice": "46.00",
+      "regularPrice": "48.00"
+    },
+    {
+      "id": "700050",
+      "name": "Bodhi Apricot Blossom Mist Bracelet - 珠子直径约：10mm",
+      "salePrice": "47.00",
+      "regularPrice": "49.00"
+    },
+    {
+      "id": "700051",
+      "name": "Bodhi Apricot Blossom Mist Bracelet - 珠子直径约：11mm",
+      "salePrice": "47.00",
+      "regularPrice": "49.00"
+    },
+    {
+      "id": "700052",
+      "name": "Bodhi Apricot Blossom Mist Bracelet - 珠子直径约：12mm",
+      "salePrice": "47.00",
+      "regularPrice": "49.00"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tname\tsalePrice\tregularPrice\n700043\tObsidian Teardrop Pendant - 约38*27*13mm\t47.00\t49.00\n700044\tObsidian Lucky Bead Bracelet - 主石直径约：10mm\t48.00\t50.00\n700045\tWhite Chalcedony Peace & Prosperity Pendant - 宽约：2cm\t46.00\t48.00\n700046\tBodhi Apricot Blossom Mist Bracelet - 珠子直径约：10mm\t47.00\t49.00\n700047\tObsidian Teardrop Pendant - 约38*27*13mm\t47.00\t49.00\n700048\tObsidian Lucky Bead Bracelet - 主石直径约：10mm\t48.00\t50.00\n700049\tWhite Chalcedony Peace & Prosperity Pendant - 宽约：2cm\t46.00\t48.00\n700050\tBodhi Apricot Blossom Mist Bracelet - 珠子直径约：10mm\t47.00\t49.00\n700051\tBodhi Apricot Blossom Mist Bracelet - 珠子直径约：11mm\t47.00\t49.00\n700052\tBodhi Apricot Blossom Mist Bracelet - 珠子直径约：12mm\t47.00\t49.00\n",
+  "stderr": "",
+  "execution_time_ms": 499
+}

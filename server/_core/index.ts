@@ -129,7 +129,22 @@ async function startServer() {
     })
   );
   // System health check API for monitoring
-  app.get('/api/health', (req, res) => {
+  app.get('/api/health', async (req, res) => {
+    let dbInfo: any = { connected: false, reviewCount: 0, dbHost: '' };
+    try {
+      const dbMod = await import('../db.js' as any);
+      const db = await dbMod.getDb();
+      if (db) {
+        const result = await db.execute('SELECT COUNT(*) as cnt FROM reviews');
+        dbInfo.connected = true;
+        dbInfo.reviewCount = (result as any)[0]?.[0]?.cnt ?? (result as any)[0]?.cnt ?? 0;
+      }
+      const url = process.env.DATABASE_URL || '';
+      const hostMatch = url.match(/@([^:/]+)/);
+      dbInfo.dbHost = hostMatch ? hostMatch[1] : 'unknown';
+    } catch(e: any) {
+      dbInfo.error = String(e?.message || '').substring(0, 100);
+    }
     res.json({
       status: 'ok',
       system: 'cneraart-shop',
@@ -137,6 +152,7 @@ async function startServer() {
       memory: process.memoryUsage(),
       timestamp: Date.now(),
       version: process.env.RAILWAY_GIT_COMMIT_SHA || 'dev',
+      db: dbInfo,
     });
   });
 

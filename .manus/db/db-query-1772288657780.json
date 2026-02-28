@@ -1,0 +1,70 @@
+{
+  "query": "SELECT id, salePrice, regularPrice, ROUND(regularPrice/salePrice, 3) as ratio FROM products WHERE id >= 700043 ORDER BY id LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2vUuSS4u8JGEyYT.root --database 8WruFPRUxPMzzwD4ZeeUDg --execute SELECT id, salePrice, regularPrice, ROUND(regularPrice/salePrice, 3) as ratio FROM products WHERE id >= 700043 ORDER BY id LIMIT 10;",
+  "rows": [
+    {
+      "id": "700043",
+      "salePrice": "47.00",
+      "regularPrice": "49.00",
+      "ratio": "1.043"
+    },
+    {
+      "id": "700044",
+      "salePrice": "48.00",
+      "regularPrice": "50.00",
+      "ratio": "1.042"
+    },
+    {
+      "id": "700045",
+      "salePrice": "46.00",
+      "regularPrice": "48.00",
+      "ratio": "1.043"
+    },
+    {
+      "id": "700046",
+      "salePrice": "47.00",
+      "regularPrice": "49.00",
+      "ratio": "1.043"
+    },
+    {
+      "id": "700047",
+      "salePrice": "47.00",
+      "regularPrice": "49.00",
+      "ratio": "1.043"
+    },
+    {
+      "id": "700048",
+      "salePrice": "48.00",
+      "regularPrice": "50.00",
+      "ratio": "1.042"
+    },
+    {
+      "id": "700049",
+      "salePrice": "46.00",
+      "regularPrice": "48.00",
+      "ratio": "1.043"
+    },
+    {
+      "id": "700050",
+      "salePrice": "47.00",
+      "regularPrice": "49.00",
+      "ratio": "1.043"
+    },
+    {
+      "id": "700051",
+      "salePrice": "47.00",
+      "regularPrice": "49.00",
+      "ratio": "1.043"
+    },
+    {
+      "id": "700052",
+      "salePrice": "47.00",
+      "regularPrice": "49.00",
+      "ratio": "1.043"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tsalePrice\tregularPrice\tratio\n700043\t47.00\t49.00\t1.043\n700044\t48.00\t50.00\t1.042\n700045\t46.00\t48.00\t1.043\n700046\t47.00\t49.00\t1.043\n700047\t47.00\t49.00\t1.043\n700048\t48.00\t50.00\t1.042\n700049\t46.00\t48.00\t1.043\n700050\t47.00\t49.00\t1.043\n700051\t47.00\t49.00\t1.043\n700052\t47.00\t49.00\t1.043\n",
+  "stderr": "",
+  "execution_time_ms": 352
+}
