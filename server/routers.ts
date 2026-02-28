@@ -65,8 +65,14 @@ export const appRouter = router({
         }
 
         const images = await db.getProductImages(product.id);
-        const reviews = await db.getProductReviews(product.id, 50);
-        const reviewStats = await db.getProductReviewStats(product.id);
+        let reviews: any[] = [];
+        let reviewStats = { total: 0, byRating: {}, byLanguage: {}, avgRating: 0 };
+        try {
+          reviews = await db.getProductReviews(product.id, 50);
+          reviewStats = await db.getProductReviewStats(product.id);
+        } catch (e) {
+          console.warn('[products.getBySlug] Failed to load reviews for product', product.id, e);
+        }
 
         return { ...product, images, reviews, reviewStats, averageRating: reviewStats.avgRating };
       }),
