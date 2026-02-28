@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,7 +13,7 @@ import { getLocalized } from "@/lib/localized";
 
 export default function Cart() {
   const { t } = useTranslation();
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isLoading: authLoading } = useAuth();
   const [, setLocation] = useLocation();
   const [couponCode, setCouponCode] = useState("");
 
@@ -31,9 +31,31 @@ export default function Cart() {
     discount: number;
   } | null>(null);
 
+  useEffect(() => {
+    if (!authLoading && !isAuthenticated) {
+      window.location.href = getLoginUrl("/cart");
+    }
+  }, [isAuthenticated, authLoading]);
+
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">{t('loading', '加载中...')}</p>
+        </div>
+      </div>
+    );
+  }
+
   if (!isAuthenticated) {
-    window.location.href = getLoginUrl();
-    return null;
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-gray-600">{t('redirectingToLogin', '正在跳转到登录页面...')}</p>
+        </div>
+      </div>
+    );
   }
 
   const handleUpdateQuantity = async (cartItemId: number, newQuantity: number) => {
