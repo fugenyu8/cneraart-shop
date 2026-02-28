@@ -131,11 +131,25 @@ function BankTransferInfo({
         <p className="text-xs text-slate-500 mt-2">{t("checkout.memo_format_hint")}</p>
       </div>
 
+       {/* WhatsApp 联系方式 */}
+      <div className="flex items-center gap-3 bg-green-900/20 border border-green-700/40 rounded-lg p-3">
+        <div className="text-sm text-green-200/90">
+          <p className="font-medium mb-0.5">After transfer, confirm via WhatsApp</p>
+          <a
+            href="https://wa.me/8618310686772"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-400 underline font-mono"
+          >
+            +86 183 1068 6772
+          </a>
+          <span className="text-green-200/60 ml-2 text-xs">(Send screenshot + order number)</span>
+        </div>
+      </div>
       <p className="text-xs text-slate-500 text-center">{t("checkout.swift_remark")}</p>
     </div>
   );
 }
-
 // ========== 支付宝信息组件 ==========
 function AlipayInfo({
   orderNumber,
@@ -226,12 +240,26 @@ function AlipayInfo({
               {step}
             </li>
           ))}
-        </ol>
+         </ol>
+      </div>
+      {/* WhatsApp 联系方式 */}
+      <div className="flex items-center gap-3 bg-green-900/20 border border-green-700/40 rounded-lg p-3">
+        <div className="text-sm text-green-200/90">
+          <p className="font-medium mb-0.5">After transfer, confirm via WhatsApp</p>
+          <a
+            href="https://wa.me/8618310686772"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-400 underline font-mono"
+          >
+            +86 183 1068 6772
+          </a>
+          <span className="text-green-200/60 ml-2 text-xs">(Send screenshot + order number)</span>
+        </div>
       </div>
     </div>
   );
 }
-
 // ========== 微信支付信息组件 ==========
 function WechatPayInfo({
   orderNumber,
@@ -256,7 +284,7 @@ function WechatPayInfo({
         <div className="text-sm text-green-200/90 space-y-1">
           <p className="font-medium">WeChat Pay · 微信支付</p>
           <p className="text-green-200/70">
-            Scan the QR code with WeChat to pay. After payment, please send a screenshot to confirm your order.
+            Scan the QR code with WeChat to pay. After payment, please send a screenshot to our WhatsApp to confirm your order.
           </p>
         </div>
       </div>
@@ -314,7 +342,7 @@ function WechatPayInfo({
             "Open WeChat and tap the Scan icon (扫一扫)",
             `Scan the QR code above and pay $${total.toFixed(2)} USD`,
             `Add order number "${orderNumber || "ORD-XXXX"}" in the payment note`,
-            "Send payment screenshot to confirm your order",
+            <span>Send payment screenshot to our WhatsApp: <a href="https://wa.me/8618310686772" target="_blank" rel="noopener noreferrer" className="text-green-400 underline">+86 183 1068 6772</a></span>,
           ].map((step, i) => (
             <li key={i} className="flex gap-2">
               <span className="shrink-0 w-5 h-5 rounded-full bg-[#07C160]/20 text-[#07C160] text-xs flex items-center justify-center font-bold">

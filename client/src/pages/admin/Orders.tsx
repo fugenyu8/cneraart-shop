@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import AdminLayout from "@/components/AdminLayout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Table,
   TableBody,
@@ -19,14 +20,61 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
-import { Search, Eye, Package, Banknote, CreditCard, AlertCircle } from "lucide-react";
+import { toast } from "sonner";
+import {
+  Search,
+  Eye,
+  Package,
+  Banknote,
+  CreditCard,
+  AlertCircle,
+  CheckCircle2,
+  RefreshCw,
+  MessageCircle,
+} from "lucide-react";
 
 export default function AdminOrders() {
   const { t } = useTranslation();
   const [search, setSearch] = useState("");
-  const [statusFilter, setStatusFilter] = useState<"all" | "pending" | "processing" | "shipped" | "delivered" | "cancelled">("all");
+  const [statusFilter, setStatusFilter] = useState<
+    "all" | "pending" | "processing" | "shipped" | "delivered" | "cancelled"
+  >("all");
+  const [confirmDialogOpen, setConfirmDialogOpen] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState<any>(null);
+  const [transactionId, setTransactionId] = useState("");
+  const utils = trpc.useUtils();
+
+  // 确认收款 mutation
+  const confirmMutation = trpc.orders.confirmOfflinePayment.useMutation({
+    onSuccess: () => {
+      toast.success("已确认收款，订单状态已更新");
+      setConfirmDialogOpen(false);
+      setSelectedOrder(null);
+      setTransactionId("");
+      utils.admin.orders.listAll.invalidate();
+    },
+    onError: (err: any) => {
+      toast.error(err.message || "确认失败，请重试");
+    },
+  });
+
+  const handleConfirmPayment = () => {
+    if (!selectedOrder) return;
+    confirmMutation.mutate({
+      orderId: selectedOrder.id,
+      paymentId: transactionId || undefined,
+    });
+  };
 
   // 获取订单列表
   const { data: orders, isLoading } = trpc.admin.orders.listAll.useQuery({
@@ -42,19 +90,29 @@ export default function AdminOrders() {
       cancelled: { variant: "outline", label: "已取消", color: "text-red-400" },
     };
     const config = variants[status] || variants.pending;
-    return <Badge variant={config.variant} className={config.color}>{config.label}</Badge>;
+    return (
+      <Badge variant={config.variant} className={config.color}>
+        {config.label}
+      </Badge>
+    );
   };
 
   const getPaymentBadge = (paymentMethod: string, paymentStatus: string) => {
+    const pendingCls =
+      "bg-red-500/20 text-red-300 border border-red-500/30 animate-pulse";
+    const paidCls =
+      "bg-green-500/20 text-green-300 border border-green-500/30";
+    const defaultCls = "bg-slate-700/50 text-slate-400";
+    const cls =
+      paymentStatus === "pending"
+        ? pendingCls
+        : paymentStatus === "paid"
+        ? paidCls
+        : defaultCls;
+
     if (paymentMethod === "bank_transfer") {
       return (
-        <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full ${
-          paymentStatus === "pending"
-            ? "bg-red-500/20 text-red-300 border border-red-500/30 animate-pulse"
-            : paymentStatus === "paid"
-            ? "bg-green-500/20 text-green-300 border border-green-500/30"
-            : "bg-slate-700/50 text-slate-400"
-        }`}>
+        <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full ${cls}`}>
           <Banknote className="w-3 h-3" />
           银行转账
           {paymentStatus === "pending" && <AlertCircle className="w-3 h-3 text-red-400" />}
@@ -63,15 +121,18 @@ export default function AdminOrders() {
     }
     if (paymentMethod === "alipay") {
       return (
-        <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full ${
-          paymentStatus === "pending"
-            ? "bg-red-500/20 text-red-300 border border-red-500/30 animate-pulse"
-            : paymentStatus === "paid"
-            ? "bg-green-500/20 text-green-300 border border-green-500/30"
-            : "bg-slate-700/50 text-slate-400"
-        }`}>
+        <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full ${cls}`}>
           <CreditCard className="w-3 h-3" />
           支付宝
+          {paymentStatus === "pending" && <AlertCircle className="w-3 h-3 text-red-400" />}
+        </span>
+      );
+    }
+    if (paymentMethod === "wechat") {
+      return (
+        <span className={`inline-flex items-center gap-1 px-2 py-0.5 text-xs rounded-full ${cls}`}>
+          <MessageCircle className="w-3 h-3" />
+          微信支付
           {paymentStatus === "pending" && <AlertCircle className="w-3 h-3 text-red-400" />}
         </span>
       );
@@ -90,10 +151,15 @@ export default function AdminOrders() {
     search ? order.orderNumber.toLowerCase().includes(search.toLowerCase()) : true
   );
 
-  // 统计待确认付款数量
-  const pendingOfflineCount = orders?.filter(
-    (o: any) => (o.paymentMethod === "bank_transfer" || o.paymentMethod === "alipay") && o.paymentStatus === "pending"
-  ).length || 0;
+  // 统计待确认付款数量（含微信）
+  const pendingOfflineCount =
+    orders?.filter(
+      (o: any) =>
+        (o.paymentMethod === "bank_transfer" ||
+          o.paymentMethod === "alipay" ||
+          o.paymentMethod === "wechat") &&
+        o.paymentStatus === "pending"
+    ).length || 0;
 
   return (
     <AdminLayout>
@@ -118,11 +184,17 @@ export default function AdminOrders() {
                 </span>
               </div>
               <span className="text-red-300 font-medium">
-                有 <span className="text-red-200 font-bold">{pendingOfflineCount}</span> 笔线下付款订单待确认
+                有{" "}
+                <span className="text-red-200 font-bold">{pendingOfflineCount}</span>{" "}
+                笔线下付款订单待确认
               </span>
             </div>
             <Link href="/wobifa888/pending-payments">
-              <Button size="sm" variant="outline" className="border-red-500/50 text-red-300 hover:bg-red-500/20">
+              <Button
+                size="sm"
+                variant="outline"
+                className="border-red-500/50 text-red-300 hover:bg-red-500/20"
+              >
                 去确认
               </Button>
             </Link>
@@ -140,7 +212,10 @@ export default function AdminOrders() {
               className="pl-10 bg-slate-900/50 border-slate-800 text-white"
             />
           </div>
-          <Select value={statusFilter} onValueChange={(value: any) => setStatusFilter(value)}>
+          <Select
+            value={statusFilter}
+            onValueChange={(value: any) => setStatusFilter(value)}
+          >
             <SelectTrigger className="w-40 bg-slate-900/50 border-slate-800 text-white">
               <SelectValue placeholder="状态筛选" />
             </SelectTrigger>
@@ -175,7 +250,11 @@ export default function AdminOrders() {
               </TableHeader>
               <TableBody>
                 {filteredOrders.map((order: any) => {
-                  const isOfflinePending = (order.paymentMethod === "bank_transfer" || order.paymentMethod === "alipay") && order.paymentStatus === "pending";
+                  const isOfflinePending =
+                    (order.paymentMethod === "bank_transfer" ||
+                      order.paymentMethod === "alipay" ||
+                      order.paymentMethod === "wechat") &&
+                    order.paymentStatus === "pending";
                   return (
                     <TableRow
                       key={order.id}
@@ -215,8 +294,26 @@ export default function AdminOrders() {
                       </TableCell>
                       <TableCell>
                         <div className="flex items-center justify-end gap-2">
+                          {isOfflinePending && (
+                            <Button
+                              size="sm"
+                              onClick={() => {
+                                setSelectedOrder(order);
+                                setTransactionId("");
+                                setConfirmDialogOpen(true);
+                              }}
+                              className="bg-green-600 hover:bg-green-500 text-white text-xs h-8 px-3"
+                            >
+                              <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
+                              确认收款
+                            </Button>
+                          )}
                           <Link href={`/wobifa888/orders/${order.id}`}>
-                            <Button variant="ghost" size="icon" className="text-slate-400 hover:text-white">
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="text-slate-400 hover:text-white"
+                            >
                               <Eye className="w-4 h-4" />
                             </Button>
                           </Link>
@@ -242,6 +339,94 @@ export default function AdminOrders() {
           )}
         </div>
       </div>
+
+      {/* 确认收款对话框 */}
+      <Dialog open={confirmDialogOpen} onOpenChange={setConfirmDialogOpen}>
+        <DialogContent className="bg-slate-900 border-slate-800 text-white max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-xl">
+              <CheckCircle2 className="w-5 h-5 text-green-400" />
+              确认收款
+            </DialogTitle>
+            <DialogDescription className="text-slate-400">
+              确认后系统将自动更新订单状态
+            </DialogDescription>
+          </DialogHeader>
+          {selectedOrder && (
+            <div className="space-y-4 py-2">
+              <div className="p-4 rounded-lg bg-slate-800/50 border border-slate-700 space-y-2">
+                <div className="flex justify-between">
+                  <span className="text-slate-400">订单号</span>
+                  <span className="font-mono text-white">{selectedOrder.orderNumber}</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">支付方式</span>
+                  <span className="text-white">
+                    {selectedOrder.paymentMethod === "bank_transfer"
+                      ? "银行转账"
+                      : selectedOrder.paymentMethod === "alipay"
+                      ? "支付宝"
+                      : selectedOrder.paymentMethod === "wechat"
+                      ? "微信支付"
+                      : selectedOrder.paymentMethod}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">订单金额</span>
+                  <span className="text-[oklch(82%_0.18_85)] font-bold text-lg">
+                    ${parseFloat(selectedOrder.total).toFixed(2)}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-slate-400">客户</span>
+                  <span className="text-white">{selectedOrder.user?.email || "未知"}</span>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Label htmlFor="transactionId" className="text-slate-300">
+                  转账流水号 <span className="text-slate-500">(选填)</span>
+                </Label>
+                <Input
+                  id="transactionId"
+                  placeholder="输入银行流水号 / 支付宝 / 微信交易号..."
+                  value={transactionId}
+                  onChange={(e) => setTransactionId(e.target.value)}
+                  className="bg-slate-800 border-slate-700 text-white"
+                />
+                <p className="text-xs text-slate-500">
+                  填写流水号有助于后续对账，不填也可以确认
+                </p>
+              </div>
+            </div>
+          )}
+          <DialogFooter className="gap-2">
+            <Button
+              variant="outline"
+              onClick={() => setConfirmDialogOpen(false)}
+              className="border-slate-700 text-slate-300"
+            >
+              取消
+            </Button>
+            <Button
+              onClick={handleConfirmPayment}
+              disabled={confirmMutation.isPending}
+              className="bg-green-600 hover:bg-green-500 text-white"
+            >
+              {confirmMutation.isPending ? (
+                <>
+                  <RefreshCw className="w-4 h-4 mr-2 animate-spin" />
+                  确认中...
+                </>
+              ) : (
+                <>
+                  <CheckCircle2 className="w-4 h-4 mr-2" />
+                  确认已收款
+                </>
+              )}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </AdminLayout>
   );
 }
