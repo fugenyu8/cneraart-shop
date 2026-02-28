@@ -446,9 +446,30 @@ export default function Checkout() {
   // 未登录跳转到登录页
   useEffect(() => {
     if (!authLoading && !user) {
-      window.location.href = getLoginUrl();
+      const loginUrl = getLoginUrl();
+      if (loginUrl) {
+        window.location.href = loginUrl;
+      }
     }
   }, [user, authLoading]);
+
+  // 未登录且无OAuth配置时显示提示
+  if (!authLoading && !user) {
+    const loginUrl = getLoginUrl();
+    if (!loginUrl) {
+      return (
+        <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+          <div className="container mx-auto px-4 py-16 text-center">
+            <h1 className="text-3xl font-bold text-white mb-4">Please Sign In</h1>
+            <p className="text-slate-400 mb-8">You need to sign in to proceed with checkout.</p>
+            <Button onClick={() => navigate("/")} className="bg-[oklch(82%_0.18_85)] hover:bg-[oklch(82%_0.18_85)]/90 text-slate-900">
+              Back to Home
+            </Button>
+          </div>
+        </div>
+      );
+    }
+  }
 
   // 使用默认地址
   useEffect(() => {
