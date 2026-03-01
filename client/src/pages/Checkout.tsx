@@ -44,7 +44,7 @@ function DeliveredCountBadge() {
           {count.toLocaleString()}+ dharma objects delivered worldwide
         </p>
         <p className="text-xs text-amber-600/80 mt-0.5">
-          已有 {count.toLocaleString()}+ 位有缘人请回此法物 · 五台山开光加持
+          已有 {count.toLocaleString()}+ 位有缘人请回法物 · 五台山开光加持
         </p>
       </div>
     </div>
