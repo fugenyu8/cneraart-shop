@@ -193,7 +193,8 @@
     "update_failed": "Aggiornamento fallito",
     "remove_success": "Articolo rimosso",
     "remove_failed": "Rimozione fallita",
-    "invalid_coupon": "Codice coupon non valido"
+    "invalid_coupon": "Codice coupon non valido",
+    "per_item": "pezzo"
   },
   "checkout": {
     "title": "Pagamento",

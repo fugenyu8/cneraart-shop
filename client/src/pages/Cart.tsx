@@ -5,7 +5,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { getLoginUrl } from "@/const";
 import { Sparkles, Trash2, Plus, Minus, ShoppingBag, Tag } from "lucide-react";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
@@ -42,7 +41,7 @@ export default function Cart() {
       <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-amber-600 mx-auto mb-4"></div>
-          <p className="text-gray-600">{t('loading', '加载中...')}</p>
+          <p className="text-gray-600">{t('common.loading', 'Loading...')}</p>
         </div>
       </div>
     );
@@ -56,23 +55,23 @@ export default function Cart() {
       });
       utils.cart.get.invalidate();
     } catch (error) {
-      toast.error("更新失败");
+      toast.error(t('cart.update_failed', 'Update failed'));
     }
   };
 
   const handleRemove = async (cartItemId: number) => {
     try {
       await removeMutation.mutateAsync({ cartItemId });
-      toast.success("已移除");
+      toast.success(t('cart.remove_success', 'Item removed'));
       utils.cart.get.invalidate();
     } catch (error) {
-      toast.error("移除失败");
+      toast.error(t('cart.remove_failed', 'Remove failed'));
     }
   };
 
   const handleApplyCoupon = async () => {
     if (!couponCode.trim()) {
-      toast.error("请输入优惠券代码");
+      toast.error(t('cart.invalid_coupon', 'Please enter a coupon code'));
       return;
     }
 
@@ -87,12 +86,12 @@ export default function Cart() {
           code: couponCode,
           discount: result.discount,
         });
-        toast.success("优惠券已应用");
+        toast.success(t('cart.coupon_applied', 'Coupon applied'));
       } else {
-        toast.error(result.error || "优惠券无效");
+        toast.error(result.error || t('cart.invalid_coupon', 'Invalid coupon'));
       }
     } catch (error) {
-      toast.error("验证失败");
+      toast.error(t('cart.update_failed', 'Validation failed'));
     }
   };
 
@@ -113,12 +112,12 @@ export default function Cart() {
     }, 0) || 0;
 
   const discount = appliedCoupon?.discount || 0;
-  const shipping = subtotal > 50 ? 0 : 5; // 满$50免运费
+  const shipping = 0; // 全场免运费
   const total = subtotal - discount + shipping;
 
   return (
     <div className="min-h-screen bg-background">
-      {/* 顶部导航 */}
+      {/* Top navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container py-4">
           <div className="flex items-center justify-between">
@@ -139,22 +138,22 @@ export default function Cart() {
       </nav>
 
       <div className="container py-4 md:py-8">
-        <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-8 gradient-text">购物车</h2>
+        <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-8 gradient-text">{t('cart.title', 'Shopping Cart')}</h2>
 
         {!cartItems || cartItems.length === 0 ? (
           <Card className="bg-card">
             <CardContent className="p-12 text-center">
               <ShoppingBag className="w-16 h-16 text-muted-foreground mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">购物车是空的</h3>
-              <p className="text-muted-foreground mb-6">快去选购您喜欢的产品吧</p>
+              <h3 className="text-xl font-bold mb-2">{t('cart.empty', 'Your cart is empty')}</h3>
+              <p className="text-muted-foreground mb-6">{t('cart.empty_desc', 'Browse our products and add items to your cart')}</p>
               <Link href="/products">
-                <Button className="btn-primary">浏览产品</Button>
+                <Button className="btn-primary">{t('cart.browse_products', 'Browse Products')}</Button>
               </Link>
             </CardContent>
           </Card>
         ) : (
           <div className="grid lg:grid-cols-3 gap-4 md:gap-8">
-            {/* 左侧 - 购物车商品列表 */}
+            {/* Left - Cart items */}
             <div className="lg:col-span-2 space-y-4">
               {cartItems.map((item) => {
                 if (!item.product) return null;
@@ -166,7 +165,7 @@ export default function Cart() {
                   <Card key={item.id} className="bg-card">
                     <CardContent className="p-4 md:p-6">
                       <div className="flex gap-3 md:gap-6 flex-col sm:flex-row">
-                        {/* 产品图片 */}
+                        {/* Product image */}
                         <div className="w-full sm:w-24 h-32 sm:h-24 rounded-lg overflow-hidden border border-border flex-shrink-0">
                           {item.images[0] ? (
                             <img
@@ -181,7 +180,7 @@ export default function Cart() {
                           )}
                         </div>
 
-                        {/* 产品信息 */}
+                        {/* Product info */}
                         <div className="flex-1">
                           <Link href={`/products/${item.product.slug}`}>
                             <h3 className="font-bold mb-1 hover:text-accent transition-colors">
@@ -189,11 +188,11 @@ export default function Cart() {
                             </h3>
                           </Link>
                           <p className="text-sm text-muted-foreground mb-3">
-                            ${price.toFixed(2)} 每件
+                            ${price.toFixed(2)} {t('cart.per_item', 'each')}
                           </p>
 
                           <div className="flex items-center justify-between flex-wrap gap-3">
-                            {/* 数量控制 */}
+                            {/* Quantity control */}
                             <div className="flex items-center gap-2 flex-1 sm:flex-initial">
                               <Button
                                 variant="outline"
@@ -218,7 +217,7 @@ export default function Cart() {
                               </Button>
                             </div>
 
-                            {/* 小计和删除 */}
+                            {/* Item total and remove */}
                             <div className="flex items-center gap-3 md:gap-4">
                               <span className="text-base md:text-lg font-bold text-accent">
                                 ${itemTotal.toFixed(2)}
@@ -241,18 +240,18 @@ export default function Cart() {
               })}
             </div>
 
-            {/* 右侧 - 订单摘要 */}
+            {/* Right - Order summary */}
             <div>
               <Card className="bg-card sticky top-24">
                 <CardContent className="p-4 md:p-6">
-                  <h3 className="text-xl font-bold mb-6">订单摘要</h3>
+                  <h3 className="text-xl font-bold mb-6">{t('checkout.order_summary', 'Order Summary')}</h3>
 
-                  {/* 优惠券输入 */}
+                  {/* Coupon input */}
                   <div className="mb-6">
-                    <label className="block text-sm font-bold mb-2">优惠券代码</label>
+                    <label className="block text-sm font-bold mb-2">{t('cart.coupon_code', 'Coupon Code')}</label>
                     <div className="flex gap-2">
                       <Input
-                        placeholder="输入优惠券"
+                        placeholder={t('cart.coupon_placeholder', 'Enter coupon code')}
                         value={couponCode}
                         onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
                         className="bg-background border-border"
@@ -267,52 +266,47 @@ export default function Cart() {
                     </div>
                     {appliedCoupon && (
                       <p className="text-sm text-success mt-2">
-                        已应用优惠券: {appliedCoupon.code}
+                        {t('cart.coupon_applied', 'Coupon applied')}: {appliedCoupon.code}
                       </p>
                     )}
                   </div>
 
-                  {/* 价格明细 */}
+                  {/* Price breakdown */}
                   <div className="space-y-3 mb-6 pb-6 border-b border-border">
                     <div className="flex justify-between text-muted-foreground">
-                      <span>小计</span>
+                      <span>{t('cart.subtotal', 'Subtotal')}</span>
                       <span>${subtotal.toFixed(2)}</span>
                     </div>
                     {discount > 0 && (
                       <div className="flex justify-between text-success">
-                        <span>优惠券折扣</span>
+                        <span>{t('cart.discount', 'Discount')}</span>
                         <span>-${discount.toFixed(2)}</span>
                       </div>
                     )}
                     <div className="flex justify-between text-muted-foreground">
-                      <span>运费</span>
-                      <span>{shipping === 0 ? "免费" : `$${shipping.toFixed(2)}`}</span>
+                      <span>{t('cart.shipping', 'Shipping')}</span>
+                      <span>{t('cart.free_shipping', 'Free')}</span>
                     </div>
-                    {subtotal < 50 && shipping > 0 && (
-                      <p className="text-xs text-muted-foreground">
-                        再购买 ${(50 - subtotal).toFixed(2)} 即可享受免运费
-                      </p>
-                    )}
                   </div>
 
-                  {/* 总计 */}
+                  {/* Total */}
                   <div className="flex justify-between text-xl font-bold mb-6">
-                    <span>总计</span>
+                    <span>{t('cart.total', 'Total')}</span>
                     <span className="text-accent">${total.toFixed(2)}</span>
                   </div>
 
-                  {/* 结算按钮 */}
+                  {/* Checkout button */}
                   <Button
                     className="btn-primary w-full"
                     size="lg"
                     onClick={() => setLocation("/checkout")}
                   >
-                    去结算
+                    {t('cart.checkout', 'Proceed to Checkout')}
                   </Button>
 
                   <Link href="/products">
                     <Button variant="ghost" className="w-full mt-3">
-                      继续购物
+                      {t('cart.continue_shopping', 'Continue Shopping')}
                     </Button>
                   </Link>
                 </CardContent>

@@ -193,7 +193,8 @@
     "update_failed": "Échec de la mise à jour",
     "remove_success": "Article retiré",
     "remove_failed": "Échec du retrait",
-    "invalid_coupon": "Code promo invalide"
+    "invalid_coupon": "Code promo invalide",
+    "per_item": "pièce"
   },
   "checkout": {
     "title": "Paiement",

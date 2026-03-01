@@ -186,7 +186,8 @@
     "update_failed": "Update failed",
     "remove_success": "Item removed",
     "remove_failed": "Remove failed",
-    "invalid_coupon": "Invalid coupon code"
+    "invalid_coupon": "Invalid coupon code",
+    "per_item": "each"
   },
   "checkout": {
     "title": "Checkout",

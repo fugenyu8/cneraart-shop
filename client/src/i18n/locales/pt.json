@@ -636,7 +636,8 @@
     "update_failed": "更新失败",
     "remove_success": "已移除",
     "remove_failed": "移除失败",
-    "invalid_coupon": "优惠券无效"
+    "invalid_coupon": "优惠券无效",
+    "per_item": "unidade"
   },
   "account": {
     "my_account": "我的账户",

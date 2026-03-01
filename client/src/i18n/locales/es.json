@@ -193,7 +193,8 @@
     "update_failed": "Actualización fallida",
     "remove_success": "Artículo eliminado",
     "remove_failed": "Eliminación fallida",
-    "invalid_coupon": "Código de cupón inválido"
+    "invalid_coupon": "Código de cupón inválido",
+    "per_item": "unidad"
   },
   "checkout": {
     "title": "Pago",

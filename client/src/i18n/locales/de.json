@@ -193,7 +193,8 @@
     "update_failed": "Aktualisierung fehlgeschlagen",
     "remove_success": "Artikel entfernt",
     "remove_failed": "Entfernen fehlgeschlagen",
-    "invalid_coupon": "Ungültiger Gutscheincode"
+    "invalid_coupon": "Ungültiger Gutscheincode",
+    "per_item": "Stück"
   },
   "checkout": {
     "title": "Kasse",
