@@ -1113,6 +1113,126 @@ export async function getAdminStats() {
     serviceStats,
     // VIP系统
     vipStats,
+    // 市场运营数据
+    marketingData: await getMarketingData(db),
+  };
+}
+
+// ====== 市场运营数据汇总 ======
+async function getMarketingData(db: ReturnType<typeof drizzle>) {
+  const now = new Date();
+  const sevenDaysAgo = new Date();
+  sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+  sevenDaysAgo.setHours(0, 0, 0, 0);
+  const thirtyDaysAgo = new Date();
+  thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+  thirtyDaysAgo.setHours(0, 0, 0, 0);
+
+  // 1. 用户语言分布
+  const langResult = await db.select({
+    language: users.preferredLanguage,
+    count: sql<number>`COUNT(*)`,
+  }).from(users).groupBy(users.preferredLanguage);
+  const languageDistribution: Record<string, number> = {};
+  langResult.forEach(r => { languageDistribution[r.language] = r.count; });
+
+  // 2. 国家分布（来自地址表）
+  const countryResult = await db.select({
+    country: addresses.country,
+    count: sql<number>`COUNT(DISTINCT ${addresses.userId})`,
+  }).from(addresses).groupBy(addresses.country).orderBy(desc(sql<number>`COUNT(DISTINCT ${addresses.userId})`)).limit(15);
+  const countryDistribution = countryResult.map(r => ({ country: r.country, users: r.count }));
+
+  // 3. 转化漏斗：注册用户 → 下单用户 → 已支付 → 已完成
+  const [totalUsersResult] = await db.select({ count: sql<number>`COUNT(*)` }).from(users);
+  const totalUsersCount = totalUsersResult?.count || 0;
+
+  const [orderedUsersResult] = await db.select({ count: sql<number>`COUNT(DISTINCT ${orders.userId})` }).from(orders);
+  const orderedUsersCount = orderedUsersResult?.count || 0;
+
+  const [paidUsersResult] = await db.select({ count: sql<number>`COUNT(DISTINCT ${orders.userId})` }).from(orders).where(eq(orders.paymentStatus, 'paid'));
+  const paidUsersCount = paidUsersResult?.count || 0;
+
+  const [completedUsersResult] = await db.select({ count: sql<number>`COUNT(DISTINCT ${orders.userId})` }).from(orders).where(eq(orders.status, 'delivered'));
+  const completedUsersCount = completedUsersResult?.count || 0;
+
+  const conversionFunnel = {
+    registered: totalUsersCount,
+    ordered: orderedUsersCount,
+    paid: paidUsersCount,
+    completed: completedUsersCount,
+    registerToOrderRate: totalUsersCount > 0 ? Number(((orderedUsersCount / totalUsersCount) * 100).toFixed(1)) : 0,
+    orderToPaidRate: orderedUsersCount > 0 ? Number(((paidUsersCount / orderedUsersCount) * 100).toFixed(1)) : 0,
+    paidToCompleteRate: paidUsersCount > 0 ? Number(((completedUsersCount / paidUsersCount) * 100).toFixed(1)) : 0,
+    overallRate: totalUsersCount > 0 ? Number(((paidUsersCount / totalUsersCount) * 100).toFixed(1)) : 0,
+  };
+
+  // 4. 近7天每日营收+订单趋势
+  const dailyTrendResult = await db.select({
+    day: sql<string>`DATE(${orders.createdAt})`,
+    orderCount: sql<number>`COUNT(*)`,
+    revenue: sql<number>`COALESCE(SUM(CASE WHEN ${orders.paymentStatus}='paid' THEN CAST(${orders.total} AS DECIMAL(10,2)) ELSE 0 END), 0)`,
+    newUsers: sql<number>`0`,
+  }).from(orders).where(gte(orders.createdAt, sevenDaysAgo)).groupBy(sql`DATE(${orders.createdAt})`);
+
+  // 新用户趋势
+  const userTrendResult = await db.select({
+    day: sql<string>`DATE(${users.createdAt})`,
+    count: sql<number>`COUNT(*)`,
+  }).from(users).where(gte(users.createdAt, sevenDaysAgo)).groupBy(sql`DATE(${users.createdAt})`);
+  const userTrendMap: Record<string, number> = {};
+  userTrendResult.forEach(r => { userTrendMap[r.day] = r.count; });
+
+  const dailyTrend7d = dailyTrendResult.map(r => ({
+    date: r.day,
+    orders: r.orderCount,
+    revenue: r.revenue,
+    newUsers: userTrendMap[r.day] || 0,
+  }));
+
+  // 5. 平均订单金额
+  const [avgResult] = await db.select({
+    avg: sql<number>`COALESCE(AVG(CAST(${orders.total} AS DECIMAL(10,2))), 0)`,
+  }).from(orders).where(eq(orders.paymentStatus, 'paid'));
+  const avgOrderValue = Number(Number(avgResult?.avg || 0).toFixed(2));
+
+  // 6. 复购率（下过2单以上的用户比例）
+  const repeatBuyersResult = await db.select({
+    count: sql<number>`COUNT(*)`,
+  }).from(
+    db.select({
+      userId: orders.userId,
+      orderCount: sql<number>`COUNT(*)`,
+    }).from(orders).where(eq(orders.paymentStatus, 'paid')).groupBy(orders.userId).having(sql`COUNT(*) >= 2`).as('repeat_buyers')
+  );
+  const repeatBuyers = repeatBuyersResult[0]?.count || 0;
+  const repeatBuyerRate = paidUsersCount > 0 ? Number(((repeatBuyers / paidUsersCount) * 100).toFixed(1)) : 0;
+
+  // 7. 30天新用户趋势（按周汇总）
+  const weeklyNewUsersResult = await db.select({
+    week: sql<string>`YEARWEEK(${users.createdAt}, 1)`,
+    count: sql<number>`COUNT(*)`,
+  }).from(users).where(gte(users.createdAt, thirtyDaysAgo)).groupBy(sql`YEARWEEK(${users.createdAt}, 1)`);
+  const weeklyNewUsers = weeklyNewUsersResult.map(r => ({ week: r.week, count: r.count }));
+
+  // 8. 命理服务转化（预约→完成）
+  const [fortuneBookedResult] = await db.select({ count: sql<number>`COUNT(*)` }).from(fortuneBookings);
+  const [fortuneCompletedResult] = await db.select({ count: sql<number>`COUNT(*)` }).from(fortuneBookings).where(eq(fortuneBookings.status, 'completed'));
+  const fortuneConversion = {
+    booked: fortuneBookedResult?.count || 0,
+    completed: fortuneCompletedResult?.count || 0,
+    rate: (fortuneBookedResult?.count || 0) > 0 ? Number((((fortuneCompletedResult?.count || 0) / (fortuneBookedResult?.count || 0)) * 100).toFixed(1)) : 0,
+  };
+
+  return {
+    languageDistribution,
+    countryDistribution,
+    conversionFunnel,
+    dailyTrend7d,
+    avgOrderValue,
+    repeatBuyerRate,
+    weeklyNewUsers,
+    fortuneConversion,
   };
 }
 
