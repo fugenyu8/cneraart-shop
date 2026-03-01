@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { getLocalized } from "@/lib/localized";
+import { PaymentProofUpload } from "@/components/PaymentProofUpload";
 
 const ALIPAY_QR_URL =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663348895853/8WruFPRUxPMzzwD4ZeeUDg/alipay-qr_ed756fd8.jpg";
@@ -1052,6 +1053,12 @@ export default function Checkout() {
                             orderNumber={createdOrderNumber}
                             total={total}
                           />
+                          {createdOrderId && createdOrderNumber && (
+                            <PaymentProofUpload
+                              orderId={createdOrderId}
+                              orderNumber={createdOrderNumber}
+                            />
+                          )}
                           <Button
                             type="button"
                             onClick={() => navigate(`/orders/${createdOrderId}`)}
@@ -1096,6 +1103,12 @@ export default function Checkout() {
                             orderNumber={createdOrderNumber}
                             total={total}
                           />
+                          {createdOrderId && createdOrderNumber && (
+                            <PaymentProofUpload
+                              orderId={createdOrderId}
+                              orderNumber={createdOrderNumber}
+                            />
+                          )}
                           <Button
                             type="button"
                             onClick={() => navigate(`/orders/${createdOrderId}`)}
@@ -1140,6 +1153,12 @@ export default function Checkout() {
                             orderNumber={createdOrderNumber}
                             total={total}
                           />
+                          {createdOrderId && createdOrderNumber && (
+                            <PaymentProofUpload
+                              orderId={createdOrderId}
+                              orderNumber={createdOrderNumber}
+                            />
+                          )}
                           <Button
                             type="button"
                             onClick={() => navigate(`/orders/${createdOrderId}`)}

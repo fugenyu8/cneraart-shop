@@ -665,6 +665,65 @@ export const appRouter = router({
           events: trackingEvents,
         };
       }),
+
+    // 上传付款凭证截图
+    uploadPaymentProof: protectedProcedure
+      .input(
+        z.object({
+          orderId: z.number(),
+          imageBase64: z.string(),
+          mimeType: z.string().default("image/jpeg"),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const { orderId, imageBase64, mimeType } = input;
+        // 验证订单归属
+        const order = await db.getOrderById(orderId);
+        if (!order) throw new TRPCError({ code: "NOT_FOUND", message: "Order not found" });
+        if (order.userId !== ctx.user.id) throw new TRPCError({ code: "FORBIDDEN", message: "Access denied" });
+        // 上传截图到S3
+        const { storagePut } = await import("./storage");
+        const ext = mimeType.split("/")[1] || "jpg";
+        const fileKey = `payment-proofs/${orderId}-${Date.now()}.${ext}`;
+        const base64Data = imageBase64.replace(/^data:[^;]+;base64,/, "");
+        const buffer = Buffer.from(base64Data, "base64");
+        const { url } = await storagePut(fileKey, buffer, mimeType);
+        // 保存到订单记录
+        await db.updateOrderPaymentProof(orderId, ctx.user.id, url, fileKey);
+        // 获取完整订单信息用于邮件通知
+        const orderWithItems = await db.getOrderWithItems(orderId);
+        // 发送邮件通知给商家
+        try {
+          const { sendEmail, getPaymentProofNotificationEmail } = await import("./email");
+          if (orderWithItems) {
+            const emailHtml = getPaymentProofNotificationEmail({
+              orderNumber: order.orderNumber,
+              total: order.total,
+              customerName: orderWithItems.user?.name || ctx.user.name || "Customer",
+              customerEmail: orderWithItems.user?.email || ctx.user.email || "",
+              paymentMethod: order.paymentMethod,
+              proofImageUrl: url,
+              items: (orderWithItems.items as any[]).map((item) => ({
+                productName: item.productName,
+                quantity: item.quantity,
+                price: item.price,
+              })),
+              shippingAddress: order.shippingAddress,
+              shippingCity: order.shippingCity,
+              shippingCountry: order.shippingCountry,
+              submittedAt: new Date().toLocaleString("zh-CN", { timeZone: "Asia/Shanghai" }),
+            });
+            await sendEmail({
+              to: "13381009758@163.com",
+              subject: `\u{1F9E7} \u65B0\u4ED8\u6B3E\u51ED\u8BC1 - \u8BA2\u5355 ${order.orderNumber} \u5DF2\u63D0\u4EA4`,
+              html: emailHtml,
+            });
+          }
+        } catch (err) {
+          console.error("Failed to send payment proof notification:", err);
+        }
+        return { success: true, proofUrl: url };
+      }),
   }),
 
   // ============= 管理员功能 =============

@@ -226,8 +226,92 @@ export function getDeliveryNotificationEmail(order: {
 }
 
 /**
- * 服务报告发送邮件模板
+ * 付款凭证通知邮件模板（发给商家）
  */
+export function getPaymentProofNotificationEmail(data: {
+  orderNumber: string;
+  total: string;
+  customerName: string;
+  customerEmail: string;
+  paymentMethod: string;
+  proofImageUrl: string;
+  items: Array<{ productName: string; quantity: number; price: string }>;
+  shippingAddress: string;
+  shippingCity: string;
+  shippingCountry: string;
+  submittedAt: string;
+}): string {
+  const itemsHtml = data.items
+    .map(
+      (item) => `
+    <tr>
+      <td style="padding: 10px; border-bottom: 1px solid #eee; color: #333;">${item.productName}</td>
+      <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: center; color: #333;">${item.quantity}</td>
+      <td style="padding: 10px; border-bottom: 1px solid #eee; text-align: right; color: #8B1A1A; font-weight: bold;">$${parseFloat(item.price).toFixed(2)}</td>
+    </tr>
+  `
+    )
+    .join("");
+
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>新付款凭证通知</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 700px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
+  <div style="background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.1);">
+    <div style="background: linear-gradient(135deg, #8B1A1A 0%, #D4AF37 100%); padding: 30px; text-align: center;">
+      <h1 style="color: white; margin: 0; font-size: 24px;">🧧 新付款凭证已提交</h1>
+      <p style="color: #FAF8F3; margin: 8px 0 0 0; font-size: 14px;">源·华渡 Yuan·Huadu — 后台通知</p>
+    </div>
+    <div style="padding: 30px;">
+      <div style="background: #FFF3CD; border: 1px solid #D4AF37; border-radius: 8px; padding: 15px; margin-bottom: 25px;">
+        <p style="margin: 0; color: #856404; font-weight: bold;">⚠️ 请核实付款截图，确认到账后在管理后台将订单状态更新为"已付款"。</p>
+      </div>
+      <h2 style="color: #8B1A1A; border-bottom: 2px solid #D4AF37; padding-bottom: 8px; margin-top: 0;">📋 订单信息</h2>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px;">
+        <tr><td style="padding: 8px 0; color: #666; width: 140px;">订单号</td><td style="padding: 8px 0; font-weight: bold; color: #8B1A1A;">${data.orderNumber}</td></tr>
+        <tr><td style="padding: 8px 0; color: #666;">订单金额</td><td style="padding: 8px 0; font-weight: bold; font-size: 18px; color: #8B1A1A;">$${parseFloat(data.total).toFixed(2)}</td></tr>
+        <tr><td style="padding: 8px 0; color: #666;">支付方式</td><td style="padding: 8px 0;">${data.paymentMethod}</td></tr>
+        <tr><td style="padding: 8px 0; color: #666;">提交时间</td><td style="padding: 8px 0;">${data.submittedAt}</td></tr>
+      </table>
+      <h2 style="color: #8B1A1A; border-bottom: 2px solid #D4AF37; padding-bottom: 8px;">👤 客户信息</h2>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px;">
+        <tr><td style="padding: 8px 0; color: #666; width: 140px;">姓名</td><td style="padding: 8px 0; font-weight: bold;">${data.customerName}</td></tr>
+        <tr><td style="padding: 8px 0; color: #666;">邮箱</td><td style="padding: 8px 0;"><a href="mailto:${data.customerEmail}" style="color: #8B1A1A;">${data.customerEmail}</a></td></tr>
+        <tr><td style="padding: 8px 0; color: #666;">收货地址</td><td style="padding: 8px 0;">${data.shippingAddress}, ${data.shippingCity}, ${data.shippingCountry}</td></tr>
+      </table>
+      <h2 style="color: #8B1A1A; border-bottom: 2px solid #D4AF37; padding-bottom: 8px;">🛍️ 购买商品</h2>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 25px; border: 1px solid #eee;">
+        <thead><tr style="background: #FAF8F3;"><th style="padding: 10px; text-align: left; color: #8B1A1A;">商品名称</th><th style="padding: 10px; text-align: center; color: #8B1A1A;">数量</th><th style="padding: 10px; text-align: right; color: #8B1A1A;">单价</th></tr></thead>
+        <tbody>${itemsHtml}</tbody>
+        <tfoot><tr style="background: #FAF8F3;"><td colspan="2" style="padding: 12px 10px; text-align: right; font-weight: bold;">订单总额</td><td style="padding: 12px 10px; text-align: right; font-weight: bold; font-size: 16px; color: #8B1A1A;">$${parseFloat(data.total).toFixed(2)}</td></tr></tfoot>
+      </table>
+      <h2 style="color: #8B1A1A; border-bottom: 2px solid #D4AF37; padding-bottom: 8px;">📸 付款截图</h2>
+      <div style="text-align: center; margin-bottom: 25px; background: #FAF8F3; padding: 20px; border-radius: 8px; border: 1px dashed #D4AF37;">
+        <img src="${data.proofImageUrl}" alt="付款截图" style="max-width: 100%; max-height: 600px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" />
+        <p style="margin: 12px 0 0 0; font-size: 12px;"><a href="${data.proofImageUrl}" target="_blank" style="color: #8B1A1A;">点击查看原图</a></p>
+      </div>
+      <div style="background: #E8F5E9; border: 1px solid #4CAF50; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+        <p style="margin: 0; color: #2E7D32; font-weight: bold;">✅ 确认到账后的操作步骤：</p>
+        <ol style="margin: 8px 0 0 0; padding-left: 20px; color: #2E7D32; font-size: 14px;">
+          <li>登录管理后台 → 订单管理 → 找到订单 ${data.orderNumber}</li>
+          <li>将支付状态更新为"已付款"</li>
+          <li>安排发货并填写物流单号</li>
+        </ol>
+      </div>
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; text-align: center; color: #999; font-size: 12px;">
+        <p>源·华渡 Yuan·Huadu — 后台自动通知</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+  `.trim();
+}
+
 export function getServiceReportEmail(service: {
   serviceName: string;
   customerName: string;

@@ -2176,3 +2176,34 @@ export async function getOrdersByPaymentStatus(
     total: countResult[0]?.count ?? 0,
   };
 }
+
+// ============= 付款凭证 =============
+export async function updateOrderPaymentProof(
+  orderId: number,
+  userId: number,
+  proofUrl: string,
+  proofFileKey: string
+) {
+  const db = await getDb();
+  if (!db) return false;
+  const order = await db.select().from(orders).where(eq(orders.id, orderId)).limit(1);
+  if (!order[0] || order[0].userId !== userId) return false;
+  await db.update(orders).set({
+    directPayProof: proofUrl,
+    directPayNote: proofFileKey,
+  }).where(eq(orders.id, orderId));
+  return true;
+}
+
+export async function getOrderWithItems(orderId: number) {
+  const db = await getDb();
+  if (!db) return null;
+  const order = await db.select().from(orders).where(eq(orders.id, orderId)).limit(1);
+  if (!order[0]) return null;
+  const items = await db
+    .select()
+    .from(orderItems)
+    .where(eq(orderItems.orderId, orderId));
+  const user = await db.select().from(users).where(eq(users.id, order[0].userId)).limit(1);
+  return { order: order[0], items, user: user[0] || null };
+}

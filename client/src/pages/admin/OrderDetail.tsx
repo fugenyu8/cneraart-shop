@@ -333,6 +333,31 @@ export default function AdminOrderDetail() {
                     </div>
                   </div>
                 )}
+                {/* 付款截图 */}
+                {(order as any).directPayProof ? (
+                  <div className="mt-3 space-y-2">
+                    <p className="text-slate-400 text-sm font-medium">付款凭证截图</p>
+                    <a
+                      href={(order as any).directPayProof}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block rounded-lg overflow-hidden border border-amber-700/40 hover:border-amber-500 transition-colors"
+                    >
+                      <img
+                        src={(order as any).directPayProof}
+                        alt="Payment proof"
+                        className="w-full max-h-64 object-contain bg-slate-950"
+                      />
+                    </a>
+                    <p className="text-xs text-slate-500">点击图片可查看原图</p>
+                  </div>
+                ) : (
+                  (order.paymentMethod === "bank_transfer" || order.paymentMethod === "alipay" || order.paymentMethod === "wechat") && (
+                    <div className="mt-2 p-2 rounded bg-slate-800/50 border border-slate-700">
+                      <p className="text-xs text-slate-500">用户尚未上传付款截图</p>
+                    </div>
+                  )
+                )}
               </CardContent>
             </Card>
 
