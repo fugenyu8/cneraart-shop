@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams, Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -24,6 +24,33 @@ export default function ProductDetail() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [uploadedImages, setUploadedImages] = useState<File[]>([]);
   const [questionDescription, setQuestionDescription] = useState("");
+  
+  // 触摸滑动手势
+  const touchStartX = useRef<number | null>(null);
+  const touchStartY = useRef<number | null>(null);
+  
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+  
+  const handleTouchEnd = (e: React.TouchEvent, imagesLength: number) => {
+    if (touchStartX.current === null || touchStartY.current === null) return;
+    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
+    const deltaY = e.changedTouches[0].clientY - touchStartY.current;
+    // 只处理水平滑动（水平位移大于垂直位移，且超过40px）
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 40) {
+      if (deltaX < 0) {
+        // 向左滑 → 下一张
+        setSelectedImage(prev => (prev + 1) % imagesLength);
+      } else {
+        // 向右滑 → 上一张
+        setSelectedImage(prev => (prev - 1 + imagesLength) % imagesLength);
+      }
+    }
+    touchStartX.current = null;
+    touchStartY.current = null;
+  };
   
   // 评价系统状态
   const [allReviews, setAllReviews] = useState<any[]>([]); // 已加载的评论
@@ -367,8 +394,10 @@ export default function ProductDetail() {
         <div className="grid md:grid-cols-2 gap-6 md:gap-12 mb-8 md:mb-12">
           {/* 左侧 - 产品图片 */}
           <div>
-            <div className="aspect-square rounded-lg overflow-hidden border border-border mb-4 bg-card cursor-pointer group relative"
-              onClick={() => product.images.length > 0 && setIsLightboxOpen(true)}>
+            <div className="aspect-square rounded-lg overflow-hidden border border-border mb-4 bg-card cursor-pointer group relative select-none"
+              onClick={() => product.images.length > 0 && setIsLightboxOpen(true)}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={(e) => handleTouchEnd(e, product.images.length)}>
               {product.images[selectedImage] ? (
                 <>
                   <OptimizedImage
@@ -390,9 +419,25 @@ export default function ProductDetail() {
                 </div>
               )}
             </div>
-            {/* 缩略图 */}
+            {/* 移动端滑动指示点 */}
             {product.images.length > 1 && (
-              <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+              <div className="flex md:hidden justify-center gap-1.5 mb-3">
+                {product.images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedImage(index)}
+                    className={`rounded-full transition-all ${
+                      selectedImage === index
+                        ? 'w-4 h-2 bg-accent'
+                        : 'w-2 h-2 bg-muted-foreground/40'
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
+            {/* 缩略图（桌面端显示） */}
+            {product.images.length > 1 && (
+              <div className="hidden md:flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
                 {product.images.map((image, index) => (
                   <button
                     key={image.id}
