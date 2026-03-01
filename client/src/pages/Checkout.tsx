@@ -20,6 +20,7 @@ import {
   Copy,
   AlertCircle,
   Tag,
+  Lock,
 } from "lucide-react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
 import { getLocalized } from "@/lib/localized";
@@ -469,13 +470,7 @@ export default function Checkout() {
     },
   });
 
-  // 未登录跳转到登录页
-  useEffect(() => {
-    if (!authLoading && !user) {
-      // 未登录时跳转到登录页，并保存返回路径
-      navigate("/login?returnTo=/checkout");
-    }
-  }, [user, authLoading]);
+  // 未登录时不再自动跳转，改为在渲染中显示登录引导
 
   // 使用默认地址
   useEffect(() => {
@@ -655,13 +650,49 @@ export default function Checkout() {
     );
   }
 
-  // 未登录时显示加载状态（useEffect会跳转）
+  // 未登录时显示登录引导页面
   if (!user) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
-        <div className="flex items-center justify-center min-h-[60vh]">
-          <Loader2 className="w-8 h-8 animate-spin text-amber-700" />
-        </div>
+      <div className="min-h-screen flex items-center justify-center px-4 py-12"
+        style={{ background: "linear-gradient(135deg, #1a0a00 0%, #3d1a00 50%, #1a0a00 100%)" }}>
+        <Card className="w-full max-w-md border-0 shadow-2xl"
+          style={{ background: "rgba(30,15,0,0.95)", borderColor: "rgba(212,175,55,0.3)" }}>
+          <div className="border rounded-xl" style={{ borderColor: "rgba(212,175,55,0.3)" }}>
+            <CardHeader className="pb-4 pt-8 px-8 text-center">
+              <div className="mx-auto mb-4 w-16 h-16 rounded-full flex items-center justify-center"
+                style={{ background: "rgba(212,175,55,0.15)" }}>
+                <Lock className="w-8 h-8" style={{ color: "#D4AF37" }} />
+              </div>
+              <CardTitle className="text-xl font-serif" style={{ color: "#D4AF37" }}>
+                {t("checkout.login_required_title", "Sign In to Continue")}
+              </CardTitle>
+              <p className="text-sm mt-2" style={{ color: "rgba(255,255,255,0.5)" }}>
+                {t("checkout.login_required_desc", "Please sign in to complete your purchase. Your cart items will be preserved.")}
+              </p>
+            </CardHeader>
+            <CardContent className="px-8 pb-8 space-y-3">
+              <Button
+                onClick={() => navigate("/login?returnTo=/checkout")}
+                className="w-full h-11 font-medium text-base"
+                style={{ background: "linear-gradient(135deg, #D4AF37, #B8962E)", color: "#1a0a00" }}>
+                {t("checkout.go_to_login", "Sign In")}
+              </Button>
+              <Button
+                variant="outline"
+                onClick={() => navigate("/register?returnTo=/checkout")}
+                className="w-full h-11 font-medium"
+                style={{ borderColor: "rgba(212,175,55,0.4)", color: "#D4AF37" }}>
+                {t("checkout.go_to_register", "Create Account")}
+              </Button>
+              <div className="text-center pt-2">
+                <button onClick={() => navigate("/")} className="text-xs hover:underline"
+                  style={{ color: "rgba(255,255,255,0.3)" }}>
+                  ← {t("checkout.back_to_store", "Back to Store")}
+                </button>
+              </div>
+            </CardContent>
+          </div>
+        </Card>
       </div>
     );
   }
