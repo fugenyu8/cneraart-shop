@@ -67,7 +67,7 @@ export default function SystemMonitor() {
   );
 
   const onlineCount = systems?.filter((s) => s.status === "online").length || 0;
-  const totalCount = systems?.length || 3;
+  const totalCount = systems?.length || 4;
   const avgResponseTime = systems
     ? Math.round(systems.reduce((sum, s) => sum + (s.responseTime || 0), 0) / systems.filter(s => s.responseTime > 0).length || 0)
     : 0;
@@ -80,7 +80,7 @@ export default function SystemMonitor() {
           <div>
             <h1 className="text-3xl font-bold text-white mb-2">系统监控</h1>
             <p className="text-slate-400">
-              实时监控三个系统的运行状态 · {onlineCount}/{totalCount} 在线
+              实时监控四个系统的运行状态 · {onlineCount}/{totalCount} 在线
               {autoRefresh && <span className="text-green-400 ml-2">● 每15秒自动刷新</span>}
             </p>
           </div>
@@ -176,7 +176,7 @@ export default function SystemMonitor() {
             正在检测系统状态...
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {systems?.map((sys) => (
               <Card key={sys.domain} className="bg-slate-900/50 border-slate-800 overflow-hidden">
                 {/* 状态条 */}

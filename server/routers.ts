@@ -1391,12 +1391,13 @@ export const appRouter = router({
         }),
     }),
 
-    // ============= 三系统统一监控 =============
+    // ============= 四系统统一监控 =============
     systemMonitor: router({
-      // 获取三个系统的实时状态（含响应时间测量）
+      // 获取四个系统的实时状态（含响应时间测量）
       getSystemStatus: adminProcedure.query(async () => {
         const systems = [
           { name: '商城主站', domain: 'www.cneraart.com', healthUrl: 'https://www.cneraart.com/api/health', type: 'json' as const },
+          { name: 'VIP专属服务', domain: 'vip.cneraart.com', healthUrl: 'https://vip.cneraart.com/api/health', type: 'json' as const },
           { name: '客户服务', domain: 'service.cneraart.com', healthUrl: 'https://service.cneraart.com/', type: 'html' as const },
           { name: '能量报告', domain: 'report.cneraart.com', healthUrl: 'https://report.cneraart.com/health', type: 'json' as const },
         ];
