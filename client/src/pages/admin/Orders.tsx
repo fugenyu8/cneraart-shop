@@ -41,6 +41,7 @@ import {
   CheckCircle2,
   RefreshCw,
   MessageCircle,
+  MessageSquare,
 } from "lucide-react";
 
 export default function AdminOrders() {
@@ -265,6 +266,14 @@ export default function AdminOrders() {
                       <TableCell className="font-mono text-white">
                         <div className="flex items-center gap-2">
                           {order.orderNumber}
+                          {order.customerNote && (
+                            <span
+                              title={order.customerNote}
+                              className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-amber-500/20 text-amber-400 cursor-help flex-shrink-0"
+                            >
+                              <MessageSquare className="w-2.5 h-2.5" />
+                            </span>
+                          )}
                           {isOfflinePending && (
                             <span className="flex h-2 w-2">
                               <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-red-400 opacity-75" />

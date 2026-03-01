@@ -1139,6 +1139,34 @@ export const appRouter = router({
             input.shippingCarrier,
             input.trackingNumber
           );
+          // 自动将订单状态更新为已发货，并发送发货邮件通知用户
+          try {
+            const order = await db.getOrderById(input.orderId);
+            if (order && order.status !== "shipped" && order.status !== "delivered") {
+              await db.updateOrderStatus(input.orderId, "shipped");
+            }
+            if (order) {
+              const user = await db.getUserById(order.userId);
+              if (user?.email) {
+                const { sendEmail, getShippingNotificationEmail } = await import("./email");
+                const addr = order.shippingAddress as any;
+                const customerName = typeof addr === 'string' ? 'Customer' : (addr?.name || 'Customer');
+                const emailHtml = getShippingNotificationEmail({
+                  orderNumber: order.orderNumber,
+                  customerName,
+                  shippingCarrier: input.shippingCarrier,
+                  trackingNumber: input.trackingNumber,
+                });
+                await sendEmail({
+                  to: user.email,
+                  subject: `Your order ${order.orderNumber} has been shipped — 源·华渡`,
+                  html: emailHtml,
+                });
+              }
+            }
+          } catch (error) {
+            console.error("[updateTracking] Failed to send shipping notification:", error);
+          }
           return { success: true };
         }),
 
