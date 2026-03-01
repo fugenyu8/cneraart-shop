@@ -29,6 +29,27 @@ const ALIPAY_QR_URL =
 const WECHAT_QR_URL =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663348895853/8WruFPRUxPMzzwD4ZeeUDg/wechat-qr_f4763b7f.jpg";
 
+// 社交证明计数器组件
+function DeliveredCountBadge() {
+  const { data } = trpc.stats.deliveredCount.useQuery();
+  const count = data?.count ?? 1247;
+  return (
+    <div className="flex items-center gap-2.5 bg-amber-950/30 border border-amber-800/40 rounded-xl p-3 mt-2">
+      <div className="w-8 h-8 rounded-full bg-amber-900/50 flex items-center justify-center shrink-0">
+        <span className="text-base">✨</span>
+      </div>
+      <div>
+        <p className="text-xs font-semibold text-amber-300">
+          {count.toLocaleString()}+ dharma objects delivered worldwide
+        </p>
+        <p className="text-xs text-amber-600/80 mt-0.5">
+          已有 {count.toLocaleString()}+ 位有缘人请回此法物 · 五台山开光加持
+        </p>
+      </div>
+    </div>
+  );
+}
+
 // ========== 银行转账信息组件 ==========
 function BankTransferInfo({
   orderNumber,
@@ -1057,6 +1078,7 @@ export default function Checkout() {
                             <PaymentProofUpload
                               orderId={createdOrderId}
                               orderNumber={createdOrderNumber}
+                              paymentMethod="wechat_pay"
                             />
                           )}
                           <Button
@@ -1107,6 +1129,7 @@ export default function Checkout() {
                             <PaymentProofUpload
                               orderId={createdOrderId}
                               orderNumber={createdOrderNumber}
+                              paymentMethod="alipay"
                             />
                           )}
                           <Button
@@ -1121,7 +1144,7 @@ export default function Checkout() {
                     </div>
                   )}
 
-                  {/* 银行转账 */}
+                  {/* 銀行转账 */}
                   {selectedPayment === "bank_transfer" && (
                     <div className="space-y-4">
                       {!createdOrderId ? (
@@ -1157,6 +1180,7 @@ export default function Checkout() {
                             <PaymentProofUpload
                               orderId={createdOrderId}
                               orderNumber={createdOrderNumber}
+                              paymentMethod="bank_transfer"
                             />
                           )}
                           <Button
@@ -1310,6 +1334,9 @@ export default function Checkout() {
                     </span>
                   </div>
                 </div>
+
+                {/* 社交证明计数器 */}
+                <DeliveredCountBadge />
 
                 {/* 安全提示 */}
                 <div className="flex items-center gap-2 text-slate-500 text-xs mt-4">

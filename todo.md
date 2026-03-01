@@ -1717,7 +1717,7 @@ PayPal支付凭证(明天完成)
 - [x] 向所有17种语言翻译文件添加5个新的支付话术键名（direct_payment_title/desc、direct_discount_text、sacred_vow_title/desc）
 - [x] 将Checkout.tsx中的硬编码英文替换为t()调用
 - [x] TypeScript编译验证通过
-- [ ] 推送到GitHub并验证生产环境
+- [x] 推送到GitHub（commit 2fcd2a4b），Railway 自动部署
 
 ## 修复运费和税费计算（2026-03-01）
 - [ ] 查看结算页面运费和税费计算逻辑
@@ -1739,4 +1739,21 @@ PayPal支付凭证(明天完成)
 - [x] 创建 PaymentProofUpload 组件（拖拽+点击上传，预览）
 - [x] 三种支付方式（微信/支付宝/银行转账）下单后均显示上传区域
 - [x] 管理后台订单详情页显示付款截图（点击可查看原图）
-- [ ] 推送到GitHub并验证生产环境
+- [x] 推送到GitHub（commit 2fcd2a4b），Railway 自动部署
+
+## 修复下单SQL错误 + 商品SKU编号（2026-03-01 紧急）
+- [ ] 修复 orders.create SQL 参数不匹配错误（directPayProof字段导致）
+- [ ] 为 products 表添加 sku 字段
+- [ ] 为现有167个商品生成 SKU 编号（格式：YHD-XXXXX）
+- [ ] 在管理后台订单详情和商品列表显示 SKU
+- [ ] 在发货相关邮件中包含 SKU 信息
+- [ ] 推送到 GitHub 并验证
+
+## 2026-03-01 新增功能
+- [x] WhatsApp一键确认按钮（付款凭证上传后显示，号码+8618310686772）
+- [x] 开光仪轨安排提示（上传成功后显示，含回复慢温馨提示）
+- [x] 社交证明计数器（结算页显示已发货订单数+基础数量1247）
+- [x] 忘记密码功能（邮件重置链接，1小时有效）
+- [x] 重置密码页面（/reset-password）
+- [x] 忘记密码页面（/forgot-password）
+- [x] 登录页添加"Forgot password?"链接

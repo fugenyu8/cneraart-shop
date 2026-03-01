@@ -134,6 +134,12 @@ export default function Login() {
                   </div>
                 </div>
 
+                <div className="flex justify-end -mt-1 mb-1">
+                  <Link href="/forgot-password" className="text-xs hover:underline" style={{ color: "rgba(212,175,55,0.7)" }}>
+                    Forgot password?
+                  </Link>
+                </div>
+
                 <Button
                   type="submit"
                   className="w-full h-11 font-medium text-base mt-2"

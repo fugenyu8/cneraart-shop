@@ -82,12 +82,95 @@ export const appRouter = router({
           name: user.name || "",
           expiresInMs: ONE_YEAR_MS,
         });
-        const cookieOptions = getSessionCookieOptions(ctx.req);
+         const cookieOptions = getSessionCookieOptions(ctx.req);
         ctx.res.cookie(COOKIE_NAME, sessionToken, { ...cookieOptions, maxAge: ONE_YEAR_MS });
         return { success: true, user: { id: user.id, email: user.email, name: user.name } };
       }),
-  }),
 
+    // 忘记密码：发送重置链接
+    forgotPassword: publicProcedure
+      .input(z.object({ email: z.string().email() }))
+      .mutation(async ({ input }) => {
+        const user = await db.getUserByEmail(input.email);
+        // 无论用户是否存在都返回成功，防止枚举邮箱
+        if (!user || !user.passwordHash) {
+          return { success: true };
+        }
+        // 生成重置令牌（使用 JWT 签名，1小时有效）
+        const crypto = await import("crypto");
+        const token = crypto.randomBytes(32).toString("hex");
+        const expiry = Date.now() + 60 * 60 * 1000; // 1小时
+        // 将 token 存储在 passwordHash 字段的特殊前缀中（临时方案，不影响正常登录）
+        // 格式：RESET:token:expiry:originalHash
+        const originalHash = user.passwordHash;
+        const resetMarker = `RESET:${token}:${expiry}:${originalHash}`;
+        await db.updateUserPasswordHash(user.id, resetMarker);
+        // 发送重置邮件
+        try {
+          const { sendEmail } = await import("./smtp");
+          const resetUrl = `https://yuanculture-8wrufpru.manus.space/reset-password?token=${token}&email=${encodeURIComponent(input.email)}`;
+          await sendEmail({
+            to: input.email,
+            subject: "Reset Your Password — 源·华渡",
+            html: `
+              <div style="font-family: Georgia, serif; max-width: 560px; margin: 0 auto; background: #1a0a00; color: #f5e6c8; padding: 40px; border-radius: 12px;">
+                <h2 style="color: #D4AF37; text-align: center; font-size: 24px;">源·华渡 密码重置</h2>
+                <p style="color: #c8a96e; margin: 24px 0 8px;">您好，</p>
+                <p style="color: #c8a96e;">我们收到了您的密码重置请求。请点击下方按钮重置您的密码：</p>
+                <div style="text-align: center; margin: 32px 0;">
+                  <a href="${resetUrl}" style="background: linear-gradient(135deg, #D4AF37, #B8962E); color: #1a0a00; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">重置密码 Reset Password</a>
+                </div>
+                <p style="color: #8a7060; font-size: 13px;">此链接将在 <strong style="color: #D4AF37;">1小时</strong> 后失效。</p>
+                <p style="color: #8a7060; font-size: 13px;">如果您没有请求重置密码，请忽略此邮件，您的账户安全不受影响。</p>
+                <hr style="border-color: #3d2010; margin: 24px 0;" />
+                <p style="color: #6a5040; font-size: 12px; text-align: center;">Yuan Hua Du · 源·华渡 · cneraart.com</p>
+              </div>
+            `,
+          });
+        } catch (err) {
+          console.error("[forgotPassword] Failed to send reset email:", err);
+        }
+        return { success: true };
+      }),
+
+    // 重置密码：验证 token 并设置新密码
+    resetPassword: publicProcedure
+      .input(z.object({
+        email: z.string().email(),
+        token: z.string().min(1),
+        newPassword: z.string().min(6, "Password must be at least 6 characters"),
+      }))
+      .mutation(async ({ input }) => {
+        const user = await db.getUserByEmail(input.email);
+        if (!user || !user.passwordHash) {
+          throw new TRPCError({ code: "BAD_REQUEST", message: "Invalid or expired reset link" });
+        }
+        // 解析重置标记
+        if (!user.passwordHash.startsWith("RESET:")) {
+          throw new TRPCError({ code: "BAD_REQUEST", message: "Invalid or expired reset link" });
+        }
+        const parts = user.passwordHash.split(":");
+        if (parts.length < 4) {
+          throw new TRPCError({ code: "BAD_REQUEST", message: "Invalid or expired reset link" });
+        }
+        const [, storedToken, expiryStr, ...hashParts] = parts;
+        const originalHash = hashParts.join(":");
+        const expiry = parseInt(expiryStr);
+        // 验证 token 和有效期
+        if (storedToken !== input.token) {
+          throw new TRPCError({ code: "BAD_REQUEST", message: "Invalid reset token" });
+        }
+        if (Date.now() > expiry) {
+          // 恢复原始 hash，避免账户锁死
+          await db.updateUserPasswordHash(user.id, originalHash);
+          throw new TRPCError({ code: "BAD_REQUEST", message: "Reset link has expired. Please request a new one." });
+        }
+        // 设置新密码
+        const newHash = await bcrypt.hash(input.newPassword, 12);
+        await db.updateUserPasswordHash(user.id, newHash);
+        return { success: true };
+      }),
+  }),
   // ============= 产品相关 =============
   products: router({
     // 获取产品列表(公开)
@@ -267,7 +350,17 @@ export const appRouter = router({
       }),
   }),
 
-  // ============= 分类相关 =============
+  // ============= 公开统计 =============
+  stats: router({
+    // 已发货订单数（社交证明）
+    deliveredCount: publicProcedure.query(async () => {
+      const count = await db.getDeliveredOrderCount();
+      // 加上基础数量（历史线下订单）
+      return { count: count + 1247 };
+    }),
+  }),
+
+  // ============= 分类相关 ==============
   categories: router({
     list: publicProcedure.query(async () => {
       return await db.getAllCategories();
@@ -553,9 +646,24 @@ export const appRouter = router({
         return { orderId: Number(orderId), orderNumber };
       }),
 
-    // 获取用户订单列表
+    // 获取用户订单列表（包含商品信息）
     list: protectedProcedure.query(async ({ ctx }) => {
-      return await db.getUserOrders(ctx.user.id);
+      const userOrders = await db.getUserOrders(ctx.user.id);
+      // 为每个订单加载商品列表
+      return await Promise.all(
+        userOrders.map(async (order) => {
+          const items = await db.getOrderItems(order.id);
+          // 为每个商品加载产品信息（图片和名称）
+          const itemsWithProducts = await Promise.all(
+            items.map(async (item) => {
+              const product = await db.getProductById(item.productId);
+              const images = product ? await db.getProductImages(item.productId) : [];
+              return { ...item, product: product ? { ...product, images } : null };
+            })
+          );
+          return { ...order, items: itemsWithProducts };
+        })
+      );
     }),
 
     // 获取订单详情

@@ -32,6 +32,8 @@ import BatchImport from "./pages/admin/BatchImport";
 import AdminSettings from "./pages/admin/Settings";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import ResetPassword from "./pages/ResetPassword";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -64,6 +66,8 @@ function Router() {
       <Route path={"/wobifa888/pending-payments"} component={PendingPayments} />
       <Route path={"/wobifa888/batch-import"} component={BatchImport} />
       <Route path={"/wobifa888/settings"} component={AdminSettings} />
+      <Route path={"/reset-password"} component={ResetPassword} />
+      <Route path={"/forgot-password"} component={ForgotPassword} />
       <Route path={"/404"} component={NotFound} />
       {/* Removed routes: /fortune, /destiny, /prayer - services migrated to VIP platform */}
       {/* Final fallback route */}

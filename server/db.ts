@@ -2207,3 +2207,22 @@ export async function getOrderWithItems(orderId: number) {
   const user = await db.select().from(users).where(eq(users.id, order[0].userId)).limit(1);
   return { order: order[0], items, user: user[0] || null };
 }
+
+// ============= 密码重置 =============
+export async function updateUserPasswordHash(userId: number, passwordHash: string) {
+  const db = await getDb();
+  if (!db) return false;
+  await db.update(users).set({ passwordHash }).where(eq(users.id, userId));
+  return true;
+}
+
+// ============= 社交证明统计 =============
+export async function getDeliveredOrderCount(): Promise<number> {
+  const db = await getDb();
+  if (!db) return 0;
+  const result = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(orders)
+    .where(eq(orders.status, "delivered"));
+  return result[0]?.count || 0;
+}

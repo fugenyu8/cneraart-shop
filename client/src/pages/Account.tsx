@@ -151,6 +151,9 @@ export default function Account() {
                                   <p className="text-white text-sm font-medium">
                                     {getLocalized(item.product?.name) || t("account.product_unavailable")}
                                   </p>
+                                  {(item.productSku || item.product?.sku) && (
+                                    <p className="text-xs text-amber-400/70 font-mono">SKU: {item.productSku || item.product?.sku}</p>
+                                  )}
                                   <p className="text-slate-400 text-sm">
                                     {t("account.quantity")}: {item.quantity} × ${parseFloat(item.price).toFixed(2)}
                                   </p>
