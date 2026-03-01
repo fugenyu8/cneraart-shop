@@ -720,5 +720,13 @@
     "out_of_stock": "Tükendi",
     "in_stock": "Stokta Var",
     "only_left": "Sadece {{count}} kaldı"
-  }
+  },
+  "copy_tracking_number": "Takip numarasını kopyala",
+  "track_package_online": "Paketi çevrimiçi takip et",
+  "track_via": "Takip et:",
+  "shipment_tracking": "Kargo takibi",
+  "tracking_not_available": "Takip bilgisi henüz mevcut değil",
+  "tracking_history": "Takip geçmişi",
+  "no_tracking_events": "Henüz takip olayı yok",
+  "shipped_date": "Gönderim tarihi"
 }

@@ -713,5 +713,13 @@
     "backToOrders": "Voltar aos Pedidos",
     "downloadPDF": "Baixar PDF",
     "exploreProducts": "Explorar Produtos"
-  }
+  },
+  "copy_tracking_number": "Copiar número de rastreamento",
+  "track_package_online": "Rastrear pacote online",
+  "track_via": "Rastrear via",
+  "shipment_tracking": "Rastreamento de envio",
+  "tracking_not_available": "Informações de rastreamento ainda não disponíveis",
+  "tracking_history": "Histórico de rastreamento",
+  "no_tracking_events": "Nenhum evento de rastreamento ainda",
+  "shipped_date": "Data de envio"
 }

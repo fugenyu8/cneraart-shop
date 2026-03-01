@@ -710,5 +710,13 @@
     "backToOrders": "返回订单",
     "downloadPDF": "下载PDF报告",
     "exploreProducts": "探索产品"
-  }
+  },
+  "copy_tracking_number": "複製運單號",
+  "track_package_online": "線上查詢物流",
+  "track_via": "透過以下管道追蹤",
+  "shipment_tracking": "物流追蹤",
+  "tracking_not_available": "暫無物流資訊",
+  "tracking_history": "物流軌跡",
+  "no_tracking_events": "暫無物流記錄",
+  "shipped_date": "發貨日期"
 }

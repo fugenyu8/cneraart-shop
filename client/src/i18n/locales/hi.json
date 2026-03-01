@@ -713,5 +713,13 @@
     "backToOrders": "ऑर्डर पर वापस जाएं",
     "downloadPDF": "पीडीएफ डाउनलोड करें",
     "exploreProducts": "उत्पाद खोजें"
-  }
+  },
+  "copy_tracking_number": "ट्रैकिंग नंबर कॉपी करें",
+  "track_package_online": "ऑनलाइन पैकेज ट्रैक करें",
+  "track_via": "के माध्यम से ट्रैक करें",
+  "shipment_tracking": "शिपमेंट ट्रैकिंग",
+  "tracking_not_available": "ट्रैकिंग जानकारी अभी उपलब्ध नहीं है",
+  "tracking_history": "ट्रैकिंग इतिहास",
+  "no_tracking_events": "अभी कोई ट्रैकिंग इवेंट नहीं",
+  "shipped_date": "शिपमेंट तिथि"
 }

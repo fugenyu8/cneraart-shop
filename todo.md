@@ -1795,3 +1795,13 @@ PayPal支付凭证(明天完成)
 ## 2026-03-01 发货通知与备注标记
 - [x] 管理员填写物流单号后自动发送发货邮件通知用户（含快递公司、追踪号）
 - [x] 管理后台订单列表中有用户留言的订单显示备注小图标（琥珀色MessageSquare图标）
+
+## 2026-03-01 用户订单追踪功能
+- [ ] 在用户订单详情页显示快递公司和追踪号（已发货状态）
+- [ ] 提供一键跳转至快递官网查询的链接（支持主流快递公司）
+
+## 快递追踪链接功能(2026-03-01)
+- [x] ShipmentTracking 组件添加一键跳转至快递官网查询按钮（支持 DHL/FedEx/UPS/EMS/顺丰/圆通/中通/申通/韵达等）
+- [x] 添加复制运单号功能（点击图标复制，显示绿色勾号确认）
+- [x] 未知快递公司默认跳转 17TRACK 通用追踪页面
+- [x] 为全部 17 种语言添加新翻译键（copy_tracking_number/track_package_online/track_via/shipment_tracking/tracking_not_available/tracking_history/no_tracking_events/shipped_date）

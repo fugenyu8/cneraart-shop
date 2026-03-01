@@ -723,5 +723,13 @@
     "backToOrders": "Zurück zu den Bestellungen",
     "downloadPDF": "PDF herunterladen",
     "exploreProducts": "Produkte entdecken"
-  }
+  },
+  "copy_tracking_number": "Sendungsnummer kopieren",
+  "track_package_online": "Paket online verfolgen",
+  "track_via": "Verfolgen über",
+  "shipment_tracking": "Sendungsverfolgung",
+  "tracking_not_available": "Sendungsverfolgung noch nicht verfügbar",
+  "tracking_history": "Sendungsverlauf",
+  "no_tracking_events": "Noch keine Sendungsereignisse",
+  "shipped_date": "Versanddatum"
 }

@@ -713,5 +713,13 @@
     "backToOrders": "주문으로 돌아가기",
     "downloadPDF": "PDF 다운로드",
     "exploreProducts": "상품 탐색"
-  }
+  },
+  "copy_tracking_number": "운송장 번호 복사",
+  "track_package_online": "온라인으로 패키지 추적",
+  "track_via": "추적 서비스",
+  "shipment_tracking": "배송 추적",
+  "tracking_not_available": "추적 정보가 아직 없습니다",
+  "tracking_history": "추적 내역",
+  "no_tracking_events": "아직 추적 이벤트가 없습니다",
+  "shipped_date": "발송일"
 }

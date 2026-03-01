@@ -713,5 +713,13 @@
     "backToOrders": "Kembali ke Pesanan",
     "downloadPDF": "Unduh PDF",
     "exploreProducts": "Jelajahi Produk"
-  }
+  },
+  "copy_tracking_number": "Salin nomor pelacakan",
+  "track_package_online": "Lacak paket secara online",
+  "track_via": "Lacak melalui",
+  "shipment_tracking": "Pelacakan pengiriman",
+  "tracking_not_available": "Informasi pelacakan belum tersedia",
+  "tracking_history": "Riwayat pelacakan",
+  "no_tracking_events": "Belum ada peristiwa pelacakan",
+  "shipped_date": "Tanggal pengiriman"
 }

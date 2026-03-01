@@ -713,5 +713,13 @@
     "backToOrders": "注文に戻る",
     "downloadPDF": "PDFダウンロード",
     "exploreProducts": "商品を探す"
-  }
+  },
+  "copy_tracking_number": "追跡番号をコピー",
+  "track_package_online": "オンラインで荷物を追跡",
+  "track_via": "追跡サービス",
+  "shipment_tracking": "配送追跡",
+  "tracking_not_available": "追跡情報はまだありません",
+  "tracking_history": "追跡履歴",
+  "no_tracking_events": "追跡イベントはまだありません",
+  "shipped_date": "発送日"
 }

@@ -713,5 +713,13 @@
     "backToOrders": "Назад к заказам",
     "downloadPDF": "Скачать PDF",
     "exploreProducts": "Изучить товары"
-  }
+  },
+  "copy_tracking_number": "Скопировать номер отслеживания",
+  "track_package_online": "Отследить посылку онлайн",
+  "track_via": "Отследить через",
+  "shipment_tracking": "Отслеживание отправления",
+  "tracking_not_available": "Информация об отслеживании пока недоступна",
+  "tracking_history": "История отслеживания",
+  "no_tracking_events": "Событий отслеживания пока нет",
+  "shipped_date": "Дата отправки"
 }

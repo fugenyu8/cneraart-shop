@@ -713,5 +713,13 @@
     "backToOrders": "العودة إلى الطلبات",
     "downloadPDF": "تحميل ملف PDF",
     "exploreProducts": "استكشاف المنتجات"
-  }
+  },
+  "copy_tracking_number": "نسخ رقم التتبع",
+  "track_package_online": "تتبع الطرد عبر الإنترنت",
+  "track_via": "التتبع عبر",
+  "shipment_tracking": "تتبع الشحنة",
+  "tracking_not_available": "معلومات التتبع غير متاحة بعد",
+  "tracking_history": "سجل التتبع",
+  "no_tracking_events": "لا توجد أحداث تتبع بعد",
+  "shipped_date": "تاريخ الشحن"
 }

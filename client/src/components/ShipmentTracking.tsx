@@ -1,9 +1,39 @@
+import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Package, Truck, MapPin, CheckCircle, Clock, AlertCircle } from "lucide-react";
+import { Package, Truck, MapPin, CheckCircle, Clock, AlertCircle, ExternalLink, Copy, Check } from "lucide-react";
 import { useTranslation } from "react-i18next";
+
+// 主流快递公司追踪链接映射
+const CARRIER_TRACKING_URLS: Record<string, string> = {
+  "DHL": "https://www.dhl.com/en/express/tracking.html?AWB={tracking}",
+  "FedEx": "https://www.fedex.com/fedextrack/?trknbr={tracking}",
+  "UPS": "https://www.ups.com/track?tracknum={tracking}",
+  "USPS": "https://tools.usps.com/go/TrackConfirmAction?tLabels={tracking}",
+  "TNT": "https://www.tnt.com/express/en_gb/site/tracking.html?searchType=con&cons={tracking}",
+  "Aramex": "https://www.aramex.com/track/results?ShipmentNumber={tracking}",
+  "EMS": "https://parcelsapp.com/en/tracking/{tracking}",
+  "China Post": "https://parcelsapp.com/en/tracking/{tracking}",
+  "SF Express": "https://www.sf-express.com/en/main/dynamic_function/waybill/#search/bill-number/{tracking}",
+  "顺丰": "https://www.sf-express.com/en/main/dynamic_function/waybill/#search/bill-number/{tracking}",
+  "圆通": "https://www.yto.net.cn/tracking?waybillNo={tracking}",
+  "中通": "https://www.zto.com/GuestService/Bill?billcode={tracking}",
+  "申通": "https://www.sto.cn/trace?waybillno={tracking}",
+  "韵达": "https://www.yundaex.com/en/index.php?waybillno={tracking}",
+  "邮政": "https://parcelsapp.com/en/tracking/{tracking}",
+};
+
+function getTrackingUrl(carrier: string, trackingNumber: string): string {
+  const carrierLower = carrier.toLowerCase();
+  for (const [key, url] of Object.entries(CARRIER_TRACKING_URLS)) {
+    if (carrierLower.includes(key.toLowerCase()) || key.toLowerCase().includes(carrierLower)) {
+      return url.replace("{tracking}", encodeURIComponent(trackingNumber));
+    }
+  }
+  return `https://www.17track.net/en/track#nums=${encodeURIComponent(trackingNumber)}`;
+}
 
 interface ShipmentTrackingProps {
   orderId: number;
@@ -12,6 +42,14 @@ interface ShipmentTrackingProps {
 export default function ShipmentTracking({ orderId }: ShipmentTrackingProps) {
   const { t } = useTranslation();
   const { data: tracking, isLoading } = trpc.orders.getTracking.useQuery({ orderId });
+  const [copied, setCopied] = useState(false);
+
+  const copyTrackingNumber = (trackingNumber: string) => {
+    navigator.clipboard.writeText(trackingNumber).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
 
   if (isLoading) {
     return (
@@ -91,25 +129,63 @@ export default function ShipmentTracking({ orderId }: ShipmentTrackingProps) {
       </CardHeader>
       <CardContent className="space-y-6">
         {/* 物流基本信息 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 bg-slate-800/50 rounded-lg">
-          <div>
-            <p className="text-sm text-slate-400 mb-1">{t("carrier")}</p>
-            <p className="text-white font-medium">{tracking.order.shippingCarrier || "N/A"}</p>
+        <div className="p-4 bg-slate-800/50 rounded-lg space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <p className="text-sm text-slate-400 mb-1">{t("carrier")}</p>
+              <p className="text-white font-medium">{tracking.order.shippingCarrier || "N/A"}</p>
+            </div>
+            <div>
+              <p className="text-sm text-slate-400 mb-1">{t("tracking_number")}</p>
+              <div className="flex items-center gap-2">
+                <p className="text-white font-medium font-mono text-sm break-all">
+                  {tracking.order.trackingNumber}
+                </p>
+                <button
+                  onClick={() => copyTrackingNumber(tracking.order.trackingNumber!)}
+                  className="text-slate-400 hover:text-white transition-colors flex-shrink-0"
+                  title={copied ? t("copied") : t("copy_tracking_number")}
+                >
+                  {copied ? (
+                    <Check className="h-4 w-4 text-green-400" />
+                  ) : (
+                    <Copy className="h-4 w-4" />
+                  )}
+                </button>
+              </div>
+              {copied && (
+                <p className="text-xs text-green-400 mt-1">{t("copied")}</p>
+              )}
+            </div>
+            {tracking.order.shippedAt && (
+              <div className="md:col-span-2">
+                <p className="text-sm text-slate-400 mb-1">{t("shipped_date")}</p>
+                <p className="text-white font-medium">
+                  {new Date(tracking.order.shippedAt).toLocaleString()}
+                </p>
+              </div>
+            )}
           </div>
-          <div>
-            <p className="text-sm text-slate-400 mb-1">{t("tracking_number")}</p>
-            <p className="text-white font-medium font-mono text-sm">
-              {tracking.order.trackingNumber}
+
+          {/* 一键追踪按钮 */}
+          <div className="pt-2 border-t border-slate-700">
+            <a
+              href={getTrackingUrl(
+                tracking.order.shippingCarrier || "",
+                tracking.order.trackingNumber || ""
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-amber-600 hover:bg-amber-500 active:bg-amber-700 text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              <Truck className="h-4 w-4" />
+              {t("track_package_online")}
+              <ExternalLink className="h-3.5 w-3.5" />
+            </a>
+            <p className="text-xs text-slate-500 mt-2">
+              {t("track_via")} {tracking.order.shippingCarrier || "17TRACK"}
             </p>
           </div>
-          {tracking.order.shippedAt && (
-            <div className="md:col-span-2">
-              <p className="text-sm text-slate-400 mb-1">{t("shipped_date")}</p>
-              <p className="text-white font-medium">
-                {new Date(tracking.order.shippedAt).toLocaleString()}
-              </p>
-            </div>
-          )}
         </div>
 
         <Separator className="bg-slate-800" />
