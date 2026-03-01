@@ -524,7 +524,7 @@ export default function Checkout() {
     }
 
     const discount = couponDiscount + directDiscount;
-    const tax = (subtotal - discount) * 0.08;
+    const tax = 0; // 税费免除
     const total = subtotal - discount + shipping + tax;
     return { subtotal, shipping, tax, discount, directDiscount, total };
   };
@@ -713,7 +713,7 @@ export default function Checkout() {
           <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.295.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.601-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.48 24 16.82 24 14.98c0-3.21-2.931-5.837-7.062-6.122zm-3.74 3.43c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.97-.982zm3.99 0c.535 0 .969.44.969.982a.976.976 0 0 1-.969.983.976.976 0 0 1-.969-.983c0-.542.434-.982.969-.982z" />
         </svg>
       ),
-      description: "CNY · 10% off · Instant",
+      description: "人民币 CNY · 10% off · Instant",
       badge: "10% OFF",
     },
     {
@@ -724,14 +724,14 @@ export default function Checkout() {
           <path d="M1024 629.76c0-2.56-0.64-4.48-0.64-7.04V192c0-105.6-86.4-192-192-192H192C86.4 0 0 86.4 0 192v640c0 105.6 86.4 192 192 192h640c105.6 0 192-86.4 192-192V629.76zM640 224c35.2 0 64 28.8 64 64s-28.8 64-64 64-64-28.8-64-64 28.8-64 64-64zM512 160h192v32H512v-32zm-96 576c-88.32 0-160-71.68-160-160s71.68-160 160-160c30.72 0 59.52 8.96 84.48 24.32L416 576l84.48 135.68C475.52 727.04 446.72 736 416 736zm480 96c0 35.2-28.8 64-64 64H192c-35.2 0-64-28.8-64-64V192c0-35.2 28.8-64 64-64h640c35.2 0 64 28.8 64 64v640z" />
         </svg>
       ),
-      description: "CNY · 10% off · Instant",
+      description: "人民币 CNY · 10% off · Instant",
       badge: "10% OFF",
     },
     {
       id: "bank_transfer",
       label: t("checkout.bank_transfer"),
       icon: <Building2 className="w-6 h-6" />,
-      description: "USD · Visa / Mastercard · 10% off",
+      description: "外币 USD/EUR · Visa / Mastercard · 10% off",
       badge: "10% OFF",
     },
   ];
@@ -1350,10 +1350,12 @@ export default function Checkout() {
                         : `$${shipping.toFixed(2)}`}
                     </span>
                   </div>
-                  <div className="flex justify-between text-slate-300">
-                    <span>{t("checkout.tax")}</span>
-                    <span>${tax.toFixed(2)}</span>
-                  </div>
+                  {tax > 0 && (
+                    <div className="flex justify-between text-slate-300">
+                      <span>{t("checkout.tax")}</span>
+                      <span>${tax.toFixed(2)}</span>
+                    </div>
+                  )}
                   <Separator className="bg-slate-800" />
                   <div className="flex justify-between text-white text-lg font-bold">
                     <span>{t("checkout.total")}</span>

@@ -2226,3 +2226,13 @@ export async function getDeliveredOrderCount(): Promise<number> {
     .where(eq(orders.status, "delivered"));
   return result[0]?.count || 0;
 }
+
+export async function getTotalReviewCount(): Promise<number> {
+  const db = await getDb();
+  if (!db) return 0;
+  const result = await db
+    .select({ count: sql<number>`COUNT(*)` })
+    .from(reviews)
+    .where(eq(reviews.isApproved, true));
+  return result[0]?.count || 0;
+}

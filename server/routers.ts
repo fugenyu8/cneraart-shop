@@ -354,9 +354,10 @@ export const appRouter = router({
   stats: router({
     // 已发货订单数（社交证明）
     deliveredCount: publicProcedure.query(async () => {
-      const count = await db.getDeliveredOrderCount();
-      // 加上基础数量（历史线下订单）
-      return { count: count + 1247 };
+      const reviewCount = await db.getTotalReviewCount();
+      // 付款人数 = 评论人数 × 1.1 + 基础数量（历史线下订单）
+      const count = Math.round(reviewCount * 1.1) + 1247;
+      return { count };
     }),
   }),
 
