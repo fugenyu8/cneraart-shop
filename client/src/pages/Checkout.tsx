@@ -899,10 +899,10 @@ export default function Checkout() {
                     <span className="text-2xl leading-none mt-0.5 shrink-0">☸️</span>
                     <div>
                       <p className="text-amber-300 font-semibold text-sm leading-snug">
-                        Why Direct Payment? — The Sacred Channel
+                        {t("checkout.direct_payment_title")}
                       </p>
                       <p className="text-amber-200/70 text-xs mt-1 leading-relaxed">
-                        Each dharma object has been personally consecrated through the ancient Qi-Yun ceremony at Wutai Mountain. To preserve the unbroken flow of spiritual energy from temple to recipient, we transmit all offerings through direct channels — free from third-party intermediaries that may disrupt the sacred bond between the item and its destined keeper.
+                        {t("checkout.direct_payment_desc")}
                       </p>
                     </div>
                   </div>
@@ -911,8 +911,7 @@ export default function Checkout() {
                   <div className="flex items-center gap-2 bg-green-900/40 border border-green-600/40 rounded-lg px-3 py-2">
                     <Tag className="w-4 h-4 text-green-400 shrink-0" />
                     <p className="text-green-300 text-sm">
-                      <span className="text-green-200 font-bold">Save 10%</span>
-                      {" "}— Direct blessing, direct savings. No intermediary fees means we pass the full merit back to you.
+                      {t("checkout.direct_discount_text")}
                     </p>
                   </div>
 
@@ -921,10 +920,10 @@ export default function Checkout() {
                     <span className="text-xl leading-none mt-0.5 shrink-0">🪷</span>
                     <div>
                       <p className="text-amber-300 font-semibold text-sm">
-                        Our Sacred Vow — 法物必达，功德圆满
+                        {t("checkout.sacred_vow_title")}
                       </p>
                       <p className="text-amber-200/60 text-xs mt-1 leading-relaxed">
-                        As the Dharma teaches, <em>“A sincere offering always finds its way.”</em> We solemnly vow that every consecrated item will be dispatched with care and delivered to its rightful keeper. Should any obstacle arise, we resolve it with full transparency — for the merit of this exchange belongs to both giver and receiver. Your trust is our sacred responsibility.
+                        {t("checkout.sacred_vow_desc")}
                       </p>
                     </div>
                   </div>

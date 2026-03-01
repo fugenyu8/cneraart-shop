@@ -171,7 +171,12 @@
     "card_desc": "Credit/Debit Card Payment",
     "pay_with_card": "Pay with Card",
     "pay_with_alipay": "Pay with Alipay",
-    "proceed_to_payment": "Proceed to Payment"
+    "proceed_to_payment": "Proceed to Payment",
+    "direct_payment_title": "Tại sao thanh toán trực tiếp? — Kênh thiêng liêng",
+    "direct_payment_desc": "Mỗi pháp vật đã được cá nhân khai quang thông qua nghi lễ Khí Vận cổ đại tại núi Ngũ Đài. Để bảo tồn dòng chảy liên tục của năng lượng tâm linh từ đền đến người nhận, chúng tôi truyền tất cả lễ vật qua các kênh trực tiếp — không có bên trung gian thứ ba có thể làm gián đoạn mối liên kết thiêng liêng giữa vật phẩm và người giữ gìn được định sẵn.",
+    "direct_discount_text": "Tiết kiệm 10% — Phước lành trực tiếp, tiết kiệm trực tiếp. Không có phí trung gian nghĩa là chúng tôi chuyển toàn bộ công đức lại cho bạn.",
+    "sacred_vow_title": "Lời thề thiêng liêng của chúng tôi — 法物必达，功德圆满",
+    "sacred_vow_desc": "Như Pháp dạy: Một lễ vật chân thành luôn tìm được đường đi. Chúng tôi trịnh trọng thề rằng mỗi pháp vật đã được khai quang sẽ được gửi đi cẩn thận và giao đến người giữ gìn hợp pháp. Nếu có bất kỳ trở ngại nào, chúng tôi sẽ giải quyết với sự minh bạch hoàn toàn — vì công đức của sự trao đổi này thuộc về cả người cho và người nhận. Sự tin tưởng của bạn là trách nhiệm thiêng liêng của chúng tôi."
   },
   "toast": {
     "success": "Thành công",

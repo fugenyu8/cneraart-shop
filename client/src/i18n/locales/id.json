@@ -171,7 +171,12 @@
     "card_desc": "Credit/Debit Card Payment",
     "pay_with_card": "Pay with Card",
     "pay_with_alipay": "Pay with Alipay",
-    "proceed_to_payment": "Proceed to Payment"
+    "proceed_to_payment": "Proceed to Payment",
+    "direct_payment_title": "Mengapa Pembayaran Langsung? — Saluran Suci",
+    "direct_payment_desc": "Setiap objek dharma telah dikonsekrasikan secara pribadi melalui upacara Qi-Yun kuno di Gunung Wutai. Untuk menjaga aliran energi spiritual yang tidak terputus dari kuil ke penerima, kami mengirimkan semua persembahan melalui saluran langsung — bebas dari perantara pihak ketiga yang dapat mengganggu ikatan suci antara benda dan penjaganya yang ditakdirkan.",
+    "direct_discount_text": "Hemat 10% — Berkah langsung, penghematan langsung. Tanpa biaya perantara berarti kami meneruskan seluruh pahala kepada Anda.",
+    "sacred_vow_title": "Sumpah Suci Kami — 法物必达，功德圆满",
+    "sacred_vow_desc": "Seperti yang diajarkan Dharma: Persembahan yang tulus selalu menemukan jalannya. Kami dengan khidmat bersumpah bahwa setiap benda yang dikonsekrasikan akan dikirimkan dengan penuh perhatian dan diserahkan kepada penjaganya yang sah. Jika ada hambatan yang muncul, kami akan menyelesaikannya dengan transparansi penuh — karena pahala pertukaran ini milik pemberi dan penerima. Kepercayaan Anda adalah tanggung jawab suci kami."
   },
   "toast": {
     "success": "Sukses",

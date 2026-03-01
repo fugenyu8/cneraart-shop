@@ -277,7 +277,12 @@
     "card_desc": "Pago con tarjeta de crédito/débito",
     "pay_with_card": "Pagar con tarjeta",
     "pay_with_alipay": "Pagar con Alipay",
-    "proceed_to_payment": "Proceder al pago"
+    "proceed_to_payment": "Proceder al pago",
+    "direct_payment_title": "¿Por qué pago directo? — El canal sagrado",
+    "direct_payment_desc": "Cada objeto del Dharma ha sido consagrado personalmente a través de la antigua ceremonia Qi-Yun en el Monte Wutai. Para preservar el flujo ininterrumpido de energía espiritual del templo al destinatario, transmitimos todas las ofrendas a través de canales directos — libres de intermediarios de terceros que puedan interrumpir el vínculo sagrado entre el objeto y su guardián destinado.",
+    "direct_discount_text": "Ahorra 10% — Bendición directa, ahorro directo. Sin comisiones de intermediarios, te devolvemos el mérito completo.",
+    "sacred_vow_title": "Nuestro voto sagrado — 法物必达，功德圆满",
+    "sacred_vow_desc": "Como enseña el Dharma: Una ofrenda sincera siempre encuentra su camino. Prometemos solemnemente que cada objeto consagrado será enviado con cuidado y entregado a su guardián legítimo. Si surge algún obstáculo, lo resolvemos con total transparencia — pues el mérito de este intercambio pertenece tanto al donante como al receptor. Tu confianza es nuestra responsabilidad sagrada."
   },
   "account": {
     "my_account": "Mi cuenta",
