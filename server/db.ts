@@ -1055,6 +1055,35 @@ export async function getAdminStats() {
     // destiny_reports 表可能不存在
   }
 
+  // ====== 跨系统数据获取 ======
+  const adminKey = process.env.ADMIN_STATS_KEY || "cneraart-admin-2024";
+
+  // 客服系统统计
+  let serviceStats = null;
+  try {
+    const serviceRes = await fetch("https://service.cneraart.com/api/admin-stats", {
+      headers: { "x-admin-key": adminKey },
+    });
+    if (serviceRes.ok) {
+      serviceStats = await serviceRes.json();
+    }
+  } catch (e) {
+    console.warn("[Dashboard] Failed to fetch service stats:", e);
+  }
+
+  // VIP系统统计
+  let vipStats = null;
+  try {
+    const vipRes = await fetch("https://vip.cneraart.com/api/admin-stats", {
+      headers: { "x-admin-key": adminKey },
+    });
+    if (vipRes.ok) {
+      vipStats = await vipRes.json();
+    }
+  } catch (e) {
+    console.warn("[Dashboard] Failed to fetch VIP stats:", e);
+  }
+
   return {
     totalRevenue,
     totalOrders,
@@ -1080,6 +1109,10 @@ export async function getAdminStats() {
     // 待确认线下付款
     pendingOfflinePayments,
     pendingOfflineOrders,
+    // 客服系统
+    serviceStats,
+    // VIP系统
+    vipStats,
   };
 }
 

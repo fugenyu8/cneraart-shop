@@ -26,6 +26,14 @@ import {
   CreditCard,
   ArrowRight,
   Bell,
+  MessageSquare,
+  Headphones,
+  Target,
+  Zap,
+  Crown,
+  Gift,
+  Receipt,
+  Wallet,
 } from "lucide-react";
 import { getLocalized } from "@/lib/localized";
 
@@ -201,7 +209,7 @@ export default function AdminDashboard() {
         {/* 页面标题 */}
         <div>
           <h1 className="text-3xl font-bold text-white mb-2">{t("admin.dashboard")}</h1>
-          <p className="text-slate-400">三大系统运营数据概览</p>
+          <p className="text-slate-400">四大系统运营数据概览</p>
         </div>
 
         {isLoading ? (
@@ -309,6 +317,120 @@ export default function AdminDashboard() {
                   bgColor="bg-amber-500/10"
                 />
               </div>
+            </div>
+
+            {/* ====== 客服系统概览 ====== */}
+            <div>
+              <SectionTitle icon={Headphones} title="客服系统" color="text-emerald-400" />
+              {stats?.serviceStats ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+                  <StatCard
+                    title="总会话数"
+                    value={stats.serviceStats.totalSessions || 0}
+                    icon={MessageSquare}
+                    color="text-emerald-400"
+                    bgColor="bg-emerald-500/10"
+                  />
+                  <StatCard
+                    title="今日会话"
+                    value={stats.serviceStats.todaySessions || 0}
+                    icon={Zap}
+                    color="text-lime-400"
+                    bgColor="bg-lime-500/10"
+                  />
+                  <StatCard
+                    title="总消息数"
+                    value={stats.serviceStats.totalMessages || 0}
+                    icon={FileText}
+                    color="text-teal-400"
+                    bgColor="bg-teal-500/10"
+                  />
+                  <StatCard
+                    title="今日消息"
+                    value={stats.serviceStats.todayMessages || 0}
+                    icon={TrendingUp}
+                    color="text-cyan-400"
+                    bgColor="bg-cyan-500/10"
+                  />
+                  <StatCard
+                    title="高意向会话"
+                    value={stats.serviceStats.highIntentSessions || 0}
+                    icon={Target}
+                    color="text-orange-400"
+                    bgColor="bg-orange-500/10"
+                  />
+                  <StatCard
+                    title="已转化"
+                    value={stats.serviceStats.convertedSessions || 0}
+                    icon={CheckCircle2}
+                    color="text-green-400"
+                    bgColor="bg-green-500/10"
+                  />
+                </div>
+              ) : (
+                <Card className="bg-slate-900/50 border-slate-800">
+                  <CardContent className="py-6 text-center text-slate-500">
+                    客服系统数据暂时无法获取
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+
+            {/* ====== VIP专属服务系统概览 ====== */}
+            <div>
+              <SectionTitle icon={Crown} title="VIP专属服务系统" color="text-amber-400" />
+              {stats?.vipStats ? (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+                  <StatCard
+                    title="总订单数"
+                    value={stats.vipStats.totalOrders || 0}
+                    icon={Receipt}
+                    color="text-amber-400"
+                    bgColor="bg-amber-500/10"
+                  />
+                  <StatCard
+                    title="今日订单"
+                    value={stats.vipStats.todayOrders || 0}
+                    icon={Zap}
+                    color="text-yellow-400"
+                    bgColor="bg-yellow-500/10"
+                  />
+                  <StatCard
+                    title="免费兑换"
+                    value={stats.vipStats.freeOrders || 0}
+                    icon={Gift}
+                    color="text-rose-400"
+                    bgColor="bg-rose-500/10"
+                  />
+                  <StatCard
+                    title="付费订单"
+                    value={stats.vipStats.paidOrders || 0}
+                    icon={Wallet}
+                    color="text-green-400"
+                    bgColor="bg-green-500/10"
+                  />
+                  <StatCard
+                    title="已完成报告"
+                    value={stats.vipStats.totalReports || 0}
+                    icon={FileText}
+                    color="text-blue-400"
+                    bgColor="bg-blue-500/10"
+                  />
+                  <StatCard
+                    title="待处理任务"
+                    value={stats.vipStats.pendingTasks || 0}
+                    icon={Clock}
+                    color="text-orange-400"
+                    bgColor="bg-orange-500/10"
+                  />
+                </div>
+              ) : (
+                <Card className="bg-slate-900/50 border-slate-800">
+                  <CardContent className="py-6 text-center text-slate-500">
+                    VIP系统数据暂时无法获取
+                  </CardContent>
+                </Card>
+              )}
             </div>
 
             {/* ====== 能量报告系统概览 ====== */}
