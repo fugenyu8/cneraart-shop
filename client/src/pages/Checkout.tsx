@@ -32,8 +32,10 @@ const WECHAT_QR_URL =
 
 // 社交证明计数器组件
 function DeliveredCountBadge() {
+  const { t } = useTranslation();
   const { data } = trpc.stats.deliveredCount.useQuery();
   const count = data?.count ?? 1247;
+  const countFormatted = count.toLocaleString();
   return (
     <div className="flex items-center gap-2.5 bg-amber-950/30 border border-amber-800/40 rounded-xl p-3 mt-2">
       <div className="w-8 h-8 rounded-full bg-amber-900/50 flex items-center justify-center shrink-0">
@@ -41,10 +43,10 @@ function DeliveredCountBadge() {
       </div>
       <div>
         <p className="text-xs font-semibold text-amber-300">
-          {count.toLocaleString()}+ dharma objects delivered worldwide
+          {t('checkout.delivered_count', `${countFormatted}+ dharma objects delivered worldwide`).replace('{{count}}', countFormatted)}
         </p>
         <p className="text-xs text-amber-600/80 mt-0.5">
-          已有 {count.toLocaleString()}+ 位有缘人请回法物 · 五台山开光加持
+          {t('checkout.delivered_subtitle', `${countFormatted}+ devotees have taken home sacred objects · Blessed at Wutai Mountain`).replace('{{count}}', countFormatted)}
         </p>
       </div>
     </div>

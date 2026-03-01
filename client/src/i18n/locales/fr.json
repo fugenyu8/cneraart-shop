@@ -285,7 +285,9 @@
     "sacred_vow_title": "Notre vœu sacré — 法物必达，功德圆满",
     "sacred_vow_desc": "Comme l'enseigne le Dharma : Une offrande sincère trouve toujours son chemin. Nous promettons solennellement que chaque objet consacré sera expédié avec soin et livré à son gardien légitime. Si un obstacle survient, nous le résolvons en toute transparence — car le mérite de cet échange appartient au donateur et au receveur. Votre confiance est notre responsabilité sacrée.",
     "customer_note": "Laissez-nous un message",
-    "customer_note_placeholder": "Demandes spéciales, instructions de livraison ou remarques... (optionnel)"
+    "customer_note_placeholder": "Demandes spéciales, instructions de livraison ou remarques... (optionnel)",
+    "delivered_count": "{{count}}+ objets sacrés livrés dans le monde entier",
+    "delivered_subtitle": "{{count}}+ fidèles ont reçu des objets sacrés · Bénis au Mont Wutai"
   },
   "account": {
     "my_account": "Mon compte",

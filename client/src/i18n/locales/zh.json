@@ -326,7 +326,9 @@
     "sacred_vow_title": "我们的庄严誓愿 — 法物必达，功德圆满",
     "sacred_vow_desc": "佛法有云：诚心供养，必有所归。我们庄严发愿，每件开光法物必将妥善发出，送达有缘人手中。若途中有任何障碍，我们必以诚信全力解决——此次供养的功德，归于施受双方。您的信任，是我们最神圣的责任。",
     "customer_note": "给我们留言",
-    "customer_note_placeholder": "如有特殊要求、配送说明或其他备注，请在此填写…（选填）"
+    "customer_note_placeholder": "如有特殊要求、配送说明或其他备注，请在此填写…（选填）",
+    "delivered_count": "{{count}}+ 件法物已发往全球",
+    "delivered_subtitle": "已有 {{count}}+ 位有缘人请回法物 · 五台山开光加持"
   },
   "account": {
     "my_account": "我的账户",

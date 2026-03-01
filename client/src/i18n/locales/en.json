@@ -278,7 +278,9 @@
     "sacred_vow_title": "Our Sacred Vow — 法物必达，功德圆满",
     "sacred_vow_desc": "As the Dharma teaches: A sincere offering always finds its way. We solemnly vow that every consecrated item will be dispatched with care and delivered to its rightful keeper. Should any obstacle arise, we resolve it with full transparency — for the merit of this exchange belongs to both giver and receiver. Your trust is our sacred responsibility.",
     "customer_note": "Leave us a message",
-    "customer_note_placeholder": "Special requests, delivery instructions, or any notes for us... (optional)"
+    "customer_note_placeholder": "Special requests, delivery instructions, or any notes for us... (optional)",
+    "delivered_count": "{{count}}+ dharma objects delivered worldwide",
+    "delivered_subtitle": "{{count}}+ devotees have taken home sacred objects · Blessed at Wutai Mountain"
   },
   "account": {
     "my_account": "My Account",

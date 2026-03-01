@@ -178,7 +178,9 @@
     "sacred_vow_title": "Sumpah Suci Kami — 法物必达，功德圆满",
     "sacred_vow_desc": "Seperti yang diajarkan Dharma: Persembahan yang tulus selalu menemukan jalannya. Kami dengan khidmat bersumpah bahwa setiap benda yang dikonsekrasikan akan dikirimkan dengan penuh perhatian dan diserahkan kepada penjaganya yang sah. Jika ada hambatan yang muncul, kami akan menyelesaikannya dengan transparansi penuh — karena pahala pertukaran ini milik pemberi dan penerima. Kepercayaan Anda adalah tanggung jawab suci kami.",
     "customer_note": "Tinggalkan pesan untuk kami",
-    "customer_note_placeholder": "Permintaan khusus, instruksi pengiriman, atau catatan... (opsional)"
+    "customer_note_placeholder": "Permintaan khusus, instruksi pengiriman, atau catatan... (opsional)",
+    "delivered_count": "{{count}}+ benda suci telah dikirim ke seluruh dunia",
+    "delivered_subtitle": "{{count}}+ umat telah menerima benda suci · Diberkati di Gunung Wutai"
   },
   "toast": {
     "success": "Sukses",

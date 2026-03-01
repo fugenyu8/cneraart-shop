@@ -178,7 +178,9 @@
     "sacred_vow_title": "Lời thề thiêng liêng của chúng tôi — 法物必达，功德圆满",
     "sacred_vow_desc": "Như Pháp dạy: Một lễ vật chân thành luôn tìm được đường đi. Chúng tôi trịnh trọng thề rằng mỗi pháp vật đã được khai quang sẽ được gửi đi cẩn thận và giao đến người giữ gìn hợp pháp. Nếu có bất kỳ trở ngại nào, chúng tôi sẽ giải quyết với sự minh bạch hoàn toàn — vì công đức của sự trao đổi này thuộc về cả người cho và người nhận. Sự tin tưởng của bạn là trách nhiệm thiêng liêng của chúng tôi.",
     "customer_note": "Để lại tin nhắn cho chúng tôi",
-    "customer_note_placeholder": "Yêu cầu đặc biệt, hướng dẫn giao hàng hoặc ghi chú... (tùy chọn)"
+    "customer_note_placeholder": "Yêu cầu đặc biệt, hướng dẫn giao hàng hoặc ghi chú... (tùy chọn)",
+    "delivered_count": "{{count}}+ vật phẩm linh thiêng đã được giao trên toàn thế giới",
+    "delivered_subtitle": "{{count}}+ người có duyên đã thỉnh vật phẩm · Được khai quang tại núi Ngũ Đài"
   },
   "toast": {
     "success": "Thành công",

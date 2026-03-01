@@ -285,7 +285,9 @@
     "sacred_vow_title": "Il nostro voto sacro — 法物必达，功德圆满",
     "sacred_vow_desc": "Come insegna il Dharma: Un'offerta sincera trova sempre la sua strada. Promettiamo solennemente che ogni oggetto consacrato sarà spedito con cura e consegnato al suo legittimo custode. Se dovesse sorgere un ostacolo, lo risolveremo con piena trasparenza — poiché il merito di questo scambio appartiene sia al donatore che al ricevente. La tua fiducia è la nostra sacra responsabilità.",
     "customer_note": "Lasciaci un messaggio",
-    "customer_note_placeholder": "Richieste speciali, istruzioni di consegna o note... (facoltativo)"
+    "customer_note_placeholder": "Richieste speciali, istruzioni di consegna o note... (facoltativo)",
+    "delivered_count": "{{count}}+ oggetti sacri consegnati in tutto il mondo",
+    "delivered_subtitle": "{{count}}+ devoti hanno ricevuto oggetti sacri · Benedetti al Monte Wutai"
   },
   "account": {
     "my_account": "Il mio account",

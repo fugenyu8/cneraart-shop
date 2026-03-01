@@ -178,7 +178,9 @@
     "sacred_vow_title": "우리의 신성한 서원 — 법물필달, 공덕원만",
     "sacred_vow_desc": "불법이 가르치듯: 진심 어린 공양은 반드시 길을 찾는다. 모든 개광된 법물이 정성껏 발송되어 인연 있는 수호자에게 전달될 것을 엄숙히 서원합니다. 장애가 생기면 완전한 투명성으로 해결합니다. 이 교환의 공덕은 주는 자와 받는 자 모두에게 속하기 때문입니다. 당신의 신뢰가 우리의 신성한 책임입니다.",
     "customer_note": "메시지 남기기",
-    "customer_note_placeholder": "특별 요청, 배송 지침 또는 기타 메모... (선택 사항)"
+    "customer_note_placeholder": "특별 요청, 배송 지침 또는 기타 메모... (선택 사항)",
+    "delivered_count": "{{count}}+ 개의 법물이 전 세계로 배송되었습니다",
+    "delivered_subtitle": "{{count}}+ 명의 인연 있는 분들이 법물을 모셔갔습니다 · 우타이산 개광 가지"
   },
   "toast": {
     "success": "Success",
