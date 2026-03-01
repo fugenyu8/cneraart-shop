@@ -80,10 +80,10 @@
     "blessing_default": "Mỗi vật phẩm đã được ban phước qua các nghi lễ truyền thống tại thánh địa Bồ Tát Văn Thù Sơn Ngũ Đài...",
     "service_guide": {
       "title": "📋 Quy trình mua dịch vụ",
-      "step1": "Sau khi thanh toán, bạn sẽ nhận được email xác nhận đơn hàng",
-      "step2": "Vui lòng gửi ảnh và câu hỏi qua email phản hồi hoặc ghi chú đơn hàng",
-      "step3": "Đại sư Ngũ Đài Sơn sẽ hoàn thành phân tích trong vòng 48 giờ",
-      "step4": "Báo cáo phân tích sẽ được gửi đến bạn qua email"
+      "step1": "Sau khi thanh toán, bạn sẽ nhận được mã đơn hàng",
+      "step2": "Truy cập vip.cneraart.com và sử dụng mã đơn hàng để đổi dịch vụ",
+      "step3": "Tải lên ảnh cần thiết trên nền tảng VIP và gửi yêu cầu",
+      "step4": "Xem báo cáo phân tích trực tiếp trên nền tảng VIP trong vòng 48 giờ"
     },
     "get_report": "Nhận Báo Cáo",
     "tab_service": "Chi Tiết Dịch Vụ",
@@ -457,9 +457,9 @@
     "submit": "Gửi Yêu Cầu Phân Tích",
     "submitting": "Đang gửi...",
     "submitSuccess": "Gửi Thành Công",
-    "submitSuccessDesc": "Yêu cầu của bạn đã được gửi. Báo cáo sẽ được gửi đến email của bạn trong vòng 48 giờ",
+    "submitSuccessDesc": "Yêu cầu của bạn đã được gửi. Vui lòng truy cập vip.cneraart.com để xem báo cáo trong vòng 48 giờ",
     "requiredFields": "Vui lòng điền đầy đủ các trường bắt buộc",
-    "deliveryTime": "* Các cao tăng chuyên nghiệp sẽ hoàn thành phân tích trong vòng 48 giờ và gửi báo cáo chi tiết qua email",
+    "deliveryTime": "* Người kế thừa văn hóa chuyên nghiệp sẽ hoàn thành phân tích trong 48 giờ. Xem báo cáo tại vip.cneraart.com",
     "feature1Title": "Tử Vi Đẩu Số",
     "feature1Desc": "Tinh hoa khoa học vận mệnh nghìn năm, phân tích lá số chuyên sâu",
     "feature2Title": "Vận Hạn Hàng Năm",

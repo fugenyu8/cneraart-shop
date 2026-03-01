@@ -162,10 +162,10 @@
     "blessing_default": "Jeder Artikel wurde durch traditionelle Zeremonien im Cultural-Cultural Guardian-Heiligtum des Berges Wutai gesegnet...",
     "service_guide": {
       "title": "📋 Service-Kaufprozess",
-      "step1": "Nach der Zahlung erhalten Sie eine Auftragsbestätigungs-E-Mail",
-      "step2": "Bitte senden Sie Fotos und Fragen per E-Mail-Antwort oder Bestellnotizen",
-      "step3": "Der Meister des Wutai-Berges wird die Analyse innerhalb von 48 Stunden abschließen",
-      "step4": "Der Analysebericht wird Ihnen per E-Mail zugesandt"
+      "step1": "Nach der Zahlung erhalten Sie eine Bestellnummer",
+      "step2": "Besuchen Sie vip.cneraart.com und lösen Sie den Service mit Ihrer Bestellnummer ein",
+      "step3": "Laden Sie die erforderlichen Fotos auf der VIP-Plattform hoch und senden Sie Ihre Anfrage",
+      "step4": "Sehen Sie Ihren Analysebericht innerhalb von 48 Stunden direkt auf der VIP-Plattform"
     },
     "get_report": "Bericht Erhalten",
     "tab_service": "Servicedetails",
@@ -584,9 +584,9 @@
     "submit": "Analyseanfrage absenden",
     "submitting": "Wird gesendet...",
     "submitSuccess": "Erfolgreich gesendet",
-    "submitSuccessDesc": "Ihre Anfrage wurde übermittelt. Der Bericht wird Ihnen innerhalb von 48 Stunden per E-Mail zugesandt.",
+    "submitSuccessDesc": "Ihre Anfrage wurde eingereicht. Bitte besuchen Sie vip.cneraart.com, um Ihren Bericht innerhalb von 48 Stunden einzusehen",
     "requiredFields": "Bitte füllen Sie alle Pflichtfelder aus",
-    "deliveryTime": "* Professionelle Meister fertigen die Analyse innerhalb von 48 Stunden an und senden einen detaillierten Bericht per E-Mail",
+    "deliveryTime": "* Professionelle Kulturerben werden die Analyse innerhalb von 48 Stunden abschließen. Sehen Sie Ihren Bericht auf vip.cneraart.com",
     "feature1Title": "Zi Wei Dou Shu",
     "feature1Desc": "Tausend Jahre alte Schicksalswissenschaft, tiefgehende Chartanalyse",
     "feature2Title": "Jahresglück",

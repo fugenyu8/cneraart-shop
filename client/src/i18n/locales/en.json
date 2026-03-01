@@ -156,10 +156,10 @@
     "blessing_default": "Each item has undergone the authentic Imbuing Ceremony at the Mount Wutai cultural heritage site, conducted by cultural lineage holders following ancient ceremonies, infusing millennium cultural energy. The Imbuing Ceremony consists of three stages: Purification, Chanting & Energy Infusion, and Cultural Empowerment, ensuring each guardian token carries the unique cultural heritage and protective power of Mount Wutai.",
     "service_guide": {
       "title": "📋 Service Purchase Process",
-      "step1": "After payment, you will receive an order confirmation email",
-      "step2": "Please submit photos and questions via email reply or order notes",
-      "step3": "Mount Wutai cultural lineage holders will complete the analysis within 48 hours",
-      "step4": "The analysis report will be sent to you via email"
+      "step1": "After payment, you will receive an order number",
+      "step2": "Visit vip.cneraart.com and use your order number to redeem the service",
+      "step3": "Upload required photos on the VIP platform and submit your request",
+      "step4": "View your analysis report directly on the VIP platform within 48 hours"
     },
     "get_report": "Get Report",
     "uploading_images": "Uploading images..."
@@ -585,9 +585,9 @@
     "submit": "Submit Analysis Request",
     "submitting": "Submitting...",
     "submitSuccess": "Submitted Successfully",
-    "submitSuccessDesc": "Your request has been submitted. The report will be sent to your email within 48 hours",
+    "submitSuccessDesc": "Your request has been submitted. Please visit vip.cneraart.com to view your report within 48 hours",
     "requiredFields": "Please fill in all required fields",
-    "deliveryTime": "* Professional cultural lineage holders will complete the analysis within 48 hours and send a detailed report via email",
+    "deliveryTime": "* Professional cultural lineage holders will complete the analysis within 48 hours. View your report at vip.cneraart.com",
     "feature1Title": "Zi Wei Dou Shu",
     "feature1Desc": "Thousand-year-old destiny science essence, in-depth chart analysis",
     "feature2Title": "Annual Fortune",
@@ -631,13 +631,13 @@
     "submitSuccess": "Submitted Successfully",
     "submitSuccessDesc": "Your ceremony request has been submitted, we will conduct it sincerely for you",
     "requiredFields": "Please fill in all required fields",
-    "deliveryTime": "* We will complete the ceremony within 3 business days and send the certificate and photos via email",
+    "deliveryTime": "* We will complete the ceremony within 3 business days. View photos and certificate at vip.cneraart.com",
     "trust1Title": "Mount Wutai Heritage Site",
     "trust1Desc": "UNESCO World Heritage Site, millennium Eastern cultural heritage site",
     "trust2Title": "Authentic Photos",
     "trust2Desc": "Each ceremony is photographed to ensure authenticity and credibility",
     "trust3Title": "Email Feedback",
-    "trust3Desc": "After ceremony completion, photos and certificates will be sent to your email"
+    "trust3Desc": "After ceremony completion, photos and certificates can be viewed at vip.cneraart.com"
   },
   "reportView": {
     "faceReadingReport": "Face Reading Report",

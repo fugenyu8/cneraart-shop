@@ -79,11 +79,11 @@
     "out_of_stock": "Out of Stock",
     "blessing_default": "Each item has been imbued through traditional ceremonies at Mount Wutai Cultural Guardian sanctuary...",
     "service_guide": {
-      "title": "📋 서비스 구매 프로세스",
-      "step1": "결제 후 주문 확인 이메일을 받게 됩니다",
-      "step2": "이메일 회신 또는 주문 메모를 통해 사진과 질문을 제출하세요",
-      "step3": "오대산 전승자가 48시간 이내에 분석을 완료합니다",
-      "step4": "분석 보고서는 이메일로 전송됩니다"
+      "title": "📋 서비스 구매 절차",
+      "step1": "결제 완료 후 주문번호를 받으세요",
+      "step2": "vip.cneraart.com에 접속하여 주문번호로 서비스를 교환하세요",
+      "step3": "VIP 플랫폼에서 필요한 사진을 업로드하고 요청을 제출하세요",
+      "step4": "48시간 이내에 VIP 플랫폼에서 분석 보고서를 확인하세요"
     },
     "get_report": "보고서 받기",
     "tab_service": "서비스 세부정보",
@@ -457,9 +457,9 @@
     "submit": "Submit Analysis Request",
     "submitting": "Submitting...",
     "submitSuccess": "Submitted Successfully",
-    "submitSuccessDesc": "Your request has been submitted. The report will be sent to your email within 48 hours",
+    "submitSuccessDesc": "요청이 제출되었습니다. 48시간 이내에 vip.cneraart.com에서 보고서를 확인하세요",
     "requiredFields": "Please fill in all required fields",
-    "deliveryTime": "* Professional masters will complete the analysis within 48 hours and send a detailed report via email",
+    "deliveryTime": "* 전문 문화 계승자가 48시간 이내에 분석을 완료합니다. vip.cneraart.com에서 보고서를 확인하세요",
     "feature1Title": "Zi Wei Dou Shu",
     "feature1Desc": "Thousand-year-old destiny science essence, in-depth chart analysis",
     "feature2Title": "Annual Fortune",

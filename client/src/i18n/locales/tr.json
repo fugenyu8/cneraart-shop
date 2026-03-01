@@ -162,10 +162,10 @@
     "blessing_default": "Her ürün, Wutai Dağı Cultural Guardian kutsal alanında geleneksel törenlerle kutsanmıştır...",
     "service_guide": {
       "title": "📋 Hizmet Satın Alma Süreci",
-      "step1": "Ödeme sonrası sipariş onay e-postası alacaksınız",
-      "step2": "Lütfen fotoğraflarınızı ve sorularınızı e-posta yanıtı veya sipariş notları aracılığıyla gönderin",
-      "step3": "Wutai Dağı Ustası analizini 48 saat içinde tamamlayacaktır",
-      "step4": "Analiz raporu e-posta ile size gönderilecektir"
+      "step1": "Ödeme sonrası bir sipariş numarası alacaksınız",
+      "step2": "vip.cneraart.com adresini ziyaret edin ve sipariş numaranızla hizmeti kullanın",
+      "step3": "VIP platformunda gerekli fotoğrafları yükleyin ve talebinizi gönderin",
+      "step4": "48 saat içinde VIP platformunda analiz raporunuzu görüntüleyin"
     },
     "get_report": "Raporu Al",
     "tab_service": "Hizmet Detayları",
@@ -581,9 +581,9 @@
     "submit": "Analiz Talebini Gönder",
     "submitting": "Gönderiliyor...",
     "submitSuccess": "Başarıyla Gönderildi",
-    "submitSuccessDesc": "Talebiniz iletildi. Rapor 48 saat içinde e-posta adresinize gönderilecektir",
+    "submitSuccessDesc": "Talebiniz gönderildi. 48 saat içinde raporunuzu vip.cneraart.com adresinde görüntüleyin",
     "requiredFields": "Lütfen tüm zorunlu alanları doldurun",
-    "deliveryTime": "* Profesyonel ustalar analizleri 48 saat içinde tamamlayacak ve detaylı raporu e-posta ile gönderecektir",
+    "deliveryTime": "* Profesyonel kültürel miras koruyucuları analizi 48 saat içinde tamamlayacaktır. Raporunuzu vip.cneraart.com adresinde görüntüleyin",
     "feature1Title": "Zi Wei Dou Shu",
     "feature1Desc": "Bin yıllık kader biliminin özü, derinlemesine harita analizi",
     "feature2Title": "Yıllık Kader",

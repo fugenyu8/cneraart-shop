@@ -217,11 +217,11 @@
     "out_of_stock": "已售罄",
     "blessing_default": "每一件饰品都经过五台山文殊智慧道场的正统啟蘊儀式仪式...",
     "service_guide": {
-      "title": "📋 服务购买流程",
-      "step1": "完成支付后,您将收到订单确认邮件",
-      "step2": "请通过邮件回复或订单备注提交照片和问题描述",
-      "step3": "五台山传承人将在48小时内完成分析",
-      "step4": "分析报告将通过邮件发送给您"
+      "title": "📋 服務購買流程",
+      "step1": "完成支付後，您將獲得訂單號",
+      "step2": "訪問 vip.cneraart.com，使用訂單號兌換服務",
+      "step3": "在VIP平台上傳所需照片並提交請求",
+      "step4": "48小時內在VIP平台查看您的分析報告"
     }
   },
   "cart": {
@@ -634,9 +634,9 @@
     "submit": "提交分析请求",
     "submitting": "提交中...",
     "submitSuccess": "提交成功",
-    "submitSuccessDesc": "您的请求已提交，报告将在48小时内发送至您的邮箱",
+    "submitSuccessDesc": "您的請求已提交，請在48小時內訪問 vip.cneraart.com 查看您的報告",
     "requiredFields": "请填写所有必填项",
-    "deliveryTime": "* 专业传承人将在48小时内完成分析，并通过邮件发送详细报告",
+    "deliveryTime": "* 專業文化傳承人將在48小時內完成分析。請在 vip.cneraart.com 查看您的報告",
     "feature1Title": "紫微斗数",
     "feature1Desc": "传承千年的命理学精髓，深度解析命盘",
     "feature2Title": "流年运势",
@@ -680,13 +680,13 @@
     "submitSuccess": "提交成功",
     "submitSuccessDesc": "您的祈願儀式请求已提交，我们将为您诚心祈願儀式",
     "requiredFields": "请填写所有必填项",
-    "deliveryTime": "* 我们将在3个工作日内完成祈願儀式，并通过邮件发送祈願儀式证明和照片",
+    "deliveryTime": "* 我們將在3個工作日內完成儀式。請在 vip.cneraart.com 查看照片和證書",
     "trust1Title": "五台山文化圣地",
     "trust1Desc": "世界五大東方文化文化圣地之一，文殊智慧道场",
     "trust2Title": "真实照片",
     "trust2Desc": "每次祈願儀式都会拍照记录，确保真实可信",
     "trust3Title": "邮件反馈",
-    "trust3Desc": "祈願儀式完成后，将照片和证明发送至您的邮箱"
+    "trust3Desc": "儀式完成後，照片和證書可在 vip.cneraart.com 查看"
   },
   "reportView": {
     "faceReadingReport": "面相分析报告",

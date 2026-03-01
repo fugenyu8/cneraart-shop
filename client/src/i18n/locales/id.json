@@ -82,11 +82,11 @@
     "tab_service": "Detail Layanan",
     "uploading_images": "Mengunggah gambar...",
     "service_guide": {
-      "title": "📋 服务购买流程",
-      "step1": "完成支付后,您将收到订单确认邮件",
-      "step2": "请通过邮件回复或订单备注提交照片和问题描述",
-      "step3": "五台山传承人将在48小时内完成分析",
-      "step4": "分析报告将通过邮件发送给您"
+      "title": "📋 Proses Pembelian Layanan",
+      "step1": "Setelah pembayaran, Anda akan menerima nomor pesanan",
+      "step2": "Kunjungi vip.cneraart.com dan gunakan nomor pesanan untuk menukarkan layanan",
+      "step3": "Unggah foto yang diperlukan di platform VIP dan kirim permintaan Anda",
+      "step4": "Lihat laporan analisis Anda langsung di platform VIP dalam 48 jam"
     }
   },
   "checkout": {
@@ -457,9 +457,9 @@
     "submit": "Kirim Permintaan Analisis",
     "submitting": "Mengirim...",
     "submitSuccess": "Berhasil Dikirim",
-    "submitSuccessDesc": "Permintaan Anda telah dikirim. Laporan akan dikirim ke email Anda dalam 48 jam",
+    "submitSuccessDesc": "Permintaan Anda telah dikirim. Kunjungi vip.cneraart.com untuk melihat laporan Anda dalam 48 jam",
     "requiredFields": "Harap isi semua bidang yang wajib diisi",
-    "deliveryTime": "* Para master profesional akan menyelesaikan analisis dalam 48 jam dan mengirimkan laporan terperinci melalui email",
+    "deliveryTime": "* Pewaris budaya profesional akan menyelesaikan analisis dalam 48 jam. Lihat laporan Anda di vip.cneraart.com",
     "feature1Title": "Zi Wei Dou Shu",
     "feature1Desc": "Esensi ilmu takdir berusia ribuan tahun, analisis grafik mendalam",
     "feature2Title": "Keberuntungan Tahunan",

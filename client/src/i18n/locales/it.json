@@ -162,10 +162,10 @@
     "blessing_default": "Ogni articolo è stato benedetto attraverso cerimonie tradizionali presso il santuario del Cultural Guardian Cultural sul Monte Wutai...",
     "service_guide": {
       "title": "📋 Processo di acquisto del servizio",
-      "step1": "Dopo il pagamento, riceverai un'email di conferma dell'ordine",
-      "step2": "Invia foto e domande tramite risposta email o note dell'ordine",
-      "step3": "Il Maestro del Monte Wutai completerà l'analisi entro 48 ore",
-      "step4": "Il rapporto di analisi ti sarà inviato via email"
+      "step1": "Dopo il pagamento, riceverai un numero d'ordine",
+      "step2": "Visita vip.cneraart.com e usa il tuo numero d'ordine per riscattare il servizio",
+      "step3": "Carica le foto richieste sulla piattaforma VIP e invia la tua richiesta",
+      "step4": "Visualizza il tuo rapporto di analisi direttamente sulla piattaforma VIP entro 48 ore"
     },
     "get_report": "Ottieni Rapporto",
     "tab_service": "Dettagli del Servizio",
@@ -584,9 +584,9 @@
     "submit": "Invia richiesta di analisi",
     "submitting": "Invio in corso...",
     "submitSuccess": "Invio riuscito",
-    "submitSuccessDesc": "La tua richiesta è stata inviata. Il rapporto sarà inviato alla tua email entro 48 ore",
+    "submitSuccessDesc": "La tua richiesta è stata inviata. Visita vip.cneraart.com per visualizzare il tuo rapporto entro 48 ore",
     "requiredFields": "Per favore compila tutti i campi obbligatori",
-    "deliveryTime": "* I maestri professionisti completeranno l'analisi entro 48 ore e invieranno un rapporto dettagliato via email",
+    "deliveryTime": "* Gli eredi culturali professionisti completeranno l'analisi entro 48 ore. Visualizza il tuo rapporto su vip.cneraart.com",
     "feature1Title": "Zi Wei Dou Shu",
     "feature1Desc": "Essenza millenaria della scienza del destino, analisi approfondita della carta",
     "feature2Title": "Fortuna Annuale",

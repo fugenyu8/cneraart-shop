@@ -206,10 +206,10 @@
     "blessing_default": "每一件饰品都经过五台山文化文化圣地的正统启蕴仪式，由文化传承人按照古法仪轨，注入千年文化能量。启蕴仪式分为三个阶段：净化清洗、吟诵赋能、能量灌注，确保每件信物都承载着五台山独特的文化底蕴与守护之力。",
     "service_guide": {
       "title": "📋 服务购买流程",
-      "step1": "完成支付后，您将收到订单确认邮件",
-      "step2": "请通过邮件回复或订单备注提交照片和问题描述",
-      "step3": "五台山文化传承人将在48小时内完成分析",
-      "step4": "分析报告将通过邮件发送给您"
+      "step1": "完成支付后，您将获得订单号",
+      "step2": "访问 vip.cneraart.com，使用订单号兑换服务",
+      "step3": "在VIP平台上传所需照片并提交请求",
+      "step4": "48小时内在VIP平台查看您的分析报告"
     }
   },
   "cart": {
@@ -633,9 +633,9 @@
     "submit": "提交分析请求",
     "submitting": "提交中...",
     "submitSuccess": "提交成功",
-    "submitSuccessDesc": "您的请求已提交，报告将在48小时内发送至您的邮箱",
+    "submitSuccessDesc": "您的请求已提交，请在48小时内访问 vip.cneraart.com 查看您的报告",
     "requiredFields": "请填写所有必填项",
-    "deliveryTime": "* 专业传承人将在48小时内完成分析，并通过邮件发送详细报告",
+    "deliveryTime": "* 专业文化传承人将在48小时内完成分析。请在 vip.cneraart.com 查看您的报告",
     "feature1Title": "紫微斗数",
     "feature1Desc": "传承千年的命理学精髓，深度解析命盘",
     "feature2Title": "流年运势",

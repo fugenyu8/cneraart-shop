@@ -161,11 +161,11 @@
     "out_of_stock": "Rupture de stock",
     "blessing_default": "Chaque article a été béni lors de cérémonies traditionnelles au sanctuaire du Cultural Guardian Cultural du Mont Wutai...",
     "service_guide": {
-      "title": "📋 Processus d'achat de service",
-      "step1": "Après le paiement, vous recevrez un e-mail de confirmation de commande",
-      "step2": "Veuillez soumettre des photos et des questions par réponse e-mail ou notes de commande",
-      "step3": "Le Maître du Mont Wutai terminera l'analyse dans les 48 heures",
-      "step4": "Le rapport d'analyse vous sera envoyé par e-mail"
+      "title": "📋 Processus d'achat du service",
+      "step1": "Après le paiement, vous recevrez un numéro de commande",
+      "step2": "Visitez vip.cneraart.com et utilisez votre numéro de commande pour échanger le service",
+      "step3": "Téléchargez les photos requises sur la plateforme VIP et soumettez votre demande",
+      "step4": "Consultez votre rapport d'analyse directement sur la plateforme VIP sous 48 heures"
     },
     "get_report": "Obtenir le Rapport",
     "tab_service": "Détails du Service",
@@ -584,9 +584,9 @@
     "submit": "Soumettre la demande d'analyse",
     "submitting": "Soumission en cours...",
     "submitSuccess": "Soumission réussie",
-    "submitSuccessDesc": "Votre demande a été soumise. Le rapport vous sera envoyé par email sous 48 heures",
+    "submitSuccessDesc": "Votre demande a été soumise. Veuillez visiter vip.cneraart.com pour consulter votre rapport sous 48 heures",
     "requiredFields": "Veuillez remplir tous les champs obligatoires",
-    "deliveryTime": "* Des maîtres professionnels réaliseront l'analyse sous 48 heures et enverront un rapport détaillé par email",
+    "deliveryTime": "* Les héritiers culturels professionnels termineront l'analyse dans les 48 heures. Consultez votre rapport sur vip.cneraart.com",
     "feature1Title": "Zi Wei Dou Shu",
     "feature1Desc": "Essence millénaire de la science du destin, analyse approfondie du thème natal",
     "feature2Title": "Fortune Annuelle",
