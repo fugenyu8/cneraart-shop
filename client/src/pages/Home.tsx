@@ -137,7 +137,7 @@ export default function Home() {
             </select>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="text-[#F5DEB3] p-1"
+              className="text-[#F5DEB3] p-2 -mr-1 rounded-md active:bg-white/10 transition-colors"
               aria-label="Menu"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -153,28 +153,28 @@ export default function Home() {
 
         {/* 移动端下拉菜单 */}
         {menuOpen && (
-          <div className="md:hidden border-t border-[#F5DEB3]/20 mt-2 pt-2 pb-1 space-y-2 text-xs">
+          <div className="md:hidden border-t border-[#F5DEB3]/20 mt-2 pt-2 pb-2 space-y-1 text-sm">
             {user ? (
-              <Link href="/account" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+              <Link href="/account" className="flex items-center gap-2 py-3 px-3 hover:bg-white/10 rounded-lg transition-colors min-h-[44px]">
                 👤 {user.name || user.email || 'Account'}
               </Link>
             ) : (
               <>
-                <Link href="/register" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+                <Link href="/register" className="flex items-center gap-2 py-3 px-3 hover:bg-white/10 rounded-lg transition-colors min-h-[44px]">
                   {t('topBar.register')}
                 </Link>
-                <Link href="/login" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+                <Link href="/login" className="flex items-center gap-2 py-3 px-3 hover:bg-white/10 rounded-lg transition-colors min-h-[44px]">
                   {t('topBar.login')}
                 </Link>
               </>
             )}
-            <a href="https://vip.cneraart.com" target="_blank" rel="noopener noreferrer" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
-              ⭐ VIP 专属服务
+            <a href="https://vip.cneraart.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-3 px-3 hover:bg-white/10 rounded-lg transition-colors min-h-[44px]">
+              ⭐ VIP
             </a>
-            <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+            <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-3 px-3 hover:bg-white/10 rounded-lg transition-colors min-h-[44px]">
               📝 {t('common.report')}
             </a>
-            <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer" className="block py-1.5 px-2 hover:bg-white/10 rounded transition-colors">
+            <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 py-3 px-3 hover:bg-white/10 rounded-lg transition-colors min-h-[44px]">
               💬 {t('common.service')}
             </a>
           </div>

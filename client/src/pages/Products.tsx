@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { trpc } from "@/lib/trpc";
-import { Search, Sparkles, SlidersHorizontal } from "lucide-react";
+import { Search, Sparkles, SlidersHorizontal, ShoppingCart } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage";
 import { Link } from "wouter";
 import { useTranslation } from "react-i18next";
@@ -72,9 +72,12 @@ export default function Products() {
                 <h1 className="text-lg md:text-2xl font-bold gradient-text">{t("common.site_name")}</h1>
               </a>
             </Link>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <Link href="/cart">
-                <Button variant="outline">{t("common.cart")}</Button>
+                <Button variant="outline" className="hidden sm:flex">{t("common.cart")}</Button>
+                <Button variant="outline" size="icon" className="flex sm:hidden h-10 w-10">
+                  <ShoppingCart className="w-5 h-5" />
+                </Button>
               </Link>
             </div>
           </div>
@@ -184,9 +187,9 @@ export default function Products() {
             {products.map((product) => (
               <Link key={product.id} href={`/products/${product.slug}`}>
                 <Card className="product-card cursor-pointer group h-full">
-                  <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
+                  <div className="relative h-44 sm:h-48 md:h-56 overflow-hidden">
                     {product.images[0] ? (
-                      <div className="w-full h-full group-hover:scale-110 transition-transform duration-500">
+                      <div className="w-full h-full [@media(hover:hover)]:group-hover:scale-110 transition-transform duration-500">
                         <OptimizedImage
                           src={product.images[0].url}
                           alt={getLocalized(product.name)}

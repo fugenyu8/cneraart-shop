@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { trpc } from "@/lib/trpc";
 import { useAuth } from "@/_core/hooks/useAuth";
-import { Sparkles, Trash2, Plus, Minus, ShoppingBag, Tag } from "lucide-react";
+import { Sparkles, Trash2, Plus, Minus, ShoppingBag, Tag, ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
 import { useTranslation } from "react-i18next";
 import { getLocalized } from "@/lib/localized";
@@ -152,7 +152,7 @@ export default function Cart() {
             </CardContent>
           </Card>
         ) : (
-          <div className="grid lg:grid-cols-3 gap-4 md:gap-8">
+          <div className="grid lg:grid-cols-3 gap-4 md:gap-8 pb-24 lg:pb-0">
             {/* Left - Cart items */}
             <div className="lg:col-span-2 space-y-4">
               {cartItems.map((item) => {
@@ -240,8 +240,8 @@ export default function Cart() {
               })}
             </div>
 
-            {/* Right - Order summary */}
-            <div>
+            {/* Right - Order summary - hidden on mobile (shown in fixed bottom bar) */}
+            <div className="hidden lg:block">
               <Card className="bg-card sticky top-24">
                 <CardContent className="p-4 md:p-6">
                   <h3 className="text-xl font-bold mb-6">{t('checkout.order_summary', 'Order Summary')}</h3>
@@ -315,6 +315,25 @@ export default function Cart() {
           </div>
         )}
       </div>
+
+      {/* 移动端固定底部结算栏 */}
+      {cartItems && cartItems.length > 0 && (
+        <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-background/95 backdrop-blur-md border-t border-border px-4 py-3">
+          <div className="flex items-center gap-3">
+            <div className="flex-1">
+              <p className="text-xs text-muted-foreground">{t('cart.total', 'Total')} ({cartItems.length} {t('cart.items', 'items')})</p>
+              <p className="text-xl font-bold text-accent">${total.toFixed(2)}</p>
+            </div>
+            <Button
+              className="btn-primary h-12 px-6 flex-shrink-0"
+              onClick={() => setLocation('/checkout')}
+            >
+              <ShoppingCart className="w-5 h-5 mr-2" />
+              {t('cart.checkout', 'Checkout')}
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

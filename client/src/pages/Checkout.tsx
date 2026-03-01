@@ -754,7 +754,7 @@ export default function Checkout() {
           {t("checkout.title")}
         </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 lg:items-start">
           {/* 左侧：收货信息 + 支付方式 */}
           <div className="lg:col-span-2 space-y-6">
             {/* 收货信息 */}
@@ -981,7 +981,7 @@ export default function Checkout() {
                 {/* ── end 说明区 ── */}
 
                 {/* 支付方式选项卡 */}
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-3 gap-2 sm:gap-3">
                   {paymentMethods.filter(m => !m.hidden).map((method) => (
                     <button
                       key={method.id}
@@ -991,7 +991,7 @@ export default function Checkout() {
                         setCreatedOrderId(null);
                         setCreatedOrderNumber(null);
                       }}
-                      className={`relative flex flex-col items-center gap-2 p-3 rounded-xl border-2 transition-all duration-200 ${
+                      className={`relative flex flex-col items-center gap-1.5 sm:gap-2 p-2 sm:p-3 rounded-xl border-2 transition-all duration-200 min-h-[72px] sm:min-h-[88px] ${
                         selectedPayment === method.id
                           ? "border-[oklch(82%_0.18_85)] bg-[oklch(82%_0.18_85)]/10 shadow-lg shadow-[oklch(82%_0.18_85)]/10"
                           : "border-slate-700 bg-slate-800/50 hover:border-slate-600 hover:bg-slate-800"
@@ -1229,8 +1229,8 @@ export default function Checkout() {
             </Card>
           </div>
 
-          {/* 右侧：订单摘要 */}
-          <div>
+          {/* 右侧：订单摘要 - 移动端显示在支付方式上方 */}
+          <div className="order-first lg:order-last">
             <Card className="bg-slate-900/50 border-slate-800 lg:sticky lg:top-4">
               <CardHeader>
                 <CardTitle className="text-white">

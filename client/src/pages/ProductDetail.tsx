@@ -339,15 +339,15 @@ export default function ProductDetail() {
                 <h1 className="text-lg md:text-2xl font-bold gradient-text">{t('common.site_name')}</h1>
               </a>
             </Link>
-            <div className="flex items-center gap-3">
-              <a href="https://report.cneraart.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="ghost" size="sm" className="text-xs md:text-sm">📝 {t('common.report')}</Button>
-              </a>
-              <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer">
+            <div className="flex items-center gap-2">
+              <a href="https://service.cneraart.com" target="_blank" rel="noopener noreferrer" className="hidden sm:block">
                 <Button variant="ghost" size="sm" className="text-xs md:text-sm">💬 {t('common.service')}</Button>
               </a>
               <Link href="/cart">
-                <Button variant="outline">{t('product_detail.cart')}</Button>
+                <Button variant="outline" className="hidden sm:flex">{t('product_detail.cart')}</Button>
+                <Button variant="outline" size="icon" className="flex sm:hidden h-10 w-10">
+                  <ShoppingCart className="w-5 h-5" />
+                </Button>
               </Link>
             </div>
           </div>
@@ -877,6 +877,26 @@ export default function ProductDetail() {
         isOpen={isLightboxOpen}
         onClose={() => setIsLightboxOpen(false)}
       />
+
+      {/* 移动端固定底部加购栏 */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 sm:hidden bg-background/95 backdrop-blur-md border-t border-border px-4 py-3 safe-area-pb">
+        <div className="flex gap-3 items-center">
+          <div className="flex-1">
+            <p className="text-xs text-muted-foreground truncate">{getLocalized(product.name)}</p>
+            <p className="text-lg font-bold text-accent">${currentPrice}</p>
+          </div>
+          <Button
+            className="btn-primary h-12 px-6 flex-shrink-0"
+            onClick={handleAddToCart}
+            disabled={addToCartMutation.isPending}
+          >
+            <ShoppingCart className="w-5 h-5 mr-2" />
+            {addToCartMutation.isPending ? '...' : lang.addToCart}
+          </Button>
+        </div>
+      </div>
+      {/* 移动端底部栏占位 */}
+      <div className="h-20 sm:hidden" />
     </div>
   );
 }
