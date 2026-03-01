@@ -275,7 +275,9 @@
     "direct_payment_desc": "Each dharma object has been personally consecrated through the ancient Qi-Yun ceremony at Wutai Mountain. To preserve the unbroken flow of spiritual energy from temple to recipient, we transmit all offerings through direct channels — free from third-party intermediaries that may disrupt the sacred bond between the item and its destined keeper.",
     "direct_discount_text": "Save 10% — Direct blessing, direct savings. No intermediary fees means we pass the full merit back to you.",
     "sacred_vow_title": "Our Sacred Vow — 法物必达，功德圆满",
-    "sacred_vow_desc": "As the Dharma teaches: A sincere offering always finds its way. We solemnly vow that every consecrated item will be dispatched with care and delivered to its rightful keeper. Should any obstacle arise, we resolve it with full transparency — for the merit of this exchange belongs to both giver and receiver. Your trust is our sacred responsibility."
+    "sacred_vow_desc": "As the Dharma teaches: A sincere offering always finds its way. We solemnly vow that every consecrated item will be dispatched with care and delivered to its rightful keeper. Should any obstacle arise, we resolve it with full transparency — for the merit of this exchange belongs to both giver and receiver. Your trust is our sacred responsibility.",
+    "customer_note": "Leave us a message",
+    "customer_note_placeholder": "Special requests, delivery instructions, or any notes for us... (optional)"
   },
   "account": {
     "my_account": "My Account",

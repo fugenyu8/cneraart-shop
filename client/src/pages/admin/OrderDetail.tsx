@@ -291,6 +291,20 @@ export default function AdminOrderDetail() {
                 {order.shippingPostalCode && <p><span className="text-slate-400">邮编:</span> {order.shippingPostalCode}</p>}
               </CardContent>
             </Card>
+
+            {/* 用户备注 */}
+            {order.customerNote && (
+              <Card className="bg-amber-950/30 border-amber-700/40">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-amber-300 flex items-center gap-2 text-sm">
+                    ✉️ 用户留言
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-amber-100/90 text-sm leading-relaxed whitespace-pre-wrap">{order.customerNote}</p>
+                </CardContent>
+              </Card>
+            )}
           </div>
 
           {/* 右侧:订单状态和物流信息 */}

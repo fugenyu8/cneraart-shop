@@ -5,6 +5,7 @@ import { useAuth } from "@/hooks/useAuth";
 import { getLoginUrl } from "@/const";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -405,6 +406,7 @@ export default function Checkout() {
 
   // 优惠券状态
   const [couponCode, setCouponCode] = useState("");
+  const [customerNote, setCustomerNote] = useState("");
   const [appliedCoupon, setAppliedCoupon] = useState<{
     code: string;
     discount: number;
@@ -583,6 +585,7 @@ export default function Checkout() {
       country: shippingInfo.country,
     },
     paymentMethod,
+    customerNote: customerNote.trim() || undefined,
   });
 
   // 直接付款：先创建订单
@@ -901,6 +904,28 @@ export default function Checkout() {
                     />
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+
+            {/* 给我们留言 */}
+            <Card className="bg-slate-900/50 border-slate-800">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-white flex items-center gap-2 text-base">
+                  <span className="text-amber-400">✉️</span>
+                  {t("checkout.customer_note")}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-4 md:p-6">
+                <Textarea
+                  value={customerNote}
+                  onChange={(e) => setCustomerNote(e.target.value)}
+                  placeholder={t("checkout.customer_note_placeholder")}
+                  className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-500 resize-none min-h-[90px]"
+                  maxLength={500}
+                />
+                <p className="text-xs text-slate-500 mt-1.5 text-right">
+                  {customerNote.length}/500
+                </p>
               </CardContent>
             </Card>
 

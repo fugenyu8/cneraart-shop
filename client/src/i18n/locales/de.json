@@ -282,7 +282,9 @@
     "direct_payment_desc": "Jedes Dharma-Objekt wurde persönlich durch die alte Qi-Yun-Zeremonie am Wutai-Berg geweiht. Um den ununterbrochenen Fluss spiritueller Energie vom Tempel zum Empfänger zu bewahren, übermitteln wir alle Angebote über direkte Kanäle — frei von Drittanbietern, die die heilige Verbindung zwischen dem Objekt und seinem bestimmten Hüter stören könnten.",
     "direct_discount_text": "10% sparen — Direkter Segen, direkte Ersparnis. Keine Vermittlungsgebühren bedeutet, wir geben das volle Verdienst an Sie weiter.",
     "sacred_vow_title": "Unser heiliges Gelübde — 法物必达，功德圆满",
-    "sacred_vow_desc": "Wie der Dharma lehrt: Ein aufrichtiges Angebot findet immer seinen Weg. Wir geloben feierlich, dass jedes geweihte Objekt sorgfältig versandt und seinem rechtmäßigen Hüter übergeben wird. Sollte ein Hindernis auftreten, lösen wir es mit voller Transparenz — denn das Verdienst dieses Austauschs gehört sowohl dem Geber als auch dem Empfänger. Ihr Vertrauen ist unsere heilige Verantwortung."
+    "sacred_vow_desc": "Wie der Dharma lehrt: Ein aufrichtiges Angebot findet immer seinen Weg. Wir geloben feierlich, dass jedes geweihte Objekt sorgfältig versandt und seinem rechtmäßigen Hüter übergeben wird. Sollte ein Hindernis auftreten, lösen wir es mit voller Transparenz — denn das Verdienst dieses Austauschs gehört sowohl dem Geber als auch dem Empfänger. Ihr Vertrauen ist unsere heilige Verantwortung.",
+    "customer_note": "Nachricht hinterlassen",
+    "customer_note_placeholder": "Besondere Wünsche, Lieferhinweise oder sonstige Anmerkungen... (optional)"
   },
   "account": {
     "my_account": "Mein Konto",

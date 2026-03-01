@@ -282,7 +282,9 @@
     "direct_payment_desc": "Cada objeto del Dharma ha sido consagrado personalmente a través de la antigua ceremonia Qi-Yun en el Monte Wutai. Para preservar el flujo ininterrumpido de energía espiritual del templo al destinatario, transmitimos todas las ofrendas a través de canales directos — libres de intermediarios de terceros que puedan interrumpir el vínculo sagrado entre el objeto y su guardián destinado.",
     "direct_discount_text": "Ahorra 10% — Bendición directa, ahorro directo. Sin comisiones de intermediarios, te devolvemos el mérito completo.",
     "sacred_vow_title": "Nuestro voto sagrado — 法物必达，功德圆满",
-    "sacred_vow_desc": "Como enseña el Dharma: Una ofrenda sincera siempre encuentra su camino. Prometemos solemnemente que cada objeto consagrado será enviado con cuidado y entregado a su guardián legítimo. Si surge algún obstáculo, lo resolvemos con total transparencia — pues el mérito de este intercambio pertenece tanto al donante como al receptor. Tu confianza es nuestra responsabilidad sagrada."
+    "sacred_vow_desc": "Como enseña el Dharma: Una ofrenda sincera siempre encuentra su camino. Prometemos solemnemente que cada objeto consagrado será enviado con cuidado y entregado a su guardián legítimo. Si surge algún obstáculo, lo resolvemos con total transparencia — pues el mérito de este intercambio pertenece tanto al donante como al receptor. Tu confianza es nuestra responsabilidad sagrada.",
+    "customer_note": "Déjanos un mensaje",
+    "customer_note_placeholder": "Solicitudes especiales, instrucciones de entrega o notas... (opcional)"
   },
   "account": {
     "my_account": "Mi cuenta",

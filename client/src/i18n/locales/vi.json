@@ -176,7 +176,9 @@
     "direct_payment_desc": "Mỗi pháp vật đã được cá nhân khai quang thông qua nghi lễ Khí Vận cổ đại tại núi Ngũ Đài. Để bảo tồn dòng chảy liên tục của năng lượng tâm linh từ đền đến người nhận, chúng tôi truyền tất cả lễ vật qua các kênh trực tiếp — không có bên trung gian thứ ba có thể làm gián đoạn mối liên kết thiêng liêng giữa vật phẩm và người giữ gìn được định sẵn.",
     "direct_discount_text": "Tiết kiệm 10% — Phước lành trực tiếp, tiết kiệm trực tiếp. Không có phí trung gian nghĩa là chúng tôi chuyển toàn bộ công đức lại cho bạn.",
     "sacred_vow_title": "Lời thề thiêng liêng của chúng tôi — 法物必达，功德圆满",
-    "sacred_vow_desc": "Như Pháp dạy: Một lễ vật chân thành luôn tìm được đường đi. Chúng tôi trịnh trọng thề rằng mỗi pháp vật đã được khai quang sẽ được gửi đi cẩn thận và giao đến người giữ gìn hợp pháp. Nếu có bất kỳ trở ngại nào, chúng tôi sẽ giải quyết với sự minh bạch hoàn toàn — vì công đức của sự trao đổi này thuộc về cả người cho và người nhận. Sự tin tưởng của bạn là trách nhiệm thiêng liêng của chúng tôi."
+    "sacred_vow_desc": "Như Pháp dạy: Một lễ vật chân thành luôn tìm được đường đi. Chúng tôi trịnh trọng thề rằng mỗi pháp vật đã được khai quang sẽ được gửi đi cẩn thận và giao đến người giữ gìn hợp pháp. Nếu có bất kỳ trở ngại nào, chúng tôi sẽ giải quyết với sự minh bạch hoàn toàn — vì công đức của sự trao đổi này thuộc về cả người cho và người nhận. Sự tin tưởng của bạn là trách nhiệm thiêng liêng của chúng tôi.",
+    "customer_note": "Để lại tin nhắn cho chúng tôi",
+    "customer_note_placeholder": "Yêu cầu đặc biệt, hướng dẫn giao hàng hoặc ghi chú... (tùy chọn)"
   },
   "toast": {
     "success": "Thành công",

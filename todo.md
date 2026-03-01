@@ -1757,3 +1757,10 @@ PayPal支付凭证(明天完成)
 - [x] 重置密码页面（/reset-password）
 - [x] 忘记密码页面（/forgot-password）
 - [x] 登录页添加"Forgot password?"链接
+
+## 2026-03-01 结算页备注功能
+- [x] 在结算页收货信息表单下方添加"给我们留言"备注输入框
+- [x] 添加customerNote state变量
+- [x] 将备注传入buildOrderData
+- [x] 为所有语言添加翻译键（customer_note, customer_note_placeholder）
+- [x] 在管理后台订单详情页显示用户备注

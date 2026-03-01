@@ -282,7 +282,9 @@
     "direct_payment_desc": "Her dharma nesnesi, Wutai Dağı'ndaki antik Qi-Yun töreni aracılığıyla kişisel olarak kutsanmıştır. Tapınaktan alıcıya kadar ruhsal enerjinin kesintisiz akışını korumak için tüm sunuları doğrudan kanallar aracılığıyla iletiyoruz — nesne ile kaderine bağlı koruyucusu arasındaki kutsal bağı bozabilecek üçüncü taraf aracılardan uzak.",
     "direct_discount_text": "%10 Tasarruf Edin — Doğrudan bereket, doğrudan tasarruf. Aracı ücreti olmadan tüm erdemi size geri aktarıyoruz.",
     "sacred_vow_title": "Kutsal Yeminimiz — 法物必达，功德圆满",
-    "sacred_vow_desc": "Dharma'nın öğrettiği gibi: Samimi bir sunum her zaman yolunu bulur. Her kutsanmış nesnenin özenle gönderileceğine ve meşru koruyucusuna teslim edileceğine dair ciddi bir yemin ediyoruz. Bir engel çıkarsa, tam şeffaflıkla çözeceğiz — çünkü bu alışverişin erdemi hem verene hem de alana aittir. Güveniniz bizim kutsal sorumluluğumuzdur."
+    "sacred_vow_desc": "Dharma'nın öğrettiği gibi: Samimi bir sunum her zaman yolunu bulur. Her kutsanmış nesnenin özenle gönderileceğine ve meşru koruyucusuna teslim edileceğine dair ciddi bir yemin ediyoruz. Bir engel çıkarsa, tam şeffaflıkla çözeceğiz — çünkü bu alışverişin erdemi hem verene hem de alana aittir. Güveniniz bizim kutsal sorumluluğumuzdur.",
+    "customer_note": "Bize mesaj bırakın",
+    "customer_note_placeholder": "Özel istekler, teslimat talimatları veya notlar... (isteğe bağlı)"
   },
   "account": {
     "my_account": "Hesabım",
