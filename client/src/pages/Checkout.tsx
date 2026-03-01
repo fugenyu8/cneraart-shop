@@ -1104,6 +1104,7 @@ export default function Checkout() {
                               orderId={createdOrderId}
                               orderNumber={createdOrderNumber}
                               paymentMethod="wechat_pay"
+                              customerNote={customerNote}
                             />
                           )}
                           <Button
@@ -1155,6 +1156,7 @@ export default function Checkout() {
                               orderId={createdOrderId}
                               orderNumber={createdOrderNumber}
                               paymentMethod="alipay"
+                              customerNote={customerNote}
                             />
                           )}
                           <Button
@@ -1206,6 +1208,7 @@ export default function Checkout() {
                               orderId={createdOrderId}
                               orderNumber={createdOrderNumber}
                               paymentMethod="bank_transfer"
+                              customerNote={customerNote}
                             />
                           )}
                           <Button

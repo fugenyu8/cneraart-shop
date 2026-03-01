@@ -11,9 +11,10 @@ interface PaymentProofUploadProps {
   orderId: number;
   orderNumber: string;
   paymentMethod?: string;
+  customerNote?: string;
 }
 
-export function PaymentProofUpload({ orderId, orderNumber, paymentMethod }: PaymentProofUploadProps) {
+export function PaymentProofUpload({ orderId, orderNumber, paymentMethod, customerNote }: PaymentProofUploadProps) {
   const { t } = useTranslation();
   const [preview, setPreview] = useState<string | null>(null);
   const [fileName, setFileName] = useState<string>("");
@@ -80,7 +81,11 @@ export function PaymentProofUpload({ orderId, orderNumber, paymentMethod }: Paym
     const method = paymentMethod === "wechat_pay" ? "WeChat Pay" :
                    paymentMethod === "alipay" ? "Alipay" :
                    paymentMethod === "bank_transfer" ? "Bank Transfer" : "Direct Payment";
-    const msg = "Hello! I have completed payment for Order " + orderNumber + " via " + method + ". Please help confirm receipt. Thank you!";
+    let msg = "Hello! I have completed payment for Order " + orderNumber + " via " + method + ". Please help confirm receipt.";
+    if (customerNote && customerNote.trim()) {
+      msg += "\n\n📝 My note: " + customerNote.trim();
+    }
+    msg += "\n\nThank you!";
     return encodeURIComponent(msg);
   };
 
